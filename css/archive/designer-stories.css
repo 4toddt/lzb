@@ -1,0 +1,236 @@
+@import url("https://use.typekit.net/goe4ivi.css");
+/********************************************************/
+
+.large-quotes:before, .large-quotes:after {
+    color: #9b9b9b;
+}
+
+/******************** Image-Copy Header *****************/
+
+section.cust-support .image-copy-header {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+}
+
+section.cust-support .image-copy-header .image-block {
+    flex: 1 1 612px;
+}
+
+section.cust-support .image-copy-header .copy-block {
+    flex: 1 1 368px;
+    max-width: 600px;
+    text-align: center;
+    padding-left: 10px;
+}
+
+section.cust-support .image-copy-header .title {
+    font-family: "house-script", sans-serif;
+    color: #9B9B9B;
+    font-size: 33px;
+    margin: 0;
+}
+
+section.cust-support .image-copy-header .copy-block .designer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section.cust-support .image-copy-header .copy-block .portrait {
+    width: 173px;
+    margin: 15px auto;
+    min-height: 1px;
+}
+
+section.cust-support .image-copy-header .copy-block .copy {
+    width: 100%;
+}
+
+section.cust-support .image-copy-header h1 {
+    font-size: 29px;
+    margin: 0;
+}
+
+section.cust-support .image-copy-header h1 .name {
+    display: block;
+    font-size: 44px;
+}
+
+section.cust-support .image-copy-header .intro {
+    margin: 0;
+}
+
+@media only screen and (max-width: 900px) {
+    body.mobileSite section.cust-support .image-copy-header {
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+    body.mobileSite section.cust-support .image-copy-header .copy-block {
+        flex-basis: auto;
+        padding: 0 10px;
+    }
+    body.mobileSite section.cust-support .image-copy-header .image-block {
+        margin-top: 20px;
+        flex-basis: auto;
+    }
+}
+
+@media only screen and (min-width: 567px) and (max-width: 900px) {
+    body.mobileSite section.cust-support .image-copy-header .copy-block .designer {
+        flex-direction: row;
+        margin-top: 15px;
+    }
+    body.mobileSite section.cust-support .image-copy-header .copy-block .portrait {
+        flex: 0 0 173px;
+    }
+    body.mobileSite section.cust-support .image-copy-header .copy-block .copy {
+        margin-left: 10px;
+    }
+}
+
+/***************************************************************/
+
+/******************** Copy-Image Rows *****************/
+
+section.cust-support .copy-image-row, section.cust-support .image-copy-row, section.cust-support .image-row {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+}
+
+section.cust-support .copy-image-row .copy-block, section.cust-support .image-copy-row .copy-block {
+    flex: 1 1 400px;
+    font-size: 23px;
+    line-height: 1.325;
+}
+
+section.cust-support .copy-image-row .copy-block {
+    padding-right: 5%;
+}
+
+section.cust-support .image-copy-row .copy-block {
+    padding-left: 5%;
+}
+
+section.cust-support .copy-image-row .copy-block h2, section.cust-support .image-copy-row .copy-block h2 {
+    font-family: "house-script", sans-serif;
+    font-weight: 400;
+    color: #9B9B9B;
+    font-size: 50px;
+    margin: 0;
+}
+
+section.cust-support .copy-image-row .copy-block p, section.cust-support .image-copy-row .copy-block p {
+    margin-bottom: 0;
+}
+
+section.cust-support .copy-image-row .image-block, section.cust-support .image-copy-row .image-block {
+    flex: 1 1 580px;
+}
+
+@media only screen and (max-width: 1000px) {
+    section.cust-support .copy-image-row .copy-block {
+        padding-left: 5px;
+    }
+    section.cust-support .image-copy-row .copy-block {
+        padding-right: 5px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    body.mobileSite section.cust-support .copy-image-row, body.mobileSite section.cust-support .image-copy-row, body.mobileSite section.cust-support .image-row {
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    body.mobileSite section.cust-support .copy-image-row {
+        flex-direction: column-reverse;
+    }
+    body.mobileSite section.cust-support .copy-image-row .copy-block, body.mobileSite section.cust-support .image-copy-row .copy-block {
+        flex-basis: auto;
+        padding: 0 10px;
+        margin-top: 20px;
+    }
+    body.mobileSite section.cust-support .copy-image-row .image-block, body.mobileSite section.cust-support .image-copy-row .image-block {
+        flex-basis: auto;
+    }
+}
+
+/***************************************************************/
+
+/******************** Product Rows *****************/
+
+section.cust-support .product-row .row-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -10px;
+}
+
+section.cust-support .product-row.two-products .row-container {
+    justify-content: space-around;
+    justify-content: space-evenly;
+}
+
+section.cust-support .product-row a.product {
+    margin: 30px 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+section.cust-support img {
+    margin: auto 0;
+}
+
+section.cust-support .product-row p {
+    margin: .5em 0 0;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    body.mobileSite section.cust-support .product-row .row-container {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support .product-row .row-container {
+        flex-wrap: wrap;
+    }
+    body.mobileSite section.cust-support .product-row .product {
+        margin: 30px auto 0;
+    }
+}
+
+/***************************************************************/
+
+/******************** Designer Portfolio Link *****************/
+
+section.cust-support .designer-portfolio-link {
+    margin-top: 30px;
+    color: #A8A5A5;
+}
+
+section.cust-support .designer-portfolio-link a {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.cust-support .designer-portfolio-link img {
+    width: 119px;
+}
+
+section.cust-support .designer-portfolio-link .copy-block {
+    max-width: 380px;
+    padding-left: 21px;
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support .designer-portfolio-link a {
+        flex-direction: column;
+    }
+    body.mobileSite ssection.cust-support .designer-portfolio-link .copy-block {
+        padding: 0 10px;
+    }
+}

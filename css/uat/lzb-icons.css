@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'LZB Icons';
+  src:  url('fonts/lzb-icons.eot?jebkb3');
+  src:  url('fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'),
+    url('fonts/lzb-icons.ttf?jebkb3') format('truetype'),
+    url('fonts/lzb-icons.woff?jebkb3') format('woff'),
+    url('fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="lzb-icon-"], [class*=" lzb-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'LZB Icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lzb-icon-space:before {
+  content: "\20";
+}
+.lzb-icon-cross:before {
+  content: "\e900";
+}
+.lzb-icon-play:before {
+  content: "\e901";
+}
+.lzb-icon-search:before {
+  content: "\e902";
+}
+.lzb-icon-arrow-left:before {
+  content: "\e903";
+}
+.lzb-icon-arrow-right:before {
+  content: "\e904";
+}
+.lzb-icon-printer:before {
+  content: "\e905";
+}
+.lzb-icon-share:before {
+  content: "\e906";
+}
+.lzb-icon-arrow-down:before {
+  content: "\e907";
+}
+.lzb-icon-arrow-up:before {
+  content: "\e908";
+}
+.lzb-icon-cart:before {
+  content: "\e909";
+}
+.lzb-icon-heart:before {
+  content: "\e90a";
+}
+.lzb-icon-star:before {
+  content: "\e90b";
+}
+.lzb-icon-checkmark:before {
+  content: "\e90c";
+}
+.lzb-icon-heart2:before {
+  content: "\e90d";
+}
+.lzb-icon-phone:before {
+  content: "\e942";
+}
+.lzb-icon-envelop:before {
+  content: "\e945";
+}
+.lzb-icon-download:before {
+  content: "\e960";
+}

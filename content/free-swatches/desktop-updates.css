@@ -1,0 +1,337 @@
+
+
+section.cust-support #freeSwatchesContainer input,section.cust-support #freeSwatchesContainer textarea,section.cust-support #freeSwatchesContainer select {
+    font-size: inherit
+}
+
+section.cust-support #freeSwatchesContainer [type="text"],section.cust-support #freeSwatchesContainer [type="password"],section.cust-support #freeSwatchesContainer [type="email"],section.cust-support #freeSwatchesContainer [type="number"],section.cust-support #freeSwatchesContainer [type="tel"],section.cust-support #freeSwatchesContainer [type="url"],section.cust-support #freeSwatchesContainer [type="search"],section.cust-support #freeSwatchesContainer select {
+    height: auto
+}
+
+section.cust-support #freeSwatchesContainer label {
+    width: auto
+}
+
+section.cust-support #freeSwatchesContainer label,section.cust-support #freeSwatchesContainer .psuedo-label {
+    display: inline;
+    font-size: 1em;
+    margin: 0
+}
+
+section.cust-support #freeSwatchesContainer .hero {
+    text-align: center;
+    color: #0d1f4b;
+    margin-bottom: 30px;
+    font-family: 'LatoWebBold',sans-serif
+}
+
+section.cust-support #freeSwatchesContainer .hero .copy-overlay {
+    position: absolute;
+    right: 0;
+    width: 43.673469%;
+    padding: 0 1.25em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255,255,255,.6)
+}
+
+section.cust-support #freeSwatchesContainer .hero h1 {
+    font-size: 2.05em;
+    margin: 0
+}
+
+section.cust-support #freeSwatchesContainer .hero hr {
+    padding-top: 23px;
+    border: 0;
+    border-bottom: 2px solid #0d1f4b;
+    margin: 0 34px 23px 34px
+}
+
+section.cust-support #freeSwatchesContainer .hero p {
+    font-size: 1.1em;
+    font-weight: bold
+}
+
+section.cust-support #freeSwatchesContainer h2 {
+    text-align: center;
+    font-size: 24px;
+    margin: 0
+}
+
+section.cust-support #freeSwatchesContainer form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-family: 'Open Sans',sans-serif
+}
+
+section.cust-support #freeSwatchesContainer form input,section.cust-support #freeSwatchesContainer form select {
+    outline: none !important
+}
+
+section.cust-support #freeSwatchesContainer form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: ''
+}
+
+section.cust-support #freeSwatchesContainer form input[type="checkbox"] {
+    position: absolute;
+    width: 27px;
+    height: 26px;
+    opacity: 0;
+    z-index: 1000
+}
+
+section.cust-support #freeSwatchesContainer .swatches {
+    display: flex;
+    flex-basis: 480px;
+    max-width: 550px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end
+}
+
+section.cust-support #freeSwatchesContainer .swatch {
+    flex-basis: 150px;
+    margin: 20px 0 30px
+}
+
+section.cust-support #freeSwatchesContainer .swatch:last-child:nth-child(3n+2) {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section.cust-support #freeSwatchesContainer .swatch:nth-last-child(2):nth-child(3n+1) {
+    margin-left: auto;
+}
+
+section.cust-support #freeSwatchesContainer .swatch-title {
+    margin-bottom: 10px;
+    position: relative
+}
+
+section.cust-support #freeSwatchesContainer .swatch h3 {
+    font-size: 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    line-height: 1.1
+}
+
+section.cust-support #freeSwatchesContainer .swatch img {
+    margin-bottom: 20px;
+    display: block;
+    cursor: pointer
+}
+
+section.cust-support #freeSwatchesContainer .swatch-thumbnail {
+    position: relative
+}
+
+section.cust-support #freeSwatchesContainer .swatch-thumbnail:after {
+    content: "";
+    background-image: url(https://www.la-z-boy.com/Images/npc/free-swatches/magnify.png);
+    background-size: 100%;
+    position: absolute;
+    bottom: 3px;
+    width: 14px;
+    height: 14px;
+    right: 3px;
+    cursor: pointer
+}
+
+section.cust-support #freeSwatchesContainer .swatch label {
+    font-size: 17px;
+    letter-spacing: .025em
+}
+
+section.cust-support #freeSwatchesContainer form input[type="checkbox"]~label {
+    padding-left: 34px;
+    position: relative;
+    line-height: 25px;
+    display: block
+}
+
+section.cust-support #freeSwatchesContainer form input[type="checkbox"]~label:before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    border: solid 1px #979797;
+    left: 0
+}
+
+section.cust-support #freeSwatchesContainer form input[type="checkbox"]:checked~label:before {
+    content: "x";
+    font-size: 36px;
+    text-align: center;
+    line-height: 20px;
+    color: #9b9b9b
+}
+
+section.cust-support #freeSwatchesContainer .client-data {
+    flex-basis: 340px;
+    max-width: 375px;
+    flex-grow: 1
+}
+
+section.cust-support #freeSwatchesContainer .client-data>div {
+    width: 310px;
+    margin: 20px auto
+}
+
+section.cust-support #freeSwatchesContainer .client-data .text {
+    position: relative;
+    border: solid 1px #979797;
+    height: 50px
+}
+
+section.cust-support #freeSwatchesContainer .client-data .text.error {
+    border: solid 2px #a52d2d;
+    font-weight: normal;
+    margin-bottom: 5px
+}
+
+section.cust-support #freeSwatchesContainer .client-data .text label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #9b9b9b;
+    transition: top .2s,font-size .2s;
+    font-size: 17px
+}
+
+section.cust-support #freeSwatchesContainer .client-data .checkbox {
+    font-size: 15px;
+    width: 310px;
+    margin: 10px auto
+}
+
+section.cust-support #freeSwatchesContainer .client-data .submit input {
+    text-transform: none;
+    width: 100%;
+    height: 70px;
+    font-family: 'LatoWebBold',sans-serif
+}
+
+section.cust-support #freeSwatchesContainer .client-data .submit input[disabled],section.cust-support #freeSwatchesContainer .client-data .submit input[disabled]:active,section.cust-support #freeSwatchesContainer .client-data .submit input[disabled]:focus,section.cust-support #freeSwatchesContainer .client-data .submit input[disabled]:hover {
+    background: #9b9b9b;
+    border-color: #979797;
+    color: white
+}
+
+section.cust-support #freeSwatchesContainer .client-data input[type=text],section.cust-support #freeSwatchesContainer .client-data select,section.cust-support #freeSwatchesContainer .client-data input[type=email],section.cust-support #freeSwatchesContainer .client-data input[type=tel] {
+    position: absolute;
+    top: 24px;
+    left: 15px;
+    border: 0;
+    padding: 0;
+    width: 280px;
+    font-size: 17px
+}
+
+section.cust-support #freeSwatchesContainer .client-data .text.active label,section.cust-support #freeSwatchesContainer .client-data .text.filled label {
+    top: 0;
+    font-size: 14px
+}
+
+section.cust-support #freeSwatchesContainer .client-data input[type=text]:not(value="") {
+    border: solid 1px red
+}
+
+#swatch-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.4)
+}
+
+#swatch-modal-content {
+    background-color: #fefefe;
+    padding: 5px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    position: fixed;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%
+}
+
+#swatch-image {
+    width: 100%;
+    display: block
+}
+
+#swatch-modal-close:after {
+    content: "\00d7";
+    font-family: 'Open Sans',sans-serif;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 14px;
+    color: gray;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 18px;
+    padding: 0 4px
+}
+
+#swatch-modal-close:hover,#swatch-modal-close:focus {
+    text-decoration: none;
+    cursor: pointer
+}
+
+#freeSwatchesContainer .freeswatchForm .text #atg_store_stateSelect {
+    color: #9b9b9b;
+    background: 0;
+    top: 15px;
+    font-size: 17px
+}
+
+#freeSwatchesContainer .freeswatchForm .text.filled #atg_store_stateSelect {
+    font-size: 16px
+}
+
+#freeSwatchesContainer .freeswatchForm .text.active #atg_store_stateSelect,#freeSwatchesContainer .freeswatchForm .text.filled #atg_store_stateSelect {
+    color: #000;
+    background: 0;
+    top: 25px
+}
+
+#freeSwatchesContainer .freeswatchForm .text label.hiddenLabel {
+    display: none
+}
+
+#freeSwatchesContainer .freeswatchForm .text.active label.hiddenLabel,#freeSwatchesContainer .freeswatchForm .text.filled label.hiddenLabel {
+    display: block
+}
+
+#freeSwatchesContainer .freeswatchForm label.error {
+    margin-left: 32px;
+    font-size: 14px;
+    position: relative
+}
+
+#freeSwatchesContainer #swatchLimitMessage {
+    display: none;
+    font-size: 14px
+}
+
+#freeSwatchesContainer .hiddenSubmitter {
+    display: none
+}

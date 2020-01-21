@@ -1,0 +1,1139 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon&text=%E2%80%9C%E2%80%9D');
+
+/*****************************************/
+
+
+/* CSS Reset for BCC Full Blank Template */
+
+
+/*****************************************/
+
+body,
+body.mobileSite {
+    /* reset mobile user agent 8px margin for local development */
+    margin: 0;
+}
+
+section.cust-support>h1,
+section.cust-support>hr {
+    /* hide h1 and mobile hr coming from ATG */
+    display: none;
+}
+
+body.two-column-first section[role="region"] {
+    /* reset the 775px width and default margin on the content section */
+    width: 100%;
+    margin-left: 0;
+}
+
+[class^="two-column"] section,
+[class^="two-column"] aside {
+    /* reset the display property of section and aside elements */
+    display: block;
+}
+
+main {
+    /* reset the 10px padding on mobile */
+    padding: 0;
+    /* reset the 980px width and default margins on desktop */
+    width: 100%;
+    margin: 0;
+}
+
+section.cust-support {
+    width: 100%;
+    margin: 0;
+    /* force desktop to be non-responsive */
+    min-width: 980px;
+}
+
+body.mobileSite section.cust-support {
+    /* reset min-width on mobile */
+    min-width: auto;
+}
+
+section.cust-support p,
+section.cust-support a {
+    /* reset p and a tags */
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+section.cust-support * {
+    /* everything is border-box for predictable layout */
+    box-sizing: border-box;
+}
+
+section.cust-support .hero {
+    /* reset hero class */
+    margin-bottom: 0;
+}
+
+
+/*****************************************/
+
+
+/****** Defaults for all NPC pages *******/
+
+
+/*****************************************/
+
+body.mobileSite section.cust-support {
+    /* default margins on mobile */
+    margin: 5px 0 60px;
+}
+
+@media only screen and (max-width: 567px) {
+    /* mobile portrait */
+    body.mobileSite section.cust-support {
+        margin-bottom: 10.6%;
+    }
+}
+
+section.cust-support img {
+    /* override browser default of inline-block to remove white space after images */
+    display: block;
+    /* fix IE bug where images in flex containers don't keep their aspect ratio */
+    min-height: 1px;
+}
+
+section.cust-support [onclick],
+section.cust-support [videoModal] {
+    /* if there is an onclick attribute, the curser will be a pointer */
+    cursor: pointer;
+}
+
+
+/******************* Responsive Page Container *******************/
+
+section.cust-support section {
+    /* fixed width on desktop */
+    width: 980px;
+    margin: 50px auto 0;
+}
+
+@media only screen and (max-width: 980px) {
+    body.mobileSite section.cust-support section {
+        /* full width on mobile */
+        width: 100%;
+        max-width: 980px;
+        /* margin-top is 50px at 980 and scales evenly to 30px at 320 with fallback in case calc() is not supported*/
+        margin-top: 5.1%;
+        margin-top: calc(3.03% + 20.3px);
+    }
+}
+
+
+/************* Responsive Visibility Classes **************/
+
+body.mobileSite section.cust-support .desktop-only {
+    display: none;
+}
+
+body:not(.mobileSite) section.cust-support .mobile-only {
+    display: none;
+}
+
+
+/* names patterned after https://getbootstrap.com/docs/3.3/css/ */
+
+section.cust-support .visible-lg,
+section.cust-support .visible-md,
+section.cust-support .visible-sm,
+section.cust-support .visible-xs {
+    /* Set default display state for visibility classes */
+    display: none;
+}
+
+body:not(.mobileSite) section.cust-support .visible-lg {
+    /* display on desktop */
+    display: block;
+}
+
+body:not(.mobileSite) section.cust-support .hidden-lg {
+    /* hide on desktop */
+    display: none;
+}
+
+@media only screen and (min-width: 751px) {
+    body.mobileSite section.cust-support .visible-lg {
+        /* display only on large mobile devices (>= 751px) */
+        display: block;
+    }
+    body.mobileSite section.cust-support .hidden-lg {
+        /* hide only on large mobile devices (>= 751px) */
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 750px) {
+    body.mobileSite section.cust-support .visible-md {
+        /* display only on medium mobile devices (501px - 750px) */
+        display: block;
+    }
+    body.mobileSite section.cust-support .hidden-md {
+        /* hide only on medium mobile devices (501px - 750px) */
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 500px) {
+    body.mobileSite section.cust-support .visible-sm {
+        /* display only on small mobile devices (376px - 500px) */
+        display: block;
+    }
+    body.mobileSite section.cust-support .hidden-sm {
+        /* hide only on small mobile devices (376px - 500px) */
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body.mobileSite section.cust-support .visible-xs {
+        /* display only on extra small mobile devices (<=375px) */
+        display: block;
+    }
+    body.mobileSite section.cust-support .hidden-xs {
+        /* hide only on extra small mobile devices (<=375px) */
+        display: none;
+    }
+}
+
+
+/************** Utility Classes **************/
+
+section.cust-support .no-wrap {
+    /* class to keep a word or phrase from wrapping */
+    white-space: nowrap;
+}
+
+section.cust-support .arrow-right {
+    /* place <span class="arrow-right"></span> around last word to keep arrow with word */
+    display: inline-block;
+}
+
+section.cust-support .arrow-right:after {
+    /* draws arrow */
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -.1em;
+    left: .25em;
+    height: 0;
+    width: 0.3em;
+    border-top: .25em solid transparent;
+    border-bottom: .25em solid transparent;
+    border-left: .35em solid;
+    box-sizing: content-box;
+}
+
+section.cust-support .registered-trademark:after {
+    /* position ® after element */
+    content: "\00ae";
+    font-size: .6em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+section.cust-support .anchor {
+    /* Put <span class="anchor" id="whatever"></span> in the HTML. jQuery will move it to accommodate the mobile header. */
+    position: relative;
+    display: block;
+    height: 0;
+    width: 0;
+}
+
+section.cust-support .bullets>span {
+    display: inline-block;
+    margin: 0 .5em;
+}
+
+section.cust-support .bullets>span::before {
+    content: '\2022\00a0\00a0';
+}
+
+
+/****************** Font Defaults ********************/
+
+section.cust-support {
+    /* default font for npc content */
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    color: #494949;
+}
+
+@media only screen and (min-width: 501px) and (max-width: 816px) {
+    body.mobileSite section.cust-support {
+        font-size: 2.45vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support {
+        font-size: 17.4px;
+    }
+}
+
+section.cust-support h1,
+section.cust-support h2,
+section.cust-support h3 {
+    margin: 0;
+    line-height: 1;
+}
+
+section.cust-support h1.section-title {
+    font-size: 3.9em;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #DDD8D8;
+    letter-spacing: 1.5px;
+    margin: 0;
+    line-height: 0.8;
+}
+
+section.cust-support h1.section-title+section,
+body.mobileSite section.cust-support h1.section-title+section {
+    margin-top: 0;
+}
+
+section.cust-support h2 {
+    text-transform: uppercase;
+    color: #A8A5A5;
+    font-size: 2.4em;
+    font-weight: normal;
+    max-width: 15em;
+}
+
+section.cust-support h2.basic {
+    text-transform: none;
+    color: #494949;
+    font-size: 1.65em;
+    text-align: center;
+    padding: 0 10px;
+}
+
+section.cust-support h2 .small {
+    font-size: .55em;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+section.cust-support h2 .indent {
+    display: block;
+    margin-left: 2em;
+}
+
+section.cust-support h2 .indent-small {
+    display: block;
+    margin-left: 1em;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support h1.section-title {
+        font-size: 3.7em;
+    }
+    body.mobileSite section.cust-support h2 {
+        font-size: 2.2em;
+    }
+    body.mobileSite section.cust-support h2.basic {
+        font-size: 1.45em;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body.mobileSite section.cust-support h2 .indent,
+    body.mobileSite section.cust-support h2 .indent-small {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+section.cust-support p {
+    margin: 0;
+    line-height: 1.25;
+}
+
+
+/******************* Hero Banner Classes *******************/
+
+section.cust-support section.hero,
+body.mobileSite section.cust-support section.hero {
+    /* override section default top margin */
+    margin-top: 0;
+}
+
+section.cust-support .hero {
+    position: relative;
+}
+
+section.cust-support .hero img {
+    width: 100%;
+}
+
+section.cust-support .hero h1 {
+    font-size: 2.4em;
+    position: absolute;
+}
+
+section.cust-support .hero p {
+    position: absolute;
+    margin-top: .2em;
+}
+
+@media only screen and (max-width: 375px) {
+    body.mobileSite section.cust-support .hero p {
+        position: static;
+        text-align: center;
+        width: 100%;
+        margin-top: 1em;
+        padding: 0 10px;
+        transform: none;
+    }
+}
+
+
+/******************* Forms *********************************/
+
+section.cust-support label {
+    /* Prevent user from selecting label text. Helpful for using label insite text input */
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+}
+
+
+/****************** Design Services Request Button ********************/
+
+section.cust-support #dsr-button {
+    text-align: center;
+}
+
+section.cust-support #dsr-button a {
+    font-size: 23px;
+    color: white;
+    display: inline-block;
+    background-color: #aeccc8;
+    padding: .82em .94em;
+}
+
+
+/****************** Rows ********************/
+
+
+/* Rows should be nested inside section.cust-support>section */
+
+section.cust-support .row {
+    display: flex;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .row {
+        flex-wrap: wrap;
+    }
+}
+
+section.cust-support .row>* {
+    /* default to keep IE from breaking */
+    flex: 0 1 100%;
+}
+
+section.cust-support .row p {
+    font-size: 1.15em;
+    line-height: 1.3;
+}
+
+section.cust-support .row a {
+    font-size: 1.35em;
+    line-height: 1;
+    text-transform: uppercase;
+    display: block;
+    margin-top: .74em;
+}
+
+@media only screen and (max-width: 980px) {
+    body.mobileSite section.cust-support .row .copy {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /* body.mobileSite section.cust-support .row .copy h2 {
+        margin-left: -10px;
+    } */
+}
+
+
+/* .no-margin **/
+
+section.cust-support .row.no-margin {
+    margin-top: 0;
+}
+
+section.cust-support .row.no-margin h2 {
+    margin-top: .5em;
+}
+
+section.cust-support .row.no-margin .copy p {
+    margin: .87em 0 0;
+}
+
+
+/************ Image Image Row *************************/
+
+section.cust-support .image-image .image:first-child {
+    flex-basis: 39.28%;
+    flex-basis: calc((100% - 20px) * (385 / 960));
+}
+
+section.cust-support .image-image .image:last-child {
+    flex-basis: 58.67%;
+    flex-basis: calc((100% - 20px) * (575 / 960));
+    margin-left: auto;
+}
+
+section.cust-support .image-image.reverse .image:first-child {
+    order: 1;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .image-image .image {
+        flex-basis: 48%;
+        flex-basis: calc((100% - 20px) / 2);
+    }
+}
+
+
+/*************** Image Copy Row ***********************/
+
+section.cust-support .image-copy .image {
+    flex-basis: 58.67%;
+    flex-basis: calc(100% * (575 / 980));
+}
+
+section.cust-support .image-copy.reverse .image {
+    order: 1;
+}
+
+section.cust-support .image-copy .copy {
+    flex-basis: 41.33%;
+    flex-basis: calc(100% * (405 / 980));
+    padding-left: 25px;
+    padding-bottom: 1em;
+    align-self: flex-end;
+}
+
+section.cust-support .image-copy.reverse .copy {
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+@media only screen and (max-width: 750px) {
+    body.mobileSite section.cust-support .image-copy .copy {
+        padding-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .image-copy .image,
+    body.mobileSite section.cust-support .image-copy .copy {
+        flex-basis: 100%;
+    }
+    body.mobileSite section.cust-support .image-copy.reverse .image {
+        order: 0;
+    }
+    body.mobileSite section.cust-support .image-copy p {
+        margin-top: 1em;
+    }
+}
+
+
+/* .no-margin **/
+
+section.cust-support .image-copy.no-margin .image {
+    flex-basis: 54.591837%;
+    flex-basis: calc(100% * (535 / 980));
+}
+
+section.cust-support .image-copy.no-margin .copy {
+    flex-basis: 45.408163%;
+    flex-basis: calc(100% * (445 / 980));
+    align-self: flex-start;
+    padding-bottom: 0;
+}
+
+
+/*************** .middle ***********************/
+
+section.cust-support .image-copy.middle .copy {
+    align-self: center;
+    padding-bottom: 0;
+}
+
+section.cust-support .image-copy.middle .copy h2 {
+    margin-top: 0;
+}
+
+@media only screen and (max-width:500px) {
+    body.mobileSite section.cust-support .image-copy.middle .copy h2 {
+        margin-top: .5em;
+    }
+}
+
+
+/*************** Brand Module Row ***********************/
+
+section.cust-support .brand-module {
+    position: relative;
+}
+
+section.cust-support .brand-module .image {
+    max-width: 44.9%;
+}
+
+section.cust-support .brand-module .copy {
+    max-width: 55.1%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3.5%;
+    border-bottom: solid 1px gray;
+    margin-bottom: 3.9%;
+}
+
+section.cust-support .brand-module h3 {
+    margin-top: auto;
+    font-size: 1.65em;
+    line-height: 1;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+section.cust-support .brand-module p {
+    font-size: .85em;
+    margin-top: .5em;
+}
+
+section.cust-support .brand-module p.signature {
+    font-style: italic;
+}
+
+section.cust-support .brand-module a {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+section.cust-support .brand-module br {
+    display: none;
+}
+
+section.cust-support .brand-module .copy *:last-child {
+    margin-bottom: auto;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .brand-module .image {
+        max-width: 46.875%;
+    }
+    body.mobileSite section.cust-support .brand-module .copy {
+        max-width: 53.125%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    body.mobileSite section.cust-support .brand-module .copy {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+}
+
+
+/******************** Title Row ***********************/
+
+section.cust-support .title-row h2 {
+    text-transform: none;
+    color: #494949;
+    text-align: center;
+    max-width: 780px;
+    max-width: calc(16em + 20px);
+    margin: 20px auto 0;
+    padding: 0 10px;
+}
+
+section.cust-support .title-row>p {
+    text-align: center;
+    max-width: 780px;
+    max-width: calc(38em + 20px);
+    margin: 20px auto 0;
+    padding: 0 10px;
+}
+
+section.cust-support .title-row>a {
+    display: block;
+    margin: 0 auto;
+    max-width: 780px;
+    max-width: calc(38em + 20px);
+    text-align: center;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+
+/******************** CDP-style Hero Banner ***********************/
+
+section.cust-support .cdp-hero,
+body.mobileSite section.cust-support .cdp-hero {
+    position: relative;
+    color: #0d1f4b;
+    text-align: center;
+    margin-top: 0;
+}
+
+section.cust-support .cdp-hero .copy-overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 43.7%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+section.cust-support .cdp-hero .copy-block {
+    position: absolute;
+    width: 100%;
+    padding: 0 1.25em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section.cust-support .cdp-hero h1 {
+    font-size: 2.05em;
+}
+
+section.cust-support .cdp-hero hr {
+    margin: 1.15em 1.7em;
+    border: none;
+    border-bottom: 2px solid #0d1f4b;
+}
+
+section.cust-support .cdp-hero p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .cdp-hero .copy-overlay {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    body.mobileSite section.cust-support .cdp-hero .copy-block {
+        position: static;
+        padding: 1.5em;
+        transform: none;
+    }
+    body.mobileSite section.cust-support .cdp-hero h1 {
+        font-size: 2.05em;
+    }
+    body.mobileSite section.cust-support .cdp-hero p {
+        font-weight: normal;
+        color: #494949;
+        font-size: 1.15em;
+        margin-top: 1em;
+        padding: 0 10px;
+    }
+}
+
+
+/****************** Grid ********************/
+
+section.cust-support .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section.cust-support .grid>h2 {
+    min-width: 100%;
+    text-transform: none;
+    color: #494949;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 0 10px;
+}
+
+section.cust-support .block {
+    display: flex;
+    flex-direction: column;
+}
+
+section.cust-support .block>* {
+    font-size: .85em;
+    min-height: 1px;
+}
+
+section.cust-support .grid img {
+    margin: 0 auto;
+}
+
+section.cust-support .grid img+*,
+section.cust-support .grid a+* {
+    margin-top: .5em;
+}
+
+@media only screen and (max-width: 1000px) {
+    body.mobileSite section.cust-support .grid h3,
+    body.mobileSite section.cust-support .grid p,
+    body.mobileSite section.cust-support .grid a.cta,
+    body.mobileSite section.cust-support .grid p+a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .grid>h2 {
+        font-size: 1.4em;
+    }
+}
+
+
+/****************** Two Column Grid ********************/
+
+section.cust-support section.two-column {
+    /* added to block padding to make 50px */
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 980px) {
+    body.mobileSite section.cust-support section.two-column {
+        /* margin-top is 20px at 980 and scales evenly to 0 at 320 with fallback in case calc() is not supported*/
+        /* since the margin-top of grid child elements is 30px, the total margin-top matches other sections */
+        margin-top: 2%;
+        margin-top: calc(3.03% - 9.7px);
+    }
+}
+
+section.cust-support .two-column>* {
+    margin-top: 30px;
+}
+
+section.cust-support .two-column .block {
+    margin-top: 30px;
+    flex-basis: 48%;
+}
+
+section.cust-support .two-column .block:nth-last-child(1):nth-of-type(odd) {
+    /* center a lone block on the last row */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section.cust-support .two-column h3 {
+    font-size: 1.5em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+section.cust-support .two-column.no-transform h3 {
+    text-transform: none;
+}
+
+section.cust-support .two-column p+a {
+    display: block;
+    padding-top: .5em;
+    text-transform: uppercase;
+    margin-top: auto;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .two-column .block {
+        flex-basis: 100%;
+    }
+    body.mobileSite section.cust-support .two-column h3 {
+        font-size: 1.4em;
+    }
+}
+
+
+/****************** Three Column Grid ********************/
+
+section.cust-support section.three-column {
+    /* added to block padding to make 50px */
+    /* use .two-column.grid style on the entire section if it only contains .block elements */
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 980px) {
+    body.mobileSite section.cust-support section.three-column {
+        /* use .two-column.grid style on the entire section if it only contains .block elements */
+        /* margin-top is 300px at 980 and scales evenly to 0 at 320 with fallback in case calc() is not supported*/
+        margin-top: 3%;
+        margin-top: calc(3.03% + .3px);
+    }
+}
+
+section.cust-support .three-column>* {
+    margin-top: 20px;
+}
+
+section.cust-support .three-column .block {
+    flex-basis: 30.6%;
+    max-width: 300px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .three-column {
+        width: 52%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    body.mobileSite section.cust-support .three-column .block {
+        flex-basis: 100%;
+    }
+    body.mobileSite section.cust-support .three-column.allow-2-col {
+        width: 100%;
+    }
+    body.mobileSite section.cust-support .three-column.allow-2-col .block {
+        flex-basis: 48%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    body.mobileSite section.cust-support .three-column.allow-wide-col {
+        width: 260px;
+    }
+    body.mobileSite section.cust-support .three-column.allow-wide-col .block {
+        flex-basis: 260px;
+    }
+}
+
+
+/****************** Four Column Grid ********************/
+
+section.cust-support section.four-column {
+    /* added to block padding to make 50px */
+    /* use .two-column.grid style on the entire section if it only contains .block elements */
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 980px) {
+    body.mobileSite section.cust-support section.four-column {
+        /* use .two-column.grid style on the entire section if it only contains .block elements */
+        /* margin-top is 300px at 980 and scales evenly to 0 at 320 with fallback in case calc() is not supported*/
+        margin-top: 3%;
+        margin-top: calc(3.03% + .3px);
+    }
+}
+
+section.cust-support .four-column>* {
+    margin-top: 20px;
+}
+
+section.cust-support .four-column .block {
+    flex-basis: 23%;
+    text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .four-column .block {
+        flex-basis: 48%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/****************** Products Grid  ********************/
+
+section.cust-support .products img,
+section.cust-support .products a {
+    margin: auto;
+}
+
+section.cust-support .products p+a {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+section.cust-support .products h3,
+section.cust-support .products p,
+section.cust-support .products a,
+body.mobileSite section.cust-support .products h3,
+body.mobileSite section.cust-support .products p,
+body.mobileSite section.cust-support .products a {
+    /* override default padding for .grid */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .products .block p {
+        margin-left: -3em;
+        margin-right: -3em;
+    }
+}
+
+
+/******************** Icon Grid ***********************/
+
+section.cust-support .icons img {}
+
+section.cust-support .icons img,
+section.cust-support .icons .block>a:first-child {
+    width: 100px;
+    margin: 0 auto;
+}
+
+section.cust-support .icons p a {
+    display: block;
+    font-weight: bold;
+}
+
+
+/****************** NPC Modal  ********************/
+
+#npc-modal {
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#npc-modal-container {
+    background-color: #fefefe;
+    padding: 5px;
+    border: 1px solid #888;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.video #npc-modal-container {
+    width: 75%;
+    max-width: 1050px;
+}
+
+#npc-image {
+    width: 100%;
+    display: block;
+}
+
+.video #npc-modal-content {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+#npc-modal-content iframe {
+    min-height: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#npc-modal-close {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    width: 22px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#npc-modal-close:hover,
+#npc-modal-close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/****************** Slideshow  ********************/
+
+section.cust-support .auto-slideshow>* {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+section.cust-support .auto-slideshow>*:first-child {
+    opacity: 1;
+}
+
+section.cust-support .auto-slideshow>*:last-child {
+    position: static;
+    transition: opacity .5s;
+    z-index: 1;
+    opacity: 1;
+}
+
+
+/****************** Infographic  ********************/
+
+section.cust-support .infographic {
+    position: relative;
+}
+
+section.cust-support .infographic .copy {
+    font-size: .85em;
+    position: absolute;
+    width: 30%;
+    float: none;
+    padding: 0 1%;
+}
+
+section.cust-support .infographic .copy h3 {
+    line-height: 1.25;
+    font-size: inherit;
+}
+
+section.cust-support .infographic .copy.right {
+    right: 0;
+}
+
+section.cust-support .infographic .copy hr {
+    border-bottom: 1px solid #979797;
+    margin: 1em 1.25em 0 0;
+}
+
+section.cust-support .infographic .copy.right hr {
+    margin: 1em 0 0 .75em;
+}
+
+@media only screen and (max-width: 500px) {
+    body.mobileSite section.cust-support .infographic img {
+        display: none;
+    }
+    body.mobileSite section.cust-support .infographic .copy {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        margin: 20px auto 0;
+        padding: 0 10px;
+    }
+    body.mobileSite section.cust-support .infographic .copy::before {
+        content: '\2022\00a0\00a0';
+    }
+    body.mobileSite section.cust-support .infographic .copy h3 {
+        display: inline;
+    }
+    body.mobileSite section.cust-support .infographic .copy hr {
+        display: none;
+    }
+}

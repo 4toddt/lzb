@@ -1,0 +1,196 @@
+<head>
+    <title>Swipeable Slider TT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+    <link href="/css/_resets.css" rel="stylesheet" type="text/css">
+    <link href="/css/_defaults.css" rel="stylesheet" type="text/css">
+    <style>
+        .slider {
+            max-width: 900px;
+            margin: 50px auto;
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            /* -webkit-overflow-scrolling: touch; */
+        }
+        
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .slider>* {
+            min-width: 250px;
+        }
+        
+        .slider.snap {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        
+        .slider.snap>* {
+            scroll-snap-align: start;
+        }
+        
+        .slider .slider-item img {
+            width: 100%;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="temp" class="slider dragscroll">
+        <div class="slider-item">
+            <a href="https://www.google.com">
+                <img src="https://via.placeholder.com/300/0000FF/?text=A" alt="">
+            </a>
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/808080/?text=B" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/FFFF00/?text=C" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/000000/?text=D" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/FF0000/?text=E" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/0000FF/?text=F" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/808080/?text=G" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/FFFF00/?text=H" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/0000FF/?text=I" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/808080/?text=J" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/FFFF00/?text=K" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/000000/?text=L" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/FF0000/?text=M" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/0000FF/?text=N" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/808080/?text=O" alt="">
+        </div>
+        <div class="slider-item">
+            <img src="https://via.placeholder.com/300/FFFF00/?text=P" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    /**
+     * @fileoverview dragscroll - scroll area by dragging
+     * @version 0.0.8
+     * 
+     * @license MIT, see http://github.com/asvd/dragscroll
+     * @copyright 2015 asvd <heliosframework@gmail.com> 
+     */
+
+    //  NOTE: I need to add snapping to start of slider-item, and I need to disable clicking links when scrolling
+
+
+    (function(root, factory) {
+        if (typeof define === 'function' && define.amd) {
+            define(['exports'], factory);
+        } else if (typeof exports !== 'undefined') {
+            factory(exports);
+        } else {
+            factory((root.dragscroll = {}));
+        }
+    }(this, function(exports) {
+        var _window = window;
+        var _document = document;
+        var mousemove = 'mousemove';
+        var mouseup = 'mouseup';
+        var mousedown = 'mousedown';
+        var EventListener = 'EventListener';
+        var addEventListener = 'add' + EventListener;
+        var removeEventListener = 'remove' + EventListener;
+        var newScrollX;
+
+        var dragged = [];
+        var reset = function(i, el) {
+            for (i = 0; i < dragged.length;) {
+                el = dragged[i++];
+                el = el.container || el;
+                el[removeEventListener](mousedown, el.md, 0);
+                _window[removeEventListener](mouseup, el.mu, 0);
+                _window[removeEventListener](mousemove, el.mm, 0);
+            }
+
+            // cloning into array since HTMLCollection is updated dynamically
+            dragged = [].slice.call(_document.getElementsByClassName('dragscroll'));
+            for (i = 0; i < dragged.length;) {
+                (function(el, lastClientX, pushed, scroller, cont) {
+                    (cont = el.container || el)[addEventListener](
+                        mousedown,
+                        cont.md = function(e) {
+                            if (!el.hasAttribute('nochilddrag') ||
+                                _document.elementFromPoint(
+                                    e.pageX, e.pageY
+                                ) == cont
+                            ) {
+                                pushed = 1;
+                                lastClientX = e.clientX;
+
+                                e.preventDefault();
+                            }
+                        }, 0
+                    );
+
+                    _window[addEventListener](
+                        mouseup, cont.mu = function() {
+                            pushed = 0;
+                            el.classList.add("snap");
+                            el.scrollLeft += .1;
+                            el.classList.remove("snap");
+                            // el.querySelector('a').onclick();
+                        }, 0
+                    );
+
+                    _window[addEventListener](
+                        mousemove,
+                        cont.mm = function(e) {
+                            if (pushed) {
+                                (scroller = el.scroller || el).scrollLeft -=
+                                    newScrollX = (-lastClientX + (lastClientX = e.clientX));
+                                if (el == _document.body) {
+                                    (scroller = _document.documentElement).scrollLeft -= newScrollX;
+                                    scroller.scrollTop -= newScrollY;
+                                }
+                            }
+                        }, 0
+                    );
+                })(dragged[i++]);
+            }
+        }
+
+
+        if (_document.readyState == 'complete') {
+            reset();
+        } else {
+            _window[addEventListener]('load', reset, 0);
+        }
+
+        exports.reset = reset;
+    }));
+</script>

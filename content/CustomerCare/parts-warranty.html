@@ -1,0 +1,797 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- begin BCC content -->
+    <!-- Parts and Warranty TT -->
+    <script>
+        var link = document.createElement('meta');
+        link.setAttribute('name', 'description');
+        link.content = "La-Z-Boy is proud to make furniture that&rsquo;s built to last. But should you need parts or service, this page provides information, phone numbers and a helpful video to point you in the right direction.";
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <link href="/css/parts-warranty.css" rel="stylesheet" type="text/css">
+    <div id="bcc-content">
+        <input class="hidden" id="nav-tab01" type="radio" name="tab" checked>
+        <input class="hidden" id="nav-tab02" type="radio" name="tab">
+        <input class="hidden" id="nav-tab03" type="radio" name="tab">
+        <input class="hidden" id="nav-tab04" type="radio" name="tab">
+        <input class="hidden" id="show-nav-menu" type="checkbox">
+        <section id="hero">
+            <h1>Parts &amp; Warranty Information</h1>
+            <div class="image" id="hero-image01">
+                <!-- <img src="/Images/npc/CustomerCare/parts-warranty/hero01.png" alt=""> -->
+                <img src="https://embed.widencdn.net/img/lazboy/0b7uv9sctm/98px/widen-placeholder.jpg?q=100" alt="">
+            </div>
+            <div class="image" id="hero-image02">
+                <!-- <img src="/Images/npc/CustomerCare/parts-warranty/hero02.png" alt=""></div> -->
+                <img src="https://embed.widencdn.net/img/lazboy/0mrpzdnstu/98px/widen-placeholder.jpg?q=100" alt="">
+            </div>
+            <div class="image" id="hero-image03">
+                <!-- <img src="/Images/npc/CustomerCare/parts-warranty/hero03.png" alt=""> -->
+                <img src="https://embed.widencdn.net/img/lazboy/loavcienw7/98px/widen-placeholder.jpg?q=100" alt="">
+            </div>
+            <div class="image" id="hero-image04">
+                <!-- <img src="/Images/npc/CustomerCare/parts-warranty/hero04.png" alt=""> -->
+                <img src="https://embed.widencdn.net/img/lazboy/wne3dlfvhd/98px/widen-placeholder.jpg?q=100" alt="">
+            </div>
+            <div id="nav-tabs"
+                onclick="document.getElementById('show-nav-menu').checked = !document.getElementById('show-nav-menu').checked;">
+                <label for="nav-tab01">If You Need&nbsp;Parts</label>
+                <label for="nav-tab02">If You Need&nbsp;Service</label>
+                <label for="nav-tab03">What to Expect</label>
+                <label for="nav-tab04">Your&nbsp;Product ID&nbsp;Tag</label>
+            </div>
+        </section>
+        <section id="tab-content">
+            <div id="tab-section01">
+                <div id="tab-content01">
+                    <h2>For Parts</h2>
+                    <p>Please enter your ZIP/Postal Code below. A list of your local <span
+                            class="no-wrap">La-Z-Boy</span> stores and their phone numbers will appear. Please call the
+                        store where you purchased your furniture for more information about parts
+                        or the&nbsp;warranty.
+                    </p>
+                    <form id="find-stores1">
+                        <div class="default-text">
+                            <input id="postal1" name="zipPostal" type="text" required=""
+                                pattern="(^\d{5}$|^[A-Za-z0-9]{3} [A-Za-z0-9]{3}$)"
+                                style="outline: transparent solid 2px;">
+                            <label for="postal1" validation-text="like “55555” or “A1A 1A1”">ZIP/Postal Code</label>
+                        </div>
+                        <input type="submit" value="Submit" class="default-submit">
+                        <a class="default-video" videomodal="WMt8FMIL784">Watch the video</a>
+                        <p>If you need help finding your Product ID Tag, please watch this&nbsp;video.</p>
+                    </form>
+                    <small>If you are not sure where you purchased your <span class="no-wrap">La-Z-Boy</span> furniture,
+                        call our Customer Care department <span class="no-wrap">at (800) 375-6890.</span></small>
+                </div>
+                <div id="tab-content02">
+                    <h2>For Service</h2>
+                    <p>Whether you are looking for a service technician or you are planning to do the repair yourself,
+                        you will need to enter your ZIP/Postal Code below. Once you have entered your ZIP/Postal Code,
+                        you will see a list of local stores. Please
+                        call the store where you purchased your furniture to discuss your service&nbsp;request.</p>
+                    <form id="find-stores2">
+                        <div class="default-text">
+                            <input id="postal2" name="zipPostal" type="text" required=""
+                                pattern="(^\d{5}$|^[A-Za-z0-9]{3} [A-Za-z0-9]{3}$)"
+                                style="outline: transparent solid 2px;">
+                            <label for="postal2" validation-text="like “55555” or “A1A 1A1”">ZIP/Postal
+                                Code</label>
+                        </div>
+                        <input type="submit" value="Submit" class="default-submit">
+                        <!-- <a href="" class="default-submit" onclick="return false;">Submit</a> -->
+                    </form>
+                    <small>If you are not sure where you purchased your <span class="no-wrap">La-Z-Boy</span> furniture,
+                        call our Customer Care department <span class="no-wrap">at (800) 375-6890.</span></small>
+                </div>
+                <div id="tab-content03">
+                    <h2>What to Expect</h2>
+                    <p>If Comfort Care is available for your product, please call the number provided to speak with a
+                        <span class="no-wrap">La-Z-Boy</span> representative. You may be asked to set up an appointment,
+                        or send a picture of the problem via text
+                        or email. You will also be asked if you would like to order parts to make the repairs yourself.
+                        (All parts orders are subect to a shipping&nbsp;fee.)</p>
+
+                </div>
+                <div id="tab-content04">
+                    <h2>Your Product ID Tag</h2>
+                    <p>The Product ID Tag has information you need to process your parts and service request. See the
+                        diagram below to find the ACK Number, Style Number and Cover Number. The Product ID Tag is
+                        located on the underside of your furniture. If
+                        you need help locating it, please watch this&nbsp;video.</p>
+                    <a class="default-video" videomodal="WMt8FMIL784">Watch the video</a>
+                    <div class="product-tag image">
+                        <!-- <img src="/Images/npc/CustomerCare/parts-warranty/product-id-tag.png" alt=""> -->
+                        <img src="https://embed.widencdn.net/img/lazboy/5xbdrb8uxc/32px/widen-placeholder.jpg?q=100"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="tab-section02">
+                <h2>Helpful Information</h2>
+                <p>To expedite the call with your store, please have the following information available.</p>
+                <hr>
+                <ul>
+                    <li>Briefly describe the issue.</li>
+                    <li>Are you looking for a service technician or <span class="no-wrap">a self-repair?</span></li>
+                    <li>Acknowledgment number ("ACK/LINE/ITEM" from your Product&nbsp;ID&nbsp;Tag).</li>
+                    <li>Style number ("STYLE" from your Product&nbsp;ID&nbsp;Tag).</li>
+                    <li>Fabric number ("COVER" from your Product&nbsp;ID&nbsp;Tag).</li>
+                    <li>Delivery date.</li>
+                    <li>Original purchase receipt.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="warranties">
+            <h2>Limitations Applicable to all Warranties</h2>
+            <p>All warranties are to the original purchaser from authorized dealers only. Warranties are not
+                transferable. Proof of purchase is required for all claims.</p>
+            <p>All warranties are limited to manufacturing and material defects that appear under normal, residential
+                use. Additional limitations described herein apply.</p>
+            <p>Warranties are for repair, replacement, or substitution only, in <span
+                    class="no-wrap">La-Z-Boy</span>&rsquo;s sole discretion. Refunds are not available.</p>
+            <p><span class="no-wrap">La-Z-Boy</span> will pay reasonable and customary rates for labor during the period
+                of the labor warranty. You will be responsible for labor costs after the stated time period.</p>
+            <p>You are responsible for service part handling fees, in-home inspection fees, and transportation of the
+                product to and from the dealer.</p>
+            <p>Warranties are voided by evidence of excessive soiling, improper cleaning or treatment, abuse, or
+                abnormal use or use contrary to the advisories or instructions contained herein. Warranties do not apply
+                to products used for rental, business,
+                commercial, institutional, or other non-residential uses.</p>
+            <h3>Important Information</h3>
+            <p>To the extent permissible by applicable law, these warranties are your exclusive remedy and no other
+                warranties, express or implied, including, but not limited to, the implied warranties of merchantability
+                and fitness for a particular purpose,
+                apply. In no event will <span class="no-wrap">La-Z-Boy</span> be liable for incidental or consequential
+                damages, even if it had reason to know in advance that such damages were possible. These warranties give
+                you specific legal rights,
+                and you may have other rights that vary from jurisdiction to jurisdiction. Some jurisdictions do not
+                allow the exclusion of implied warranties or the limitation of damages, so the above exclusion and
+                limitations may not apply to you. In
+                the event the warranty exclusions do not apply to you, then, where legally permissible, such warranties
+                are limited in duration to the applicable warranty period and no warranties apply after that period.</p>
+            <p>Please review the warranty card that accompanied your product for warranty coverage.</p>
+            <h2>Residential Upholstered Furniture Limited Warranty</h2>
+            <p>(for products purchased on or after August 1, 1992)</p>
+            <input type="checkbox" id="war01" checked>
+            <input type="checkbox" id="war02">
+            <input type="checkbox" id="war03">
+            <input type="checkbox" id="war04">
+            <input type="checkbox" id="war05">
+            <input type="checkbox" id="war06">
+            <input type="checkbox" id="war07">
+            <table>
+                <thead>
+                    <th>Description</th>
+                    <th>Parts Coverage</th>
+                    <th>Labor Coverage</th>
+                </thead>
+                <tbody id="war-content01">
+                    <tr>
+                        <th colspan="3"><label for="war01">Mechanism</label></th>
+                    </tr>
+                    <tr class="exceptions-below">
+                        <td>Reclining Mechanism Parts <small>(exceptions below)</small></td>
+                        <td>Lifetime</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions exceptions-below">
+                        <td>Luxury-Lift 2BL styles</td>
+                        <td>One Year</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions">
+                        <td>Luxury-Lift 1HM, 1PH, 1PL, 1PM, 4LP, styles</td>
+                        <td>Three Years</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions-below">
+                        <td>Lift Mechanism and Base <small>(exceptions below)</small></td>
+                        <td>Three Years</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions">
+                        <td>Luxury-Lift 2BL styles</td>
+                        <td>One Year</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr>
+                        <td>Sleep Sofa Mechanism</td>
+                        <td>Lifetime</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions-below">
+                        <td>Springs & Spring Systems <small>(exceptions below)</small></td>
+                        <td>Lifetime</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions">
+                        <td>Luxury-Lift Styles 2BL, 1HM, 1PH, 1PL, 1PM, 4LP</td>
+                        <td>Three Years</td>
+                        <td>One Year</td>
+                    </tr>
+                </tbody>
+                <tbody id="war-content02">
+                    <tr>
+                        <th colspan="3"><label for="war02">Frame</label></th>
+                    </tr>
+                    <tr>
+                        <td>Base — Metal, Swivel and Wood Bases</td>
+                        <td>Lifetime</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr>
+                        <td>Base — Polished Silver Tone</td>
+                        <td>One Year</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr>
+                        <td>Decorative Show Wood Drawers, Trim</td>
+                        <td>One Year</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td>Decorative Show Wood Legs and Arms</td>
+                        <td>One Year</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr>
+                        <td>Decorative Show Wood Legs <small>(screw attachment)</small></td>
+                        <td>One Year</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td>Metal Arms</td>
+                        <td>One Year</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions-below">
+                        <td>Wood Frame Parts <small>(exceptions below)</small></td>
+                        <td>Lifetime</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions">
+                        <td>Styles 023456, 023459, 024459, 023466, 024466, 023472, 023495, 023812, 029423, 235472,
+                            235466, 245466, 294523</td>
+                        <td>Five Years</td>
+                        <td>One Year</td>
+                    </tr>
+                </tbody>
+                <tbody id="war-content03">
+                    <tr>
+                        <th colspan="3"><label for="war03">Electrical</label></th>
+                    </tr>
+                    <tr class="exceptions-below">
+                        <td>Electrical Parts and Motors <small>(exceptions below)</small></td>
+                        <td>Three Years</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions exceptions-below">
+                        <td>Bronze 2BL Luxury-Lift electronics</td>
+                        <td>One Year</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr class="exceptions">
+                        <td>SumberAir electronics</td>
+                        <td>One Year</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td>Lighted Cup Holder</td>
+                        <td>Three Years</td>
+                        <td>One Year</td>
+                    </tr>
+                </tbody>
+                <tbody id="war-content04">
+                    <tr>
+                        <th colspan="3"><label for="war04">Fabric and Leather</label></th>
+                    </tr>
+                    <tr>
+                        <td>Fabric</td>
+                        <td>One Year <small>(applies to seam failure, fabric separation and nap loss)</small></td>
+                        <td>One Year <small>(does not apply to some upholstered components)</small></td>
+                    </tr>
+                    <tr>
+                        <td>Leather</td>
+                        <td>One Year <small>(applies to manufacturing or material defects)</small></td>
+                        <td>One Year <small>(does not apply to some upholstered components)</small></td>
+                    </tr>
+                    <tr>
+                        <td>iClean&trade; Fabric</td>
+                        <td>Three Years <small>(limited to specific stains; refer to iClean cleaning instructions and
+                                warranty details)</small><br>One Year <small>(applies to seam failure, fabric separation
+                                and nap loss)</small></td>
+                        <td>One Year <small>(does not apply to some upholstered components)</small></td>
+                    </tr>
+                </tbody>
+                <tbody id="war-content05">
+                    <tr>
+                        <th colspan="3"><label for="war05">Cushions</label></th>
+                    </tr>
+                    <tr>
+                        <td>airorm</td>
+                        <td>Three Years</td>
+                        <td>One Year <small>(no coverage on loose seat styles)</small></td>
+                    </tr>
+                    <tr>
+                        <td>Accent Pillows <small>(excludes decorative pillow program)</small></td>
+                        <td>One Year</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td>Blown Fiber</td>
+                        <td>One Year</td>
+                        <td>One Year <small>(no coverage on loose back styles)</small></td>
+                    </tr>
+                    <tr>
+                        <td>ComfortCore&trade;</td>
+                        <td>Three Years</td>
+                        <td>One Year <small>(no coverage on loose seat styles)</small></td>
+                    </tr>
+                    <tr>
+                        <td>ComfortCore&trade; GEL</td>
+                        <td>Five Years</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td>Standard Polyurethane Foam Cushioning</td>
+                        <td>One Year</td>
+                        <td>One Year</td>
+                    </tr>
+                    <tr>
+                        <td>Standard Poly Foam Cushioning <small>(loose seats)</small></td>
+                        <td>One Year</td>
+                        <td>No Coverage</td>
+                    </tr>
+                </tbody>
+                <tbody id="war-content06">
+                    <tr>
+                        <th colspan="3"><label for="war06">Mattresses</label></th>
+                    </tr>
+                    <tr>
+                        <td>Memory Foam Mattress</td>
+                        <td>Three Years</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td><span class="registered">SlumberAir</span> Bladder</td>
+                        <td>Five Years</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td><span class="registered">SlumberAir</span> Mattress</td>
+                        <td>Five Years</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td><span class="registered">Supreme Comfort</span> Mattress</td>
+                        <td>Five Years</td>
+                        <td>No Coverage</td>
+                    </tr>
+                </tbody>
+                <tbody id="war-content07">
+                    <tr>
+                        <th colspan="3"><label for="war07">Miscellaneous</label></th>
+                    </tr>
+                    <tr>
+                        <td>Battery Pack <small>(088BP1, 088BP2)</small></td>
+                        <td>One Year</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr class="exceptions-below">
+                        <td>Casters <small>(exceptions below)</small></td>
+                        <td>Lifetime</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr class="exceptions">
+                        <td>Casters prior to 8/1998</td>
+                        <td>Twenty-Five Years</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td>Drawers</td>
+                        <td>One Year</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td>Plastic Compnents <small>(Trays, non-lighted Cup Holders)</small></td>
+                        <td>One Year</td>
+                        <td>No Coverage</td>
+                    </tr>
+                    <tr>
+                        <td><span class="registered">SlumberAir</span> Valve</td>
+                        <td>Five Years</td>
+                        <td>No Coverage</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p> To make a claim under this warranty, please contact the authorized dealer from whom you made your
+                purchase. If your original dealer is not available, please contact another authorized dealer with your
+                proof of purchase. <a href="/storeLocator/storeLocator.jsp">Click here</a> to find an authorized dealer
+                near you. </p>
+            <p> <span style="white-space: nowrap">La-Z-Boy</span> products may not be altered by any person, dealer, or
+                company without the express written authorization of <span style="white-space: nowrap">La-Z-Boy</span>.
+                If you feel, after presenting your
+                warranty claim to your dealer, that it has not been resolved, you may write to: </p>
+            <p style="padding-left:2em;margin-top:.5em;line-height:1.2;"><span
+                    style="white-space: nowrap">La-Z-Boy</span> Incorporated <br>Attn: Comfort Care <br>One <span
+                    style="white-space: nowrap">La-Z-Boy</span> Drive <br>Monroe, MI 48162 </p>
+            <p> In-home inspection fees or transportation of the product to and from the dealer for repair are not the
+                responsibility of <span style="white-space: nowrap">La-Z-Boy</span> Incorporated. </p>
+            <p> Please review the warranty card that came with your product for specific warranty coverage. For further
+                information regarding a specific product warranty, please contact a local authorized dealer. </p>
+            <p> Please include the dealer&rsquo;s name and address, furniture delivery date, ALI
+                #(Acknowledgement-Line-Item), style, cover number, and a brief explanation of the problem. </p>
+            <p>This Limited Warranty will be governed by the laws of the State of Michigan.</p>
+            <h2>Mattress Limited Warranty</h2>
+            <p><span style="white-space: nowrap">La-Z-Boy</span> warrants your mattress for a period of ten (10) years
+                from the date of purchase. This Limited Warranty covers the following defects in material and
+                workmanship:</p>
+            <ul>
+                <li>Any visible indentation or sag greater than one (1) inch that is not associated with an indentation
+                    or sag which results from use of an improper or unsupportive foundation.</li>
+                <li>Any physical flaw in the mattress that causes the foam material to split or crack, despite normal
+                    usage and proper handling.</li>
+                <li>Any manufacturing defect in the mattress cover such as the fabric tearing or stitching unraveling.
+                </li>
+            </ul>
+            <p>This Limited Warranty does not cover the following:</p>
+            <ul>
+                <li>Changes to your mattress that are caused by or result from normal wear and use (please note that
+                    &ldquo;normal wear&rdquo; assumes and requires that your mattress is continuously supported by a
+                    proper foundation sufficient to support the
+                    distributed weight of your body and the mattress itself);</li>
+                <li>A normal increase in softness of the foam material;</li>
+                <li>Individual or personalized preferences relating to firmness, texture, comfort, etc.;</li>
+                <li>Mattresses sold &ldquo;as-is&rdquo;, &ldquo;preconditioned&rdquo;, &ldquo;reconditioned&rdquo;,
+                    &ldquo;used&rdquo;, &ldquo;comfort return&rdquo;, &ldquo;returned&rdquo;, &ldquo;previously
+                    owned&rdquo;, or any other similar wording indicating
+                    that the mattress is not &ldquo;new&rdquo; or of &ldquo;first quality&rdquo;, or has previously been
+                    purchased or used by another consumer;</li>
+                <li>Minor imperfections and slight cosmetic flaws;</li>
+                <li>Individual or personalized allergies and sensitivities;</li>
+                <li>Naturally-occurring cotton or foam aromas; and</li>
+                <li>Mattresses that are located outside of the United States at the time you wish to take advantage of
+                    this Limited Warranty.</li>
+            </ul>
+            <p>In addition, this Limited Warranty does not cover conditions resulting from misuse, neglect or physical
+                abuse or damage to the mattress. Accordingly, the following circumstances, if discovered upon
+                inspection, will void your Limited Warranty:
+                (a) any unsanitary condition; (b) burns, cuts or tears; (c) liquid damage or stains; (d) use of the
+                mattress on an improper bed frame; (e) physically abusing the mattress; (f) attempting to clean the
+                mattress in an inappropriate manner;
+                and (g) improper storage of the mattress (including storage in damp locations, areas infested with
+                insects or rodents, or any other unprotected storage areas).</p>
+            <p>In the event of a defect, <span style="white-space: nowrap">La-Z-Boy&rsquo;s</span> sole and exclusive
+                liability and your sole remedy under this Limited Warranty will be a replacement mattress. Should
+                shipping costs be required to return your
+                mattress, you will not be responsible for those costs. If you wish to replace your mattress with a more
+                expensive mattress, you will be required to pay the difference between the original purchase price of
+                the mattress and that of the
+                upgraded mattress.</p>
+            <p>Replaced mattresses are subject to the same Limited Warranty as the original mattress. If you obtain a
+                replacement mattress, the warranty term of the replacement mattress begins from the date of purchase of
+                the original mattress. If you purchase
+                an upgraded mattress, a new warranty term will begin upon the purchase of the upgraded mattress.</p>
+            <p>To make a claim under the <span style="white-space: nowrap">La-Z-Boy</span> Limited Warranty, please
+                contact <a href="mailto:mattress@la-z-boy.com" style="white-space: nowrap">mattress@la-z-boy.com</a> or
+                800-375-6890. This Limited Warranty
+                will be governed by the laws of the State of Michigan.</p>
+            <h2>Outdoor Furniture Limited Warranty</h2>
+            <p>Outdoor Furniture is manufactured by Casual Living (&ldquo;La-Z-Boy Outdoor&rdquo;), and will be free
+                from defects in materials and workmanship (normal wear and tear, fading and stretching excepted) as
+                provided below.</p>
+            <h3>Frame (Cast, Extruded Aluminum) &ndash; Five (5) Years</h3>
+            <p>If the furniture frame fails structurally (i.e. broken frame or welds) within five (5) years from the
+                purchase date, we will replace in the original color and style, if available, or in a similar color and
+                style if the original has been discontinued.
+                Damage to frames or welds due to freeze damage and/or improper assembly are not covered.</p>
+            <h3>Frame (Steel, Wrought Iron) &ndash; One (1) Year</h3>
+            <p>Wrought Iron and Steel furniture is covered for one (1) year from the original purchase date against
+                defects in manufacturing and/or workmanship. NOTE: Steel and wrought iron are not covered for rust or
+                rust staining.</p>
+            <h3>Wicker Weave (Resin) and/or Straps &ndash; One (1) Year</h3>
+            <p>Straps and/or wicker weave shall be covered against separation or breaking for one (1) year from the date
+                of purchase. Discoloration and /or fading due to exposure to elements, chemicals or harsh cleaning
+                products are not covered.</p>
+            <h3>Powder Coat and/or Paint &ndash; One (1) Year</h3>
+            <p>Finishes shall be covered against blistering, cracking, or peeling for a period of one (1) year from the
+                original date of purchase. We will replace in the original color and style, if available, or in similar
+                color and style if the original
+                has been discontinued. Scratches, chips, and abrasion due to normal wear and tear are not covered.</p>
+            <h3>Cushion and Pillow Construction &ndash; One (1) Year</h3>
+            <p>All cushions and pillows shall be covered against separation at the seams for a period of one (1) year
+                from the original date of purchase by the initial consumer. We will repair or replace any cushion or
+                pillow in the original color and style,
+                if available, or in similar color and style if the original has been discontinued. Fading or
+                discoloration is not covered.</p>
+            <h3>Solution Dyed Acrylic Fabrics &ndash; Five (5) Years</h3>
+            <p>Solution Dyed Acrylic Fabric manufacturers, like Sunbrella&reg; and Outdura&reg;, provide a five (5) year
+                limited warranty on their fabrics. When used on our outdoor furniture, these fabrics are warranted to
+                the original purchaser for 5 years,
+                protecting against fabrics becoming unserviceable due to color or strength loss from normal usage and
+                exposure conditions, including sunlight, mildew and atmospheric chemicals. This warranty covers the
+                fabric only and is serviced by the
+                fabric manufacturer. This warranty does not cover normal care and cleaning; damage from misuse or abuse;
+                improper installation; or costs associated with replacement of the fabric, including labor and
+                installation. We reserve the right
+                to inspect the fabric submitted for claim and will supply new equivalent fabric to replace the fabric
+                that becomes unserviceable.</p>
+            <h3>Sling Fabrics &ndash; One (1) Year</h3>
+            <p>All sling fabrics shall be covered against separation at the seams for a period of one (1) year from the
+                original date of purchase. We will repair or replace any fabric in the original color and style, if
+                available, or in similar color and
+                style if the original has been discontinued. Fading or discoloration due to exposure to harsh chemicals
+                is not covered.</p>
+            <h3>Wood &ndash; Three (3) Years</h3>
+            <p>If the wood fails structurally (i.e., broken frame) within three (3) years from the date of purchase, we
+                will, at our option, replace, repair or refinish the product in the original color and style, if
+                available, or in a similar color and
+                style if the original has been discontinued. Wood requires user maintenance and changes in the color of
+                wood are normal and should be expected to occur over time as the natural material ages. Therefore,
+                fading and color changes in wood
+                frames are not covered by this warranty. Components such as chair feet are subject to wear and tear and
+                are not considered part of the frame.</p>
+            <h3>Alternative Stone Tops &ndash; One (1) Year</h3>
+            <p>Alternative Stone Tops are covered for one (1) year against defects in manufacturing and/or workmanship.
+            </p>
+            <h3>Hardware and Components &ndash; One (1) Year</h3>
+            <p>If a component part (nuts, bolts, brackets, etc.) fails due to manufacturing defects within one (1) year
+                from the date of purchase, we will replace the part.</p>
+            <h3>Umbrellas &ndash; One (1) Year</h3>
+            <p>Umbrellas are covered against failure structurally within one (1) year from the date of purchase, due to
+                manufacturer&rsquo;s defects only. Umbrella bases are NOT covered. NOTE: Umbrellas should only be used
+                with a table and umbrella base.
+                Do not use in high wind or storms.</p>
+            <h3>Shipping</h3>
+            <p>If necessary, La-Z-Boy Outdoor will pay for shipping of replacement product for a period of one (1) year
+                from the date of purchase. After one (1) year, it will be the original purchaser&rsquo;s responsibility
+                to pay for freight and any packaging
+                costs. All orders will be assessed a handling fee and large items may require an additional handling
+                fee.</p>
+            <h3>Exclusions</h3>
+            <p>Failure caused by unreasonable or abusive use, fire, freight damage, acts of nature (such as, but not
+                limited to freezing or high winds), suntan oil or other chemicals (such as chlorine or exposure to salt
+                water), normal fading, scratching
+                or chipping of the finish, weathering or staining or discoloration of furniture, accidental damage,
+                repair, or modifications by customer, glass breakage, burning and/or melting caused by magnified or
+                reflected sunlight, normal wear and
+                tear are excluded from the warranty.</p>
+            <p>Furniture used in commercial, contract or any other non-residential applications, clearance items,
+                display models, and all other &ldquo;as is&rdquo; or outlet purchased items are not covered under this
+                warranty. In addition, La-Z-Boy Outdoor
+                will not be responsible for loss of use or time, inconvenience, travel, packaging, or any other
+                consequential/incidental damages. In no event shall La-Z-Boy Outdoor&rsquo;s responsibility exceed the
+                value of the replacement part/product.
+                <strong>Glass breakage is not a covered item.</strong></p>
+            <h3>Care and Maintenance</h3>
+            <p>Be careful to never allow water to build up in frames as this will cause corrosion and freeze damage in
+                cold climates. Wash all frames with a solution of mild soap and water. Rinse with clean water and dry
+                with a soft absorbent cloth towel.
+                Frames can be treated with a liquid wax for maximum protection against UV rays and/or salty, damp air.
+                If your set includes cushions, slings, and/or an umbrella, they may be cleaned by hand with a solution
+                of soap and water with a clean
+                water rinse. Never machine wash cushions, slings or umbrella covers as this will result in shrinkage or
+                damage. After cleaning cushions, tip on end and allow to drip dry. Never use a commercial or home dryer
+                to tumble dry fabric goods.
+                Do not use bleach or solvents to clean any product! This will void the warranty. <strong>NOTE: Lack of
+                    original receipt will void the warranty!</strong></p>
+            <p><strong>CAUTION:</strong> Read all instructions before assembly. Failure to do so may result in faulty
+                assembly and potential injury. Assemble product on a soft, non-abrasive surface (carpet or cardboard) to
+                avoid damaging the item. Seek assistance
+                to assemble bulky or heavy items. After final alignment, make sure all bolts and nuts are securely
+                tightened with screw head covers pressed in place.</p>
+            <h2>Office Furniture Limited Warranty</h2>
+            <p>Office Furniture is manufactured by True Innovations, and will be free from defects in materials and
+                workmanship (normal wear and tear, fading and stretching excepted) for ten years from the date of
+                purchase, except as provided below under
+                the limited warranty. </p>
+            <p>The exceptions or exclusions to this warranty are as follows:</p>
+            <ul>
+                <li>Upholstery material and foam cushion material is warranted against defects in material and
+                    workmanship for a period of one year, beginning on the date of purchase as shown on the original
+                    sales receipt.</li>
+                <li>Any warranty claim that is submitted after the limited warranty period, or without proper proof of
+                    purchase, will not include the cost of parts, labor or delivery.</li>
+                <li>This warranty shall not apply to products which have been subjected to misuse, neglect, alteration,
+                    modification or attachments either caused by the original purchaser, shipping, storage, accident,
+                    fire, flood or acts of God.</li>
+            </ul>
+            <p>In the event of a defect in material or workmanship covered by this warranty, True Innovations will
+                repair or replace, at their discretion, without charge the warranted furniture within a reasonable
+                amount of time. We reserve the right to
+                require damaged parts to be returned to us upon request. Natural markings such as scars, brands, grain
+                variations, wrinkles, color variations, etc. will be considered normal characteristics and not construed
+                as defects. We cannot warrant
+                leather against scratching or scuffing, as all leather is subject to blemishes with use.</p>
+            <p>For claims or questions concerning this warranty, you may contact True Innovations Customer Service
+                department directly on the web at www.trueinnovations.com. Be prepared to provide your name, address,
+                daytime phone number, the model and purchase
+                order number of the product, date of purchase, and the store where it was purchased. True Innovations
+                requires that the original sales receipt be submitted with all requests to confirm that you are the
+                original purchaser according to our
+                written warranty. </p>
+            <p>All warranties are limited to the original purchaser for normal use by a person weighing less than 125 kg
+                / 275 lb.</p>
+            <h2>Pet Bed Limited Warranty</h2>
+            <p>Pet Beds are manufactured by Petmate. If you are not completely satisfied with your purchase, Petmate
+                offers returns within 30 days of the original date of purchase. <strong>Before sending your return
+                    please e-mail their Consumer Service Team at <a
+                        href="mailto:consumerservices1@petmate.com">consumerservices1@petmate.com</a>.</strong></p>
+            <ul>
+                <li>After 30 days from the original date of purchase, all sales are final.</li>
+                <li>If you paid for shipping on your original order we will refund that shipping charge to you.</li>
+                <li>Return shipping charges are paid by the customer unless it was due to a shipping error on our part.
+                </li>
+                <li>Returns must be shipped freight prepaid. Any return sent back freight collect will be refused.</li>
+                <li>All returns must be in an unused condition and in original factory packaging with all original
+                    packing materials. Please include a copy of the original packing list or the order number.</li>
+                <li>In the unlikely event that your product is missing parts, please email Petmate at <a
+                        href="mailto:consumerservices1@petmate.com">consumerservices1@petmate.com</a> within 30 days of
+                    the original date of purchase and they will send you the missing parts at no charge to you.</li>
+            </ul>
+            <h3>Damaged items</h3>
+            <p>If a package arrives damaged, it&rsquo;s best for you to refuse the package. If you sign for and
+                keep the package, you should note the damage when signing for it so that a claim may be filed with
+                the carrier.</p>
+            <p>Damaged products are allowed for replacement or credit within 30 days of original date of purchase.</p>
+            <h3>Defective items</h3>
+            <p>Defective products are allowed for replacement or credit within 30 days of original date of
+                purchase.</p>
+            <p>Please contact Petmate at <a
+                    href="mailto:consumerservices1@petmate.com">consumerservices1@petmate.com</a> before shipping
+                the defective item back to Petmate.</p>
+            <h3>Exchanged items</h3>
+            <p>An exchange will be handled as a purchase/return. You should make a new purchase of the correct item
+                and return the original item back to Petmate in unused condition.</p>
+            <h3>Incorrect item</h3>
+            <p>If the wrong item is shipped to you, please contact Petmate Consumer Services at <a
+                    href="mailto:consumerservices1@petmate.com">consumerservices1@petmate.com</a> for further
+                instructions.</p>
+            <h3>Credits</h3>
+            <p>All credits will be made back to the original payment method. We will request a credit to your
+                account within 14 business days from the date that we receive and audit the return. If the item is
+                not returned, then credit will not be issued.</p>
+            <p>Please note that credit card companies vary in the time it takes to post credits to your account and
+                we cannot control when you will receive your credit.</p>
+            <h3>All product returns should be sent directly to:</h3>
+            <p style="padding-left:2em;line-height:1.2;">Petmate <br>800 W. Stephens
+                Street<br>Arlington, TX 76017<br>Attention: Consumer Returns</p>
+            <h2>Governing Law</h2>
+            <p>This Limited Warranty will be governed by the laws of the State of Michigan.</p>
+            <h2>Arbitration</h2>
+            <p>In the event a dispute arises between you and <span style="white-space: nowrap">La-Z-Boy</span> arising
+                out of this Limited Warranty, such dispute will be determined and settled by binding arbitration between
+                the parties, in accordance with
+                the Commercial Arbitration Rules of the American Arbitration Association (&ldquo;AAA&rdquo;). More
+                information about the AAA is located at <a href="https://www.adr.org/">www.adr.org</a>, or you can call
+                the AAA at 1-800-778-7879.</p>
+            <p>You must seek arbitration for disputes arising out of this Limited Warranty prior to exercising any
+                rights or seeking any remedies created by the Title I of the Magnuson Moss Warranty Act. If you choose
+                to pursue any rights and remedies that
+                are not created by Title I of the Magnuson Moss Warranty Act, then arbitration is not required.</p>
+            <p>Arbitration will take place in Monroe, Michigan.</p>
+            <p>The arbitration will not be combined with any other proceeding or arbitration against one of the parties.
+                Each party will designate one arbitrator and the two designated arbitrators will select a third
+                arbitrator, who will serve as the chair
+                of the arbitration panel. If the two arbitrators cannot agree on the third arbitrator, then the AAA will
+                appoint the third arbitrator. Barring extraordinary circumstances, the arbitrators will issue their
+                decision within 120 days from
+                the date the third arbitrator is selected by the two designated arbitrators or appointed by the AAA. The
+                arbitrators may extend this time limit for an additional 30 days in the interests of justice. All
+                arbitration proceedings will be
+                closed to the public and confidential and all related records will be permanently sealed, except as
+                necessary to obtain court confirmation of the arbitration award. The decision and the arbitrators&rsquo;
+                award will be in writing and will
+                include a statement setting forth the reasons for the disposition of any claim. A dissenting decision
+                will also be set forth in writing. The arbitrators&rsquo; award will be final and binding on the
+                parties, and judgment thereon may be
+                entered in any court of competent jurisdiction.</p>
+        </section>
+    </div>
+    <script>
+        var rmsDealers = ['02118118', '02206086', '02255923', '20880006', '20880057', '23461039', '23461047', '28457536', '47102004', '47102012', '47102039', '48206016', '50824147', '50824414', '50841092', '50841114', '50841122', '50851640', '50851802', '50852354', '50852566', '50852760', '50853384', '50853767', '50853872', '50854194', '50854305', '50854402', '50854535', '50854658', '50854666', '50854798', '50855387', '50855395', '50855418', '50855468', '50855484', '50855506', '50855662', '50855884', '50855948', '50856066', '50856146', '50856278', '50856286', '50856308', '50856316', '50856367', '50856375', '50856383', '50856626', '50856723', '50856812', '50856944', '50856987', '50857037', '50857088', '50857142', '50857193', '50857363', '50857398', '50857606', '50857615', '50857622', '50857762', '50857843', '50857894', '50857916', '50857967', '50857975', '50857983', '50858009', '50858025', '50858165', '50858173', '50858238', '50858246', '50858297', '50858467', '50858548', '50858572', '50858645', '50858777', '50858786', '50858866', '50859188', '50859285', '50859293', '50859368', '50859404', '50859412', '50859439', '50859447', '50859463', '50859528', '50859536', '50859544', '50859579', '50859587', '50859595', '50859625', '50859684', '50859757', '50859765', '50859897', '50859919', '50859927', '50859935', '50859994', '50860046', '50860062', '50860089', '50860127', '50860135', '50860143', '50860216', '50860232', '50860259', '50860275', '50860283', '50860364', '50860372', '50860399', '50860402', '50860453', '50860488', '50860496', '50860518', '50860526', '50860534', '50860577', '50860585', '50860593', '50860615', '50860623', '50860658', '50860674', '50860712', '50860739', '50860747', '50860755', '50860844', '50860887', '50860895', '50860909', '50860925', '50860933', '50860984', '50860992', '50861018', '50861026', '50861034', '50861042', '50861085', '50861107', '50861115', '50861123', '50861158', '50861174', '50861204', '50861247', '50861379', '50861387', '50861395', '50861409', '50861476', '50861484', '50861492', '50861506', '50861514', '50861522', '50861549', '50861557', '50861565', '50861573', '50861603', '50861646', '50861654', '50861662', '50861689', '50861697', '50861735', '50862758', '50862782', '50862855', '50869116', '50869160', '50869648', '50870255', '50870263', '50870298', '50870378', '50870424', '50870459', '50870548', '50870600', '50870603', '50870645', '50870718', '50876074', '50876082', '50876296', '50876325', '50876392', '50876458', '85166023', '85166058'];
+
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+
+        // jQuery
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                $(document).ready(function () {
+                    $('#bcc-content input').blur(function () {
+                        if ($(this).val() == "") {
+                            $(this).removeClass('filled');
+                        } else {
+                            $(this).addClass('filled');
+                        }
+                    });
+
+                });
+
+                $('#bcc-content form').submit(function (e) {
+                    e.preventDefault();
+                    var invalidInputs = $(this).find("input:invalid");
+                    if (invalidInputs.length) {
+                        // There are validation issues
+                        invalidInputs.addClass('filled');
+                        return false;
+                    } else {
+                        // display local stores in modal             
+                        $.ajax({
+                            type: "POST",
+                            url: "/storeLocator/storeLocator.jsp?_DARGS=/storeLocator/storeLocator.jsp",
+                            data: {
+                                _dynSessConf: $('[name=_dynSessConf]').val() || "missing_dynSessConf",
+                                locator: $(this).find('[name=zipPostal]').val() || "missing_zipPostal",
+                                locatorSucccess: '/mobile/storeLocator/json/storeLocatorSuccess.jsp',
+                                locatorError: '/mobile/storeLocator/json/storeLocatorError.jsp',
+                                findStore: 'Search',
+                                '_D:locator': '',
+                                '_D:locatorSucccess': '',
+                                '_D:locatorError': '',
+                                '_D:findStore': ''
+                            },
+                            success: function (obj) {
+                                if (obj.success == "true") {
+                                    var locations = obj.locations;
+                                    var locationsDiv = document.createElement('div');
+                                    locationsDiv.id = "your-locations";
+                                    for (var i = 0; i < locations.length; i++) {
+                                        var locationHTML = document.createElement('DIV');
+                                        var phoneNumber = rmsDealers.indexOf(locations[i].locationId) >= 0 ? '(800) 375-6890' : (locations[i].phoneNum1 && locations[i].phoneNum2 && locations[i].phoneNum3) ? '(' + locations[i].phoneNum1 + ') ' + locations[i].phoneNum2 + '-' + locations[i].phoneNum3 : '';
+
+                                        locationHTML.innerHTML =
+                                            '<h3>' + locations[i].name + '</h3>' +
+                                            '<p>' + locations[i].address + '</p>' +
+                                            (locations[i].address2 != "" ? '<p>' + locations[i].address2 + '</p>' : '') +
+                                            (locations[i].address3 != "" ? '<p>' + locations[i].address3 + '</p>' : '') +
+                                            '<p>' + locations[i].city + ', ' + locations[i].state + ' ' + locations[i].zip + '</p>' +
+                                            (phoneNumber != "" ? '<a href="tel:' + phoneNumber + '">' + phoneNumber + '</a>' : '');
+
+                                        locationsDiv.appendChild(locationHTML);
+
+                                    }
+                                    nonVideoModal('<h2>Locations that match your search</h2>' + locationsDiv.outerHTML);
+                                    $('#npc-modal-content').click(function (event) {
+                                        event.stopPropagation();
+                                    });
+
+                                } else {
+                                    alert("No Stores Found. Please enter a different Zip/Postal code.");
+                                }
+                            },
+                            error: function () {
+                                if (window.confirm('Unfortunately your submission was unsuccessful. Would you like to use our store locator page to find nearby stores?')) {
+                                    window.location.href = 'https://www.la-z-boy.com/storeLocator/storeLocator.jsp';
+                                };
+                            }
+                        });
+                    }
+                    return false;
+                });
+            }
+        })();
+    </script>
+    <script src="/js/widen-loader.js"></script>
+    <script src="/js/npc.js"></script>
+    <!-- end BCC content -->
+</body>

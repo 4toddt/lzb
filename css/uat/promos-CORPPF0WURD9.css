@@ -1,0 +1,50 @@
+@import "https://fonts.googleapis.com/css?family=Lato:400,700,900";
+@import "_resets.css";
+@import "_defaults.css";
+@font-face {
+    font-family: 'LZB Icons';
+    src: url('fonts/lzb-icons.eot?jebkb3');
+    src: url('fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('fonts/lzb-icons.woff?jebkb3') format('woff'), url('fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#bcc-content section {
+    margin-top: 50px;
+    padding: 0 15px;
+}
+
+#bcc-content h1 {
+    font-size: 2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #851B22;
+    text-align: center;
+}
+
+#bcc-content h1+.subtitle {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: .25em;
+    color: #4A4A4A;
+}
+
+@media only screen and (min-width: 375.1px) {
+    #bcc-content h1 {
+        font-size: 3em;
+    }
+    #bcc-content h1+.subtitle {
+        font-size: 2em;
+    }
+}
+
+#bcc-content .hotbuys {
+    justify-content: center;
+}
+
+#bcc-content .hotbuys>div {
+    margin-top: 50px;
+}
+
+#bcc-content .hotbuys a {
+}

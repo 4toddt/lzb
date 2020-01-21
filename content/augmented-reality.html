@@ -1,0 +1,303 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Augmented Reality TT -->
+    <!-- begin BCC content -->
+
+    <!-- <script>
+        var link = document.createElement('meta');
+        link.setAttribute('name', 'description');
+        link.content = "";
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="/css/_resets.css" rel="stylesheet" type="text/css">
+    <link href="/css/_defaults.css" rel="stylesheet" type="text/css">
+
+    <style>
+        #bcc-content {
+            max-width: 1010px;
+        }
+        
+        #bcc-content>section {
+            margin-top: 30px;
+            padding: 0 15px;
+        }
+        
+        #bcc-content>section.full-width {
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+        #bcc-content>section:first-child {
+            margin-top: 0;
+        }
+        
+        #bcc-content h2 {
+            font-size: 1.6em;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        #bcc-content h2+.subtitle {
+            font-size: .8em;
+        }
+        
+        #bcc-content h3 {
+            text-align: center;
+        }
+        
+        #bcc-content p {
+            line-height: 1.5;
+            margin: 1em auto 0;
+            text-align: center;
+        }
+        
+        #bcc-content #try-it .image {
+            max-width: 220px;
+            width: 68%;
+            margin: 1em auto 0;
+        }
+        
+        #bcc-content #try-it .image+p {
+            margin-top: 30px;
+        }
+        
+        #bcc-content #how-it-works {
+            padding: 30px 0;
+            margin-top: 40px;
+            color: white;
+            background-color: #0070af;
+        }
+        
+        #bcc-content .steps {
+            margin-top: 20px;
+            padding: 0 3%;
+            display: flex;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        #bcc-content .steps>div {
+            flex: 65% 0 0;
+            padding: 0 7%;
+        }
+        
+        #bcc-content .steps h3 {
+            margin-top: 1em;
+        }
+        
+        #bcc-content .steps p {
+            font-size: .8em;
+            margin-top: .5em;
+            max-width: 10em;
+        }
+        
+        #bcc-content #shop-by-category {
+            padding: 0 20px;
+        }
+        
+        #bcc-content #shop-by-category a {
+            display: block;
+            line-height: 1.5;
+            padding: 0.5em 0;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        #bcc-content #shop-by-category h2+a {
+            margin-top: 1em;
+        }
+        
+        #bcc-content #shop-by-category a::after,
+        #bcc-content #faq label::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: calc(50% - 10px);
+            height: 20px;
+            width: 20px;
+            background-image: url(/Images/npc/augmented-reality/link-arrow.svg);
+            background-size: contain;
+            background-position: right center;
+            background-repeat: no-repeat;
+        }
+        
+        #bcc-content #faq {
+            border-top: 1px solid #c1c1c1;
+            padding-top: 30px;
+        }
+        
+        #bcc-content #faq>div {
+            font-size: .8em;
+            border-top: 1px solid #c1c1c1;
+        }
+        
+        #bcc-content #faq h2+div {
+            border-top: none;
+            margin-top: 1em;
+        }
+        
+        #bcc-content #faq input {
+            display: none;
+        }
+        
+        #bcc-content #faq label {
+            font-weight: bold;
+            line-height: 1.5;
+            display: block;
+            position: relative;
+            padding: 1em 40px 1em 0;
+            margin-right: 5px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            /* Safari 3.1+ */
+            -moz-user-select: none;
+            /* Firefox 2+ */
+            -ms-user-select: none;
+            /* IE 10+ */
+            user-select: none;
+            /* Standard syntax */
+        }
+        
+        #bcc-content #faq label::after {
+            background-image: url(/Images/npc/augmented-reality/open.svg);
+        }
+        
+        #bcc-content #faq p {
+            text-align: left;
+            display: none;
+            margin: 0 0 1em;
+        }
+        
+        #bcc-content #faq :checked~label::after {
+            background-image: url(/Images/npc/augmented-reality/close.svg);
+        }
+        
+        #bcc-content #faq :checked~p {
+            display: block;
+        }
+        
+        @media only screen and (min-width: 500.1px) {
+            #bcc-content .steps {
+                padding: 0 10px;
+            }
+            #bcc-content .steps>div {
+                flex: 190px 0 0;
+                padding: 0 20px;
+            }
+        }
+    </style>
+
+    <div id="bcc-content">
+        <section class="full-width">
+            <div class="image">
+                <picture>
+                    <source media="(max-width: 500px)" srcset="/Images/npc/augmented-reality/hero-mobile.png">
+                    <img src="/Images/npc/augmented-reality/hero.png" alt="">
+                </picture>
+            </div>
+        </section>
+        <section id="try-it">
+            <h2>Try it now!</h2>
+            <p class="subtitle">Download <span style="white-space: nowrap">La-Z-Boy</span> AR from the<br>iTunes App Store.</p>
+            <div class="image"><a href="https://ar.la-z-boy.com/visualize/products"><img src="/Images/npc/augmented-reality/download.svg" alt=""></a></div>
+            <p style="max-width:42em;">Ready to see how <span style="white-space: nowrap">La-Z-Boy</span> furniture will look in your home? Thanks to augmented reality (AR), you can now get an instant sneak preview right on your&nbsp;iPhone.</p>
+        </section>
+        <section id="how-it-works" class="full-width">
+            <h2>How it Works</h2>
+            <div class="steps">
+                <div>
+                    <div class="image"><img src="/Images/npc/augmented-reality/step-01.png" alt=""></div>
+                    <h3>Step 1</h3>
+                    <p>Go to the product page of the furniture you&rsquo;d like to see in your&nbsp;room.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/npc/augmented-reality/step-02.png" alt=""></div>
+                    <h3>Step 2</h3>
+                    <p>Customize the piece with your choice of fabric, leather or welt&nbsp;trim.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/npc/augmented-reality/step-03.png" alt=""></div>
+                    <h3>Step 3</h3>
+                    <p>Tap &ldquo;View Virtually in Your Space&rdquo; to see the product appear in your&nbsp;home.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/npc/augmented-reality/step-04.png" alt=""></div>
+                    <h3>Step 4</h3>
+                    <p>Follow the on-screen instructions to begin your AR experience.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/npc/augmented-reality/step-05.png" alt=""></div>
+                    <h3>Step 5</h3>
+                    <p>Snap a photo to share with friends or go back to the product page to purchase online.</p>
+                </div>
+            </div>
+        </section>
+        <section id="shop-by-category">
+            <h2>Shop by Category</h2>
+            <a href="/b/_/N-1bzxwkq">View Chairs in AR</a>
+            <a href="/b/_/N-afgfhj">View Recliners in AR</a>
+            <a href="/b/_/N-1xjgdgn">View Sofas in AR</a>
+            <a href="/b/_/N-12xfkyy">View Loveseats in AR</a>
+            <!-- <a href="">View Sectionals in AR</a> -->
+            <a href="/b/_/N-1r6cq9j">View Ottomans in AR</a>
+        </section>
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div>
+                <input type="checkbox" id="q1" checked><label for="q1">What is AR?</label>
+                <p>Augmented reality (AR) is the state-of-the-art technology that allows you to add computerized 3-D images to &ldquo;real life&rdquo; situations. If your kids play Pok&eacute;mon Go, then you&rsquo;ve probably seen AR in&nbsp;action.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q2"><label for="q2">Why did you create <span style="white-space: nowrap">La-Z-Boy AR?</span></label>
+                <p><span style="white-space: nowrap">La-Z-Boy</span> developed this app to make furniture shopping easier, and to help you find the perfect piece for your space. It&rsquo;s also really&nbsp;fun.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q3"><label for="q3">Which <span style="white-space: nowrap">La-Z-Boy</span> products are viewable in&nbsp;AR?</label>
+                <p>Most sofas, loveseats, chairs and recliners are viewable in AR. (Look for the button that reads &ldquo;View Virtually in Your Space&rdquo; on the product&nbsp;pages.)</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q4"><label for="q4">How do I use <span style="white-space: nowrap">La-Z-Boy AR?</span></label>
+                <p>For best results, stand up and hold your iPhone about 5 feet off the ground. Point your camera toward the floor and tap the circular icon to make your product&nbsp;appear.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q5"><label for="q5">Can I manipulate the virtual furniture&nbsp;image?</label>
+                <p>Yes. Slide one finger on the touchscreen to move the image forward, backward, left and right. Twist your thumb and index finger (like you were turning a knob) to rotate the&nbsp;image.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q6"><label for="q6">Can I save the AR&nbsp;image?</label>
+                <p>Yes! Press the white shutter button to snap a photo that you can save to your iPhone or share via text or email. You can also post it to your favorite social media&nbsp;account.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q7"><label for="q7">What do I need to use <span style="white-space: nowrap">La-Z-Boy AR?</span></label>
+                <p>The app requires iPhone 6S or newer devices, running iOS 11 and&nbsp;later.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q8"><label for="q8">Is <span style="white-space: nowrap">La-Z-Boy</span> AR available for iPads and Android&nbsp;devices?</label>
+                <p>Currently, <span style="white-space: nowrap">La-Z-Boy</span> AR is available for iPhone&nbsp;only.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q9"><label for="q9">Is there a&nbsp;tutorial?</label>
+                <p>Yes, a tutorial will appear the first time you launch <span style="white-space: nowrap">La-Z-Boy</span> AR. After that, you can access the tutorial any time by tapping the &ldquo;More&rdquo;&nbsp;menu.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="q10"><label for="q10">Can <span style="white-space: nowrap">La-Z-Boy</span> AR make my son&rsquo;s room appear&nbsp;neater?</label>
+                <p>No, but that would really be&nbsp;something.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+    </script>
+
+    <!-- end BCC content -->
+</body>

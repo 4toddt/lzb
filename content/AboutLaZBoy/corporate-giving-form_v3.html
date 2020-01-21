@@ -1,0 +1,431 @@
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+
+<body>
+    <section class="cust-support">
+        <!-- Content for full blank template -->
+        <!-- Content for full blank template -->
+        <!-- Content for full blank template -->
+
+        <!-- Corporate Giving Form v3 TT -->
+        <style>
+            body>.above-header-targeters,
+            body>.util-nav,
+            .create-account,
+            .cart-link,
+            .micro-cart-items,
+            .masthead,
+            .primary-nav,
+            .breadcrumb-wrapper,
+            .cust-support>h1:first-child,
+            .cust-support>hr:first-child,
+            #site-menu,
+            #skip-to-content,
+            #mobile-header-container,
+            .off-canvas-heading,
+            #off-canvas-menu,
+            #off-canvas-search,
+            #off-canvas-locator,
+            .breadcrumbs,
+            .section-title,
+            footer,
+            .back-to-top,
+            .loader,
+            .tooltip,
+            body>nav,
+            body>header,
+            nav.breadcrumb,
+            .your-store {
+                display: none !important;
+            }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <script src="/js/about-lzb.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/about-lzb.css">
+        <link rel="stylesheet" type="text/css" href="/css/datepicker.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab|Open+Sans" rel="stylesheet">
+        <script>
+            var givingFormSubmitted = false;
+        </script>
+        <style>
+            /******************* Forms *********************************/
+            
+            form {
+                margin: 0 10px;
+            }
+            
+            form p {
+                margin-top: .5em;
+            }
+            
+            .text-field,
+            .form-submit {
+                position: relative;
+                margin-top: 1em;
+                max-width: 888px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: .9em;
+            }
+            
+            .text-field textarea,
+            .text-field input,
+            .form-submit input {
+                /* min-height: 3.5em; */
+                width: 100%;
+                height: 3.5em;
+                font-size: 1em;
+                line-height: 1.2;
+                border: solid 1px #979797;
+                padding: 1.623em 1em 0.6em;
+            }
+            
+            .form-submit input {
+                background-color: #0070AF;
+                color: white;
+                padding: 0;
+                height: 3em;
+                width: 13em;
+            }
+            
+            .text-field textarea {
+                resize: vertical;
+            }
+            
+            .text-field label {
+                /* Prevent user from selecting label text. Helpful for using label inside text input */
+                -webkit-user-select: none;
+                /* Chrome all / Safari all */
+                -moz-user-select: none;
+                /* Firefox all */
+                -ms-user-select: none;
+                /* IE 10+ */
+                user-select: none;
+                /* Likely future */
+                color: #9B9B9B;
+                position: absolute;
+                width: auto;
+                margin: 0 1em;
+                top: 48%;
+                left: 0;
+                transform: translateY(-50%);
+                line-height: 1.2;
+                transition: all .2s ease-out;
+            }
+            
+            .text-field.active label,
+            .text-field.filled label {
+                font-size: .8em;
+                top: 1em;
+                margin: 0 .7em;
+                white-space: nowrap;
+                max-width: 90%;
+                max-width: calc(100% - 2em);
+                overflow: hidden;
+            }
+            /* Validation hints */
+            
+            .text-field.filled :invalid {
+                outline: red solid 1px !important;
+                outline-offset: 0;
+            }
+            
+            .text-field :invalid:focus {
+                outline: #4d90fe solid 1px !important;
+                outline-offset: 0;
+            }
+            
+            .text-field :valid:focus {
+                outline: green solid 1px !important;
+                outline-offset: 0;
+            }
+            
+            .text-field .rules {
+                display: none;
+            }
+            
+            .text-field.filled :invalid+*>.rules {
+                color: red;
+                display: inline;
+            }
+            
+            .text-field.filled :invalid+*>.rules::before {
+                content: "Error (";
+                /* color: red; */
+                padding-left: 1.5em;
+                margin-left: .3em;
+                background-image: url(/Images/npc/error.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            
+            .text-field.filled :invalid+*>.rules::after {
+                content: ")";
+            }
+            
+            .text-field.active :invalid+*>.rules {
+                display: inline;
+            }
+            
+            .text-field.active :invalid+*>.rules::before {
+                content: " (";
+            }
+            
+            .text-field.active :invalid+*>.rules::after {
+                content: ")";
+            }
+            
+            .ui-datepicker-calendar td {
+                width: 47px;
+            }
+            
+            @media only screen and (min-width: 600px) {
+                h1 {
+                    left: auto;
+                    right: 5%;
+                    background-color: #ffffff80;
+                    box-shadow: 0 0 2em 1em #ffffff88;
+                }
+            }
+            
+            @media only screen and (min-width: 900px) {
+                .lzb-cares.grid {
+                    display: flex;
+                    flex-wrap: nowrap;
+                }
+                .lzb-cares.grid .image {
+                    padding-top: 10%;
+                }
+                .lzb-cares.grid .block:nth-child(2) {
+                    order: -1;
+                }
+            }
+        </style>
+        <div class="gray">
+            <div class="page-width">
+                <nav id="topnav">
+                    <div class="logo">
+                        <a href="https://www.la-z-boy.com">
+                            <img src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/logo.png" alt="">
+                        </a>
+                    </div>
+                    <button class="hamburger hamburger--boring" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                    <script>
+                        insertNavHere();
+                    </script>
+                </nav>
+            </div>
+        </div>
+        <div class="blue hero-background"></div>
+        <div class="page-width">
+            <div id="hero">
+                <img class="mobile" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/mobile/hero.jpg" alt="">
+                <img class="tablet-desktop" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/desktop/hero.jpg" alt="">
+                <h1>Online request&nbsp;form</h1>
+            </div>
+            <form id="lzb-form" action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSeD88fbSWQ5fRGk6lPKaRui34ok8SHgcq6bWgCAsbwtNcza9A/formResponse" target="hidden_iframe" onsubmit="givingFormSubmitted=true;">
+                <section>
+                    <h2>Organization information</h2>
+                    <p>Please refer to our focus areas of concentration and geographic areas of preference prior to completing this application form.</p>
+                    <div class="text-field">
+                        <input class="move-the-label" id="organizationName" name="entry.677973598" type="text" minlength="3" maxlength="100" value="" required>
+                        <label for="organizationName">Organization name<span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <input class="move-the-label" id="address" name="entry.1965117714" type="text" pattern=".{10,}(\d\d\d\d\d|[a-zA-Z]\d[a-zA-Z] \d[a-zA-Z]\d)" maxlength="100" value="" required>
+                        <label for="address">Complete address<span class="rules">like &ldquo;123 Fourth St, Dover, SC 55555&rdquo;</span>
+                        </label>
+                    </div>
+                    <div class="text-field">
+                        <input class="move-the-label" id="phone" name="entry.1355461343" type="tel" pattern="[0-9]{3}.*?[0-9]{3}.*?[0-9]{4}" maxlength="20" value="" required>
+                        <label for="phone">Phone number<span class="rules">like &ldquo;555-555-5555&rdquo;</span>
+                        </label>
+                    </div>
+                    <div class="text-field">
+                        <input class="move-the-label" id="contact" name="entry.1552852042" type="text" minlength="3" maxlength="100" value="" required>
+                        <label for="contact">Contact name<span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <input class="move-the-label" id="website" name="entry.884534476" type="text" pattern="^(?=(((http|HTTP|https|HTTPS)?:\/\/)?((www|WWW)\.)?))\1([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]\.)?[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]\.[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]$"
+                            maxlength="200" value="" required>
+                        <label for="website">Website<span class="rules">like &ldquo;www.example.com&rdquo;</span>
+                        </label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="history" name="entry.1896042578" minlength="10" maxlength="1000" value="" required></textarea>
+                        <label for="history">History<span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="mission" name="entry.458327749" minlength="10" maxlength="1000" value="" required></textarea>
+                        <label for="mission">Mission<span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <input class="move-the-label" id="nonprofit" name="entry.1030728790" type="text" pattern=".{8,}" maxlength="20" value="" required>
+                        <label for="nonprofit">501c3 number<span class="rules">like &ldquo;00-0000000&rdquo;</span>
+                        </label>
+                    </div>
+                </section>
+                <section>
+                    <h2>Project/event information</h2>
+                    <div class="text-field">
+                        <input class="move-the-label" id="title" name="entry.813171092" type="text" pattern=".{3,}" maxlength="100" value="" required>
+                        <label for="title">Title<span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <input class="move-the-label datepicker" id="startDate" name="entry.1511670078" type="text" pattern="^\d{2}\/\d{2}\/\d{4}$" maxlength="10" value="" required>
+                        <label for="startDate">Start date<span class="rules">like &ldquo;01/01/2030&rdquo;</span>
+                        </label>
+                    </div>
+                    <div class="text-field">
+                        <input class="move-the-label datepicker" id="endDate" name="entry.100829471" type="text" pattern="^\d{2}\/\d{2}\/\d{4}$" maxlength="10" value="" required>
+                        <label for="endDate">End date<span class="rules">like &ldquo;01/02/2030&rdquo;</span>
+                        </label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="whyAssist" name="entry.168790587" minlength="10" maxlength="1000" value="" required></textarea>
+                        <label for="whyAssist">Why is assistance needed?<span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="communityNeed" name="entry.2134472847" minlength="10" maxlength="1000" value="" required></textarea>
+                        <label for="communityNeed">What important community need will this project/event meet?<span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="whoServed" name="entry.2113024091" minlength="10" maxlength="500" value="" required></textarea>
+                        <label for="whoServed">Who will be served by this project/event? (<span class="tablet-desktop">geographic </span>area and population)</span><span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="criteria" name="entry.158711197" minlength="10" maxlength="1000" value="" required></textarea>
+                        <label for="criteria">What criteria will measure the success of this project/event?<span class="rules">required</span></label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="partners" name="entry.178782765" minlength="10" maxlength="500" value="" required></textarea>
+                        <label for="partners">Who are major partners or collaborators in this project/event?<span class="rules">required</span></label>
+                    </div>
+                </section>
+                <section>
+                    <h2>Donation request type (optional)</h2>
+                    <div class="text-field">
+                        <input class="move-the-label" id="money" name="entry.1468343057" type="text" pattern="^\$?\d+(,\d\d\d)*(\.\d\d)?$" maxlength="10" value="">
+                        <label for="money">Monetary donation<span class="rules">like &ldquo;$0.00&rdquo;</span>
+                        </label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="product" name="entry.166183095" minlength="3" maxlength="250" value=""></textarea>
+                        <label for="product">Product donation<span class="rules">enter requested product</span></label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="promoItem" name="entry.1200240184" minlength="3" maxlength="250" value=""></textarea>
+                        <label for="promoItem">Promotional item donation<span class="rules">enter requested promotional item</span></label>
+                    </div>
+                    <div class="text-field">
+                        <textarea class="move-the-label" id="advertisement" name="entry.277212776" minlength="3" maxlength="250" value=""></textarea>
+                        <label for="advertisement">Advertisement<span class="rules">enter requested advertisement</span></label>
+                    </div>
+                    <div class="form-submit">
+                        <input id="lzb-submit" type="submit" value="Submit Application">
+                    </div>
+                </section>
+            </form>
+        </div>
+
+        <div class="gray footer">
+            <p>&copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated</p>
+        </div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if (givingFormSubmitted) {
+            parent.document.getElementById('lzb-submit').disabled = true;
+            parent.document.getElementById('lzb-submit').value = 'Thank you!';
+            parent.document.getElementById('lzb-submit').style.backgroundColor = 'gray';
+            parent.document.getElementById('lzb-form').reset();
+            var filledClass = parent.document.querySelectorAll('#lzb-form .filled');
+            for (var j = 0; j < filledClass.length; j++) {
+                filledClass[j].className = 'text-field';
+            }
+        }"></iframe>
+        <script>
+            runAfterDOM();
+        </script>
+
+        <script>
+            // Control text field label position and size
+            var inputs = document.getElementsByClassName('move-the-label');
+            for (var i = 0; i < inputs.length; i++) {
+                input = inputs[i];
+                input.onfocus = function() {
+                    this.parentElement.className = 'text-field active';
+                };
+                input.onblur = function() {
+                    if (this.value == '') {
+                        this.parentElement.className = 'text-field';
+                    } else {
+                        this.parentElement.className = 'text-field filled';
+                    }
+                }
+            }
+
+            //var JQREADY = false;
+            function jqIsReady() {
+                if (typeof jQuery === "undefined") {
+                    //if (!JQREADY)
+                    return false;
+                }
+                return true;
+            }
+
+
+
+            (function jqCheck() {
+                if (!jqIsReady()) {
+                    setTimeout(jqCheck, 10);
+                    return;
+                } else {
+                    if (typeof requirejs === "undefined") {
+                        $.getScript("/js/datepicker.js")
+                            .done(function() {
+                                $('section.cust-support .datepicker').datepicker({
+                                    onClose: function() {
+                                        if (this.value == '') {
+                                            this.parentElement.className = 'text-field';
+                                        } else {
+                                            this.parentElement.className = 'text-field filled';
+                                        }
+                                        $(this).focus();
+                                    }
+                                });
+                            });
+                    } else {
+                        requirejs(['jqueryDatepicker'], function() {
+                            $('section.cust-support .datepicker').datepicker({
+                                onClose: function() {
+                                    if (this.value == '') {
+                                        this.parentElement.className = 'text-field';
+                                    } else {
+                                        this.parentElement.className = 'text-field filled';
+                                    }
+                                    $(this).focus();
+                                }
+                            });
+                        });
+                    }
+
+                    $('section.cust-support textarea').css('overflow', 'hidden').css('resize', 'none');
+
+                    $('section.cust-support textarea').on('keyup input', function() {
+                        $(this).css('height', '0').css('height', (this.scrollHeight + 2) / parseFloat($(this).css('font-size')) + 'em');
+                    });
+                }
+            })();
+        </script>
+
+
+        <!-- End content for full blank template -->
+        <!-- End content for full blank template -->
+        <!-- End content for full blank template -->
+    </section>
+</body>

@@ -1,0 +1,209 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/min/desktop.css">
+    <base href="C:\Users\ttownsend\OneDrive - La-Z-Boy Incorporated\Dev\" target="_blank">
+</head>
+
+<body class="mobileSite">
+    <section class="cust-support">
+        <!-- Only publish code to BCC from after this -->
+        <!-- Only publish code to BCC from after this -->
+        <!-- Only publish code to BCC from after this -->
+
+        <!-- iClean TT -->
+        <link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/bcc-resets.css">
+        <link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/npc-defaults.css">
+        <link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/iclean.css">
+        <style>
+            section.cust-support [onclick],
+            section.cust-support [videoModal] {
+                /* if there is an onclick attribute, the curser will be a pointer */
+                cursor: pointer;
+            }
+
+            #npc-modal {
+                position: fixed;
+                z-index: 1000000;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                overflow: auto;
+                background-color: rgb(0, 0, 0);
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+            #npc-modal-container {
+                background-color: #fefefe;
+                padding: 5px;
+                border: 1px solid #888;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            .video #npc-modal-container {
+                width: 90%;
+                max-width: 1050px;
+            }
+
+            #npc-image {
+                width: 100%;
+                display: block;
+            }
+
+            .video #npc-modal-content {
+                position: relative;
+                height: 0;
+                padding-bottom: 56.25%;
+            }
+
+            #npc-modal-content iframe {
+                min-height: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            #npc-modal-close {
+                position: absolute;
+                right: -7px;
+                top: -7px;
+                width: 22px;
+                z-index: 10;
+                cursor: pointer;
+            }
+
+            #npc-modal-close:hover,
+            #npc-modal-close:focus {
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+
+        <section class="hero">
+            <img class="hidden-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/desktop/hero.jpg" alt="Lady dropping coffee on sofa">
+            <img class="visible-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/mobile/hero.jpg" alt="Lady dropping coffee on sofa">
+            <div class="copy-block">
+                <h1>Style that
+                    <br>stands up
+                    <br class="visible-xs">to stains</h1>
+                <div class="logo">
+                    <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/logo.png" alt="iClean logo">
+                </div>
+            </div>
+            <div class="subtitle">
+                <h2>Innovative performance fabrics</h2>
+                <p>Innovative technology surrounds each fiber, creating a barrier of protection that repels spills before they
+                    turn into stains.</p>
+            </div>
+        </section>
+        <section id="video-bar" videoModal="UrvQtImGHPI">
+            <div>
+                <p>See it for yourself! Watch&nbsp;the&nbsp;video
+                </p>
+                <svg viewBox="0 0 100 100" id="play-button">
+                    <defs>
+                        <mask id="hole">
+                            <rect width="100%" height="100%" fill="white" />
+                            <polygon points="35,24 80,50 35,76" fill="black" />
+                        </mask>
+                    </defs>
+                    <circle r="50" cy="50" cx="50" fill="white" mask="url(#hole)" />
+                </svg>
+            </div>
+        </section>
+        <section id="spills">
+            <h2>Repels common spills: coffee, wine, dirt, salsa and&nbsp;more!</h2>
+            <div class="images">
+                <div class="image">
+                    <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/spill01.jpg" alt="Wine spill">
+                </div>
+                <div class="image">
+                    <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/spill02.jpg" alt="Dirty paw print">
+                </div>
+                <div class="image">
+                    <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/spill03.jpg" alt="Ice cream spill">
+                </div>
+                <div class="image">
+                    <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/spill04.jpg" alt="Salsa spill">
+                </div>
+            </div>
+        </section>
+        <section id="features">
+            <div class="grid">
+                <div class="block">
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/icon01.png" alt="Stain-Resistant icon">
+                    </div>
+                    <h3>Stain-Resistant</h3>
+                    <p>Innovative technology surrounds each fiber, repelling spills before they turn into stains.</p>
+                </div>
+                <div class="block">
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/icon02.png" alt="Easy to Clean icon">
+                    </div>
+                    <h3>Easy to Clean</h3>
+                    <p>For most spills, simply blot with a paper towel. For tougher spills, use a mild soap and water mix.</p>
+                    <a href="/content/CustomerCare/iclean-cleaning">Learn
+                        <span class="arrow-right">more</span>
+                    </a>
+                </div>
+                <div class="block">
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/icon03.png" alt="Soft-to-the-Touch icon">
+                    </div>
+                    <h3>Soft-to-the-Touch</h3>
+                    <p>Luxurious feel and exceptional comfort, available in a variety of colors and patterns.</p>
+                </div>
+                <div class="block">
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/icon04.png" alt="Warranty icon">
+                    </div>
+                    <h3>3-Year Limited Warranty</h3>
+                    <p>Quality-backed to stay soft and beautiful. Relax, you&rsquo;re covered.</p>
+                    <a href="/content/CustomerCare/iclean-warranty">Learn
+                        <span class="arrow-right">more</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="shop">
+            <div class="grid">
+                <div class="block">
+                    <img class="hidden-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/desktop/module01.jpg" alt="Rolls of fabric">
+                    <img class="visible-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/mobile/module01.jpg" alt="Rolls of fabric">
+                    <h3>Show off your style with fabrics in every&nbsp;color</h3>
+                    <p>Choose from over a hundred different colors, patterns and prints. You&rsquo;re sure to find an iClean
+                        fabric to match your&nbsp;style.</p>
+                    <a href="/content/CustomizeIt/CoverSearch?selectedCover=Z1i2aad7">Search
+                        <span class="arrow-right">fabrics</span>
+                    </a>
+                </div>
+                <div class="block">
+                    <img class="hidden-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/desktop/module02.jpg" alt="Room with iClean products">
+                    <img class="visible-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/iClean/mobile/module02.jpg" alt="Room with iClean products">
+                    <h3>Show off your style &amp; protect it from&nbsp;stains</h3>
+                    <p>Available on most products, iClean fabrics repel stains no matter what your style. From classic to modern,
+                        protect your look and your furniture with&nbsp;iClean.</p>
+                    <a href="/b/iClean/_/N-1x6kcdq">Shop
+                        <span class="arrow-right">now</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="dsr-button">
+            <a class="dsr-redirect" href="javascript:void(0)">Designing an entire room? Book&nbsp;your FREE
+                <span class="arrow-right">design consultation!</span>
+            </a>
+        </section>
+
+        <script src="https://www.la-z-boy.com/js/npc.js"></script>
+
+        <!-- Only publish code to BCC from before this -->
+        <!-- Only publish code to BCC from before this -->
+        <!-- Only publish code to BCC from before this -->
+    </section>
+</body>

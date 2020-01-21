@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,700" rel="stylesheet">
+<style>
+    section.cust-support>h1,
+    section.cust-support>hr {
+        /* hide h1 and mobile hr coming from ATG */
+        display: none;
+    }
+
+    body.two-column-first section[role="region"] {
+        /* reset the 775px width and default margin on the content section */
+        width: 100%;
+        margin-left: 0;
+    }
+
+    main {
+        /* reset the 10px padding on mobile */
+        padding: 0;
+        /* reset the 980px width and default margins on desktop */
+        width: 100%;
+        margin: 0;
+    }
+
+    section.cust-support {
+        width: 100%;
+        margin: 0;
+        /* force desktop to be non-responsive */
+        min-width: 980px;
+    }
+
+    body.mobileSite section.cust-support {
+        /* reset min-width on mobile */
+        min-width: auto;
+    }
+
+    body.mobileSite section.cust-support {
+        /* default margins on mobile */
+        margin: 5px 0 60px;
+    }
+
+    @media only screen and (max-width: 567px) {
+        /* mobile portrait */
+        body.mobileSite section.cust-support {
+            margin-bottom: 10.6%;
+        }
+    }
+</style>

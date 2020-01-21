@@ -1,0 +1,395 @@
+<!--Print Ads-->
+<style>
+    .container {
+        width: 775px;
+    }
+
+    .social {
+        width: 200px;
+        float: right;
+        margin-top: -20px;
+    }
+
+    .ads {
+        width: 100%;
+        height: 734px;
+    }
+
+    .ads .bigPrint {
+        width: 550px;
+        height: 100%;
+        background: #ccc;
+        float: left;
+        margin-right: 30px;
+    }
+
+    .printSelectorCol {
+        width: 195px;
+        height: 100%;
+        float: left;
+        overflow-y: scroll;
+    }
+
+    .printSelectorBox img.active {
+        padding-bottom: 3px;
+        border-bottom: 6px outset #232323;
+        height: 159px;
+    }
+
+    #print_ad_image {
+        width: 100%;
+    }
+
+    .clearFix {
+        clear: both;
+    }
+
+    .productCarousel {
+        background: #fff;
+        padding: 10px 0;
+        margin-top: 40px;
+    }
+
+    .productCarousel p {
+        margin: 10px;
+    }
+
+    .productCarousel .leftArrow {
+        width: 30px;
+        height: 150px;
+        background: #fff;
+        float: left;
+    }
+
+    .productCarousel .rightArrow {
+        width: 30px;
+        height: 150px;
+        background: #fff;
+        float: right;
+    }
+
+    .productCarousel .leftArrow a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 60px 0px 0 10px;
+        text-decoration: none;
+        background: url(/img/leftArrow.png) no-repeat 10px 60px;
+        text-indent: -9999px
+    }
+
+    .productCarousel .rightArrow a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 60px 0px 0 10px;
+        text-decoration: none;
+        background: url(/img/rightArrow.png) no-repeat 10px 60px;
+        text-indent: -9999px
+    }
+
+    .productCarousel .leftArrow:hover,
+    .productCarousel .rightArrow:hover {
+        background: #e4e4e4;
+    }
+
+    .productCarousel img {
+        margin: 0 5px;
+        width: 150px;
+    }
+
+    .productCarousel img.active {
+        padding-bottom: 3px;
+        border-bottom: 6px outset #232323;
+    }
+
+    .productCarousel .imgBox {
+        width: 180px;
+        height: 180px;
+        float: left;
+        text-align: center;
+    }
+
+    .productCarousel .imgBox p {
+        text-align: center;
+        width: 100%;
+        margin: 4px 0 0;
+    }
+
+    .productCarousel p span {
+        float: right;
+    }
+
+    .productCarousel a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .slider {
+        width: 715px;
+        height: 188px;
+        overflow: hidden;
+    }
+
+    .slider_thumbnails {
+        width: 2000px;
+        height: 188px;
+        position: relative;
+        left: 0px;
+    }
+
+    .hide {
+        display: none;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        loadAd(getAdHashId());
+
+        $(".printSelectorBox").click(function () {
+            var ad_id = $(this).data("print-id");
+            if ("undefined" != typeof (ad_id) && getAdHashId() != ad_id) {
+                loadAd($(this).data("print-id"));
+            }
+        });
+
+        $(".rightArrow", ".productCarousel").click(function (e) {
+            e.preventDefault();
+            if (product_slider_pos < $(".imgBox", ".product_thumbnails").length - 3) {
+                $(".product_thumbnails").animate({
+                    left: "-=224"
+                });
+                product_slider_pos++;
+            }
+        });
+
+        $(".leftArrow", ".productCarousel").click(function (e) {
+            e.preventDefault();
+            if (product_slider_pos > 0) {
+                $(".product_thumbnails").animate({
+                    left: "+=224"
+                });
+                product_slider_pos--;
+            }
+        });
+    });
+
+    function getAdHashId() {
+        var hash_value = document.URL.substr(document.URL.indexOf('#') + 1);
+
+        if ("" != hash_value && -1 != $.inArray(hash_value, ["what_you_dont_know_1", "exciting_recline", "so_surprised", "wow"])) {
+            return hash_value;
+        } else {
+            return $(".printSelectorBox:first").data("print-id");
+        }
+    }
+
+    function loadAd(ad_id) {
+        //update "active ad" indicator 
+        $("img.active", ".printSelectorBox").removeClass("active");
+        $("img", ".printSelectorBox[data-print-id='" + ad_id + "']").addClass("active");
+
+        //update the hash location 
+        window.location.hash = ad_id;
+
+        //load the main image 
+        $("#print_ad_image").prop("src", "https://content.la-z-boy.com/Images/our_print_ads/" + ad_id + "/" + ad_id + ".jpg");
+
+        //load the related products 
+        if (1 == $("#" + ad_id + "-product-collection.product_collections").length) {
+            //related products exist - load them 
+            $(".product_thumbnails").html($("#" + ad_id + "-product-collection.product_collections").html());
+            $(".productCarousel").removeClass("hide");
+
+            if ($(".tearsheet-file", "#" + ad_id + "-product-collection.product_collections").length > 0) {
+                $("#product_list_download")
+                    .prop("href", $(".tearsheet-file", "#" + ad_id + "-product-collection.product_collections").attr("val"))
+                    .removeClass("hide");
+            } else {
+                $("#product_list_download")
+                    .addClass("hide");
+            }
+        } else {
+            //related products do not exist - hide the products 
+            $(".productCarousel").addClass("hide");
+        }
+
+        $(".webtrends_enabled", ".product_thumbnail_slider").click(function (e) {
+            var productGroup = $(this).data("product_group");
+            var productName = $(this).data("product_name");
+
+            Webtrends.multiTrack({
+                argsa: ["WT.dl", "99", "DCSext.w_event_name", "Featured Furnishings", "DCSext.w_event_action", "TV Ads", "DCSext.w_event_prod_group", productGroup, "DCSext.w_event_prod_name", productName]
+            });
+        });
+    }
+
+</script>
+
+<div class="container">
+    <div class="ads">
+        <div class="bigPrint"><img id="print_ad_image" /></div>
+        <div class="printSelectorCol">
+
+            <div class="printSelectorBox" data-print-id="what_you_dont_know_1">
+                <img class="active" src="https://content.la-z-boy.com/Images/our_print_ads/what_you_dont_know/what_you_dont_know_tn.jpg" width="150" height="150">
+                <h4>What you don't know about La-Z-Boy could fill a room.</h4>
+                <p>Did you know La-Z-Boy makes more than recliners? Yep—sofas, sectionals, chairs and ottomans are available
+                    in over 800 different fabrics and leathers. With this many gorgeous options for your living room, only
+                    one question remains: How will you fill yours?</p>
+                <p><a href="/productassets/tearsheets/ads/LaZBoy_Wave_6_Brennan.pdf" target="_blank">View PDF</a></p>
+                <p><a href="/productassets/tearsheets/tearsheets/Brennan_merchandiser.pdf" target="_blank">Download Product List</a></p>
+                <p><a href="/content/NowFeaturing/ViewOurTVAds/#-YYi1pUfawUM">Watch TV Spot</a></p>
+            </div>
+
+            <div class="printSelectorBox" data-print-id="wow">
+                <img class="active" src="https://content.la-z-boy.com/Images/our_print_ads/wow/wow_tn.jpg" width="150" height="150">
+                <h4>If you thought you knew La-Z-Boy, think again.</h4>
+                <p>There are so many great-looking options, from sofas to chairs to sectionals and more.</p>
+                <p><a href="/productassets/tearsheets/ads/wow_ad.pdf" target="_blank">View PDF</a></p>
+                <p><a href="/productassets/tearsheets/tearsheets/AsTheRoomTurns-Stavros.pdf" target="_blank">Download Product List</a></p>
+                <!--<p><a href="">Watch TV Spot</a></p>-->
+            </div>
+
+            <!-- <div class="printSelectorBox" data-print-id="deco">
+                <img src="https://content.la-z-boy.com/Images/our_print_ads/deco/deco_tn.jpg" width="150" height="150">
+                <h4>In a world of style, comfort is making a comeback.</h4>
+                <p>We all want a gorgeous living room, but why can't it be comfortable, too?</p>
+                <p><a href="/productassets/tearsheets/ads/40102_LZB_Deco_Ad.r4.pdf" target="_blank">View PDF</a></p>
+                <p><a href="/productassets/tearsheets/tearsheets/Deco_merchandiser.pdf" target="_blank">Download Product List</a></p>
+                <p><a href="/content/NowFeaturing/ViewOurTVAds/#-ob2DAckCCM">Watch TV Spot</a></p>
+            </div> -->
+
+            <!-- <div class="printSelectorBox" data-print-id="bijou">
+                <img src="https://content.la-z-boy.com/Images/our_print_ads/bijou/bijou_tn.jpg" width="150" height="150">
+                <h4>Style is back with a whole new attitude</h4>
+                <p>A living room stylish enough for a movie set doesn't have to come with a movie star price tag.</p>
+                <p><a href="/productassets/tearsheets/ads/40101_LZB_Wave_5_Bijou_Ad.pdf" target="_blank">View PDF</a></p>
+                <p><a href="/productassets/tearsheets/tearsheets/Brand_Ad_Merchandiser_Photo%20Shoot.pdf" target="_blank">Download Product List</a></p>
+                <p><a href="/content/NowFeaturing/ViewOurTVAds/#g9_3R7-s2X4">Watch TV Spot</a></p>
+            </div> -->
+
+            <!--<div class="printSelectorBox" data-print-id="repeat_after_me">
+                <img src="https://content.la-z-boy.com/Images/our_print_ads/repeat_after_me/repeat_after_me_tn.jpg" width="150" height="150">
+                <h4>Repeat After Me</h4>
+                <p>"Repeat after me: La-Z-Boy makes more than recliners. Good."</p>
+                <p><a href="/productassets/tearsheets/ads/repeat_after_me.pdf" target="_blank">View PDF</a></p>
+                <p><a href="/productassets/tearsheets/tearsheets/Talbot_Merchandiser.pdf" target="_blank">Download Product List</a></p>
+                <p><a href="">Watch TV Spot</a></p>
+            </div>-->
+
+            <!-- <div class="printSelectorBox" data-print-id="exciting_recline">
+                <img src="https://content.la-z-boy.com/Images/our_print_ads/exciting_recline/exciting_recline_tn.jpg" width="150" height="150">
+                <h4>Exciting When</h4>
+                <p>"It used to be exciting when La-Z-Boy furniture reclined. Now it’s just as exciting when it doesn’t."</p>
+                <p><a href="/productassets/tearsheets/ads/exciting_recline.pdf" target="_blank">View PDF</a></p>
+                <p><a href="/productassets/tearsheets/tearsheets/Kiefer_Merchandiser.pdf" target="_blank">Download Product List</a></p>
+                <p><a href="/content/NowFeaturing/ViewOurTVAds/#kcXT5sziyxg">Watch TV Spot</a></p>
+            </div> -->
+
+            <div class="printSelectorBox" data-print-id="so_surprised">
+                <img src="https://content.la-z-boy.com/Images/our_print_ads/so_surprised/so_surprised_tn.jpg" width="150" height="150">
+                <h4>So Surprised</h4>
+                <p>"You'll be so surprised by everything La-Z-Boy makes, you may need to sit down."</p>
+                <p><a href="/productassets/tearsheets/tearsheets/MVP0028-Laurel.pdf" target="_blank">Product Information Sheet</a></p>
+                <p><a href="/productassets/tearsheets/ads/so_surprised.pdf" target="_blank">View PDF</a></p>
+                <p><a href="/content/NowFeaturing/ViewOurTVAds/#khuuUM4jYKg">Watch TV Spot</a></p>
+            </div>
+
+            <div class="printSelectorBox">
+                <img src="https://content.la-z-boy.com/Images/our_print_ads/tv_ads_elephant.jpg" width="150" height="150">
+                <h4>Television Spots</h4>
+                <p>Click on the link below to view our television spots.</p>
+                <!--<p><a href="">View PDF</a></p>-->
+                <!--<p><a href="">Download Product List</a></p>-->
+                <p><a href="/content/NowFeaturing/ViewOurTVAds/">Watch All TV Spots</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="clearFix"> </div>
+
+    <div class="productCarousel">
+        <p>TV ad features the furnishings below: <span><a href="" id="product_list_download">Download Product List</a></span></p>
+        <div class="arrowHolder">
+            <div class="leftArrow">
+                <a href="">
+                    <</a>
+            </div>
+        </div>
+        <div class="arrowHolder">
+            <div class="rightArrow"><a href="">></a></div>
+        </div>
+
+        <div class="product_thumbnail_slider slider">
+            <div class="product_thumbnails slider_thumbnails">
+            </div>
+        </div>
+
+        <div class="clearFix"> </div>
+
+        <div class="hide">
+
+            <!-- deco products -->
+            <!-- <div id="deco-product-collection" class="product_collections">
+                <input type="hidden" class="tearsheet-file" val="/productassets/tearsheets/tearsheets/Deco_merchandiser.pdf" />
+                <div class="imgBox">
+                    <a href="/p/deco-premier-sofa/_/R-610628" class="webtrends_enabled" data-product_group="Sofas" data-product_name="Deco Premier Sofa"> 
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/sofas/610_628.jpg"> 
+                        <p>Deco Premier Sofa</p> 
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/jazz-stationary-chair/_/R-023468" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Jazz Stationary Chair"> 
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/chairs/023_468.jpg"> 
+                        <p>Jazz Stationary Chair</p> 
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/avenue-stationary-chair/_/R-023487" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Avenue Stationary Chair"> 
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/chairs/023_487_1.jpg"> 
+                        <p>Avenue Stationary Chair</p> 
+                    </a>
+                </div>
+            </div> -->
+
+            <!-- exciting_recline products -->
+            <!-- <div id="exciting_recline-product-collection" class="product_collections">
+                <input type="hidden" class="tearsheet-file" val="/productassets/tearsheets/tearsheets/WebMerchandiser.pdf" />
+                <div class="imgBox">
+                    <a href="/p/charlotte-high-leg-recliner/_/R-028931" class="webtrends_enabled" data-product_group="Recliners" data-product_name="Charlotte High Leg Recliner"> 
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/recliners/931_recliner_1.jpg"> 
+                        <p>Charlotte High Leg Recliner</p> 
+                    </a>
+                </div>
+            </div> -->
+
+            <!-- so_surprised products -->
+            <div id="so_surprised-product-collection" class="product_collections">
+                <input type="hidden" class="tearsheet-file" val="/productassets/tearsheets/tearsheets/MVP0028-Laurel.pdf" />
+                <div class="imgBox">
+                    <a href="/p/laurel-premier-sofa/_/R-610411" class="webtrends_enabled" data-product_group="Sofas" data-product_name="Laurel Premier Sofa"> 
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/sofas/411_sofa.jpg"> 
+                        <p>Laurel Premier Sofa</p> 
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/laurel-premier-chair--a-half/_/R-655411" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Laurel Premier Chair & A Half"> 
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/chairs/411_chair.jpg"> 
+                        <p>Laurel Premier Chair & A Half</p> 
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/laurel-premier-ottoman/_/R-240411" class="webtrends_enabled" data-product_group="Ottomans" data-product_name="Laurel Premier Ottoman"> 
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/ottomans/411_ottoman.jpg"> 
+                        <p>Laurel Premier Ottoman</p> 
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

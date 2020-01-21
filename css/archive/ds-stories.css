@@ -1,0 +1,424 @@
+
+    body.mobileSite .bcc-fbt {
+        margin-top: 0;
+    }
+
+    .bcc-fbt p {
+        line-height: 1.3;
+    }
+
+    /* ****************** Large Quotes ******************* */
+
+    .large-quotes:before,
+    .large-quotes:after {
+        font-family: 'IM Fell French Canon', serif;
+        color: #9b9b9b;
+        font-size: 3.1em;
+        position: relative;
+        top: 0.4em;
+        line-height: 0;
+    }
+
+    .large-quotes:before {
+        content: "\201C";
+        padding-right: .07em;
+    }
+
+    .large-quotes:after {
+        content: "\201D";
+        padding-left: .07em;
+    }
+
+    /* ****************** Hero ******************* */
+
+    .bcc-fbt .hero {
+        font-size: 20px;
+        letter-spacing: .5px;
+        color: #F0EDEB;
+        position: relative;
+        margin-top: 35px;
+    }
+
+    @media only screen and (max-width: 852px) {
+        body.mobileSite .bcc-fbt .hero {
+            font-size: 2.3469388vw;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        body.mobileSite .bcc-fbt .hero {
+            margin-top: 5px;
+        }
+    }
+
+    .bcc-fbt .hero .image {
+        width: 100%;
+        height: 0;
+        padding-bottom: 48.979592%;
+        margin-bottom: 3%;
+        background-size: 100% auto;
+        position: relative;
+    }
+
+    @media only screen and (max-width: 567px) {
+        body.mobileSite .bcc-fbt .hero .image {
+            padding-bottom: 93.75%;
+            margin-bottom: 6.25%;
+        }
+    }
+
+    /* ****************** Hero v2 ******************* */
+
+    .bcc-fbt #hero .room-image>div {
+        padding-bottom: 78.431373%
+    }
+
+    @media only screen and (max-width: 567px) {
+        body.mobileSite .bcc-fbt #hero .room-image>div {
+            padding-bottom: 93.75%
+        }
+    }
+
+    /* ****************** Hero Play Button ******************* */
+
+    .bcc-fbt #play-button {
+        position: absolute;
+        top: 10%;
+        width: 18.368%;
+        height: 37.5%;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 567px) {
+        body.mobileSite .bcc-fbt #play-button {
+            width: 32.5%;
+            top: 40%;
+        }
+    }
+
+    /* **************** Hero Copy ********************* */
+
+    .bcc-fbt .hero h1,
+    .bcc-fbt .hero p {
+        width: 46.4%;
+        text-align: center;
+        position: absolute;
+    }
+
+    .bcc-fbt .hero h1 {
+        font-size: 2.4em;
+        letter-spacing: .01em;
+        margin: 0;
+        top: 49%;
+    }
+
+    .bcc-fbt .hero p {
+        font-size: 1em;
+        letter-spacing: .025em;
+        margin: 0;
+        top: 61.1%;
+        padding: 0 0.1em;
+    }
+
+    @media only screen and (max-width: 567px) {
+        body.mobileSite .bcc-fbt h1,
+        body.mobileSite .bcc-fbt p {
+            text-align: left;
+        }
+
+        body.mobileSite .bcc-fbt .hero h1 {
+            top: 6%;
+            font-size: 5.61458em;
+            line-height: 1;
+        }
+
+        body.mobileSite .bcc-fbt .hero p {
+            position: static;
+            width: 100%;
+            font-size: 23px;
+            font-weight: normal;
+            color: #494949;
+            padding: 0 10px;
+            margin-bottom: 6.25%;
+        }
+    }
+
+    /* ****************** Image-Copy Row ******************* */
+
+    .bcc-fbt .image-copy-row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 23px;
+        letter-spacing: .022em;
+        line-height: 1.325;
+    }
+
+    .bcc-fbt .image-copy-row .copy-block h2 {
+        font-family: "house-script", sans-serif;
+        font-weight: normal;
+        font-size: 2.173915em;
+        line-height: 1;
+        color: #9B9B9B;
+        margin: 0;
+        width: 6em;
+    }
+
+    .bcc-fbt .image-copy-row .room-image>div {
+        background-size: 100% auto;
+    }
+
+    .bcc-fbt .image-copy-row .copy-block p {
+        margin-bottom: 0;
+    }
+
+    .bcc-fbt .image-copy-row {
+        margin-bottom: 3%;
+    }
+
+    .bcc-fbt .image-copy-row.reverse {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+
+    .bcc-fbt .image-copy-row .copy-block {
+        padding: 0 0 0 5%;
+        width: 400px;
+    }
+
+    .bcc-fbt .image-copy-row.reverse .copy-block {
+        padding: 0 5% 0 0;
+    }
+
+    .bcc-fbt #opportunity .image-copy-row .copy-block {
+        width: 370px;
+        padding-right: 2.0408163%;
+    }
+
+    .bcc-fbt .image-copy-row .room-image {
+        width: 580px;
+    }
+
+    .bcc-fbt .image-copy-row .room-image>div {
+        padding-bottom: 82.758621%;
+    }
+
+    .bcc-fbt #opportunity .image-copy-row .room-image>div {
+        padding-bottom: 78.688525%;
+    }
+
+    .bcc-fbt #opportunity .image-copy-row .room-image {
+        width: 610px;
+    }
+
+    @media only screen and (min-width: 568px) and (max-width: 980px) {
+        body.mobileSite .bcc-fbt .image-copy-row:not(.reverse) .copy-block {
+            padding-right: 5px;
+        }
+
+        body.mobileSite .bcc-fbt .image-copy-row.reverse .copy-block {
+            padding-left: 5px;
+        }
+    }
+
+    @media only screen and (min-width: 568px) and (max-width: 933px) {
+        body.mobileSite .bcc-fbt .image-copy-row {
+            font-size: 2.4647887vw;
+        }
+    }
+
+    @media only screen and (max-width: 567px) {
+        body.mobileSite .bcc-fbt .image-copy-row {
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        body.mobileSite .bcc-fbt .image-copy-row .room-image {
+            width: 100%;
+            margin-bottom: 6.25%;
+        }
+
+        body.mobileSite .bcc-fbt .image-copy-row .room-image>div,
+        body.mobileSite .bcc-fbt #opportunity .image-copy-row .room-image>div {
+            padding-bottom: 70.3125%;
+        }
+
+        body.mobileSite .bcc-fbt .image-copy-row .copy-block,
+        body.mobileSite .bcc-fbt #opportunity .image-copy-row .copy-block,
+        body.mobileSite .bcc-fbt #experience .image-copy-row .copy-block,
+        body.mobileSite .bcc-fbt #hero .image-copy-row .copy-block {
+            width: 100%;
+            padding: 0 10px;
+            margin-bottom: 6.25%;
+        }
+    }
+
+    /* ****************** Product Row ******************* */
+
+    .bcc-fbt .product-row img {
+        height: 0;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .bcc-fbt .product-row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-bottom: 3%;
+    }
+
+    .bcc-fbt .product-row>div {
+        margin: 0 1em;
+        position: relative;
+    }
+
+    .bcc-fbt .product-row>div.long-name {
+        margin: 0 2em;
+    }
+
+    .bcc-fbt .product-row a {
+        display: block;
+        text-align: center;
+        text-transform: capitalize;
+        margin: 0 -1em;
+    }
+
+    .bcc-fbt .product-row .long-name a {
+        margin: 0 -2em;
+    }
+
+    .bcc-fbt .product-row a:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media only screen and (min-width: 568px) and (max-width: 710px) {
+        body.mobileSite .bcc-fbt .product-row a {
+            font-size: 2.8169vw;
+        }
+    }
+
+    @media only screen and (max-width: 567px) {
+        body.mobileSite .bcc-fbt .product-row {
+            display: block;
+        }
+
+        body.mobileSite .bcc-fbt .product-row img {
+            margin: 0 auto;
+        }
+
+        body.mobileSite .bcc-fbt #product01,
+        body.mobileSite .bcc-fbt #product02,
+        body.mobileSite .bcc-fbt #product03,
+        body.mobileSite .bcc-fbt #product04,
+        body.mobileSite .bcc-fbt #product05,
+        body.mobileSite .bcc-fbt #product06 {
+            width: 100%;
+            margin: 0;
+        }
+
+        body.mobileSite .bcc-fbt .product-row a {
+            margin: 6.25% 0;
+        }
+
+        body.mobileSite .bcc-fbt #product02 a,
+        body.mobileSite .bcc-fbt #product06 a {
+            margin: 6.25% 0;
+        }
+    }
+
+    /* ******************  Designer ******************* */
+
+    .bcc-fbt #designer {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #A8A5A5;
+        position: relative;
+    }
+
+    .bcc-fbt #designer .clickable-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+    }
+
+    .bcc-fbt #designer img {
+        width: 100px;
+        min-width: 100px;
+        padding-bottom: 100px;
+        height: 0;
+        margin-left: 2%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .bcc-fbt #designer .copy-block {
+        padding-left: 21px;
+        font-size: 15px;
+        line-height: 1.375;
+        letter-spacing: .5px;
+    }
+
+    .bcc-fbt #designer h2 {
+        margin: 0;
+        font-size: 23px;
+        line-height: 1.25;
+        color: #777373;
+    }
+
+    .bcc-fbt #designer p {
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .bcc-fbt #designer a {
+        display: block;
+        margin-top: 5px;
+    }
+
+    @media only screen and (max-width: 567px) {
+        body.mobileSite .bcc-fbt #designer img {
+            margin-left: 0;
+        }
+
+        body.mobileSite .bcc-fbt #designer .copy-block {
+            width: 195px;
+        }
+
+        body.mobileSite .bcc-fbt #designer h2 {
+            font-size: 19px;
+        }
+    }

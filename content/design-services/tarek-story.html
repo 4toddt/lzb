@@ -1,0 +1,356 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/uat/min/desktop.css">
+    <!-- <base href="C:\Users\ttownsend\OneDrive - La-Z-Boy Incorporated\Dev\" target="_blank"> -->
+</head>
+
+<body class="mobileSite">
+    <!-- Only publish code to BCC from after this -->
+    <!-- Only publish code to BCC from after this -->
+    <!-- Only publish code to BCC from after this -->
+
+    <!-- Tarek's Design Story TT -->
+    <script>
+        dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
+        if (dmiStickyNav != null) {
+            dmiStickyNav.className = "primary-nav";
+        }
+
+        //Add Design Stories to breadcrumb
+        (function() {
+            var div = document.createElement('div');
+            if (document.querySelector('body.mobile-site')) {
+                div.innerHTML = "<li><a class='crumb' href='/mobile/content/design-services/design-stories/'>Design Stories</a></li>";
+                var breadcrumb = document.querySelector('ul.breadcrumb');
+            } else {
+                div.innerHTML = "<li><a href='/content/design-services/design-stories'>Design Stories</a></li>";
+                var breadcrumb = document.querySelector('nav.breadcrumb-wrapper>ul');
+            }
+            var newLink = div.firstChild;
+            breadcrumb.insertBefore(newLink, breadcrumb.lastElementChild);
+        })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="/css/ds-design-stories.css">
+    <link rel="stylesheet" type="text/css" href="/css/_ds-sticky-nav.css">
+    <!-- iClean TT -->
+    <link rel="stylesheet" type="text/css" href="/css/npc.css">
+    <style>
+        /* ****************** Hero ******************* */
+        
+        .bcc-fbt .hero .image {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/desktop/hero.jpg');
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt .hero .image {
+                background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/mobile/hero.jpg');
+            }
+        }
+        /* ****************** Hero Play Button ******************* */
+        
+        .bcc-fbt #play-button {
+            right: 17%;
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt #play-button {
+                right: auto;
+                left: 6%;
+                width: 30%;
+                top: 35%;
+            }
+        }
+        /* **************** Hero Copy ********************* */
+        
+        .bcc-fbt .hero {
+            color: #494949;
+        }
+        
+        .bcc-fbt .hero h1 {
+            top: 50%;
+            right: 0;
+            width: 53%;
+            font-size: 2.2em;
+            white-space: nowrap;
+        }
+        
+        .bcc-fbt .hero p {
+            top: 62%;
+            /* font-size: 1.2em; */
+            width: 53%;
+            padding: 0 5%;
+            right: 0;
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt .hero h1 {
+                right: auto;
+                left: 6%;
+                color: white;
+                white-space: normal;
+            }
+        }
+        /* ****************** Image-Copy Row ******************* */
+        
+        .bcc-fbt #opportunity .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/desktop/room01.jpg');
+        }
+        
+        .bcc-fbt #experience .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/desktop/room02.jpg');
+        }
+        
+        .bcc-fbt #result .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/desktop/room03.jpg');
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt #opportunity .image-copy-row .room-image>div {
+                background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/mobile/room01.jpg');
+            }
+            body .bcc-fbt #experience .image-copy-row .room-image>div {
+                background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/mobile/room02.jpg');
+            }
+            body .bcc-fbt #result .image-copy-row .room-image>div {
+                background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/mobile/room03.jpg');
+            }
+        }
+        /* ****************** Product Row ******************* */
+        
+        .bcc-fbt .product-row a {
+            margin: 0;
+        }
+        
+        .bcc-fbt #product01 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/silo01.jpg');
+        }
+        
+        .bcc-fbt #product02 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/silo02.jpg');
+        }
+        
+        .bcc-fbt #product03 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/silo03.jpg');
+        }
+        
+        .bcc-fbt #product04 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/silo04.jpg');
+        }
+        
+        .bcc-fbt #product05 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/silo05.jpg');
+        }
+        
+        .bcc-fbt #product06 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/tarek/silo06.jpg');
+        }
+        
+        .bcc-fbt #product01 {
+            width: 300px;
+        }
+        
+        .bcc-fbt #product02 {
+            width: 300px;
+        }
+        
+        .bcc-fbt #product03 {
+            width: 221px;
+        }
+        
+        .bcc-fbt #product04 {
+            width: 223px;
+        }
+        
+        .bcc-fbt #product05 {
+            width: 300px;
+        }
+        
+        .bcc-fbt #product06 {
+            width: 191px;
+        }
+        
+        .bcc-fbt #product06 {
+            margin: 0 50px;
+        }
+        
+        .bcc-fbt #product06 a {
+            margin: 0 -50px;
+        }
+        
+        .bcc-fbt #product01 img {
+            padding-bottom: 100%;
+        }
+        
+        .bcc-fbt #product02 img {
+            padding-bottom: 100%;
+        }
+        
+        .bcc-fbt #product03 img {
+            padding-bottom: 135.747%;
+        }
+        
+        .bcc-fbt #product04 img {
+            padding-bottom: 134.529%;
+        }
+        
+        .bcc-fbt #product05 img {
+            padding-bottom: 100%;
+        }
+        
+        .bcc-fbt #product06 img {
+            padding-bottom: 157.068%;
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt #product01 img {
+                width: 300px;
+                padding-bottom: 167px;
+            }
+            body .bcc-fbt #product02 img {
+                width: 300px;
+                padding-bottom: 151px;
+            }
+            body .bcc-fbt #product03 img {
+                width: 221px;
+                padding-bottom: 247px;
+            }
+            body .bcc-fbt #product04 img {
+                width: 223px;
+                padding-bottom: 236px;
+            }
+            body .bcc-fbt #product05 img {
+                width: 300px;
+                padding-bottom: 169px;
+            }
+            body .bcc-fbt #product06 img {
+                width: 191px;
+                padding-bottom: 273px;
+            }
+        }
+        /* ******************  Designer ******************* */
+        
+        .bcc-fbt #designer img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/designer/list/erica.jpg');
+        }
+    </style>
+    <div class="bcc-fbt">
+        <nav class="ds-topnav">
+            <div class="lzb-container">
+                <a href="/content/design-services">Design&nbsp;services</a>
+                <a href="/content/design-services/meet-our-designers">Meet&nbsp;our&nbsp;designers</a>
+                <a class="current-page" href="/content/design-services/design-stories">Design&nbsp;stories</a>
+                <a class="lzb-button design-consultation" href="/content/design-services/design-request-form">
+                    Book&nbsp;my free&nbsp;design
+                    <span class="arrow-right">consultation</span>
+                </a>
+            </div>
+        </nav>
+        <section class="container">
+            <div class="hero">
+                <div class="image">
+                    <svg viewBox="0 0 100 100" id="play-button" class="dtm-click-modal" videoModal='fkpagKD6bw0'>
+                        <defs>
+                            <mask id="hole">
+                                <rect width="100%" height="100%" fill="white" />
+                                <polygon points="35,24 80,50 35,76" fill="black" />
+                            </mask>
+                        </defs>
+                        <circle r="50" cy="50" cx="50" fill="white" fill-opacity=".85" mask="url(#hole)" />
+                    </svg>
+                    <h1>Tarek&rsquo;s Story</h1>
+                </div>
+                <p>Tarek recently built a home in Canton, Michigan. He wanted the interior to be a reflection of his modern yet eclectic style, while also providing a comfortable space for entertaining family and&nbsp;friends.</p>
+            </div>
+        </section>
+        <section class="container">
+            <div id="opportunity">
+                <div class="image-copy-row reverse">
+                    <div class="room-image">
+                        <div></div>
+                    </div>
+                    <div class="copy-block">
+                        <h2>The opportunity</h2>
+                        <p class="large-quotes">I&rsquo;ve always wanted to have a personal designer but knew it could be costly. That&rsquo;s when I discovered <span class="no-wrap">La-Z-Boy</span> offers Free Design Services. I visited my local store and was shocked to find
+                            that they are truly a <span class="no-wrap">one-stop shop!</span></p>
+                    </div>
+                </div>
+                <div class="product-row" style="justify-content: space-around;justify-content: space-evenly;">
+                    <!-- <div id="product01">
+                        <img>
+                        <a href="https://www.la-z-boy.com/p/sofas/nitro-sofa/_/R-710928">Nitro <span class="arrow-right">Sofa</span></a>
+                    </div> -->
+                    <div id="product02">
+                        <img>
+                        <a href="https://www.la-z-boy.com/p/home-accents/intermix-rectangular-cocktail-table/_/R-677-910">Intermix Cocktail <span class="arrow-right">Table</span></a>
+                    </div>
+                    <div id="product03">
+                        <img>
+                        <a href="https://www.la-z-boy.com/p/home-accents/hidden-treasures-angular-accent-table/_/R-090-882">Angular Accent <span class="arrow-right">Table</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div id="experience">
+                <div class="image-copy-row">
+                    <div class="room-image">
+                        <div></div>
+                    </div>
+                    <div class="copy-block">
+                        <h2>The experience</h2>
+                        <p class="large-quotes"> I was so impressed with the level of customer service and design expertise Erica provided. I gave her my color scheme with my budget and right away she had a vision. She also came to my home to ensure everything would fit and offered
+                            advice on&nbsp;accessories.</p>
+                    </div>
+                </div>
+                <div class="product-row">
+                    <div id="product04">
+                        <img>
+                        <a href="https://www.la-z-boy.com/p/home-accents/hidden-treasures-black-storage-cube/_/R-090-426">Black Storage <span class="arrow-right">Cube</span></a>
+                    </div>
+                    <div id="product05">
+                        <img>
+                        <a href="https://www.la-z-boy.com/p/kitchen--dining/montreat-cornerstone-dining-table/_/R-84-054V">Cornerstone Dining <span class="arrow-right">Table</span></a>
+                    </div>
+                    <div id="product06">
+                        <img>
+                        <a class="dtm-click-npc" href="https://www.la-z-boy.com/p/home-accents/foundry-etagere/_/R-59-030">Arden Upholstered <span class="arrow-right">Arm Chair</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div id="result">
+                <div class="image-copy-row reverse">
+                    <div class="room-image">
+                        <div></div>
+                    </div>
+                    <div class="copy-block">
+                        <h2>The result</h2>
+                        <p class="large-quotes">It&rsquo;s so beautiful, I never want to leave home! I love to entertain and get so many compliments. People cannot believe this is all from <span class="no-wrap">La-Z-Boy</span>! I&rsquo;ve already recommended Erica and
+                            <span class="no-wrap">La-Z-Boy</span> to others and want to work with them on other rooms in my&nbsp;home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div id="designer">
+                <a href="/content/design-services/erica">
+                    <img>
+                </a>
+                <div class="copy-block">
+                    <h2>Erica designed this beautiful room</h2>
+                    <a href="/content/design-services/erica">
+                        View
+                        <span class="arrow-right">Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://www.la-z-boy.com/js/npc.js"></script>
+
+    <!-- Only publish code to BCC from before this -->
+    <!-- Only publish code to BCC from before this -->
+    <!-- Only publish code to BCC from before this -->
+</body>

@@ -1,0 +1,256 @@
+<!-- Designer Profile - Jessica S TT -->
+<script>
+    dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
+    if (dmiStickyNav != null) {
+        dmiStickyNav.className = "primary-nav";
+    }
+
+    //Add Meet Our Designers to breadcrumb
+    (function() {
+        var div = document.createElement('div');
+        if (document.querySelector('body.mobile-site')) {
+            div.innerHTML = "<li><a class='crumb' href='/mobile/content/design-services/meet-our-designers/'>Meet Our Designers</a></li>";
+            var breadcrumb = document.querySelector('ul.breadcrumb');
+        } else {
+            div.innerHTML = "<li><a href='/content/design-services/meet-our-designers'>Meet Our Designers</a></li>";
+            var breadcrumb = document.querySelector('nav.breadcrumb-wrapper>ul');
+        }
+        var newLink = div.firstChild;
+        breadcrumb.insertBefore(newLink, breadcrumb.lastElementChild);
+    })();
+</script>
+<link rel="stylesheet" type="text/css" href="/css/uat/ds-designers.css">
+<link rel="stylesheet" type="text/css" href="/css/uat/_ds-sticky-nav.css">
+
+<div class="bcc-fbt">
+    <nav class="ds-topnav">
+        <div class="lzb-container">
+            <a href="/content/design-services">Design&nbsp;services</a>
+            <a class="current-page" href="/content/design-services/meet-our-designers">Meet&nbsp;our&nbsp;designers</a>
+            <a href="/content/design-services/design-stories">Design&nbsp;stories</a>
+            <a class="lzb-button" href="/content/design-services/design-request-form">Book&nbsp;my free&nbsp;design
+                <span class="arrow-right">consultation</span>
+            </a>
+        </div>
+    </nav>
+    <header class="lzb-container designer">
+        <div class="portrait-copy">
+            <img class="portrait" src="https://content.la-z-boy.com/Images/npc/designer/jessica_s/portrait_400.jpg" alt="Jessica S Portrait">
+            <div class="copy-block">
+                <h1>Jessica</h1>
+                <p class="location">South Bend, IN</p>
+                <p class="bio">My design philosophy is that no room should sacrifice beauty in the name of comfort. With my design expertise and access to
+                    <span class="no-wrap">La-Z-Boy&rsquo;s</span> vast catalog of home goods, I will help you create the room of your dreams!</p>
+            </div>
+        </div>
+        <p class="bio">My design philosophy is that no room should sacrifice beauty in the name of comfort. With my design expertise and access to
+            <span class="no-wrap">La-Z-Boy&rsquo;s</span> vast catalog of home goods, I will help you create the room of your dreams!</p>
+        <div class="badge-block">
+            <a class="arrow-right" href="#portfolio">See Jessica's portfolio</a>
+            <div class="badges">
+                <div id="badge1" class="badge">
+                    <img class="palette-pro">
+                    <div>
+                        <p>
+                            <strong>Palette Pro</strong>
+                            <br>Clever color combos to create the perfect mood.
+                        </p>
+                    </div>
+                </div>
+                <div id="badge2" class="badge">
+                    <img class="couples-collaborator">
+                    <div>
+                        <p>
+                            <strong>Couples Collaborator</strong>
+                            <br>Blending styles for a look you&rsquo;ll both love.
+                        </p>
+                    </div>
+                </div>
+                <div id="badge3" class="badge">
+                    <img class="storage-hero">
+                    <div>
+                        <p>
+                            <strong>Storage Super Hero</strong>
+                            <br>Organizing clutter with unique storage solutions.
+                        </p>
+                    </div>
+                </div>
+                <div id="badge4" class="badge">
+                    <img class="space-maximizer">
+                    <div>
+                        <p>
+                            <strong>Space Maximizer</strong>
+                            <br>Creative space planning and room flow.
+                        </p>
+                    </div>
+                </div>
+                <div id="badge5" class="badge">
+                    <img class="kid-friendly">
+                    <div>
+                        <p>
+                            <strong>Kid Friendly</strong>
+                            <br>Designing spaces with safety and spills in mind.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="experience">Designing with
+                <span class="no-wrap">La-Z-Boy</span> for 4 years</p>
+        </div>
+    </header>
+    <section class="lzb-intro">
+        <div class="lzb-container">
+            <h2>About Jessica</h2>
+            <div class="q-a">
+                <h3>What tips do you have for clients who are looking to re-design their space?</h3>
+                <p>Go for comfort first! Once you find what&rsquo;s comfortable for you, we have tons of flexibility to suit your style. We offer so many options - that&rsquo;s the best part about
+                    <span class="no-wrap">La-Z-Boy</span>! Also buy for you and don&rsquo;t try to convince yourself to like something. No matter how attractive the design is, if you don&rsquo;t love it or you can&rsquo;t live in it day-to-day, then why
+                    do it?</p>
+                <h3>What is your favorite part of designing a client&rsquo;s homes?</h3>
+                <p>Without a doubt, their reaction when they realize that everything we&rsquo;ve been working on has captured exactly what they want. The reaction is a combination of awe, relief, and bliss. I love that moment and it&rsquo;s the most rewarding
+                    feeling in the world knowing that I was the one they trusted to get them there.
+                </p>
+                <h3>What is your favorite way to spend your Saturday?</h3>
+                <p>I&rsquo;m a northern girl so I love doing anything outside- hiking, biking, kayaking, I&rsquo;ll even take a walk around the river. Just getting away from everything to decompress works wonders!</p>
+            </div>
+        </div>
+    </section>
+    <section class="lzb-portfolio">
+        <div id="portfolio"></div>
+        <div class="lzb-container">
+            <h2>Portfolio</h2>
+            <div class="lzb-gallery group">
+                <div class="active">
+                    <p class="mobile">Style: Comfortably Casual</p>
+                    <div class="image">
+                        <img src="https://content.la-z-boy.com/Images/npc/designer/jessica_s/room1_1594.jpg" srcset="https://content.la-z-boy.com/Images/npc/designer/jessica_s/room1_870.jpg 870w, https://content.la-z-boy.com/Images/npc/designer/jessica_s/room1_1594.jpg 1594w"
+                            alt="Jessica S Room 1">
+                        <a class="lzb-nav-left" href="javascript:void(0);">
+                            <div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lzb-nav-right" href="javascript:void(0);">
+                            <div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="desktop">Style: Comfortably Casual</p>
+                </div>
+                <div>
+                    <p class="mobile">Style: Family Favorites</p>
+                    <div class="image">
+                        <img src="https://content.la-z-boy.com/Images/npc/designer/jessica_s/room2_1594.jpg" srcset="https://content.la-z-boy.com/Images/npc/designer/jessica_s/room2_870.jpg 870w, https://content.la-z-boy.com/Images/npc/designer/jessica_s/room2_1594.jpg 1594w"
+                            alt="Jessica S Room 2">
+                        <a class="lzb-nav-left" href="javascript:void(0);">
+                            <div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lzb-nav-right" href="javascript:void(0);">
+                            <div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="desktop">Style: Family Favorites</p>
+                </div>
+                <div>
+                    <p class="mobile">Style: Family Favorites</p>
+                    <div class="image">
+                        <img src="https://content.la-z-boy.com/Images/npc/designer/jessica_s/room3_1594.jpg" srcset="https://content.la-z-boy.com/Images/npc/designer/jessica_s/room3_870.jpg 870w, https://content.la-z-boy.com/Images/npc/designer/jessica_s/room3_1594.jpg 1594w"
+                            alt="Jessica S Room 3">
+                        <a class="lzb-nav-left" href="javascript:void(0);">
+                            <div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lzb-nav-right" href="javascript:void(0);">
+                            <div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="desktop">Style: Family Favorites</p>
+                </div>
+                <div>
+                    <p class="mobile">Style: Modern Retreat</p>
+                    <div class="image">
+                        <img src="https://content.la-z-boy.com/Images/npc/designer/jessica_s/room4_1594.jpg" srcset="https://content.la-z-boy.com/Images/npc/designer/jessica_s/room4_870.jpg 870w, https://content.la-z-boy.com/Images/npc/designer/jessica_s/room4_1594.jpg 1594w"
+                            alt="Jessica S Room 4">
+                        <a class="lzb-nav-left" href="javascript:void(0);">
+                            <div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="lzb-nav-right" href="javascript:void(0);">
+                            <div>
+                                <div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="desktop">Style: Modern Retreat</p>
+                </div>
+            </div>
+            <a class="arrow-right" href="/content/design-services/design-request-form">Get this look! Book your
+                <strong>FREE</strong>&nbsp;design&nbsp;consultation</a>
+        </div>
+    </section>
+    <section class="lzb-feedback">
+        <div class="lzb-container">
+            <h2>Happy feedback</h2>
+            <p>My wife and I are not visionaries so we need an experienced interior designer and typically purchase items at inflated prices at design studios. Our son furnished his home with Jessica&rsquo;s expertise and he was thrilled with her design
+                and the selection of items at the store. After seeing our son&rsquo;s experience, we decided to re-decorate our family room and it is beautiful! Thank you Jessica! We couldn't have done it without you! Keep up the good work and know that
+                I will spread the good word!</p>
+            <p>Our experience was amazing! Jessica asked questions, listened to our needs, challenged me to consider possibilities outside of my traditional style. We were so pleased when everything arrived! Everything fit together beautifully and Jessica
+                deserves all the credit! She assisted during the entire process from purchase to delivery, and returned to hang new artwork! Our new family room is elegant yet practical, traditional with a modern twist. It&rsquo;s our favorite room in
+                the house!</p>
+        </div>
+    </section>
+    <nav class="lzb-browse">
+        <div class="lzb-container">
+            <h2>Browse Designers</h2>
+            <div class="left-half">
+                <p class="mobile">Previous</p>
+                <a class="lzb-nav-left" href="javascript:void(0);">
+                    <div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <span class="designer-carousel desktop">
+            </span>
+            <div class="right-half">
+                <p class="mobile">Next</p>
+                <a class="lzb-nav-right" href="javascript:void(0);">
+                    <div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>
+<script src="https://www.la-z-boy.com/js/npc.js"></script>
+<script src="https://www.la-z-boy.com/js/ds-designers.js"></script>

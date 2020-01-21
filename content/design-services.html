@@ -1,0 +1,767 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
+<!-- Design Services TT -->
+<script>
+    dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
+    if (dmiStickyNav != null) {
+        // remove all classes but primary-nav to disable sticky nav
+        dmiStickyNav.className = "primary-nav";
+    }
+</script>
+<link rel="stylesheet" href="https://use.typekit.net/goe4ivi.css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+    }
+    
+    .site-wrapper,
+    .section-row {
+        max-width: none;
+    }
+    
+    .breadcrumbs {
+        margin: 0.625rem auto;
+        max-width: 62.5rem;
+    }
+    
+    main#site-wrapper>.section-title {
+        display: none;
+    }
+    
+    .section-row>.section-content {
+        padding: 0;
+    }
+    
+    section.cust-support .right {
+        float: none !important;
+    }
+    
+    section.cust-support [class*="column"]+[class*="column"]:last-child {
+        float: none;
+    }
+    
+    section.cust-support>h1,
+    section.cust-support>hr {
+        display: none;
+    }
+    
+    .cust-support iframe {
+        min-height: 0;
+    }
+    
+    .two-column-first [role="region"] {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    main {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .bcc-fbt p {
+        font-size: inherit;
+        line-height: inherit;
+    }
+    
+    .bcc-fbt {
+        font-family: 'lato', sans-serif;
+        line-height: 1.2;
+    }
+    
+    .bcc-fbt * {
+        box-sizing: border-box;
+    }
+    
+    .bcc-fbt img {
+        width: 100%;
+        display: block;
+    }
+    
+    .bcc-fbt a {
+        text-decoration: none;
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+    
+    .bcc-fbt .group:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .arrow-right {
+        /* place <span class="arrow-right"></span> around last word to keep arrow with word */
+        display: inline-block;
+    }
+    
+    .arrow-right:after {
+        /* draws arrow */
+        content: "";
+        display: inline-block;
+        position: relative;
+        top: -.1em;
+        left: .25em;
+        height: 0;
+        width: 0.3em;
+        border-top: .25em solid transparent;
+        border-bottom: .25em solid transparent;
+        border-left: .35em solid;
+    }
+    
+    .bcc-fbt .container {
+        max-width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        padding: 2em 0;
+        font-size: 16px;
+    }
+    
+    @media only screen and (min-width: 544px) {
+        .bcc-fbt .container {
+            font-size: 20px;
+        }
+    }
+    
+    @media only screen and (min-width: 992px) {
+        .bcc-fbt .container {
+            font-size: 23.5px;
+        }
+    }
+    
+    .bcc-fbt .desktop,
+    .bcc-fbt .landscape-phone-show {
+        display: none;
+    }
+    
+    @media only screen and (min-width: 544px) {
+        .bcc-fbt .landscape-phone-show {
+            display: block;
+        }
+        .bcc-fbt .landscape-phone-hide {
+            display: none;
+        }
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .bcc-fbt .desktop,
+        .bcc-fbt .landscape-phone-hide {
+            display: block;
+        }
+        .bcc-fbt .mobile,
+        .bcc-fbt .landscape-phone-show {
+            display: none;
+        }
+    }
+    
+    .bcc-fbt header {
+        width: auto;
+    }
+    
+    .bcc-fbt header .container {
+        padding: 0;
+    }
+    
+    .bcc-fbt header img {
+        margin-top: 5px;
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .bcc-fbt header img {
+            margin: 35px 0 2em;
+        }
+    }
+    
+    .bcc-fbt header .text-box {
+        position: absolute;
+        top: 25%;
+        left: 52.2%;
+        width: 17em;
+        height: 14em;
+        transform: translate(-50%, -50%);
+        color: #373838;
+        font-size: 10.72px;
+        font-size: 3.35vw;
+    }
+    
+    .bcc-fbt header h1 {
+        font-family: "house-script", sans-serif;
+        font-size: 2.9em;
+        line-height: 1;
+        font-weight: normal;
+        margin: 0;
+    }
+    
+    .bcc-fbt header strong {
+        text-transform: uppercase;
+    }
+    
+    .bcc-fbt header p {
+        margin: 0.6em 0;
+    }
+    
+    .bcc-fbt header .lzb-button {
+        display: inline-block;
+        padding: 0.5em 0.55em;
+        line-height: 1.5em;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-color: #6a6a6a;
+        border-style: solid;
+        border-width: 1px;
+        margin: 0.3em 0;
+    }
+    
+    .bcc-fbt .boxes {
+        background-color: #f1edea;
+        position: relative;
+    }
+    
+    .bcc-fbt .boxes .container {
+        width: 100%;
+        max-width: 336px;
+    }
+    
+    .bcc-fbt .boxes .container-inner {
+        padding: 0 10px;
+    }
+    
+    .bcc-fbt .boxes .box-outer {
+        width: 100%;
+        padding-bottom: 5.063291%;
+        float: left;
+    }
+    
+    .bcc-fbt .boxes .one-col-bottom {
+        padding: 0;
+    }
+    
+    @media only screen and (min-width: 544px) {
+        .bcc-fbt .boxes .container {
+            max-width: 668px;
+        }
+        .bcc-fbt .boxes .box-outer {
+            width: 48.8%;
+            padding-bottom: 2.4%;
+        }
+        .bcc-fbt .boxes .two-col-left {
+            margin-right: 2.4%;
+        }
+        .bcc-fbt .boxes .two-col-bottom {
+            padding-bottom: 0;
+        }
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .bcc-fbt .boxes .container {
+            max-width: 1000px;
+        }
+        .bcc-fbt .boxes .box-outer {
+            width: 32.2%;
+            padding-bottom: 1.7%;
+            margin-right: 0;
+        }
+        .bcc-fbt .boxes .three-col-left {
+            margin-right: 1.7%;
+        }
+        .bcc-fbt .boxes .three-col-bottom {
+            padding-bottom: 0;
+        }
+    }
+    
+    .bcc-fbt .boxes .box-inner {
+        padding-bottom: 100%;
+        height: 0;
+        background-color: #aeccc8;
+        position: relative;
+    }
+    
+    .bcc-fbt .boxes .text-box {
+        font-size: 23.5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 9.5em;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+    }
+    
+    .bcc-fbt .boxes h2 {
+        font-size: 1em;
+        margin: 0;
+    }
+    
+    .bcc-fbt .boxes p {
+        margin: 0;
+        font-weight: 300;
+    }
+    
+    .bcc-fbt .expect {
+        background-color: #afcdc8;
+    }
+    
+    .bcc-fbt .expect .container {
+        width: 100%;
+        max-width: 20.4em;
+        padding-bottom: 0;
+    }
+    
+    .bcc-fbt .expect h1 {
+        font-size: 2.04em;
+        color: #373838;
+        font-weight: normal;
+        text-align: center;
+        margin: 0 0 1em;
+        line-height: .8;
+    }
+    
+    .bcc-fbt .expect h1 {
+        font-size: 2.04em;
+    }
+    
+    .bcc-fbt .expect .container-inner {
+        margin: -2em -1em;
+    }
+    
+    .bcc-fbt .expect .box-outer {
+        position: relative;
+        margin: 0 0 2em;
+        float: left;
+        width: 100%
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .bcc-fbt .expect .box-outer:nth-child(even) {
+            clear: left;
+        }
+    }
+    
+    .bcc-fbt .expect img {
+        position: absolute;
+        width: 5.7em;
+        margin: 0;
+        left: .1em;
+    }
+    
+    .bcc-fbt .expect h2 {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .bcc-fbt .expect p {
+        margin: 0 1em;
+        position: relative;
+        color: #4A4A4A;
+        line-height: 1.4;
+    }
+    
+    .bcc-fbt .designers .container {
+        width: 100%;
+        padding-bottom: 0;
+    }
+    
+    .bcc-fbt .designers h1 {
+        font-size: 2.5em;
+        font-size: 2.04em;
+        color: #373838;
+        font-weight: normal;
+        text-align: center;
+        margin: 0 0 .5em;
+    }
+    
+    .bcc-fbt .designers h1::first-line {
+        line-height: .8;
+    }
+    
+    .bcc-fbt .designers .video {
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    
+    .bcc-fbt .designers iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+    }
+    
+    .bcc-fbt .designers p {
+        margin-bottom: 1.8em;
+        padding: 0 10px;
+    }
+    
+    @media only screen and (min-width: 1000px) {
+        .bcc-fbt .designers p {
+            padding: 0;
+        }
+    }
+    /* body:not(.mobile-site) .bcc-fbt .designers p {
+        padding: 0;
+    } */
+    
+    .bcc-fbt .designers .lzb-button a {
+        background-color: #aeccc8;
+        color: white;
+        padding: .82em .94em;
+        text-transform: uppercase;
+        font-size: 17px;
+        display: block;
+    }
+    
+    .bcc-fbt .designers .lzb-button a:hover {
+        font-weight: bold;
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .bcc-fbt .designers .lzb-button {
+            text-align: center;
+        }
+        .bcc-fbt .designers .lzb-button a {
+            font-size: 14.4px;
+            font-size: 1.88vw;
+            padding: .82em 0.7em;
+            display: inline-block;
+        }
+    }
+    
+    @media only screen and (min-width: 1000px) {
+        .bcc-fbt .designers .lzb-button a {
+            font-size: 18.8px;
+        }
+    }
+    
+    @media only screen and (min-width: 544px) {
+        .bcc-fbt header .text-box {
+            font-size: 18.22px;
+            font-size: 3.35vw;
+        }
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .bcc-fbt header .text-box {
+            top: 26%;
+            left: 54%;
+            font-size: 18.2px;
+            font-size: 2.37vw;
+        }
+        .bcc-fbt .boxes .lzb-triangle-down {
+            position: absolute;
+            left: 85%;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 25px solid white;
+        }
+        .bcc-fbt .boxes .lzb-triangle-up {
+            position: absolute;
+            left: 15%;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 25px solid #afcdc8;
+        }
+        .bcc-fbt .designers .lzb-triangle-down {
+            position: absolute;
+            left: 85%;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 25px solid #afcdc8;
+        }
+        .bcc-fbt .expect .container {
+            max-width: 980px;
+        }
+        .bcc-fbt .expect .box-outer {
+            width: 50%;
+        }
+    }
+    
+    @media only screen and (min-width: 992px) {
+        .bcc-fbt header .text-box {
+            font-size: 23.5px;
+        }
+    }
+    
+    /* #houzz-award img {
+        position: absolute;
+        width: 85px;
+        height: 85px;
+        margin: 0;
+        bottom: 0;
+        right: 0;
+    }
+    
+    #houzz-award p {
+        position: absolute;
+        bottom: 0;
+        right: 85px;
+        font-size: 16px;
+        padding: .5em;
+        margin: 0;
+        background-color: rgba(255, 255, 255, 0.6);
+        text-align: right;
+        max-width: 19.5em;
+    } 
+    
+    body header.mobile {
+        position: relative;
+    }
+    
+    @media only screen and (max-width:567px) {
+        body #houzz-award {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        body #houzz-award img {
+            position: static;
+            width: 23.4375%;
+            padding-bottom: 23.4375%;
+            height: 0;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg');
+        }
+        body #houzz-award p {
+            position: static;
+            font-size: 18px;
+            padding: 0 10px 0 0;
+        }
+    } */
+    /*****************************************************/
+    /***************** Video Modal ***********************/
+    /*****************************************************/
+    
+    section.cust-support [videomodal] {
+        /* if there is an onclick attribute, the curser will be a pointer */
+        cursor: pointer;
+    }
+    
+    #npc-modal {
+        position: fixed;
+        z-index: 1000000;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    #npc-modal-container {
+        background-color: #fefefe;
+        padding: 5px;
+        border: 1px solid #888;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    
+    .video #npc-modal-container {
+        width: 75%;
+        max-width: 1050px;
+    }
+    
+    #npc-image {
+        width: 100%;
+        display: block;
+    }
+    
+    .video #npc-modal-content {
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    
+    #npc-modal-content iframe {
+        min-height: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #npc-modal-close {
+        position: absolute;
+        right: -7px;
+        top: -7px;
+        width: 22px;
+        z-index: 10;
+        cursor: pointer;
+    }
+    
+    #npc-modal-close:hover,
+    #npc-modal-close:focus {
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/ds-sticky-nav.css">
+
+<div class="bcc-fbt">
+    <nav class="ds-topnav">
+        <div class="lzb-container">
+            <a class="current-page" href="/content/design-services">Design&nbsp;services</a>
+            <a href="/content/design-services/meet-our-designers">Meet&nbsp;our&nbsp;designers</a>
+            <a href="/content/design-services/design-stories">Design&nbsp;stories</a>
+            <a class="lzb-button design-consultation dsr-redirect" href="javascript:void(0);">Book&nbsp;my free&nbsp;design
+                <span class="arrow-right">consultation</span>
+            </a>
+        </div>
+    </nav>
+    <header class="mobile">
+        <div class="container">
+            <img src="https://content.la-z-boy.com/Images/npc/design-services/mobile/pano_v3.jpg" alt="Free Design Services">
+            <div class="text-box">
+                <h1>The Design Studio</h1>
+                <p>Get the room of your dreams with
+                    <strong>free</strong> Design Services.</p>
+                <p>From small style updates to complete transformations, our expert designers will guide you through every step.
+                </p>
+                <a class="lzb-button arrow-right design-consultation dsr-redirect" href="javascript:void(0);">Book my
+                    <strong>free</strong> design consultation</a>
+            </div>
+        </div>
+        <!-- <span id="houzz-award">
+            <p>Thank you Houzz community for choosing us as one of the best in the&nbsp;industry!</p>
+            <img src="https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg" alt="Best of houzz 2018 - Design Award">
+        </span> -->
+    </header>
+    <header class="desktop">
+        <div class="container">
+            <img src="https://content.la-z-boy.com/Images/npc/design-services/desktop/pano_v3.jpg" alt="Free Design Services">
+            <div class="text-box">
+                <h1>The Design Studio</h1>
+                <p>Get the room of your dreams with
+                    <strong>free</strong> Design Services.</p>
+                <p>From small style updates to complete transformations, our expert designers will guide you through every step.
+                </p>
+                <a class="lzb-button arrow-right design-consultation dsr-redirect" href="javascript:void(0);">Book my
+                    <strong>free</strong> design consultation</a>
+            </div>
+            <!-- <span id="houzz-award">
+                <p>Thank you Houzz community for choosing
+                    <br>us as one of the best in the&nbsp;industry!</p>
+                <img src="https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg" alt="Best of houzz 2018 - Design Award">
+            </span> -->
+        </div>
+    </header>
+    <section class="boxes">
+        <div class="lzb-triangle-down"></div>
+        <div class="container">
+            <div class="container-inner group">
+                <div class="box-outer two-col-left three-col-left">
+                    <div class="box-inner">
+                        <div class="text-box">
+                            <h2>Design services</h2>
+                            <p>for any, or every stage of your project.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-outer three-col-left">
+                    <div class="box-inner">
+                        <img src="https://content.la-z-boy.com/Images/npc/design-services/block-2.jpg" alt="Design services">
+                    </div>
+                </div>
+                <div class="box-outer landscape-phone-hide">
+                    <div class="box-inner">
+                        <div class="text-box">
+                            <h2>Personalized services</h2>
+                            <p>tailored to your life, style, and budget.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-outer two-col-left three-col-left three-col-bottom">
+                    <div class="box-inner">
+                        <img src="https://content.la-z-boy.com/Images/npc/design-services/block-4.jpg" alt="Personalized
+                services">
+                    </div>
+                </div>
+                <div class="box-outer landscape-phone-show">
+                    <div class="box-inner">
+                        <div class="text-box">
+                            <h2>Personalized services</h2>
+                            <p>tailored to your life, style, and budget.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-outer two-col-left three-col-left two-col-bottom three-col-bottom">
+                    <div class="box-inner">
+                        <div class="text-box">
+                            <h2>Professional designers</h2>
+                            <p>dedicated to bringing your unique vision to life.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-outer one-col-bottom two-col-bottom three-col-bottom">
+                    <div class="box-inner">
+                        <img src="https://content.la-z-boy.com/Images/npc/design-services/block-6.jpg" alt="Professional
+                designers">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lzb-triangle-up"></div>
+    </section>
+    <section class="expect">
+        <div class="container group">
+            <h1>What to expect</h1>
+            <div class="box-outer">
+                <img src="https://content.la-z-boy.com/Images/npc/design-services/1_left.png" alt="1">
+                <h2>Consultation</h2>
+                <p>Whether you want a complete room transformation or just need a little advice, our design experts can help. Work with a professional in store, or schedule a free consultation and we’ll come right to you.
+                </p>
+            </div>
+            <div class="box-outer">
+                <img src="https://content.la-z-boy.com/Images/npc/design-services/2_left.png" alt="2">
+                <h2>Collaboration</h2>
+                <p>No one knows what you love and how you live better than you. That’s why we listen. Your thoughts and feedback are the inspiration behind our design, down to the very last detail.</p>
+            </div>
+            <div class="box-outer">
+                <img src="https://content.la-z-boy.com/Images/npc/design-services/3_left.png" alt="3">
+                <h2>Presentation</h2>
+                <p>After collaborating with you on your project ideas and budget, you’ll receive a customized design plan so you can visualize your finished space. From colors to fabrics and more, see your design take shape.</p>
+            </div>
+            <div class="box-outer">
+                <img src="https://content.la-z-boy.com/Images/npc/design-services/4_left.png" alt="4">
+                <h2>Decoration</h2>
+                <p>Watch the room come together, or wait for the reveal! Your designer will handle every detail, from overseeing the white-glove delivery and placement of your furniture, to styling and accessorizing.</p>
+            </div>
+        </div>
+    </section>
+    <section class="designers">
+        <div class="lzb-triangle-down"></div>
+        <div class="container">
+            <h1>Hear from our designers</h1>
+            <div class="container-inner group">
+                <div videomodal="WpNXEeHautg">
+                    <img class="desktop" src="https://content.la-z-boy.com/Images/npc/design-services/desktop/video-1.jpg">
+                    <img class="mobile" src="https://content.la-z-boy.com/Images/npc/design-services/mobile/video-1.jpg">
+                </div>
+                <p>Watch La-Z-Boy designer
+                    <strong>Vanessa</strong> describe how she collaborates to bring homes to life.</p>
+                <div videomodal="tDCo8vfKIRA">
+                    <img class="desktop" src="https://content.la-z-boy.com/Images/npc/design-services/desktop/video-2.jpg">
+                    <img class="mobile" src="https://content.la-z-boy.com/Images/npc/design-services/mobile/video-2.jpg">
+                </div>
+                <p>Watch La-Z-Boy designer
+                    <strong>Nikole</strong> describe how she creates fresh ideas for your home.</p>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="https://www.la-z-boy.com/js/npc.js"></script>

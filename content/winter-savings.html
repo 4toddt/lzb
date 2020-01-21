@@ -1,0 +1,305 @@
+<!-- Winter Savings Blast -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<style>
+    /******** Resets ********/
+
+    section.cust-support>h1,
+    section.cust-support>hr {
+        display: none;
+    }
+
+    .cust-support iframe {
+        min-height: 0;
+    }
+
+    .two-column-first [role="region"] {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    main {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .bcc-fbt p,
+    .bcc-fbt a {
+        text-decoration: none;
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    /**/
+
+    /****** General Styles *******/
+
+    body,
+    body.mobileSite {
+        margin: 0;
+    }
+
+    .bcc-fbt {
+        min-width: 980px;
+        font-family: 'Lato', sans-serif;
+    }
+
+    body.mobileSite .bcc-fbt {
+        min-width: auto;
+    }
+
+    .bcc-fbt div,
+    .bcc-fbt img {
+        box-sizing: border-box;
+    }
+
+    .bcc-fbt img {
+        width: 100%;
+        display: block;
+    }
+
+    .bcc-fbt .group:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .bcc-fbt .arrow-right::after {
+        content: "‣";
+        position: relative;
+        font-size: 1.5em;
+        line-height: .5em;
+        top: .1em;
+        left: .1em;
+    }
+
+    .bcc-fbt .for-portrait-phone {
+        display: none;
+    }
+
+    .bcc-fbt .for-landscape-phone-up {
+        display: block;
+    }
+
+    @media only screen and (max-width: 500px) {
+
+        body.mobileSite .bcc-fbt .for-portrait-phone {
+            display: block;
+        }
+
+        body.mobileSite .bcc-fbt .for-landscape-phone-up {
+            display: none;
+        }
+    }
+
+    .bcc-fbt .lzb-container {
+        width: 980px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    body.mobileSite .bcc-fbt .lzb-container {
+        width: 100%;
+        max-width: 990px;
+        padding: 0 5px;
+        position: relative;
+    }
+
+    /**/
+
+    /****** Hero Banner Area *******/
+
+    .bcc-fbt .hero-banner div {
+        position: relative;
+    }
+
+    @media only screen and (max-width: 500px) {
+
+        body.mobileSite .bcc-fbt .hero-banner img {
+            margin-top: 10px;
+        }
+    }
+
+    .bcc-fbt .hero-banner a.larson-link {
+        position: absolute;
+        width: 28%;
+        height: 60%;
+        left: 6%;
+        top: 38%;
+    }
+
+    .bcc-fbt .hero-banner a.lawrence-link {
+        position: absolute;
+        width: 28%;
+        height: 60%;
+        left: 65%;
+        top: 38%;
+    }
+
+    @media only screen and (max-width: 567px) {
+
+        body.mobileSite .bcc-fbt .hero-banner a.larson-link {
+            position: absolute;
+            width: 41%;
+            height: 48%;
+            left: 3%;
+            top: 49%;
+        }
+
+        body.mobileSite .bcc-fbt .hero-banner a.lawrence-link {
+            position: absolute;
+            width: 42%;
+            height: 48%;
+            left: 54%;
+            top: 49%;
+        }
+    }
+
+
+    /**/
+
+    /****** Image Blocks *******/
+
+    .bcc-fbt .block {
+        display: block;
+        width: 32%;
+        float: left;
+        margin: 0 0 2% 2%;
+    }
+
+    .bcc-fbt .block:nth-child(3n+1) {
+        margin-left: 0;
+    }
+
+    .bcc-fbt .block.double {
+        width: 66%;
+    }
+
+    .bcc-fbt .block.double .landscape,
+    .bcc-fbt .block.double .portrait {
+        display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+
+        body.mobileSite .bcc-fbt .block {
+            width: 48.25%;
+            margin: 0 0 3.5% 3.5%;
+        }
+
+        body.mobileSite .bcc-fbt .block:nth-child(2n+1) {
+            margin-left: 0;
+        }
+
+        body.mobileSite .bcc-fbt .block.double {
+            width: 48.25%;
+        }
+
+        body.mobileSite .bcc-fbt .block.double .desktop {
+            display: none;
+        }
+
+        body.mobileSite .bcc-fbt .block.double .landscape {
+            display: block;
+        }
+    }
+
+    @media only screen and (max-width: 500px) {
+
+        body.mobileSite .bcc-fbt .block {
+            width: 100%;
+            margin: 0 0 13%;
+        }
+
+        body.mobileSite .bcc-fbt .block.double {
+            width: 100%;
+        }
+
+        body.mobileSite .bcc-fbt .block.double .landscape {
+            display: none;
+        }
+
+        body.mobileSite .bcc-fbt .block.double .portrait {
+            display: block;
+        }
+    }
+</style>
+
+<div class="bcc-fbt">
+    <section class="hero-banner">
+        <div class="lzb-container">
+            <img class="for-portrait-phone" src="https://content.la-z-boy.com/Images/npc/winter-savings/mobile/hero_v2.jpg" alt="Winter Savings Blast - Save big in-store and online">
+            <img class="for-landscape-phone-up" src="https://content.la-z-boy.com/Images/npc/winter-savings/desktop/hero_v2.jpg" alt="Winter Savings Blast - Save big in-store and online">
+            <a class="larson-link" href="/p/recliners/larson-powerreclinexr-reclina-rocker-recliner/_/R-P10528"></a>
+            <a class="lawrence-link" href="/p/recliners/lawrence-powerreclinexr-reclina-rocker-recliner/_/R-P10572"></a>
+        </div>
+    </section>
+    <section class="block-section">
+        <div class="lzb-container group">
+            <a class="block" href="/p/recliners/larson-reclina-rocker-recliner/_/R-010528" alt="Larson Reclina-Rocker® Recliner">
+                <img src="https://content.la-z-boy.com/Images/npc/winter-savings/Module-01.jpg">
+            </a>
+            <a class="block" href="/p/recliners/larson-reclina-way-recliner/_/R-016528" alt="Larson Reclina-Way® Recliner">
+                <img src="https://content.la-z-boy.com/Images/npc/winter-savings/Module-02.jpg">
+            </a>
+            <a class="block" href="/p/recliners/larson-powerreclinexrw-reclina-way-recliner/_/R-P16528" alt="Larson PowerReclineXRw™ Reclina-Way® Recliner">
+                <img src="https://content.la-z-boy.com/Images/npc/winter-savings/Module_03_v2.jpg">
+            </a>
+            <a class="block" href="/p/recliners/lawrence-reclina-rocker-recliner/_/R-010572" alt="Lawrence Reclina-Rocker® Recliner">
+                <img src="https://content.la-z-boy.com/Images/npc/winter-savings/Module-04.jpg">
+            </a>
+            <a class="block" href="/p/recliners/lawrence-reclina-way-recliner/_/R-016572" alt="Lawrence Reclina-Way® Recliner">
+                <img src="https://content.la-z-boy.com/Images/npc/winter-savings/Module-05.jpg">
+            </a>
+            <a class="block" href="/p/recliners/lawrence-reclina-glider-swivel-recliner/_/R-017572" alt="Lawrence Reclina-Glider® Swivel Recliner">
+                <img src="https://content.la-z-boy.com/Images/npc/winter-savings/Module-06.jpg">
+            </a>
+            <a class="block" href="/p/recliners/lawrence-powerreclinexrw-reclina-way-recliner/_/R-P16572" alt="Lawrence PowerReclineXRw™ Reclina-Way® Recliner">
+                <img src="https://content.la-z-boy.com/Images/npc/winter-savings/Module-07_v2.jpg">
+            </a>
+            <a class="block double" href="/b/_/N-1obe4n" alt="There's even more on sale!">
+                <img class="desktop" src="https://content.la-z-boy.com/Images/npc/winter-savings/desktop/Module-08.jpg">
+                <img class="landscape" src="https://content.la-z-boy.com/Images/npc/winter-savings/mobile/Module-08b.jpg">
+                <img class="portrait" src="https://content.la-z-boy.com/Images/npc/presidents-day/mobile/Module-08.jpg">
+            </a>
+        </div>
+    </section>
+</div>
+<script>
+    //Tweak mobile header
+    //Check if mobileSite
+    if (document.getElementsByTagName("body")[0].classList.contains('mobileSite')) {
+        //Wait for jQuery to load
+        requirejs(['jQuery'], function ($) {
+            //Adjust mobile header on load
+            $(document).ready(function () {
+                if (window.innerHeight > window.innerWidth) {
+                    // Device is Landscape. Hide search box.
+                    $('body.mobileSite #searchForm').css('display', 'inline-block');
+                } else {
+                    // Device is Portrait. Show search box.
+                    $('body.mobileSite #searchForm').css('display', 'none');
+                }
+                // Adjust content below header.
+                $('.mobileSite #site-wrapper').css('margin-top', $('header.masthead').css('height'));
+            });
+            //Adjust mobile header on resize
+            $(window).resize(function () {
+                clearTimeout(window.resizedFinished);
+                window.resizedFinished = setTimeout(function () {
+                    if (window.innerHeight > window.innerWidth) {
+                        // Device is Landscape. Hide search box.
+                        $('body.mobileSite #searchForm').css('display', 'inline-block');
+                    } else {
+                        // Device is Portrait. Show search box.
+                        $('body.mobileSite #searchForm').css('display', 'none');
+                    }
+                    // Adjust content below header.
+                    $('.mobileSite #site-wrapper').css('margin-top', $('header.masthead').css('height'));
+                }, 100);
+            });
+        });
+    }
+</script>

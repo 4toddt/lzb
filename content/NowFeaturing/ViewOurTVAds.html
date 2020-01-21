@@ -1,0 +1,628 @@
+<!--TV Ads-->
+<style>
+    .container {
+        width: 775px;
+    }
+    
+    .social {
+        width: 240px;
+        float: right;
+        margin-top: -20px;
+    }
+    
+    .video_container {
+        width: 100%;
+        height: 500px;
+        background: #ccc;
+        overflow: hidden;
+    }
+    
+    .videoCarousel {
+        width: 100%;
+        height: 150px;
+        margin: 20px 0;
+    }
+    
+    .videoCarousel .leftArrow {
+        width: 30px;
+        height: 150px;
+        background: #fff;
+        float: left;
+    }
+    
+    .videoCarousel .rightArrow {
+        width: 30px;
+        height: 150px;
+        background: #fff;
+        float: right;
+    }
+    
+    .videoCarousel .leftArrow a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 60px 0px 0 10px;
+        text-decoration: none;
+        background: url(/img/leftArrow.png) no-repeat 10px 60px;
+        text-indent: -9999px
+    }
+    
+    .videoCarousel .rightArrow a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 60px 0px 0 10px;
+        text-decoration: none;
+        background: url(/img/rightArrow.png) no-repeat 10px 60px;
+        text-indent: -9999px
+    }
+    
+    .videoCarousel .leftArrow:hover,
+    .videoCarousel .rightArrow:hover {
+        background: #fff;
+    }
+    
+    .videoCarousel img {
+        margin: 0 5px;
+    }
+    
+    .videoCarousel img.active {
+        padding-bottom: 3px;
+        border-bottom: 6px outset #232323;
+    }
+    
+    .videoCarousel .imgBox {
+        width: 224px;
+        height: 180px;
+        float: left;
+    }
+    
+    .videoCarousel .imgBox p {
+        text-align: center;
+        width: 100%;
+        margin: 4px 0 0;
+    }
+    
+    .clearFix {
+        clear: both;
+    }
+    
+    .productCarousel {
+        background: #fff;
+        padding: 10px 0;
+        margin-top: 40px;
+    }
+    
+    .productCarousel p {
+        margin: 10px;
+    }
+    
+    .productCarousel .leftArrow {
+        width: 30px;
+        height: 150px;
+        background: #fff;
+        float: left;
+    }
+    
+    .productCarousel .rightArrow {
+        width: 30px;
+        height: 150px;
+        background: #fff;
+        float: right;
+    }
+    
+    .productCarousel .leftArrow a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 60px 0px 0 10px;
+        text-decoration: none;
+        background: url(/img/leftArrow.png) no-repeat 10px 60px;
+        text-indent: -9999px
+    }
+    
+    .productCarousel .rightArrow a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 60px 0px 0 10px;
+        text-decoration: none;
+        background: url(/img/rightArrow.png) no-repeat 10px 60px;
+        text-indent: -9999px
+    }
+    
+    .productCarousel .leftArrow:hover,
+    .productCarousel .rightArrow:hover {
+        background: #fff;
+    }
+    
+    .productCarousel img {
+        margin: 0 5px;
+        width: 150px;
+    }
+    
+    .productCarousel img.active {
+        padding-bottom: 3px;
+        border-bottom: 6px outset #232323;
+    }
+    
+    .productCarousel .imgBox {
+        width: 180px;
+        height: 180px;
+        float: left;
+        text-align: center;
+    }
+    
+    .productCarousel .imgBox p {
+        text-align: center;
+        width: 100%;
+        margin: 4px 0 0;
+    }
+    
+    .productCarousel p span {
+        float: right;
+    }
+    
+    .productCarousel a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .slider {
+        width: 715px;
+        height: 188px;
+        overflow: hidden;
+    }
+    
+    .slider_thumbnails {
+        width: 2240px;
+        height: 188px;
+        position: relative;
+        left: 0px;
+    }
+    
+    .hide {
+        display: none;
+    }
+</style>
+<!-- 
+<div id="fb-root"></div> 
+-->
+<script>
+    /*function loadFB() {(function(d, s, id) { 
+    var js, fjs = d.getElementsByTagName(s)[0]; 
+    if (d.getElementById(id)) return; 
+    js = d.createElement(s); js.id = id; 
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=506434569369843"; 
+    fjs.parentNode.insertBefore(js, fjs); 
+    }(document, 'script', 'facebook-jssdk')); 
+
+    loadFB();*/
+</script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+<script>
+    //jQuery
+    requirejs(['jQuery'], function($) {
+        // Load the IFrame Player API code asynchronously. 
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Replace the 'ytplayer' element with an <iframe> and 
+        // YouTube player after the API code downloads. 
+        var player;
+        var video_slider_pos = 0;
+        var product_slider_pos = 0;
+
+
+        $(document).ready(function() {
+            $(".rightArrow", ".videoCarousel").click(function(e) {
+                e.preventDefault();
+                if (video_slider_pos < 1) {
+                    $(".video_thumbnails").animate({
+                        left: "-=224"
+                    }, {
+                        queue: true
+                    });
+                    video_slider_pos++;
+                }
+            });
+
+            $(".leftArrow", ".videoCarousel").click(function(e) {
+                e.preventDefault();
+                if (video_slider_pos > 0) {
+                    $(".video_thumbnails").clearQueue().finish().animate({
+                        left: "+=224"
+                    });
+                    video_slider_pos--;
+                }
+            });
+
+            $(".rightArrow", ".productCarousel").click(function(e) {
+                e.preventDefault();
+                if (product_slider_pos < $(".imgBox", ".product_thumbnails").length - 4) {
+                    $(".product_thumbnails").animate({
+                        left: "-=224"
+                    });
+                    product_slider_pos++;
+                }
+            });
+
+            $(".leftArrow", ".productCarousel").click(function(e) {
+                e.preventDefault();
+                if (product_slider_pos > 0) {
+                    $(".product_thumbnails").animate({
+                        left: "+=224"
+                    });
+                    product_slider_pos--;
+                }
+            });
+
+            //flag the active item 
+            var video_id = getUrlHashVideo();
+            var $videoThumb = $("#video-" + video_id);
+
+            $videoThumb.find("img").addClass("active");
+            video_slider_pos = ($videoThumb.index() > 2 ? $videoThumb.index() - 2 : 0);
+
+            if (video_slider_pos != 0) {
+                $(".video_thumbnails").css("left", 0 - (video_slider_pos * $videoThumb.outerWidth()));
+            }
+        });
+    });
+
+    function getUrlHashVideo() {
+        var hash_value = document.URL.substr(document.URL.indexOf('#') + 1);
+
+        if ("" != hash_value && -1 != $.inArray(hash_value, ["YoD5FwIKB18", "SuVL6uvGWec", "LRyaJzcZtTk", "YiZmSPTYZKA", "-ob2DAckCCM", "g9_3R7-s2X4"])) {
+            return hash_value;
+        } else {
+            return $("input[type='hidden']", ".video_thumbnails:first").val();
+        }
+    };
+
+    function onYouTubePlayerAPIReady() {
+        var hash = getUrlHashVideo();
+
+        player = new YT.Player('ytplayer', {
+            height: '390',
+            width: '640',
+            videoId: hash,
+            playerVars: {
+                rel: 0,
+                // autoplay: 1
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+        $("#ytplayer").css("min-height", "0px");
+        loadVideoProducts(hash);
+    }
+
+    function onPlayerReady(evt) {
+
+        evt.target.playVideo();
+
+        //declare the click even function you want 
+        $(".imgBox", ".video_thumbnails").click(function() {
+            if (!$(this).find("img").hasClass("active")) {
+                //change active indicator 
+                $(".imgBox img.active", ".video_thumbnails").removeClass("active");
+                $(this).find("img").addClass("active");
+
+                //update hash 
+                var hash = $(this).find("input[type='hidden']").val();
+                window.location.hash = hash;
+                loadVideo(hash);
+            }
+        });
+    }
+
+    function loadVideo(video_id) {
+        player.loadVideoById(video_id, 0);
+        $(".fb-share-button, .fb-like").data("href", window.location.url);
+        $(".twitter_link").prop("href", "http://twitter.com/share?text=I%20looked%20at%20 " + $("p", "#video-" + video_id).html());
+        //loadFB(); 
+        loadVideoProducts(video_id);
+    }
+
+    function loadVideoProducts(video_name) {
+        var video_id = getUrlHashVideo();
+        product_slider_pos = 0;
+
+        $(".product_thumbnails")
+            .html($("#video-" + video_id + "-products").html())
+            .css("left", "0");
+
+        if ($(".tearsheet-file", "#video-" + video_id + "-products").length > 0) {
+            $("#product_list_download")
+                .attr("href", $(".tearsheet-file", "#video-" + video_id + "-products").attr("val"))
+                .removeClass("hide");
+        } else {
+            $("#product_list_download")
+                .addClass("hide");
+        }
+
+        $(".webtrends_enabled", ".product_thumbnail_slider").click(function(e) {
+            var productGroup = $(this).data("product_group");
+            var productName = $(this).data("product_name");
+
+            Webtrends.multiTrack({
+                argsa: ["WT.dl", "99", "DCSext.w_event_name", "Featured Furnishings", "DCSext.w_event_action", "TV Ads", "DCSext.w_event_prod_group", productGroup, "DCSext.w_event_prod_name", productName]
+            });
+        });
+    }
+</script>
+
+<div class="container">
+    <div class="video_container" id="ytplayer"></div>
+    <div class="videoCarousel">
+        <div class="leftArrow">
+            <a href="">&lt;</a>
+        </div>
+        <div class="rightArrow">
+            <a href="">&gt;</a>
+        </div>
+        <div class="video_thumbnail_slider slider">
+            <div class="video_thumbnails slider_thumbnails">
+
+                <div class="imgBox" id="video-YoD5FwIKB18">
+                    <img class="" src="/Images/our_tv_ads/video_thumbnails/reveal.jpg">
+                    <p>Reveal</p>
+                    <input type="hidden" value="YoD5FwIKB18" />
+                </div>
+
+                <div class="imgBox" id="video-SuVL6uvGWec">
+                    <img class="" src="/Images/our_tv_ads/video_thumbnails/best_of_both.jpg">
+                    <p>Best Of Both</p>
+                    <input type="hidden" value="SuVL6uvGWec" />
+                </div>
+
+                <div class="imgBox" id="video-LRyaJzcZtTk">
+                    <img class="" src="/Images/our_tv_ads/video_thumbnails/fast_forward.jpg">
+                    <p>Fast Forward</p>
+                    <input type="hidden" value="LRyaJzcZtTk" />
+                </div>
+
+                <div class="imgBox" id="video-YiZmSPTYZKA">
+                    <img class="" src="/Images/our_tv_ads/video_thumbnails/change_of_plans.jpg">
+                    <p>Change of Plans</p>
+                    <input type="hidden" value="YiZmSPTYZKA" />
+                </div>
+
+            </div>
+        </div>
+        <div class="clearFix"> </div>
+    </div>
+    <div class="clearFix"> </div>
+
+    <div class="productCarousel">
+        <p>TV ad features the furnishings below:
+            <span>
+                <a href="" id="product_list_download">Download Product List</a>
+            </span>
+        </p>
+        <div class="leftArrow">
+            <a href="">&lt;</a>
+        </div>
+        <div class="rightArrow">
+            <a href="">&gt;</a>
+        </div>
+        <div class="product_thumbnail_slider slider">
+            <div class="product_thumbnails slider_thumbnails">
+            </div>
+        </div>
+
+        <div class="hide">
+
+            <div id="video-YoD5FwIKB18-products">
+                <input type="hidden" class="tearsheet-file" val="https://content.la-z-boy.com/productassets/tearsheets/tearsheets/Reveal_merchandiser.pdf" />
+                <div class="imgBox">
+                    <a href="/p/sofas/luke-duo-reclining-2-seat-sofa/_/R-92P898" class="webtrends_enabled" data-product_group="Sofas" data-product_name="Luke duo® Reclining 2 Seat Sofa">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/sofas/92P_898.jpg">
+                        <p>Luke duo® Reclining 2 Seat Sofa</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/chairs/luke-duo-reclining-chair--a-half/_/R-95P898" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Luke duo® Reclining Chair & A Half">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/chairs/95P_898.jpg">
+                        <p>Luke duo® Reclining Chair & A Half</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/chairs/gridiron-premier-stationary-occasional-chair/_/R-235466" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Gridiron Premier Stationary Occasional Chair">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/chairs/023_466_2_v2.jpg">
+                        <p>Gridiron Premier Stationary Occasional Chair</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/home-accents/junction-block-cocktail-table/_/R-710-912" class="webtrends_enabled" data-product_group="Home Accents" data-product_name="Junction Block Cocktail Table">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/tables/710_912.jpg">
+                        <p>Junction Block Cocktail Table</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/home-accents/junction-block-end-table/_/R-710-923" class="webtrends_enabled" data-product_group="Home Accents" data-product_name="Junction Block End Table">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/tables/710_923.jpg">
+                        <p>Junction Block End Table</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/home-accents/ad-modern-synergy-ibeam-chairside-table/_/R-700-916" class="webtrends_enabled" data-product_group="Home Accents" data-product_name="AD Modern Synergy Ibeam Chairside Table">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/tables/700_916.jpg">
+                        <p>AD Modern Synergy Ibeam Chairside Table</p>
+                    </a>
+                </div>
+            </div>
+
+            <div id="video-SuVL6uvGWec-products">
+                <input type="hidden" class="tearsheet-file" val="https://content.la-z-boy.com/productassets/tearsheets/tearsheets/Best_Of_Both_merchandiser.pdf" />
+                <div class="imgBox">
+                    <a href="/p/sofas/makenna-duo-reclining-sofa/_/R-91P896" class="webtrends_enabled" data-product_group="Sofas" data-product_name="Makenna duo™ Reclining Sofa">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/sofas/91P_896.jpg">
+                        <p>Makenna duo™ Reclining Sofa</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/chairs/stiletto-premier-stationary-occasional-chair/_/R-235472" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Stiletto Premier Stationary Occasional Chair">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/chairs/023_472_1_md.jpg">
+                        <p>Stiletto Premier Stationary Occasional Chair</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/home-accents/foundry-drawer-end-table/_/R-59-022" class="webtrends_enabled" data-product_group="Home Accents" data-product_name="Foundry Drawer End Table">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/tables/59022_662935942345.jpg">
+                        <p>Foundry Drawer End Table</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/home-accents/foundry-rectangular-cocktail-table/_/R-59-023" class="webtrends_enabled" data-product_group="Home Accents" data-product_name="Foundry Rectangular Cocktail Table">
+                        <img class="" src="https://content.la-z-boy.com/Images/product/category/tables/59023_662935942383.jpg">
+                        <p>Foundry Rectangular Cocktail Table</p>
+                    </a>
+                </div>
+            </div>
+
+            <div id="video-LRyaJzcZtTk-products">
+                <input type="hidden" class="tearsheet-file" val="/productassets/tearsheets/tearsheets/Fast_Forward_merchandiser.pdf" />
+
+                <div class="imgBox">
+                    <a href="/p/sofas/aberdeen-premier-sofa/_/R-610604" class="webtrends_enabled" data-product_group="Sofa" data-product_name="Aberdeen Premier Sofa">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/sofas/610_604.jpg">
+                        <p>Aberdeen Premier Sofa</p>
+                    </a>
+                </div>
+
+                <div class="imgBox">
+                    <a href="/p/chairs/moscato-premier-stationary-occasional-chair/_/R-23542A" class="webtrends_enabled" data-product_group="Chair" data-product_name="Moscato Premier Stationary Occasional Chair">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/chairs/023_42a_md.jpg">
+                        <p>Moscato Premier Stationary Occasional Chair</p>
+                    </a>
+                </div>
+
+                <div class="imgBox">
+                    <a href="/p/chairs/aberdeen-premier-stationary-chair/_/R-230604" class="webtrends_enabled" data-product_group="Chair" data-product_name="Aberdeen Premier Stationary Chair">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/chairs/230_604.jpg">
+                        <p>Aberdeen Premier Stationary Chair</p>
+                    </a>
+                </div>
+            </div>
+
+            <div id="video-YiZmSPTYZKA-products">
+                <input type="hidden" class="tearsheet-file" val="/productassets/tearsheets/tearsheets/Collins_merchandiser_1.pdf" />
+
+                <div class="imgBox">
+                    <a href="/p/sectional-pieces/collins-premier-right-arm-sitting-chaise/_/R-60R494" class="webtrends_enabled" data-product_group="SectionalPiece" data-product_name="Collins Right Arm Sitting Chaise">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/roomplanner/glamour/494_60R_1.jpg">
+                        <p>Collins Right Arm Sitting Chaise</p>
+                    </a>
+                </div>
+
+                <div class="imgBox">
+                    <a href="/p/sectional-pieces/collins-premier-armless-loveseat/_/R-6MM494" class="webtrends_enabled" data-product_group="SectionalPiece" data-product_name="Collins Armless Loveseat">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/roomplanner/glamour/494_6sp_1.jpg">
+                        <p>Collins Armless Loveseat</p>
+                    </a>
+                </div>
+
+                <div class="imgBox">
+                    <a href="/p/sectional-pieces/collins-premier-corner-unit/_/R-60C494" class="webtrends_enabled" data-product_group="SectionalPiece" data-product_name="Collins Corner Unit">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/roomplanner/glamour/494_60C_1.jpg">
+                        <p>Collins Corner Unit</p>
+                    </a>
+                </div>
+
+                <div class="imgBox">
+                    <a href="/p/sectional-pieces/collins-premier-armless-middle/_/R-60M494" class="webtrends_enabled" data-product_group="SectionalPiece" data-product_name="Collins Armless Middle">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/roomplanner/glamour/494_60M_1.jpg">
+                        <p>Collins Armless Middle</p>
+                    </a>
+                </div>
+
+                <div class="imgBox">
+                    <a href="/p/sectional-pieces/collins-premier-left-arm-sitting-stationary-chair/_/R-60A494" class="webtrends_enabled" data-product_group="SectionalPiece" data-product_name="Collins Left Arm Sitting Chair">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/roomplanner/glamour/494_60a_1.jpg">
+                        <p>Collins Left Arm Sitting Chair</p>
+                    </a>
+                </div>
+
+                <div class="imgBox">
+                    <a href="/p/ottomans/jordan-ottoman/_/R-024276" class="webtrends_enabled" data-product_group="Ottoman" data-product_name="Jordan Ottoman">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/ottomans/276_ottoman.jpg">
+                        <p>Jordan Ottoman</p>
+                    </a>
+                </div>
+
+                <div class="imgBox">
+                    <a href="/p/chairs/aria-premier-stationary-occasional-chair/_/R-235465" class="webtrends_enabled" data-product_group="Chair" data-product_name="Aria Premier Stationary Chair">
+                        <img class="" src="//content.la-z-boy.com/Images/product/category/chairs/023_465_1.jpg">
+                        <p>Aria Premier Stationary Chair</p>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="video--ob2DAckCCM-products">
+                <input type="hidden" class="tearsheet-file" val="/productassets/tearsheets/tearsheets/Deco_merchandiser.pdf" />
+                <div class="imgBox">
+                    <a href="/p/jazz-stationary-chair/_/R-023468" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Jazz Stationary Chair">
+                        <img class="" src="/Images/product/category/chairs/023_468.jpg">
+                        <p>Jazz Stationary Chair</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/deco-premier-sofa/_/R-610628" class="webtrends_enabled" data-product_group="Sofas" data-product_name="Deco Premier Sofa">
+                        <img class="" src="/Images/product/category/sofas/610_628.jpg">
+                        <p>Deco Premier Sofa</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/avenue-stationary-chair/_/R-023487" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Avenue Stationary Chair">
+                        <img class="" src="/Images/product/category/chairs/023_487_1.jpg">
+                        <p>Avenue Stationary Chair</p>
+                    </a>
+                </div>
+            </div>
+
+            <div id="video-g9_3R7-s2X4-products">
+                <div class="imgBox">
+                    <a href="/p/bijou-premier-sofa/_/R-610611" class="webtrends_enabled" data-product_group="Sofas" data-product_name="Bijou Premier Sofa">
+                        <img class="" src="/Images/product/category/sofas/610_611.jpg">
+                        <p>Bijou Premier Sofa</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/bijou-premier-right-arm-sitting-chaise/_/R-20R611" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Bijou Premier Right-Arm Sitting Chaise">
+                        <img class="" src="/Images/product/category/chairs/20L_611.jpg">
+                        <p>Bijou Premier Right-Arm Sitting Chaise</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/modern-basics-round-end-table/_/R-t2c190-918" class="webtrends_enabled" data-product_group="Tables" data-product_name="Modern Basics Round End Table">
+                        <img class="" src="/Images/product/category/tables/190_918_SILO.jpg">
+                        <p>Modern Basics Round End Table</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/bijou-premier-stationary-chair/_/R-230611" class="webtrends_enabled" data-product_group="Chairs" data-product_name="Bijou Premier Stationary Chair">
+                        <img class="" src="/Images/product/category/chairs/230_611.jpg">
+                        <p>Bijou Premier Stationary Chair</p>
+                    </a>
+                </div>
+                <div class="imgBox">
+                    <a href="/p/modern-basics-round-cocktail-table/_/R-t1c190-911" class="webtrends_enabled" data-product_group="Tables" data-product_name="Modern Basics Round Cocktail Table">
+                        <img class="" src="/Images/product/category/tables/190_911_SILO.jpg">
+                        <p>Modern Basics Round Cocktail Table</p>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="clearFix"> </div>
+    </div>
+</div>

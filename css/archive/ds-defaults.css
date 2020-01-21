@@ -1,0 +1,138 @@
+@import url("https://use.typekit.net/goe4ivi.css");
+
+
+body.mobileSite section.cust-support {
+    /* No margin above sticky nav */
+    margin-top: 0;
+}
+
+/******************* Sticky Nav *******************/
+
+.ds-topnav {
+    background-color: #e5ece8;
+    overflow: hidden;
+    position: relative;
+    font-size: 17px;
+    letter-spacing: normal;
+    line-height: normal
+}
+
+.ds-topnav .lzb-container {
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    font-size: 0
+}
+
+.ds-topnav a {
+    font-size: 17px;
+    color: #b7b6b6;
+    padding: .82em .94em;
+    text-transform: uppercase;
+    float: none;
+    display: block;
+    text-align: left
+}
+
+.ds-topnav a:hover, .ds-topnav a.current-page {
+    color: #7b7777
+}
+
+.ds-topnav a.lzb-button {
+    background-color: #aeccc8;
+    color: white;
+    border: none
+}
+
+body:not(.mobileSite) .ds-topnav {
+    padding: .6em 0 .9em;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    border-bottom: 3px solid white
+}
+
+body:not(.mobileSite) .ds-topnav .lzb-container {
+    width: 980px;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+body:not(.mobileSite) .ds-topnav a {
+    font-size: 18.8px;
+    padding: 0;
+    margin: .82em 0;
+    display: inline-block
+}
+
+body:not(.mobileSite) .ds-topnav a.lzb-button {
+    padding: .82em .7em;
+    margin: 0
+}
+
+body.mobileSite #searchForm {
+    display: none
+}
+
+#ds-sticky-topnav {
+    display: none;
+    position: fixed;
+    margin-top: 10px;
+    left: 0;
+    width: 100%;
+    font-family: Lato, sans-serif;
+    border-bottom: 5px solid white
+}
+
+#ds-sticky-topnav .lzb-container {
+    position: relative
+}
+
+#ds-sticky-topnav a {
+    text-decoration: none
+}
+
+#ds-sticky-topnav a:not(.lzb-button) {
+    display: none
+}
+
+@media only screen and (min-width:768px) {
+    .ds-topnav {
+        padding: .6em 0 .9em
+    }
+    .ds-topnav .lzb-container {
+        max-width: 1000px;
+        padding: 0 10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+    }
+    .ds-topnav a {
+        font-size: 14.4px;
+        font-size: 1.88vw;
+        padding: 0;
+        margin: .82em 0;
+        display: inline-block
+    }
+    .ds-topnav a.lzb-button {
+        padding: .82em .7em;
+        margin: 0
+    }
+    #ds-sticky-topnav a:not(.lzb-button) {
+        display: inline-block
+    }
+}
+
+@media only screen and (min-width:1000px) {
+    .ds-topnav a {
+        font-size: 18.8px
+    }
+}

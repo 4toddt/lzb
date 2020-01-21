@@ -1,0 +1,115 @@
+#bcc-content .swatch-carousel {
+    position: relative;
+    margin-top: .5em;
+}
+
+#bcc-content .swatch-carousel a::after {
+    content: "";
+}
+
+#bcc-content .swatch-carousel .swatch-row {
+    display: flex;
+}
+
+#bcc-content .swatch-carousel .swatch-row.bottom {
+    margin-top: 1px;
+    padding-bottom: .5em;
+}
+
+#bcc-content .swatch-carousel .scroll-left,
+#bcc-content .swatch-carousel .scroll-right {
+    flex-basis: 33.5px;
+    background-image: url('https://content.la-z-boy.com/Images/npc/urban-attitudes/arrow-left.png');
+    background-repeat: no-repeat;
+    background-size: 68.6%;
+    background-position: left;
+    cursor: pointer;
+}
+
+#bcc-content .swatch-carousel .scroll-right {
+    background-image: url('https://content.la-z-boy.com/Images/npc/urban-attitudes/arrow-right.png');
+    background-position: right;
+}
+
+#bcc-content .swatch-carousel .swatch-window {
+    flex-basis: 913px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+#bcc-content .swatch-carousel .swatch {
+    flex-shrink: 0;
+    width: 18.073%;
+    margin: 0 1.205%;
+    transition: margin-left .3s;
+    margin-left: -19.278%;
+}
+
+#bcc-content .swatch-carousel .swatch.active,
+#bcc-content .swatch-carousel .swatch.active~.swatch {
+    left: auto;
+    position: static;
+    margin-left: 1.205%;
+}
+
+#bcc-content .swatch-carousel .swatch.active {
+    margin-left: 0;
+}
+
+#bcc-content .swatch-carousel .cover-id {
+    border: solid #D8D8D8;
+    border-width: 1px 1px 0;
+    text-align: center;
+    font-size: .9em;
+    padding: .2em;
+}
+
+#bcc-content .swatch-carousel .bottom .cover-id {
+    border-width: 0 1px 1px;
+}
+
+#bcc-content .swatch-carousel .selection-box {
+    position: absolute;
+    width: 19.5%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid 3px #BC984E;
+}
+
+@media only screen and (max-width: 500px) {
+    #bcc-content .swatch-carousel .selection-box {
+        font-size: 16px;
+        font-size: 5vw;
+        width: 8em;
+    }
+    #bcc-content .swatch-carousel .scroll-left,
+    #bcc-content .swatch-carousel .scroll-right {
+        flex-basis: 10.625%;
+        background-size: 30%;
+        background-position: center;
+    }
+    #bcc-content .swatch-carousel .swatch-window {
+        flex-basis: 78.75%;
+    }
+    #bcc-content .swatch-carousel .cover-id {
+        font-size: 0.8em;
+    }
+    #bcc-content .swatch-carousel .swatch,
+    #bcc-content .swatch-carousel .swatch.active {
+        width: 31.733333%;
+        margin-left: -32.933333%;
+    }
+    #bcc-content .swatch-carousel .swatch.active~.swatch {
+        margin: 0 1.2%;
+    }
+    #bcc-content .swatch-carousel .swatch.active+.swatch {
+        margin-left: 0;
+    }
+    #bcc-content .swatch-carousel .selection-box {
+        width: 27.5%;
+        border-width: 2px;
+    }
+}

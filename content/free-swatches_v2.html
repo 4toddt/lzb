@@ -1,0 +1,449 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- begin HTML from .jsp -->
+    <section id="freeSwatchesContainer">
+        <!-- begin XM HTML block 1 -->
+        <link href="/css/uat/swatches.css" rel="stylesheet" type="text/css">
+        <section>
+            <div id="hero">
+                <picture>
+                    <source media="(max-width: 500px)" srcset="https://embed.widencdn.net/img/lazboy/qatsvnknkz/50px/widen-placeholder.jpg?q=100">
+                    <img src="https://embed.widencdn.net/img/lazboy/bgonfwnq1e/98px/widen-placeholder.jpg?q=100">
+                </picture>
+                <div class="copy">
+                    <h1>FREE Swatches<small>You&rsquo;re welcome.</small></h1>
+                    <p>Go ahead, pick your favorite three and <span style="white-space: nowrap;">La-Z-Boy</span> will send them to you for&nbsp;free. <strong>I&nbsp;know,&nbsp;right!</strong></p>
+                </div>
+            </div>
+            <p id="hero-copy">Go ahead, pick your favorite three and <span style="white-space: nowrap;">La-Z-Boy</span> will send them to you for&nbsp;free.<br><strong>I know, right!</strong></p>
+        </section>
+        <!-- end XM HTML block 1 -->
+        <section data-module="free-swatches floating-form-labels modal-jquery-validation eloqua-submit">
+            <label class="error" id="swatchLimitMessage">Maximum 3 Swatches Allowed</label>
+            <form id="freeswatchForm" name="freeswatch" action="/content/free-swatches?_DARGS=/contactus/free-swatches.jsp" class="elq-form freeswatchForm" method="post" novalidate="novalidate">
+                <div style="display:none"><input name="_dyncharset" value="UTF-8" type="hidden"> </div>
+                <div style="display:none"><input name="_dynSessConf" value="-3387639477494286316" type="hidden"> </div>
+                <div class="group-swatches">
+                    <div class="swatch-heading">
+                        <h2>Select Free Swatch&nbsp;Groups</h2>
+                        <p>Find your inspiration. Choose&nbsp;up&nbsp;to three sets or individual&nbsp;swatches.</p>
+                    </div>
+                    <div class="swatches-list">
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>Primitive Artistry</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch02.jpg" alt="Primitive Artistry">
+                            </div>
+                            <input id="swatchGroup1" name="freeSwatchGroup" value="SWFC02" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup1">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>iClean™</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch03.jpg" alt="iClean">
+                            </div>
+                            <input id="swatchGroup2" name="freeSwatchGroup" value="SWFC03" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup2">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>Charcoal Chic</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch04.jpg" alt="Charcoal Chic">
+                            </div>
+                            <input id="swatchGroup3" name="freeSwatchGroup" value="SWFC04" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup3">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>True Blues</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch05.jpg" alt="True Blues">
+                            </div>
+                            <input id="swatchGroup4" name="freeSwatchGroup" value="SWFC05" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup4">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>Naturally Neutral</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch06.jpg" alt="Naturally Neutral">
+                            </div>
+                            <input id="swatchGroup5" name="freeSwatchGroup" value="SWFC06" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup5">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>Tuxedo</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch07.jpg" alt="Tuxedo">
+                            </div>
+                            <input id="swatchGroup6" name="freeSwatchGroup" value="SWFC07" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup6">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>At First Blush</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch08.jpg" alt="At First Blush">
+                            </div>
+                            <input id="swatchGroup7" name="freeSwatchGroup" value="SWFC08" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup7">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>Global Expressions</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch09.jpg" alt="Global Expressions">
+                            </div>
+                            <input id="swatchGroup8" name="freeSwatchGroup" value="SWFC09" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup8">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>Color My World</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch10.jpg" alt="Color My World">
+                            </div>
+                            <input id="swatchGroup9" name="freeSwatchGroup" value="SWFC10" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup9">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>Color My World</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch10.jpg" alt="Color My World">
+                            </div>
+                            <input id="swatchGroup9" name="freeSwatchGroup" value="SWFC10" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup9">Select Group</label>
+                        </div>
+                        <div class="swatch-item">
+                            <div class="swatch-title">
+                                <h3>Color My World</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch10.jpg" alt="Color My World">
+                            </div>
+                            <input id="swatchGroup9" name="freeSwatchGroup" value="SWFC10" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchGroup9">Select Group</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-swatches">
+                    <div class="swatch-heading">
+                        <h2>Select Free Individual&nbsp;Swatches</h2>
+                        <p>Find your inspiration. Choose&nbsp;up&nbsp;to three sets or individual&nbsp;swatches.</p>
+                    </div>
+                    <div id="swatch-search">
+                        <label for="swatch-search-field">Search by color, name or SKU</label>
+                        <input type="text" id="swatch-search-field" name="swatch-search-field" placeholder="Search by color, name or SKU">
+                        <button type="button" class="btn-swatch-search"><span class="sr-only">Search Swatches</span><span class="icon-search" aria-hidden="true"></span></button>
+                    </div>
+                    <p class="swatch-search-no-results">We're sorry, we couldn't find any swatches matching <strong>"<span class="search-term"></span>"</strong> If you are unable to find a specific fabric or leather online, please visit your local La-Z-Boy Furniture Galleries store to view
+                        our complete assortment.
+                    </p>
+                    <div class="swatches-list">
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test1">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test2">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test3">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test1">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test2">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test3">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test1">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test2">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test3">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test1">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test2">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                        <div class="swatch-item" data-name="Uniquely Ultramarine" data-sku="SWFC01" data-keywords="test test3">
+                            <div class="swatch-title">
+                                <h3>Uniquely Ultramarine</h3>
+                            </div>
+                            <div class="swatch-thumbnail">
+                                <img src="/Images/npc/free-swatches/swatch01.jpg" alt="Uniquely Ultramarine AltText">
+                            </div>
+                            <input id="swatchSingle1" name="freeSwatchGroup" value="SWFC01" type="checkbox"><input name="_D:freeSwatchGroup" value=" " type="hidden">
+                            <label for="swatchSingle1">Select</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-data">
+                    <div class="swatch-heading">
+                        <h2>Mail Swatches To:</h2>
+                    </div>
+                    <div class="field-group">
+                        <input id="firstName" maxlength="64" name="firstName" value="" class="requiredField move-label" type="text"><input name="_D:firstName" value=" " type="hidden">
+                        <label for="firstName" class="sr-only">First Name</label>
+                    </div>
+                    <div class="field-group">
+                        <input id="lastName" maxlength="64" name="lastName" value="" class="requiredField move-label" type="text"><input name="_D:lastName" value=" " type="hidden">
+                        <label for="lastName" class="sr-only">Last Name</label>
+                    </div>
+                    <div class="field-group">
+                        <input id="homePhone1" maxlength="30" name="homePhone1" value="" class="move-label" type="tel"><input name="_D:homePhone1" value=" " type="hidden">
+                        <label for="homePhone1" class="sr-only">Phone Number (optional)</label>
+                    </div>
+                    <div class="field-group">
+                        <input id="emailAddress" maxlength="64" name="emailAddress" value="" class="requiredField move-label" type="text"><input name="_D:emailAddress" value=" " type="hidden">
+                        <label for="emailAddress" class="sr-only">Email</label>
+                    </div>
+                    <div class="field-group">
+                        <input id="address1" maxlength="100" name="address1" value="" class="requiredField move-label" type="text"><input name="_D:address1" value=" " type="hidden">
+                        <label for="address1" class="sr-only">Street Address</label>
+                    </div>
+                    <div class="field-group">
+                        <input id="address2" maxlength="100" name="address2" value="" class="move-label" type="text"><input name="_D:address2" value=" " type="hidden">
+                        <label for="address2" class="sr-only">Address line 2 (optional)</label>
+                    </div>
+                    <div class="field-group">
+                        <input id="city" maxlength="40" name="city" value="" class="requiredField move-label" type="text"><input name="_D:city" value=" " type="hidden">
+                        <label for="city" class="sr-only">City</label>
+                    </div>
+                    <div class="field-group dropdown-arrow">
+                        <input name="_D:stateProv" value=" " type="hidden">
+                        <select id="atg_store_stateSelect" name="stateProv" class="requiredField move-label">
+                            <option value=""></option>
+                            <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VA">Virginia</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option>
+                            <option value="AB">Alberta</option>
+                            <option value="BC">British Columbia</option>
+                            <option value="MB">Manitoba</option>
+                            <option value="NB">New Brunswick</option>
+                            <option value="NL">Newfoundland and Labrador</option>
+                            <option value="NT">Northwest Territories</option>
+                            <option value="NS">Nova Scotia</option>
+                            <option value="NU">Nunavut</option>
+                            <option value="ON">Ontario</option>
+                            <option value="PE">Prince Edward Island</option>
+                            <option value="QC">Quebec</option>
+                            <option value="SK">Saskatchewan</option>
+                            <option value="YT">Yukon Territory</option>
+                        </select>
+                        <label for="stateProv" class="sr-only">State or Province</label>
+                    </div>
+                    <div class="field-group">
+                        <input id="zipPostal" maxlength="50" name="zipPostal" value="" class="requiredField move-label" type="text"><input name="_D:zipPostal" value=" " type="hidden"><br>
+                        <label for="zipPostal" class="sr-only">Zip or Postal Code</label>
+                    </div>
+                    <div class="field-group custom-checkbox">
+                        <input id="emailOptIn1" name="emailOptIn1" value="on" type="checkbox"><input name="_D:emailOptIn1" value=" " type="hidden">
+                        <label for="emailOptIn1">Yes! I want to receive <span class="no-wrap">La-Z-Boy</span> emails!</label>
+                    </div>
+                    <div class="field-group">
+                        <input name="/com/lzb/catalogOrder/CatalogOrderFormHandler.successURL" value="/content/free-swatches/thank-you" type="hidden">
+                        <input name="_D:/com/lzb/catalogOrder/CatalogOrderFormHandler.successURL" value=" " type="hidden">
+                        <input name="/com/lzb/catalogOrder/CatalogOrderFormHandler.errorURL" value="/content/free-swatches/?error=true" type="hidden">
+                        <input name="_D:/com/lzb/catalogOrder/CatalogOrderFormHandler.errorURL" value=" " type="hidden">
+                        <input name="formSubmitter" value="Get my free swatches" class="hiddenSubmitter" type="submit">
+                        <input name="_D:formSubmitter" value=" " type="hidden">
+                        <input type="button" class="button primary-btn" value="Get my FREE swatches" name="sendSwatches" id="sendSwatches" disabled="disabled">
+                    </div>
+                </div>
+                <input type="hidden" name="elqFormName" value="freeswatch">
+                <input type="hidden" name="elqSiteID" value="20103530">
+                <input type="hidden" name="elqCustomerGUID" value="">
+                <input type="hidden" name="elqCookieWrite" value="0">
+                <div style="display:none"><input name="_DARGS" value="/contactus/free-swatches.jsp" type="hidden"> </div>
+            </form>
+        </section>
+    </section>
+
+    <!-- begin XM HTML block 2 -->
+
+    <script src="/js/widen-loader.js"></script>
+    <script>
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                $(document).ready(function() {
+                    $('.move-label').blur(function() {
+                        if ($(this).val() == "") {
+                            $(this).removeClass('filled');
+                        } else {
+                            $(this).addClass('filled');
+                        }
+                    });
+
+                });
+            }
+        })();
+    </script>
+
+    <!-- end XM HTML block 2 -->
+
+    <!-- end HTML from .jsp -->
+</body>

@@ -1,0 +1,938 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- begin BCC content -->
+    <!-- 12 Days of Giving TT -->
+    <link href="/css/_resets.css" rel="stylesheet">
+    <link href="/css/_defaults.css" rel="stylesheet">
+    <link href="https://cloud.typography.com/7057696/7391412/css/fonts.css" rel="stylesheet">
+    <style>
+        input[name="day"] {
+            margin-left: 8px;
+            display: none;
+        }
+        
+        #bcc-content {
+            max-width: none;
+        }
+        
+        #bcc-content section {
+            margin: 30px auto 0;
+            max-width: 1010px;
+            padding: 0 15px;
+        }
+        
+        #bcc-content h1 {
+            font-size: 1.4em;
+            font-family: Archer A, Archer B, Archer, 'Lato', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        #bcc-content h1+p.subheading {
+            text-align: center;
+            font-weight: bold;
+            color: #666;
+            line-height: 2.3;
+            font-size: 4.4vw;
+            width: 50%;
+            margin: -9% auto 0;
+        }
+        
+        #bcc-content h1+.subheading img {
+            width: 56.5%;
+            display: inline-block;
+        }
+        
+        #bcc-content h1+.subheading+img {
+            display: inline-block;
+            padding: 0 21%;
+            margin: 0 auto -8%;
+        }
+        
+        #bcc-content h2 {
+            font-size: 1.6em;
+            font-family: Archer A, Archer B, Archer, 'Lato', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            text-align: center;
+        }
+        
+        #bcc-content h2+.subtitle {
+            font-size: .9em;
+            line-height: 1.5;
+            text-align: center;
+        }
+        
+        #bcc-content h2+.subtitle strong {
+            font-weight: 600;;
+        }
+        
+        #hero {
+            background-color: #D9EAF4;
+            max-width: 980px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        #hero .blue {
+            padding: 20px;
+            padding: calc(3.7878788% + 7.8787878px);
+            background-color: #D9EAF4;
+        }
+        
+        #hero .white {
+            background-color: white;
+            box-shadow: 0 2px 4px #b8d6e9;
+            position: relative;
+            padding-top: 10%;
+        }
+        
+        #hero #holly {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: -5%;
+            margin-left: -5%;
+            width: 45%;
+        }
+        
+        #hero text {
+            fill: #333;
+        }
+        
+        #hero #rect02 {
+            width: 280px;
+            height: 200px;
+        }
+        
+        #hero .calendar {
+            font-family: Archer A, Archer B, Archer, 'Lato', serif;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 10%;
+            /* height: 50px; */
+            height: 66px;
+        }
+        
+        #hero .days {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            /* height: 50px; */
+            height: 66px;
+        }
+        
+        #hero .calendar p {
+            flex-shrink: 0;
+        }
+        
+        #hero .days span {
+            font-size: 1.2em;
+            height: 50px;
+            width: 50px;
+            margin-left: 15px;
+            border-radius: 50%;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: #b8d6e9;
+            border-color: #b8d6e9;
+            color: white;
+            display: none;
+        }
+        
+        input[value="day1"]:checked~#bcc-content .days .day1,
+        input[value="day2"]:checked~#bcc-content .days .day2,
+        input[value="day3"]:checked~#bcc-content .days .day3,
+        input[value="day4"]:checked~#bcc-content .days .day4,
+        input[value="day5"]:checked~#bcc-content .days .day5,
+        input[value="day6"]:checked~#bcc-content .days .day6,
+        input[value="day7"]:checked~#bcc-content .days .day7,
+        input[value="day8"]:checked~#bcc-content .days .day8,
+        input[value="day9"]:checked~#bcc-content .days .day9,
+        input[value="day10"]:checked~#bcc-content .days .day10,
+        input[value="day11"]:checked~#bcc-content .days .day11,
+        input[value="day12"]:checked~#bcc-content .days .day12 {
+            background-color: #fb4f4d;
+            border-color: #fb4f4d;
+            color: white;
+            height: 66px;
+            width: 66px;
+        }
+        
+        input[value="day1"]:checked~#bcc-content .days .day1~span,
+        input[value="day2"]:checked~#bcc-content .days .day2~span,
+        input[value="day3"]:checked~#bcc-content .days .day3~span,
+        input[value="day4"]:checked~#bcc-content .days .day4~span,
+        input[value="day5"]:checked~#bcc-content .days .day5~span,
+        input[value="day6"]:checked~#bcc-content .days .day6~span,
+        input[value="day7"]:checked~#bcc-content .days .day7~span,
+        input[value="day8"]:checked~#bcc-content .days .day8~span,
+        input[value="day9"]:checked~#bcc-content .days .day9~span,
+        input[value="day10"]:checked~#bcc-content .days .day10~span,
+        input[value="day11"]:checked~#bcc-content .days .day11~span,
+        input[value="day12"]:checked~#bcc-content .days .day12~span {
+            background-color: #dfedf6;
+            border: 1px solid white;
+            color: rgb(152, 163, 170);
+        }
+        
+        input[value="day1"]:checked~#bcc-content .days span,
+        input[value="day2"]:checked~#bcc-content .days span,
+        input[value="day3"]:checked~#bcc-content .days .day1~span,
+        input[value="day4"]:checked~#bcc-content .days .day2~span,
+        input[value="day5"]:checked~#bcc-content .days .day3~span,
+        input[value="day6"]:checked~#bcc-content .days .day4~span,
+        input[value="day7"]:checked~#bcc-content .days .day5~span,
+        input[value="day8"]:checked~#bcc-content .days .day6~span,
+        input[value="day9"]:checked~#bcc-content .days .day7~span,
+        input[value="day10"]:checked~#bcc-content .days .day8~span,
+        input[value="day11"]:checked~#bcc-content .days .day8~span,
+        input[value="day12"]:checked~#bcc-content .days .day9~span,
+        input[value="day13"]:checked~#bcc-content .days span {
+            display: flex;
+        }
+        
+        #bcc-content .current-day {
+            background-color: #fbfbfb;
+            padding: 1px 15px 50px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        #bcc-content .current-day>div {
+            display: none;
+            text-align: center;
+            max-width: 980px;
+            margin: 30px auto 0;
+        }
+        
+        input[value="day1"]:checked~#bcc-content .current-day .day1,
+        input[value="day2"]:checked~#bcc-content .current-day .day2,
+        input[value="day3"]:checked~#bcc-content .current-day .day3,
+        input[value="day4"]:checked~#bcc-content .current-day .day4,
+        input[value="day5"]:checked~#bcc-content .current-day .day5,
+        input[value="day6"]:checked~#bcc-content .current-day .day6,
+        input[value="day7"]:checked~#bcc-content .current-day .day7,
+        input[value="day8"]:checked~#bcc-content .current-day .day8,
+        input[value="day9"]:checked~#bcc-content .current-day .day9,
+        input[value="day10"]:checked~#bcc-content .current-day .day10,
+        input[value="day11"]:checked~#bcc-content .current-day .day11,
+        input[value="day12"]:checked~#bcc-content .current-day .day12 {
+            display: block;
+        }
+        
+        #bcc-content .current-day .today {
+            display: block;
+        }
+        
+        #bcc-content .current-day h2 {
+            font-size: 1.6em;
+            color: #FA504A;
+            text-align: center;
+            font-family: Archer A, Archer B, Archer, 'Lato', serif;
+            font-weight: 600;
+        }
+        
+        #bcc-content .current-day .product-name {
+            font-size: 1.4em;
+            text-align: center;
+            font-family: Archer A, Archer B, Archer, 'Lato', serif;
+            font-weight: 600;
+        }
+        
+        #bcc-content .current-day .image {
+            height: 0;
+            padding-bottom: 70%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            margin-top: 20px;
+        }
+        
+        #bcc-content .current-day .image img {
+            display: none;
+        }
+        
+        #bcc-content .current-day .day1 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/owm0bzmo7d/exact/alexandria.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day2 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/kw7lbuyyh4/exact/avenue.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day3 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/cfprahwyj4/exact/violet.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day4 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/zazr35char/exact/bellevue.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day5 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/iazvivezhv/exact/rowan.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day6 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/30cmntr8yx/exact/talbot.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day7 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/kry8z1nybd/exact/james.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day8 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/xs47yoksud/exact/bennett.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day9 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/vj8azpzsz2/exact/leighton.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day10 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/caqo43mwok/exact/vail.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day11 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/uifhot1do4/exact/brentwood.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .day12 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/jypozb6ojp/exact/collins.jpg?q=85&color=fbfbfb);
+        }
+        
+        #bcc-content .current-day .enter {
+            background-color: #FA504A;
+            border-radius: 4px;
+            color: white;
+            font-size: 1.4em;
+            font-family: Archer A, Archer B, Archer, 'Lato', serif;
+            font-weight: 600;
+            display: inline-block;
+            padding: .5em 1em;
+            text-align: center;
+            text-decoration: none;
+            margin: 1em auto 0;
+            transition: background-color .2s;
+            position: relative;
+        }
+        
+        #bcc-content .current-day .enter:hover {
+            background-color: #e34943;
+        }
+        
+        #bcc-content .current-day .enter::after {
+            content: "";
+            position: absolute;
+            top: -32px;
+            left: -13px;
+            width: 60px;
+            height: 60px;
+            background-image: url(https://embed.widencdn.net/img/lazboy/i2dbatp1or/70px/holly.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        #bcc-content .current-day .links {
+            margin-top: 1.5em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        #bcc-content .current-day .links a {
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0 1em;
+            line-height: 1.7;
+            font-size: .9em;
+            font-weight: 600;
+        }
+        
+        #bcc-content .current-day .links a::after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        #bcc-content .six-col {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -15px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #666;
+        }
+        
+        #bcc-content .six-col>div {
+            width: 180px;
+            max-width: 50%;
+            margin-top: 50px;
+            padding: 0 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        #bcc-content .six-col .image {
+            width: 100%;
+            padding-bottom: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #bcc-content .six-col .day1 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/ntxzok1bqx/300px/alexandria-sofa.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day2 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/kw7lbuyyh4/300px/avenue-chair.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day3 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/1mgzih1rxq/300px/violet-sofa.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day4 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/zazr35char/300px/bellevue-high-leg-swivel-chair.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day5 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/iazvivezhv/300px/rowan-rocking-recliner.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day6 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/30cmntr8yx/300px/talbot-sofa.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day7 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/kry8z1nybd/300px/james-rocking-recliner.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day8 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/xs47yoksud/300px/bennett-duo-reclining-chair.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day9 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/vj8azpzsz2/300px/leighton-sofa.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day10 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/caqo43mwok/300px/vail-rocking-recliner.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day11 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/uifhot1do4/300px/brentwood-high-leg-reclining-chair.jpg?q=50);
+        }
+        
+        #bcc-content .six-col .day12 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/jypozb6ojp/300px/collins-sectional.jpg?q=50);
+        }
+        
+        input[value="day1"]:checked~#bcc-content .six-col .day1,
+        input[value="day2"]:checked~#bcc-content .six-col .day2,
+        input[value="day3"]:checked~#bcc-content .six-col .day3,
+        input[value="day4"]:checked~#bcc-content .six-col .day4,
+        input[value="day5"]:checked~#bcc-content .six-col .day5,
+        input[value="day6"]:checked~#bcc-content .six-col .day6,
+        input[value="day7"]:checked~#bcc-content .six-col .day7,
+        input[value="day8"]:checked~#bcc-content .six-col .day8,
+        input[value="day9"]:checked~#bcc-content .six-col .day9,
+        input[value="day10"]:checked~#bcc-content .six-col .day10,
+        input[value="day11"]:checked~#bcc-content .six-col .day11,
+        input[value="day12"]:checked~#bcc-content .six-col .day12 {
+            background-image: url(https://embed.widencdn.net/img/lazboy/gzzfhrviyr/exact/gift.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top;
+            padding-top: 35px;
+            margin-top: 15px;
+        }
+        
+        input[value="day1"]:checked~#bcc-content .six-col .day1~div .image,
+        input[value="day2"]:checked~#bcc-content .six-col .day2~div .image,
+        input[value="day3"]:checked~#bcc-content .six-col .day3~div .image,
+        input[value="day4"]:checked~#bcc-content .six-col .day4~div .image,
+        input[value="day5"]:checked~#bcc-content .six-col .day5~div .image,
+        input[value="day6"]:checked~#bcc-content .six-col .day6~div .image,
+        input[value="day7"]:checked~#bcc-content .six-col .day7~div .image,
+        input[value="day8"]:checked~#bcc-content .six-col .day8~div .image,
+        input[value="day9"]:checked~#bcc-content .six-col .day9~div .image,
+        input[value="day10"]:checked~#bcc-content .six-col .day10~div .image,
+        input[value="day11"]:checked~#bcc-content .six-col .day12 .image {
+            background-image: url(https://embed.widencdn.net/img/lazboy/zbm6nkrmi9/exact/gift.png);
+            width: 85px;
+            margin: 0 auto;
+        }
+        /* #54A4CB */
+        
+        #bcc-content .six-col h3 {
+            margin-top: 30px;
+            font-size: .9em;
+            font-weight: 600;
+            font-family: Archer A, Archer B, Archer, 'Lato', serif;
+        }
+        
+        input[value="day1"]:checked~#bcc-content .six-col .day1~div h3,
+        input[value="day2"]:checked~#bcc-content .six-col .day2~div h3,
+        input[value="day3"]:checked~#bcc-content .six-col .day3~div h3,
+        input[value="day4"]:checked~#bcc-content .six-col .day4~div h3,
+        input[value="day5"]:checked~#bcc-content .six-col .day5~div h3,
+        input[value="day6"]:checked~#bcc-content .six-col .day6~div h3,
+        input[value="day7"]:checked~#bcc-content .six-col .day7~div h3,
+        input[value="day8"]:checked~#bcc-content .six-col .day8~div h3,
+        input[value="day9"]:checked~#bcc-content .six-col .day9~div h3,
+        input[value="day10"]:checked~#bcc-content .six-col .day10~div h3,
+        input[value="day11"]:checked~#bcc-content .six-col .day12 h3 {
+            color: #54A4CB;
+        }
+        
+        input[value="day1"]:checked~#bcc-content .six-col .day1~div h3::after,
+        input[value="day2"]:checked~#bcc-content .six-col .day2~div h3::after,
+        input[value="day3"]:checked~#bcc-content .six-col .day3~div h3::after,
+        input[value="day4"]:checked~#bcc-content .six-col .day4~div h3::after,
+        input[value="day5"]:checked~#bcc-content .six-col .day5~div h3::after,
+        input[value="day6"]:checked~#bcc-content .six-col .day6~div h3::after,
+        input[value="day7"]:checked~#bcc-content .six-col .day7~div h3::after,
+        input[value="day8"]:checked~#bcc-content .six-col .day8~div h3::after,
+        input[value="day9"]:checked~#bcc-content .six-col .day9~div h3::after,
+        input[value="day10"]:checked~#bcc-content .six-col .day10~div h3::after,
+        input[value="day11"]:checked~#bcc-content .six-col .day12 h3::after {
+            content: "";
+            width: 20px;
+            height: 3px;
+            display: block;
+            margin: 4px auto 17px;
+            border: 1.5px solid #54A4CB;
+            border-radius: 1.5px;
+        }
+        
+        #bcc-content .six-col h3+a {
+            font-size: .8em;
+            margin-top: .5em;
+            text-decoration: underline;
+        }
+        
+        input[value="day1"]:checked~#bcc-content .six-col .day1~div h3+a,
+        input[value="day2"]:checked~#bcc-content .six-col .day2~div h3+a,
+        input[value="day3"]:checked~#bcc-content .six-col .day3~div h3+a,
+        input[value="day4"]:checked~#bcc-content .six-col .day4~div h3+a,
+        input[value="day5"]:checked~#bcc-content .six-col .day5~div h3+a,
+        input[value="day6"]:checked~#bcc-content .six-col .day6~div h3+a,
+        input[value="day7"]:checked~#bcc-content .six-col .day7~div h3+a,
+        input[value="day8"]:checked~#bcc-content .six-col .day8~div h3+a,
+        input[value="day9"]:checked~#bcc-content .six-col .day9~div h3+a,
+        input[value="day10"]:checked~#bcc-content .six-col .day10~div h3+a,
+        input[value="day11"]:checked~#bcc-content .six-col .day12 h3+a {
+            display: none;
+        }
+        
+        @media only screen and (min-width: 356.1px) {
+            input[value="day3"]:checked~#bcc-content .days span,
+            input[value="day4"]:checked~#bcc-content .days .day1~span,
+            input[value="day5"]:checked~#bcc-content .days .day2~span,
+            input[value="day6"]:checked~#bcc-content .days .day3~span,
+            input[value="day7"]:checked~#bcc-content .days .day4~span,
+            input[value="day8"]:checked~#bcc-content .days .day5~span,
+            input[value="day9"]:checked~#bcc-content .days .day6~span,
+            input[value="day10"]:checked~#bcc-content .days .day6~span,
+            input[value="day11"]:checked~#bcc-content .days .day7~span,
+            input[value="day12"]:checked~#bcc-content .days .day8~span {
+                display: flex;
+            }
+        }
+        
+        @media only screen and (min-width: 496.1px) {
+            input[value="day4"]:checked~#bcc-content .days span,
+            input[value="day5"]:checked~#bcc-content .days .day1~span,
+            input[value="day6"]:checked~#bcc-content .days .day2~span,
+            input[value="day7"]:checked~#bcc-content .days .day3~span,
+            input[value="day8"]:checked~#bcc-content .days .day4~span,
+            input[value="day9"]:checked~#bcc-content .days .day4~span,
+            input[value="day10"]:checked~#bcc-content .days .day4~span,
+            input[value="day11"]:checked~#bcc-content .days .day5~span,
+            input[value="day12"]:checked~#bcc-content .days .day6~span {
+                display: flex;
+            }
+        }
+        
+        @media only screen and (min-width: 500.1px) {
+            #bcc-content h1 {
+                font-size: 2.2em;
+                text-align: center;
+            }
+            #bcc-content h1+p.subheading {
+                margin-top: 0;
+                width: auto;
+                font-size: 1.1em;
+            }
+            #bcc-content h1+.subheading img {
+                width: 100px;
+                display: inline-block;
+            }
+            #bcc-content .current-day {
+                margin-top: 40px;
+            }
+            #bcc-content .current-day h2 {
+                font-size: 1.9em;
+            }
+            #bcc-content .current-day .image {
+                padding-bottom: 380px;
+            }
+            #bcc-content .current-day .enter {
+                padding: .75em 2em;
+            }
+            #bcc-content .current-day .enter::after {
+                width: 70px;
+                height: 70px;
+            }
+            #bcc-content .current-day .links {
+                flex-wrap: wrap;
+            }
+            #bcc-content .current-day .links a+a {
+                border-left: 1px solid #979797;
+            }
+        }
+        
+        @media only screen and (min-width: 600.1px) {
+            #hero::after {
+                content: "";
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                width: 31px;
+                height: 29px;
+                background-image: url(https://embed.widencdn.net/img/lazboy/viuuwdihau/31px/holly.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                -webkit-transform: scaleY(-1);
+                transform: scaleY(-1);
+            }
+            #bcc-content section {
+                margin-top: 40px;
+            }
+            #bcc-content h1 {
+                font-size: 2.5em;
+            }
+            #bcc-content h1+p.subheading {
+                font-size: 1.1em;
+            }
+            #bcc-content h1+.subheading+img {
+                position: absolute;
+                top: 50%;
+                transform: translatey(-50%);
+                right: -3%;
+                margin: 0;
+                padding: 0;
+                width: 23%;
+            }
+            #bcc-content h2 {
+                font-size: 1.9em;
+            }
+            #hero .white {
+                padding: 4% 100px 4% 8%;
+            }
+            #hero #holly {
+                margin-top: -4%;
+                margin-left: -4%;
+                width: 30%;
+            }
+            #hero .calendar {
+                margin-top: 20px;
+                margin-bottom: -15px;
+            }
+        }
+        
+        @media only screen and (min-width: 636.1px) {
+            input[value="day5"]:checked~#bcc-content .days span,
+            input[value="day6"]:checked~#bcc-content .days .day1~span,
+            input[value="day7"]:checked~#bcc-content .days .day2~span,
+            input[value="day8"]:checked~#bcc-content .days .day2~span,
+            input[value="day9"]:checked~#bcc-content .days .day2~span,
+            input[value="day10"]:checked~#bcc-content .days .day2~span,
+            input[value="day11"]:checked~#bcc-content .days .day3~span,
+            input[value="day12"]:checked~#bcc-content .days .day4~span {
+                display: flex;
+            }
+        }
+        
+        @media only screen and (min-width: 750.1px) {
+            #hero h1 {
+                font-size: 3em;
+            }
+        }
+        
+        @media only screen and (min-width: 776.1px) {
+            input[value="day6"]:checked~#bcc-content .days span,
+            input[value="day7"]:checked~#bcc-content .days span,
+            input[value="day8"]:checked~#bcc-content .days span,
+            input[value="day9"]:checked~#bcc-content .days span,
+            input[value="day10"]:checked~#bcc-content .days span,
+            input[value="day11"]:checked~#bcc-content .days .day1~span,
+            input[value="day12"]:checked~#bcc-content .days .day2~span {
+                display: flex;
+            }
+        }
+        
+        @media only screen and (min-width: 846.1px) {
+            input[value="day11"]:checked~#bcc-content .days span,
+            input[value="day12"]:checked~#bcc-content .days .day1~span {
+                display: flex;
+            }
+        }
+        
+        @media only screen and (min-width: 916.1px) {
+            #hero h1+.subheading+img {
+                transform: none;
+                top: -9%;
+                right: 1%;
+                margin: 0;
+                padding: 0;
+                width: 23%;
+            }
+            input[value="day12"]:checked~#bcc-content .days span {
+                display: flex;
+            }
+        }
+        
+        @media only screen and (min-width: 970.1px) {
+            #hero .white::after {
+                content: "";
+                position: absolute;
+                bottom: -45px;
+                right: -15px;
+                width: 31px;
+                height: 29px;
+                background-image: url(https://embed.widencdn.net/img/lazboy/viuuwdihau/31px/holly.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">12 Days of Giving</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>12 Days of Giving</li>
+        </ul>
+    </nav>
+    <input type="radio" name="day" value="day1">
+    <input type="radio" name="day" value="day2">
+    <input type="radio" name="day" value="day3">
+    <input type="radio" name="day" value="day4">
+    <input type="radio" name="day" value="day5">
+    <input type="radio" name="day" value="day6">
+    <input type="radio" name="day" value="day7">
+    <input type="radio" name="day" value="day8">
+    <input type="radio" name="day" value="day9">
+    <input type="radio" name="day" value="day10">
+    <input type="radio" name="day" value="day11">
+    <input type="radio" name="day" value="day12">
+    <input type="radio" name="day" value="day13" checked>
+    <div id="bcc-content">
+        <div id="hero">
+            <!-- <picture>
+                <source media="(max-width: 500px)" srcset="/Images/npc/12-days-of-giving/hero-sm.png">
+                <source media="(max-width: 750px)" srcset="/Images/npc/12-days-of-giving/hero-md.png">
+                <img src="/Images/npc/12-days-of-giving/hero.png" alt="">
+            </picture> -->
+            <div class="blue">
+                <div class="white">
+                    <img id="holly" src="https://embed.widencdn.net/img/lazboy/bl00c4tevf/exact/holly.png" alt="holly">
+                    <h1 class="hidden-md-xl">
+                        <svg viewbox="0 0 280 70">
+                            <rect width="100%" height="100%" fill="white"/>
+                            <path id="curve" fill="none" d="
+                                M 15,150
+                                a 125 125 0 0 1 250,0
+                            "/>
+                            <text>
+                                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" spacing = "auto">12 Days of Giving</textPath>
+                            </text>
+                        </svg>
+                    </h1>
+                    <h1 class="hidden-xs-sm">12 Days of Giving</h1>
+                    <p class="subheading"><img src="https://embed.widencdn.net/img/lazboy/qwny2rsixq/exact/kristens.png" alt="Kristen's"> PICKS&nbsp;EDITION
+                    </p>
+                    <img src="https://embed.widencdn.net/img/lazboy/1fx40olju1/exact/kb-circle.png" alt="Kristen Bell">
+                </div>
+                <div class="calendar">
+                    <p>Day:</p>
+                    <div class="days">
+                        <span class="day1">1</span>
+                        <span class="day2">2</span>
+                        <span class="day3">3</span>
+                        <span class="day4">4</span>
+                        <span class="day5">5</span>
+                        <span class="day6">6</span>
+                        <span class="day7">7</span>
+                        <span class="day8">8</span>
+                        <span class="day9">9</span>
+                        <span class="day10">10</span>
+                        <span class="day11">11</span>
+                        <span class="day12">12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <h2>12 Days. 12 Prizes. 12&nbsp;Chances&nbsp;to&nbsp;WIN!</h2>
+            <p class="subtitle"><strong>&ldquo;Kristen&rsquo;s Picks&rdquo;</strong> are just a few of Kristen Bell&rsquo;s favorite things &mdash; and we&rsquo;re giving you 12 chances to win them! Enter once a day for your chance to win La-Z-Boy furniture personally selected by Kristen
+                Bell, customized with her choice of&nbsp;fabrics.</p>
+        </section>
+        <div class="current-day">
+            <div class="day1">
+                <h2>Day 1</h2>
+                <p class="product-name">Alexandria Sofa</p>
+                <div class="image"></div>
+            </div>
+            <div class="day2">
+                <h2>Day 2</h2>
+                <p class="product-name">Avenue Chair</p>
+                <div class="image"></div>
+            </div>
+            <div class="day3">
+                <h2>Day 3</h2>
+                <p class="product-name">Violet Sofa</p>
+                <div class="image"></div>
+            </div>
+            <div class="day4">
+                <h2>Day 4</h2>
+                <p class="product-name">Bellevue Chair</p>
+                <div class="image"></div>
+            </div>
+            <div class="day5">
+                <h2>Day 5</h2>
+                <p class="product-name">Rowan Recliner</p>
+                <div class="image"></div>
+            </div>
+            <div class="day6">
+                <h2>Day 6</h2>
+                <p class="product-name">Talbot Sofa</p>
+                <div class="image"></div>
+            </div>
+            <div class="day7">
+                <h2>Day 7</h2>
+                <p class="product-name">James Recliner</p>
+                <div class="image"></div>
+            </div>
+            <div class="day8">
+                <h2>Day 8</h2>
+                <p class="product-name">Bennett Chair</p>
+                <div class="image"></div>
+            </div>
+            <div class="day9">
+                <h2>Day 9</h2>
+                <p class="product-name">Leighton Sofa</p>
+                <div class="image"></div>
+            </div>
+            <div class="day10">
+                <h2>Day 10</h2>
+                <p class="product-name">Vail Recliner</p>
+                <div class="image"></div>
+            </div>
+            <div class="day11">
+                <h2>Day 11</h2>
+                <p class="product-name">Brentwood Recliner</p>
+                <div class="image"></div>
+            </div>
+            <div class="day12">
+                <h2>Day 12</h2>
+                <p class="product-name">Collins Sectional</p>
+                <div class="image"></div>
+            </div>
+            <a href="https://sweeps.la-z-boy.com/12daysofgivingKBedition2019?s=web" class="enter">Enter Sweepstakes</a>
+            <div class="links"><a class="arrow-right" href="https://www.la-z-boy.com/b//_/N-io28jp">Shop Kristen&rsquo;s Picks</a><a href="https://sweeps.la-z-boy.com/12daysofgivingrules">See Sweepstakes Rules</a></div>
+        </div>
+
+        <section style="max-width: 1080px">
+            <h2>What will we give away next?</h2>
+            <p class="subtitle">Find out tomorrow, and get another chance&nbsp;to&nbsp;win!</p>
+            <div class="six-col">
+                <div class="day1">
+                    <div class="image"></div>
+                    <h3>Day 1</h3>
+                    <a href="/p/sofas/alexandria-sofa/_/R-610682">Alexandria Sofa</a>
+                </div>
+                <div class="day2">
+                    <div class="image"></div>
+                    <h3>Day 2</h3>
+                    <a href="/p/chairs/avenue-chair/_/R-235487">Avenue Chair</a>
+                </div>
+                <div class="day3">
+                    <div class="image"></div>
+                    <h3>Day 3</h3>
+                    <a href="/p/sofas/violet-sofa/_/R-610619">Violet Sofa</a>
+                </div>
+                <div class="day4">
+                    <div class="image"></div>
+                    <h3>Day 4</h3>
+                    <a href="/p/chairs/bellevue-high-leg-swivel-chair/_/R-210421">Bellevue Chair</a>
+                </div>
+                <div class="day5">
+                    <div class="image"></div>
+                    <h3>Day 5</h3>
+                    <a href="/p/recliners/rowan-rocking-recliner/_/R-010765">Rowan Recliner</a>
+                </div>
+                <div class="day6">
+                    <div class="image"></div>
+                    <h3>Day 6</h3>
+                    <a href="/p/sofas/talbot-sofa/_/R-610451">Talbot Sofa</a>
+                </div>
+                <div class="day7">
+                    <div class="image"></div>
+                    <h3>Day 7</h3>
+                    <a href="/p/recliners/james-rocking-recliner/_/R-010521">James Recliner</a>
+                </div>
+                <div class="day8">
+                    <div class="image"></div>
+                    <h3>Day 8</h3>
+                    <a href="/p/chairs/bennett-duo-reclining-chair/_/R-94P899">Bennett Chair</a>
+                </div>
+                <div class="day9">
+                    <div class="image"></div>
+                    <h3>Day 9</h3>
+                    <a href="/p/sofas/leighton-sofa/_/R-610653">Leighton Sofa</a>
+                </div>
+                <div class="day10">
+                    <div class="image"></div>
+                    <h3>Day 10</h3>
+                    <a href="/p/recliners/vail-rocking-recliner/_/R-010403">Vail Recliner</a>
+                </div>
+                <div class="day11">
+                    <div class="image"></div>
+                    <h3>Day 11</h3>
+                    <a href="/p/recliners/brentwood-high-leg-reclining-chair/_/R-295430">Brentwood Recliner</a>
+                </div>
+                <div class="day12">
+                    <div class="image"></div>
+                    <h3>Day 12</h3>
+                    <a href="/p/sectionals/collins-sectional/_/R-xxy494Style2">Collins Sectional</a>
+                </div>
+            </div>
+            <p style="text-align:center;font-size:.8em;margin:2em;">All Sweepstakes winners will be notified by phone. To see the list of winners, visit&nbsp;us&nbsp;on&nbsp;<a sytle="text-decoration:underline" href="https://www.facebook.com/lazboy">Facebook</a>.</p>
+        </section>
+    </div>
+
+    <!-- end BCC content -->
+</body>

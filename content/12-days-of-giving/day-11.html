@@ -1,0 +1,381 @@
+<!-- 12 Days of Giving - Day 11 -->
+<link rel="stylesheet" href="https://content.la-z-boy.com/css/bccFramework_v05.css" media="all">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+
+<style>
+    /* section>h1 {
+        display: none;
+    } */
+
+    .two-column-first section.cust-support {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    #frameDOPButton {
+        width: 100%;
+        height: 120px;
+        min-height: 120px;
+    }
+
+    .frameGroup {
+        font-family: 'Lato', sans-serif;
+    }
+
+    .frameGroup h1 {
+        color: #872165;
+        text-align: center;
+        font-size: 26px;
+        font-weight: normal;
+        margin-top: 36px;
+    }
+
+    .frameGroup h1::first-line {
+        font-size: 39px;
+    }
+
+    p.intro {
+        /* Added .intro to keep from messing up the rest of the p tags on the page */
+        font-size: 18px;
+        text-align: center;
+        max-width: 735px;
+        margin: 1em auto;
+    }
+
+    p.come-back {
+        font-size: 26px;
+        margin: 65px 0 10px;
+    }
+
+    a.sweeps {
+        background: #872165;
+        padding: 9px 60px;
+        color: white;
+        font-size: 24px;
+        margin: 0px 40px;
+        font-family: 'News Cycle', sans-serif;
+        letter-spacing: 1px
+    }
+
+    .giftBox {
+        height: 148px;
+        border: 1px solid #fff;
+        margin: 10px;
+        position: relative;
+    }
+
+    .giftBox p {
+        text-align: center;
+        color: #872165;
+        margin: -4px 0 0 0;
+        font-size: 20px;
+    }
+
+    .giftBox span {
+        /* Targets text at bottom of gift box */
+        display: block;
+        color: white;
+        text-align: right;
+        background: #872165;
+        font-family: 'News Cycle', sans-serif;
+        letter-spacing: .5px;
+        font-size: 14px;
+        padding: 5px 12px 5px 0;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .giftBox.inactive {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    body .giftBox.active {
+        border: 3px solid #872165;
+    }
+
+    .giftBox p.product {
+        font-family: arial;
+        font-size: 12px;
+        color: #6f6f6f;
+        margin: -4px 0 0 0;
+        line-height: 12px;
+        text-transform: uppercase;
+        text-shadow: 0px 1px 2px #fff;
+    }
+
+    .day1 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day1-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day2 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day2-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day3 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day3-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day4 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day4-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day5 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day5-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day6 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day6-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day7 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day7-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day8 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day8-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day9 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day9-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day10 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day10-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .day11 {
+        background: url(https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day11-thumb_v2.jpg) no-repeat;
+        background-position-x: 50%;
+    }
+
+    .giftBox:hover {
+        cursor: pointer;
+        opacity: .9;
+        border: 1px solid #c2c2c2;
+        text-decoration: none;
+        /* Disables underline when hovering over gift box */
+    }
+
+    .giftBox.day3:hover,
+    .giftBox.day5:hover,
+    .giftBox.day9:hover,
+    .giftBox.day11:hover {
+        cursor: initial;
+        border: 1px solid white;
+    }
+
+    body .giftBox.active:hover {
+        border: 3px solid rgba(135, 34, 102, .9);
+    }
+
+    .giftBox.inactive:hover {
+        cursor: initial;
+        border: 1px solid white;
+    }
+
+    .mobileSite a.sweeps {
+        font-size: 16px;
+        margin: 20px 0;
+        display: block;
+    }
+
+    .mobileSite p.remember,
+    .mobileSite p.intro {
+        padding: 0 30px;
+    }
+
+    .mobileSite .giftBox {
+        height: 150px;
+        margin: 10px 0;
+        /*Fixes width on mobile*/
+    }
+
+    :focus {
+        outline: none;
+    }
+
+    body.mobileSite .giftBox {
+        width: 150px;
+        margin: 0 0 20px;
+    }
+
+    body.mobileSite .frameGroup.giftBoxes {
+        width: 150px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    @media only screen and (min-width: 340px) {
+        body.mobileSite .giftBox {
+            width: 150px;
+            margin: 0 20px 20px 0;
+        }
+
+        body.mobileSite .giftBox:nth-child(2n+2) {
+            margin-right: 0;
+        }
+
+        body.mobileSite .frameGroup.giftBoxes {
+            width: 320px;
+        }
+    }
+
+    @media only screen and (min-width: 510px) {
+        body.mobileSite a.sweeps {
+            display: inline;
+            margin: 0 5px;
+        }
+
+        body.mobileSite .giftBox:nth-child(2n+2) {
+            margin-right: 20px;
+        }
+
+        body.mobileSite .giftBox:nth-child(3n+3) {
+            margin-right: 0;
+        }
+
+        body.mobileSite .frameGroup.giftBoxes {
+            width: 490px;
+        }
+    }
+
+    @media only screen and (min-width: 1020px) {
+        body.mobileSite a.sweeps {
+            font-size: 24px;
+            margin: 0 40px;
+        }
+
+        body.mobileSite .giftBox:nth-child(3n+3) {
+            margin-right: 20px;
+        }
+
+        body.mobileSite .giftBox:nth-child(6n+6) {
+            margin-right: 0;
+        }
+
+        body.mobileSite .frameGroup.giftBoxes {
+            width: 1000px;
+        }
+    }
+</style>
+
+<img style="width:100%;" src="https://content.la-z-boy.com/Images/npc/12-days-of-giving/pano_v2.jpg" alt="Deserving duo Sweepstakes"
+    title="">
+
+<div class="frameGroup">
+    <div class="frameCol span_1_of_1">
+        <h1>12 days of giving.
+            <br>24 prizes. 12 chances to win!</h1>
+        <p class="intro">Every day from November 25 – December 6, 2017, a deserving duo will win a pair of prizes. You could win sofas, chairs,
+            or loveseats from duo™, our revolutionary new line that combines the power to recline with style you’d never
+            expect.
+        </p>
+    </div>
+</div>
+<div class="frameGroup">
+    <div style="text-align:center;" class="frameCol span_1_of_1">
+        <img style="margin:0px auto;" src="https://content.la-z-boy.com/Images/npc/12-days-of-giving/Day11_v4.jpg" alt="Day 11 Surprise"
+            title="">
+    </div>
+</div>
+<div style="margin-top:20px;" class="frameGroup">
+    <div style="text-align:center;" class="frameCol span_1_of_1">
+        <p>
+            <a class="sweeps" href="http://promotions.la-z-boy.com/12DaysDuoSweepsSC">Enter to WIN ></a>
+            <a class="sweeps" href="/content/duo">Discover duo ></a>
+        </p>
+        <p class="come-back">Come back tomorrow for the next big reveal and enter to WIN!</p>
+    </div>
+</div>
+<div style="margin-top:20px;" class="frameGroup giftBoxes">
+    <a href="/p/sofas/makenna-duo-reclining-sofa/_/R-91P896" class="giftBox day1 frameCol span_1_of_6">
+        <p>DAY 1</p>
+        <p class="product">Makenna Sofa</p>
+        <span>Shop now ></span>
+    </a>
+    <a href="/p/loveseats/bennett-duo-reclining-loveseat/_/R-93P899" class="giftBox day2 frameCol span_1_of_6">
+        <p>DAY 2</p>
+        <p class="product">Bennett Loveseat</p>
+        <span>Shop now ></span>
+    </a>
+    <a class="giftBox day3 frameCol span_1_of_6">
+        <p>DAY 3</p>
+        <p class="product">Surprise</p>
+        <span>&nbsp;</span>
+    </a>
+    <a href="/p/sofas/luke-duo-reclining-2-seat-sofa/_/R-92P898" class="giftBox day4 frameCol span_1_of_6">
+        <p>DAY 4</p>
+        <p class="product">Luke Sofa</p>
+        <span>Shop now ></span>
+    </a>
+    <a class="giftBox day5 frameCol span_1_of_6">
+        <p>DAY 5</p>
+        <p class="product">Surprise</p>
+        <span>&nbsp;</span>
+    </a>
+    <a href="/p/chairs/edie-duo-reclining-chair-and-a-half/_/R-95P897" class="giftBox day6 frameCol span_1_of_6">
+        <p>DAY 6</p>
+        <p class="product">Edie Chair &amp; A Half</p>
+        <span>Shop now ></span>
+    </a>
+</div>
+<div class="frameGroup giftBoxes">
+    <a href="/p/loveseats/makenna-duo-reclining-loveseat/_/R-93P896" class="giftBox day7 frameCol span_1_of_6">
+        <p>DAY 7</p>
+        <p class="product">Makenna Loveseat</p>
+        <span>Shop now ></span>
+    </a>
+    <a href="/p/chairs/bennett-duo-reclining-chair/_/R-94P899" class="giftBox day8 frameCol span_1_of_6">
+        <p>DAY 8</p>
+        <p class="product">Bennett Chair</p>
+        <span>Shop now ></span>
+    </a>
+    <a class="giftBox day9 frameCol span_1_of_6">
+        <p>DAY 9</p>
+        <p class="product">Surprise</p>
+        <span>&nbsp;</span>
+    </a>
+    <a href="/p/chairs/luke-duo-reclining-chair-and-a-half/_/R-95P898" class="giftBox day10 frameCol span_1_of_6">
+        <p>DAY 10</p>
+        <p class="product">Luke Chair &amp; A Half</p>
+        <span>Shop now ></span>
+    </a>
+    <a class="giftBox day11 active frameCol span_1_of_6">
+        <p>DAY 11</p>
+        <p class="product">Surprise</p>
+        <span>&nbsp;</span>
+    </a>
+    <div class="giftBox day12 inactive frameCol span_1_of_6">
+        <p>DAY 12</p>
+    </div>
+</div>
+
+<script>
+    //JQuery Functions
+    requirejs(['jQuery'], function ($) {
+        //Adjust mobile header on load
+        $(document).ready(function () {
+            $('.mobileSite #site-wrapper').css('margin-top', $('header.masthead').css('height'));
+        });
+        //Adjust mobile header on resize
+        $(window).resize(function () {
+            clearTimeout(window.resizedFinished);
+            window.resizedFinished = setTimeout(function () {
+                $('.mobileSite #site-wrapper').css('margin-top', $('header.masthead').css('height'));
+            }, 250);
+        });
+    });
+</script>

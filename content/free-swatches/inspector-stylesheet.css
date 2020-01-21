@@ -1,0 +1,223 @@
+#freeSwatchesContainer {
+    font-size: 20px;
+    color: #494949;
+    line-height: normal;
+}
+
+#freeSwatchesContainer .hero {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    margin-left: -0.625rem;
+    margin-right: -0.625rem;
+}
+
+#freeSwatchesContainer .hero h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: #0d1f4b;
+    text-align: center;
+    font-size: 2em;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    padding: .9em 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+#freeSwatchesContainer .hero hr {
+    padding-top: 23px;
+    border: none;
+    border-bottom: 2px solid #0d1f4b;
+    margin: 0 34px 23px 34px;
+}
+
+#freeSwatchesContainer .hero p {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin: 20px 10px 0;
+    text-align: left;
+    color: gray;
+}
+
+#freeSwatchesContainer .hero .copy-overlay {
+    position: absolute;
+    right: 0;
+    width: 43.673469%;
+    padding: 0 1.25em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .6);
+}
+
+#freeSwatchesContainer .swatches-list {
+    display: flex;
+    flex: 320px 3 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -20px;
+}
+
+#freeSwatchesContainer .swatch-item {
+    max-width: 160px;
+    flex-basis: 140px;
+    flex-grow: 1;
+    margin: 50px 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#freeSwatchesContainer .swatch-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 .5em;
+    line-height: 1.1;
+}
+
+#freeSwatchesContainer input[type="checkbox"]~label {
+    padding-left: 34px;
+    position: relative;
+    line-height: 25px;
+    font-size: 17px;
+    letter-spacing: .025em;
+    margin: 0;
+    vertical-align: baseline;
+}
+
+#freeSwatchesContainer .swatch-checkbox {
+    margin-top: 20px;
+}
+
+#freeSwatchesContainer input[type="checkbox"] {
+    margin: 0;
+}
+
+#freeSwatchesContainer input[type="checkbox"]~label:before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    border: solid 1px #979797;
+    left: 0;
+}
+
+#freeSwatchesContainer input[type="checkbox"]:checked~label:before {
+    content: "\00D7";
+    font-family: "OpenSans",helvetica,sans-serif;
+    font-size: 42px;
+    text-align: center;
+    line-height: 21px;
+    color: #9B9B9B;
+}
+
+#freeSwatchesContainer .client-data {
+    width: 310px;
+    margin: 50px auto 0;
+}
+
+#freeSwatchesContainer .client-data .field-group {
+    margin-bottom: 20px;
+}
+
+#freeSwatchesContainer .move-label~label {
+    border: 0 none;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: auto;
+    top: 14px;
+    left: 20px;
+    font-size: 20px;
+    transition: all .2s ease-out;
+}
+
+#freeSwatchesContainer .filled .move-label~label, #freeSwatchesContainer .active .move-label~label {
+    top: 6px;
+    left: 10px;
+    font-size: 11px;
+}
+
+#freeSwatchesContainer span.no-wrap {
+    white-space: nowrap;
+    font-size: inherit;
+}
+
+#freeSwatchesContainer input[type="text"], #freeSwatchesContainer input[type="tel"] {
+    font-size: 20px;
+    padding: 20px 20px 5px;
+}
+
+#freeSwatchesContainer input[type="submit"] {
+    font-size: 20px;
+    margin: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+#freeSwatchesContainer select {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 499.9px) {
+    #freeSwatchesContainer .hidden-sm {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    #freeSwatchesContainer .visible-sm {
+        display: none;
+    }
+
+    #freeSwatchesContainer .hero {
+        font-size: 2.5vw;
+    }
+
+    #freeSwatchesContainer .hero h1 {
+        position: static;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    #freeSwatchesContainer .hero p {
+        font-weight: bold;
+        margin: 1em 0 0;
+        color: #0d1f4b;
+        text-align: center;
+    }
+
+    #freeSwatchesContainer .swatches-list {
+        margin: 0 -10px;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    #freeSwatchesContainer form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #freeSwatchesContainer .client-data {
+        flex: 310px 1 0;
+        padding: 0 20px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    #freeSwatchesContainer .hero {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #freeSwatchesContainer .client-data {
+        padding: 0 30px 0 60px;
+    }
+}

@@ -1,0 +1,262 @@
+section.cust-support .hero h1 {
+    margin: 0;
+    line-height: 1;
+}
+
+section.cust-support .hero p {
+    margin: 0;
+}
+
+@media only screen and (min-width: 568px) and (max-width: 767px) {
+    body.mobileSite section.cust-support .hero p {
+        /* hide only between 568px and 767px */
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support .hero .copy-block {
+        position: static;
+        width: 100%;
+        padding: 0 10px;
+        transform: none;
+    }
+    body.mobileSite section.cust-support .hero p {
+        margin-top: 10px;
+    }
+}
+
+section.cust-support h2 {
+    font-size: 78px;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #DDD8D8;
+    letter-spacing: 1.5px;
+    margin: 50px 0 0;
+    line-height: 0.8;
+    padding-left: 1.7em;
+    text-indent: -1.7em;
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support h2 {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+    body.mobileSite section.cust-support h2 {
+        padding-left: .6em;
+        text-indent: -.6em;
+    }
+}
+
+section.cust-support [class*="-row"] {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+section.cust-support [class*="-row"].no-margin {
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support [class*="-row"] {
+        margin-top: 20px;
+    }
+    body.mobileSite section.cust-support [class*="-row"].no-margin {
+        margin-top: 0;
+    }
+}
+
+section.cust-support .copy-image-row {
+    flex-direction: row-reverse;
+}
+
+section.cust-support .copy-image-row .copy {
+    width: 45.4%;
+    padding-right: 35px;
+}
+
+section.cust-support .image-copy-row .copy {
+    width: 45.4%;
+    padding-left: 35px;
+}
+
+section.cust-support .copy-image-row .image, section.cust-support .image-copy-row .image {
+    width: 54.6%;
+}
+
+section.cust-support .image-row .image {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    body.mobileSite section.cust-support .copy {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    body.mobileSite section.cust-support .copy-image-row .copy, body.mobileSite section.cust-support .image-copy-row .copy, body.mobileSite section.cust-support .copy-image-row .image, body.mobileSite section.cust-support .image-copy-row .image {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support .copy {
+        flex-basis: auto;
+    }
+}
+
+section.cust-support .copy h3 {
+    font-size: 48px;
+    color: #A8A5A5;
+    letter-spacing: 1.3px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 30px 0 0;
+    padding-left: 1.4em;
+    text-indent: -1.4em;
+}
+
+section.cust-support .copy {
+    font-size: 23px;
+}
+
+section.cust-support .copy p {
+    margin: 1.3em 0 0;
+}
+
+section.cust-support .copy a {
+    font-size: 30px;
+    display: inline-block;
+    margin-top: 23px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support .copy h3 {
+        font-size: 34px;
+        margin-top: 20px;
+        padding-left: 0.6em;
+        text-indent: -0.6em;
+        letter-spacing: .9px;
+    }
+    body.mobileSite section.cust-support .copy {
+        font-size: 20px;
+    }
+    body.mobileSite section.cust-support .copy p {
+        margin: 1em 0 0;
+    }
+    body.mobileSite section.cust-support .copy a {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+}
+
+section.cust-support .vertical-align {
+    align-items: center;
+}
+
+section.cust-support [class*="-column-row"] {
+    flex-wrap: wrap;
+}
+
+section.cust-support [class*="-column-row"] .block {
+    margin-top: 30px;
+    position: relative;
+}
+
+section.cust-support [class*="-column-row"] .block a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+section.cust-support .three-column-row {
+    text-align: center;
+}
+
+section.cust-support .three-column-row .block {
+    width: 30.6%;
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support .three-column-row .block {
+        width: 300px;
+        margin: 20px auto 0;
+    }
+}
+
+section.cust-support .three-column-row p {
+    margin: 20px 0 0;
+}
+
+section.cust-support .sub-head {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 840px;
+    padding: 0 10px;
+}
+
+section.cust-support .sub-head .title {
+    font-size: 35px;
+    margin-top: 40px;
+    line-height: 1;
+}
+
+section.cust-support .sub-head p {
+    font-size: 23px;
+    margin: 0;
+}
+
+@media only screen and (max-width: 567px) {    
+    body.mobileSite section.cust-support .sub-head .title {
+        margin-top: 20px;
+    }
+}
+
+section.cust-support .two-column-row .block {
+    width: 49%;
+}
+
+section.cust-support .two-column-row h3 {
+    font-size: 35px;
+    margin: 20px 0 0;
+    font-weight: normal;
+}
+
+section.cust-support .two-column-row p {
+    font-size: 20px;
+    margin: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    body.mobileSite section.cust-support .two-column-row h3,
+    body.mobileSite section.cust-support .two-column-row p {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support .two-column-row .block {
+        width: 100%;
+        margin: 20px 0 0;
+    }
+}
+
+section.cust-support #dsr-button {
+    margin-top: 60px;
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support #dsr-button {
+        margin-top: 40px;
+    }
+}

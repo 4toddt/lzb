@@ -1,0 +1,369 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/uat/min/desktop.css">
+    <base href="C:\Users\ttownsend\OneDrive - La-Z-Boy Incorporated\Dev\" target="_blank">
+</head>
+
+<body class="mobileSite">
+    <!-- Only publish code to BCC from after this -->
+    <!-- Only publish code to BCC from after this -->
+    <!-- Only publish code to BCC from after this -->
+
+    <!-- Susie and Greg's Design Story TT -->
+    <script>
+        dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
+        if (dmiStickyNav != null) {
+            dmiStickyNav.className = "primary-nav";
+        }
+
+        //Add Design Stories to breadcrumb
+        (function() {
+            var div = document.createElement('div');
+            if (document.querySelector('body.mobile-site')) {
+                div.innerHTML = "<li><a class='crumb' href='/mobile/content/design-services/design-stories/'>Design Stories</a></li>";
+                var breadcrumb = document.querySelector('ul.breadcrumb');
+            } else {
+                div.innerHTML = "<li><a href='/content/design-services/design-stories'>Design Stories</a></li>";
+                var breadcrumb = document.querySelector('nav.breadcrumb-wrapper>ul');
+            }
+            var newLink = div.firstChild;
+            breadcrumb.insertBefore(newLink, breadcrumb.lastElementChild);
+        })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="/css/uat/ds-design-stories.css">
+    <link rel="stylesheet" type="text/css" href="/css/uat/_ds-sticky-nav.css">
+    <style>
+        /* ****************** Hero ******************* */
+        
+        .bcc-fbt .hero .image {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/desktop/hero.jpg');
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt .hero .image {
+                background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/mobile/hero.jpg');
+            }
+        }
+        /* ****************** Hero Play Button ******************* */
+        
+        .bcc-fbt #play-button {
+            right: 17%;
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt #play-button {
+                right: 8%;
+                left: auto;
+                width: 27%;
+                top: 62%;
+            }
+        }
+        /* **************** Hero Copy ********************* */
+        
+        .bcc-fbt .hero h1 {
+            top: 51%;
+            right: 0;
+            width: 53%;
+            font-size: 2.2em;
+            white-space: nowrap;
+        }
+        
+        .bcc-fbt .hero p {
+            top: 63%;
+            font-size: 1.2em;
+            width: 53%;
+            padding: 0 5%;
+            right: 0;
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt .hero h1 {
+                left: auto;
+                right: 5%;
+                text-align: right;
+                white-space: normal;
+            }
+        }
+        /* ****************** Image-Copy Row ******************* */
+        
+        .bcc-fbt #opportunity .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/desktop/room01.jpg');
+        }
+        
+        .bcc-fbt #experience .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/desktop/room02.jpg');
+        }
+        
+        .bcc-fbt #result .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/desktop/room03.jpg');
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt #opportunity .image-copy-row .room-image>div {
+                background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/mobile/room01.jpg');
+            }
+            body .bcc-fbt #experience .image-copy-row .room-image>div {
+                background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/mobile/room02.jpg');
+            }
+            body .bcc-fbt #result .image-copy-row .room-image>div {
+                background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/mobile/room03.jpg');
+            }
+        }
+        /* ****************** Product Row ******************* */
+        
+        .bcc-fbt .product-row a {
+            margin: 0;
+        }
+        
+        .bcc-fbt #product01 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/silo01.jpg');
+        }
+        
+        .bcc-fbt #product02 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/silo02.jpg');
+        }
+        
+        .bcc-fbt #product03 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/silo03.jpg');
+        }
+        
+        .bcc-fbt #product04 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/silo04.jpg');
+        }
+        
+        .bcc-fbt #product05 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/silo05.jpg');
+        }
+        
+        .bcc-fbt #product06 img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/susie-greg/silo06.jpg');
+        }
+        
+        .bcc-fbt #product01 {
+            width: 300px;
+        }
+        
+        .bcc-fbt #product02 {
+            width: 296px;
+        }
+        
+        .bcc-fbt #product03 {
+            width: 270px;
+        }
+        
+        .bcc-fbt #product04 {
+            width: 297px;
+        }
+        
+        .bcc-fbt #product05 {
+            width: 280px;
+        }
+        
+        .bcc-fbt #product06 {
+            width: 122px;
+        }
+        
+        .bcc-fbt #product06 {
+            margin: 0 50px;
+        }
+        
+        .bcc-fbt #product06 a {
+            margin: 0 -50px;
+        }
+        
+        .bcc-fbt #product01 img {
+            padding-bottom: 100%;
+        }
+        
+        .bcc-fbt #product02 img {
+            padding-bottom: 101.35135%;
+        }
+        
+        .bcc-fbt #product03 img {
+            padding-bottom: 111.11111%;
+        }
+        
+        .bcc-fbt #product04 img {
+            padding-bottom: 101.01010%;
+        }
+        
+        .bcc-fbt #product05 img {
+            padding-bottom: 107.14285%;
+        }
+        
+        .bcc-fbt #product06 img {
+            padding-bottom: 245.90164%;
+        }
+        
+        @media only screen and (max-width: 567px) {
+            body .bcc-fbt #product01 img {
+                width: 300px;
+                padding-bottom: 164px;
+            }
+            body .bcc-fbt #product02 img {
+                width: 296px;
+                padding-bottom: 158px;
+            }
+            body .bcc-fbt #product03 img {
+                width: 270px;
+                padding-bottom: 237px;
+            }
+            body .bcc-fbt #product04 img {
+                width: 297px;
+                padding-bottom: 192px;
+            }
+            body .bcc-fbt #product05 img {
+                width: 280px;
+                padding-bottom: 286px;
+            }
+            body .bcc-fbt #product06 img {
+                width: 122px;
+                padding-bottom: 298px;
+            }
+        }
+        /* ******************  Designer ******************* */
+        
+        .bcc-fbt #designer img {
+            background-image: url('https://content.la-z-boy.com/Images/npc/designer/list/shannon.jpg');
+        }
+    </style>
+    <div class="bcc-fbt">
+        <nav class="ds-topnav">
+            <div class="lzb-container">
+                <a href="/content/design-services">Design&nbsp;services</a>
+                <a href="/content/design-services/meet-our-designers">Meet&nbsp;our&nbsp;designers</a>
+                <a class="current-page" href="/content/design-services/design-stories">Design&nbsp;stories</a>
+                <a class="lzb-button design-consultation" href="/content/design-services/design-request-form">
+                    Book&nbsp;my free&nbsp;design
+                    <span class="arrow-right">consultation</span>
+                </a>
+            </div>
+        </nav>
+        <section class="container">
+            <div class="hero">
+                <div class="image">
+                    <svg viewBox="0 0 100 100" id="play-button" class="dtm-click-modal" videoModal='jg6J3jBN3yM'>
+                        <defs>
+                            <mask id="hole">
+                                <rect width="100%" height="100%" fill="white" />
+                                <polygon points="35,24 80,50 35,76" fill="black" />
+                            </mask>
+                        </defs>
+                        <circle r="50" cy="50" cx="50" fill="white" fill-opacity=".5" mask="url(#hole)" />
+                    </svg>
+                    <h1>Susie and Greg&rsquo;s Story</h1>
+                </div>
+                <p>With a brand new home and the daunting task of redecorating, Susie and Greg knew they needed help to achieve the look they were&nbsp;after.</p>
+            </div>
+        </section>
+        <section class="container">
+            <div id="opportunity">
+                <div class="image-copy-row reverse">
+                    <div class="room-image">
+                        <div></div>
+                    </div>
+                    <div class="copy-block">
+                        <h2>The opportunity</h2>
+                        <p class="large-quotes">We moved into our home about two months ago. The thought of buying a house full of furniture is daunting. We had planned to hire a designer, since we knew we couldn&rsquo;t do it all on our own. We went to
+                            <span class="registered-trademark">La-Z-Boy</span> for a couple of chairs and discovered their free design services.</p>
+                    </div>
+                </div>
+                <div class="product-row">
+                    <div id="product01">
+                        <img>
+                        <a class="dtm-click-pdp" href="https://www.la-z-boy.com/p/sofas/kennedy-premier-sofa/_/R-610593">
+                            Kennedy Stationary
+                            <span class="arrow-right">Sofa</span>
+                        </a>
+                    </div>
+                    <div id="product02">
+                        <img>
+                        <a class="dtm-click-pdp" href="https://www.la-z-boy.com/p/home-accents/foundry-rectangular-cocktail-table/_/R-59-023">
+                            Foundry Cocktail
+                            <span class="arrow-right">Table</span>
+                        </a>
+                    </div>
+                    <div id="product03">
+                        <img>
+                        <a class="dtm-click-pdp" href="https://www.la-z-boy.com/p/chairs/kennedy-premier-stationary-chair/_/R-230593">
+                            Kennedy Stationary
+                            <span class="arrow-right">Chair</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div id="experience">
+                <div class="image-copy-row">
+                    <div class="room-image">
+                        <div></div>
+                    </div>
+                    <div class="copy-block">
+                        <h2>The experience</h2>
+                        <p class="large-quotes">Our designer was wonderful! She was able to give us the look we wanted, but couldn&rsquo;t quite get on our own. We were also happy to see
+                            <span class="no-wrap">La-Z-Boy</span> had office and bedroom furniture! They helped us achieve our vision of a beautiful home!
+                        </p>
+                    </div>
+                </div>
+                <div class="product-row">
+                    <div id="product04">
+                        <img>
+                        <a class="dtm-click-pdp" href="https://www.la-z-boy.com/p/home-accents/foundry-entertainment-console/_/R-59-035">
+                            Foundry Entertainment
+                            <span class="arrow-right">Console</span>
+                        </a>
+                    </div>
+                    <div id="product05">
+                        <img>
+                        <a class="dtm-click-pdp" href="https://www.la-z-boy.com/p/recliners/cabot-low-profile-recliner/_/R-255439">
+                            Cabot
+                            <span class="arrow-right">Recliner</span>
+                        </a>
+                    </div>
+                    <div id="product06">
+                        <img>
+                        <a class="dtm-click-npc" href="https://www.la-z-boy.com/p/home-accents/foundry-etagere/_/R-59-030">
+                            Foundry
+                            <span class="arrow-right">Etagere</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div id="result">
+                <div class="image-copy-row reverse">
+                    <div class="room-image">
+                        <div></div>
+                    </div>
+                    <div class="copy-block">
+                        <h2>The result</h2>
+                        <p class="large-quotes">Easily the most popular reaction we get is that our house should be in a magazine! Not only does it look nice, but it&rsquo;s actually comfortable! I don’t think we could be happier with how it actually turned out.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <div id="designer">
+                <a href="/content/design-services/shannon">
+                    <img>
+                </a>
+                <div class="copy-block">
+                    <h2>Shannon designed this beautiful room</h2>
+                    <a href="/content/design-services/shannon">
+                        View
+                        <span class="arrow-right">Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://www.la-z-boy.com/js/npc.js"></script>
+
+    <!-- Only publish code to BCC from before this -->
+    <!-- Only publish code to BCC from before this -->
+    <!-- Only publish code to BCC from before this -->
+</body>

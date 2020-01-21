@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+section.cust-support {
+    /* default font for npc content */
+    font-family: 'Lato', 'OpenSans', sans-serif;
+    font-size: 20px;
+    line-height: normal;
+    color: #494949;
+}
+
+section.cust-support {
+    /* default margins on mobile */
+    margin: 0;
+}
+
+section.cust-support img {
+    /* override browser default of inline-block to remove white space after image */
+    display: block;
+    /* fix IE bug where images in flex containers don't keep their aspect ratio */
+    min-height: 1px;
+}
+
+section.cust-support .no-wrap {
+    /* class to keep a word or phrase from wrapping */
+    white-space: nowrap;
+}
+
+
+/************** Special Characters **************/
+
+section.cust-support .arrow-right {
+    /* place <span class="arrow-right"></span> around last word to keep arrow with word */
+    display: inline-block;
+}
+
+section.cust-support .arrow-right:after {
+    /* draws arrow */
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -.1em;
+    left: .25em;
+    height: 0;
+    width: 0.3em;
+    border-top: .25em solid transparent;
+    border-bottom: .25em solid transparent;
+    border-left: .35em solid;
+    box-sizing: content-box;
+}
+
+section.cust-support .registered-trademark:after {
+    content: "\00ae";
+    font-size: .6em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+section.cust-support .large-quotes:before,
+section.cust-support .large-quotes:after {
+    font-family: 'IM Fell French Canon', serif;
+    font-size: 3.1em;
+    position: relative;
+    top: 0.4em;
+    line-height: 0;
+}
+
+section.cust-support .large-quotes:before {
+    content: "\201C";
+    padding-right: .07em;
+}
+
+section.cust-support .large-quotes:after {
+    content: "\201D";
+    padding-left: .07em;
+}
+
+
+/******************* Responsive Container *******************/
+
+section.cust-support section {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+
+/************* Responsive Visibility Classes **************/
+
+
+/* names patterned after https://getbootstrap.com/docs/3.3/css/ */
+
+section.cust-support .visible-xs {
+    /* display only on mobile portrait (<=567px) */
+    display: none;
+}
+
+section.cust-support .hidden-lg {
+    /* hide only on desktop and large mobile devices (>=980px) */
+    display: none;
+}
+
+@media only screen and (max-width: 979px) {
+    body section.cust-support .visible-lg {
+        /* display only on desktop and large mobile devices (>=980px) */
+        display: none;
+    }
+    body section.cust-support .hidden-lg {
+        /* hide only on desktop and large mobile devices (>=980px) */
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    body section.cust-support .visible-xs {
+        /* display only on mobile portrait (<=567px) */
+        display: block;
+    }
+    body section.cust-support .hidden-xs {
+        /* hide only on mobile portrait (<=567px) */
+        display: none;
+    }
+}
+
+
+/******************* Hero Banner Classes *******************/
+
+section.cust-support .hero {
+    position: relative;
+}
+
+section.cust-support .hero img {
+    width: 100%;
+}
+
+section.cust-support .hero .copy-block {
+    position: absolute;
+}
+
+section.cust-support .hero h1 {
+    font-size: 48px;
+}
+
+
+/******************* Forms *********************************/
+
+section.cust-support label {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+}
+
+
+/****************** Design Services Button ********************/
+
+section.cust-support #dsr-button {
+    text-align: center;
+}
+
+section.cust-support #dsr-button a {
+    font-size: 23px;
+    color: white;
+    display: inline-block;
+    background-color: #aeccc8;
+    padding: .82em .94em;
+}

@@ -1,0 +1,182 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <base href="O:">
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+    <style>
+        #page1,
+        #page2,
+        #last-page,
+        #confirmation-page {
+            display: inline-block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Design Services Survey Post-Purchase -->
+    <!-- begin BCC content -->
+    <script>
+        dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
+        if (dmiStickyNav != null) {
+            dmiStickyNav.className = "primary-nav";
+        }
+    </script>
+
+    <link href="/css/uat/ds-forms.css" rel="stylesheet" type="text/css">
+
+    <style>
+        #bcc-content .hero .text-box {
+            top: 16%;
+        }
+        
+        #bcc-content h2 {
+            font-size: 1.4em;
+        }
+        
+        #bcc-content .form-subheading {
+            font-size: .9em;
+        }
+        
+        @media only screen and (min-width: 600.1px) {
+            #bcc-content h2 {
+                font-size: 1.6em;
+            }
+            #bcc-content .form-subheading {
+                font-size: 1em;
+            }
+        }
+        
+        #bcc-content .default-radio,
+        #bcc-content .number-line .labels {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #bcc-content .default-radio>label {
+            margin-right: 2em;
+        }
+    </style>
+
+    <nav class="ds-topnav">
+        <div class="lzb-container">
+            <a href="/content/design-services">Design&nbsp;services</a>
+            <a href="/content/design-services/meet-our-designers">Meet&nbsp;our&nbsp;designers</a>
+            <a href="/content/design-services/design-stories">Design&nbsp;stories</a>
+            <a class="lzb-button">Book&nbsp;my free&nbsp;design
+                <span class="arrow-right">consultation</span>
+            </a>
+        </div>
+    </nav>
+
+    <div id="bcc-content">
+        <form action="">
+            <input value="FDS_Survey_Purchased" type="hidden" name="elqFormName" />
+            <input value="20103530" type="hidden" name="elqSiteId" />
+            <input name="elqCampaignId" type="hidden" />
+            <input id='last-page' type="radio" name="currentPage" checked>
+            <input id='confirmation-page' type="radio" name="currentPage">
+            <div class="page last-page">
+                <div class="hero">
+                    <img class="hidden-md-xl" src="https://www.la-z-boy.com/Images/npc/design-services/survey/mobile/hero.jpg" alt="">
+                    <img class="hidden-xs-sm" src="https://www.la-z-boy.com/Images/npc/design-services/survey/desktop/hero.jpg" alt="">
+                    <div class="text-box">
+                        <h1>How did we do?</h1>
+                        <p class="hidden-md">Share your experience for a chance to win a new&nbsp;chair!</p>
+                    </div>
+                </div>
+                <div class="container-980">
+                    <h2>Thank you for inquiring about <span class="no-wrap">La-Z-Boy</span> Free&nbsp;Design&nbsp;Services.</h2>
+                    <p class="form-subheading">Please take a moment to tell us what you think of our program. Answer the questions below to be automatically entered in a sweepstake for a chance to win a <span class="no-wrap">La-Z-Boy</span> chair in your choice of fabric. <a target="_blank"
+                            href="http://info.la-z-boy.com/2019DesignServicesExperienceSweepsRules">See&nbsp;official&nbsp;rules.</a></p>
+                </div>
+                <div class="container-840">
+                    <h3><span class="bolder">Question 1: </span>Contact information</h3>
+                    <div class="two-col gutter-30">
+                        <div class="default-text">
+                            <input id="spp-field1" name="firstName" type="text" required pattern="[A-Za-z]{2,}.*">
+                            <label for="spp-field1" validation-text="required">First Name</label>
+                        </div>
+                        <div class="default-text">
+                            <input id="spp-field2" name="lastName" type="text" required pattern="[A-Za-z]{2,}.*">
+                            <label for="spp-field2" validation-text="required">Last Name</label>
+                        </div>
+                        <div class="default-text">
+                            <input id="spp-field3" name="emailAddress" type="email" required pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$">
+                            <label for="spp-field3" validation-text="required &ldquo;someone@example.com&rdquo;">Email</label>
+                        </div>
+                    </div>
+                    <h3><span class="bolder">Question 2: </span>Overall, how likely are you to recommend <span class="no-wrap">La-Z-Boy</span> Design&nbsp;Services</h3>
+                    <div class="number-line">
+                        <div class="default-radio">
+                            <input id="spp-field4a" type="radio" name="radioButtons" value="1">
+                            <label for="spp-field4a">1</label>
+                            <input id="spp-field4b" type="radio" name="radioButtons" value="2">
+                            <label for="spp-field4b">2</label>
+                            <input id="spp-field4c" type="radio" name="radioButtons" value="3">
+                            <label for="spp-field4c">3</label>
+                            <input id="spp-field4d" type="radio" name="radioButtons" value="4">
+                            <label for="spp-field4d">4</label>
+                            <input id="spp-field4e" type="radio" name="radioButtons" value="5">
+                            <label for="spp-field4e">5</label>
+                            <input id="spp-field4f" type="radio" name="radioButtons" value="6">
+                            <label for="spp-field4f">6</label>
+                            <input id="spp-field4g" type="radio" name="radioButtons" value="7">
+                            <label for="spp-field4g">7</label>
+                            <input id="spp-field4h" type="radio" name="radioButtons" value="8">
+                            <label for="spp-field4h">8</label>
+                            <input id="spp-field4i" type="radio" name="radioButtons" value="9">
+                            <label for="spp-field4i">9</label>
+                            <input id="spp-field4j" type="radio" name="radioButtons" value="10">
+                            <label for="spp-field4j">10</label>
+                        </div>
+                        <div class="labels">
+                            <label for="spp-field4a">Not Likely</label>
+                            <label for="spp-field4j">Very Likely</label>
+                        </div>
+                    </div>
+                    <h3><span class="bolder">Question 3: </span>Did <span class="no-wrap">la-z-boy.com</span> provide you with enough detail on what to expect from <span class="no-wrap">La-Z-Boy</span> Design&nbsp;Services?</h3>
+                    <div class="default-radio vertical">
+                        <input id="spp-field5a" type="radio" name="radioButtons2" value="yes">
+                        <label for="spp-field5a">Yes</label>
+                        <input id="spp-field5b" type="radio" name="radioButtons2" value="no">
+                        <label for="spp-field5b">No</label>
+                    </div>
+                    <h3><span class="bolder">Question 4: </span>Were there any additional details that <span class="no-wrap">la-z-boy.com</span> could have provided to clarify what to expect of your Design Services&nbsp;experience?</h3>
+                    <div class="default-textarea">
+                        <textarea id="dsr-field6" name="paragraphText"></textarea>
+                    </div>
+                    <h3><span class="bolder">Question 5: </span>Did your local store contact you in a timely&nbsp;manner?</h3>
+                    <div class="default-radio vertical">
+                        <input id="spp-field7a" type="radio" name="radioButtons3" value="yes">
+                        <label for="spp-field7a">Yes</label>
+                        <input id="spp-field7b" type="radio" name="radioButtons3" value="no">
+                        <label for="spp-field7b">No</label>
+                    </div>
+                    <h3><span class="bolder">Question 6: </span>What could <span class="no-wrap">La-Z-Boy</span> have done or provided to enhance your experience with Design&nbsp;Services?</h3>
+                    <div class="default-textarea">
+                        <textarea id="dsr-field10" name="paragraphText2"></textarea>
+                    </div>
+                    <label id="dsr-submit" class="form-button" for="">Submit</label>
+                </div>
+            </div>
+
+            <div class="page confirmation-page">
+                <div class="thank-you">
+                    <img class="hidden-md-xl" src="https://www.la-z-boy.com/Images/npc/design-services/survey/mobile/thank-you.jpg" alt="">
+                    <img class="hidden-xs-sm" src="https://www.la-z-boy.com/Images/npc/design-services/survey/desktop/thank-you.jpg" alt="">
+                    <div class="text-box">
+                        <h1>Thank you!
+                            <span>Your response has been submitted and you have been entered into our sweepstakes.</span>
+                        </h1>
+                        <a href="/">Back to homepage</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/uat/ds-forms.js"></script>
+    <!-- end BCC content -->
+</body>

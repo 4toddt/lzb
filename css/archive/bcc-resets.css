@@ -1,0 +1,55 @@
+/* CSS Reset for BCC Full Blank Template */
+
+body, body.mobileSite {
+    /* reset mobile user agent 8px margin for local development */
+    margin: 0;
+}
+
+section.cust-support>h1, section.cust-support>hr {
+    /* hide h1 and mobile hr coming from ATG */
+    display: none;
+}
+
+body.two-column-first section[role="region"] {
+    /* reset the 775px width and default margin on the content section */
+    width: 100%;
+    margin-left: 0;
+}
+
+main {
+    /* reset the 10px padding on mobile */
+    padding: 0;
+    /* reset the 980px width and default margins on desktop */
+    width: 100%;
+    margin: 0;
+}
+
+section.cust-support {
+    width: 100%;
+    margin: 0;
+    /* force desktop to be non-responsive */
+    min-width: 980px;
+}
+
+body.mobileSite section.cust-support {
+    /* reset min-width on mobile */
+    min-width: auto;
+}
+
+section.cust-support p, section.cust-support a {
+    /* reset p and a tags */
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+section.cust-support * {
+    /* everything is border-box for predictable layout */
+    box-sizing: border-box;
+}
+
+section.cust-support .hero {
+    /* reset hero class */
+    margin-bottom: 0;
+}

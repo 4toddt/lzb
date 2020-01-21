@@ -1,0 +1,381 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- begin BCC content -->
+    <!-- Black Friday Sale Retail TT -->
+    <link href="/css/promos.css" rel="stylesheet" type="text/css">
+    <style>
+        #bcc-content h1 {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        #bcc-content h1+.subtitle {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #0071B5;
+            text-transform: uppercase;
+        }
+        
+        #bcc-content h2 {
+            font-size: 1.7em;
+        }
+        
+        #bcc-content h2+.subtitle {
+            margin-top: .5em;
+        }
+        
+        #bcc-content h3 {
+            font-size: 1.2em;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: .5em;
+        }
+        
+        #bcc-content h3~.description {
+            font-size: .8em;
+            margin-top: .25em;
+        }
+        
+        /* #bcc-content h3~.price {
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-top: .25em;
+        } */
+        
+        #bcc-content h3~.price>del {
+            color: #777;
+        }
+        
+        #bcc-content p {
+            line-height: 1.5;
+        }
+        
+        section#super-buy {
+            border: solid 1px #979797;
+            border-top: none;
+            max-width: 980px;
+            margin-top: 0;
+            padding-bottom: 40px;
+        }
+        
+        #bcc-content .image {
+            position: relative;
+        }
+        
+        #bcc-content .image a {
+            font-size: .9em;
+            color: white;
+            text-align: left;
+            text-decoration: none;
+            position: absolute;
+            bottom: 1em;
+            left: 1em;
+            text-shadow: 0 0 1em black;
+        }
+        
+        #bcc-content .image a h3 {
+            font-size: 1em;
+            line-height: 1;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        #bcc-content .image h3:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        #bcc-content .image a .price {
+            font-size: .9em;
+            margin-top: .2em;
+            line-height: 1;
+            text-shadow: 0 0 .5em black;
+        }
+        
+        #bcc-content .image a .price>del {
+            color: inherit;
+        }
+        
+        #bcc-content .image~a {
+            background-color: #333;
+            font-size: 1em;
+            margin-top: .75em;
+        }
+        
+        #bcc-content .image~a:hover,
+        #bcc-content .image:hover~a {
+            background-color: #404040;
+        }
+        
+        #super-buy .image~a {
+            background-color: #8F0803;
+        }
+        
+        #super-buy .image~a:hover,
+        #super-buy .image:hover~a {
+            background-color: #780602;
+        }
+        
+        #bcc-content .image.background-image {
+            margin-top: 0;
+            margin-bottom: 0;
+            height: 100%;
+            background-size: cover;
+            background-position: bottom;
+            padding-bottom: 120%;
+        }
+        
+        #duo-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #duo-logo {
+            width: 140px;
+            align-self: center;
+            padding: 0 20px 20px;
+            border: solid #979797;
+            border-width: 0 0 1px;
+            min-height: 1px;
+        }
+        
+        #duo-copy {
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        @media only screen and (min-width: 500.1px) {
+            #bcc-content h1 {
+                font-size: 2.5em;
+            }
+            #bcc-content h1+.subtitle {
+                font-size: 1.2em;
+            }
+            #super-buy .hotbuys>div:first-child {
+                flex-basis: 40%;
+                justify-content: center;
+            }
+            #super-buy .hotbuys>div:last-child {
+                justify-content: flex-start;
+            }
+        }
+        
+        @media only screen and (min-width: 750.1px) {
+            #bcc-content .hero {
+                z-index: -1;
+            }
+            #bcc-content .hero .image {
+                margin-bottom: -2.8%;
+            }
+        }
+        
+        @media only screen and (min-width: 800.1px) {
+            #duo-header {
+                flex-direction: row;
+                justify-content: center;
+            }
+            #duo-logo {
+                padding: 10px 40px 10px 0;
+                border-width: 0 1px 0 0;
+            }
+            #duo-copy {
+                padding: 0 0 0 40px;
+                text-align: left;
+            }
+        }
+    </style>
+    <div id="bcc-content">
+        <section class="hero">
+            <div class="image">
+                <picture>
+                    <source media="(max-width: 500px)" srcset="https://embed.widencdn.net/img/lazboy/tmm5va6y5q/500px@2x/black-friday-sale.jpg?q=50 2x, https://embed.widencdn.net/img/lazboy/tmm5va6y5q/500px/black-friday-sale.jpg?q=85 1x">
+                    <source media="(max-width: 750px)" srcset="https://embed.widencdn.net/img/lazboy/o7nou2odvg/750px@2x/black-friday-sale.jpg?q=50 2x, https://embed.widencdn.net/img/lazboy/o7nou2odvg/750px/black-friday-sale.jpg?q=85 1x">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/fzjucfxolx/980px@2x/black-friday-sale.jpg?q=50 2x, https://embed.widencdn.net/img/lazboy/fzjucfxolx/980px/black-friday-sale.jpg?q=85 1x" src="https://embed.widencdn.net/img/lazboy/fzjucfxolx/980px/black-friday-sale.jpg?q=85" alt="Black Friday Sale Extended! Hurry and save before it's over! Save online & in-store. Great deals on recliners, sofas, and more!">
+                </picture>
+            </div>
+        </section>
+        <section id="super-buy">
+            <div class="three-col gutter-40 hotbuys">
+                <div id="collage">
+                    <div class="hidden-md-xl" class="image">
+                        <img srcset="https://embed.widencdn.net/img/lazboy/knu3qn4zmv/300px@2x/limited-time-super-buy.png 2x, https://embed.widencdn.net/img/lazboy/knu3qn4zmv/300px/limited-time-super-buy.png 1x" src="https://embed.widencdn.net/img/lazboy/knu3qn4zmv/300px/limited-time-super-buy.png" alt="Limited time only! Super buy! Collage $349">
+                    </div>
+                    <div class="image">
+                        <img srcset="https://embed.widencdn.net/img/lazboy/w97vz9asoo/400px@2x/collage-rocking-recliner.jpg?q=50 2x, https://embed.widencdn.net/img/lazboy/w97vz9asoo/400px/collage-rocking-recliner.jpg?q=85 1x" src="https://embed.widencdn.net/img/lazboy/w97vz9asoo/400px/collage-rocking-recliner.jpg?q=85" alt="Collage Rocking Recliner">
+                    </div>
+                    <a class="hidden-md-xl" href="/p/recliners/collage-rocking-recliner/_/R-010734">Shop now</a>
+                </div>
+                <div class="hidden-xs-sm">
+                    <div class="image">
+                        <img srcset="https://embed.widencdn.net/img/lazboy/knu3qn4zmv/300px@2x/limited-time-super-buy.png 2x, https://embed.widencdn.net/img/lazboy/knu3qn4zmv/300px/limited-time-super-buy.png 1x" src="https://embed.widencdn.net/img/lazboy/knu3qn4zmv/300px/limited-time-super-buy.png" alt="Limited time only! Super buy! Collage $349">
+                    </div>
+                    <a href="/p/recliners/collage-rocking-recliner/_/R-010734">Shop now</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h1 style="margin:0 -15px;">Bonus recliner&nbsp;deals</h1>
+            <p class="subtitle">Prices, comfort and quality you&rsquo;ll&nbsp;love.</p>
+            <div class="three-col gutter-40 hotbuys" style="justify-content: space-evenly;">
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/z81pcxeu8a/30px/widen-placeholder.jpg?q=100" alt="Gabe Rocking Recliner $399"></div>
+                    <a href="/p/recliners/gabe-rocking-recliner/_/R-010705">Shop now</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/tjt2xvls6y/30px/widen-placeholder.jpg?q=100" alt="Gibson Rocking Recliner $499"></div>
+                    <a href="/p/recliners/gibson-rocking-recliner/_/R-010563">Shop now</a>
+                </div>
+                <!-- <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/saybiwjcnn/30px/widen-placeholder.jpg?q=100" alt="Trouper Rocking Recliner $599"></div>
+                    <a href="/p/recliners/trouper-rocking-recliner/_/R-010724">Shop now</a>
+                </div> -->
+            </div>
+            <p class="disclaimer">Power and/or AirForm&trade; upgrades available on select reclining styles</p>
+        </section>
+        <!-- <section>
+            <h1 style="font-size: 2.3em;">15% off all mattresses +&nbsp;free&nbsp;shipping</h1>
+            <p class="subtitle">2 styles and 6 sizes to suit your family -&nbsp;online&nbsp;exclusive!</p>
+            <div class="three-col gutter-40 products" style="justify-content: space-evenly;">
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/7oftudlojr/30px/widen-placeholder.jpg?q=100" alt="Essential Mattress"></div>
+                    <h3>Essential mattress</h3>
+                    <p class="description">Everything you need for an exceptional night of comfort.</p>
+                    <a href="/b/_/N-bznv78">Shop now</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/iinfogjdjh/30px/widen-placeholder.jpg?q=100" alt="Select Mattress"></div>
+                    <h3>Select mattress</h3>
+                    <p class="description">The comfort of our Essential Mattress, upgraded with premium foam.</p>
+                   <a href="/b/_/N-1rdp0q1">Shop now</a>
+                </div>
+            </div>
+        </section> -->
+        <section>
+            <h1>Bonus sofa&nbsp;deals</h1>
+            <p class="subtitle">Find hot deals on Sofas, storewide <span class="no-wrap">and site-wide.</span></p>
+            <div class="two-col gutter-20 products">
+                <div>
+                    <div class="image">
+                        <img src="https://embed.widencdn.net/img/lazboy/tlanq3m7h1/48px/widen-placeholder.jpg?q=100" alt="Laurel Sofa">
+                        <a href="/p/sofas/laurel-sofa/_/R-610411">
+                            <h3>Laurel sofa</h3>
+                            <p class="price">Starting at <del>$1299</del> $799</p>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image">
+                        <img src="https://embed.widencdn.net/img/lazboy/ijvc9bqwml/48px/widen-placeholder.jpg?q=100" alt="Dixie Sofa">
+                        <a href="/p/sofas/dixie-sofa/_/R-610634">
+                            <h3>Dixie sofa</h3>
+                            <p class="price">Starting at <del>$1299</del> $799</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="double">
+                    <div class="image">
+                        <picture>
+                            <source media="(max-width: 500px)" srcset="https://embed.widencdn.net/img/lazboy/zovt1gwz0f/29px/widen-placeholder.jpg?q=100">
+                            <img src="https://embed.widencdn.net/img/lazboy/kbfnyuogq5/98px/widen-placeholder.jpg?q=100" alt="Easton Reclining Sofa">
+                        </picture>
+                        <a href="/p/sofas/easton-reclining-sofa/_/R-440702">
+                            <h3>Easton reclining sofa</h3>
+                            <p class="price">Starting at <del>$1599</del> $999</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="three-col gutter-40 products">
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/wvtme8gipj/30px/widen-placeholder.jpg?q=100" alt="Pinnacle Wall Reclining Sofa"></div>
+                    <h3>Pinnacle</h3>
+                    <p class="subtitle">Reclining Sofa</p>
+                    <p class="price">Starting at <del>$1899</del> $1099</p>
+                    <a href="/p/sofas/pinnacle-wall-reclining-sofa/_/R-330512">Shop now</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/8jas8tzfb8/30px/widen-placeholder.jpg?q=100" alt="Rowan Wall Reclining Sofa"></div>
+                    <h3>Rowan</h3>
+                    <p class="subtitle">Reclining Sofa</p>
+                    <p class="price">Starting at <del>$1899</del> $1199</p>
+                    <a href="/p/sofas/rowan-wall-reclining-sofa/_/R-330765">Shop now</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/pbkbuzx3nl/30px/widen-placeholder.jpg?q=100" alt="Rowan Wall Reclining Sofa"></div>
+                    <h3>James</h3>
+                    <p class="subtitle">Reclining Sofa</p>
+                    <p class="price">Starting at <del>$3599</del> $1999</p>
+                    <a href="/p/sofas/james-reclining-sofa/_/R-440521">Shop now</a>
+                </div>
+                <div>
+                    <div class="image background-image" style="background-image:url(https://embed.widencdn.net/img/lazboy/00a9k7d4jm/300px@2x/widen-placeholder.jpg?q=50);">
+                        <a href="/p/sectionals/paxton-sectional/_/R-xxs663Style3">
+                            <h3>Paxton sectional</h3>   
+                            <p class="price">Starting at <del>$4449</del> $2999</p>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/ezlekzqe6b/30px/widen-placeholder.jpg?q=100" alt="Bexley Sofa"></div>
+                    <h3>Bexley</h3>
+                    <p class="subtitle">Sofa</p>
+                    <p class="price">Starting at <del>$1449</del> $999</p>
+                    <a href="/p/sofas/bexley-sofa/_/R-610681">Shop now</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/ksrlkbhcjd/30px/widen-placeholder.jpg?q=100" alt="Alexandria Sofa"></div>
+                    <h3>Alexandria</h3>
+                    <p class="subtitle">Sofa</p>
+                    <p class="price">Starting at <del>$1649</del> $1099</p>
+                    <a href="/p/sofas/alexandria-sofa/_/R-610682">Shop now</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="duo-header">
+                <div id="duo-logo">
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/ufwtycmudr/10px/widen-placeholder.jpg?q=100" alt="Duo logo"></div>
+                </div>
+                <div id="duo-copy">
+                    <h2>Power reclining meets stationary&nbsp;style.</h2>
+                    <p class="subtitle">Trendy sofas, loveseats and chairs with power&nbsp;and&nbsp;USB.</p>
+                </div>
+            </div>
+            <div class="two-col gutter-20 products">
+                <div>
+                    <div class="image">
+                        <img src="https://embed.widencdn.net/img/lazboy/lmkwqc4noq/48px/widen-placeholder.jpg?q=100" alt="Makenna duo® Reclining Sofa">
+                        <a href="/p/sofas/makenna-duo-reclining-sofa/_/R-91P896">
+                            <h3>Makenna power reclining&nbsp;sofa</h3>   
+                            <p class="price">Starting at <del>$2649</del> $1599</p>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image">
+                        <img src="https://embed.widencdn.net/img/lazboy/zr1y3iqsmr/48px/widen-placeholder.jpg?q=100" alt="Bennett duo® Reclining Sofa">
+                        <a href="/p/sofas/bennett-duo-reclining-sofa/_/R-91P899">
+                            <h3>Bennett power reclining&nbsp;sofa</h3>   
+                            <p class="price">Starting at <del>$2774</del> $1799</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p class="disclaimer" style="padding: 0 15px">Local prices and dealer participation may&nbsp;vary.</p>
+    </div>
+    <script src="/js/widen-loader.js"></script>
+    <script src="/js/promos.js"></script>
+    <!-- end BCC content -->
+</body>

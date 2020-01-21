@@ -1,0 +1,1179 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+/*****************************************/
+
+
+/* CSS Reset for BCC Full Blank Template */
+
+
+/*****************************************/
+
+body {
+    /* reset mobile user agent 8px margin for local development */
+    margin: 0;
+}
+
+.site-wrapper,
+.section-row {
+    max-width: none;
+}
+
+.breadcrumbs {
+    margin: 0.625rem auto;
+    max-width: 62.5rem;
+}
+
+section.cust-support>h1,
+section.cust-support>hr {
+    /* hide h1 and mobile hr coming from ATG */
+    display: none;
+}
+
+body.two-column-first section[role="region"] {
+    /* reset the 775px width and default margin on the content section */
+    width: 100%;
+    margin-left: 0;
+}
+
+[class^="two-column"] section,
+[class^="two-column"] aside {
+    /* reset the display property of section and aside elements */
+    display: block;
+}
+
+main {
+    /* reset the 10px padding on mobile */
+    padding: 0;
+    /* reset the 980px width and default margins on desktop */
+    width: 100%;
+    margin: 0;
+}
+
+section.cust-support {
+    width: 100%;
+    margin: 0;
+}
+
+section.cust-support {
+    /* reset min-width */
+    min-width: auto;
+}
+
+section.cust-support p,
+section.cust-support a {
+    /* reset p and a tags */
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+section.cust-support * {
+    /* everything is border-box for predictable layout */
+    box-sizing: border-box;
+}
+
+section.cust-support .hero {
+    /* reset hero class */
+    margin-bottom: 0;
+}
+
+
+/*****************************************/
+
+
+/*** Resets for new mobile framework *****/
+
+
+/*****************************************/
+
+main#site-wrapper>.section-title {
+    display: none;
+}
+
+.section-row>.section-content {
+    padding: 0;
+}
+
+section.cust-support .right {
+    float: none !important;
+}
+
+section.cust-support [class*="column"]+[class*="column"]:last-child {
+    float: none;
+}
+
+
+/*****************************************/
+
+
+/****** Defaults for all NPC pages *******/
+
+
+/*****************************************/
+
+section.cust-support img {
+    /* override browser default of inline-block to remove white space after images */
+    display: block;
+    /* fix IE bug where images in flex containers don't keep their aspect ratio */
+    min-height: 1px;
+}
+
+section.cust-support [onclick],
+section.cust-support [videoModal] {
+    /* if there is an onclick attribute, the curser will be a pointer */
+    cursor: pointer;
+}
+
+
+/******************* Responsive Page Container *******************/
+
+section.cust-support section {
+    /* fixed width on desktop */
+    width: 980px;
+    margin: 50px auto 0;
+}
+
+@media only screen and (max-width: 980px) {
+    body section.cust-support section {
+        /* full width on mobile */
+        width: 100%;
+        max-width: 980px;
+        /* margin-top is 50px at 980 and scales evenly to 30px at 320 with fallback in case calc() is not supported*/
+        margin-top: 5.1%;
+        margin-top: calc(3.03% + 20.3px);
+    }
+}
+
+
+/************* Responsive Visibility Classes **************/
+
+body.mobile-site section.cust-support .desktop-only {
+    display: none;
+}
+
+body:not(.mobile-site) section.cust-support .mobile-only {
+    display: none;
+}
+
+
+/* names patterned after https://getbootstrap.com/docs/3.3/css/ */
+
+section.cust-support .visible-lg,
+section.cust-support .visible-md,
+section.cust-support .visible-sm,
+section.cust-support .visible-xs {
+    /* Set default display state for visibility classes */
+    display: none;
+}
+
+@media only screen and (min-width: 751px) {
+    section.cust-support .visible-lg {
+        /* display only on large devices (>= 751px) */
+        display: block;
+    }
+    body section.cust-support .hidden-lg {
+        /* hide only on large devices (>= 751px) */
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 750px) {
+    section.cust-support .visible-md {
+        /* display only on medium devices (501px - 750px) */
+        display: block;
+    }
+    body section.cust-support .hidden-md {
+        /* hide only on medium devices (501px - 750px) */
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 500px) {
+    section.cust-support .visible-sm {
+        /* display only on small devices (376px - 500px) */
+        display: block;
+    }
+    body section.cust-support .hidden-sm {
+        /* hide only on small devices (376px - 500px) */
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    section.cust-support .visible-xs {
+        /* display only on extra small devices (<=375px) */
+        display: block;
+    }
+    body section.cust-support .hidden-xs {
+        /* hide only on extra small devices (<=375px) */
+        display: none;
+    }
+}
+
+
+/************** Utility Classes **************/
+
+section.cust-support .no-wrap {
+    /* class to keep a word or phrase from wrapping */
+    white-space: nowrap;
+}
+
+section.cust-support .arrow-right {
+    /* place <span class="arrow-right"></span> around last word to keep arrow with word */
+    display: inline-block;
+}
+
+section.cust-support .arrow-right:after {
+    /* draws arrow */
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -.1em;
+    left: .25em;
+    height: 0;
+    width: 0.3em;
+    border-top: .25em solid transparent;
+    border-bottom: .25em solid transparent;
+    border-left: .35em solid;
+    box-sizing: content-box;
+}
+
+section.cust-support .registered-trademark:after {
+    /* position ® after element */
+    content: "\00ae";
+    font-size: .6em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+
+/****************** Font Defaults ********************/
+
+section.cust-support {
+    /* default font for npc content */
+    font-family: 'lato', 'OpenSans', sans-serif;
+    font-size: 20px;
+    line-height: normal;
+    color: #494949;
+}
+
+section.cust-support h1,
+section.cust-support h2,
+section.cust-support h3 {
+    font-family: 'lato', 'OpenSans', sans-serif;
+    margin: 0;
+    line-height: 1;
+}
+
+section.cust-support p {
+    margin: 0;
+    line-height: 1.25;
+}
+
+
+/******************* Hero Banner Classes *******************/
+
+section.cust-support section.hero,
+body section.cust-support section.hero {
+    /* override section default top margin */
+    margin-top: 0;
+}
+
+section.cust-support .hero {
+    position: relative;
+}
+
+section.cust-support .hero img {
+    width: 100%;
+}
+
+
+/****************** NPC Modal  ********************/
+
+#npc-modal,
+#vote-modal {
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#npc-modal-container {
+    background-color: #fefefe;
+    padding: 5px;
+    border: 1px solid #888;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 75%;
+    max-width: 1050px;
+}
+
+#npc-image {
+    width: 100%;
+    display: block;
+}
+
+.video #npc-modal-content {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+#npc-modal-content iframe {
+    min-height: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#npc-modal-close {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    width: 22px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#npc-modal-close:hover,
+#npc-modal-close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#vote-modal {
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 750px) {
+    body #vote-modal {
+        font-size: 14.7px;
+    }
+}
+
+#vote-modal #npc-modal-container {
+    max-width: 400px;
+    min-width: 300px;
+    padding: 0;
+    font-family: 'lato', sans-serif;
+    color: #494949;
+}
+
+#vote-modal #npc-modal-content {
+    height: 100%;
+    max-height: 95vh;
+    overflow: auto;
+    padding: 0 1em 1em;
+}
+
+#vote-modal h2 {
+    font-size: 1.7em;
+    line-height: 1;
+    color: #848484;
+    margin: 1em;
+    text-align: center;
+    font-weight: normal;
+}
+
+#vote-modal p {
+    font-size: 1em;
+    line-height: 1.25;
+    margin: .5em 0;
+}
+
+#vote-modal label,
+#vote-modal label.error,
+#vote-modal .psuedo-label {
+    display: block;
+    font-size: 1em;
+    margin: 0;
+    width: 100%;
+}
+
+#vote-modal [type="text"],
+#vote-modal [type="password"],
+#vote-modal [type="email"],
+#vote-modal [type="number"],
+#vote-modal [type="tel"],
+#vote-modal [type="url"],
+#vote-modal [type="search"],
+#vote-modal select {
+    width: 100%;
+    /* height: 32px;
+    padding: 0 5px 0 10px; */
+}
+
+#vote-modal input[type="checkbox"],
+#vote-modal input[type="radio"] {
+    margin: 0.3em;
+}
+
+#vote-modal .elq-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#vote-modal .elq-field {
+    margin-top: .5em;
+}
+
+#vote-modal .elq-field.text {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#vote-modal .elq-field.checkbox {
+    display: flex;
+}
+
+#vote-modal .elq-field.vote-button {
+    width: 14em;
+    margin: 1em auto 0;
+}
+
+#vote-modal input[type="submit"] {
+    background-color: #d38259;
+    color: white;
+    font-size: 1em;
+    padding: .7em;
+    border-radius: .45em;
+    width: 100%;
+    border: none;
+    transition: opacity .2s;
+}
+
+#vote-modal input[type="submit"]:hover {
+    opacity: .65;
+}
+
+#vote-modal #thank-you,
+#vote-modal .hidden-iframe {
+    display: none;
+}
+
+
+/*****************************************/
+
+
+/****** Design Dash Custom Styles *******/
+
+
+/*****************************************/
+
+section.cust-support .hero .dd-rules {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    color: white;
+    text-shadow: 0px 0px 20px black, 0px 0px 12px black;
+    font-size: 12px;
+    transition-property: opacity;
+    transition-duration: 200ms;
+}
+
+section.cust-support .hero .dd-rules:hover {
+    opacity: .65;
+}
+
+section.cust-support .hero .copy-pane .dd-rules {
+    display: none;
+}
+
+section.cust-support .hero .copy-pane {
+    font-size: 17px;
+    letter-spacing: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 36px;
+    width: 390px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+section.cust-support .hero .copy-pane::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -4.3%;
+    width: 4.3%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+section.cust-support .hero .copy-pane p {
+    position: static;
+    text-align: center;
+}
+
+section.cust-support .hero .copy-pane .story {
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+}
+
+section.cust-support .hero .copy-pane .story.short {
+    display: none;
+}
+
+section.cust-support .hero .copy-pane hr {
+    border: 0;
+    border-bottom: 1px solid gray;
+    margin: 1em auto;
+    width: 7em;
+}
+
+section.cust-support .hero .copy-pane .announcement {
+    max-width: 16em;
+}
+
+section.cust-support .hero .copy-pane .announcement.short {
+    display: none;
+}
+
+section.cust-support .hero .copy-pane .win {
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: 1;
+}
+
+section.cust-support .hero .dash {
+    margin-top: 1em;
+}
+
+#dd-logo {
+    display: none;
+}
+
+#dd-sign-up {
+    background-color: #bcbabb;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    padding: .5em;
+}
+
+#dd-sign-up form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#dd-sign-up.sent form {
+    display: none;
+}
+
+#dd-sign-up .confirmation {
+    font-size: .9em;
+    line-height: 1.15;
+    padding: .88888888em;
+    display: none;
+    text-align: center;
+}
+
+#dd-sign-up.sent .confirmation {
+    display: block;
+}
+
+#dd-sign-up label {
+    font-size: .9em;
+    line-height: 1.15;
+    width: auto;
+    margin: .5em;
+    text-align: center;
+}
+
+#dd-sign-up input {
+    font-size: .8em;
+    border: none;
+    line-height: 1.25;
+    height: auto;
+    padding: .5em;
+    margin: .5em;
+}
+
+#dd-email {
+    width: 13em;
+    color: #999;
+}
+
+#dd-sign-up input[type="submit"] {
+    background-color: #6a879b;
+    border-radius: .5em;
+    padding: .5em 1.5em;
+    transition-property: opacity;
+    transition-duration: 200ms;
+}
+
+#dd-sign-up input[type="submit"]:hover {
+    opacity: .65;
+}
+
+#dd-kelly-video {
+    margin-top: 10px;
+    position: relative;
+}
+
+#dd-kelly-video::after {
+    content: "";
+    position: absolute;
+    width: 9.6%;
+    height: 65.2%;
+    top: 18.6%;
+    left: 45.2%;
+    border-radius: 200px;
+    transition: background-color .2s;
+}
+
+#dd-kelly-video:hover::after {
+    background-color: rgba(255, 255, 255, .25);
+}
+
+#dd-bloggers {
+    width: 100%;
+    margin-top: 0;
+}
+
+section.cust-support h2 {
+    text-transform: none;
+    color: #848484;
+    font-size: 1.3em;
+    margin: 1em;
+    max-width: none;
+    text-align: center;
+    font-weight: normal;
+}
+
+section.cust-support h2 strong {
+    font-weight: 900;
+}
+
+#dd-bloggers .blogger-background {
+    background-color: #f1f1f1;
+}
+
+#dd-bloggers .bloggers {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    padding: 1% 0;
+}
+
+#dd-bloggers .blogger {
+    width: 48.469388%;
+    margin: 1.022% auto 0;
+    background-color: white;
+    padding: 1em;
+    border-radius: .6em;
+}
+
+#dd-bloggers a {
+    color: #006fb1;
+    color: #3f789e;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 200ms;
+}
+
+#dd-bloggers a:hover {
+    opacity: .65;
+}
+
+#dd-bloggers .blogger:nth-child(even) {
+    margin-left: 0;
+}
+
+section.cust-support .blogger-profile {
+    display: flex;
+}
+
+section.cust-support .blogger-portrait {
+    width: 5.5em;
+    min-width: 5.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border-radius: .45em;
+    overflow: hidden; */
+}
+
+section.cust-support .blogger-portrait img {
+    /* width: 5.5em;
+    min-width: 5.5em; */
+    border-radius: .45em;
+    overflow: hidden;
+}
+
+section.cust-support .blogger-details {
+    padding-left: .8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section.cust-support .dd-blogger-room>.blogger-profile>.blogger-details {
+    /* min-width: 14em; */
+}
+
+section.cust-support .blogger-details h3 {
+    margin-top: 0;
+    font-weight: 900;
+    font-size: 1em;
+}
+
+section.cust-support .blogger-details a {
+    font-size: .7em;
+    color: #65a0c8;
+    color: #3f789e;
+    font-weight: bold;
+    transition: opacity .2s;
+}
+
+section.cust-support .blogger-details a:hover {
+    opacity: .65;
+}
+
+#dd-bloggers .blogger-sofa {
+    display: block;
+    margin: 1em 1.5em 0;
+}
+
+#dd-bloggers .blogger-sofa p {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+}
+
+#dd-bloggers .blogger-copy {
+    margin: 1em;
+    font-size: .8em;
+}
+
+#dd-blogger-rooms {
+    margin-top: 0;
+}
+
+#dd-blogger-rooms a {
+    transition: opacity .2s;
+}
+
+#dd-blogger-rooms a:hover {
+    opacity: .65;
+}
+
+#dd-blogger-rooms .dd-blogger-room {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5em;
+    padding: 3%;
+    margin-top: 1.3em;
+}
+
+#dd-blogger-rooms .dd-slideshow {
+    width: 60%;
+}
+
+#dd-blogger-rooms .dd-slideshow .slides img {
+    display: none;
+    border-radius: .45em .45em 0 0;
+    transition: opacity .2s;
+}
+
+#dd-blogger-rooms .dd-slideshow .slides img[videoModal]:hover {
+    opacity: .75;
+}
+
+#dd-blogger-rooms .dd-slideshow .slides img.active {
+    display: block;
+    border-radius: .45em .45em 0 0;
+}
+
+#dd-blogger-rooms .dd-slideshow .thumbnails {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 3%;
+}
+
+#dd-blogger-rooms .dd-slideshow .thumbnails img {
+    width: 23%;
+    transition: background-color 0.2s;
+    border-radius: 0 0 .45em .45em;
+    cursor: pointer;
+}
+
+#dd-blogger-rooms .dd-slideshow .thumbnails img.active,
+#dd-blogger-rooms .dd-slideshow .thumbnails img:hover {
+    background-color: #6a879b;
+    padding-bottom: 1.5%;
+}
+
+#dd-blogger-rooms .dd-blogger {
+    width: 40%;
+    padding-left: 1.5em;
+    padding-left: 3%;
+}
+
+#dd-blogger-rooms .blogger-bio {
+    font-size: .8em;
+    margin: 1em 0;
+    cursor: pointer;
+}
+
+#dd-blogger-rooms .blogger-bio p {
+    overflow: hidden;
+}
+
+#dd-blogger-rooms .blogger-bio::after {
+    content: "Read less...";
+    color: #65a0c8;
+    color: #3f789e;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+
+#dd-blogger-rooms .blogger-bio:hover::after {
+    opacity: .65;
+}
+
+#dd-blogger-rooms .blogger-bio.collapsed p {
+    height: 2.5em;
+}
+
+#dd-blogger-rooms .blogger-bio.collapsed::after {
+    content: "Read more...";
+}
+
+#dd-blogger-rooms .blogger-buttons {
+    font-size: .8em;
+    color: white;
+    text-align: center;
+}
+
+#dd-blogger-rooms .blogger-buttons a {
+    padding: .7em;
+    border-radius: .45em;
+    display: block;
+    width: 14em;
+    margin: .5em .5em 0 0;
+}
+
+#dd-blogger-rooms .blogger-buttons .vote {
+    background-color: #d38259;
+}
+
+#dd-blogger-rooms .blogger-buttons .get,
+#dd-blogger-rooms .blogger-buttons .free-swatches {
+    background-color: #6a879b;
+}
+
+#dd-blogger-rooms .blogger-buttons .free-swatches {
+    display: none;
+}
+
+#dd-blogger-rooms .blogger-share {
+    margin-top: 1em;
+    font-size: .8em;
+    display: flex;
+    align-items: center;
+}
+
+#dd-blogger-rooms .blogger-share p {
+    margin-right: 0.25em;
+}
+
+#dd-blogger-rooms .blogger-share a {
+    margin-left: 0.25em;
+}
+
+#dd-blogger-rooms .dsr-button {
+    text-align: right;
+}
+
+#dd-blogger-rooms .blogger-tabs {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#dd-blogger-rooms .blogger-tabs a,
+#dd-blogger-rooms .dsr-button a {
+    font-size: 0.8em;
+    color: white;
+    background-color: #aeccc8;
+    padding: 0.5em 1em;
+    margin-right: .5em;
+    text-align: center;
+    border-radius: 0 0 0.45em 0.45em;
+}
+
+#dd-blogger-rooms .blogger-tabs a.swatch-tab {
+    background-color: #95b7b2;
+}
+
+#dd-blogger-rooms .dsr-button a {
+    display: inline-block;
+    padding: .5em 1.7em;
+    margin-right: 0;
+    min-width: 38%;
+}
+
+#dd-blogger-products {
+    margin-top: 0;
+    width: 100%;
+}
+
+#dd-blogger-products .gray-background {
+    background-color: #f1f1f1;
+}
+
+#dd-blogger-products .products {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 1%;
+}
+
+#dd-blogger-products .product {
+    width: 49.5%;
+    max-width: 500px;
+    margin-top: 1%;
+    padding: 2%;
+    background-color: white;
+    text-align: center;
+}
+
+#dd-blogger-products h3 {
+    margin: .5em 0;
+}
+
+#dd-blogger-products a {
+    padding: .6em;
+    font-size: .8em;
+    border-radius: .45em;
+    display: block;
+    margin: 0 auto;
+    max-width: 12em;
+    transition: opacity .2s;
+    background-color: #6a879b;
+    color: white;
+}
+
+#dd-blogger-products a:hover {
+    opacity: .65;
+}
+
+#dd-footer {
+    margin-top: 2%;
+    position: relative;
+}
+
+#dd-footer a {
+    position: absolute;
+    display: block;
+    left: 63%;
+    top: 81%;
+    width: 10%;
+    height: 13%;
+}
+
+#dd-footer a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media only screen and (max-width: 850px) {
+    body section.cust-support .hero .copy-pane {
+        font-size: 2.4vw;
+        width: 39.8%;
+        padding: 0 1.4em;
+    }
+    body section.cust-support .hero .copy-pane .story,
+    body section.cust-support .hero .copy-pane .announcement {
+        display: none;
+    }
+    body section.cust-support .hero .copy-pane .story.short {
+        display: block;
+    }
+    body section.cust-support .hero .copy-pane .announcement.short {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    body section.cust-support {
+        font-size: 18.4px;
+    }
+    body #dd-sign-up form {
+        max-width: 18em;
+    }
+    body #dd-bloggers .bloggers {
+        padding: 2% 0;
+    }
+    body #dd-bloggers .blogger {
+        width: 23.75em;
+        max-width: 96%;
+        margin: 2% auto;
+    }
+    body #dd-bloggers .blogger:nth-child(1) {
+        order: -1;
+    }
+    body #dd-bloggers .blogger:nth-child(2) {
+        order: -1;
+    }
+    body #dd-bloggers .blogger:nth-child(4) {
+        order: -1;
+    }
+    body #dd-blogger-rooms .dd-blogger-room {
+        max-width: 600px;
+        padding: 3%;
+        margin: 1.3em auto 0;
+    }
+    body #dd-blogger-rooms .blogger-tabs {
+        max-width: 600px;
+        margin: 0 auto;
+        justify-content: flex-end;
+    }
+    body #dd-blogger-rooms .blogger-tabs a {
+        margin-right: 0;
+        padding: .5em 1.7em;
+    }
+    body #dd-blogger-rooms .dd-slideshow {
+        width: 100%;
+        margin-top: 3%;
+    }
+    body #dd-blogger-rooms .dd-blogger {
+        width: 100%;
+        padding-left: 0;
+    }
+    body #dd-blogger-rooms .dd-blogger .vote {
+        display: none;
+    }
+    body #dd-blogger-rooms .blogger-buttons {
+        font-size: .7em;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    body #dd-blogger-rooms .blogger-buttons .vote {
+        font-size: 1em;
+        color: white;
+        margin-top: .5em;
+    }
+    body #dd-blogger-rooms .blogger-buttons .get {
+        background-color: #66a3cc;
+    }
+    body #dd-blogger-rooms .dsr-button {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    body #dd-blogger-products .products {
+        justify-content: center;
+        padding-bottom: 2%;
+    }
+    body #dd-blogger-products .product {
+        width: 100%;
+        max-width: 500px;
+        margin-top: 2%;
+        padding: 4%;
+    }
+    body #dd-footer {
+        margin-top: 4%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body section.cust-support .hero .copy-pane {
+        font-size: 16px;
+        width: 16em;
+        padding: 0 1.1em;
+        margin-bottom: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    body #dd-logo {
+        display: block;
+        width: 120px;
+        margin: 0 auto 1em;
+    }
+    body section.cust-support .hero .copy-pane .story.short {
+        text-align: center;
+    }
+    body section.cust-support .hero .dd-rules {
+        display: none;
+    }
+    body section.cust-support .hero .copy-pane .dd-rules {
+        position: static;
+        display: block;
+        text-shadow: none;
+        margin-top: 1.5em;
+        margin-bottom: -.5em;
+        color: #494949;
+        text-decoration: underline;
+    }
+    body #dd-kelly-video:hover::after {
+        background-color: transparent;
+    }
+    body #dd-blogger-rooms .dsr-button {
+        text-align: center;
+        padding: 0 3%;
+    }
+    body #dd-blogger-rooms .blogger-tabs {
+        justify-content: center;
+        padding: 0 3%;
+    }
+    body #dd-footer a {
+        left: 43%;
+        top: 77%;
+        width: 20%;
+        height: 18%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body section.cust-support .hero .copy-pane {
+        font-size: 15px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+    body section.cust-support .hero .copy-pane::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -4.3%;
+        width: 4.3%;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    body #dd-blogger-rooms .dsr-redirect {
+        min-width: 100%;
+    }
+    body #dd-logo {
+        width: 100px;
+        margin: 0 auto .5em;
+    }
+    body section.cust-support .hero .dash,
+    body section.cust-support .hero p {
+        text-align: center;
+        padding: 0;
+        margin-top: .5em;
+    }
+}

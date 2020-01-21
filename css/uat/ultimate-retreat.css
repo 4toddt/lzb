@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+/*****************************************/
+
+
+/* CSS Reset for BCC Full Blank Template */
+
+
+/*****************************************/
+
+body {
+    /* reset mobile user agent 8px margin for local development */
+    margin: 0;
+}
+
+.site-wrapper,
+.section-row {
+    max-width: none;
+}
+
+.breadcrumbs {
+    margin: 0.625rem auto;
+    max-width: 62.5rem;
+}
+
+body.two-column-first section[role="region"] {
+    /* reset the 775px width and default margin on the content section */
+    width: 100%;
+    margin-left: 0;
+}
+
+[class^="two-column"] section,
+[class^="two-column"] aside {
+    /* reset the display property of section and aside elements */
+    display: block;
+}
+
+main {
+    /* reset the 10px padding on mobile */
+    padding: 0;
+    /* reset the 980px width and default margins on desktop */
+    width: 100%;
+    margin: 0;
+}
+
+section.cust-support {
+    width: 100%;
+    margin: 0;
+    /* reset min-width */
+    min-width: auto;
+}
+
+section.cust-support>h1,
+section.cust-support>hr {
+    /* hide h1 and mobile hr coming from ATG */
+    display: none;
+}
+
+section.cust-support p,
+section.cust-support a {
+    /* reset p and a tags */
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+section.cust-support * {
+    /* everything is border-box for predictable layout */
+    box-sizing: border-box;
+}
+
+section.cust-support .hero {
+    /* reset hero class */
+    margin-bottom: 0;
+}
+
+
+/*****************************************/
+
+
+/*** Resets for new mobile framework *****/
+
+
+/*****************************************/
+
+main#site-wrapper>.section-title {
+    display: none;
+}
+
+.section-row>.section-content {
+    padding: 0;
+}
+
+section.cust-support .right {
+    float: none !important;
+}
+
+section.cust-support [class*="column"]+[class*="column"]:last-child {
+    float: none;
+}
+
+
+/*****************************************/
+
+
+/****** Defaults for all NPC pages *******/
+
+
+/*****************************************/
+
+section.cust-support img {
+    /* override browser default of inline-block to remove white space after images */
+    display: block;
+    /* fix IE bug where images in flex containers don't keep their aspect ratio */
+    min-height: 1px;
+}
+
+section.cust-support [onclick],
+section.cust-support [videoModal] {
+    /* if there is an onclick attribute, the curser will be a pointer */
+    cursor: pointer;
+}
+
+
+/******************* Responsive Page Container *******************/
+
+section.cust-support section {
+    width: 980px;
+    margin: 78px auto 0;
+}
+
+@media only screen and (max-width: 980px) {
+    section.cust-support section {
+        /* full width on mobile */
+        width: 100%;
+        max-width: 980px;
+        /* margin-top is 50px at 980 and scales evenly to 30px at 320 with fallback in case calc() is not supported*/
+        margin-top: 8%;
+    }
+}
+
+
+/************* Responsive Visibility Classes **************/
+
+body.mobile-site section.cust-support .desktop-only {
+    display: none;
+}
+
+body:not(.mobile-site) section.cust-support .mobile-only {
+    display: none;
+}
+
+
+/* names patterned after https://getbootstrap.com/docs/3.3/css/ */
+
+section.cust-support .visible-lg,
+section.cust-support .visible-md,
+section.cust-support .visible-sm,
+section.cust-support .visible-xs {
+    /* Set default display state for visibility classes */
+    display: none;
+}
+
+@media only screen and (min-width: 751px) {
+    section.cust-support .visible-lg {
+        /* display only on large devices (>= 751px) */
+        display: block;
+    }
+    body section.cust-support .hidden-lg {
+        /* hide only on large devices (>= 751px) */
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 750px) {
+    section.cust-support .visible-md {
+        /* display only on medium devices (501px - 750px) */
+        display: block;
+    }
+    body section.cust-support .hidden-md {
+        /* hide only on medium devices (501px - 750px) */
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 500px) {
+    section.cust-support .visible-sm {
+        /* display only on small devices (376px - 500px) */
+        display: block;
+    }
+    body section.cust-support .hidden-sm {
+        /* hide only on small devices (376px - 500px) */
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    section.cust-support .visible-xs {
+        /* display only on extra small devices (<=375px) */
+        display: block;
+    }
+    body section.cust-support .hidden-xs {
+        /* hide only on extra small devices (<=375px) */
+        display: none;
+    }
+}
+
+/************** Utility Classes **************/
+
+section.cust-support .no-wrap {
+    /* class to keep a word or phrase from wrapping */
+    white-space: nowrap;
+}
+
+section.cust-support .arrow-right {
+    /* place <span class="arrow-right"></span> around last word to keep arrow with word */
+    display: inline-block;
+}
+
+section.cust-support .arrow-right:after {
+    /* draws arrow */
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -.1em;
+    left: .25em;
+    height: 0;
+    width: 0.3em;
+    border-top: .25em solid transparent;
+    border-bottom: .25em solid transparent;
+    border-left: .35em solid;
+    box-sizing: content-box;
+}
+
+section.cust-support .registered-trademark:after {
+    /* position ® after element */
+    content: "\00ae";
+    font-size: .6em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+section.cust-support .anchor {
+    /* Put <span class="anchor" id="whatever"></span> in the HTML. jQuery will move it to accommodate the mobile header. */
+    position: relative;
+    display: block;
+    height: 0;
+    width: 0;
+}
+
+/****************** Font Defaults ********************/
+
+section.cust-support {
+    /* default font for npc content */
+    font-family: 'lato', 'OpenSans', sans-serif;
+    font-size: 20px;
+    line-height: normal;
+    color: #494949;
+}
+
+section.cust-support h1,
+section.cust-support h2,
+section.cust-support h3,
+section.cust-support h4 {
+    font-family: inherit;
+    font-weight: bold;
+    margin: 0;
+    line-height: inherit;
+}
+
+/******************* Hero Banner Classes *******************/
+
+section.cust-support section.hero {
+    /* override section default top margin */
+    margin-top: 0;
+}
+
+section.cust-support .hero img {
+    width: 100%;
+}
+
+/****************** Design Services Request Button ********************/
+
+section.cust-support #dsr-button {
+    text-align: center;
+}
+
+section.cust-support #dsr-button a {
+    font-size: 23px;
+    color: white;
+    display: inline-block;
+    background-color: #aeccc8;
+    padding: .82em .94em;
+}
+
+/****** Copy Styles *******/
+
+section.cust-support {
+    font-size: 3.4vw;
+}
+
+section.cust-support p {
+    color: #333333;
+    line-height: 1.3;
+}
+
+section.cust-support h1 {
+    font-size: 1.3333em;
+    text-align: center;
+    color: #333333;
+    margin: .5em;
+}
+
+section.cust-support .hero p {
+    margin: 0 auto;
+    padding: 0 10px 1.3em;
+    max-width: 920px;
+}
+
+section.cust-support .lzb-midnav {
+    background-color: #9db3b8;
+    padding: .1px;
+}
+
+section.cust-support .lzb-midnav p {
+    font-size: 1.9em;
+    margin: .48em;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+section.cust-support .lzb-midnav-links {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section.cust-support .lzb-midnav-links a {
+    margin: 0 10px .8em;
+    display: inline-block;
+    color: white;
+}
+
+section.cust-support h2 {
+    font-size: 5.86vw;
+    color: #a8a5a5;
+    margin: 0 3% 20px 0;
+    line-height: .8;
+    /* letter-spacing: .09em; */
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+section.cust-support h3 {
+    color: #333333;
+}
+
+/****** Room Styles *******/
+
+section.cust-support .lzb-copy-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.cust-support .lzb-copy-side .image {
+    width: 58.163265%;
+}
+
+section.cust-support .lzb-copy-side .copy {
+    width: 41.836735%;
+    padding: 10px;
+}
+
+section.cust-support .lzb-copy-side .copy h3 {
+    margin: 0 auto;
+    max-width: 9.28em;
+}
+
+section.cust-support .lzb-copy-side .copy p {
+    margin: 0 auto;
+    max-width: 11.6em;
+}
+
+section.cust-support .lzb-copy-side h3, section.cust-support .lzb-copy-overlay h3 {
+    font-size: 1.25em;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+section.cust-support .lzb-copy-overlay {
+    position: relative;
+}
+
+section.cust-support .lzb-copy-overlay .copy {
+    position: absolute;
+    margin: 0;
+    line-height: 1.15;
+}
+
+section.cust-support .lzb-copy-overlay p {
+    margin: 0;
+}
+
+section.cust-support .design-consultation {
+    display: block;
+    margin: 2em auto 3em;
+    text-align: center;
+}
+
+section.cust-support .lzb-disclaimer {
+    font-size: 10px;
+    margin-top: 1em;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    section.cust-support .lzb-disclaimer {
+        padding: 0 10px;
+    }
+
+}
+
+@media only screen and (min-width: 950px) {
+    section.cust-support h1 {
+        font-size: 43px;
+    }
+}
+
+@media only screen and (min-width: 559px) {
+    section.cust-support .hero p {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (min-width: 387px) {
+    section.cust-support .lzb-midnav p {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 647px) {
+    section.cust-support .lzb-midnav-links {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    section.cust-support h2 {
+        font-size: 57px;
+    }
+}
+
+@media only screen and (min-width: 736px) {
+    section.cust-support .lzb-copy-overlay .copy, section.cust-support a.design-consultation, section.cust-support .lzb-copy-side {
+        font-size: 25px;
+    }
+}
+
+/****** Boxes *******/
+
+section.cust-support .lzb-boxes {
+    background-color: #e2e6e7;
+    position: relative;
+}
+
+section.cust-support .lzb-boxes .box-container {
+    padding: 50px 0;
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section.cust-support .box {
+    width: 49.6%;
+    width: calc(50% - 4px);
+    padding: 3.9% 3.9% 0;
+    margin-top: 8px;
+    background-color: white;
+}
+
+section.cust-support .box p {
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    section.cust-support .lzb-boxes .box-container {
+        width: 100%;
+    }
+    section.cust-support .box {
+        width: 100%;
+        padding: 7.8% 7.8% 0;
+    }
+}

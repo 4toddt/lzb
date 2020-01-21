@@ -1,0 +1,317 @@
+<!-- Cathy's Design Story TT -->
+<script>
+    dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
+    if (dmiStickyNav != null) {
+        dmiStickyNav.className = "primary-nav";
+    }
+
+    //Add Design Stories to breadcrumb
+    (function() {
+        var div = document.createElement('div');
+        if (document.querySelector('body.mobile-site')) {
+            div.innerHTML = "<li><a class='crumb' href='/mobile/content/design-services/design-stories/'>Design Stories</a></li>";
+            var breadcrumb = document.querySelector('ul.breadcrumb');
+        } else {
+            div.innerHTML = "<li><a href='/content/design-services/design-stories'>Design Stories</a></li>";
+            var breadcrumb = document.querySelector('nav.breadcrumb-wrapper>ul');
+        }
+        var newLink = div.firstChild;
+        breadcrumb.insertBefore(newLink, breadcrumb.lastElementChild);
+    })();
+</script>
+<link rel="stylesheet" type="text/css" href="/css/uat/ds-design-stories.css">
+<link rel="stylesheet" type="text/css" href="/css/uat/_ds-sticky-nav.css">
+<style>
+    /* ****************** Hero ******************* */
+    
+    .bcc-fbt .hero .image {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/desktop/hero.jpg');
+    }
+    
+    @media only screen and (max-width: 567px) {
+        body .bcc-fbt .hero .image {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/mobile/hero.jpg');
+        }
+    }
+    /* ****************** Hero Play Button ******************* */
+    
+    .bcc-fbt #play-button {
+        left: 65.8%;
+    }
+    
+    @media only screen and (max-width: 567px) {
+        body .bcc-fbt #play-button {
+            right: 8%;
+            left: auto;
+        }
+    }
+    /* **************** Hero Copy ********************* */
+    
+    .bcc-fbt .hero h1,
+    .bcc-fbt .hero p {
+        left: 51.1%;
+    }
+    
+    @media only screen and (max-width: 567px) {
+        body .bcc-fbt .hero h1 {
+            left: auto;
+            right: 5%;
+            text-align: right;
+        }
+    }
+    /* ****************** Image-Copy Row ******************* */
+    
+    .bcc-fbt #opportunity .image-copy-row .room-image>div {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/desktop/room01.jpg');
+    }
+    
+    .bcc-fbt #experience .image-copy-row .room-image>div {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/desktop/room02.jpg');
+    }
+    
+    .bcc-fbt #result .image-copy-row .room-image>div {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/desktop/room03.jpg');
+    }
+    
+    @media only screen and (max-width: 567px) {
+        body .bcc-fbt #opportunity .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/mobile/room01.jpg');
+        }
+        body .bcc-fbt #experience .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/mobile/room02.jpg');
+        }
+        body .bcc-fbt #result .image-copy-row .room-image>div {
+            background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/mobile/room03.jpg');
+        }
+    }
+    /* ****************** Product Row ******************* */
+    
+    .bcc-fbt #product01 img {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/product01.jpg');
+    }
+    
+    .bcc-fbt #product02 img {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/product02.jpg');
+    }
+    
+    .bcc-fbt #product03 img {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/product05.jpg');
+    }
+    
+    .bcc-fbt #product04 img {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/product04.jpg');
+    }
+    
+    .bcc-fbt #product05 img {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/product03.jpg');
+    }
+    
+    .bcc-fbt #product06 img {
+        background-image: url('https://content.la-z-boy.com/Images/npc/design-stories/cathy/product06.jpg');
+    }
+    
+    .bcc-fbt #product01 {
+        width: 307px;
+    }
+    
+    .bcc-fbt #product02 {
+        width: 260px;
+    }
+    
+    .bcc-fbt #product03 {
+        width: 235px;
+    }
+    
+    .bcc-fbt #product03 {
+        margin: 0 25px;
+    }
+    
+    .bcc-fbt #product04 {
+        width: 276px;
+    }
+    
+    .bcc-fbt #product05 {
+        width: 211px;
+    }
+    
+    .bcc-fbt #product06 {
+        width: 245px;
+    }
+    
+    .bcc-fbt #product01 img {
+        padding-bottom: 81.43322476%;
+    }
+    
+    .bcc-fbt #product02 img {
+        padding-bottom: 96.15384615%;
+    }
+    
+    .bcc-fbt #product03 img {
+        padding-bottom: 106.3829787%;
+    }
+    
+    .bcc-fbt #product04 img {
+        padding-bottom: 90.57971014%;
+    }
+    
+    .bcc-fbt #product05 img {
+        padding-bottom: 118.4834123%;
+    }
+    
+    .bcc-fbt #product06 img {
+        padding-bottom: 102.0408163%;
+    }
+    
+    @media only screen and (max-width: 567px) {
+        body .bcc-fbt #product01 img {
+            width: 307px;
+            padding-bottom: 179px;
+        }
+        body .bcc-fbt #product02 img {
+            width: 260px;
+            padding-bottom: 165px;
+        }
+        body .bcc-fbt #product03 img {
+            width: 235px;
+            padding-bottom: 246px;
+        }
+        body .bcc-fbt #product04 img {
+            width: 276px;
+            padding-bottom: 249px;
+        }
+        body .bcc-fbt #product05 img {
+            width: 211px;
+            padding-bottom: 213px;
+        }
+        body .bcc-fbt #product06 img {
+            width: 245px;
+            padding-bottom: 214px;
+        }
+    }
+    /* ******************  Designer ******************* */
+    
+    .bcc-fbt #designer img {
+        background-image: url(https://content.la-z-boy.com/Images/npc/designer/list/kathryn.jpg);
+    }
+</style>
+<div class="bcc-fbt">
+    <nav class="ds-topnav">
+        <div class="lzb-container">
+            <a href="/content/design-services">Design&nbsp;services</a>
+            <a href="/content/design-services/meet-our-designers">Meet&nbsp;our&nbsp;designers</a>
+            <a class="current-page" href="/content/design-services/design-stories">Design&nbsp;stories</a>
+            <a class="lzb-button design-consultation" href="/content/design-services/design-request-form">
+                Book&nbsp;my free&nbsp;design
+                <span class="arrow-right">consultation</span>
+            </a>
+        </div>
+    </nav>
+    <section class="container">
+        <div class="hero">
+            <div class="image">
+                <svg viewBox="0 0 100 100" id="play-button" class="dtm-click-modal" videoModal='mErj05nn28Y'>
+                    <defs>
+                        <mask id="hole">
+                            <rect width="100%" height="100%" fill="white" />
+                            <polygon points="35,24 80,50 35,76" fill="black" />
+                        </mask>
+                    </defs>
+                    <circle r="50" cy="50" cx="50" fill="white" fill-opacity=".5" mask="url(#hole)" />
+                </svg>
+                <h1>Cathy&rsquo;s Story</h1>
+            </div>
+            <p>Cathy lives in a condo in Grand Blanc, a rural suburb of Flint, Michigan. She wanted a brand new look that was comfortable for her and welcoming to friends and family.</p>
+        </div>
+    </section>
+    <section class="container">
+        <div id="opportunity">
+            <div class="image-copy-row reverse">
+                <div class="room-image">
+                    <div></div>
+                </div>
+                <div class="copy-block">
+                    <h2>The opportunity</h2>
+                    <p class="large-quotes">I just moved into this area and I wanted a fresh start. And of course I wanted new living room furniture. I didn&rsquo;t know what color or what style, I didn&rsquo;t really have a vision. I looked at a lot of furniture stores and
+                        didn&rsquo;t find anything that I liked.</p>
+                </div>
+            </div>
+            <div class="product-row">
+                <div id="product01">
+                    <img>
+                    <a class="dtm-click-pdp" href="https://www.la-z-boy.com/p/sofas/amanda-premier-sofa/_/R-610600">
+                        Amanda
+                        <span class="arrow-right">Sofa</span>
+                    </a>
+                </div>
+                <div id="product02">
+                    <img>
+                    <a class="dtm-click-npc" href="https://www.la-z-boy.com/p/home-accents/solitaire-round-cocktail-table/_/R-247-911">
+                        Solitaire Cocktail
+                        <span class="arrow-right">Table</span>
+                    </a>
+                </div>
+                <div id="product03">
+                    <img>
+                    <a class="dtm-click-pdp" href="https://www.la-z-boy.com/p/recliners/riley-high-leg-recliner/_/R-295448">
+                        Riley High Leg
+                        <span class="arrow-right">Recliner</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div id="experience">
+            <div class="image-copy-row">
+                <div class="room-image">
+                    <div></div>
+                </div>
+                <div class="copy-block">
+                    <h2>The experience</h2>
+                    <p class="large-quotes">When I walked into the
+                        <span class="no-wrap">La-Z-Boy</span> store, there was all kinds of possibilities. And the free design services is amazing. The designer came to my home and worked her magic. I met with her again and she had tables, lamps, artwork,
+                        She had it all. It was a lot of fun. She&rsquo;s really great at her job.
+                    </p>
+                </div>
+            </div>
+            <div class="product-row">
+                <div id="product04">
+                    <img>
+                    <a class="dtm-click-npc" href="/storeLocator/storeLocator.jsp">
+                        Teal Drawer
+                        <span class="arrow-right">Cabinet</span>
+                    </a>
+                </div>
+                <div id="product05">
+                    <img>
+                    <a class="dtm-click-pdp" href="https://www.la-z-boy.com/p/chairs/avenue-premier-stationary-occasional-chair/_/R-235487">
+                        Avenue Stationary
+                        <span class="arrow-right">Chair</span>
+                    </a>
+                </div>
+                <div id="product06">
+                    <img>
+                    <a class="dtm-click-npc" href="/storeLocator/storeLocator.jsp">
+                        Hammary Accent
+                        <span class="arrow-right">Table</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div id="result">
+            <div class="image-copy-row reverse">
+                <div class="room-image">
+                    <div></div>
+                </div>
+                <div class="copy-block">
+                    <h2>The result</h2>
+                    <p class="large-quotes">I love this room! This is probably my favorite spot in the whole house. It is very comfortable and it&rsquo;s fun to have people come who haven&rsquo;t been here yet so they can see my new home. It&rsquo;s an inviting home to have!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://www.la-z-boy.com/js/npc.js"></script>

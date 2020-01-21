@@ -1,0 +1,158 @@
+body {
+    /* reset mobile user agent 8px margin for local development */
+    margin: 0;
+}
+
+.site-wrapper,
+.section-row {
+    max-width: none;
+}
+
+.breadcrumbs {
+    margin: 0.625rem auto;
+    max-width: 62.5rem;
+}
+
+main#site-wrapper>.section-title {
+    display: none;
+}
+
+.section-row>.section-content {
+    padding: 0;
+}
+
+section.cust-support .right {
+    float: none !important;
+}
+
+section.cust-support [class*="column"]+[class*="column"]:last-child {
+    float: none;
+}
+
+section.cust-support>h1,
+section.cust-support>hr {
+    /* hide h1 and mobile hr coming from ATG */
+    display: none;
+}
+
+body.two-column-first section[role="region"] {
+    /* reset the 775px width and default margin on the content section */
+    width: 100%;
+    margin-left: 0;
+}
+
+main {
+    /* reset the 10px padding on mobile */
+    padding: 0;
+    /* reset the 980px width and default margins on desktop */
+    width: 100%;
+    margin: 0;
+}
+
+
+/* Note: bcc-fbt is short for BCC Full Blank Template and should be the class of the outermost element in BCC HTML content */
+
+.bcc-fbt {
+    /* default font for npc content */
+    font-family: 'Lato', 'OpenSans', sans-serif;
+    font-size: 20px;
+    line-height: normal;
+    color: #494949;
+}
+
+.bcc-fbt h1,
+.bcc-fbt h2,
+.bcc-fbt h3,
+.bcc-fbt h4,
+.bcc-fbt h5,
+.bcc-fbt h6 {
+    font-family: inherit;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.bcc-fbt p,
+.bcc-fbt a {
+    /* reset p and a tags */
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.bcc-fbt * {
+    /* border-box is easier for layout */
+    box-sizing: border-box;
+}
+
+.bcc-fbt img {
+    /* override browser defaults */
+    width: 100%;
+    display: block;
+}
+
+.bcc-fbt .hero {
+    /* reset hero class */
+    margin-bottom: 0;
+}
+
+.bcc-fbt .group:after {
+    /* clear floats */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.bcc-fbt .no-wrap {
+    white-space: nowrap;
+}
+
+
+/* .arrow-right creates right-pointing triangle after text */
+
+#ds-sticky-topnav .arrow-right,
+.bcc-fbt .arrow-right {
+    display: inline-block;
+}
+
+#ds-sticky-topnav .arrow-right:after,
+.bcc-fbt .arrow-right:after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -.1em;
+    left: .25em;
+    height: 0;
+    width: 0.3em;
+    border-top: .25em solid transparent;
+    border-bottom: .25em solid transparent;
+    border-left: .35em solid;
+}
+
+.bcc-fbt .registered-trademark:after {
+    content: "\00ae";
+    font-size: .6em;
+    vertical-align: super;
+    line-height: 0;
+}
+.bcc-fbt .container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.bcc-fbt .mobile-portrait {
+    /* hide content for mobile portrait by default */
+    display: none;
+}
+
+@media only screen and (max-width: 567px) {
+    /* show content for mobile portrait by default and hide content for mobile landscape and larger */
+    body .bcc-fbt .mobile-portrait {
+        display: block;
+    }
+    body .bcc-fbt .mobile-landscape-up {
+        display: none;
+    }
+}

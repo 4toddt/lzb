@@ -1,0 +1,157 @@
+.cust-support {
+    margin-left: 0;
+}
+
+#dd-vote-page input,
+#dd-vote-page label {
+    display: block;
+    margin: 0;
+}
+
+#dd-vote-page {
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+}
+
+#dd-vote-page p,
+#dd-vote-page label,
+#dd-vote-page input {
+    font-size: 15px;
+    line-height: 17px;
+}
+
+.dd-blogger {
+    background-color: #f1f1f1;
+}
+
+.elq-form,
+#thank-you {
+    padding: 20px 20px 0;
+    background-color: white;
+}
+
+.dd-room {
+    margin-bottom: 15px;
+}
+
+#dd-vote-page h2 {
+    margin-top: 0;
+    font-size: 25px;
+    line-height: 27px;
+    color: #848484;
+    font-weight: 400;
+}
+
+.dd-blogger h2 {
+    padding: 20px;
+    margin: 0;
+}
+
+.dd-info {
+    padding-top: 15px;
+}
+
+.dd-info>* {
+    margin: 0;
+}
+
+#dd-vote-page a {
+    font-size: 13px;
+}
+
+.dd-portrait {
+    width: 110px;
+    float: left;
+    margin: 0 15px 20px 20px;
+    border-radius: 9px;
+}
+
+.elq-fields {
+    margin: 0 -5px;
+}
+
+.elq-field {
+    width: 100%;
+    float: left;
+    padding: 5px;
+}
+
+@media only screen and (min-width: 450px) {
+    .elq-field.text {
+        width: 50%;
+    }
+}
+
+.elq-field.text label {
+    padding-left: 5px;
+}
+
+.elq-field.text input {
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+#dd-vote-page .elq-field.checkbox input {
+    float: left;
+    margin: 3px;
+}
+
+.elq-field.checkbox label {
+    width: 100%;
+}
+
+.submit-button {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    text-decoration: none;
+    opacity: .65;
+}
+
+.elq-field.vote-button .submit-button {
+    color: white;
+    padding: 6px 25px;
+    border-radius: 6px;
+    border: none;
+    font-size: 13px;
+    background-color: #7789c6;
+}
+
+#thank-you {
+    display: none;
+}
+
+.hidden-iframe {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    #dd-vote-page {
+        display: flex;
+    }
+    .dd-blogger,
+    .elq-form,
+    #thank-you {
+        width: 50%;
+        position: relative;
+    }
+    .dd-blogger {
+        padding-right: 0;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    #dd-vote-page {
+        background-color: #f1f1f1;
+    }
+}

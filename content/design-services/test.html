@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+
+    <div>
+        <select id="method">
+            <option value="get">GET</option>
+            <option value="post">POST</option>
+            <option value="put">PUT</option>
+        </select>
+        <input type="button" value="Try it" onclick="sendRequest()" />
+        <span id='value1'>(Result)</span>
+    </div>
+
+    <script>
+        // TODO: Replace with the URL of your WebService app
+        var serviceUrl = 'https://LZB-GBWWA20.IIS101.devhart.com/api/DesignForm/Validate?zipcode=43615';
+
+        function sendRequest() {
+            var method = $('#method').val();
+
+            $.ajax({
+                type: 'get',
+                url: 'https://LZB-GBWWA20.IIS101.devhart.com/api/DesignForm/Validate?zipcode=43615'
+            }).done(function(data) {
+                alert('success: ' + data);
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                alert(jqXHR.responseText || textStatus);
+            });
+
+            $.get('https://LZB-GBWWA20.IIS101.devhart.com/api/DesignForm/Validate?zipcode=43615', function(data, status) {
+                alert("Data: " + data + "\nStatus: " + status);
+            })
+
+            $.get('https://LZB-GBWWA20.IIS101.devhart.com/api/DesignForm/Validate?zipcode=55555', function(data, status) {
+                alert("Postal code is " + data["Data"]);
+            })
+        }
+    </script>
+
+</body>
+
+</html>

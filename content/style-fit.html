@@ -1,0 +1,349 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/min/desktop.css">
+    <base href="C:\Users\ttownsend\OneDrive - La-Z-Boy Incorporated\Dev\">
+</head>
+
+<body class="mobileSite">
+    <section class="cust-support">
+        <!-- Only publish code to BCC from after this -->
+        <!-- Only publish code to BCC from after this -->
+        <!-- Only publish code to BCC from after this -->
+
+        <!-- Style Fit TT -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+        <style>
+            /*************************************************************/
+            /******************* Resets             **********************/
+            /*************************************************************/
+            
+            body {
+                /* reset mobile user agent 8px margin for local development */
+                margin: 0;
+            }
+            
+            .site-wrapper,
+            .section-row {
+                max-width: none;
+            }
+            
+            .breadcrumbs {
+                margin: 0.625rem auto;
+                max-width: 62.5rem;
+            }
+            
+            main#site-wrapper>.section-title {
+                display: none;
+            }
+            
+            .section-row>.section-content {
+                padding: 0;
+            }
+            
+            section.cust-support .right {
+                float: none !important;
+            }
+            
+            section.cust-support [class*="column"]+[class*="column"]:last-child {
+                float: none;
+            }
+            
+            section.cust-support>h1,
+            section.cust-support>hr {
+                /* hide h1 and mobile hr coming from ATG */
+                display: none;
+            }
+            
+            body.two-column-first section[role="region"] {
+                /* reset the 775px width and default margin on the content section */
+                width: 100%;
+                margin-left: 0;
+            }
+            
+            main {
+                /* reset the 10px padding on mobile */
+                padding: 0;
+                /* reset the 980px width and default margins on desktop */
+                width: 100%;
+                margin: 0;
+            }
+            
+            section.cust-support {
+                width: 100%;
+                margin: 0;
+            }
+            
+            section.cust-support h1,
+            section.cust-support h2,
+            section.cust-support h3,
+            section.cust-support h4,
+            section.cust-support h5,
+            section.cust-support h6 {
+                font-family: inherit;
+                font-weight: bold;
+                line-height: normal;
+            }
+            
+            section.cust-support p,
+            section.cust-support a {
+                /* reset p and a tags */
+                text-decoration: none;
+                color: inherit;
+                font-size: inherit;
+                line-height: inherit;
+            }
+            
+            section.cust-support * {
+                /* everything is border-box for predictable layout */
+                box-sizing: border-box;
+            }
+            
+            section.cust-support .hero {
+                /* reset hero class */
+                margin-bottom: 0;
+            }
+            /*************************************************************/
+            /*******************  Defaults *******************************/
+            /*************************************************************/
+            
+            section.cust-support {
+                /* default font for npc content */
+                font-family: 'Lato', 'OpenSans', sans-serif;
+                font-size: 20px;
+                line-height: normal;
+                color: #494949;
+            }
+            
+            section.cust-support {
+                /* default margins on mobile */
+                margin: 0;
+            }
+            
+            section.cust-support img {
+                /* override browser default of inline-block to remove white space after image */
+                display: block;
+                /* fix IE bug where images in flex containers don't keep their aspect ratio */
+                min-height: 1px;
+            }
+            
+            section.cust-support .no-wrap {
+                /* class to keep a word or phrase from wrapping */
+                white-space: nowrap;
+            }
+            /************** Special Characters **************/
+            
+            section.cust-support .arrow-right {
+                /* place <span class="arrow-right"></span> around last word to keep arrow with word */
+                display: inline-block;
+            }
+            
+            section.cust-support .arrow-right:after {
+                /* draws arrow */
+                content: "";
+                display: inline-block;
+                position: relative;
+                top: -.1em;
+                left: .25em;
+                height: 0;
+                width: 0.3em;
+                border-top: .25em solid transparent;
+                border-bottom: .25em solid transparent;
+                border-left: .35em solid;
+                box-sizing: content-box;
+            }
+            
+            section.cust-support .registered-trademark:after {
+                content: "\00ae";
+                font-size: .6em;
+                vertical-align: super;
+                line-height: 0;
+            }
+            
+            section.cust-support .large-quotes:before,
+            section.cust-support .large-quotes:after {
+                font-family: 'IM Fell French Canon', serif;
+                font-size: 3.1em;
+                position: relative;
+                top: 0.4em;
+                line-height: 0;
+            }
+            
+            section.cust-support .large-quotes:before {
+                content: "\201C";
+                padding-right: .07em;
+            }
+            
+            section.cust-support .large-quotes:after {
+                content: "\201D";
+                padding-left: .07em;
+            }
+            /******************* Responsive Container *******************/
+            
+            section.cust-support section {
+                width: 100%;
+                max-width: 980px;
+                margin: 0 auto;
+            }
+            /************* Responsive Visibility Classes **************/
+            /* names patterned after https://getbootstrap.com/docs/3.3/css/ */
+            
+            section.cust-support .visible-xs {
+                /* display only on mobile portrait (<=567px) */
+                display: none;
+            }
+            
+            section.cust-support .hidden-lg {
+                /* hide only on desktop and large mobile devices (>=980px) */
+                display: none;
+            }
+            
+            @media only screen and (max-width: 979px) {
+                body section.cust-support .visible-lg {
+                    /* display only on desktop and large mobile devices (>=980px) */
+                    display: none;
+                }
+                body section.cust-support .hidden-lg {
+                    /* hide only on desktop and large mobile devices (>=980px) */
+                    display: block;
+                }
+            }
+            
+            @media only screen and (max-width: 567px) {
+                body section.cust-support .visible-xs {
+                    /* display only on mobile portrait (<=567px) */
+                    display: block;
+                }
+                body section.cust-support .hidden-xs {
+                    /* hide only on mobile portrait (<=567px) */
+                    display: none;
+                }
+            }
+            /******************* Hero Banner Classes *******************/
+            
+            section.cust-support .hero {
+                position: relative;
+            }
+            
+            section.cust-support .hero img {
+                width: 100%;
+            }
+            
+            section.cust-support .hero .copy-block {
+                position: absolute;
+            }
+            
+            section.cust-support .hero h1 {
+                font-size: 48px;
+            }
+            /******************* Forms *********************************/
+            
+            section.cust-support label {
+                -webkit-user-select: none;
+                /* Chrome all / Safari all */
+                -moz-user-select: none;
+                /* Firefox all */
+                -ms-user-select: none;
+                /* IE 10+ */
+                user-select: none;
+                /* Likely future */
+            }
+            /****************** Design Services Button ********************/
+            
+            section.cust-support #dsr-button {
+                text-align: center;
+            }
+            
+            section.cust-support #dsr-button a {
+                font-size: 23px;
+                color: white;
+                display: inline-block;
+                background-color: #aeccc8;
+                padding: .82em .94em;
+            }
+            /*************************************************************/
+            /******************** Style Fit styles ***********************/
+            /*************************************************************/
+            
+            section.cust-support .image-map {
+                position: relative;
+            }
+            
+            section.cust-support .shop-now,
+            section.cust-support .get-inspired {
+                position: absolute;
+                width: 15.5%;
+                height: 10%;
+            }
+            
+            section.cust-support #classics .shop-now {
+                top: 64%;
+                left: 65%;
+            }
+            
+            section.cust-support #classics .get-inspired {
+                top: 64%;
+                left: 81.5%;
+            }
+            
+            section.cust-support #modern .shop-now {
+                top: 64.2%;
+                left: 2.9%;
+            }
+            
+            section.cust-support #modern .get-inspired {
+                top: 64.2%;
+                left: 19.5%;
+            }
+            
+            section.cust-support #family .shop-now {
+                top: 67.5%;
+                left: 65%;
+            }
+            
+            section.cust-support #family .get-inspired {
+                top: 67.5%;
+                left: 81.5%;
+            }
+            
+            section.cust-support #casual .shop-now {
+                top: 65.7%;
+                left: 3.2%;
+            }
+            
+            section.cust-support #casual .get-inspired {
+                top: 65.7%;
+                left: 19.5%;
+            }
+        </style>
+
+        <section>
+            <img src="https://content.la-z-boy.com/Images/npc/style-fit/hero2.jpg" alt="Find a style that fits you">
+            <img src="https://content.la-z-boy.com/Images/npc/style-fit/StyleFit_02b.jpg" alt="We take style personally">
+            <div id="classics" class="image-map">
+                <img src="https://content.la-z-boy.com/Images/npc/style-fit/section01.jpg" alt="Classics Revisited">
+                <a href="/b/_/N-1etgqjw" class="shop-now"></a>
+                <a href="/content/room-inspirations/classics-revisited" class="get-inspired"></a>
+            </div>
+            <div id="modern" class="image-map">
+                <img src="https://content.la-z-boy.com/Images/npc/style-fit/section02.jpg" alt="Modern Retreat">
+                <a href="/b/_/N-6b7qq4" class="shop-now"></a>
+                <a href="/content/room-inspirations/modern-retreat" class="get-inspired"></a>
+            </div>
+            <div id="family" class="image-map">
+                <img src="https://content.la-z-boy.com/Images/npc/style-fit/section03.jpg" alt="Family Favorites">
+                <a href="/b/_/N-1knlfb6" class="shop-now"></a>
+                <a href="/content/room-inspirations/family-favorites" class="get-inspired"></a>
+            </div>
+            <div id="casual" class="image-map">
+                <img src="https://content.la-z-boy.com/Images/npc/style-fit/section04.jpg" alt="Comfortably Casual">
+                <a href="/b/_/N-vq6hg6" class="shop-now"></a>
+                <a href="/content/room-inspirations/comfortably-casual" class="get-inspired"></a>
+            </div>
+        </section>
+
+        <!-- Only publish code to BCC from before this -->
+        <!-- Only publish code to BCC from before this -->
+        <!-- Only publish code to BCC from before this -->
+    </section>
+</body>

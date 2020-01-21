@@ -1,0 +1,51 @@
+/******** Resets ********/
+
+body, body.mobileSite {
+    /* reset mobile user agent 8px margin for local development */
+    margin: 0;
+}
+
+section.cust-support>h1, section.cust-support>hr {
+    /* hide h1 and mobile hr coming from ATG */
+    display: none;
+}
+
+body.two-column-first section[role="region"] {
+    /* reset the 775px width and default margin on the content section */
+    width: 100%;
+    margin-left: 0;
+}
+
+main {
+    /* reset the 10px padding on mobile */
+    padding: 0;
+    /* reset the 980px width and default margins on desktop */
+    width: 100%;
+    margin: 0;
+}
+
+/* Note: bcc-fbt is short for BCC Full Blank Template and should be the class of the outermost element in BCC HTML content */
+
+.bcc-fbt {
+    /* force desktop to be non-responsive */
+    min-width: 980px;
+}
+
+.bcc-fbt p, .bcc-fbt a {
+    /* reset p and a tags */
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.bcc-fbt img {
+    /* override browser defaults */
+    width: 100%;
+    display: block;
+}
+
+.bcc-fbt .hero {
+    /* reset hero class */
+    margin-bottom: 0;
+}

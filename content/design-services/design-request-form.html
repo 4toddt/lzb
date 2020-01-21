@@ -1,0 +1,288 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <base href="O:\">
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+    <style>
+        #page1,
+        #page2,
+        #last-page,
+        #confirmation-page {
+            display: inline-block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Design Request Form TT -->
+    <!-- begin BCC content -->
+    <script>
+        dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
+        if (dmiStickyNav != null) {
+            dmiStickyNav.className = "primary-nav";
+        }
+    </script>
+    <link href="/css/ds-forms.css" rel="stylesheet" type="text/css">
+    <nav class="ds-topnav">
+        <div class="lzb-container">
+            <a href="/content/design-services">Design&nbsp;services</a>
+            <a href="/content/design-services/meet-our-designers">Meet&nbsp;our&nbsp;designers</a>
+            <a href="/content/design-services/design-stories">Design&nbsp;stories</a>
+            <a class="lzb-button current-page">Book&nbsp;my free&nbsp;design
+                <span class="arrow-right">consultation</span>
+            </a>
+        </div>
+    </nav>
+    <div id="bcc-content">
+        <form id="dsr-form" action="">
+            <input id='page1' type="radio" name="currentPage" checked>
+            <input id='page2' type="radio" name="currentPage">
+            <input id='last-page' type="radio" name="currentPage">
+            <input id='confirmation-page' type="radio" name="currentPage">
+            <div class="page page1">
+                <div class="hero">
+                    <img class="hidden-md-xl" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/mobile/hero.jpg" alt="">
+                    <img class="hidden-xs-sm" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/desktop/hero.jpg" alt="">
+                    <div class="text-box">
+                        <p class="hidden-xs-md">Get the room of your dreams with</p>
+                        <h1>FREE<br class="hidden-md-xl"> Design Services</h1>
+                        <p class="hidden-xs-md">From small style updates to complete transformations, our expert designers will guide you through every&nbsp;step.</p>
+                    </div>
+                </div>
+                <div class="container-840">
+                    <div class="form-progress">
+                        <div class="nav-circle current"></div>
+                        <div class="line"></div>
+                        <div class="nav-circle"></div>
+                        <div class="line"></div>
+                        <div class="nav-circle"></div>
+                    </div>
+                    <h2>Tell us a little about&nbsp;yourself.</h2>
+                    <h3><span class="bolder">Step 1: </span>Contact information</h3>
+                    <div class="two-col gutter-30">
+                        <div class="default-text">
+                            <input id="dsr-field1" name="firstName" type="text" required pattern="[A-Za-z]{2,}.*">
+                            <label for="dsr-field1" validation-text="required">First Name</label>
+                        </div>
+                        <div class="default-text">
+                            <input id="dsr-field2" name="lastName" type="text" required pattern="[A-Za-z]{2,}.*">
+                            <label for="dsr-field2" validation-text="required">Last Name</label>
+                        </div>
+                        <div class="default-text">
+                            <input id="dsr-field3" name="city" type="text" pattern="[A-Za-z]{2,}.*">
+                            <label for="dsr-field3" validation-text="required">City</label>
+                        </div>
+                        <div class="default-text">
+                            <input id="dsr-field4" name="stateProv" type="text" pattern="^[A-Za-z]{2}$" maxlength="2">
+                            <label for="dsr-field4" validation-text="two-letter abbreviation">State/Province</label>
+                        </div>
+                        <div class="default-text">
+                            <input id="dsr-field5" name="zipPostal" type="text" required pattern="(^\d{5}$|^[A-Za-z0-9]{3} [A-Za-z0-9]{3}$)">
+                            <label for="dsr-field5" validation-text="required">Zip/Postal
+                                Code</label>
+                        </div>
+                        <div class="default-text">
+                            <input id="dsr-field6" name="dob" type="date" pattern="^\d{1,2}\/\d{1,2}\/\d{4}$">
+                            <label for="dsr-field6" validation-text="like &ldquo;9/14/1776&rdquo;">Date of Birth</label>
+                        </div>
+                        <div class="default-text">
+                            <input id="dsr-field7" name="emailAddress" type="email" required pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$">
+                            <label for="dsr-field7" validation-text="like &ldquo;someone@example.com&rdquo;">Email</label>
+                        </div>
+                    </div>
+                    <div class="default-checkbox">
+                        <input class="make-required" id="dsr-field8" name="contactByPhone" type="checkbox" toggle-inputs>
+                        <label for="dsr-field8">I&rsquo;d prefer to be contacted by phone, not&nbsp;email.</label>
+                        <div class="default-text check-to-show">
+                            <input id="dsr-field9" name="homePhone" type="tel" pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$" disabled>
+                            <label for="dsr-field9" validation-text="like &ldquo;555-555-5555&rdquo;">Phone
+                                Number</label>
+                        </div>
+                    </div>
+                    <p class="form-title">Which room(s) in your home are you looking to&nbsp;complete?</p>
+                    <p class="form-subtitle">Click to select all that&nbsp;apply.</p>
+                    <div class="circle-checkbox aggregate-checkboxes">
+                        <input id="dsr-field10" type="checkbox" value="Family Room">
+                        <label for="dsr-field10">Family Room</label>
+                        <input id="dsr-field11" type="checkbox" value="Living Room">
+                        <label for="dsr-field11">Living Room</label>
+                        <input id="dsr-field12" type="checkbox" value="Bedroom">
+                        <label for="dsr-field12">Bedroom</label>
+                        <input id="dsr-field13" type="checkbox" value="Home Theater">
+                        <label for="dsr-field13">Home Theater</label>
+                        <input class="aggregate" name="rooms" type="hidden">
+                    </div>
+                    <label class="form-button" for="page2">Next Step</label>
+                </div>
+            </div>
+            <div class="page page2">
+                <div class="hero">
+                    <img class="hidden-md-xl" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/mobile/hero.jpg" alt="">
+                    <img class="hidden-xs-sm" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/desktop/hero.jpg" alt="">
+                    <div class="text-box">
+                        <p class="hidden-xs-md">Get the room of your dreams with</p>
+                        <h1>FREE<br class="hidden-md-xl"> Design Services</h1>
+                        <p class="hidden-xs-md">From small style updates to complete transformations, our expert designers will guide you through every&nbsp;step.</p>
+                    </div>
+                </div>
+                <div class="container-840">
+                    <div class="form-progress">
+                        <label for="page1" class="nav-circle done"></label>
+                        <div class="line"></div>
+                        <div class="nav-circle current"></div>
+                        <div class="line"></div>
+                        <div class="nav-circle"></div>
+                    </div>
+                    <h2>What style(s) appeal to you&nbsp;most?</h2>
+                    <h3><span class="bolder">Step 2: </span>Click to select all that&nbsp;apply.</h3>
+                    <p class="form-subtitle">Don&rsquo;t see anything you like? That&rsquo;s ok, skip ahead to the next step.
+                    </p>
+                    <div class="square-checkbox aggregate-checkboxes">
+                        <input id="dsr-field14" type="checkbox" value="Comfortably Casual: Meyer">
+                        <label for="dsr-field14" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid01.jpg')" role="img" aria-label="Comfortably Casual room style with Meyer Sectional">
+                        </label>
+                        <input id="dsr-field15" type="checkbox" value="Classics Revisited: Alexandria, Cambridge">
+                        <label for="dsr-field15" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid02.jpg')" role="img" aria-label="Classics Revisited room style with Alexandria Sofa, Cambridge Recliner">
+                        </label>
+                        <input id="dsr-field16" type="checkbox" value="Modern Retreat: Ridgemont">
+                        <label for="dsr-field16" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid03.jpg')" role="img" aria-label="Modern Retreat room style with Ridgemont Sectional">
+                        </label>
+                        <input id="dsr-field17" type="checkbox" value="Classics Revisited: Bexley">
+                        <label for="dsr-field17" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid04.jpg')" role="img" aria-label="Classics Revisited room style with Bexley Sofa">
+                        </label>
+                        <input id="dsr-field18" type="checkbox" value="Modern Retreat: Talladega, leather">
+                        <label for="dsr-field18" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid05.jpg')" role="img" aria-label="Modern Retreat room style with leather Talladega Recliner and Sofa">
+                        </label>
+                        <input id="dsr-field19" type="checkbox" value="Comfortably Casual: McKinney, Logan Square">
+                        <label for="dsr-field19" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid06.jpg')" role="img" aria-label="Comfortably Casual room style with McKinney Sofa, Logan Square Ottoman">
+                        </label>
+                        <input id="dsr-field20" type="checkbox" value="Modern Retreat: Kennedy, Logan Circle">
+                        <label for="dsr-field20" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid07.jpg')" role="img" aria-label="Modern Retreat room style with Kennedy Sofa, Logan Circle Ottoman">
+                        </label>
+                        <input id="dsr-field21" type="checkbox" value="Modern Retreat: Dixie">
+                        <label for="dsr-field21" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid08.jpg')" role="img" aria-label="Modern Retreat room style with Dixie Sofa">
+                        </label>
+                        <input id="dsr-field22" type="checkbox" value="Family Favorites: Morrison">
+                        <label for="dsr-field22" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid09.jpg')" role="img" aria-label="Family Favorites room style with Morrison Sofa">
+                        </label>
+                        <input class="aggregate" name="roomStyles" type="hidden">
+                    </div>
+                    <label class="form-button" for="last-page">Next Step</label>
+                </div>
+            </div>
+            <div class="page last-page">
+                <div class="hero">
+                    <img class="hidden-md-xl" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/mobile/hero.jpg" alt="">
+                    <img class="hidden-xs-sm" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/desktop/hero.jpg" alt="">
+                    <div class="text-box">
+                        <p class="hidden-xs-md">Get the room of your dreams with</p>
+                        <h1>FREE<br class="hidden-md-xl"> Design Services</h1>
+                        <p class="hidden-xs-md">From small style updates to complete transformations, our expert designers will guide you through every&nbsp;step.</p>
+                    </div>
+                </div>
+                <div class="container-840">
+                    <div class="form-progress">
+                        <label for="page1" class="nav-circle done"></label>
+                        <div class="line"></div>
+                        <label for="page2" class="nav-circle done"></label>
+                        <div class="line"></div>
+                        <div class="nav-circle current"></div>
+                    </div>
+                    <h2>What type of furniture can we help you&nbsp;find?</h2>
+                    <h3><span class="bolder">Step 3: </span>Click to select all that apply, then provide additional details.
+                    </h3>
+                    <div class="circle-checkbox aggregate-checkboxes">
+                        <input id="dsr-field23" type="checkbox" value="Recliner">
+                        <label for="dsr-field23">Recliner</label>
+                        <input id="dsr-field24" type="checkbox" value="Chair">
+                        <label for="dsr-field24">Chair</label>
+                        <input id="dsr-field25" type="checkbox" value="Sofa">
+                        <label for="dsr-field25">Sofa</label>
+                        <input id="dsr-field26" type="checkbox" value="Sectional">
+                        <label for="dsr-field26">Sectional</label>
+                        <input id="dsr-field27" type="checkbox" value="Ottoman">
+                        <label for="dsr-field27">Ottoman</label>
+                        <input id="dsr-field28" type="checkbox" value="Loveseat">
+                        <label for="dsr-field28">Loveseat</label>
+                        <input id="dsr-field29" type="checkbox" value="Table">
+                        <label for="dsr-field29">Table</label>
+                        <input class="aggregate" name="furniture" type="hidden">
+                    </div>
+                    <div class="default-textarea">
+                        <label for="dsr-field30" class="form-title">What colors would you like your new furniture to
+                            match or&nbsp;complement?</label>
+                        <textarea id="dsr-field30" name="colors"></textarea>
+                    </div>
+                    <div class="default-textarea">
+                        <label for="dsr-field31" class="form-title">How would you describe the style you&rsquo;re
+                            looking&nbsp;for?</label>
+                        <textarea id="dsr-field31" name="style"></textarea>
+                    </div>
+                    <div class="default-radio">
+                        <p class="form-title">In general, do you prefer reclining or&nbsp;stationary?</p>
+                        <input id="dsr-field32a" type="radio" name="motion" value="Reclining">
+                        <label for="dsr-field32a">Reclining</label>
+                        <input id="dsr-field32b" type="radio" name="motion" value="Stationary">
+                        <label for="dsr-field32b">Stationary</label>
+                        <input id="dsr-field32c" type="radio" name="motion" value="Both">
+                        <label for="dsr-field32c">Both</label>
+                        <input id="dsr-field32d" type="radio" name="motion" value="Not sure">
+                        <label for="dsr-field32d">Not sure</label>
+                    </div>
+                    <div class="default-textarea">
+                        <label for="dsr-field33" class="form-title">Who will be using your new&nbsp;furniture?</label>
+                        <textarea id="dsr-field33" name="whoIsUsing"></textarea>
+                    </div>
+                    <div class="default-select">
+                        <label for="dsr-field34" class="form-title">When would you like to receive your new&nbsp;furniture?</label>
+                        <select id="dsr-field34" name="whenToRecieve">
+                            <option value="" selected>Please select</option>
+                            <option value="Within 3 months">Within 3 months</option>
+                            <option value="3 - 6 months">3 - 6 months</option>
+                            <option value="6 - 12 months">6 - 12 months</option>
+                            <option value="12+ months">12+ months</option>
+                        </select>
+                    </div>
+                    <div class="default-textarea">
+                        <label for="dsr-field35" class="form-title">Is there anything else we should know about you or your&nbsp;project?</label>
+                        <textarea id="dsr-field35" name="otherInfo"></textarea>
+                    </div>
+                    <div class="default-select">
+                        <label for="dsr-field36" class="form-title">How did you hear about&nbsp;us?</label>
+                        <select id="dsr-field36" name="referral">
+                            <option value="" disabled selected>Please select</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Email">Email</option>
+                            <option value="Website">Website</option>
+                            <option value="Newspaper">Newspaper</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="default-checkbox">
+                        <input id="dsr-field37" name="emailOptIn" type="checkbox">
+                        <label for="dsr-field37">Yes! I want to receive La-Z-Boy emails!</label> <span class="no-wrap"></span>
+                    </div>
+                </div>
+                <label id="dsr-submit" class="form-button" for="">Submit</label>
+            </div>
+            <div class="page confirmation-page">
+                <div class="hero thank-you">
+                    <img class="hidden-md-xl" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/mobile/thank-you.jpg" alt="">
+                    <img class="hidden-xs-sm" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/desktop/thank-you.jpg" alt="">
+                    <div class="text-box">
+                        <h1>Thank you
+                            <span>for submitting your&nbsp;design&nbsp;preferences.</span>
+                        </h1>
+                        <p>One of our designer professionals will contact you within 48 hours to help you create something&nbsp;special!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="elqFormName" value="InHomeDesignUpdate2019">
+            <input type="hidden" name="elqSiteID" value="20103530">
+        </form>
+    </div>
+
+    <script src="/js/ds-forms.js"></script>
+    <!-- end BCC content -->
+</body>

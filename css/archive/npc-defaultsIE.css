@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+French+Canon&text=%E2%80%9C%E2%80%9D');
+section.cust-support {
+    /* default font for npc content */
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    color: #494949;
+}
+
+body.mobileSite section.cust-support {
+    /* default margins on mobile */
+    margin: 5px 0 60px;
+}
+
+@media only screen and (max-width: 567px) {
+    /* mobile portrait */
+    body.mobileSite section.cust-support {
+        margin-bottom: 10.6%;
+    }
+}
+
+section.cust-support img {
+    /* override browser default of inline-block to remove white space after image */
+    display: block;
+}
+
+section.cust-support .no-wrap {
+    /* class to keep a word or phrase from wrapping */
+    white-space: nowrap;
+}
+
+/************** Special Characters **************/
+
+section.cust-support .arrow-right {
+    /* place <span class="arrow-right"></span> around last word to keep arrow with word */
+    display: inline-block;
+}
+
+section.cust-support .arrow-right:after {
+    /* draws arrow */
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -.1em;
+    left: .25em;
+    height: 0;
+    width: 0.3em;
+    border-top: .25em solid transparent;
+    border-bottom: .25em solid transparent;
+    border-left: .35em solid;
+    box-sizing: content-box;
+}
+
+section.cust-support .registered-trademark:after {
+    content: "\00ae";
+    font-size: .6em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+section.cust-support .large-quotes:before, section.cust-support .large-quotes:after {
+    font-family: 'IM Fell French Canon', serif;
+    font-size: 3.1em;
+    position: relative;
+    top: 0.4em;
+    line-height: 0;
+}
+
+section.cust-support .large-quotes:before {
+    content: "\201C";
+    padding-right: .07em;
+}
+
+section.cust-support .large-quotes:after {
+    content: "\201D";
+    padding-left: .07em;
+}
+
+/******************* Responsive Container *******************/
+
+section.cust-support section {
+    /* fixed width on desktop */
+    width: 980px;
+    margin: 0 auto;
+}
+
+body.mobileSite section.cust-support section {
+    /* full width on mobile */
+    width: 100%;
+    max-width: 980px;
+}
+
+/************* Responsive Visibility Classes **************/
+
+/* names patterned after https://getbootstrap.com/docs/3.3/css/ */
+
+section.cust-support .visible-xs {
+    /* display only on mobile portrait (<=567px) */
+    display: none;
+}
+
+section.cust-support .hidden-lg {
+    /* hide only on desktop and large mobile devices (>=980px) */
+    display: none;
+}
+
+@media only screen and (max-width: 979px) {
+    body.mobileSite section.cust-support .visible-lg {
+        /* display only on desktop and large mobile devices (>=980px) */
+        display: none;
+    }
+    body.mobileSite section.cust-support .hidden-lg {
+        /* hide only on desktop and large mobile devices (>=980px) */
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    body.mobileSite section.cust-support .visible-xs {
+        /* display only on mobile portrait (<=567px) */
+        display: block;
+    }
+    body.mobileSite section.cust-support .hidden-xs {
+        /* hide only on mobile portrait (<=567px) */
+        display: none;
+    }
+}
+
+/************* Grid Layout Classes **************/
+
+section.cust-support .grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.cust-support .grid .block {
+    margin: 0;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+/******************* Hero Banner Classes *******************/
+
+section.cust-support .hero {
+    position: relative;
+}
+
+section.cust-support .hero img {
+    width: 100%;
+}
+
+section.cust-support .hero .copy-block {
+    position: absolute;
+}
+
+section.cust-support .hero h1 {
+    font-size: 48px;
+}
+
+/******************* Forms *********************************/
+
+section.cust-support label {
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+}
+
+/****************** Design Services Button ********************/
+
+section.cust-support #dsr-button {
+    text-align: center;
+}
+
+section.cust-support #dsr-button a {
+    font-size: 23px;
+    color: white;
+    display: inline-block;
+    background-color: #aeccc8;
+    padding: .82em .94em;
+}

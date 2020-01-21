@@ -1,0 +1,268 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <base href="O:">
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <style>
+        #bcc-content {
+            margin-bottom: 100px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- begin BCC content -->
+    <!-- No Results On Sale TT -->
+    <style>
+        .breadcrumb-wrapper.search-results-title {
+            margin-bottom: 10px;
+        }
+        
+        .search-results-title h2 {
+            display: none;
+        }
+        
+        main {
+            width: auto;
+        }
+        
+        .one-column-container {
+            padding: 0;
+        }
+    </style>
+    <link href="/css/bell.css" rel="stylesheet" type="text/css">
+    <style>
+        #bcc-content {
+            margin-bottom: 50px;
+        }
+        
+        #bcc-content h1 {
+            font-size: 1.7em;
+            text-align: left;
+            padding: 0;
+        }
+        
+        #bcc-content h2 {
+            font-size: 1.3em;
+        }
+        
+        #bcc-content .hero {
+            margin-top: 0;
+            padding-bottom: 30px;
+            text-align: left;
+            font-size: .8em;
+            line-height: 1.5;
+        }
+        
+        #bcc-content .hero .content {
+            width: 320px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        
+        #bcc-content .hero .white {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            margin-bottom: .6em;
+            padding-bottom: .6em;
+            border-bottom: 10px solid;
+            border-image-source: url(/Images/npc/free-swatches/border.svg);
+            border-image-slice: 33.333333%;
+            border-image-repeat: repeat;
+        }
+        
+        #bcc-content .hero .white p {
+            max-width: 7em;
+            margin-top: 0;
+        }
+        
+        #bcc-content .hero .blue {
+            background-color: #5ba7e2;
+            color: white;
+            padding-top: 1.5em;
+        }
+        
+        #bcc-content .hero .dark-blue {
+            background-color: #5ba7e2;
+            color: white;
+            padding-bottom: 1.5em;
+        }
+        
+        #bcc-content .hero .blue p {
+            max-width: 11em;
+            margin-top: 0;
+        }
+        
+        #bcc-content .hero a {
+            display: inline-block;
+            margin-top: 1em;
+            padding: .25em .75em;
+            background-color: white;
+            border-radius: 2px;
+            color: #333;
+            font-family: Archer A, Archer B, serif;
+            font-weight: 500;
+        }
+        
+        #bcc-content .hero .image {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        #bcc-content .hero .image img {
+            height: 100%;
+            width: auto;
+            margin-left: auto;
+            margin-right: -10px;
+        }
+        
+        #favorites {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -10px;
+        }
+        
+        #favorites>div {
+            width: 25%;
+            min-width: 230px;
+            padding: 0 10px;
+            margin-top: 30px;
+        }
+        
+        #favorites a {
+            display: block;
+            text-align: center;
+            font-family: Archer A, Archer B, serif;
+            font-weight: 700;
+            font-size: .9em;
+            margin-top: .5em;
+        }
+        
+        @media only screen and (min-width: 500.1px) {
+            #bcc-content .hero {
+                font-size: 1em;
+                text-align: center;
+            }
+            #bcc-content h1 {
+                font-size: 2em;
+                text-align: center;
+            }
+            #bcc-content .hero .white p {
+                max-width: 12em;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #bcc-content .hero .blue p {
+                max-width: 17em;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #bcc-content .hero .dark-blue p {
+                font-size: .9em;
+                max-width: none;
+                margin: 0 auto;
+            }
+            #bcc-content .hero .dark-blue p span {
+                font-size: .7em;
+            }
+            #bcc-content .hero .content {
+                width: 25em;
+                padding-right: 7.5em;
+            }
+            #bcc-content .hero .image {
+                padding-right: 15px;
+            }
+        }
+        
+        @media only screen and (min-width: 750.1px) {
+            #bcc-content section {
+                margin-top: 50px;
+            }
+            #bcc-content .hero {
+                font-size: 1.2em;
+            }
+            #bcc-content h2 {
+                font-size: 1.7em;
+            }
+            #bcc-content .hero .content {
+                width: 30em;
+                padding-right: 11em;
+            }
+            #bcc-content .hero .dark-blue {
+                background-color: #4492d2;
+            }
+            #bcc-content .hero .image {
+                padding-right: 15px;
+            }
+            #bcc-content .hero .blue {
+                padding-bottom: 1.5em;
+            }
+            #bcc-content .hero .dark-blue {
+                padding-top: 1.4em;
+            }
+            #bcc-content .hero .image img {
+                margin-right: 0;
+            }
+        }
+        
+        @media only screen and (min-width: 900.1px) {
+            #bcc-content .hero {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+    <div id="bcc-content">
+        <section class="hero">
+            <div class="white">
+                <div class="content">
+                    <h1>Love a good sale?</h1>
+                    <p><strong>Me too,</strong> but you&rsquo;ll have to visit&nbsp;a&nbsp;store!</p>
+                </div>
+            </div>
+            <div class="blue">
+                <div class="content">
+                    <p>Your local <span class="no-wrap">La-Z-Boy</span><br>store has some amazing deals we can&rsquo;t show online right&nbsp;now.</p>
+                </div>
+            </div>
+            <div class="dark-blue">
+                <div class="content">
+                    <p class="hidden-xs-md">Just tell them Kristen sent you.<br><span>(It might not help, but it couldn't hurt.)</span></p>
+                    <a class="hidden-mobile" href="/storeLocator/storeLocator.jsp">Find your nearest store</a>
+                    <a class="hidden-desktop" href="/mobile/storeLocator/storeLocator.jsp">Find your nearest store</a>
+                </div>
+            </div>
+            <div class="image content">
+                <img alt="Kristen Bell Yoga Pose" src="https://embed.widencdn.net/img/lazboy/dvkcz2dbql/357px/kristen-bell-no-results-on-sale.png">
+            </div>
+        </section>
+        <section>
+            <h2>Or check out my favorite things. See,&nbsp;we&nbsp;got&nbsp;this!</h2>
+            <div id="favorites">
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/qocgd6jbri/460px/kristen-bell-favorite-sofas.jpg?q=60" alt="Kristen Bell&rsquo;s Favorite Sofas"></div>
+                    <a href="/content/sofas-with-kristen">Sofas</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/xxb0rouej6/460px/kristen-bell-favorite-sectionals.jpg?q=60" alt="Kristen Bell&rsquo;s Favorite Sectionals"></div>
+                    <a href="/content/sectionals-with-kristen">Sectionals</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/dtv84hmk3h/460px/kristen-bell-favorite-chairs.jpg?q=60" alt="Kristen Bell&rsquo;s Favorite Chairs"></div>
+                    <a href="/content/chairs-with-kristen">Chairs</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/tb19crtofh/460px/kristen-bell-favorite-inspiration.jpg?q=60" alt="Kristen Bell&rsquo;s Favorite Inspiration"></div>
+                    <a href="/content/room-design-with-kristen">Inspiration</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="/js/bell.js"></script>
+    <!-- end BCC content -->
+</body>

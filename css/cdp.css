@@ -1,0 +1,24 @@
+.main-hero-banner {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.plp-hero-banner-text {
+    position: absolute;
+    text-align: center;
+    padding: 0 34px;
+    width: 428px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: auto;
+}
+
+.plp-hero-banner-text h1,
+.plp-hero-banner-text hr,
+.plp-hero-banner-text h2 {
+    top: auto;
+    position: static;
+    width: 100%;
+    left: auto;
+}

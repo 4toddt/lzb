@@ -1,0 +1,53 @@
+body {
+    font-size: 14px;
+}
+
+/* Home page */
+.welcome {
+    padding: 17px;
+}
+
+.welcome .welcome-header {
+    padding-bottom: 17px;
+    border-bottom: solid 1px #CCC;
+}
+
+.welcome .welcome-header img {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 34px 0 0;
+    padding: 0;
+}
+
+.welcome .welcome-header h1 {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 12px;
+}
+
+.welcome p {
+    font-size: 14px;
+}
+
+.welcome a {
+    white-space: nowrap;
+}
+
+.welcome .welcome_small img {
+    margin: 0;
+    padding: 10px;
+}
+
+.welcome .welcome_small img, .welcome .welcome_small ul {
+    margin: 0;
+    padding: 10px;
+}
+
+.welcome .welcome_small ul li {
+    background-position: top left;
+}
+
+/* Module pages */
+.propertypane div.propertyItem {
+    font-size: 14px;
+}

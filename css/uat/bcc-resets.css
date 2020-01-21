@@ -1,0 +1,85 @@
+/* CSS Reset for BCC Full Blank Template */
+
+body {
+    /* reset mobile user agent 8px margin for local development */
+    margin: 0;
+}
+
+.site-wrapper,
+.section-row {
+    max-width: none;
+}
+
+.breadcrumbs {
+    margin: 0.625rem auto;
+    max-width: 62.5rem;
+}
+
+main#site-wrapper>.section-title {
+    display: none;
+}
+
+.section-row>.section-content {
+    padding: 0;
+}
+
+section.cust-support .right {
+    float: none !important;
+}
+
+section.cust-support [class*="column"]+[class*="column"]:last-child {
+    float: none;
+}
+
+section.cust-support>h1, section.cust-support>hr {
+    /* hide h1 and mobile hr coming from ATG */
+    display: none;
+}
+
+body.two-column-first section[role="region"] {
+    /* reset the 775px width and default margin on the content section */
+    width: 100%;
+    margin-left: 0;
+}
+
+main {
+    /* reset the 10px padding on mobile */
+    padding: 0;
+    /* reset the 980px width and default margins on desktop */
+    width: 100%;
+    margin: 0;
+}
+
+section.cust-support {
+    width: 100%;
+    margin: 0;
+}
+
+section.cust-support h1,
+section.cust-support h2,
+section.cust-support h3,
+section.cust-support h4,
+section.cust-support h5,
+section.cust-support h6 {
+    font-family: inherit;
+    font-weight: bold;
+    line-height: normal;
+}
+
+section.cust-support p, section.cust-support a {
+    /* reset p and a tags */
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+section.cust-support * {
+    /* everything is border-box for predictable layout */
+    box-sizing: border-box;
+}
+
+section.cust-support .hero {
+    /* reset hero class */
+    margin-bottom: 0;
+}

@@ -1,0 +1,164 @@
+@import "_resets.css";
+@import "_defaults.css";
+#bcc-content {
+    max-width: none;
+}
+
+.one-column-container,
+.two-column-container {
+    max-width: none;
+}
+
+#bcc-content section {
+    margin: 60px auto 0;
+    max-width: 1010px;
+    padding: 0 15px;
+}
+
+#bcc-content section.hero {
+    margin-top: 0;
+    max-width: 980px;
+    padding: 0;
+}
+
+#bcc-content h1 {
+    font-size: 2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #851B22;
+    text-align: center;
+}
+
+#bcc-content h1+.subtitle {
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: .2em;
+    color: #4A4A4A;
+}
+
+@media only screen and (min-width: 500.1px) {
+    #bcc-content h1 {
+        font-size: 2.8em;
+    }
+    #bcc-content h1+.subtitle {
+        font-size: 1.9em;
+    }
+}
+
+#bcc-content .hotbuys,
+#bcc-content .products {
+    justify-content: center;
+    text-align: center;
+}
+
+#bcc-content .one-col>div,
+#bcc-content .two-col>div,
+#bcc-content .three-col>div,
+#bcc-content .four-col>div {
+    margin-top: 30px;
+    min-width: 290px;
+}
+
+@media only screen and (min-width: 500.1px) {
+    #bcc-content .one-col>div,
+    #bcc-content .two-col>div,
+    #bcc-content .three-col>div,
+    #bcc-content .four-col>div {
+        margin-top: 40px;
+        min-width: 210px;
+    }
+    #bcc-content .two-col>.double {
+        flex-basis: 100%;
+    }
+}
+
+#bcc-content .image~a {
+    text-align: center;
+    display: block;
+    background-color: #244566;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    padding: 0.7em;
+    margin-top: .5em;
+    transition: background-color .1s ease-out;
+}
+
+#bcc-content .image~a:hover,
+#bcc-content .image:hover~a {
+    background-color: #1d3853;
+}
+
+#bcc-content .image~a:after,
+#bcc-content .arrow-right:after {
+    font-family: 'LZB Icons';
+    content: "\e90e";
+    line-height: 0;
+}
+
+#bcc-content .arrow-right {
+    display: inline-block;
+}
+
+#bcc-content .hotbuys>* {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#bcc-content .products>* {
+    display: flex;
+    flex-direction: column;
+}
+
+#bcc-content .products .image {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#bcc-content .products h3 {
+    line-height: 1.4;
+}
+
+#bcc-content .products h3 strong {
+    font-weight: bold;
+    display: block;
+    text-transform: uppercase;
+}
+
+#bcc-content .disclaimer {
+    font-size: .9em;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+#bcc-content .red.bar {
+    background-color: #810510;
+    color: white;
+}
+
+#bcc-content .red.bar section>* {
+    display: block;
+    text-decoration: none;
+    font-size: 1.7em;
+    text-align: center;
+    padding: .7em 0;
+}
+
+@media only screen and (min-width: 500.1px) {
+    #bcc-content .red.bar section>* {
+        font-size: 2.5em;
+    }
+}
+
+#bcc-content .bar+section {
+    margin-top: 0;
+}
+
+#bcc-content hr {
+    display: block;
+    margin-top: 50px;
+    border-bottom: 1px solid #494949;
+}
