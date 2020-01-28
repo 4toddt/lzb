@@ -1,0 +1,696 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- begin NPC content -->
+    <!-- Presidents Day 2020 TT -->
+    <style>
+        /*********** Import Fonts **********/
+        @import url("https://use.typekit.net/pou1zjg.css");
+
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        #site-wrapper {
+            max-width: none;
+        }
+
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+
+        #site-wrapper .section-title {
+            display: none;
+        }
+
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+
+        /****** desktop resets ******/
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+
+        /****** BCC content resets ******/
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+
+        #npc-content .right,
+        #npc-content .left {
+            float: none !important;
+        }
+
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+
+        #npc-content section {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        #npc-content strong {
+            font-weight: bold;
+        }
+
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+
+        /*********** Utility Classes ************/
+        #npc-content [onclick],
+        #npc-content [videoModal],
+        #npc-content .clickable {
+            /* if there is an onclick attribute, the curser will be a pointer */
+            cursor: pointer;
+        }
+
+        #npc-content .anchor {
+            /* use like <span class="anchor" id="whatever"></span> */
+            position: relative;
+            display: block;
+            height: 0;
+            width: 0;
+            top: -160px;
+        }
+
+        body.mobile-site #npc-content .anchor {
+            top: -60px;
+        }
+
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+
+        #npc-content .registered:after {
+            content: "\00ae";
+            font-size: .6em;
+            vertical-align: super;
+            line-height: 0;
+        }
+
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+
+        /********** Responsive Hidden Elements *********/
+        @media only screen and (max-width: 375px) {
+            #npc-content .hidden-xs {
+                display: none !important;
+            }
+
+            #npc-content .hidden-xs-sm {
+                display: none !important;
+            }
+
+            #npc-content .hidden-xs-md {
+                display: none !important;
+            }
+
+            #npc-content .hidden-xs-lg {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (min-width: 375.1px) and (max-width: 500px) {
+            #npc-content .hidden-xs-sm {
+                display: none !important;
+            }
+
+            #npc-content .hidden-xs-md {
+                display: none !important;
+            }
+
+            #npc-content .hidden-xs-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm-md {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm-xl {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (min-width: 500.1px) and (max-width: 750px) {
+            #npc-content .hidden-xs-md {
+                display: none !important;
+            }
+
+            #npc-content .hidden-xs-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm-md {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm-xl {
+                display: none !important;
+            }
+
+            #npc-content .hidden-md {
+                display: none !important;
+            }
+
+            #npc-content .hidden-md-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-md-xl {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (min-width: 750.1px) and (max-width: 980px) {
+            #npc-content .hidden-xs-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-sm-xl {
+                display: none !important;
+            }
+
+            #npc-content .hidden-md-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-md-xl {
+                display: none !important;
+            }
+
+            #npc-content .hidden-lg {
+                display: none !important;
+            }
+
+            #npc-content .hidden-lg-xl {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (min-width: 980.1px) {
+            #npc-content .hidden-sm-xl {
+                display: none !important;
+            }
+
+            #npc-content .hidden-md-xl {
+                display: none !important;
+            }
+
+            #npc-content .hidden-lg-xl {
+                display: none !important;
+            }
+
+            #npc-content .hidden-xl {
+                display: none !important;
+            }
+        }
+
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+
+        /******** Column Layout ********/
+        #npc-content .gutter-20 {
+            margin: 0 -10px;
+        }
+
+        #npc-content .gutter-20>* {
+            padding: 0 10px
+        }
+
+        #npc-content .gutter-25 {
+            margin: 0 -12.5px;
+        }
+
+        #npc-content .gutter-25>* {
+            padding: 0 12.5px;
+        }
+
+        #npc-content .gutter-30 {
+            margin: 0 -15px;
+        }
+
+        #npc-content .gutter-30>* {
+            padding: 0 15px;
+        }
+
+        #npc-content .gutter-40 {
+            margin: 0 -20px;
+        }
+
+        #npc-content .gutter-40>* {
+            padding: 0 20px;
+        }
+
+        #npc-content .gutter-50 {
+            margin: 0 -25px;
+        }
+
+        #npc-content .gutter-50>* {
+            padding: 0 25px;
+        }
+
+        #npc-content .gutter-60 {
+            margin: 0 -30px;
+        }
+
+        #npc-content .gutter-60>* {
+            padding: 0 30px;
+        }
+
+        #npc-content .row {
+            display: flex;
+        }
+
+        #npc-content .grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #npc-content .two-col>* {
+            flex-basis: 50%;
+        }
+
+        #npc-content .three-col>* {
+            flex-basis: 33.333333%;
+        }
+
+        #npc-content .three-col>.double {
+            flex-basis: 66.666666%;
+        }
+
+        #npc-content .four-col>* {
+            flex-basis: 25%;
+        }
+
+        #npc-content .four-col>.double {
+            flex-basis: 50%;
+        }
+
+        #npc-content .four-col>.triple {
+            flex-basis: 75%;
+        }
+
+        #npc-content .five-col>* {
+            flex-basis: 20%;
+        }
+
+        #npc-content .five-col>.double {
+            flex-basis: 40%;
+        }
+
+        #npc-content .five-col>.triple {
+            flex-basis: 60%;
+        }
+
+        #npc-content .five-col>.quad {
+            flex-basis: 80%;
+        }
+
+        #npc-content [class*="-col"]>.full-width {
+            flex-basis: 100%;
+        }
+
+        /****************** Slideshow  ********************/
+        #npc-content .auto-slideshow>* {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        #npc-content .auto-slideshow>*:first-child {
+            opacity: 1;
+        }
+
+        #npc-content .auto-slideshow>*:last-child {
+            position: static;
+            transition: opacity .5s;
+            z-index: 1;
+            opacity: 1;
+        }
+
+        /****************** NPC Modal  ********************/
+        #npc-modal {
+            position: fixed;
+            z-index: 1000000;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        #npc-modal-container {
+            background-color: #fefefe;
+            padding: 5px;
+            border: 1px solid #888;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        #npc-modal.video #npc-modal-container {
+            width: 75%;
+            max-width: 1050px;
+        }
+
+        #npc-image {
+            width: 100%;
+            display: block;
+        }
+
+        #npc-modal.video #npc-modal-content {
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+        #npc-modal-content iframe {
+            min-height: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        #npc-modal-close {
+            position: absolute;
+            right: -7px;
+            top: -7px;
+            width: 22px;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        #npc-modal-close:hover,
+        #npc-modal-close:focus {
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /**************************************/
+        /*********** Custom Styles ************/
+        /**************************************/
+        #top-banner {
+            background-image: url(https://embed.widencdn.net/img/lazboy/olpgj2dzjl/exact/top-banner-sm.png);
+            background-size: contain;
+            font-size: 12.5vw;
+        }
+
+        #top-banner h1 {
+            padding: .75em .5em 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            color: white;
+            -webkit-text-fill-color: #9E132F;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: white;
+        }
+
+        #top-banner .stars {
+            text-align: center;
+            padding: .25em 0 .75em;
+        }
+
+        #top-banner svg {
+            width: 3.5em;
+        }
+
+        #bonus-recliners {
+            position: relative;
+        }
+
+        #bonus-recliners .links {
+            text-align: center;
+            height: 0;
+            padding-bottom: 13%;
+            margin-top: -13%;
+            font-size: .8em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #bonus-recliners .links>a {
+            padding: 0 10px;
+        }
+
+        #npc-content .products>div {
+            margin-top: 30px;
+        }
+
+        @media only screen and (min-width: 500px) {
+            #top-banner {
+                background-image: url(https://embed.widencdn.net/img/lazboy/w38doacmjz/exact/top-banner-lg.png);
+                font-size: 8vw;
+            }
+
+            #top-banner h1 {
+                padding: .4em .5em 0;
+            }
+
+            #top-banner .stars {
+                padding: .1em 0 .3em;
+            }
+
+            #top-banner svg {
+                width: 2.2em;
+            }
+
+            #npc-content section#bonus-recliners {
+                margin-top: 30px;
+            }
+
+            #bonus-recliners .links {
+                height: 0;
+                padding-bottom: 4%;
+                margin-top: -4%;
+            }
+
+            #bonus-recliners .circles>* {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: absolute;
+                height: 65px;
+                width: 65px;
+                border-radius: 50%;
+                text-align: center;
+                border: 1px solid #9E132F;
+                font-size: .8em;
+                font-weight: bold;
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+
+            #bonus-recliners .price {
+                font-size: 1.2em;
+                color: #9E132F;
+                font-weight: 900;
+            }
+
+            #bonus-recliners .circles>* {
+                bottom: 44%;
+                right: 33%;
+            }
+
+            #bonus-recliners .circles>*:first-child {
+                left: 16%;
+                right: auto;
+            }
+
+            #bonus-recliners .circles>*:last-child {
+                right: 7%;
+            }
+        }
+
+        #npc-content .products>div {
+            margin-top: 40px;
+        }
+
+        @media only screen and (min-width: 750px) {
+            #bonus-recliners .circles>* {
+                line-height: 1.3;
+                height: 130px;
+                width: 130px;
+                bottom: 33%;
+                right: 33%;
+            }
+
+            #bonus-recliners .circles>*:first-child {
+                bottom: 9%;
+                left: 3%;
+                right: auto;
+            }
+
+            #bonus-recliners .circles>*:last-child {
+                bottom: 9%;
+                right: 3%;
+            }
+        }
+
+        @media only screen and (min-width: 1000px) {
+            #top-banner {
+                font-size: 4em;
+            }
+        }
+    </style>
+    <div id="npc-content">
+        <div id="top-banner">
+            <h1>Presidents <span class="no-wrap">Day Sale</span></h1>
+            <div class="stars">
+                <svg viewBox="0 0 160 20">
+                    <defs>
+                        <path id="star" fill="#fff" d="M10.2.306l2.478,5.865,6.344.545a.5.5,0,0,1,.285.876L14.5,11.761l1.442,6.2a.5.5,0,0,1-.745.541L9.741,15.216,4.289,18.5a.5.5,0,0,1-.745-.541l1.442-6.2L.173,7.591a.5.5,0,0,1,.285-.876L6.8,6.17,9.28.306A.5.5,0,0,1,10.2.306Z" />
+                    </defs>
+                    <use xlink:href="#star" x="0" y="0"></use>
+                    <use xlink:href="#star" x="28" y="0"></use>
+                    <use xlink:href="#star" x="56" y="0"></use>
+                    <use xlink:href="#star" x="84" y="0"></use>
+                    <use xlink:href="#star" x="112" y="0"></use>
+                    <use xlink:href="#star" x="140" y="0"></use>
+                </svg>
+            </div>
+        </div>
+        <section id="bonus-recliners">
+            <picture>
+                <source media="(max-width: 499.9px)" srcset="https://embed.widencdn.net/img/lazboy/hzcd06fwea/640px/bonus-recliners.jpg?q=85">
+                <img src="https://embed.widencdn.net/img/lazboy/q4mzkerv7j/1960px/widen-placeholder.jpg?q=50" alt="Bonus Recliner Deals!">
+            </picture>
+            <div class="links hidden-lg-xl">
+                <a href="/p/recliners/loni-rocking-recliner/_/R-010234" class="arrow-right">Shop Loni Recliner</a>
+                <a href="/p/recliners/casey-rocking-recliner/_/R-010767" class="arrow-right">Shop Casey Recliner</a>
+                <a href="/p/recliners/perry-rocking-recliner/_/R-010516" class="arrow-right">Shop Perry Recliner</a>
+            </div>
+            <div class="circles hidden-xs-sm hidden-lg-xl">
+                <a href="/p/recliners/loni-rocking-recliner/_/R-010234"><span class="price">$349</span></a>
+                <a href="/p/recliners/casey-rocking-recliner/_/R-010767"><span class="price">$349</span></a>
+                <a href="/p/recliners/perry-rocking-recliner/_/R-010516"><span class="price">$399</span></a>
+            </div>
+            <div class="circles hidden-xs-md">
+                <a href="/p/recliners/loni-rocking-recliner/_/R-010234" id="circle01"><span class="arrow-right">Shop<br>Loni Rocking<br>Recliner</span><span class="price">$349</span></a>
+                <a href="/p/recliners/casey-rocking-recliner/_/R-010767" id="circle01"><span class="arrow-right">Shop<br>Casey Rocking<br>Recliner</span><span class="price">$349</span></a>
+                <a href="/p/recliners/perry-rocking-recliner/_/R-010516" id="circle01"><span class="arrow-right">Shop<br>Perry Rocking<br>Recliner</span><span class="price">$399</span></a>
+            </div>
+            <div class="products grid three-col gutter-30">
+                <div>
+                    <div class="image"><img src="" alt=""></div>
+                    <h3></h3>
+                    <a href="" class="arrow-right"></a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/wih7gvlzzr/600x470px/Baylor.jpg?crop=false&color=f7f7f7&q=50" alt=""></div>
+                    <h3>Shop Baylor</h3>
+                    <a href="" class="arrow-right">Executive Office Chair</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/3td6z0ve16/600x470px/Bellamy.jpg?crop=false&color=f7f7f7&q=50" alt=""></div>
+                    <h3>Shop Bellamy</h3>
+                    <a href="" class="arrow-right">Executive Office Chair</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/mxvdpmlp1e/600x470px/Delano.jpg?crop=false&color=f7f7f7&q=50" alt=""></div>
+                    <h3>Shop Delano</h3>
+                    <a href="" class="arrow-right">Executive Office Chair</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/pictkciwk9/600x470px/Greyson.jpg?crop=false&color=f7f7f7&q=50" alt=""></div>
+                    <h3>Shop Greyson</h3>
+                    <a href="" class="arrow-right">Executive Office Chair</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/xdfppw6mhm/600x470px/Hyland.jpg?crop=false&color=f7f7f7&q=50" alt=""></div>
+                    <h3>Shop Hyland</h3>
+                    <a href="" class="arrow-right">Executive Office Chair</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>
