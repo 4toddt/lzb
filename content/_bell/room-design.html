@@ -151,51 +151,6 @@
             </div>
             <hr>
         </section>
-        <!-- <section id="favorite-swatches">
-            <h2>Kristen&rsquo;s Favorite Swatches</h2>
-            <p class="subheading">Don&rsquo;t be afraid to mix colors and patterns. Need a little help? Our FREE swatches make it easy to choose the perfect palette. I recommend choosing my favorites, but I&rsquo;m a little&nbsp;biased.</p>
-            <div class="swatch-carousel">
-                <div class="swatch-row">
-                    <a class="scroll-left" onclick="slideLeft(this);" href="JavaScript:Void(0);"></a>
-                    <div class="swatch-window">
-                        <div class="swatch active">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156363.jpg" alt="D156363"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156365.jpg" alt="D156365"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156378.jpg" alt="D156378"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156385.jpg" alt="D156385"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156407.jpg" alt="D156407"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156415.jpg" alt="D156415"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156424.jpg" alt="D156424"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156431.jpg" alt="D156431"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156444.jpg" alt="D156444"></div>
-                        </div>
-                        <div class="swatch">
-                            <div class="swatch-image"><img src="https://content.la-z-boy.com/Images/npc/urban-attitudes/D156446.jpg" alt="D156446"></div>
-                        </div>
-                    </div>
-                    <a class="scroll-right" onclick="slideRight(this);" href="JavaScript:Void(0);"></a>
-                </div>
-                <div class="link-box">
-                    <a href="">Get your FREE&nbsp;Swatches</a>
-                </div>
-                <hr>
-        </section> -->
         <section id="add-style">
             <h2>Simple Ways to Add Style</h2>
             <p class="subheading">A simple flower arrangement or potted plant adds instant color to a room, while a diffuser in your favorite scent can literally freshen up the place. (Just&nbsp;saying.)</p>
@@ -223,8 +178,7 @@
                     <div class="image"><img src="https://content.la-z-boy.com/Images/npc/bell/room-design/picks.jpg" alt="Kristen Bell on Nolita Chair"></div>
                     <h3>Check out my favorites</h3>
                     <p>I&rsquo;ll admit, I&rsquo;m getting really good at this designing thing. Look for my favorite pieces, the ones with the cute little badge, and your room will be styling in no&nbsp;time!</p>
-                    <!-- <a href="/b/_/N-io28jp">Shop Kristen&rsquo;s Picks</a> -->
-                    <a href="/b/_/N-zd72h1">Shop Kristen&rsquo;s Picks</a>
+                    <a href="/b/_/N-io28jp">Shop Kristen&rsquo;s Picks</a>
                 </div>
                 <div>
                     <div class="image auto-slideshow">
@@ -250,54 +204,6 @@
             </div>
         </section>
     </div>
-
-    <!-- <script>
-        function hasClass(el, className) {
-            if (el.classList)
-                return el.classList.contains(className)
-            else
-                return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
-        }
-
-        function addClass(el, className) {
-            if (el.classList)
-                el.classList.add(className)
-            else if (!hasClass(el, className)) el.className += " " + className
-        }
-
-        function removeClass(el, className) {
-            if (el.classList)
-                el.classList.remove(className)
-            else if (hasClass(el, className)) {
-                var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
-                el.className = el.className.replace(reg, ' ')
-            }
-        }
-
-        function slideLeft(button) {
-            var swatches = button.nextElementSibling;
-            var firstSwatch = swatches.firstElementChild;
-            var activeSwatch = swatches.querySelector('.active');
-            var prevSwatch = activeSwatch.previousElementSibling
-            if (prevSwatch != null) {
-                addClass(prevSwatch, 'active');
-                removeClass(activeSwatch, 'active');
-            }
-            return false;
-        }
-
-        function slideRight(button) {
-            var swatches = button.previousElementSibling;
-            var firstSwatch = swatches.firstElementChild;
-            var activeSwatch = swatches.querySelector('.active');
-            var nextSwatch = activeSwatch.nextElementSibling;
-            if (nextSwatch.nextElementSibling.nextElementSibling.nextElementSibling != null) {
-                addClass(nextSwatch, 'active');
-                removeClass(activeSwatch, 'active');
-            }
-            return false;
-        }
-    </script> -->
     <script src="/js/bell.js"></script>
     <!-- end BCC content -->
 </body>
