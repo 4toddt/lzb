@@ -1,0 +1,687 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- begin NPC content -->
+    <!-- Instant Rebate Sale 2020 TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content [onclick],
+        #npc-content [videoModal],
+        #npc-content .clickable {
+            /* if there is an onclick attribute, the curser will be a pointer */
+            cursor: pointer;
+        }
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        @media only screen and (max-width: 374.9px) {
+            #npc-content .hidden-xs-sm {
+                display: none !important;
+            }
+            #npc-content .hidden-xs-md {
+                display: none !important;
+            }
+        }
+        
+        @media only screen and (min-width: 375px) and (max-width: 499.9px) {
+            #npc-content .hidden-xs-sm {
+                display: none !important;
+            }
+            #npc-content .hidden-xs-md {
+                display: none !important;
+            }
+        }
+        
+        @media only screen and (min-width: 500px) and (max-width: 749.9px) {
+            #npc-content .hidden-xs-md {
+                display: none !important;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) and (max-width: 979.9px) {
+            #npc-content .hidden-lg-xl {
+                display: none !important;
+            }
+        }
+        
+        @media only screen and (min-width: 980px) {
+            #npc-content .hidden-lg-xl {
+                display: none !important;
+            }
+        }
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /**************************************/
+        /*********** Custom Styles ************/
+        /**************************************/
+        
+        #npc-content h2 {
+            margin-top: 40px;
+            line-height: 1.4;
+            text-align: center;
+        }
+        
+        #npc-content h2 .large {
+            display: block;
+            font-size: 1.3em;
+            font-weight: 900;
+            color: #9E132F;
+            line-height: 1;
+            margin-top: .2em;
+            text-transform: uppercase;
+        }
+        
+        #npc-content h2 .small {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        #top-banner {
+            background-image: url(https://embed.widencdn.net/img/lazboy/mrjbanax1r/exact/top-banner-sm.png);
+            background-size: contain;
+            font-size: 12.5vw;
+        }
+        
+        #top-banner h1 {
+            padding: .75em .5em 0;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            color: white;
+            -webkit-text-fill-color: black;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: white;
+        }
+        
+        #top-banner .stars {
+            text-align: center;
+            padding: .25em 0 .75em;
+        }
+        
+        #top-banner svg {
+            width: 3.5em;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        #npc-content section#bonus-recliners {
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        #bonus-recliners .links {
+            text-align: center;
+            height: 0;
+            padding-bottom: 11%;
+            margin-top: -11%;
+            font-size: .8em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+            text-shadow: 0 0 1em white;
+        }
+        
+        #bonus-recliners .links>a {
+            padding: 0 10px;
+        }
+        
+        #npc-content .product-silos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        #npc-content .product-silos>div {
+            flex-basis: 50%;
+            margin-top: 30px;
+            text-align: center;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #npc-content .product-silos>div.full-width-xs-sm {
+            flex-basis: 100%;
+            padding: 0;
+        }
+        
+        #npc-content .product-silos .image {
+            margin: auto 0;
+        }
+        
+        #npc-content .product-silos h3 {
+            font-size: .9em;
+            margin-top: 1em;
+            font-weight: bold;
+        }
+        
+        #npc-content .product-silos a {
+            display: block;
+            font-size: .8em;
+            margin-top: .5em;
+        }
+        
+        #npc-content .product-banners {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        #npc-content .product-banners>a {
+            flex-basis: 100%;
+            margin-top: 30px;
+        }
+        
+        #npc-content .services {
+            max-width: 570px;
+            margin: 30px auto 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #npc-content .services>div {
+            padding: 0 5px;
+            max-width: 170px;
+        }
+        
+        #npc-content .services .image {
+            width: 75px;
+            margin: 0 auto;
+        }
+        
+        #npc-content .services p {
+            font-size: .8em;
+            color: #0070AF;
+            line-height: 1.4;
+            text-align: center;
+            margin-top: .5em;
+        }
+        
+        #npc-content .mattress-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            justify-content: space-evenly;
+            margin: 0 -10px;
+        }
+        
+        #npc-content .mattress-row>div {
+            flex-basis: 320px;
+            margin-top: 30px;
+            padding: 0 10px;
+            text-align: center;
+        }
+        
+        #npc-content .mattress-row h3 {
+            font-size: .9em;
+            margin-top: 1em;
+            font-weight: bold;
+        }
+        
+        #npc-content .mattress-row p {
+            font-size: .8em;
+            margin: .5em auto 0;
+            line-height: 1.4;
+            max-width: 17em;
+        }
+        
+        #npc-content .gray-background {
+            background-color: #f7f7f7;
+            margin-top: 30px;
+            padding-bottom: 30px;
+        }
+        
+        #npc-content .disclaimer {
+            font-size: .8em;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 1.2;
+            padding: 0 15px
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #npc-content h2 {
+                margin-top: 50px;
+                font-size: 1.25em;
+            }
+            #top-banner {
+                background-image: url(https://embed.widencdn.net/img/lazboy/pgf1tyttxj/exact/top-banner-lg.png);
+                font-size: 8vw;
+            }
+            #top-banner h1 {
+                padding: .4em .5em 0;
+            }
+            #top-banner .stars {
+                padding: .1em 0 .3em;
+            }
+            #top-banner svg {
+                width: 2.2em;
+            }
+            #bonus-recliners .links {
+                height: 0;
+                padding-bottom: 5%;
+                margin-top: -5%;
+            }
+            #bonus-recliners .circles>* {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: absolute;
+                height: 65px;
+                width: 65px;
+                border-radius: 50%;
+                text-align: center;
+                border: 1px solid #9E132F;
+                font-size: .8em;
+                font-weight: bold;
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+            #bonus-recliners .price {
+                font-size: 1.2em;
+                color: #9E132F;
+                font-weight: 900;
+            }
+            #bonus-recliners .circles>* {
+                bottom: 44%;
+                right: 33%;
+            }
+            #bonus-recliners .circles>*:first-child {
+                left: 16%;
+                right: auto;
+            }
+            #bonus-recliners .circles>*:last-child {
+                right: 7%;
+            }
+            #npc-content .product-silos {
+                margin: 0 -20px;
+            }
+            #npc-content .product-silos>div {
+                flex-basis: 33.333333%;
+                margin-top: 40px;
+                padding: 0 20px;
+            }
+            #npc-content .product-silos>div.full-width-xs-sm {
+                flex-basis: 33.333333%;
+                padding: 0 20px;
+            }
+            #npc-content .product-silos h3 {
+                font-size: 1em;
+            }
+            #npc-content .product-banners {
+                margin: 0 -15px;
+            }
+            #npc-content .product-banners>a {
+                flex-basis: 50%;
+                margin-top: 40px;
+                padding: 0 15px;
+            }
+            #npc-content .mattress-row>div {
+                margin-top: 40px;
+            }
+            #npc-content .mattress-row h3 {
+                font-size: 1em;
+            }
+            #npc-content .gray-background {
+                margin-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #npc-content h2 {
+                font-size: 1.5em;
+            }
+            #bonus-recliners .circles>* {
+                line-height: 1.3;
+                height: 130px;
+                width: 130px;
+                bottom: 33%;
+                right: 33%;
+            }
+            #bonus-recliners .circles>*:first-child {
+                bottom: 9%;
+                left: 3%;
+                right: auto;
+            }
+            #bonus-recliners .circles>*:last-child {
+                bottom: 9%;
+                right: 3%;
+            }
+            #npc-content .product-silos h3 {
+                font-size: 1.2em;
+            }
+            #npc-content .product-banners {
+                margin: 0 -25px;
+            }
+            #npc-content .product-banners>a {
+                padding: 0 25px;
+            }
+            #npc-content .mattress-row h3 {
+                font-size: 1.2em;
+            }
+        }
+        
+        @media only screen and (min-width: 1000px) {
+            #top-banner {
+                font-size: 4em;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">Instant Rebate Sale</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Instant Rebate Sale</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <div id="top-banner">
+            <h1>Instant <span class="no-wrap">Rebate Sale</span></h1>
+            <div class="stars">
+                <svg viewBox="0 0 160 20">
+                    <defs>
+                        <path id="star" fill="#fff" d="M10.2.306l2.478,5.865,6.344.545a.5.5,0,0,1,.285.876L14.5,11.761l1.442,6.2a.5.5,0,0,1-.745.541L9.741,15.216,4.289,18.5a.5.5,0,0,1-.745-.541l1.442-6.2L.173,7.591a.5.5,0,0,1,.285-.876L6.8,6.17,9.28.306A.5.5,0,0,1,10.2.306Z" />
+                    </defs>
+                    <use xlink:href="#star" x="0" y="0"></use>
+                    <use xlink:href="#star" x="28" y="0"></use>
+                    <use xlink:href="#star" x="56" y="0"></use>
+                    <use xlink:href="#star" x="84" y="0"></use>
+                    <use xlink:href="#star" x="112" y="0"></use>
+                    <use xlink:href="#star" x="140" y="0"></use>
+                </svg>
+            </div>
+        </div>
+        <section id="bonus-recliners">
+            <picture>
+                <source media="(max-width: 499.9px)" srcset="https://embed.widencdn.net/img/lazboy/sczc1z9s5k/640px/bonus-recliners.jpg?q=85">
+                <img src="https://embed.widencdn.net/img/lazboy/joyuseifiq/1960px/widen-placeholder.jpg?q=50" alt="Bonus Recliner Deals!">
+            </picture>
+            <div class="links hidden-lg-xl">
+                <a href="/p/recliners/loni-rocking-recliner/_/R-010234" class="arrow-right">Shop Loni Recliner</a>
+                <a href="/p/recliners/casey-rocking-recliner/_/R-010767" class="arrow-right">Shop Casey Recliner</a>
+                <a href="/p/recliners/perry-rocking-recliner/_/R-010516" class="arrow-right">Shop Perry Recliner</a>
+            </div>
+            <div class="circles hidden-xs-sm hidden-lg-xl">
+                <a href="/p/recliners/loni-rocking-recliner/_/R-010234"><span class="price">$599</span></a>
+                <a href="/p/recliners/casey-rocking-recliner/_/R-010767"><span class="price">$599</span></a>
+                <a href="/p/recliners/perry-rocking-recliner/_/R-010516"><span class="price">$699</span></a>
+            </div>
+            <div class="circles hidden-xs-md">
+                <a href="/p/recliners/loni-rocking-recliner/_/R-010234" id="circle01"><span class="arrow-right">Shop<br>Loni Rocking<br>Recliner</span><span class="price">$599</span></a>
+                <a href="/p/recliners/casey-rocking-recliner/_/R-010767" id="circle01"><span class="arrow-right">Shop<br>Casey Rocking<br>Recliner</span><span class="price">$599</span></a>
+                <a href="/p/recliners/perry-rocking-recliner/_/R-010516" id="circle01"><span class="arrow-right">Shop<br>Perry Rocking<br>Recliner</span><span class="price">$699</span></a>
+            </div>
+        </section>
+        <section>
+            <div class="product-silos">
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/ge0vdnks0u/600px/Vail.jpg?q=50" alt="Vail Rocking Recliner"></div>
+                    <h3>Shop Vail</h3>
+                    <a href="/p/recliners/vail-rocking-recliner/_/R-010403" class="arrow-right">Rocking Recliner</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/ikdn5yu6ag/600px/Reed.jpg?q=50" alt="Reed Rocking Recliner"></div>
+                    <h3>Shop Reed</h3>
+                    <a href="/p/recliners/reed-rocking-recliner/_/R-010704" class="arrow-right">Rocking Recliner</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/g3b82hlwdp/600px/Pinnacle.jpg?q=50" alt="Pinnacle Rocking Recliner"></div>
+                    <h3>Shop Pinnacle</h3>
+                    <a href="/p/recliners/pinnacle-rocking-recliner/_/R-010512" class="arrow-right">Rocking Recliner</a>
+                </div>
+            </div>
+            <p class="disclaimer">Power and/or AirForm&trade; upgrades available on select <span class="no-wrap">reclining styles.</span></p>
+        </section>
+        <section>
+            <h2>From recliners to sofas &amp; more <span class="large">This is Your Chance <span class="no-wrap">to Save Big!</span></span>
+            </h2>
+            <div class="product-banners">
+                <a href="/p/sofas/laurel-sofa/_/R-610411">
+                    <div class="image">
+                        <picture>
+                            <source media="(max-width: 400px)" srcset="https://embed.widencdn.net/img/lazboy/rglgexttth/800px/Laurel.jpg?q=50">
+                            <source media="(max-width: 499.9px)" srcset="https://embed.widencdn.net/img/lazboy/xeojlali7a/1000px/Laurel.jpg?q=50">
+                            <source media="(max-width: 850px)" srcset="https://embed.widencdn.net/img/lazboy/rglgexttth/800px/Laurel.jpg?q=50">
+                            <img src="https://embed.widencdn.net/img/lazboy/xeojlali7a/930px/Laurel.jpg?q=50" alt="Shop Laurel Sofa">
+                        </picture>
+                    </div>
+                </a>
+                <a href="/p/sofas/meyer-sofa/_/R-610694">
+                    <div class="image">
+                        <picture>
+                            <source media="(max-width: 400px)" srcset="https://embed.widencdn.net/img/lazboy/m0j46jqcvb/800px/Meyer.jpg?q=50">
+                            <source media="(max-width: 499.9px)" srcset="https://embed.widencdn.net/img/lazboy/uvstb5jaqb/1000px/Meyer.jpg?q=50">
+                            <source media="(max-width: 850px)" srcset="https://embed.widencdn.net/img/lazboy/m0j46jqcvb/800px/Meyer.jpg?q=50">
+                            <img src="https://embed.widencdn.net/img/lazboy/uvstb5jaqb/930px/Meyer.jpg?q=50" alt="Shop Meyer Sofa">
+                        </picture>
+                    </div>
+                </a>
+            </div>
+            <div class="product-silos">
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/l5xbchkk0m/600px/Jay.jpg?q=50" alt=""></div>
+                    <h3>Shop Jay</h3>
+                    <a href="/p/sofas/jay-reclining-sofa/_/R-440706" class="arrow-right">Reclining Sofa</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/w1z2ebkw41/600px/Brooks.jpg?q=50" alt=""></div>
+                    <h3>Shop Brooks</h3>
+                    <a href="/p/sofas/brooks-reclining-sofa/_/R-440727" class="arrow-right">Reclining Sofa</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/gduj8zdgbz/600px/James.jpg?q=50" alt=""></div>
+                    <h3>Shop James</h3>
+                    <a href="/p/sofas/james-reclining-sofa/_/R-440521" class="arrow-right">Reclining Sofa</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/czswqjheuo/600px/Morrison.jpg?q=50" alt=""></div>
+                    <h3>Shop Morrison</h3>
+                    <a href="/p/recliners/morrison-rocking-recliner/_/R-010766" class="arrow-right">Rocking Recliner</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/rstpbocrzb/600px/Maverick.jpg?q=50" alt=""></div>
+                    <h3>Shop Maverick</h3>
+                    <a href="/p/recliners/maverick-rocking-recliner/_/R-010582" class="arrow-right">Rocking Recliner</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/ihpejlpnsg/600px/Norris.jpg?q=50" alt=""></div>
+                    <h3>Shop Norris</h3>
+                    <a href="/p/recliners/norris-rocking-recliner/_/R-010771" class="arrow-right">Rocking Recliner</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/hrua2kfeqm/600px/Jake.jpg?q=50" alt=""></div>
+                    <h3>Shop Jake</h3>
+                    <a href="/p/sofas/jake-sofa-w-nickel-nail-head-trim/_/R-710993" class="arrow-right">Leather Sofa</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/9wa1z5k7nw/600px/Tripoli.jpg?q=50" alt=""></div>
+                    <h3>Shop Tripoli</h3>
+                    <a href="/p/sofas/tripoli-wall-reclining-sofa/_/R-330713" class="arrow-right">Reclining Sofa</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/pmdfvgok76/600px/Greyson.jpg?q=50" alt=""></div>
+                    <h3>Shop Greyson</h3>
+                    <a href="/p/sofas/greyson-reclining-sofa/_/R-440530" class="arrow-right">Reclining Sofa</a>
+                </div>
+            </div>
+            <div class="product-banners">
+                <a href="/p/sofas/bennett-duo-reclining-sofa/_/R-91P899">
+                    <div class="image">
+                        <picture>
+                            <source media="(max-width: 400px)" srcset="https://embed.widencdn.net/img/lazboy/b7ahlusglz/800px/Bennett.jpg?q=50">
+                            <source media="(max-width: 499.9px)" srcset="https://embed.widencdn.net/img/lazboy/qclloyoj11/1000px/Bennett.jpg?q=50">
+                            <source media="(max-width: 850px)" srcset="https://embed.widencdn.net/img/lazboy/b7ahlusglz/800px/Bennett.jpg?q=50">
+                            <img src="https://embed.widencdn.net/img/lazboy/qclloyoj11/930px/Bennett.jpg?q=50" alt="Shop Bennett duo Reclining Sofa">
+                        </picture>
+                    </div>
+                </a>
+                <a href="/p/sectionals/devon-sectional/_/R-xxr420Style2">
+                    <div class="image">
+                        <picture>
+                            <source media="(max-width: 400px)" srcset="https://embed.widencdn.net/img/lazboy/h8q0bdusoj/800px/Devon.jpg?q=50">
+                            <source media="(max-width: 499.9px)" srcset="https://embed.widencdn.net/img/lazboy/sa0nzkuklh/1000px/Devon.jpg?q=50">
+                            <source media="(max-width: 850px)" srcset="https://embed.widencdn.net/img/lazboy/h8q0bdusoj/800px/Devon.jpg?q=50">
+                            <img src="https://embed.widencdn.net/img/lazboy/sa0nzkuklh/930px/Meyer.jpg?q=50" alt="Shop Devon Sectional">
+                        </picture>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section>
+            <p class="disclaimer">Local prices and dealer participation may&nbsp;vary.</p>
+        </section>
+    </div>
+    <script>
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                // Make images followed by links clickable
+                $(document).ready(function() {
+                    $('#npc-content .image~a').siblings(".image").addClass('clickable').click(function() {
+                        $(this).siblings('a')[0].click();
+                    });
+                    $('#npc-content .image>a').parent().addClass('clickable').click(function() {
+                        $(this).children('a')[0].click();
+                    });
+                });
+            }
+        })();
+    </script>
+    <!-- end NPC content -->
+</body>
