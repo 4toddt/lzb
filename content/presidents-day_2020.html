@@ -218,11 +218,7 @@
         #top-banner .stars {
             text-align: center;
             padding: .25em 0 .75em;
-        }
-        
-        #top-banner svg {
             width: 3.5em;
-            display: block;
             margin: 0 auto;
         }
         
@@ -254,16 +250,16 @@
         }
         
         #npc-content .product-silos>div {
-            flex-basis: 50%;
+            flex: 0 1 50%;
+            max-width: 50%;
             margin-top: 30px;
             text-align: center;
             padding: 0 10px;
-            display: flex;
-            flex-direction: column;
         }
         
         #npc-content .product-silos>div.full-width-xs-sm {
-            flex-basis: 100%;
+            flex: 0 1 100%;
+            max-width: 100%;
             padding: 0;
         }
         
@@ -289,7 +285,8 @@
         }
         
         #npc-content .product-banners>a {
-            flex-basis: 100%;
+            flex: 0 1 100%;
+            max-width: 100%;
             margin-top: 30px;
         }
         
@@ -327,7 +324,8 @@
         }
         
         #npc-content .mattress-row>div {
-            flex-basis: 320px;
+            flex: 0 1 320px;
+            max-width: 320px;
             margin-top: 30px;
             padding: 0 10px;
             text-align: center;
@@ -374,8 +372,6 @@
             }
             #top-banner .stars {
                 padding: .1em 0 .3em;
-            }
-            #top-banner svg {
                 width: 2.2em;
             }
             #bonus-recliners .links {
@@ -417,12 +413,14 @@
                 margin: 0 -20px;
             }
             #npc-content .product-silos>div {
-                flex-basis: 33.333333%;
+                flex: 0 1 33.333333%;
+                max-width: 33.333333%;
                 margin-top: 40px;
                 padding: 0 20px;
             }
             #npc-content .product-silos>div.full-width-xs-sm {
-                flex-basis: 33.333333%;
+                flex: 0 1 33.333333%;
+                max-width: 33.333333%;
                 padding: 0 20px;
             }
             #npc-content .product-silos h3 {
@@ -432,7 +430,8 @@
                 margin: 0 -15px;
             }
             #npc-content .product-banners>a {
-                flex-basis: 50%;
+                flex: 0 1 50%;
+                max-width: 50%;
                 margin-top: 40px;
                 padding: 0 15px;
             }
@@ -504,23 +503,13 @@
         <div id="top-banner">
             <h1>Presidents <span class="no-wrap">Day Sale</span></h1>
             <div class="stars">
-                <svg viewBox="0 0 160 20">
-                    <defs>
-                        <path id="star" fill="#fff" d="M10.2.306l2.478,5.865,6.344.545a.5.5,0,0,1,.285.876L14.5,11.761l1.442,6.2a.5.5,0,0,1-.745.541L9.741,15.216,4.289,18.5a.5.5,0,0,1-.745-.541l1.442-6.2L.173,7.591a.5.5,0,0,1,.285-.876L6.8,6.17,9.28.306A.5.5,0,0,1,10.2.306Z" />
-                    </defs>
-                    <use xlink:href="#star" x="0" y="0"></use>
-                    <use xlink:href="#star" x="28" y="0"></use>
-                    <use xlink:href="#star" x="56" y="0"></use>
-                    <use xlink:href="#star" x="84" y="0"></use>
-                    <use xlink:href="#star" x="112" y="0"></use>
-                    <use xlink:href="#star" x="140" y="0"></use>
-                </svg>
+                <img src="https://embed.widencdn.net/img/lazboy/1kowv4o2ku/exact/stars.png" alt="stars">
             </div>
         </div>
         <section id="bonus-recliners">
             <picture>
                 <source media="(max-width: 499.9px)" srcset="https://embed.widencdn.net/img/lazboy/hzcd06fwea/640px/bonus-recliners.jpg?q=85">
-                <img src="https://embed.widencdn.net/img/lazboy/q4mzkerv7j/1960px/widen-placeholder.jpg?q=50" alt="Bonus Recliner Deals!">
+                <img src="https://embed.widencdn.net/img/lazboy/q4mzkerv7j/1960px/bonus-recliners.jpg?q=50" alt="Bonus Recliner Deals!">
             </picture>
             <div class="links hidden-lg-xl">
                 <a href="/p/recliners/loni-rocking-recliner/_/R-010234" class="arrow-right">Shop Loni Recliner</a>
