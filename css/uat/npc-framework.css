@@ -99,6 +99,10 @@ main {
     overflow: hidden;
 }
 
+body.mobile-site #npc-content {
+    margin-bottom: 40px;
+}
+
 #npc-content section {
     width: 100%;
     max-width: 980px;
