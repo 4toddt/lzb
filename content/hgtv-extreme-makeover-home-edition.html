@@ -187,7 +187,29 @@
         }
         
         #npc-content .bio {
-            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 10px;
+        }
+        
+        #npc-content .bio>div {
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        
+        #npc-content .bio .image {
+            width: 46%;
+            max-width: calc(13% + 100px);
+        }
+        
+        #npc-content .bio .copy {
+            align-self: center;
+        }
+        
+        #npc-content .bio img {
+            border: 1px solid #E4DFDC;
+            border-radius: 50%;
+            padding: 5%;
         }
         
         #npc-content .bio h2 {
@@ -211,18 +233,6 @@
             flex-grow: 1;
         }
         
-        #npc-content .home .row h3 {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        
-        #npc-content .home .row .pre {
-            text-transform: uppercase;
-            font-size: 16px;
-            display: block;
-            margin-bottom: 1em;
-        }
-        
         #npc-content .home .row .copy {
             background-clip: content-box;
             text-align: center;
@@ -234,6 +244,25 @@
         
         #npc-content .home .row .copy>div {
             padding: 25px 15px;
+            width: 100%;
+        }
+        
+        #npc-content .home .row .copy h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        #npc-content .home .row .copy .pre {
+            text-transform: uppercase;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 1em;
+        }
+        
+        #npc-content .home .row .copy p {
+            font-size: .8em;
+            line-height: 1.75;
+            margin-top: 1em;
         }
         
         #npc-content .home .row .copy img {
@@ -242,10 +271,9 @@
             display: none;
         }
         
-        #npc-content .home .row p {
-            font-size: .8em;
-            line-height: 1.75;
-            margin-top: 1em;
+        #npc-content .home .row .image {
+            position: relative;
+            display: flex;
         }
         
         #npc-content [role="img"] {
@@ -307,7 +335,7 @@
         
         #npc-content .four-col-grid a {
             font-size: .8em;
-            padding-top: 1em;
+            margin-top: 1em;
             line-height: 1.2;
         }
         
@@ -352,6 +380,10 @@
         
         #design-link a:hover {
             background-color: #73645e;
+        }
+        
+        #npc-content .product-modal {
+            display: none;
         }
         
         @media only screen and (min-width: 500px) {
@@ -438,6 +470,13 @@
                 width: 265px;
                 margin: 0 auto;
             }
+            #npc-content .bio {
+                flex-wrap: nowrap;
+                margin: 0 -10px;
+            }
+            #npc-content .bio .image {
+                flex: 0 0 230px;
+            }
             #npc-content .bio h2 {
                 font-size: 2em;
             }
@@ -446,9 +485,112 @@
             }
             #npc-content .flex-50-50>div {
                 flex: 0 0 50%;
+                max-width: 50%;
             }
             #npc-content .flex-x-340px>div:last-child {
                 flex: 0 0 260px;
+            }
+            #npc-content .product-modal {
+                display: block;
+                position: absolute;
+            }
+            #npc-content .product-modal.open {
+                z-index: 10;
+            }
+            #paxton-modal {
+                top: calc(50% - 8px);
+                right: calc(50% - 10px);
+            }
+            #reclamation-modal {
+                top: calc(50% + 14px);
+                right: calc(50% - 160px);
+            }
+            #new-boston-modal {
+                top: calc(50% - 75px);
+                right: calc(50% + 70px);
+            }
+            #bellevue-modal {
+                top: calc(50% + 170px);
+                right: calc(50% + 70px);
+            }
+            #aberdeen-modal {
+                top: calc(50% + 50px);
+                right: calc(50% - 140px);
+            }
+            #hulsey-modal {
+                top: calc(50% - 25px);
+                right: calc(50% - 145px);
+            }
+            #junction-modal {
+                top: calc(50% + 95px);
+                right: calc(50% - 150px);
+            }
+            #isabella-modal {
+                top: calc(50% - 75px);
+                right: calc(50% - 40px);
+            }
+            #cory-modal {
+                top: calc(50% + 105px);
+                right: calc(50% - 70px);
+            }
+            #npc-content .product-modal .product-modal-content {
+                opacity: 0;
+                padding: 30px 45px 20px;
+                background-color: white;
+                border: 1px solid #E4DFDC;
+                transition: opacity .5s ease-out;
+                pointer-events: none;
+            }
+            #npc-content .product-modal.open .product-modal-content {
+                opacity: 1;
+                pointer-events: all;
+            }
+            #npc-content .product-modal .open-close-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 1;
+                height: 28px;
+                width: 28px;
+                cursor: pointer;
+                /* outline: none !important; */
+            }
+            #npc-content .product-modal .open-close-button::before {
+                content: url(https://embed.widencdn.net/svg/lazboy/5vn117rs72/plus-circle.svg);
+            }
+            #npc-content .product-modal .open-close-button:hover::before {
+                content: url(https://embed.widencdn.net/svg/lazboy/bo93dhp34x/plus-circle-filled.svg);
+            }
+            #npc-content .product-modal.open .open-close-button::before {
+                content: url(https://embed.widencdn.net/svg/lazboy/oqgqy7wx7n/close.svg);
+            }
+            #npc-content .product-modal img {
+                width: 205px;
+            }
+            #npc-content .product-modal h3 {
+                font-size: .9em;
+                font-weight: bold;
+                text-align: center;
+                margin-top: .5em;
+                white-space: nowrap;
+            }
+            #npc-content .product-modal a {
+                font-size: .9em;
+                margin-top: 1em;
+                display: block;
+                background-color: #0070af;
+                color: white;
+                padding: .5em;
+                text-align: center;
+                border-radius: 3px;
+                transition: background-color .2s ease-out;
+                display: none;
+            }
+            #npc-content .product-modal.open a {
+                display: block;
+            }
+            #npc-content .product-modal a:hover {
+                background-color: #005e94;
             }
         }
         
@@ -459,7 +601,7 @@
                 padding: 0 20px;
                 margin: 0 auto;
             }
-            #npc-content .bio {
+            #npc-content .bio>div {
                 margin-top: 45px;
             }
             #npc-content .home .row {
@@ -478,11 +620,48 @@
             #npc-content .home .row p {
                 margin-top: 2.2em;
             }
-            #npc-content .flex-x-340px>div:last-child {
+            #npc-content .flex-x-340px .copy {
                 flex: 0 0 340px;
+                max-width: 340px;
             }
             #npc-content .home .row .copy img {
                 display: block;
+            }
+            #paxton-modal {
+                top: calc(50% - 8px);
+                right: calc(50% - 10px);
+            }
+            #reclamation-modal {
+                top: calc(50% + 14px);
+                right: calc(50% - 160px);
+            }
+            #new-boston-modal {
+                top: calc(50% - 75px);
+                right: calc(50% + 70px);
+            }
+            #bellevue-modal {
+                top: calc(50% + 150px);
+                right: calc(50% + 70px);
+            }
+            #aberdeen-modal {
+                top: calc(50% + 50px);
+                right: calc(50% - 140px);
+            }
+            #hulsey-modal {
+                top: calc(50% - 25px);
+                right: calc(50% - 184px);
+            }
+            #junction-modal {
+                top: calc(50% + 105px);
+                right: calc(50% - 180px);
+            }
+            #isabella-modal {
+                top: calc(50% - 75px);
+                right: calc(50% - 40px);
+            }
+            #cory-modal {
+                top: calc(50% + 85px);
+                right: calc(50% - 70px);
             }
         }
         
@@ -510,8 +689,9 @@
     <div id="npc-content">
         <section id="hero" class="full-width">
             <div class="row">
-                <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px/hero.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px@2x/hero.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px/hero.jpeg?q=85"
-                        alt="Porch with yellow door and welcome mat"></div>
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px/hero.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px@2x/hero.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px/hero.jpeg?q=85" alt="Porch with yellow door and welcome mat">
+                </div>
                 <div class="copy">
                     <div class="white">
                         <img src="https://embed.widencdn.net/img/lazboy/6156klasvb/exact/emh-logo.png" alt="Extreme Makeover Home Edition logo">
@@ -525,15 +705,39 @@
             </div>
         </section>
         <section id="holtzclaw" class="home">
-            <div class="bio" style="max-width: 770px;">
-                <h2>Ranch Revamp</h2>
-                <p>Jeff, an Army veteran, teaches at a high school that helps disenfranchised youth get back on their feet. He&rsquo;s the kind of teacher who goes above and beyond to help his at risk students who often feel like they have been discarded
-                    by the school system, the courts and even their own families. Much like a father would, he becomes invested in helping the kids heal from their negative experiences, graduated high school, attend college and build positive futures
-                    <span class="no-wrap">for themselves.</span></p>
+            <div class="bio">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/alo2vdyyav/187px/holtzclaw.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/alo2vdyyav/187px@2x/holtzclaw.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/alo2vdyyav/187px/holtzclaw.jpeg?q=85"
+                        alt="Holtzclaw Home">
+                </div>
+                <div class="copy">
+                    <h2>Ranch Revamp</h2>
+                    <p>Jeff, an Army veteran, teaches at a high school that helps disenfranchised youth get back on their feet. He&rsquo;s the kind of teacher who goes above and beyond to help his at-risk students who often feel like they have been discarded
+                        by the school system, the courts and even their own families. Much like a father would, he becomes invested in helping the kids heal from their negative experiences, graduated high school, attend college and build positive futures
+                        <span class="no-wrap">for themselves.</span></p>
+                </div>
             </div>
             <div class="row">
                 <div class="image">
                     <div id="holtzclaw01" role="img" aria-label="Holtzclaw Living Room"></div>
+                    <div class="product-modal" id="paxton-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px/paxton-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px@2x/paxton-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px/paxton-sofa.jpeg?q=85"
+                                alt="Paxton Sofa">
+                            <h3>Paxton Sofa</h3>
+                            <a href="/p/sofas/paxton-sofa/_/R-610663">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="reclamation-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px/reclamation-cocktail-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px@2x/reclamation-cocktail-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px/reclamation-cocktail-table.jpeg?q=85"
+                                alt="Reclamation Place Rectangular Cocktail Table">
+                            <h3>Reclamation Cocktail Table</h3>
+                            <a href="/p/home-accents/reclamation-place-rectangular-cocktail-table/_/R-523-914">Shop now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row flex-50-50">
@@ -608,13 +812,28 @@
             <hr>
         </section>
         <section id="jeuregui" class="home">
-            <div class="bio" style="max-width: 700px;">
-                <h2>Historic Haven</h2>
-                <p>A Marine and Army Veteran who served twelve years in the military, Pedro has devoted his life to helping Veterans who suffer from PTSD get the treatment they need, get off the streets and get the second chance <span class="no-wrap">they deserve.</span></p>
+            <div class="bio">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/oiz4hdm6s7/187px/jauregui.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/oiz4hdm6s7/187px@2x/jauregui.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/oiz4hdm6s7/187px/jauregui.jpeg?q=85"
+                        alt="Holtzclaw Home">
+                </div>
+                <div class="copy">
+                    <h2>Historic Haven</h2>
+                    <p>A Marine and Army veteran who served twelve years in the military, Pedro has devoted his life to helping veterans who suffer from PTSD get the treatment they need, get off the streets and get the second chance <span class="no-wrap">they deserve.</span></p>
+                </div>
             </div>
             <div class="row">
                 <div class="image">
                     <div id="jauregui01" role="img" aria-label="Jauregui Patio"></div>
+                    <div class="product-modal" id="new-boston-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px/new-boston.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px@2x/new-boston.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px/new-boston.jpeg?q=85"
+                                alt="New Boston 2 Piece Wicker Patio Conversation Set">
+                            <h3>New Boston Outdoor Set</h3>
+                            <a href="/p/outdoor/new-boston-2-piece-wicker-patio-conversation-set/_/R-NWB-SOFA-CT">Shop now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row flex-50-50">
@@ -629,11 +848,65 @@
                 </div>
                 <div class="image">
                     <div id="jauregui02" role="img" aria-label="Jauregui Living Room"></div>
+                    <div class="product-modal" id="isabella-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px/isabella-table-lamp.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px@2x/isabella-table-lamp.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px/isabella-table-lamp.jpeg?q=85"
+                                alt="Isabella Table Lamp">
+                            <h3>Isabella Table Lamp</h3>
+                            <a href="/p/home-accents/isabella-table-lamp/_/R-L01-A24">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="aberdeen-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/04jyfffklc/205px/aberdeen-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/04jyfffklc/205px@2x/aberdeen-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/04jyfffklc/205px/aberdeen-sofa.jpeg?q=85"
+                                alt="Aberdeen Sofa">
+                            <h3>Aberdeen Sofa</h3>
+                            <a href="/p/sofas/aberdeen-sofa/_/R-610604">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="cory-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px/cory-ottoman.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px@2x/cory-ottoman.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px/cory-ottoman.jpeg?q=85"
+                                alt="Cory Ottoman">
+                            <h3>Cory Ottoman</h3>
+                            <a href="/p/home-accents/cory-ottoman/_/R-024205">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="bellevue-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px/bellevue-swivel-chair.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px@2x/bellevue-swivel-chair.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px/bellevue-swivel-chair.jpeg?q=85"
+                                alt="Bellevue High Leg Swivel Chair">
+                            <h3>Bellevue Swivel Chair</h3>
+                            <a href="/p/chairs/bellevue-high-leg-swivel-chair/_/R-210421">Shop now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row flex-x-340px">
                 <div class="image">
                     <div id="jauregui03" role="img" aria-label="Jauregui Bedroom"></div>
+                    <div class="product-modal" id="junction-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px/junction-ironwork-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px@2x/junction-ironwork-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px/junction-ironwork-table.jpeg?q=85"
+                                alt="Junction Ironwork Spot Table">
+                            <h3>Junction Ironwork Spot Table</h3>
+                            <a href="/p/home-accents/junction-ironwork-spot-table/_/R-710-922">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="hulsey-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px/hulsey-table-lamp.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px@2x/hulsey-table-lamp.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px/hulsey-table-lamp.jpeg?q=85"
+                                alt="Hulsey Table Lamp">
+                            <h3>Hulsey Table Lamp</h3>
+                            <a href="/p/home-accents/hulsey-table-lamp/_/R-L01-A28">Shop now</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="copy">
                     <div>
@@ -697,6 +970,44 @@
             <a href="/content/design-services/design-request-form" class="arrow-right">Feeling inspired? <span class="no-wrap">Book a FREE</span> design <span class="no-wrap">consultation today.</span></a>
         </section>
     </div>
-
+    <script>
+        // Function to see if event is a click, enter, or spacebar
+        function accessibleClick(event) {
+            if (event.type === 'click') {
+                return true;
+            } else if (event.type === 'keypress') {
+                var code = event.charCode || event.keyCode;
+                if ((code === 32) || (code === 13)) {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                // open-close buttons
+                $(".open-close-button").attr("tabIndex", "0").on("click touchstart keypress", function(e) {
+                    if (accessibleClick(e)) {
+                        var thisModal = $(this).parent();
+                        $(".product-modal").not(thisModal).removeClass("open");
+                        thisModal.toggleClass("open");
+                        e.preventDefault();
+                    }
+                });
+            }
+        })();
+    </script>
     <!-- end NPC content -->
 </body>
