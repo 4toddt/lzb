@@ -1,0 +1,1013 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Extreme Home Makeover TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        
+        #npc-content .right,
+        #npc-content .left {
+            float: none !important;
+        }
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #000;
+            overflow: hidden;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content [onclick],
+        #npc-content [videoModal],
+        #npc-content .clickable {
+            /* if there is an onclick attribute, the curser will be a pointer */
+            cursor: pointer;
+        }
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /**************************************/
+        /*********** Custom Styles ************/
+        /**************************************/
+        
+        #npc-content strong {
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        #npc-content h1 {
+            font-size: 1.4em;
+            font-size: 7.2vw;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: .5em;
+        }
+        
+        #hero .image {
+            position: relative;
+        }
+        
+        #hero .white {
+            padding: 20px;
+            background-color: white;
+        }
+        
+        #hero .white img {
+            width: 155px;
+            margin: 0 auto;
+        }
+        
+        #hero .gray {
+            background-color: #E4DFDC;
+            padding: 30px;
+            font-size: .9em;
+            line-height: 1.9;
+            text-align: center;
+        }
+        
+        #npc-content .bio {
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 10px;
+        }
+        
+        #npc-content .bio>div {
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        
+        #npc-content .bio .image {
+            width: 46%;
+            max-width: calc(13% + 100px);
+        }
+        
+        #npc-content .bio .copy {
+            align-self: center;
+        }
+        
+        #npc-content .bio img {
+            border: 1px solid #E4DFDC;
+            border-radius: 50%;
+            padding: 5%;
+        }
+        
+        #npc-content .bio h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        #npc-content .bio p {
+            font-size: .8em;
+            line-height: 1.5;
+            margin-top: 1em;
+        }
+        
+        #npc-content .home .row {
+            margin: 0 -5px;
+        }
+        
+        #npc-content .home .row>div {
+            margin-top: 10px;
+            padding: 0 5px;
+            flex-grow: 1;
+        }
+        
+        #npc-content .home .row .copy {
+            background-clip: content-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #npc-content .home .row .copy>div {
+            padding: 25px 15px;
+            width: 100%;
+        }
+        
+        #npc-content .home .row .copy h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        #npc-content .home .row .copy .pre {
+            text-transform: uppercase;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 1em;
+        }
+        
+        #npc-content .home .row .copy p {
+            font-size: .8em;
+            line-height: 1.75;
+            margin-top: 1em;
+        }
+        
+        #npc-content .home .row .copy img {
+            width: 250px;
+            margin: 30px auto 0;
+            display: none;
+        }
+        
+        #npc-content .home .row .image {
+            position: relative;
+            display: flex;
+        }
+        
+        #npc-content [role="img"] {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding-bottom: 80%;
+            width: 100%;
+        }
+        
+        #holtzclaw01 {
+            background-image: url(https://embed.widencdn.net/img/lazboy/slzli4q8na/480px@2x/holtzclaw01-sm.jpeg?q=50);
+        }
+        
+        #holtzclaw02 {
+            background-image: url(https://embed.widencdn.net/img/lazboy/wffsyk1pig/480px@2x/holtzclaw02-sm.jpeg?q=50);
+        }
+        
+        #holtzclaw03 {
+            background-image: url(https://embed.widencdn.net/img/lazboy/zc48wvi41z/480px@2x/holtzclaw03-sm.jpeg?q=50);
+        }
+        
+        #jauregui01 {
+            background-image: url(https://embed.widencdn.net/img/lazboy/fd9zjy563d/480px@2x/jauregui01-sm.jpeg?q=50);
+        }
+        
+        #jauregui02 {
+            background-image: url(https://embed.widencdn.net/img/lazboy/lozuilsczc/480px@2x/jauregui02-sm.jpeg?q=50);
+        }
+        
+        #jauregui03 {
+            background-image: url(https://embed.widencdn.net/img/lazboy/31fpbdm6n2/480px@2x/jauregui03-sm.jpeg?q=50);
+        }
+        
+        #npc-content .gray-box {
+            background-color: #F1EFED;
+        }
+        
+        #npc-content .four-col-grid {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        #npc-content .four-col-grid>div {
+            flex: 0 0 50%;
+            max-width: 255px;
+            padding: 0 10px;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #npc-content .four-col-grid .image {
+            margin: auto;
+        }
+        
+        #npc-content .four-col-grid a {
+            font-size: .8em;
+            margin-top: 1em;
+            line-height: 1.2;
+        }
+        
+        #npc-content hr {
+            border-top: 1px solid #707070;
+            margin-top: 30px;
+        }
+        
+        #gray-bar {
+            background-color: #E4DFDC;
+            margin-top: 30px;
+            padding: 30px 10px;
+            text-align: center;
+        }
+        
+        #gray-bar h2 {
+            font-size: 1.2em;
+            line-height: 1.25;
+        }
+        
+        #gray-bar p {
+            font-size: .8em;
+            line-height: 1.5;
+            margin-top: .5em;
+        }
+        
+        #design-link {
+            display: flex;
+        }
+        
+        #design-link a {
+            text-align: center;
+            margin: 30px auto 0;
+            background-color: #807069;
+            padding: 25px 55px;
+            color: white;
+            font-weight: bold;
+            line-height: 1.45;
+            transition: background-color .2s ease-out;
+            border-radius: 3px;
+        }
+        
+        #design-link a:hover {
+            background-color: #73645e;
+        }
+        
+        #npc-content .product-modal {
+            display: none;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero h1 {
+                font-size: 1.8em;
+            }
+            #npc-content .home [role="img"] {
+                padding-bottom: 350px;
+            }
+            #holtzclaw01 {
+                background-image: url(https://embed.widencdn.net/img/lazboy/ru9rmaqemq/980px@2x/holtzclaw01-lg.jpeg?q=50);
+            }
+            #holtzclaw02 {
+                background-image: url(https://embed.widencdn.net/img/lazboy/ushcwkiao9/480px@2x/holtzclaw02-lg.jpeg?q=50);
+            }
+            #holtzclaw03 {
+                background-image: url(https://embed.widencdn.net/img/lazboy/y5g3dinmp4/640px@2x/holtzclaw03-lg.jpeg?q=50);
+            }
+            #jauregui01 {
+                background-image: url(https://embed.widencdn.net/img/lazboy/frwpjxzhmi/980px@2x/jauregui01-lg.jpeg?q=50);
+            }
+            #jauregui02 {
+                background-image: url(https://embed.widencdn.net/img/lazboy/gbms2oxjem/480px@2x/jauregui02-lg.jpeg?q=50);
+            }
+            #jauregui03 {
+                background-image: url(https://embed.widencdn.net/img/lazboy/tadf7kenkz/640px@2x/jauregui03-lg.jpeg?q=50);
+            }
+            #npc-content .four-col-grid {
+                margin: 0 -25px;
+            }
+            #npc-content .four-col-grid>div {
+                padding: 0 25px;
+            }
+            #npc-content hr {
+                margin-top: 50px;
+            }
+            #gray-bar {
+                margin-top: 50px;
+                padding: 40px 10px;
+            }
+            #design-link a {
+                margin-top: 50px;
+                font-size: 1.1em;
+            }
+        }
+        
+        @media only screen and (min-width: 600px) {
+            #npc-content .row {
+                display: flex;
+            }
+            #hero .row {
+                height: 400px;
+            }
+            #hero .image {
+                flex: 1 0 200px;
+            }
+            #hero .image>img {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 100%;
+                width: auto;
+            }
+            #hero .copy {
+                flex: 0 0 330px;
+                position: relative;
+            }
+            #hero .white {
+                position: absolute;
+                height: 220px;
+                width: 290px;
+                border: 1px solid #E3E3E3;
+                z-index: 10;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            #hero .gray {
+                padding: 0;
+                height: 400px;
+                padding-top: 155px;
+                border-top: 80px solid white;
+            }
+            #hero .gray p {
+                width: 265px;
+                margin: 0 auto;
+            }
+            #npc-content .bio {
+                flex-wrap: nowrap;
+                margin: 0 -10px;
+            }
+            #npc-content .bio .image {
+                flex: 0 0 230px;
+            }
+            #npc-content .bio h2 {
+                font-size: 2em;
+            }
+            #npc-content .bio p {
+                font-size: .9em;
+            }
+            #npc-content .flex-50-50>div {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            #npc-content .flex-x-340px>div:last-child {
+                flex: 0 0 260px;
+            }
+            #npc-content .product-modal {
+                display: block;
+                position: absolute;
+            }
+            #npc-content .product-modal.open {
+                z-index: 10;
+            }
+            #paxton-modal {
+                top: calc(50% - 8px);
+                right: calc(50% - 10px);
+            }
+            #reclamation-modal {
+                top: calc(50% + 14px);
+                right: calc(50% - 160px);
+            }
+            #new-boston-modal {
+                top: calc(50% - 75px);
+                right: calc(50% + 70px);
+            }
+            #bellevue-modal {
+                top: calc(50% + 170px);
+                right: calc(50% + 70px);
+            }
+            #aberdeen-modal {
+                top: calc(50% + 50px);
+                right: calc(50% - 140px);
+            }
+            #hulsey-modal {
+                top: calc(50% - 25px);
+                right: calc(50% - 145px);
+            }
+            #junction-modal {
+                top: calc(50% + 95px);
+                right: calc(50% - 150px);
+            }
+            #isabella-modal {
+                top: calc(50% - 75px);
+                right: calc(50% - 40px);
+            }
+            #cory-modal {
+                top: calc(50% + 105px);
+                right: calc(50% - 70px);
+            }
+            #npc-content .product-modal .product-modal-content {
+                opacity: 0;
+                padding: 30px 45px 20px;
+                background-color: white;
+                border: 1px solid #E4DFDC;
+                transition: opacity .5s ease-out;
+                pointer-events: none;
+            }
+            #npc-content .product-modal.open .product-modal-content {
+                opacity: 1;
+                pointer-events: all;
+            }
+            #npc-content .product-modal .open-close-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 1;
+                height: 28px;
+                width: 28px;
+                cursor: pointer;
+                /* outline: none !important; */
+            }
+            #npc-content .product-modal .open-close-button::before {
+                content: url(https://embed.widencdn.net/svg/lazboy/5vn117rs72/plus-circle.svg);
+            }
+            #npc-content .product-modal .open-close-button:hover::before {
+                content: url(https://embed.widencdn.net/svg/lazboy/bo93dhp34x/plus-circle-filled.svg);
+            }
+            #npc-content .product-modal.open .open-close-button::before {
+                content: url(https://embed.widencdn.net/svg/lazboy/oqgqy7wx7n/close.svg);
+            }
+            #npc-content .product-modal img {
+                width: 205px;
+            }
+            #npc-content .product-modal h3 {
+                font-size: .9em;
+                font-weight: bold;
+                text-align: center;
+                margin-top: .5em;
+                white-space: nowrap;
+            }
+            #npc-content .product-modal a {
+                font-size: .9em;
+                margin-top: 1em;
+                display: block;
+                background-color: #0070af;
+                color: white;
+                padding: .5em;
+                text-align: center;
+                border-radius: 3px;
+                transition: background-color .2s ease-out;
+                display: none;
+            }
+            #npc-content .product-modal.open a {
+                display: block;
+            }
+            #npc-content .product-modal a:hover {
+                background-color: #005e94;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #npc-content section {
+                width: 100%;
+                max-width: 1020px;
+                padding: 0 20px;
+                margin: 0 auto;
+            }
+            #npc-content .bio>div {
+                margin-top: 45px;
+            }
+            #npc-content .home .row {
+                margin: 0 -10px;
+            }
+            #npc-content .home .row>div {
+                margin-top: 20px;
+                padding: 0 10px;
+            }
+            #npc-content .home [role="img"] {
+                padding-bottom: 450px;
+            }
+            #npc-content .home .row .pre {
+                margin-bottom: 1.6em;
+            }
+            #npc-content .home .row p {
+                margin-top: 2.2em;
+            }
+            #npc-content .flex-x-340px .copy {
+                flex: 0 0 340px;
+                max-width: 340px;
+            }
+            #npc-content .home .row .copy img {
+                display: block;
+            }
+            #paxton-modal {
+                top: calc(50% - 8px);
+                right: calc(50% - 10px);
+            }
+            #reclamation-modal {
+                top: calc(50% + 14px);
+                right: calc(50% - 160px);
+            }
+            #new-boston-modal {
+                top: calc(50% - 75px);
+                right: calc(50% + 70px);
+            }
+            #bellevue-modal {
+                top: calc(50% + 150px);
+                right: calc(50% + 70px);
+            }
+            #aberdeen-modal {
+                top: calc(50% + 50px);
+                right: calc(50% - 140px);
+            }
+            #hulsey-modal {
+                top: calc(50% - 25px);
+                right: calc(50% - 184px);
+            }
+            #junction-modal {
+                top: calc(50% + 105px);
+                right: calc(50% - 180px);
+            }
+            #isabella-modal {
+                top: calc(50% - 75px);
+                right: calc(50% - 40px);
+            }
+            #cory-modal {
+                top: calc(50% + 85px);
+                right: calc(50% - 70px);
+            }
+        }
+        
+        @media only screen and (min-width: 930px) {
+            #hero .image {
+                flex: 0 0 600px;
+            }
+            #hero .copy {
+                flex-grow: 1;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">HGTV Extreme Makeover Home Edition</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>HGTV Extreme Makeover Home Edition</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <div class="row">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px/hero.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px@2x/hero.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/i3yi6mv5qk/600px/hero.jpeg?q=85" alt="Porch with yellow door and welcome mat">
+                </div>
+                <div class="copy">
+                    <div class="white">
+                        <img src="https://embed.widencdn.net/img/lazboy/6156klasvb/exact/emh-logo.png" alt="Extreme Makeover Home Edition logo">
+                        <h1>Welcome Home!</h1>
+                    </div>
+                    <div class="gray">
+                        <p><strong>Extreme Makeover: Home Edition</strong> is back, with two special appearances by <span class="no-wrap">La-Z-Boy.</span> Catch the all-new episodes <span class="no-wrap">on HGTV.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="holtzclaw" class="home">
+            <div class="bio">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/alo2vdyyav/187px/holtzclaw.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/alo2vdyyav/187px@2x/holtzclaw.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/alo2vdyyav/187px/holtzclaw.jpeg?q=85"
+                        alt="Holtzclaw Home">
+                </div>
+                <div class="copy">
+                    <h2>Ranch Revamp</h2>
+                    <p>Jeff, an Army veteran, teaches at a high school that helps disenfranchised youth get back on their feet. He&rsquo;s the kind of teacher who goes above and beyond to help his at-risk students who often feel like they have been discarded
+                        by the school system, the courts and even their own families. Much like a father would, he becomes invested in helping the kids heal from their negative experiences, graduated high school, attend college and build positive futures
+                        <span class="no-wrap">for themselves.</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="image">
+                    <div id="holtzclaw01" role="img" aria-label="Holtzclaw Living Room"></div>
+                    <div class="product-modal" id="paxton-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px/paxton-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px@2x/paxton-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px/paxton-sofa.jpeg?q=85"
+                                alt="Paxton Sofa">
+                            <h3>Paxton Sofa</h3>
+                            <a href="/p/sofas/paxton-sofa/_/R-610663">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="reclamation-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px/reclamation-cocktail-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px@2x/reclamation-cocktail-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px/reclamation-cocktail-table.jpeg?q=85"
+                                alt="Reclamation Place Rectangular Cocktail Table">
+                            <h3>Reclamation Cocktail Table</h3>
+                            <a href="/p/home-accents/reclamation-place-rectangular-cocktail-table/_/R-523-914">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-50-50">
+                <div class="copy gray-box">
+                    <div style="max-width: 420px;">
+                        <h3><span class="pre">The Great Room</span> Wide Open Spaces</h3>
+                        <p>To make Jeff&rsquo;s home wheelchair accessible, designers created an open floor plan, with our Paxton Sofa as the center of attention. The crisp white fabric helps establish an airy, <span class="no-wrap">tranquil atmosphere.</span></p>
+                    </div style="max-width: 400px;">
+                </div>
+                <div class="image">
+                    <div id="holtzclaw02" role="img" aria-label="Holtzclaw Dining Room"></div>
+                </div>
+            </div>
+            <div class="row flex-x-340px">
+                <div class="image">
+                    <div id="holtzclaw03" role="img" aria-label="Holtzclaw Bedroom"></div>
+                </div>
+                <div class="copy">
+                    <div>
+                        <h3><span class="pre">the Master bedroom</span> Functional Style</h3>
+                        <p>In the master bedroom, we provided the solid wood bed and dressers, finished in a soothing driftwood <span class="no-wrap">gray tone.</span></p>
+                        <img srcset="https://embed.widencdn.net/img/lazboy/k5otu6p6lk/250px/holtzclaw04.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/k5otu6p6lk/250px@2x/holtzclaw04.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/k5otu6p6lk/250px/holtzclaw04.jpeg?q=85"
+                            alt="Holtzclaw Bedroom Closeup">
+                    </div>
+                </div>
+            </div>
+            <div class="four-col-grid">
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px/paxton-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px@2x/paxton-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/2fxjezntbo/205px/paxton-sofa.jpeg?q=85"
+                            alt="Paxton Sofa"></div>
+                    <a href="/p/sofas/paxton-sofa/_/R-610663" class="arrow-right">Shop Paxton Sofa</a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px/reclamation-cocktail-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px@2x/reclamation-cocktail-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/8ks0fkpuvi/205px/reclamation-cocktail-table.jpeg?q=85"
+                            alt="Reclamation Place Rectangular Cocktail Table"></div>
+                    <a href="/p/home-accents/reclamation-place-rectangular-cocktail-table/_/R-523-914" class="arrow-right">Shop Reclamation <span class="no-wrap">Cocktail Table</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/pvdyjl99sp/205px/hidden-treasures-trunk.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/pvdyjl99sp/205px@2x/hidden-treasures-trunk.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/pvdyjl99sp/205px/hidden-treasures-trunk.jpeg?q=85"
+                            alt="Hidden Treasures Trunk End Table"></div>
+                    <a href="/p/home-accents/hidden-treasures-trunk-end-table/_/R-090-743" class="arrow-right">Shop Hidden
+                        <span class="no-wrap">Treasures Trunk</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/lklc6mdlou/205px/nook-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/lklc6mdlou/205px@2x/nook-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/lklc6mdlou/205px/nook-table.jpeg?q=85"
+                            alt="The Nook 80 Inch Large Rectangular Leg Table"></div>
+                    <a href="/p/kitchen--dining/the-nook-80-large-rectangular-leg-table/_/R-664-761" class="arrow-right">Shop The Nook Table</a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/hroa59fq2n/205px/ferndale-reclining-chair.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/hroa59fq2n/205px@2x/ferndale-reclining-chair.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/hroa59fq2n/205px/ferndale-reclining-chair.jpeg?q=85"
+                            alt="Ferndale Press Back Reclining Chair"></div>
+                    <a href="/p/recliners/ferndale-press-back-reclining-chair/_/R-265408" class="arrow-right">Shop Ferndale
+                        <span class="no-wrap">Reclining Chair</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px/isabella-table-lamp.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px@2x/isabella-table-lamp.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px/isabella-table-lamp.jpeg?q=85"
+                            alt="Isabella Table Lamp"></div>
+                    <a href="/p/home-accents/isabella-table-lamp/_/R-L01-A24" class="arrow-right">Shop Isabella <span class="no-wrap">Table Lamp</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/7ikdqncoov/205px/modern-basics-end-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/7ikdqncoov/205px@2x/modern-basics-end-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/7ikdqncoov/205px/modern-basics-end-table.jpeg?q=85"
+                            alt="Modern Basics Round End Table"></div>
+                    <a href="/p/home-accents/modern-basics-round-end-table/_/R-190-918" class="arrow-right">Shop Modern Basics
+                        <span class="no-wrap">End Table</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/qjmqeabneh/205px/kennedy-chair.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/qjmqeabneh/205px@2x/kennedy-chair.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/qjmqeabneh/205px/kennedy-chair.jpeg?q=85"
+                            alt="Kennedy Chair"></div>
+                    <a href="/p/chairs/kennedy-chair/_/R-230593" class="arrow-right">Shop Kennedy Chair</a>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section id="jeuregui" class="home">
+            <div class="bio">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/oiz4hdm6s7/187px/jauregui.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/oiz4hdm6s7/187px@2x/jauregui.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/oiz4hdm6s7/187px/jauregui.jpeg?q=85"
+                        alt="Jauregui Home">
+                </div>
+                <div class="copy">
+                    <h2>Historic Haven</h2>
+                    <p>A Marine and Army veteran who served twelve years in the military, Pedro has devoted his life to helping veterans who suffer from PTSD get the treatment they need, get off the streets and get the second chance <span class="no-wrap">they deserve.</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="image">
+                    <div id="jauregui01" role="img" aria-label="Jauregui Patio"></div>
+                    <div class="product-modal" id="new-boston-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px/new-boston.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px@2x/new-boston.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px/new-boston.jpeg?q=85"
+                                alt="New Boston 2 Piece Wicker Patio Conversation Set">
+                            <h3>New Boston Outdoor Set</h3>
+                            <a href="/p/outdoor/new-boston-2-piece-wicker-patio-conversation-set/_/R-NWB-SOFA-CT">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-50-50">
+                <div class="copy gray-box">
+                    <div style="max-width: 460px;">
+                        <h3><span class="pre">Yard and Living Room</span> Craftsman Charm</h3>
+                        <p>Due to his tireless work for fellow veterans, Pedro&rsquo;s yard was overgrown and unused. <span class="no-wrap">La-Z-Boy</span> brought some comfort and style to the space with the New Boston Seating <span class="no-wrap">Set (above).</span></p>
+                        <p>Inside, the transformation included a new open concept floor plan that maintained the home&rsquo;s rustic flair. <span class="no-wrap">La-Z-Boy</span> provided an eclectic set of furniture, including the Aberdeen Sofa, Bellevue
+                            Swivel Chair and <span class="no-wrap">Cory Ottoman.</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="image">
+                    <div id="jauregui02" role="img" aria-label="Jauregui Living Room"></div>
+                    <div class="product-modal" id="isabella-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px/isabella-table-lamp.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px@2x/isabella-table-lamp.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/esbeqmzssm/205px/isabella-table-lamp.jpeg?q=85"
+                                alt="Isabella Table Lamp">
+                            <h3>Isabella Table Lamp</h3>
+                            <a href="/p/home-accents/isabella-table-lamp/_/R-L01-A24">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="aberdeen-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/04jyfffklc/205px/aberdeen-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/04jyfffklc/205px@2x/aberdeen-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/04jyfffklc/205px/aberdeen-sofa.jpeg?q=85"
+                                alt="Aberdeen Sofa">
+                            <h3>Aberdeen Sofa</h3>
+                            <a href="/p/sofas/aberdeen-sofa/_/R-610604">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="cory-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px/cory-ottoman.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px@2x/cory-ottoman.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px/cory-ottoman.jpeg?q=85"
+                                alt="Cory Ottoman">
+                            <h3>Cory Ottoman</h3>
+                            <a href="/p/home-accents/cory-ottoman/_/R-024205">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="bellevue-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px/bellevue-swivel-chair.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px@2x/bellevue-swivel-chair.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px/bellevue-swivel-chair.jpeg?q=85"
+                                alt="Bellevue High Leg Swivel Chair">
+                            <h3>Bellevue Swivel Chair</h3>
+                            <a href="/p/chairs/bellevue-high-leg-swivel-chair/_/R-210421">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-x-340px">
+                <div class="image">
+                    <div id="jauregui03" role="img" aria-label="Jauregui Bedroom"></div>
+                    <div class="product-modal" id="junction-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px/junction-ironwork-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px@2x/junction-ironwork-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px/junction-ironwork-table.jpeg?q=85"
+                                alt="Junction Ironwork Spot Table">
+                            <h3>Junction Ironwork Spot Table</h3>
+                            <a href="/p/home-accents/junction-ironwork-spot-table/_/R-710-922">Shop now</a>
+                        </div>
+                    </div>
+                    <div class="product-modal" id="hulsey-modal">
+                        <div class="open-close-button"></div>
+                        <div class="product-modal-content">
+                            <img srcset="https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px/hulsey-table-lamp.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px@2x/hulsey-table-lamp.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px/hulsey-table-lamp.jpeg?q=85"
+                                alt="Hulsey Table Lamp">
+                            <h3>Hulsey Table Lamp</h3>
+                            <a href="/p/home-accents/hulsey-table-lamp/_/R-L01-A28">Shop now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copy">
+                    <div>
+                        <h3><span class="pre">the Master bedroom</span> Dream Come True</h3>
+                        <p>With its exposed wood grain, our Craftsman-inspired bed was a fitting choice for <span class="no-wrap">the home.</span></p>
+                        <img srcset="https://embed.widencdn.net/img/lazboy/boz0bg2hfr/250px/jauregui04.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/boz0bg2hfr/250px@2x/jauregui04.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/boz0bg2hfr/250px/jauregui04.jpeg?q=85"
+                            alt="Jauregui Bedroom Closeup">
+                    </div>
+                </div>
+            </div>
+            <div class="four-col-grid">
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px/new-boston.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px@2x/new-boston.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/im41ikf4ek/205px/new-boston.jpeg?q=85"
+                            alt="New Boston 2 Piece Wicker Patio Conversation Set"></div>
+                    <a href="/p/outdoor/new-boston-2-piece-wicker-patio-conversation-set/_/R-NWB-SOFA-CT" class="arrow-right">Shop New Boston <span class="no-wrap">Outdoor Set</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px/bellevue-swivel-chair.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px@2x/bellevue-swivel-chair.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/mlvpuzvdcs/205px/bellevue-swivel-chair.jpeg?q=85"
+                            alt="Bellevue High Leg Swivel Chair"></div>
+                    <a href="/p/chairs/bellevue-high-leg-swivel-chair/_/R-210421" class="arrow-right">Shop Bellevue <span class="no-wrap">Swivel Chair</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/04jyfffklc/205px/aberdeen-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/04jyfffklc/205px@2x/aberdeen-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/04jyfffklc/205px/aberdeen-sofa.jpeg?q=85"
+                            alt="Aberdeen Sofa"></div>
+                    <a href="/p/sofas/aberdeen-sofa/_/R-610604" class="arrow-right">Shop Aberdeen Sofa</a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/sesc3f6iun/205px/hidden-treasures-barstool.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/sesc3f6iun/205px@2x/hidden-treasures-barstool.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/sesc3f6iun/205px/hidden-treasures-barstool.jpeg?q=85"
+                            alt="Hidden Treasures Barstool"></div>
+                    <a href="/p/kitchen--dining/hidden-treasures-barstool/_/R-090-969" class="arrow-right">Shop Hidden <span class="no-wrap">Treasures Barstool</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px/hulsey-table-lamp.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px@2x/hulsey-table-lamp.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/yyojcrvj7z/205px/hulsey-table-lamp.jpeg?q=85"
+                            alt="Hulsey Table Lamp"></div>
+                    <a href="/p/home-accents/hulsey-table-lamp/_/R-L01-A28" class="arrow-right">Shop Hulsey <span class="no-wrap">Table Lamp</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px/cory-ottoman.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px@2x/cory-ottoman.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/fng10zjdjz/205px/cory-ottoman.jpeg?q=85"
+                            alt="Cory Ottoman"></div>
+                    <a href="/p/home-accents/cory-ottoman/_/R-024205" class="arrow-right">Shop Cory Ottoman</a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px/junction-ironwork-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px@2x/junction-ironwork-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/9qusnztkkp/205px/junction-ironwork-table.jpeg?q=85"
+                            alt="Junction Ironwork Spot Table"></div>
+                    <a href="/p/home-accents/junction-ironwork-spot-table/_/R-710-922" class="arrow-right">Shop Junction <span class="no-wrap">Ironwork Table</span></a>
+                </div>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/kintlf3v31/205px/plank-road-table.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/kintlf3v31/205px@2x/plank-road-table.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/kintlf3v31/205px/plank-road-table.jpeg?q=85"
+                            alt="Plank Road Rankin Rectangular Leg Table"></div>
+                    <a href="/p/kitchen--dining/plank-road-rankin-rectangular-leg-table/_/R-706-744C" class="arrow-right">Shop Plank <span class="no-wrap">Road Table</span></a>
+                </div>
+            </div>
+        </section>
+        <div id="gray-bar">
+            <section>
+                <h2>La-Z-Boy is honored to be a part of these two <span class="no-wrap">powerful stories.</span></h2>
+                <p>Be sure to catch all 10 brand-new episodes on the new season of <strong>Extreme Makeover: Home Edition</strong> <span class="no-wrap">on HGTV.</span></p>
+            </section>
+        </div>
+        <section id="design-link">
+            <a href="/content/design-services/design-request-form" class="arrow-right">Feeling inspired? <span class="no-wrap">Book a FREE</span> design <span class="no-wrap">consultation today.</span></a>
+        </section>
+    </div>
+    <script>
+        // Function to see if event is a click, enter, or spacebar
+        function accessibleClick(event) {
+            if (event.type === 'click') {
+                return true;
+            } else if (event.type === 'keypress') {
+                var code = event.charCode || event.keyCode;
+                if ((code === 32) || (code === 13)) {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                // open-close buttons
+                $(".open-close-button").attr("tabIndex", "0").on("click touchstart keypress", function(e) {
+                    if (accessibleClick(e)) {
+                        var thisModal = $(this).parent();
+                        $(".product-modal").not(thisModal).removeClass("open");
+                        thisModal.toggleClass("open");
+                        e.preventDefault();
+                    }
+                });
+            }
+        })();
+    </script>
+    <!-- end NPC content -->
+</body>

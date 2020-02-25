@@ -105,8 +105,14 @@ body.mobile-site #npc-content {
 
 #npc-content section {
     width: 100%;
-    max-width: 980px;
+    max-width: 1000px;
+    padding: 0 10px;
     margin: 0 auto;
+}
+
+#npc-content section.full-width {
+    max-width: 980px;
+    padding: 0;
 }
 
 #npc-content strong {
