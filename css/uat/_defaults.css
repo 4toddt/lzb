@@ -6,6 +6,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 #bcc-content {
     width: 100%;
     max-width: 980px;
@@ -174,6 +175,12 @@ body.mobile-site .hidden-mobile {
     content: "\00ae";
     font-size: .6em;
     vertical-align: super;
+    line-height: 0;
+}
+
+#bcc-content .arrow-right:after {
+    font-family: 'LZB Icons';
+    content: "\e90e";
     line-height: 0;
 }
 

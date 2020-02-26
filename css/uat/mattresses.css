@@ -14,8 +14,12 @@
     max-width: none;
 }
 
+body.mobile-site #bcc-content {
+    margin-bottom: 50px;
+}
+
 #bcc-content section {
-    margin: 40px auto 0;
+    margin: 50px auto 0;
     max-width: 1010px;
     padding: 0 15px;
 }
@@ -66,9 +70,8 @@
 
 #bcc-content p.subtitle {
     text-align: center;
-    font-size: .9em;
+    font-size: 1em;
     line-height: 1.5;
-    max-width: 45em;
     margin: .5em auto;
 }
 
@@ -91,8 +94,41 @@
     position: absolute;
 }
 
+#hero .flickity-page-dots {
+    bottom: 25px;
+}
+
+#hero .flickity-page-dots .dot {
+    width: 13px;
+    height: 13px;
+    margin: 0 6px;
+    background: #0070af;
+}
+
 #hero .copy {
     padding: 15px;
+}
+
+#icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    color: #0070af;
+}
+
+#icon-row>div {
+    flex: 0 0 300px;
+    max-width: 300px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+#icon-row .image {
+    width: 75px;
+    margin: auto;
 }
 
 #styles {
@@ -103,25 +139,22 @@
 
 #styles>div {
     max-width: 320px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-}
-
-#styles label {
+    margin-top: 30px;
+    margin-bottom: 60px;
     position: relative;
 }
 
-#styles h3:before {
-    content: "La-Z-Boy";
-    display: block;
-    font-size: .5em;
+#styles h3 {
+    text-align: center;
 }
 
-#styles label+p {
-    font-weight: 300;
+#styles h3+p {
     margin-top: .5em;
-    /* max-width: 15em; */
+    text-align: center;
+}
+
+#styles input {
+    display: none;
 }
 
 #styles .details {
@@ -129,10 +162,44 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    border-top: 3px solid #0070af;
+    position: absolute;
+    width: 100%;
+    background-color: white;
 }
 
-#styles input {
+#styles :checked+.details {
+    border: 1px solid #0070af;
+    padding: 0 20px 40px;
+    color: inherit;
+    z-index: 1;
+}
+
+#styles label {
+    text-align: center;
+    padding: .75em;
+    background-color: #0070af;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+}
+
+#styles :checked+.details label {
+    background-color: white;
+    color: #0070af;
+    border-bottom: 1px solid #ccc;
+}
+
+#styles label::after {
+    font-family: 'LZB Icons';
+    content: "\20\e907";
+    font-size: .75em;
+}
+
+#styles :checked+.details label::after {
+    content: "\20\e908";
+}
+
+#styles input:not(:checked)+.details label~* {
     display: none;
 }
 
@@ -146,17 +213,18 @@
     margin-top: 1.5em;
 }
 
-#styles .details div {
-    margin-top: auto;
-}
-
 #styles .details a {
     color: white;
     text-align: center;
     display: block;
     margin-top: 1em;
-    padding: .75em;
+    padding: .75em 0;
     background-color: #0070af;
+    transition: background-color .2s ease-out;
+}
+
+#styles .details a:hover {
+    background-color: #005e94;
 }
 
 #styles .details a::after {
@@ -300,20 +368,63 @@ section#transforming>div {
     margin: 15px 15px 0;
 }
 
-#support-features {
+#inside .flex-x-400 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
-#support-features p {
-    flex: 0 0 15em;
+#inside .flex-x-400>div {
+    margin-top: 30px;
+}
+
+#inside .image {
+    flex: 1 1 400px;
+    max-width: 600px;
+}
+
+#inside .copy {
+    flex: 0 1 430px;
+    max-width: 430px;
+}
+
+#inside ol {
+    list-style-type: none;
+    counter-reset: layer;
+    font-size: .8em;
+    line-height: 1.5;
+    padding-left: 50px;
+}
+
+#inside li {
+    position: relative;
+}
+
+#inside li::before {
+    counter-increment: layer;
+    content: counter(layer) " ";
+    position: absolute;
+    left: -50px;
+    top: -5px;
+    border: 1.5px solid #0070af;
+    color: #0070af;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
     text-align: center;
+    line-height: 30px;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+#inside li+li {
+    margin-top: 1em;
 }
 
 #mattress-video {
     color: white;
-    background-image: url(https://embed.widencdn.net/img/lazboy/egxfujtehy/980px/video.jpg?q=85);
+    background-image: url(https://embed.widencdn.net/img/lazboy/czk14fgc2c/1280px@/video.jpg?q=85);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -327,15 +438,99 @@ section#transforming>div {
 
 #mattress-video img {
     width: 100px;
-    margin: 25px;
+    margin-top: 50px;
 }
 
 #mattress-video p {
-    margin-top: 0;
+    margin-top: 20px;
 }
 
-#bcc-content #q-a h2 {
-    text-align: left;
+#reviews {
+    text-align: center;
+}
+
+#reviews .flickity-slider>div {
+    width: 100%;
+    padding: 0 30px;
+}
+
+#reviews p {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.5;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+#reviews p.stars {
+    font-family: 'LZB Icons';
+    color: #0070af;
+    margin-top: .5em;
+}
+
+#reviews p.signature {
+    font-size: .8em;
+    margin-top: .5em;
+}
+
+#reviews p.signature::before {
+    font-family: 'LZB Icons';
+    content: "\e90f\20";
+    color: #66cc00;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+#reviews>div {
+    outline: none !important;
+}
+
+#bcc-content .flickity-button {
+    background: none;
+    border: none;
+    color: #0070af;
+}
+
+#reviews .flickity-prev-next-button {
+    top: 0;
+    transform: none;
+}
+
+#reviews .flickity-prev-next-button.previous {
+    left: -13px;
+}
+
+#reviews .flickity-prev-next-button.next {
+    right: -13px;
+}
+
+#bcc-content #q-a-toggle,
+#bcc-content #q-a-toggle:not(:checked)~#q-a {
+    display: none;
+}
+
+#bcc-content #q-a-toggle+div {
+    border-bottom: 1px solid #ccc;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#bcc-content #q-a-toggle+div>label {
+    display: inline-block;
+    padding: .75em 1em;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+#bcc-content #q-a-toggle+div>label:after {
+    font-family: 'LZB Icons';
+    content: "\20\e907";
+    font-size: .75em;
+}
+
+#bcc-content #q-a-toggle:checked+div>label:after {
+    content: "\20\e908";
 }
 
 #bcc-content #q-a .question {
@@ -391,7 +586,7 @@ section#transforming>div {
     border: 1px solid;
 }
 
-#bcc-content #q-a a#view-more~.question {
+#bcc-content a#view-more+section {
     display: none;
 }
 
@@ -430,25 +625,7 @@ section#transforming>div {
     font-weight: bold;
 }
 
-#bedroom-furniture a::after {
-    font-family: 'LZB Icons';
-    content: "\e90e";
-}
-
 @media only screen and (max-width: 600px) {
-    #styles label::after {
-        font-family: 'LZB Icons';
-        content: "\e907";
-        position: absolute;
-        top: 2em;
-        right: 0;
-    }
-    #styles :checked+label::after {
-        content: "\e908";
-    }
-    #styles input:not(:checked)~.details {
-        display: none;
-    }
     #nav-tabs {
         color: white;
         position: relative;
@@ -518,9 +695,6 @@ section#transforming>div {
     #styles>div {
         flex: 0 0 calc(50% - 40px);
     }
-    #styles .details a {
-        width: 200px;
-    }
     #bcc-content #nav-tabs {
         display: flex;
         flex-wrap: wrap;
@@ -531,9 +705,10 @@ section#transforming>div {
     }
     #nav-tabs label {
         font-size: .8em;
+        font-weight: bold;
         padding: 0.75em .5em;
-        color: black;
-        border: solid #ccc;
+        /* color: black; */
+        /* border: solid #ccc; */
         border-width: 1px 1px 0;
         border-radius: 5px 5px 0 0;
         margin: 25px 4px 0;
@@ -548,7 +723,9 @@ section#transforming>div {
     #tf05:checked~#nav-tabs [for="tf05"],
     #tf06:checked~#nav-tabs [for="tf06"],
     #tf07:checked~#nav-tabs [for="tf07"] {
-        background-color: white;
+        /* background-color: white; */
+        border-bottom: 5px solid #0070af;
+        color: #0070af;
     }
     #transforming [id^="tf-content"] {
         flex-direction: row;
@@ -589,24 +766,18 @@ section#transforming>div {
 
 @media only screen and (min-width: 850.1px) {
     #bcc-content h1 {
-        font-size: 1.9em;
+        font-size: 2.4em;
+        white-space: nowrap;
     }
     #bcc-content h2 {
         font-size: 1.6em;
     }
-    #bcc-content h3 {
-        font-size: 1.4em;
-    }
-    #hero .copy-background {
-        position: relative;
-        padding-bottom: 12%;
-        margin: -12% 15px;
-        background-image: linear-gradient(rgba(255, 255, 255, .85), white);
-    }
     #hero .copy {
-        position: relative;
-        margin: 0 15px;
-        border: 1px solid #ccc;
+        position: absolute;
+        top: 2%;
+        right: 50%;
+        transform: translateX(50%);
+        text-shadow: 0 0 1em white;
     }
     #styles>div {
         flex: 0 0 calc(33.333333% - 40px);
@@ -618,24 +789,6 @@ section#transforming>div {
     }
     #transforming .columns>div {
         flex: 0 0 calc(25% - 30px);
-    }
-    #support {
-        position: relative;
-    }
-    #support h2,
-    #support p.subtitle {
-        line-height: 1;
-        margin-top: 3%;
-        position: absolute;
-        width: 700px;
-        left: 15%;
-    }
-    #support p.subtitle {
-        margin-top: 8%;
-    }
-    #support-features {
-        position: absolute;
-        bottom: 5%;
     }
     #bedroom-furniture .image {
         height: 350px;
