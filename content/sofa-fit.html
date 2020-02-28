@@ -1,0 +1,548 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Sofa Fit TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1020px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content [onclick],
+        #npc-content [videoModal],
+        #npc-content .clickable {
+            /* if there is an onclick attribute, the curser will be a pointer */
+            cursor: pointer;
+        }
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /**************************************/
+        /*********** Custom Styles ************/
+        /**************************************/
+        
+        #hero [role="img"] {
+            background-image: url(https://embed.widencdn.net/img/lazboy/sppgp8c2iz/600px@2x/bonus-recliners.jpg?q=50);
+            padding-bottom: 70%;
+            padding-bottom: calc(32.3529% + 116px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #hero .copy {
+            padding: 20px 20px 60px;
+            background-color: #f9f9f9;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 280px;
+        }
+        
+        #hero h1 {
+            font-size: 2.1em;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        #hero h1 .pre {
+            font-size: 0.5em;
+            font-weight: 400;
+            margin-bottom: 0.4em;
+        }
+        
+        #hero p {
+            font-size: .9em;
+            text-align: center;
+            line-height: 1.75;
+            margin-top: 1em;
+        }
+        
+        #hero .border {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            top: -10px;
+            bottom: 10px;
+            border: 1px solid gray;
+            pointer-events: none
+        }
+        
+        #find-sofas input {
+            display: none;
+        }
+        
+        #find-sofas h2 {
+            font-size: 1.5em;
+            text-align: center;
+            line-height: 1.2;
+            margin-top: 1em;
+        }
+        
+        #find-sofas h2+.subtitle {
+            text-align: center;
+            margin-top: .5em;
+            font-size: 1.05em;
+        }
+        
+        #sizes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -10px;
+        }
+        
+        #sizes label {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            height: 115px;
+            width: 115px;
+            padding: 20px;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.3;
+            margin: 30px 10px 0;
+            user-select: none;
+            cursor: pointer;
+        }
+        
+        @media (hover) {
+            #sizes label:hover {
+                color: #0173c6;
+                border-color: #0173c6;
+            }
+        }
+        
+        #petite:checked~#sizes [for="petite"],
+        #small:checked~#sizes [for="small"],
+        #tall:checked~#sizes [for="tall"],
+        #extra-tall:checked~#sizes [for="extra-tall"] {
+            color: #0173c6;
+            border-color: #0173c6;
+        }
+        
+        #sizes label .small {
+            display: block;
+            margin-top: .3em;
+            font-size: 13px;
+            font-weight: normal;
+            color: #333;
+        }
+        
+        #find-sofas .size-details {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 0 -20px;
+        }
+        
+        #petite:checked~#petite-details,
+        #small:checked~#small-details,
+        #tall:checked~#tall-details,
+        #extra-tall:checked~#extra-tall-details {
+            display: flex;
+        }
+        
+        #find-sofas .size-details>div {
+            padding: 60px 20px 0;
+        }
+        
+        #find-sofas .size-details .image {
+            flex: 0 1 500px
+        }
+        
+        #find-sofas .size-details .copy {
+            flex: 0 0 290px
+        }
+        
+        #find-sofas .size-details .title {
+            padding-left: 40px;
+            position: relative;
+            height: 57px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        
+        #find-sofas .size-details .title::before {
+            content: "";
+            background-image: url(https://embed.widencdn.net/img/lazboy/fabtzefye4/exact/person.png);
+            background-size: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 25px;
+            height: 57px;
+        }
+        
+        #find-sofas .size-details h3 {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        #find-sofas .size-details p {
+            font-size: .8em;
+        }
+        
+        #find-sofas .size-details ol {
+            margin-top: 30px;
+        }
+        
+        #find-sofas .size-details ol::before {
+            display: block;
+            content: "SEAT GUIDE";
+            border-bottom: 2px solid #4b4b4b;
+            font-size: 12px;
+            padding-bottom: 0.4em;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        #find-sofas .size-details li {
+            font-size: .75em;
+            line-height: 25px;
+            margin-top: 1em;
+            list-style-type: none;
+            padding-left: 35px;
+            position: relative;
+        }
+        
+        #find-sofas .size-details li::before {
+            background-color: #4b4b4b;
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            font-size: 14px;
+            text-align: center;
+            left: 0;
+            border-radius: 50%;
+            color: white;
+        }
+        
+        #find-sofas .size-details li.a:before {
+            content: "A";
+        }
+        
+        #find-sofas .size-details li.b:before {
+            content: "B";
+        }
+        
+        #find-sofas .size-details a {
+            display: block;
+            margin-top: 30px;
+            padding: .75em;
+            background-color: #0074c9;
+            color: white;
+            text-align: center;
+            transform: background-color .1s ease-out;
+        }
+        
+        #find-sofas .size-details a:hover {
+            background-color: #0065ad;
+        }
+        
+        #npc-content .gray-background {
+            background-color: #f9f9f9;
+            margin-top: 60px;
+            padding: 30px 0;
+        }
+        
+        #remember p {
+            font-size: .8em;
+            line-height: 1.5;
+            text-align: center;
+            max-width: 55em;
+            margin: 0 auto;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            #hero {
+                display: flex;
+            }
+            #hero [role="img"] {
+                flex: 0 1 600px;
+            }
+            #hero .copy {
+                flex: 0 1 400px;
+                padding: 20px 30px 20px 20px;
+            }
+            #hero p {
+                max-width: 15em;
+            }
+            #hero .border {
+                left: -10px;
+                top: 10px;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            #hero .copy {
+                padding: 45px 45px 45px 20px;
+            }
+            #hero .border {
+                left: -25px;
+                right: 25px;
+                top: 25px;
+                bottom: 25px;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">Sofa Fit</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Sofa Fit</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <div role="img" aria-label="A row of sofas"></div>
+            <div class="copy">
+                <h1>
+                    <div class="pre">Sofa</div> fit guide
+                </h1>
+                <p>Your sofa says a lot about your style, but don&rsquo;t overlook comfort. Using your height as a guide, <span class="no-wrap">La-Z-Boy</span> can help you choose a sofa that&rsquo;s best <span class="no-wrap">for you.</span></p>
+                <div class="border"></div>
+            </div>
+        </section>
+        <section id="find-sofas">
+            <input type="radio" name="size" id="petite" checked>
+            <input type="radio" name="size" id="small">
+            <input type="radio" name="size" id="tall">
+            <input type="radio" name="size" id="extra-tall">
+            <h2>Find the sofa that&rsquo;s right <span class="no-wrap">for you</span></h2>
+            <p class="subtitle">Shop sofas by your height</p>
+            <div id="sizes">
+                <label for="petite">Petite <span class="small">5&rsquo;4&rdquo; and under</span></label>
+                <label for="small">Small <span class="small">5&rsquo;5&rdquo; - 5&rsquo;9&rdquo;</span></label>
+                <label for="tall">Tall <span class="small">5&rsquo;10&rdquo; - 6&rsquo;2&rdquo;</span></label>
+                <label for="extra-tall">Extra Tall <span class="small">6&rsquo;3&rdquo; and up</span></label>
+            </div>
+            <div id="petite-details" class="size-details">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/yh0nk6eonv/460px@2x/petite-sofa.jpg?q=50 2x, https://embed.widencdn.net/img/lazboy/yh0nk6eonv/460px/petite-sofa.jpg?q=85 1x" src="https://embed.widencdn.net/img/lazboy/yh0nk6eonv/460px/petite-sofa.jpg?q=85"
+                        alt="Petite Sofa">
+                </div>
+                <div class="copy">
+                    <div class="title">
+                        <h3>Petite</h3>
+                        <p>5&rsquo;4&rdquo; and under</p>
+                    </div>
+                    <ol>
+                        <li class="a">Seat Height: 19&rdquo; and below</li>
+                        <li class="b">Seat Depth: Up to 22&rdquo;</li>
+                        <a class="arrow-right hidden-mobile" href="https://www.la-z-boy.com/b/sofas/_/N-103rjdd#/b/sofas/_/N-103rjddZ4d2xh4">Shop Petite Sofas</a>
+                        <a class="arrow-right hidden-desktop" href="https://mobile.la-z-boy.com/mobile/mb/sofas/_/N-103rjdd#/mobile/mb/sofas/_/N-103rjddZ4d2xh4">Shop Petite Sofas</a>
+                    </ol>
+                </div>
+            </div>
+            <div id="small-details" class="size-details">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/fu11h11pjt/460px@2x/petite-sofa.jpg?q=50 2x, https://embed.widencdn.net/img/lazboy/fu11h11pjt/460px/petite-sofa.jpg?q=85 1x" src="https://embed.widencdn.net/img/lazboy/fu11h11pjt/460px/small-sofa.jpg?q=85"
+                        alt="Small Sofa">
+                </div>
+                <div class="copy">
+                    <div class="title">
+                        <h3>Small</h3>
+                        <p>5&rsquo;5&rdquo; - 5&rsquo;9&rdquo;</p>
+                    </div>
+                    <ol>
+                        <li class="a">Seat Height: 19&rdquo; - 20.5&rdquo;</li>
+                        <li class="b">Seat Depth: Up to 22.5&rdquo;</li>
+                        <a class="arrow-right hidden-mobile" href="https://www.la-z-boy.com/b/sofas/_/N-103rjdd#/b/sofas/_/N-103rjddZh07z80">Shop Small Sofas</a>
+                        <a class="arrow-right hidden-desktop" href="https://mobile.la-z-boy.com/mobile/mb/sofas/_/N-103rjdd#/mobile/mb/sofas/_/N-103rjddZh07z80">Shop Small Sofas</a>
+                    </ol>
+                </div>
+            </div>
+            <div id="tall-details" class="size-details">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/dgd2skrbou/460px@2x/petite-sofa.jpg?q=50 2x, https://embed.widencdn.net/img/lazboy/dgd2skrbou/460px/petite-sofa.jpg?q=85 1x" src="https://embed.widencdn.net/img/lazboy/dgd2skrbou/460px/tall-sofa.jpg?q=85"
+                        alt="Tall Sofa">
+                </div>
+                <div class="copy">
+                    <div class="title">
+                        <h3>Tall</h3>
+                        <p>5&rsquo;10&rdquo; - 6&rsquo;2&rdquo;</p>
+                    </div>
+                    <ol>
+                        <li class="a">Seat Height: 20.5&rdquo; - 21.5&rdquo;</li>
+                        <li class="b">Seat Depth: Up to 24&rdquo;</li>
+                        <a class="arrow-right hidden-mobile" href="https://www.la-z-boy.com/b/sofas/_/N-103rjdd#/b/sofas/_/N-103rjddZ19ktcvd">Shop Tall Sofas</a>
+                        <a class="arrow-right hidden-desktop" href="https://mobile.la-z-boy.com/mobile/mb/sofas/_/N-103rjdd#/mobile/mb/sofas/_/N-103rjddZ19ktcvd">Shop Tall Sofas</a>
+                    </ol>
+                </div>
+            </div>
+            <div id="extra-tall-details" class="size-details">
+                <div class="image">
+                    <img srcset="https://embed.widencdn.net/img/lazboy/ewb1goc4kf/460px@2x/petite-sofa.jpg?q=50 2x, https://embed.widencdn.net/img/lazboy/ewb1goc4kf/460px/petite-sofa.jpg?q=85 1x" src="https://embed.widencdn.net/img/lazboy/ewb1goc4kf/460px/tall-sofa.jpg?q=85"
+                        alt="Extra Tall Sofa">
+                </div>
+                <div class="copy">
+                    <div class="title">
+                        <h3>Extra Tall</h3>
+                        <p>6&rsquo;3&rdquo; and up</p>
+                    </div>
+                    <ol>
+                        <li class="a">Seat Height: 21.5&rdquo; and above</li>
+                        <li class="b">Seat Depth: Up to 25&rdquo;</li>
+                        <a class="arrow-right hidden-mobile" href="https://www.la-z-boy.com/b/sofas/_/N-103rjdd#/b/sofas/_/N-103rjddZlbqna3">Shop Extra Tall Sofas</a>
+                        <a class="arrow-right hidden-desktop" href="https://mobile.la-z-boy.com/mobile/mb/sofas/_/N-103rjdd#/mobile/mb/sofas/_/N-103rjddZlbqna3">Shop Extra Tall Sofas</a>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <div class="gray-background">
+            <section id="remember">
+                <p>Remember, your sofa should allow you to sit comfortably without pillows. The seat cushion should support your hips and thighs, with your knees bent at a 90-degree angle and your feet touching the floor. Of course, the best way to find
+                    the perfect fit is to visit your local <span class="no-wrap">La-Z-Boy</span> Furniture Galleries store and test one <span class="no-wrap">in person!</span></p>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- end NPC content -->
+</body>
