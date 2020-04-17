@@ -1,0 +1,1119 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Free Virtual Design TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        
+        #npc-content .right,
+        #npc-content .left {
+            float: none !important;
+        }
+        /************* NPC Defaults ************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1010px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content strong {
+            font-weight: bold;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /*! Flickity v2.2.0
+https://flickity.metafizzy.co
+---------------------------------------------- */
+        
+        #npc-content [data-flickity] {
+            outline: none !important;
+        }
+        
+        #npc-content .flickity-enabled {
+            position: relative;
+        }
+        
+        #npc-content .flickity-enabled:focus {
+            outline: none;
+        }
+        
+        #npc-content .flickity-viewport {
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+        }
+        
+        #npc-content .flickity-slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #npc-content .flickity-slider>div {
+            width: 470px;
+            max-width: 100%;
+            margin-left: 40px;
+        }
+        /* draggable */
+        
+        #npc-content .flickity-enabled.is-draggable {
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        #npc-content .flickity-enabled.is-draggable .flickity-viewport {
+            cursor: move;
+            cursor: -webkit-grab;
+            cursor: grab;
+        }
+        
+        #npc-content .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+            cursor: -webkit-grabbing;
+            cursor: grabbing;
+        }
+        /* ---- flickity-button ---- */
+        
+        #npc-content .flickity-button {
+            position: absolute;
+            background: hsla(0, 0%, 100%, 0.75);
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        #npc-content .flickity-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #19F;
+        }
+        
+        #npc-content .flickity-button:active {
+            opacity: 0.6;
+        }
+        
+        #npc-content .flickity-button:disabled {
+            opacity: 0.3;
+            cursor: auto;
+            /* prevent disabled button from capturing pointer up event. #716 */
+            pointer-events: none;
+        }
+        
+        #npc-content .flickity-button-icon {
+            fill: currentColor;
+        }
+        /* ---- previous/next buttons ---- */
+        
+        #npc-content .flickity-prev-next-button {
+            top: 30vw;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            /* vertically center */
+            transform: translateY(-50%);
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #npc-content .flickity-prev-next-button {
+                top: 150px;
+            }
+        }
+        
+        #npc-content .flickity-prev-next-button.previous {
+            left: 10px;
+        }
+        
+        #npc-content .flickity-prev-next-button.next {
+            right: 10px;
+        }
+        /* right to left */
+        
+        #npc-content .flickity-rtl .flickity-prev-next-button.previous {
+            left: auto;
+            right: 10px;
+        }
+        
+        #npc-content .flickity-rtl .flickity-prev-next-button.next {
+            right: auto;
+            left: 10px;
+        }
+        
+        #npc-content .flickity-prev-next-button .flickity-button-icon {
+            position: absolute;
+            left: 20%;
+            top: 20%;
+            width: 60%;
+            height: 60%;
+        }
+        /* ---- page dots ---- */
+        
+        #npc-content .flickity-page-dots {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        #npc-content .flickity-rtl .flickity-page-dots {
+            direction: rtl;
+        }
+        
+        #npc-content .flickity-page-dots .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 8px;
+            background: #66C9CF;
+            border-radius: 50%;
+            opacity: 0.25;
+            cursor: pointer;
+        }
+        
+        #npc-content .flickity-page-dots .dot.is-selected {
+            opacity: 1;
+        }
+        /***************** Custom CSS ******************/
+        
+        #hero {
+            position: relative;
+        }
+        
+        #hero-image {
+            height: 610px;
+            background-image: url(https://embed.widencdn.net/img/lazboy/aufxzjfdjl/500px@2x/hero.jpeg?q=50);
+            background-size: cover;
+            background-position: left;
+            position: relative;
+        }
+        
+        #hero h1 {
+            max-width: 10em;
+            font-size: 2.1em;
+            font-weight: bold;
+            line-height: 1.2;
+            text-align: center;
+            color: white;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        #iphone {
+            position: relative;
+            width: calc((350% + 3240px) / 23);
+            margin: -160px auto 0;
+        }
+        
+        section#location {
+            text-align: center;
+            max-width: 980px;
+        }
+        
+        #npc-content h2 {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1.2;
+            width: 100%;
+        }
+        
+        #location h2 {
+            margin-top: 30px;
+        }
+        
+        #location p {
+            font-size: .9em;
+            line-height: 1.6;
+            margin-top: .1em;
+        }
+        
+        #location .copy form {
+            display: none;
+        }
+        
+        #npc-content form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        #npc-content h3 {
+            font-size: .9em;
+            font-weight: bold;
+            margin: 30px 0 1em;
+            line-height: 1.2;
+            width: 100%;
+        }
+        
+        #npc-content .field {
+            position: relative;
+            flex: 225px 0 0;
+        }
+        
+        #npc-content [type="text"] {
+            width: 100%;
+            height: 3em;
+            padding: 1.25em 1em .25em;
+            border: 1px solid #b7b7b7;
+            outline: none;
+        }
+        
+        #npc-content [type="text"].filled:invalid {
+            border: solid 1px red
+        }
+        
+        #npc-content [type="text"]+label {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            -webkit-transition: all .2s ease-out;
+            transition: all .2s ease-out
+        }
+        
+        #npc-content [type="text"]:focus+label,
+        #npc-content [type="text"].filled+label {
+            font-size: .8em;
+            top: .5em;
+            left: .5em
+        }
+        
+        #npc-content [type="text"].filled:invalid+label:after {
+            content: "Error (" attr(validation-text) ")";
+            color: red;
+            padding-left: 1.3em;
+            margin-left: 0.3em;
+            line-height: .7;
+            background-image: url(https://www.la-z-boy.com/Images/npc/error.svg);
+            background-size: contain;
+            background-size: 1em;
+            background-position: left;
+            background-repeat: no-repeat;
+        }
+        
+        #npc-content [type="submit"] {
+            line-height: 60px;
+            font-size: 1.1em;
+            font-weight: bold;
+            width: 100%;
+            background-color: #AFCDC8;
+            border-color: #AFCDC8;
+            /* color: white; */
+            padding: 0;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background-color 1s ease-out, border-color 1s ease-out;
+        }
+        
+        .green-background {
+            background-color: #AFCDC8;
+        }
+        
+        section#program {
+            margin-top: 70px;
+            padding-bottom: 70px;
+            position: relative;
+            text-align: center;
+        }
+        
+        #program::before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            left: calc(50% - 37px);
+            border-width: 0 37px 40px;
+            border-color: white white #AFCDC8;
+            border-style: solid;
+        }
+        
+        #program::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            right: calc(50% - 37px);
+            border-width: 40px 37px 0;
+            border-color: #AFCDC8 white white;
+            border-style: solid;
+        }
+        
+        #program h2 {
+            padding-top: 30px;
+        }
+        
+        #program h3 {
+            text-transform: uppercase;
+            margin: 0;
+        }
+        
+        #program .grid>div {
+            margin-top: 50px;
+        }
+        
+        #program .number {
+            min-height: 140px;
+            background-size: auto 140px;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #program .number.one {
+            background-image: url(https://embed.widencdn.net/img/lazboy/0oelkupkdw/exact/1.png);
+        }
+        
+        #program .number.two {
+            background-image: url(https://embed.widencdn.net/img/lazboy/fwhgh1v5fa/exact/2.png);
+        }
+        
+        #program .number.three {
+            background-image: url(https://embed.widencdn.net/img/lazboy/jf36rjr134/exact/3.png);
+        }
+        
+        #program .number.four {
+            background-image: url(https://embed.widencdn.net/img/lazboy/morfnakfpn/exact/4.png);
+        }
+        
+        #program .number p {
+            font-size: .8em;
+            line-height: 1.25;
+            text-align: center;
+            max-width: 19em;
+        }
+        
+        section#links {
+            margin-top: 70px;
+        }
+        
+        #links>div>div {
+            height: 265px;
+            max-width: 425px;
+            margin: 30px auto 0;
+        }
+        
+        #links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            max-width: 100%;
+            background-size: cover;
+            padding: 0 10px;
+            color: white
+        }
+        
+        #ar-link {
+            background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), rgba(51, 51, 51, 0.8)), url(https://embed.widencdn.net/img/lazboy/7shrowqn46/425px@2x/augmented-reality.jpeg?q=50);
+            background-position: top right;
+        }
+        
+        #ar-link>.image {
+            flex: 0 1 110px;
+        }
+        
+        #ar-link>.copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 0 1 250px;
+            margin: 20px 0;
+            padding-left: 5%;
+        }
+        
+        #ar-icon {
+            width: 30%;
+        }
+        
+        #ar-copy {
+            margin: 9% 0;
+        }
+        
+        #links h3 {
+            margin: 0;
+        }
+        
+        #ar-copy p {
+            font-size: .75em;
+            line-height: 1.2;
+        }
+        
+        #ar-download {
+            width: 50%;
+        }
+        
+        a#inspiration-link {
+            background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), rgba(51, 51, 51, 0.8)), url(https://embed.widencdn.net/img/lazboy/j3nnihwmo8/425px@2x/augmented-reality.jpeg?q=50);
+            background-position: bottom left;
+            flex-direction: column;
+            text-align: center;
+            justify-content: flex-end;
+            padding-bottom: 20px;
+        }
+        
+        #inspiration-link h3 {
+            font-size: 1.2em;
+        }
+        
+        #inspiration-link p {
+            font-size: .8em;
+            line-height: 1.2;
+        }
+        
+        section#get-started {
+            max-width: 630px;
+        }
+        
+        section#get-started h2,
+        #top-trends h2 {
+            text-align: center;
+        }
+        
+        #get-started h2,
+        #top-trends h2 {
+            margin: 1.75em 0 1em;
+            padding: 0;
+        }
+        
+        #npc-content .carousel p {
+            font-size: .8em;
+            line-height: 1.25;
+            margin-top: .5em;
+            text-align: center;
+        }
+        
+        #npc-content .carousel a {
+            display: block;
+            font-size: .8em;
+            line-height: 1.25;
+            margin-top: .25em;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            /******** Column Layout ********/
+            #npc-content .gutter-25 {
+                margin: 0 -12.5px;
+            }
+            #npc-content .gutter-25>* {
+                padding-left: 12.5px;
+                padding-right: 12.5px;
+            }
+            #npc-content .gutter-40 {
+                margin: 0 -20px;
+            }
+            #npc-content .gutter-40>* {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            #npc-content .grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #npc-content .two-col>* {
+                flex-basis: 50%;
+            }
+            /***************** Custom CSS ******************/
+            #hero-image {
+                height: 545px;
+                background-image: url(https://embed.widencdn.net/img/lazboy/bn2rwxme6r/980px@2x/hero.jpeg?q=50);
+            }
+            #hero h1 {
+                font-size: 2.4em;
+                text-align: left;
+                left: 120px;
+                transform: none;
+            }
+            #location {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #iphone {
+                margin: 0;
+            }
+            #iphone img {
+                margin-top: -30%;
+            }
+            #location .copy {
+                flex: 250px 1 0;
+                text-align: left;
+            }
+            #npc-content .field {
+                flex-grow: 1;
+            }
+            #npc-content .field+.field {
+                max-width: 280px;
+            }
+            section#program {
+                margin-top: 100px;
+                padding-bottom: 80px;
+            }
+            #program::before {
+                left: 80px;
+            }
+            #program::after {
+                right: 80px;
+            }
+            #program h2 {
+                padding-top: 50px;
+            }
+            #program .grid>div {
+                margin-top: 60px;
+            }
+            #program .number {
+                background-position: 20px 0;
+                justify-content: flex-end;
+                align-items: flex-start;
+                padding-top: 10px;
+                height: auto;
+                max-width: 430px
+            }
+            section#links {
+                margin-top: 100px;
+            }
+            #links>div>div {
+                max-width: 450px;
+            }
+            #get-started h3 {
+                margin-top: 60px;
+            }
+            #npc-content .carousel p {
+                font-size: .9em;
+                text-align: left;
+            }
+            #npc-content .carousel a {
+                font-size: .9em;
+                text-align: left;
+            }
+        }
+        
+        @media only screen and (min-width: 600px) {
+            #links>div {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            #links>div>div {
+                margin: 0;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #location>* {
+                padding: 0 10px;
+            }
+            #iphone {
+                width: calc((350% + 3800px) / 23);
+            }
+            #npc-content h2 {
+                font-size: 1.6em;
+            }
+            #location p {
+                font-size: 1em;
+                max-width: 29.7em;
+            }
+            #npc-content h3 {
+                font-size: 1.2em;
+            }
+            #npc-content [type="submit"] {
+                font-size: 1.2em;
+            }
+            #program .number p {
+                font-size: .9em;
+                text-align: left;
+            }
+            #ar-icon {
+                width: 30%;
+            }
+            #ar-copy p {
+                font-size: .9em;
+            }
+            #inspiration-link h3 {
+                font-size: 1.8em;
+            }
+            #inspiration-link p {
+                font-size: 1.2em;
+            }
+        }
+        
+        @media only screen and (min-width: 950px) {
+            #location .copy form {
+                display: flex;
+            }
+            #location h3 {
+                margin-top: .5em;
+            }
+            #location>form {
+                display: none;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><a href="/mobile/design-services" class="crumb" itemprop="url">Design Services</a></li>
+            <li><span class="crumb active">Free Virtual Design</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/design-services">Design Services</a></li>
+            <li>Free Virtual Design</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <div id="hero-image" class="image" role="img" aria-label="Living room with La-Z-Boy furniture and accessories"></div>
+            <h1>Free VIRTUAL <span class="no-wrap">Design Services</span></h1>
+        </section>
+        <section id="location">
+            <div id="iphone" class="image">
+                <img src="https://embed.widencdn.net/img/lazboy/y6f2kxm6lq/exact/iphone.png" alt="">
+            </div>
+            <div class="copy">
+                <h2>Need a refresh? We&rsquo;re here <span class="no-wrap">to help!</span></h2>
+                <p>Collaborate with one of our Interior Designers from the comfort and safety of your home through chat, video conference or even a simple phone call. Enter your zip/postal code to connect with a local design expert who will help you redesign
+                    any room in your home. It&rsquo;s fun and <span class="no-wrap">it&rsquo;s FREE!</span></p>
+                <form id="form1" action="/content/design-services/design-request-form">
+                    <h3>Simply enter your zip/postal code to <span class="no-wrap">get started.</span></h3>
+                    <div class="field">
+                        <!-- <input id="zipPostal1" name="zipPostal" type="text" required pattern="(^\d{5}$)">
+                        <label for="zipPostal1" validation-text="like &ldquo;55555&rdquo; or&nbsp;&ldquo;A1A&nbsp;1A1&rdquo;">Zip/Postal Code</label> -->
+                        <input id="zipPostal1" name="zipPostal" type="text" required pattern="(^\d{5}$|^[A-Za-z0-9]{3} [A-Za-z0-9]{3}$)">
+                        <label for="zipPostal1" validation-text="like &ldquo;55555&rdquo; or&nbsp;&ldquo;A1A&nbsp;1A1&rdquo;">Zip/Postal Code</label>
+                    </div>
+                    <div class="field">
+                        <button type="submit" form="form1" value="Submit" class="arrow-right">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <form id="form2" action="/content/design-services/design-request-form">
+                <h3>Simply enter your zip/postal code to <span class="no-wrap">get started.</span></h3>
+                <div class="field">
+                    <!-- <input id="zipPostal2" name="zipPostal" type="text" required pattern="(^\d{5}$)">
+                    <label for="zipPostal2" validation-text="like &ldquo;55555&rdquo; or&nbsp;&ldquo;A1A&nbsp;1A1&rdquo;">Zip/Postal Code</label> -->
+                    <input id="zipPostal2" name="zipPostal" type="text" required pattern="(^\d{5}$|^[A-Za-z0-9]{3} [A-Za-z0-9]{3}$)">
+                    <label for="zipPostal2" validation-text="like &ldquo;55555&rdquo; or&nbsp;&ldquo;A1A&nbsp;1A1&rdquo;">Zip/Postal Code</label>
+                </div>
+                <div class="field">
+                    <button type="submit" form="form2" value="Submit" class="arrow-right">Submit</button>
+                </div>
+            </form>
+        </section>
+        <div class="green-background">
+            <section id="program">
+                <h2>Here&rsquo;s how our VIRTUAL design <span class="no-wrap">program works:</span></h2>
+                <div class="two-col grid gutter-40">
+                    <div class="number one">
+                        <div class="copy">
+                            <h3>Consultation</h3>
+                            <p>We&rsquo;ll connect you with a local Interior Designer and we&rsquo;ll schedule an initial call that works <span class="no-wrap">for you.</span></p>
+                        </div>
+                    </div>
+                    <div class="number two">
+                        <div class="copy">
+                            <h3>Collaboration</h3>
+                            <p>Let&rsquo;s work together to bring your vision to life. Our personalized service is tailored to your life, style <span class="no-wrap">and budget.</span></p>
+                        </div>
+                    </div>
+                    <div class="number three">
+                        <div class="copy">
+                            <h3>Styling</h3>
+                            <p>With your help, we&rsquo;ll capture your room dimensions and style preferences and develop a customized design plan with visuals so you can visualize your <span class="no-wrap">finished space.</span></p>
+                        </div>
+                    </div>
+                    <div class="number four">
+                        <div class="copy">
+                            <h3>Enjoy!</h3>
+                            <p>Bring some added comfort to your home during these uncertain times. Now more than ever we want you to live <span class="no-wrap">life comfortably.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="links">
+            <div class="two-col gutter-25">
+                <div>
+                    <a id="ar-link" href="/content/augmented-reality">
+                        <div class="image"><img src="https://embed.widencdn.net/img/lazboy/cix7hxiu7u/110px@2x/ar-phone.png" alt=""></div>
+                        <div class="copy">
+                            <div id="ar-icon" class="image"><img src="https://embed.widencdn.net/img/lazboy/hdwchmydjd/70px@2x/ar-icon.png" alt=""></div>
+                            <div id="ar-copy" class="copy">
+                                <h3>Together in Comfort</h3>
+                                <p>See your home upgraded with AR technology!</p>
+                            </div>
+                            <div id="ar-download" class="image"><img src="https://embed.widencdn.net/svg/lazboy/468c33rbpp/ar-download.svg" alt=""></div>
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a id="inspiration-link" href="/content/DesignInspirations">
+                        <h3>Find inspiration</h3>
+                        <p class="arrow-right">No matter what your taste is!</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="get-started">
+            <form id="form3" action="/content/design-services/design-request-form">
+                <h2>Get started below</h2>
+                <div class="field">
+                    <!-- <input id="zipPostal3" name="zipPostal" type="text" required pattern="(^\d{5}$)">
+                    <label for="zipPostal3" validation-text="like &ldquo;55555&rdquo; or&nbsp;&ldquo;A1A&nbsp;1A1&rdquo;">Zip/Postal Code</label> -->
+                    <input id="zipPostal3" name="zipPostal" type="text" required pattern="(^\d{5}$|^[A-Za-z0-9]{3} [A-Za-z0-9]{3}$)">
+                    <label for="zipPostal3" validation-text="like &ldquo;55555&rdquo; or&nbsp;&ldquo;A1A&nbsp;1A1&rdquo;">Zip/Postal Code</label>
+                </div>
+                <div class="field">
+                    <button type="submit" form="form3" value="Submit" class="arrow-right">Submit</button>
+                </div>
+            </form>
+        </section>
+        <section id="top-trends" class="carousel">
+            <h2>Real room updates from <span class="no-wrap">La-Z-Boy Design Experts</span></h2>
+            <div class="favorites-window" data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": false,
+                "prevNextButtons": true,
+                "cellAlign": "left",
+                "contain": true,
+                "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                }'>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/home/2020-04-07/tarek.jpg" alt="Room scene with streamlined pieces, natural materials and bold colors">
+                    </div>
+                    <div class="copy">
+                        <p>Tarek recently built a home in Canton, Michigan and wanted the interior to reflect his modern yet eclectic&nbsp;style.</p>
+                        <a href="/content/design-services/tarek-story" class="arrow-right">Read Tarek&rsquo;s Story</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/home/2020-04-07/carol-ann.jpg" alt="Room scene with a one-of-a-kind look"></div>
+                    <div class="copy">
+                        <p>La-Z-Boy Interior Designer Carol-Ann&rsquo;s design for a California couple was inspired by beauty and&nbsp;entertaining.</p>
+                        <a href="/content/design-services/carol-ann-story" class="arrow-right">Hear from Carol-Ann</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/home/2020-04-07/susie-greg.jpg" alt="Living room scene showcasing mixed prints and blues"></div>
+                    <div class="copy">
+                        <p>With a new home and lots of ideas, Susie and Greg knew they needed help to achieve the look they were&nbsp;after.</p>
+                        <a href="/content/design-services/susie-greg-story" class="arrow-right">Read Susie &amp; Greg&rsquo;s Story</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/home/2020-04-07/danielle.jpg" alt="Room scene that has a unique sense of style"></div>
+                    <div class="copy">
+                        <p>La-Z-Boy Interior Designer Danielle&rsquo;s functional family room blends open concept with oriental&nbsp;design.</p>
+                        <a href="/content/design-services/danielle-story" class="arrow-right">Hear from Danielle</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/home/2020-04-07/cathy.jpg" alt="Find your style"></div>
+                    <div class="copy">
+                        <p>Cathy wanted her living room to make a statement as she welcomed friends into her&nbsp;new&nbsp;home.</p>
+                        <a href="/content/design-services/cathy-story" class="arrow-right">Read Cathy&rsquo;s Story</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/home/2020-04-07/erin.jpg" alt="Room scene that has a unique sense of style"></div>
+                    <div class="copy">
+                        <p>La-Z-Boy Interior Designer Erin brings breathtaking style and a fresh start to a working mom&rsquo;s&nbsp;new&nbsp;home.</p>
+                        <a href="/content/design-services/erin-story" class="arrow-right">Hear from Erin</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/home/2020-04-07/erica.jpg" alt="Room scene with leather chairs and rug"></div>
+                    <div class="copy">
+                        <p>Erica&rsquo;s living room wasn&rsquo;t working. She wanted a stylish, functional space her family would love spending&nbsp;time&nbsp;in.</p>
+                        <a href="/content/design-services/erica-story" class="arrow-right">Read Erica&rsquo;s Story</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/home/2020-04-07/everton.jpg" alt="Room scene that has a unique sense of style"></div>
+                    <div class="copy">
+                        <p>La-Z-Boy Interior Designer Everton helps a family in Connecticut get a fresh new living&nbsp;room.</p>
+                        <a href="/content/design-services/everton-story" class="arrow-right">Hear from Everton</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="top-trends" class="carousel">
+            <h2>Top trends for <span class="no-wrap">every space</span></h2>
+            <div class="favorites-window" data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": false,
+                "prevNextButtons": true,
+                "cellAlign": "left",
+                "contain": true,
+                "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                }'>
+                <div>
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/hjk9o2pj7s/470px@2x/design-inspirations-world-traveler.jpeg?q=50 2x, https://embed.widencdn.net/img/lazboy/hjk9o2pj7s/470px/design-inspirations-world-traveler.jpeg?q=85 1x" src="https://embed.widencdn.net/img/lazboy/hjk9o2pj7s/470px/design-inspirations-world-traveler.jpeg?q=85"
+                            alt="Living room with Porter Sofa and Cabot Reclining Chair covered in conserve Sustainable Fabrics">
+                    </div>
+                    <div class="copy">
+                        <p>Tap into a jet-setting world of sophisticated color combinations with the timely trend that brings together calm neutrals, saturated hues and exotic&nbsp;patterns.</p>
+                        <a href="/content/DesignInspirations/world-traveler" class="arrow-right">Explore World Traveler</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/DesignInspirations/room04.jpg" alt="Room scene with streamlined pieces, natural materials and bold colors">
+                    </div>
+                    <div class="copy">
+                        <p>Timeless never trendy, these streamlined pieces with clean lines pair sleek design, natural materials and bold colors for looks that are here to stay and never go out of&nbsp;style.</p>
+                        <a href="/content/DesignInspirations/mid-century" class="arrow-right">See timeless Mid-century Modern</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/DesignInspirations/room03b.jpg" alt="Living room with simple updates">
+                    </div>
+                    <div class="copy">
+                        <p>Small changes can have a big impact. Discover simple and inexpensive ways to update your look with tips and room designs that make it&nbsp;easy.</p>
+                        <a href="/content/DesignInspirations/refresh-your-room" class="arrow-right">Refresh your room</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/DesignInspirations/room17.jpg" alt="Living room with dazzling design trends">
+                    </div>
+                    <div class="copy">
+                        <p>Express yourself with a dazzling design that&rsquo;s anything but meek. Party Animal is loud, rich and slightly over the top, with bold blues, deep greens and daring&nbsp;patterns.</p>
+                        <a href="/content/DesignInspirations/party-animal" class="arrow-right">Join the party</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/DesignInspirations/room19.jpg" alt="Living room with Porter Sofa and Cabot Reclining Chair covered in conserve Sustainable Fabrics">
+                    </div>
+                    <div class="copy">
+                        <p>Whether it&rsquo;s new, antique or somewhere in between, Eco-Chic is the upcycled trend that lets you mix, match and showcase your&nbsp;personality.</p>
+                        <a href="/content/DesignInspirations/eco-chic" class="arrow-right">Discover Sustainable Style</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/DesignInspirations/room11.jpg" alt="Clean classic casual room scene with Jade Sofa , Haven High Leg Reclining Chair, Blanton Rectangular Cocktail Table and accessories">
+                    </div>
+                    <div class="copy">
+                        <p>Soothing neutral colors look great in any room, year after year. Keep it simple with colors like beige, gray and off-white for a look that never goes out of&nbsp;style.</p>
+                        <a href="/content/DesignInspirations/clean-classic-casual" class="arrow-right">Soothe with Clean Classic Casual</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/DesignInspirations/room12.jpg" alt="Summer living room scene with Makenna duo® Reclining Sofa, Loveseat and Chair and accessories in natural materials">
+                    </div>
+                    <div class="copy">
+                        <p>Natural materials add a casual elegance and relaxed style to indoor spaces. Update a sofa with a bright linen slip cover, or add texture with pillows and throws in rich&nbsp;wovens.</p>
+                        <a href="/content/DesignInspirations/summer-styles" class="arrow-right">Say Hello to Summer Styles</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/DesignInspirations/room18.jpg" alt="Serene living room with muted pinks, blues and grays">
+                    </div>
+                    <div class="copy">
+                        <p>Create a serene scene with the Wallflower color trend. Muted pinks, blues and grays give you a modern look that&rsquo;s chic and&nbsp;sophisticated.</p>
+                        <a href="/content/DesignInspirations/wallflower" class="arrow-right">Create calm with Wallflower</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/flickity.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/flickity.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script>
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                $(document).ready(function() {
+                    $('[type="text"]').blur(function() {
+                        if ($(this).val() == "") {
+                            $(this).removeClass('filled');
+                        } else {
+                            $(this).addClass('filled');
+                        }
+                    });
+                });
+
+                $('#npc-content form').submit(function(e) {
+                    var zipPostal = $(this).find('input')[0].value;
+                    e.preventDefault;
+                    $.getScript('https://assets.calendly.com/assets/external/widget.js')
+                        .done(function() {
+                            $.getJSON('/js/calendars.json', function(json) {
+                                    var calendar = json[zipPostal];
+                                    if (calendar) {
+                                        Calendly.initPopupWidget({
+                                            url: 'https://calendly.com/' + calendar
+                                        });
+                                    } else {
+                                        window.location.href = '/content/design-services/design-request-form';
+                                        // console.log('cannot find zip');
+                                    }
+                                })
+                                .fail(function() {
+                                    window.location.href = '/content/design-services/design-request-form';
+                                    // console.log('getJSON failed');
+                                })
+                        })
+                        .fail(function() {
+                            window.location.href = '/content/design-services/design-request-form';
+                            // console.log('getScript failed');
+                        });
+                    return false;
+                });
+            }
+        })();
+    </script>
+    <!-- end NPC content -->
+</body>

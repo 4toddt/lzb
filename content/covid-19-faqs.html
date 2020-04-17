@@ -1,0 +1,318 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- COVID-19 FAQs TT -->
+    <link rel="stylesheet" href="https://use.typekit.net/lop7gci.css">
+    <style>
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        
+        #npc-content .right,
+        #npc-content .left {
+            float: none !important;
+        }
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1010px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content strong {
+            font-weight: bold;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /***************** Custom CSS ******************/
+        
+        #npc-content a {
+            text-decoration: underline;
+        }
+        
+        #hero {
+            background-image: url(https://embed.widencdn.net/img/lazboy/3rdela0ewl/500px@2x/hero.jpg?q=50);
+            height: 340px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-bottom: 10px solid #0070AF;
+        }
+        
+        #hero h1 {
+            font-weight: 800;
+            font-style: italic;
+            color: white;
+            font-size: 2.5em;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            padding: 0 15px;
+        }
+        
+        #npc-content h2 {
+            font-weight: 700;
+            font-style: italic;
+            color: #0070AF;
+            margin-top: 1em;
+            line-height: 1.2;
+        }
+        
+        #npc-content h3 {
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1.2;
+        }
+        
+        #npc-content p {
+            font-size: .8em;
+            margin-top: 1em;
+            line-height: 1.25;
+        }
+        
+        #npc-content .blue-title {
+            background-color: #0070AF;
+        }
+        
+        #npc-content .blue-title h1 {
+            font-size: 1.6em;
+            line-height: 1.2;
+            color: white;
+            width: 100%;
+            max-width: 1010px;
+            padding: 15px;
+            margin: .75em auto 0;
+            font-weight: 800;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        #family h3 {
+            margin: 1em 15px .5em;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero {
+                /* background-image: linear-gradient(to bottom, rgba(171, 171, 171, .6), rgba(171, 171, 171, .6)), url(https://embed.widencdn.net/img/lazboy/99sz560qqc/980px@2x/hero.jpg?q=50); */
+                background-image: url(https://embed.widencdn.net/img/lazboy/99sz560qqc/980px@2x/hero.jpg?q=50);
+                height: 350px;
+            }
+            #hero h1 {
+                text-align: left;
+                padding-left: 42px;
+                font-size: 2.5em;
+            }
+            #npc-content h2 {
+                font-size: 1.2em;
+            }
+            #npc-content p {
+                font-size: .9em;
+            }
+            #npc-content .blue-title h1 {
+                font-size: 2.3em;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            #family {
+                position: relative;
+            }
+            #family .copy {
+                position: absolute;
+                background-color: rgba(255, 255, 255, .75);
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 200px;
+                padding-left: 34px;
+                display: flex;
+                align-items: center;
+            }
+            #family .image {
+                margin-top: 18px;
+            }
+            #family h3 {
+                margin: 0;
+                font-size: 1.8em;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">COVID-19 FAQs</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>COVID-19 FAQs</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <h1>We are here <span class="no-wrap">to help</span></h1>
+        </section>
+        <section id="message">
+            <h2>A message from your friends <span class="no-wrap">at La-Z-Boy</span></h2>
+            <p>From all of us at <span class="no-wrap">La-Z-Boy</span>, we want to sincerely thank you for being part of the nationwide effort to keep our local communities healthy and safe. We are especially grateful for our first responders and healthcare
+                professionals who are heroically working to help those in need. We appreciate your patience and understanding as we navigate through these <span class="no-wrap">challenging times.</span></p>
+            <p>At present time, we have made the decision to temporarily close most of our retail showrooms in order to preserve the health and safety of our communities. This is in accordance with government directives to bring the spread of COVID-19 under
+                control as quickly <span class="no-wrap">as possible.</span></p>
+            <p>Although most of our retail stores are closed, our online store at <span class="no-wrap">www.la-z-boy.com</span> is still open and accepting new orders and many of our interior designers are available for virtual consultations. As much as
+                possible, our warehouse and delivery services are up and running, while observing enhanced health protocols to help keep you and our team <span class="no-wrap">members safe.</span></p>
+            <p>We look forward to bringing you all the style, value and comfort you expect. If you need to reach us for any reason, our Comfort Care team is available (working remotely) and is here to help via email <span class="no-wrap">or phone.</span></p>
+            <p>Thank you for choosing <span class="no-wrap">La-Z-Boy</span> to help create a home you love. Take care of yourself and your loved ones, and we hope to see <span class="no-wrap">you soon.</span></p>
+        </section>
+        <section id="family" class="full-width">
+            <div class="copy">
+                <h3>Your
+                    <span class="no-wrap">La-Z-Boy</span> Family
+                </h3>
+            </div>
+            <div class="image">
+                <img srcset="https://embed.widencdn.net/img/lazboy/mr4wjxs1kc/750px/lzb-family.jpg?q=85 750w, https://embed.widencdn.net/img/lazboy/mr4wjxs1kc/1315px/lzb-family.jpg?q=85 1315w" src="https://embed.widencdn.net/img/lazboy/mr4wjxs1kc/980px/lzb-family.jpg?q=85"
+                    alt="Overhead shot of La-Z-Boy employees">
+            </div>
+        </section>
+        <div class="blue-title">
+            <h1>Questions that may be <span class="no-wrap">on your mind.</span>
+            </h1>
+        </div>
+        <section id="faqs">
+            <h2>Why are you closing your retail stores at a time when we need comfort more <span class="no-wrap">than ever?</span></h2>
+            <p>Like you, we are following rules established by local governments to prevent the spread of COVID-19 and flatten the curve. At present time, we have made the decision to temporarily close most of our retail showrooms. Our primary focus is the
+                health, safety and well-being of our employees and their families, as well as our customers and the communities in which <span class="no-wrap">we operate.</span></p>
+            <h2>Are all your <span class="no-wrap">stores closed?</span></h2>
+            <p>We are following the guidance of local governments, the Centers for Disease Control and the World Health Organization. It&rsquo;s too soon to tell when all our stores may reopen but we encourage you to check back on <span class="no-wrap">La-Z-Boy.com</span>                for updates. Once our stores are open, we will continue to ensure the health and safety of our customers and employees. This includes additional procedures to clean and disinfect surfaces within <span class="no-wrap">our stores.</span></p>
+            <h2>What if I still want to buy something? Please <span class="no-wrap">can I?</span></h2>
+            <p>Good news. The nice people who work on <span class="no-wrap">La-Z-Boy.com</span> are keeping things going during these uncertain times. You can still find inspiration, research products, even see what products look like in our own home. Sound
+                too good to be true? Download the <a href="/content/augmented-reality"><span class="no-wrap">La-Z-Boy</span> Augmented Reality App</a> and see <span class="no-wrap">for yourself.</span></p>
+            <h2>Are you still delivering orders in those good looking <span class="no-wrap">La-Z-Boy trucks?</span></h2>
+            <p>Our warehouse and delivery services are up and running where possible while observing enhanced health protocols to help keep you and our team members safe. Preventing the spread of COVID-19 is our first priority. Therefore, we have made the
+                decision to temporarily suspend in-home delivery services in <span class="no-wrap">many locations.</span></p>
+            <h2>While your stores are closed should I expect a delay in <span class="no-wrap">my order?</span></h2>
+            <p>Where delivery is available, many of our products can be ready for you to enjoy in a matter of days. In other cases we will custom build your new product and have it to your home in as little as <span class="no-wrap">6-8 weeks.</span></p>
+            <h2>What precautions are you taking when providing <span class="no-wrap">in-home delivery?</span></h2>
+            <p>Our delivery drivers are taking additional measures to keep everyone safe. We are following guidelines provided by the Centers for Disease Control including cleaning and disinfecting surfaces you may come into contact with during the delivery
+                process. We may also keep our distance while in your home and we encourage you to do <span class="no-wrap">the same.</span></p>
+            <h2>I love <span class="no-wrap">La-Z-Boy,</span> but I&rsquo;d really like to wait and have my order delivered at a <span class="no-wrap">later date.</span></h2>
+            <p>No problem, we get it. We want you to feel safe, healthy and comfortable in your new <span class="no-wrap">La-Z-Boy</span> product. If you would like to take delivery at a later date we are happy to reschedule for you. Just give us a call
+                and we will find a date and time that you are <span class="no-wrap">comfortable with.</span></p>
+            <h2>Are interior designers still available to transform my room from drab <span class="no-wrap">to fab?</span></h2>
+            <p>Where stores are closed our interior designers may be unable to offer in-home design consultations. As much as possible, our designers are still doing their best to provide you with advice, ideas and recommendations. In some locations, we
+                are also offering virtual design services. <a href="/content/design-services">Click Here</a> to learn about our Free Design Services, see some examples of the magic we work and request to speak with <span class="no-wrap">a designer.</span></p>
+            <h2>How can I remake my room when I&rsquo;m being careful not to leave <span class="no-wrap">my home?</span></h2>
+            <p>We live by the rule – &ldquo;when life gets tough, rearrange the furniture.&rdquo; So, we have created a number of tools and services that make it easy to transform your home, while at home. <a href="/content/free-swatches">Click Here</a>                to request free swatches samples delivered direct to your door. To customize furniture and see what it will look like in your own home, download our <a href="/content/augmented-reality">Augmented Reality app for iOS</a>. To transform your
+                entire room, or your entire house, we recommend our
+                <a href="https://www.la-z-boy.com/content/Room-Planner-3D/" class="no-wrap">3D Room Planner.</a>
+            </p>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>

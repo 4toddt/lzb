@@ -1,0 +1,442 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Comfort Is Back TT -->
+    <style>
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        
+        #npc-content .right,
+        #npc-content .left {
+            float: none !important;
+        }
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 60px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1010px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content strong {
+            font-weight: bold;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        #npc-content .anchor {
+            /* use like <span class="anchor" id="whatever"></span> */
+            position: relative;
+            display: block;
+            height: 0;
+            width: 0;
+            top: -160px;
+        }
+        
+        body.mobile-site #npc-content .anchor {
+            top: -60px;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /***************** Custom CSS ******************/
+        
+        #npc-content a {
+            text-decoration: underline;
+        }
+        
+        #hero {
+            background-image: url(https://embed.widencdn.net/img/lazboy/qvzooburk5/500px@2x/hero.jpg?q=50);
+            height: 460px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        #hero h1 {
+            font-size: 1.8em;
+            line-height: 1.2;
+            font-weight: 600;
+            color: #373838;
+            text-align: center;
+            position: absolute;
+            width: 7.5em;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        #announcement p {
+            line-height: 1.3;
+            margin-top: 45px;
+        }
+        
+        #announcement p+p,
+        #announcement .image+p {
+            margin-top: 1em;
+        }
+        
+        #announcement .my-callout {
+            padding: 45px 15px;
+            background-color: #f5f5f5;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            line-height: 1.2;
+        }
+        
+        #announcement .link-modules {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -7px;
+            text-align: center;
+        }
+        
+        #announcement .link-modules>div {
+            padding: 0 7px;
+            flex: 0 1 330px;
+            margin-top: 50px;
+        }
+        
+        #announcement .link-modules img {
+            height: 75px;
+            width: auto;
+            margin: 0 auto;
+        }
+        
+        #announcement .link-modules p {
+            line-height: 1.1;
+        }
+        
+        #announcement .link-modules a {
+            display: block;
+            margin-top: 1em;
+            padding: 1em 0;
+            text-decoration: none;
+            background-color: #1372af;
+            color: white;
+            font-weight: bold;
+        }
+        
+        #open-stores h2 {
+            margin-top: 50px;
+            text-align: center;
+            color: #1372af;
+            font-weight: bold;
+        }
+        
+        #open-stores table {
+            margin: .5em auto 0;
+            border-collapse: collapse;
+            border-top: 1px solid gray;
+        }
+        
+        #open-stores tr {
+            padding: .5em 0;
+            border-bottom: 1px solid gray;
+            display: block;
+        }
+        
+        #open-stores td {
+            font-size: .8em;
+            padding: 0.25em .5em;
+            white-space: nowrap;
+            display: block;
+        }
+        
+        #open-stores a.arrow-right {
+            text-decoration: none;
+            background-color: #1372af;
+            color: white;
+            padding: .5em;
+            display: block;
+            text-align: center;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero {
+                background-image: url(https://embed.widencdn.net/img/lazboy/3cccecevvs/980px@2x/hero.jpg?q=50);
+                height: 700px;
+            }
+            #hero h1 {
+                font-size: 2.4em;
+                width: 9em;
+                margin-top: 30px;
+            }
+            #announcement p,
+            #announcement .link-modules a,
+            #open-stores h2 {
+                font-size: 1.25em;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #hero h1 {
+                font-size: 3em;
+                margin-top: 20px;
+            }
+            #announcement .two-col {
+                display: flex;
+                margin: 0 -20px;
+                margin-top: 35px;
+            }
+            #announcement .two-col>div {
+                flex: 0 0 50%;
+                padding: 0 20px;
+                display: flex;
+                align-items: center;
+            }
+            #announcement p {
+                margin-top: 35px;
+            }
+            #announcement .my-callout {
+                padding: 45px;
+                font-size: 1.375em;
+            }
+            #announcement .link-modules>div,
+            #open-stores h2 {
+                margin-top: 70px;
+            }
+            #open-stores tr {
+                display: table-row;
+            }
+            #open-stores td {
+                display: table-cell;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">Comfort Is Back</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Comfort Is Back</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <h1>Comfort is back in your neighborhood!</h1>
+        </section>
+        <section id="announcement">
+            <div class="two-col gutter-30">
+                <div>
+                    <p>A local <span class="no-wrap">La-Z-Boy</span> store has reopened near you. Our top priority is to make your shopping experience safe, which is why we are following the CDC’s regulations for regular cleaning, and limiting the number
+                        of people admitted into the store at a&nbsp;time.</p>
+                </div>
+                <div>
+                    <p class="my-callout">We are also offering private shopping appointments one hour before the store opens, allowing you to explore our products in added&nbsp;comfort.</p>
+                </div>
+            </div>
+            <p>In addition, all of our delivery teams and warehouse technicians are wearing masks to ensure safety, and we are able to make garage or porch drop-offs for added peace of&nbsp;mind.</p>
+            <p>When your order is ready, we will call to schedule a delivery time and discuss any delivery details for added safety and&nbsp;comfort.</p>
+            <div class="link-modules">
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/clsxrzlmmf/exact/in-store.png" alt="In-store badge"></div>
+                    <p>Shop in store at one of our local <span class="no-wrap">La-Z-Boy</span> stores.</p>
+                    <a href="#store-links" class="arrow-right to-store-links">Find a Store Near You</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/ckhinfrsxc/exact/online.png" alt="Online badge"></div>
+                    <p>Sign up for a private shopping appointment.</p>
+                    <a href="#store-links" class="arrow-right to-store-links">Schedule Yours Today</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://embed.widencdn.net/img/lazboy/mjdjleqafv/exact/sign-up.png" alt="Sign-up badge"></div>
+                    <p>Work virtually with an interior designer.</p>
+                    <a href="https://www.la-z-boy.com/content/design-services/free-virtual-design" class="arrow-right">Set My Appointment</a>
+                </div>
+            </div>
+        </section>
+        <section id="open-stores" style="display: none;">
+            <span class="anchor" id="store-links"></span>
+            <h2>Virginia</h2>
+            <table>
+                <tr>
+                    <td>Alexandria</td>
+                    <td>6003 Kingstown Village Pkwy</td>
+                    <td>(703) 971-5065</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore005">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Fairfax</td>
+                    <td>10900 Fairfax Blvd</td>
+                    <td>(703) 273-6133</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore004">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Richmond</td>
+                    <td>11541 W. Broad St</td>
+                    <td>(804) 360-5272</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore015">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Virginia Beach</td>
+                    <td>5300 Virginia Beach Blvd</td>
+                    <td>(757) 490-6057</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore007">Set private appointment</a></td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script>
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                $('.to-store-links').click(function() {
+                    $('#open-stores').show();
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $("#store-links").offset().top
+                    }, 1000);
+                    return false;
+                });
+                $('#open-stores a').click(function() {
+                    var calendlyUrl = $(this).attr('href');
+                    console.log('calendlyUrl');
+                    $.getScript('https://assets.calendly.com/assets/external/widget.js')
+                        .done(function() {
+                            Calendly.initPopupWidget({
+                                url: calendlyUrl
+                            });
+                        })
+                        .fail(function() {
+                            window.location.href = calendlyUrl;
+                            console.log('getScript failed');
+                        });
+                    return false;
+                });
+            }
+        })();
+    </script>
+    <!-- end NPC content -->
+</body>
