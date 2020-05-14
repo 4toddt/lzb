@@ -1,0 +1,309 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Financing TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /**************  Resets ****************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .one-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        
+        #npc-content * {
+            font-size: 100%;
+        }
+        /************* NPC Defaults ************/
+        
+        #npc-content {
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1010px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+        }
+        
+        #npc-content sup {
+            line-height: 0;
+            font-size: 0.5em;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /***************** Custom CSS ******************/
+        
+        #hero {
+            position: relative;
+        }
+        
+        #hero .image {
+            background-image: url(/Images/financing/hero.png);
+            height: 460px;
+            background-size: cover;
+            background-position: left;
+        }
+        
+        #hero .copy {
+            text-align: center;
+            margin-top: 20px;
+            padding: 0 15px;
+        }
+        
+        #hero h1 {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, .8);
+            font-size: 1.8em;
+            width: 8em;
+            padding: .5em;
+            margin: 0;
+            line-height: 1.25;
+        }
+        
+        #hero p {
+            margin: 0;
+            font-size: 0.75em;
+        }
+        
+        #hero a {
+            margin-top: 1em;
+            display: inline-block;
+            background-color: #0064B1;
+            color: white;
+            line-height: 2.5;
+            border-radius: 3px;
+            width: 185px;
+            text-align: center;
+        }
+        
+        #details .column {
+            margin-top: 40px;
+        }
+        
+        #details h2 {
+            font-weight: normal;
+            font-size: 1.3em;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        #details h3 {
+            font-weight: normal;
+            line-height: 1.4;
+            margin: 1.5em 0 0;
+        }
+        
+        #details ul {
+            font-size: .8em;
+            margin: 0;
+        }
+        
+        #details li {
+            margin-top: .6em;
+            line-height: 1.25;
+        }
+        
+        #details li a {
+            font-size: .9em;
+            text-decoration: underline;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero .image {
+                height: 540px;
+            }
+            #hero .copy {
+                position: absolute;
+                top: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: 0;
+                padding: 13px 17px;
+                border: 2px solid #436479;
+            }
+            #hero .inner {
+                width: 390px;
+                padding: 20px 15px;
+                background-color: rgba(255, 255, 255, .8);
+            }
+            #hero h1 {
+                position: static;
+                transform: none;
+                background-color: transparent;
+                font-size: 1.4em;
+                padding: 0;
+                width: auto;
+            }
+            #hero p {
+                margin-top: .5em;
+                line-height: 1.25;
+                font-size: .7em;
+            }
+        }
+        
+        @media only screen and (min-width: 650px) {
+            #hero .image {
+                transform: scaleX(-1);
+                background-position: center;
+            }
+            #hero .copy {
+                top: 80px;
+                left: 20px;
+                transform: none;
+            }
+            #hero .inner {
+                padding: 60px 15px 40px;
+                width: 350px;
+            }
+            #hero h1 {
+                font-size: 2em;
+                line-height: 1;
+            }
+            #hero p {
+                font-size: .8em;
+            }
+            #details .column {
+                margin-top: 60px;
+            }
+            #details h2 {
+                font-size: 1.5em;
+                line-height: 1.5;
+            }
+            #details .two-col {
+                display: flex;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #hero .copy {
+                padding: 13px 17px;
+                border: 2px solid #436479;
+            }
+            #hero .inner {
+                padding: 60px 25px 40px;
+                width: 410px;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">Financing</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Financing</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <div class="image" role="img" aria-label=""></div>
+            <div class="copy">
+                <div class="inner">
+                    <h1>No Interest for 12&nbsp;Months*</h1>
+                    <p>On online or in-store purchases made with your <span class="no-wrap">La-Z-Boy</span> Furniture Galleries credit card. Equal monthly payments required for 12 months. Minimum purchase <span class="no-wrap">may apply.</span></p>
+                    <a href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=3FCBEDF2AEB5DB5367FE85B61761D567CC04E21E3BF1FEB7&client=La-Z-Boy%20Furniture%20Galleries">Apply Now</a>
+                </div>
+            </div>
+        </section>
+        <section id="details">
+            <div class="column">
+                <h2>A dedicated credit limit to use again and again at <span class="no-wrap">La-Z-Boy</span> <span class="no-wrap"></span>Furniture Galleries<sup>1</sup></h2>
+                <ul>
+                    <li>Convenient monthly payments <a href="">Calculate your payments</a></li>
+                    <li>Payment options—online or by mail</li>
+                    <li>Special financing available from Synchrony Bank**</li>
+                    <li>Special in-store & online deals <a href="">Find a Store</a></li>
+                </ul>
+                <div class="two-col">
+                    <div>
+                        <h3>Access Your Account 24/7</h3>
+                        <ul>
+                            <li>Make payments</li>
+                            <li>View your balance</li>
+                            <li>Update account info</li>
+                            <li>Schedule up to your next 12 payments</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Easy to Use</h3>
+                        <ul>
+                            <li>Use your card anytime on any product<sup>1</sup></li>
+                            <li>No expiration date</li>
+                            <li>Cardholder-only special offers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>

@@ -54,10 +54,34 @@
             text-align: center;
         }
         
+        #bcc-content #try-it {
+            text-align: center;
+        }
+        
         #bcc-content #try-it .image {
-            max-width: 220px;
-            width: 68%;
-            margin: 1em auto 0;
+            margin: 1em .5em 0;
+            display: inline-block;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.apple .hidden-apple {
+            display: none !important;
+        }
+        
+        body.android .hidden-android {
+            display: none !important;
+        }
+        
+        #bcc-content #try-it .image img {
+            height: 64px;
+            width: auto;
         }
         
         #bcc-content #try-it .image+p {
@@ -203,11 +227,20 @@
         </section>
         <section id="try-it">
             <h2>Try it now!</h2>
-            <p class="subtitle">Download <span style="white-space: nowrap">La-Z-Boy</span> AR from the<br>iTunes App Store.</p>
-            <div class="image">
-                <a href="https://ar.la-z-boy.com/visualize/products"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt=""></a>
+            <p class="subtitle hidden-mobile">Download <span style="white-space: nowrap">La-Z-Boy</span> AR from the<br>iTunes App Store or Google Play.</p>
+            <div class="image hidden-mobile">
+                <a href="https://apps.apple.com/us/app/la-z-boy-ar/id1468901467"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt="Download on the App Store"></a>
             </div>
-            <p style="max-width:42em;">Ready to see how <span style="white-space: nowrap">La-Z-Boy</span> furniture will look in your home? Thanks to augmented reality (AR), you can now get an instant sneak preview right on your&nbsp;iPhone.</p>
+            <div class="image hidden-mobile">
+                <a href="https://play.google.com/store/apps/details?id=us.zoom.videomeetings"><img alt='Get it on Google Play' src='https://www.la-z-boy.com/Images/npc/augmented-reality/en_badge_web_generic.png'></a>
+            </div>
+            <div class="image hidden-android hidden-desktop">
+                <a href="itms-apps://itunes.apple.com/us/app/la-z-boy-ar/id1468901467"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt="Download on the App Store"></a>
+            </div>
+            <div class="image hidden-apple hidden-desktop">
+                <a href="https://ar.la-z-boy.com/visualize/products"><img alt='Get it on Google Play' src='https://www.la-z-boy.com/Images/npc/augmented-reality/en_badge_web_generic.png'></a>
+            </div>
+            <p style="max-width:42em;">Ready to see how <span style="white-space: nowrap">La-Z-Boy</span> furniture will look in your home? Thanks to augmented reality (AR), you can now get an instant sneak preview right on your phone.</p>
         </section>
         <section id="how-it-works" class="full-width">
             <h2>How it Works</h2>
@@ -299,6 +332,11 @@
         </section>
     </div>
     <script>
+        if (navigator.userAgent.match(/iPhone|iPod/i)) {
+            document.body.classList.add("apple");
+        } else if (navigator.userAgent.match(/Android/i)) {
+            document.body.classList.add("android");
+        }
         if (typeof define == 'function' && define.amd) {
             require(["/js/flickity.js"]);
         } else {

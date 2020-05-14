@@ -1,0 +1,253 @@
+    /************* Import Fonts ************/
+    
+    @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400i&display=swap&text=A');
+    @import url("https://use.typekit.net/dro8vvu.css");
+    /***************************************/
+    /*********** Mobile Resets *************/
+    /***************************************/
+    
+    #site-wrapper {
+        max-width: none;
+    }
+    
+    #site-wrapper .breadcrumbs {
+        max-width: 62.5rem;
+        margin: 0.625rem auto;
+    }
+    
+    #site-wrapper .section-title {
+        display: none;
+    }
+    
+    #site-wrapper .section-row {
+        max-width: none;
+    }
+    
+    #site-wrapper .section-content {
+        padding: 0;
+        float: none;
+    }
+    
+    #site-wrapper .one-column-container,
+    #site-wrapper .two-column-container {
+        max-width: none;
+        padding: 0;
+    }
+    /************ desktop resets ***********/
+    
+    .two-column-first [role="main"],
+    .two-column-first [role="region"],
+    main {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .two-column-first [role="region"]>h1 {
+        display: none;
+    }
+    /********* BCC content resets **********/
+    
+    #npc-content * {
+        font: inherit;
+        color: inherit;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        float: none;
+        width: auto;
+        text-decoration: none;
+    }
+    /***************************************/
+    /************* NPC Defaults ************/
+    /***************************************/
+    
+    #npc-content {
+        width: 100%;
+        font-family: 'lato', 'OpenSans', sans-serif;
+        font-size: 20px;
+        line-height: 1;
+        color: #333;
+        overflow: hidden;
+    }
+    
+    body.mobile-site #npc-content {
+        margin-bottom: 40px;
+    }
+    
+    #npc-content section {
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+    
+    #npc-content section.full-width {
+        max-width: 980px;
+        padding: 0;
+    }
+    
+    #npc-content strong {
+        font-weight: bold;
+    }
+    
+    #npc-content img {
+        /* override browser default of inline-block to remove white space after images */
+        display: block;
+        width: 100%;
+        max-width: none;
+    }
+    
+    #npc-content .image {
+        /* fix IE bug where images in flex containers don't keep their aspect ratio */
+        min-height: 1px;
+    }
+    /********** Utility Classes ************/
+    
+    #npc-content .no-wrap {
+        white-space: nowrap;
+    }
+    /****** Responsive Hidden Elements *****/
+    
+    body:not(.mobile-site) .hidden-desktop {
+        display: none !important;
+    }
+    
+    body.mobile-site .hidden-mobile {
+        display: none !important;
+    }
+    /************* NPC Modal ***************/
+    
+    #npc-modal {
+        position: fixed;
+        z-index: 1000000;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    #npc-modal-container {
+        background-color: #fefefe;
+        padding: 5px;
+        border: 1px solid #888;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    
+    #npc-modal.video #npc-modal-container {
+        width: 75%;
+        max-width: 1050px;
+    }
+    
+    #npc-image {
+        width: 100%;
+        display: block;
+    }
+    
+    #npc-modal.video #npc-modal-content {
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    
+    #npc-modal-content iframe {
+        min-height: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #npc-modal-close {
+        position: absolute;
+        right: -7px;
+        top: -7px;
+        width: 22px;
+        z-index: 10;
+        cursor: pointer;
+    }
+    
+    #npc-modal-close:hover,
+    #npc-modal-close:focus {
+        text-decoration: none;
+        cursor: pointer;
+    }
+    /***************************************/
+    /******** Design Services Nav Bar *******/
+    /***************************************/
+    
+    #ds-nav {
+        font-size: .8em;
+    }
+    
+    #ds-nav a {
+        line-height: 40px;
+        display: block;
+        padding: 0 15px;
+        border-top: 1px solid #cbcbcb;
+    }
+    
+    #ds-nav a.active {
+        background-color: #595451;
+        color: white;
+        border: none;
+    }
+    
+    #ds-nav a.active~a {
+        border: none;
+        border-bottom: 1px solid #cbcbcb;
+    }
+    
+    @media only screen and (min-width: 700px) {
+        #ds-nav {
+            display: flex;
+            background-color: #595451;
+        }
+        #ds-nav>div {
+            width: 100%;
+            max-width: 1010px;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 0 auto;
+        }
+        #ds-nav a {
+            line-height: 60px;
+            color: white;
+        }
+        #ds-nav a.active {
+            position: relative;
+        }
+        #ds-nav a.active:after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: white;
+            height: 7px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        #ds-nav#ds-nav a {
+            border: none;
+        }
+    }
+    
+    @media only screen and (min-width: 850px) {
+        #ds-nav {
+            font-size: 1em;
+        }
+    }
+    /***************************************/
+    /******* Design Service Defaults *******/
+    /***************************************/
+    
+    #npc-content h2 {
+        font-family: 'Playfair Display', playfair-display, serif;
+    }

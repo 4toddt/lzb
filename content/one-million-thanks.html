@@ -1,0 +1,878 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- #OneMillionThanks TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /*********** Mobile Resets *************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        
+        .two-column-first [role="region"] section {
+            display: block;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /************* NPC Defaults ************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /*! Flickity v2.2.0 https://flickity.metafizzy.co */
+        
+        #npc-content [data-flickity] {
+            outline: none !important;
+        }
+        
+        #npc-content .flickity-enabled {
+            position: relative;
+        }
+        
+        #npc-content .flickity-enabled:focus {
+            outline: none;
+        }
+        
+        #npc-content .flickity-viewport {
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+        }
+        
+        #npc-content .flickity-slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #npc-content .flickity-slider>div {
+            width: 480px;
+            max-width: 100%;
+            margin-left: 20px;
+        }
+        /* draggable */
+        
+        #npc-content .flickity-enabled.is-draggable {
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        #npc-content .flickity-enabled.is-draggable .flickity-viewport {
+            cursor: move;
+            cursor: -webkit-grab;
+            cursor: grab;
+        }
+        
+        #npc-content .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+            cursor: -webkit-grabbing;
+            cursor: grabbing;
+        }
+        /* ---- flickity-button ---- */
+        
+        #npc-content .flickity-button {
+            position: absolute;
+            background: hsla(0, 0%, 100%, 0.75);
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        #npc-content .flickity-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #19F;
+        }
+        
+        #npc-content .flickity-button:active {
+            opacity: 0.6;
+        }
+        
+        #npc-content .flickity-button:disabled {
+            opacity: 0.3;
+            cursor: auto;
+            /* prevent disabled button from capturing pointer up event. #716 */
+            pointer-events: none;
+        }
+        
+        #npc-content .flickity-button-icon {
+            fill: currentColor;
+        }
+        /* ---- previous/next buttons ---- */
+        
+        #npc-content .flickity-prev-next-button {
+            top: calc(37.5vw - 22px);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            /* vertically center */
+        }
+        
+        @media only screen and (min-width: 480px) {
+            #npc-content .flickity-prev-next-button {
+                top: 158px;
+            }
+        }
+        
+        #npc-content .flickity-prev-next-button.previous {
+            left: 10px;
+        }
+        
+        #npc-content .flickity-prev-next-button.next {
+            right: 10px;
+        }
+        /* right to left */
+        
+        #npc-content .flickity-rtl .flickity-prev-next-button.previous {
+            left: auto;
+            right: 10px;
+        }
+        
+        #npc-content .flickity-rtl .flickity-prev-next-button.next {
+            right: auto;
+            left: 10px;
+        }
+        
+        #npc-content .flickity-prev-next-button .flickity-button-icon {
+            position: absolute;
+            left: 20%;
+            top: 20%;
+            width: 60%;
+            height: 60%;
+        }
+        /* ---- page dots ---- */
+        
+        #npc-content .flickity-page-dots {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        #npc-content .flickity-rtl .flickity-page-dots {
+            direction: rtl;
+        }
+        
+        #npc-content .flickity-page-dots .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 8px;
+            background: #66C9CF;
+            border-radius: 50%;
+            opacity: 0.25;
+            cursor: pointer;
+        }
+        
+        #npc-content .flickity-page-dots .dot.is-selected {
+            opacity: 1;
+        }
+        /***************** Custom CSS ******************/
+        
+        #hero .image {
+            height: 268px;
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/hero-sm.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #hero .copy {
+            background-color: #94c7e5;
+            text-align: center;
+            color: white;
+            padding: 0 40px 40px;
+        }
+        
+        #hero h1 {
+            font-size: 1.4em;
+            line-height: 1.2;
+            font-weight: bold;
+            text-transform: uppercase;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        #npc-content p {
+            font-size: .8em;
+            line-height: 1.375;
+            margin-top: .75em;
+        }
+        
+        #hero p {
+            max-width: 600px;
+            margin: 1em auto 0;
+        }
+        
+        #npc-content strong {
+            font-weight: bold;
+        }
+        
+        #sky {
+            height: 150px;
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/how-to-join.png);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #how-to-join .grid {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -30px;
+            justify-content: space-evenly;
+        }
+        
+        #how-to-join .grid>div {
+            flex: 0 0 290px;
+            margin-top: 30px;
+            padding: 0 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #how-to-join .grid .image {
+            width: 180px;
+        }
+        
+        #how-to-join h3 {
+            font-size: .9em;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 15px;
+        }
+        
+        #how-to-join p {
+            text-align: center;
+            margin-top: .5em;
+        }
+        
+        section#ideas {
+            max-width: 1020px;
+            padding: 0 20px;
+        }
+        
+        #npc-content h2 {
+            font-size: 1.2em;
+            line-height: 1.2;
+            margin-top: 1.25em;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        #ideas .row {
+            margin-top: 30px;
+        }
+        
+        #ideas .image {
+            height: 0;
+            padding-bottom: 60%;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #ideas01 {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas01-sm.jpg);
+        }
+        
+        #ideas02 {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas02-sm.jpg);
+        }
+        
+        #ideas03 {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas03-sm.jpg);
+        }
+        
+        #ideas .copy {
+            background-color: #94c7e5;
+            color: white;
+            padding: 25px 25px 55px;
+        }
+        
+        #ideas h3 {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        
+        #ideas a {
+            font-size: .9em;
+            text-transform: uppercase;
+            margin-top: .5em;
+            display: block;
+        }
+        
+        #OneMillionThanks h2 {
+            margin-bottom: 20px;
+        }
+        
+        #heart {
+            width: 170px;
+            margin: 30px auto 0;
+        }
+        
+        #lzb-cares [data-flickity] {
+            margin-top: 30px;
+        }
+        
+        #lzb-cares h2 {
+            font-size: 1.4em;
+            padding: 0 1em;
+            text-transform: uppercase;
+        }
+        
+        #lzb-cares p {
+            text-align: center;
+            padding: 0 5px;
+        }
+        
+        #npc-content .idea-modal {
+            display: none;
+            position: fixed;
+            z-index: 1500000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 30px 10px;
+            overflow: auto;
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+        
+        #npc-content .idea-modal-content {
+            background-color: #fefefe;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+            position: relative;
+            border-radius: 17px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .18);
+        }
+        
+        #npc-content .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            line-height: 20px;
+            font-size: 37px;
+            cursor: pointer;
+        }
+        
+        #npc-content .idea-modal .two-col>div {
+            margin-top: 30px;
+        }
+        
+        #npc-content .idea-modal .image {
+            height: 268px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #npc-content .idea-modal a {
+            background-color: #006FB1;
+            color: white;
+            border-radius: 4px;
+            padding: .75em 1.5em;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: .8em;
+        }
+        
+        #npc-content .idea-modal h2 {
+            text-align: left;
+            margin-top: 0;
+        }
+        
+        #npc-content .idea-modal h3 {
+            font-weight: bold;
+            font-size: .9em;
+            margin-top: 1em;
+        }
+        
+        #npc-content .idea-modal ol {
+            padding-inline-start: 30px;
+        }
+        
+        #npc-content .idea-modal li {
+            font-size: .8em;
+            line-height: 1.25;
+            margin-top: .5em;
+        }
+        
+        #chalk .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas01-sm.jpg);
+        }
+        
+        #coloring .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas02-sm.jpg);
+        }
+        
+        #stencil .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas03-sm.jpg);
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero .image {
+                height: 403px;
+                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/hero-md.jpg);
+            }
+            #hero h1 {
+                font-size: 1.8em;
+            }
+            #sky {
+                height: 170px;
+            }
+            #npc-content h2 {
+                font-size: 1.8em;
+            }
+            #lzb-cares h2 {
+                font-size: 1.5em;
+            }
+            #npc-content .idea-modal {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #hero .image {
+                height: 526px;
+                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/hero.jpg);
+            }
+            #ideas .row {
+                display: flex;
+                margin-top: 50px;
+            }
+            #ideas .row.reverse {
+                flex-direction: row-reverse;
+            }
+            #ideas .image {
+                height: 355px;
+                padding-bottom: 0;
+                flex: 0 1 580px;
+            }
+            #ideas01 {
+                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas01.jpg);
+            }
+            #ideas02 {
+                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas02.jpg);
+            }
+            #ideas03 {
+                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas03.jpg);
+            }
+            #ideas .copy {
+                flex: 0 1 400px;
+                padding: 40px 30px;
+            }
+            #npc-content .idea-modal .two-col {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            #npc-content .idea-modal .image {
+                height: 360px;
+                flex: 0 1 340px;
+            }
+            #npc-content .idea-modal .copy {
+                padding-left: 20px;
+                flex: 0 1 500px;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            #npc-content .idea-modal-content {
+                padding: 50px 40px 80px;
+            }
+            #npc-content .idea-modal .copy {
+                padding-left: 40px;
+            }
+            #npc-content .idea-modal {
+                padding: 80px 20px;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">#OneMillionThanks</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>#OneMillionThanks</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <div class="image">
+            </div>
+            <div class="copy">
+                <h1>Join us in thanking healthcare workers</h1>
+                <p>La-Z-Boy is donating one million dollars in furniture to frontline nurses in order to give them the comfort they deserve. It&rsquo;s just one way of thanking healthcare workers for their heroics. Now, we&rsquo;re calling on you to send
+                    your own creative show of&nbsp;appreciation.</p>
+                <p>Make it, capture it and post it with <strong>#OneMillionThanks</strong>.</p>
+                <p>Let&rsquo;s thank healthcare workers a million times over, and show them how grateful we are for all that they&nbsp;do.</p>
+            </div>
+        </section>
+        <section id="how-to-join">
+            <div id="sky" class="image"></div>
+            <div class="grid">
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join01.png" alt=""></div>
+                    <h3>Create</h3>
+                    <p>Use your imagination to come up with a creative show of support. Take photos or capture the whole thing on video.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join02.png" alt=""></div>
+                    <h3>Share</h3>
+                    <p>Post your message on your social media channels with #OneMillionThanks.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join03.png" alt=""></div>
+                    <h3>Watch</h3>
+                    <p>Check back often to see what others are sharing and to see if your message is included in our compilation video.</p>
+                </div>
+            </div>
+        </section>
+        <section id="ideas">
+            <h2>Ideas for Showing Thanks</h2>
+            <div class="row">
+                <div id="ideas01" class="image"></div>
+                <div class="copy">
+                    <h3>DIY Sidewalk Chalk Paint</h3>
+                    <p>You can send healthcare workers a colorful message of appreciation using items you have around the house. All you need is cornstarch, food coloring, and a little creativity.</p>
+                    <a onclick="return showThat('chalk')" class="arrow-right" href="">Read more</a>
+                </div>
+            </div>
+            <div class="row reverse">
+                <div id="ideas02" class="image"></div>
+                <div class="copy">
+                    <h3>Downloadable Coloring Page</h3>
+                    <p>An art piece is a creative way to show healthcare workers how much you appreciate all they do. This coloring page is a simple and fun way for your kids to get involved.</p>
+                    <a onclick="return showThat('coloring')" class="arrow-right" href="">Read more</a>
+                </div>
+            </div>
+            <div class="row">
+                <div id="ideas03" class="image"></div>
+                <div class="copy">
+                    <h3>Downloadable Stencil</h3>
+                    <p>Use this stencil to turn any fabric into a show of support. You can decorate a tote bag, or make your own #OneMillionThanks shirt that you can wear while you record your message to healthcare workers.</p>
+                    <a onclick="return showThat('stencil')" class="arrow-right" href="">Read more</a>
+                </div>
+            </div>
+        </section>
+        <section id="OneMillionThanks">
+            <h2>#OneMillionThanks</h2>
+            <div data-crl8-container-id="gallery-wTXaa9bC"></div>
+            <!-- <div data-crl8-container-id="gallery-UHGHuqEI">Curalate content</div> -->
+        </section>
+        <section id="lzb-cares" class="full-width">
+            <h2>How we&rsquo;re helping</h2>
+            <div id="heart" class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/lzb-cares.png" alt=""></div>
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": false,
+                "prevNextButtons": true,
+                "cellAlign": "left",
+                "contain": true,
+                "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                }'>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care01.jpg" alt=""></div>
+                    <div class="copy">
+                        <p>The La-Z-Boy Foundation provided a grant to the Pandemic Response Program, providing meals for those in need and temporary housing for the&nbsp;homeless.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care02.jpg" alt=""></div>
+                    <div class="copy">
+                        <p>The La-Z-Boy Foundation has provided a $50,000 grant to assist with free supper&nbsp;programs.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care03.jpg" alt=""></div>
+                    <div class="copy">
+                        <p>The La-Z-Boy Foundation is keeping first responders safe by providing grants for face&nbsp;shields.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care04.jpg" alt=""></div>
+                    <div class="copy">
+                        <p>Our facility in Saltillo, Mexico, has been producing masks for local&nbsp;hospitals.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care05.jpg" alt=""></div>
+                    <div class="copy">
+                        <p>Our facility in Newton, Mississippi, has been producing protective gear to assist the local sheriff&rsquo;s&nbsp;department.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care06.jpg" alt=""></div>
+                    <div class="copy">
+                        <p>The La-Z-Boy Foundation has provided grants to ensure local nonprofits can keep their staff safe while serving the&nbsp;community.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care07.jpg" alt=""></div>
+                    <div class="copy">
+                        <p>Our facility in Newton, Mississippi, has been providing Rush Medical Systems with masks to assist them with their vital&nbsp;work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="chalk" class="idea-modal" onclick="hideThis(event,this)">
+            <div class="idea-modal-content">
+                <span class="close" onclick="hideThat('chalk')">&times;</span>
+                <div class="two-col">
+                    <div class="image"></div>
+                    <div class="copy">
+                        <h2>DIY Sidewalk Chalk Paint</h2>
+                        <h3>What you&rsquo;ll need</h3>
+                        <ol>
+                            <li>Cornstarch</li>
+                            <li>Food coloring</li>
+                            <li>Jar or bowl</li>
+                            <li>Paint brushes</li>
+                        </ol>
+                        <h3>Steps</h3>
+                        <ol>
+                            <li><strong>Make your colors</strong><br>Mix 1 tablespoon cornstarch with 2 tablespoons of water and 3 drops of food coloring in a jar or bowl. Be sure to make all the colors you&rsquo;ll want, so you&rsquo;ll have them on hand
+                                when painting.</li>
+                            <li><strong>Head outside and use your imagination</strong><br>Find a quiet stretch of sidewalk or cement and let your imagination run free. You can make anything you want to show healthcare workers you care. At first the chalk
+                                paint will look just like paint, but don&rsquo;t worry, when it dries it can wash off easily like chalk.</li>
+                            <li><strong>Share</strong><br>Snap pictures or take a video of the whole process and be sure to share on your social media channels with #OneMillionThanks.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="stencil" class="idea-modal" onclick="hideThis(event,this)">
+            <div class="idea-modal-content">
+                <span class="close" onclick="hideThat('stencil')">&times;</span>
+                <div class="two-col">
+                    <div class="image"></div>
+                    <div class="copy">
+                        <a href="https://www.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanksStencil.pdf" target="_blank">Download</a>
+                        <h2>Downloadable Stencils</h2>
+                        <h3>What you&rsquo;ll need</h3>
+                        <ol>
+                            <li>Heavy stock printer paper</li>
+                            <li>Utility knife</li>
+                            <li>Tape</li>
+                            <li>Fabric</li>
+                            <li>Paint, paintbrush or sponge (you can also use color markers)</li>
+                        </ol>
+                        <h3>Steps</h3>
+                        <ol>
+                            <li><strong>Download and print</strong><br>We recommend using heavy stock paper if you have it. This will ensure that your stencil is sturdy and will hold its shape.</li>
+                            <li><strong>Cutting out your stencil</strong><br>Place your paper on a piece of cardboard to make sure that you do not damage your table or other surface when cutting. Then use a utility knife to cut around the black areas of the
+                                printed image. Be careful not to trim floating pieces of the paper.</li>
+                            <li><strong>Placing your stencil</strong><br>Place the item you want to color with your stencil on a flat surface. It is a good idea to place another piece of heavy stock paper or cardboard between the fabric and your surface,
+                                so that if the paint bleeds, it won&rsquo;t make a mess. If you are painting a shirt or a bag, it is a good idea to put another piece of cardboard inside, so that the paint doesn&rsquo;t bleed through to the other side
+                                of the item.</li>
+                            <li><strong>Position your stencil</strong><br>Use tape to lock your stencil in place on your fabric.</li>
+                            <li><strong>Paint your stencil</strong><br>Use a brush or sponge to dab paint into the fabric through the shapes you have cut out of your stencil. Don&rsquo;t worry about getting paint on the stencil paper. If you don&rsquo;t have
+                                a brush or sponge, you can use old rags to dab the paint on. Or if you prefer, you can use color markers. Be careful not to get paint under the stencil. Keep it only in the spaces that you have cut out.</li>
+                            <li><strong>Finishing</strong><br>Be sure to wait until your paint is fully dry before removing the stencil, otherwise you might smudge the paint. To speed up the process you can use a hair dryer on a low setting. Once the paint
+                                is dry, peel off the stencil.
+                            </li>
+                            <li><strong>Show support</strong><br>Now you have a lasting way to show your support for healthcare workers. Be sure to share with #OneMillionThanks.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="coloring" class="idea-modal" onclick="hideThis(event,this)">
+            <div class="idea-modal-content">
+                <span class="close" onclick="hideThat('coloring')">&times;</span>
+                <div class="two-col">
+                    <div class="image"></div>
+                    <div class="copy">
+                        <a href="https://www.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanksColoringPage.pdf" target="_blank">Download</a>
+                        <h2>Downloadable Coloring Page</h2>
+                        <h3>What you&rsquo;ll need</h3>
+                        <ol>
+                            <li>Printer paper</li>
+                            <li>Coloring supplies</li>
+                        </ol>
+                        <h3>Steps</h3>
+                        <ol>
+                            <li><strong>Gather your things</strong><br>Just print the coloring page, then give it your own personal touch. Keep a few blank pages on hand, because you just might get inspired to create something completely new.</li>
+                            <li><strong>Share</strong><br>Be sure to share your art work on social media with #OneMillionThanks. You might inspire your friends to show their support for healthcare workers, too.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/flickity.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/flickity.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+    <script>
+        function showThat(id) {
+            document.getElementById(id).style.display = "block";
+            return false;
+        }
+
+        function hideThis(e, t) {
+            if (e.target == t) {
+                t.style.display = "none";
+            }
+            return false;
+        }
+
+        function hideThat(id) {
+            document.getElementById(id).style.display = "none";
+            return false;
+        }
+        (function() {
+            // Create array of query string values
+            var params = [],
+                hash;
+            var q = document.URL.split('?')[1];
+            if (q != undefined) {
+                q = q.split('&');
+                for (var i = 0; i < q.length; i++) {
+                    hash = q[i].split('=');
+                    params.push(hash[1]);
+                    params[hash[0]] = hash[1];
+                }
+            }
+            // Open the modal
+            if (document.getElementById(params['modal']) != null) {
+                showThat(params['modal']);
+            }
+        })();
+    </script>
+    <!-- end NPC content -->
+</body>

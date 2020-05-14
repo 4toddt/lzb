@@ -7,6 +7,28 @@
 <body class="mobile-site">
     <!-- begin NPC content -->
     <!-- Comfort Is Back TT -->
+    <script>
+        (function() {
+            // Create array of query string values
+            var params = [],
+                hash;
+            var q = document.URL.split('?')[1];
+            if (q != undefined) {
+                q = q.split('&');
+                for (var i = 0; i < q.length; i++) {
+                    hash = q[i].split('=');
+                    params.push(hash[1]);
+                    params[hash[0]] = hash[1];
+                }
+            }
+
+            // Play the video in the query string
+            if (params['calendly'] != null) {
+                document.body.classList.add("calendly");
+                calendlyUrl = 'https://www.calendly.com/' + decodeURIComponent(params['calendly']);
+            }
+        })();
+    </script>
     <style>
         @import url("https://use.typekit.net/pou1zjg.css");
         @font-face {
@@ -234,17 +256,83 @@
             font-weight: bold;
         }
         
-        #open-stores h2 {
-            margin-top: 50px;
+        #npc-content [name="state"] {
+            display: none;
+        }
+        
+        #open-stores {
             text-align: center;
-            color: #1372af;
+        }
+        
+        #open-stores h2 {
+            font-size: 1.6em;
+            margin-top: 50px;
+        }
+        
+        #open-stores h2+p {
+            margin-top: .5em;
+            line-height: 1.3;
+        }
+        
+        #open-stores hr {
+            display: block;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+        }
+        
+        #open-stores label {
+            display: inline-block;
+            /* padding: .5em; */
+            margin-top: .5em;
+            vertical-align: baseline;
+            width: auto;
+            cursor: pointer;
+        }
+        
+        #open-stores label+label {
+            margin-left: .5em;
+        }
+        
+        #california-radio:checked~#open-stores [for="california-radio"],
+        #colorado-radio:checked~#open-stores [for="colorado-radio"],
+        #florida-radio:checked~#open-stores [for="florida-radio"],
+        #indiana-radio:checked~#open-stores [for="indiana-radio"],
+        #kansas-radio:checked~#open-stores [for="kansas-radio"],
+        #minnesota-radio:checked~#open-stores [for="minnesota-radio"],
+        #missouri-radio:checked~#open-stores [for="missouri-radio"],
+        #north-carolina-radio:checked~#open-stores [for="north-carolina-radio"],
+        #ohio-radio:checked~#open-stores [for="ohio-radio"],
+        #rhode-island-radio:checked~#open-stores [for="rhode-island-radio"],
+        #south-carolina-radio:checked~#open-stores [for="south-carolina-radio"],
+        #virginia-radio:checked~#open-stores [for="virginia-radio"] {
             font-weight: bold;
+            text-decoration: underline;
+            color: #1372af;
         }
         
         #open-stores table {
-            margin: .5em auto 0;
+            margin: 30px auto 0;
             border-collapse: collapse;
             border-top: 1px solid gray;
+            display: none;
+        }
+        
+        #california-radio:checked~#open-stores #california-stores,
+        #colorado-radio:checked~#open-stores #colorado-stores,
+        #florida-radio:checked~#open-stores #florida-stores,
+        #indiana-radio:checked~#open-stores #indiana-stores,
+        #kansas-radio:checked~#open-stores #kansas-stores,
+        #minnesota-radio:checked~#open-stores #minnesota-stores,
+        #missouri-radio:checked~#open-stores #missouri-stores,
+        #north-carolina-radio:checked~#open-stores #north-carolina-stores,
+        #ohio-radio:checked~#open-stores #ohio-stores,
+        #rhode-island-radio:checked~#open-stores #rhode-island-stores,
+        #south-carolina-radio:checked~#open-stores #south-carolina-stores,
+        #virginia-radio:checked~#open-stores #virginia-stores {
+            display: table;
         }
         
         #open-stores tr {
@@ -269,6 +357,14 @@
             text-align: center;
         }
         
+        body.calendly .multiple-stores {
+            display: none;
+        }
+        
+        body:not(.calendly) .single-store {
+            display: none;
+        }
+        
         @media only screen and (min-width: 500px) {
             #hero {
                 background-image: url(https://embed.widencdn.net/img/lazboy/3cccecevvs/980px@2x/hero.jpg?q=50);
@@ -280,9 +376,11 @@
                 margin-top: 30px;
             }
             #announcement p,
-            #announcement .link-modules a,
-            #open-stores h2 {
+            #announcement .link-modules a {
                 font-size: 1.25em;
+            }
+            #open-stores h2 {
+                font-size: 2em;
             }
         }
         
@@ -313,6 +411,9 @@
             #open-stores h2 {
                 margin-top: 70px;
             }
+            #open-stores table {
+                margin-top: 50px;
+            }
             #open-stores tr {
                 display: table-row;
             }
@@ -340,17 +441,17 @@
         <section id="announcement">
             <div class="two-col gutter-30">
                 <div>
-                    <p>A local <span class="no-wrap">La-Z-Boy</span> store has reopened near you. Our top priority is to make your shopping experience safe, which is why we are following the CDC’s regulations for regular cleaning, and limiting the number
-                        of people admitted into the store at a&nbsp;time.</p>
+                    <p><span class="multiple-stores">A local <span class="no-wrap">La-Z-Boy</span> store has reopened near you.</span><span class="single-store">Your <span class="no-wrap">La-Z-Boy</span> store has reopened.</span> Our top priority is to
+                        make your shopping experience safe, which is why we are following the CDC’s regulations for regular cleaning, and limiting the number of people admitted into the store at a&nbsp;time.</p>
                 </div>
                 <div>
-                    <p class="my-callout">We are also offering private shopping appointments one hour before the store opens, allowing you to explore our products in added&nbsp;comfort.</p>
+                    <p class="my-callout">We are <span class="multiple-stores">also </span>offering private shopping appointments<span class="multiple-stores"> one hour before the store opens</span>, allowing you to explore our products in added&nbsp;comfort.</p>
                 </div>
             </div>
             <p>In addition, all of our delivery teams and warehouse technicians are wearing masks to ensure safety, and we are able to make garage or porch drop-offs for added peace of&nbsp;mind.</p>
             <p>When your order is ready, we will call to schedule a delivery time and discuss any delivery details for added safety and&nbsp;comfort.</p>
             <div class="link-modules">
-                <div>
+                <div class="multiple-stores">
                     <div class="image"><img src="https://embed.widencdn.net/img/lazboy/clsxrzlmmf/exact/in-store.png" alt="In-store badge"></div>
                     <p>Shop in store at one of our local <span class="no-wrap">La-Z-Boy</span> stores.</p>
                     <a href="#store-links" class="arrow-right to-store-links">Find a Store Near You</a>
@@ -367,10 +468,172 @@
                 </div>
             </div>
         </section>
+        <input type="radio" name="state" id="california-radio">
+        <input type="radio" name="state" id="colorado-radio">
+        <input type="radio" name="state" id="florida-radio">
+        <input type="radio" name="state" id="indiana-radio">
+        <input type="radio" name="state" id="kansas-radio">
+        <input type="radio" name="state" id="minnesota-radio">
+        <input type="radio" name="state" id="missouri-radio">
+        <input type="radio" name="state" id="north-carolina-radio">
+        <input type="radio" name="state" id="ohio-radio">
+        <input type="radio" name="state" id="rhode-island-radio">
+        <input type="radio" name="state" id="south-carolina-radio">
+        <input type="radio" name="state" id="virginia-radio">
         <section id="open-stores" style="display: none;">
             <span class="anchor" id="store-links"></span>
-            <h2>Virginia</h2>
-            <table>
+            <h2>Choose your&nbsp;location</h2>
+            <p>Select your state to see local&nbsp;stores.</p>
+            <hr>
+            <label for="california-radio">California</label>
+            <label for="colorado-radio">Colorado</label>
+            <label for="florida-radio">Florida</label>
+            <label for="indiana-radio">Indiana</label>
+            <label for="kansas-radio">Kansas</label>
+            <label for="minnesota-radio">Minnesota</label>
+            <label for="missouri-radio">Missouri</label>
+            <label for="north-carolina-radio">North Carolina</label>
+            <label for="ohio-radio">Ohio</label>
+            <label for="rhode-island-radio">Rhode Island</label>
+            <label for="south-carolina-radio">South Carolina</label>
+            <label for="virginia-radio">Virginia</label>
+            <table id="california-stores">
+                <tr>
+                    <td>San Diego</td>
+                    <td>1640 Camino De La Reina</td>
+                    <td>(619) 209-3690</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore138">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="colorado-stores">
+                <tr>
+                    <td>Fort Collins</td>
+                    <td>4621 S Timberline Rd</td>
+                    <td>(970) 226-3131</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore296">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="florida-stores">
+                <tr>
+                    <td>Jensen Beach</td>
+                    <td>4360 N Federal Hwy</td>
+                    <td>(772) 692-9988</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore082">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="indiana-stores">
+                <tr>
+                    <td>Mishawaka</td>
+                    <td>5209 N Main St</td>
+                    <td>(574) 243-1766</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr243">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="kansas-stores">
+                <tr>
+                    <td>Overland Park</td>
+                    <td>7540 W 135th St</td>
+                    <td>(913) 814-7490</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore026">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="minnesota-stores">
+                <tr>
+                    <td>Edina</td>
+                    <td>7595 France Ave S</td>
+                    <td>(952) 835-1722</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore233">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Woodbury</td>
+                    <td>325 Radio Dr</td>
+                    <td>(651) 731-6485</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr265">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="missouri-stores">
+                <tr>
+                    <td>O'Fallon</td>
+                    <td>1690 Highway K</td>
+                    <td>(636) 379-3945</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr063">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="north-carolina-stores">
+                <tr>
+                    <td>Cary</td>
+                    <td>2530 Walnut St</td>
+                    <td>(919) 859-3707</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/la-z-boycarystore">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Wilmington</td>
+                    <td>4116 Oleander Dr</td>
+                    <td>(910) 796-0089</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr271">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="ohio-stores">
+                <tr>
+                    <td>Beachwood</td>
+                    <td>4087 Richmond Rd</td>
+                    <td>(216) 464-1500</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr275">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Beavercreek</td>
+                    <td>2476 Commons Blvd</td>
+                    <td>(937) 431-9093</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore167">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Canton</td>
+                    <td>5828 Dressler Rd NW</td>
+                    <td>(330) 494-8085</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr289">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Cincinnati</td>
+                    <td>9891 Colerain Ave</td>
+                    <td>(513) 923-4455</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr168">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Columbus</td>
+                    <td>4228 Easton Gateway</td>
+                    <td>(614) 337-1249</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore236">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Dublin</td>
+                    <td>5915 Britton Pkwy</td>
+                    <td>(614) 766-7760</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr313">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Strongsville</td>
+                    <td>16720 Royalton Rd</td>
+                    <td>(440) 238-3008</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr281">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="rhode-island-stores">
+                <tr>
+                    <td>Warwick</td>
+                    <td>1755 Baldhill Rd</td>
+                    <td>(401) 823-0390</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore083">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="south-carolina-stores">
+                <tr>
+                    <td>Myrtle Beach</td>
+                    <td>565 Market Ct</td>
+                    <td>(843) 839-5410</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr270">Set private appointment</a></td>
+                </tr>
+            </table>
+            <table id="virginia-stores">
                 <tr>
                     <td>Alexandria</td>
                     <td>6003 Kingstown Village Pkwy</td>
@@ -382,6 +645,18 @@
                     <td>10900 Fairfax Blvd</td>
                     <td>(703) 273-6133</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore004">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Fredericksburg</td>
+                    <td>3104 Plank Rd</td>
+                    <td>(540) 785-0747</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr231">Set private appointment</a></td>
+                </tr>
+                <tr>
+                    <td>Newport News</td>
+                    <td>11967 Jefferson Ave</td>
+                    <td>(757) 249-2500</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore017">Set private appointment</a></td>
                 </tr>
                 <tr>
                     <td>Richmond</td>
@@ -413,26 +688,35 @@
                 setTimeout(jqCheck, 10);
                 return;
             } else {
-                $('.to-store-links').click(function() {
-                    $('#open-stores').show();
-                    $([document.documentElement, document.body]).animate({
-                        scrollTop: $("#store-links").offset().top
-                    }, 1000);
-                    return false;
-                });
-                $('#open-stores a').click(function() {
-                    var calendlyUrl = $(this).attr('href');
-                    console.log('calendlyUrl');
+                function loadCalendly(thisUrl) {
                     $.getScript('https://assets.calendly.com/assets/external/widget.js')
                         .done(function() {
                             Calendly.initPopupWidget({
-                                url: calendlyUrl
+                                url: thisUrl
+                            });
+                            gtag('event', 'conversion', {
+                                'allow_custom_scripts': true,
+                                'send_to': 'DC-1461522/fy17l0/sched0+standard'
                             });
                         })
                         .fail(function() {
-                            window.location.href = calendlyUrl;
-                            console.log('getScript failed');
+                            window.location.href = thisUrl;
                         });
+                }
+                $('.to-store-links').click(function() {
+                    if ($('body').hasClass('calendly')) {
+                        loadCalendly(calendlyUrl);
+                        return false;
+                    } else {
+                        $('#open-stores').show();
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: $("#store-links").offset().top
+                        }, 1000);
+                    }
+                    return false;
+                });
+                $('#open-stores a').click(function() {
+                    loadCalendly($(this).attr('href'));
                     return false;
                 });
             }
