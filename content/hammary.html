@@ -1,0 +1,331 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Hammary TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/dro8vvu.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        
+        #npc-content .right,
+        #npc-content .left {
+            float: none !important;
+        }
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /***************** Custom CSS ******************/
+        
+        #header {
+            border-bottom: 1px solid #c1c1c1;
+        }
+        
+        #header .logo {
+            width: 190px;
+            margin: 30px auto;
+        }
+        
+        section#hero {
+            height: 430px;
+            background-image: url(/Images/hammary/hero.png);
+            background-size: cover;
+            background-position: center bottom;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #hero .copy {
+            background-color: rgba(255, 255, 255, .9);
+            text-align: center;
+            width: 290px;
+            padding: 25px 20px;
+        }
+        
+        #hero h1 {
+            font-family: playfair-display, serif;
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+        
+        #hero p {
+            font-size: .8em;
+            margin-top: .5em;
+            line-height: 1.5;
+        }
+        
+        #features .two-col>div {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        #features h2 {
+            font-family: playfair-display, serif;
+            text-transform: uppercase;
+            font-size: 1.4em;
+            line-height: 1.2;
+        }
+        
+        #features p {
+            font-size: .8em;
+            line-height: 1.7;
+        }
+        
+        #features .ciic>div {
+            margin-top: 20px;
+            margin-bottom: -10px;
+        }
+        
+        #features .ciic>div>div {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        #features .extra-img-row .image {
+            display: none;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #header .logo {
+                margin-bottom: 20px;
+            }
+            section#hero {
+                margin-top: 20px;
+            }
+            #features .two-col {
+                display: flex;
+            }
+            #features .two-col>div {
+                width: 50%;
+            }
+            #features .ciic {
+                align-items: stretch;
+            }
+            #features .ciic>div {
+                display: flex;
+                flex-direction: column;
+            }
+            #features .ciic>div:nth-child(even) {
+                flex-direction: column-reverse;
+            }
+            #features .gutter-20 {
+                margin-left: -10px;
+                margin-right: -10px;
+            }
+            #features .gutter-20>div {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        
+        @media only screen and (min-width: 600px) {
+            #hero .copy {
+                width: 550px;
+                padding: 35px;
+            }
+            #hero h1 {
+                font-size: 2em;
+            }
+            #hero p {
+                margin-top: 0;
+                line-height: 1;
+            }
+            #features .ciic>div {
+                margin-top: 40px;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            #features h2 {
+                margin-top: 25px;
+            }
+            #features .extra-img-row {
+                display: flex;
+                justify-content: space-between;
+            }
+            #features .extra-img-row .copy {
+                text-align: left;
+                max-width: 250px;
+            }
+            #features .extra-img-row .image {
+                display: block;
+                flex: 0 0 145px;
+                margin-left: 20px;
+            }
+        }
+    </style>
+
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">Hammary</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Hammary</li>
+        </ul>
+    </nav>
+
+    <div id="npc-content">
+        <section id="header" class="full-width">
+            <img class="logo" src="/Images/hammary/logo.png" alt="">
+        </section>
+        <section id="hero" class="full-width" role="img" aria-label="">
+            <div class="copy">
+                <h1>Global inspiration</h1>
+                <p>At Hammary, form doesn’t just follow function, it <span class="no-wrap">is function.</span></p>
+            </div>
+        </section>
+        <section id="features">
+            <div class="two-col gutter-20 ciic">
+                <div>
+                    <div class="image"><img src="/Images/hammary/feature01.png" alt=""></div>
+                    <div class="extra-img-row">
+                        <div class="copy">
+                            <h2>Quality craftsmanship</h2>
+                            <p>Whether you prefer traditional, casual, contemporary or eclectic, Hammary delivers unparalleled beauty, function <span class="no-wrap">and value.</span></p>
+                        </div>
+                        <div class="image"><img src="/Images/hammary/extra-img.png" alt=""></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/hammary/feature02.png" alt=""></div>
+                    <div class="copy">
+                        <h2>Superior styling</h2>
+                        <p>Exquisite designs, made with <span class="no-wrap">exceptional materials.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>

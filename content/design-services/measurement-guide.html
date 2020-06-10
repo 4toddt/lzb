@@ -1,0 +1,403 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Measurement Guide TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        /*********** Mobile Resets *************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /************* NPC Defaults ************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1030px;
+            padding: 0 25px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /***************** Custom CSS ******************/
+        
+        #hero {
+            position: relative;
+            background-image: url(https://embed.widencdn.net/img/lazboy/qsyoxewgmd/500px@2x/hero-sm.jpg?q=50);
+            background-size: cover;
+            height: 440px;
+            background-position: center;
+        }
+        
+        #hero h1 {
+            position: absolute;
+            top: 85px;
+            left: 45px;
+            font-size: 1.8em;
+            line-height: 1.2;
+            font-weight: bold;
+            color: white;
+            max-width: 75%;
+        }
+        
+        section#steps {
+            margin-top: 40px;
+        }
+        
+        #steps h1 {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1.3;
+            text-align: center;
+        }
+        
+        #steps h1+.subtitle {
+            font-size: .9em;
+            line-height: 1.5;
+            margin-top: .5em;
+            text-align: center;
+        }
+        
+        #steps .step {
+            margin-top: 40px;
+        }
+        
+        #steps .step+.step {
+            padding-top: 35px;
+            border-top: 1px dotted #979797;
+            margin-top: 40px;
+        }
+        
+        #steps .step-number {
+            font-size: .8em;
+            line-height: 1.2;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #AECDC8;
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        
+        #steps h2 {
+            text-transform: uppercase;
+            font-size: 1.2em;
+            line-height: 1.2;
+            text-align: center;
+            max-width: 860px;
+            margin: .5em auto;
+        }
+        
+        #steps .image-copy {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -10px;
+        }
+        
+        #steps .image-copy>div {
+            margin-top: 25px;
+            padding: 0 10px;
+        }
+        
+        #steps .image-copy .image {
+            flex: 0 1 400px;
+        }
+        
+        #steps .image-copy .copy {
+            flex: 0 1 500px;
+        }
+        
+        #steps ul {
+            margin-left: 1.7em;
+            font-size: .8em;
+            line-height: 1.75;
+            font-weight: 300;
+        }
+        
+        #steps li.strong {
+            font-weight: normal;
+            font-style: italic;
+        }
+        
+        .green-background {
+            background-color: #AECDC8;
+        }
+        
+        section#download-button {
+            padding: 65px 35px;
+            margin-top: 75px;
+            text-align: center;
+        }
+        
+        #download-button a {
+            display: inline-block;
+            text-align: center;
+            background-color: white;
+            font-size: 1.05em;
+            line-height: 1.2;
+            font-weight: bold;
+            border-radius: 4px;
+            padding: .75em 1.5em;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            .below-500 {
+                display: none;
+            }
+            #hero {
+                background-image: url(https://embed.widencdn.net/img/lazboy/debcggyiyl/980px@2x/hero.jpg?q=50);
+                height: 545px;
+                background-position: left;
+            }
+            #hero h1 {
+                font-size: 2.2em;
+                max-width: none;
+            }
+            section#steps {
+                margin-top: 40px;
+            }
+            #steps h1 {
+                font-size: 1.8em;
+            }
+            #steps h1+.subtitle {
+                font-size: 1em;
+            }
+            #steps .image-copy>div {
+                margin-top: 0;
+            }
+            #steps .step {
+                margin-top: 60px;
+            }
+            #steps .step+.step {
+                padding-top: 65px;
+                margin-top: 70px;
+            }
+            #steps .step-number {
+                font-size: .9em;
+                text-align: left;
+            }
+            #steps h2 {
+                font-size: 1.5em;
+                text-align: left;
+            }
+            #steps .image-copy {
+                flex-wrap: nowrap;
+                flex-direction: row-reverse;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #hero h1 {
+                font-size: 2.3em;
+            }
+            #steps h1 {
+                font-size: 2.4em;
+            }
+            #steps h1+.subtitle {
+                font-size: 1.2em;
+            }
+            #steps .image-copy {
+                margin: 0 -20px;
+            }
+            #steps .image-copy>div {
+                padding: 0 20px;
+            }
+            #steps ul {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><a href="/mobile/design-services" class="crumb" itemprop="url">Design Services</a></li>
+            <li><span class="crumb active">Measurement Guide</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/design-services">Design Services</a></li>
+            <li>Measurement Guide</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <h1>Measurement Guide</h1>
+        </section>
+        <section id="steps">
+            <h1>Help us help you by <span class="no-wrap">measuring your space.</span></h1>
+            <p class="subtitle">It will help us to tailor <span class="no-wrap">fit your new room.</span></p>
+            <div class="step">
+                <p class="step-number">step 1</p>
+                <h2>Sketch outline <span class="no-wrap">of room</span></h2>
+                <div class="image-copy">
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/34flm0xqw6/360px/step01.jpg?q=85 1x, https://embed.widencdn.net/img/lazboy/34flm0xqw6/360px@2x/step01.jpg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/34flm0xqw6/360px/step01.jpg?q=85"
+                            alt="Scetch of room"></div>
+                    <div class="copy">
+                        <ul>
+                            <li>Sketch the outline of your room as if looking down from a birds eye view, as shown.</li>
+                            <li>Include any windows, doors (display which way the doors open)</li>
+                            <li>Show if there is a TV point in the room where it is located with (TV) on your sketch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <p class="step-number">step 2</p>
+                <h2>Measure room</h2>
+                <div class="image-copy">
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/67fqs6at4q/360px/step01.jpg?q=85 1x, https://embed.widencdn.net/img/lazboy/67fqs6at4q/360px@2x/step01.jpg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/67fqs6at4q/360px/step01.jpg?q=85"
+                            alt="Scetch of room measurements"></div>
+                    <div class="copy">
+                        <ul>
+                            <li>Measure overall length of each internal wall</li>
+                            <li>Show each measurement of all windows, doors, main fixtures, i.e. fireplace as shown</li>
+                            <li>Show all measurements in feet and/or inches</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <p class="step-number">step 3</p>
+                <h2>Take photos <span class="no-wrap">of room</span></h2>
+                <div class="image-copy">
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/jitc6rg1tr/360px/step01.jpg?q=85 1x, https://embed.widencdn.net/img/lazboy/jitc6rg1tr/360px@2x/step01.jpg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/jitc6rg1tr/360px/step01.jpg?q=85"
+                            alt="Scetch of where to take pictures"></div>
+                    <div class="copy">
+                        <ul>
+                            <li>Capture photos of room from the various angles as shown. This will allow us to get a good sense of your space</li>
+                            <li class="strong">NOTE: Take photos of any furniture pieces that you would like to keep in the room.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <p class="step-number">step 4</p>
+                <h2>Measure remaining furniture</h2>
+                <div class="image-copy">
+                    <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/vttgrh7dvo/360px/step01.jpg?q=85 1x, https://embed.widencdn.net/img/lazboy/vttgrh7dvo/360px@2x/step01.jpg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/vttgrh7dvo/360px/step01.jpg?q=85"
+                            alt="Scetch of furniture measurements"></div>
+                    <div class="copy">
+                        <ul>
+                            <li>Measure any furniture pieces you would like to keep in the room</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="green-background">
+            <section id="download-button">
+                <a href="/productassets/grid.pdf" target="_blank" download>Download your free<br class="below-500">
+                    measurement grid</a>
+            </section>
+        </div>
+    </div>
+    <!-- end NPC content -->
+</body>

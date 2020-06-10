@@ -115,6 +115,7 @@ section.cust-support img {
     display: block;
     /* fix IE bug where images in flex containers don't keep their aspect ratio */
     min-height: 1px;
+    width: 100%;
 }
 
 section.cust-support [onclick],
@@ -998,6 +999,7 @@ section.cust-support .four-column .block {
 section.cust-support .products img,
 section.cust-support .products a {
     margin: auto;
+    width: 100%;
 }
 
 section.cust-support .products p+a {
@@ -1022,8 +1024,6 @@ section.cust-support .products a {
 
 
 /******************** Icon Grid ***********************/
-
-section.cust-support .icons img {}
 
 section.cust-support .icons img,
 section.cust-support .icons .block>a:first-child {

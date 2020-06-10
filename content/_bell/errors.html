@@ -43,6 +43,18 @@
             line-height: 1.5;
         }
         
+        #bcc-content .hero .copy p>a {
+            color: #006fb1;
+        }
+        
+        #bcc-content .hero .copy p>a:hover {
+            text-decoration: underline;
+        }
+        
+        #bcc-content .hero .copy p>a::after {
+            content: none;
+        }
+        
         #favorites {
             display: flex;
             flex-wrap: wrap;
@@ -144,7 +156,7 @@
         <section class="hero">
             <div class="copy">
                 <h1>Relax.<br>We can fix&nbsp;this.</h1>
-                <p>While our tech team looks into it, please use the search box below to find what you&rsquo;re looking&nbsp;for.</p>
+                <p>While our tech team looks into it, please use the search box below or visit our <a href="/site-map">site&nbsp;map</a>.</p>
                 <form class="hidden-desktop" action="/mobile/ms">
                     <label for="search-mobile" style="display:none">keyword search</label>
                     <input id="search-mobile" name="Ntt" placeholder="Enter your search terms..." value="" autocorrect="off" autocomplete="off" type="text" data-typeahead="" aria-label="What are you looking for? Search by SKU, item # or keyword">

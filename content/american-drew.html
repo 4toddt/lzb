@@ -1,0 +1,325 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- American Drew TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        
+        #npc-content .right,
+        #npc-content .left {
+            float: none !important;
+        }
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /***************** Custom CSS ******************/
+        
+        #header {
+            border-bottom: 1px solid #c1c1c1;
+        }
+        
+        #header .logo {
+            width: 330px;
+            max-width: 80%;
+            margin: 30px auto;
+        }
+        
+        section#hero {
+            position: relative;
+        }
+        
+        #hero [role="img"] {
+            height: 350px;
+            background-image: url(/Images/american-drew/hero.png);
+            background-size: cover;
+            background-position: center 70%;
+            margin-top: 180px;
+        }
+        
+        #hero h1 {
+            font-size: 2em;
+            line-height: 1.25;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 40px 0;
+            width: 220px;
+            border: 1px solid #979797;
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        #hero .copy {
+            font-size: .9em;
+            line-height: 1.8;
+            padding: 25px;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+        
+        #features .two-col>div {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        #features h2 {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        #features p {
+            margin: .5em auto 0;
+            font-size: .8em;
+            line-height: 1.1;
+            max-width: 440px;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #header .logo {
+                margin-left: 10px;
+            }
+            #hero [role="img"] {
+                height: 450px;
+                background-position: center 75%;
+            }
+            #features .two-col {
+                display: flex;
+            }
+            #features .two-col>div {
+                width: 50%;
+            }
+            #features .gutter-20-30 {
+                margin: 0 -10px;
+            }
+            #features .gutter-20-30>div {
+                padding: 0 10px;
+            }
+        }
+        
+        @media only screen and (min-width: 600px) {
+            section#hero {
+                display: flex;
+                margin-top: 20px;
+            }
+            #hero h1 {
+                position: static;
+                transform: none;
+                margin: -40px auto 0;
+            }
+            #hero [role="img"] {
+                height: auto;
+                flex: 0 2 600px;
+                margin-top: 0;
+            }
+            #hero .copy {
+                flex: 0 1 380px;
+                position: relative;
+                margin-top: 70px;
+                padding-top: 0;
+            }
+            #hero .copy p {
+                margin-top: 30px;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            #hero [role="img"] {
+                background-position: center 58%;
+            }
+            #hero .copy {
+                margin-top: 160px;
+                padding: 0 39px 60px;
+            }
+            #hero h1 {
+                padding: 55px 0;
+                width: 220px;
+            }
+            #features .gutter-20-30 {
+                margin: 0 -15px;
+            }
+            #features .gutter-20-30>div {
+                padding: 0 15px;
+            }
+            #features .two-col>div {
+                margin-top: 50px;
+            }
+        }
+    </style>
+
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">American Drew</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>American Drew</li>
+        </ul>
+    </nav>
+
+    <div id="npc-content">
+        <section id="header" class="full-width">
+            <img class="logo" src="/Images/american-drew/logo.png" alt="">
+        </section>
+        <section id="hero" class="full-width">
+            <div role="img" aria-label="Sabine Console Table in entry way with painting and accessories"></div>
+            <div class="copy">
+                <h1>Endless beauty</h1>
+                <p>Part of the La-Z-Boy family of brands, American Drew offers a wide assortment of living room, dining room, bedroom and home office furniture, bringing comfort and quality throughout your <span class="no-wrap">entire home.</span></p>
+            </div>
+        </section>
+        <section id="features">
+            <div class="two-col gutter-20-30">
+                <div>
+                    <div class="image"><img src="/Images/american-drew/feature01.png" alt=""></div>
+                    <div class="copy">
+                        <h2>Inspired design</h2>
+                        <p>American Drew furniture transforms any room into a daily retreat, with collections that span the <span class="no-wrap">design spectrum.</span></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/american-drew/feature02.png" alt=""></div>
+                    <div class="copy">
+                        <h2>Quality</h2>
+                        <p>Founded in 1927, American Drew furniture is proudly made in North Carolina, and available <span class="no-wrap">through La-Z-Boy.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>

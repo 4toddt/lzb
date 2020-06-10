@@ -60,6 +60,10 @@ main {
     display: none;
 }
 
+.two-column-first [role="region"] section {
+    display: block;
+}
+
 
 /****** BCC content resets ******/
 

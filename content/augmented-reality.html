@@ -4,19 +4,13 @@
 </head>
 
 <body>
-    <!-- Augmented Reality TT -->
     <!-- begin BCC content -->
-
-    <!-- <script>
-        var link = document.createElement('meta');
-        link.setAttribute('name', 'description');
-        link.content = "";
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script> -->
+    <!-- Augmented Reality TT -->
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="/css/_resets.css" rel="stylesheet" type="text/css">
     <link href="/css/_defaults.css" rel="stylesheet" type="text/css">
+    <link href="/css/flickity.css" rel="stylesheet" type="text/css">
 
     <style>
         #bcc-content {
@@ -60,10 +54,25 @@
             text-align: center;
         }
         
+        #bcc-content #try-it {
+            text-align: center;
+        }
+        
         #bcc-content #try-it .image {
-            max-width: 220px;
-            width: 68%;
-            margin: 1em auto 0;
+            margin: 1em .5em 0;
+            display: inline-block;
+        }
+        
+        body:not(.iphone) .iphone,
+        body:not(.android-phone) .android-phone,
+        body.iphone .not-phone,
+        body.android-phone .not-phone {
+            display: none !important;
+        }
+        
+        #bcc-content #try-it .image img {
+            height: 64px;
+            width: auto;
         }
         
         #bcc-content #try-it .image+p {
@@ -77,18 +86,18 @@
             background-color: #0070af;
         }
         
-        #bcc-content .steps {
+        #bcc-content .steps .flickity-slider {
             margin-top: 20px;
-            padding: 0 3%;
-            display: flex;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
         }
         
-        #bcc-content .steps>div {
-            flex: 65% 0 0;
-            padding: 0 7%;
+        #bcc-content .steps .flickity-slider>div {
+            width: 58%;
+            padding-left: 10%;
+        }
+        
+        #bcc-content .steps .flickity-slider>div+div {
+            width: 62%;
+            padding-left: 14%;
         }
         
         #bcc-content .steps h3 {
@@ -125,7 +134,7 @@
             top: calc(50% - 10px);
             height: 20px;
             width: 20px;
-            background-image: url(/Images/npc/augmented-reality/link-arrow.svg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/augmented-reality/link-arrow.svg);
             background-size: contain;
             background-position: right center;
             background-repeat: no-repeat;
@@ -169,7 +178,7 @@
         }
         
         #bcc-content #faq label::after {
-            background-image: url(/Images/npc/augmented-reality/open.svg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/augmented-reality/open.svg);
         }
         
         #bcc-content #faq p {
@@ -179,7 +188,7 @@
         }
         
         #bcc-content #faq :checked~label::after {
-            background-image: url(/Images/npc/augmented-reality/close.svg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/augmented-reality/close.svg);
         }
         
         #bcc-content #faq :checked~p {
@@ -187,12 +196,13 @@
         }
         
         @media only screen and (min-width: 500.1px) {
-            #bcc-content .steps {
-                padding: 0 10px;
+            #bcc-content .steps .flickity-slider>div {
+                width: 185px;
+                padding-left: 35px;
             }
-            #bcc-content .steps>div {
-                flex: 190px 0 0;
-                padding: 0 20px;
+            #bcc-content .steps .flickity-slider>div+div {
+                width: 190px;
+                padding-left: 40px;
             }
         }
     </style>
@@ -201,42 +211,67 @@
         <section class="full-width">
             <div class="image">
                 <picture>
-                    <source media="(max-width: 500px)" srcset="/Images/npc/augmented-reality/hero-mobile.png">
-                    <img src="/Images/npc/augmented-reality/hero.png" alt="">
+                    <source media="(max-width: 500px)" srcset="https://content.la-z-boy.com/Images/npc/augmented-reality/hero-mobile.png">
+                    <img src="https://content.la-z-boy.com/Images/npc/augmented-reality/hero.png" alt="">
                 </picture>
             </div>
         </section>
         <section id="try-it">
             <h2>Try it now!</h2>
-            <p class="subtitle">Download <span style="white-space: nowrap">La-Z-Boy</span> AR from the<br>iTunes App Store.</p>
-            <div class="image"><a href="https://ar.la-z-boy.com/visualize/products"><img src="/Images/npc/augmented-reality/download.svg" alt=""></a></div>
-            <p style="max-width:42em;">Ready to see how <span style="white-space: nowrap">La-Z-Boy</span> furniture will look in your home? Thanks to augmented reality (AR), you can now get an instant sneak preview right on your&nbsp;iPhone.</p>
+            <p class="subtitle not-phone">Download <span style="white-space: nowrap">La-Z-Boy</span> AR from the<br>iTunes App Store or Google Play.</p>
+            <div class="image not-phone">
+                <a href="https://apps.apple.com/us/app/la-z-boy-ar/id1468901467">
+                    <img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt="Download on the App Store">
+                </a>
+            </div>
+            <div class="image not-phone">
+                <a href="http://play.google.com/store/apps/details?id=com.la_z_boy.retail">
+                    <img alt='Get it on Google Play' src='https://content.la-z-boy.com/Images/npc/augmented-reality/en_badge_web_generic.png'>
+                </a>
+            </div>
+            <div class="image iphone">
+                <a href="https://ar.la-z-boy.com/visualize/products">
+                    <img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt="Download on the App Store">
+                </a>
+            </div>
+            <div class="image android-phone">
+                <a href="https://ar.la-z-boy.com/visualize/products">
+                    <img alt='Get it on Google Play' src='https://content.la-z-boy.com/Images/npc/augmented-reality/en_badge_web_generic.png'>
+                </a>
+            </div>
+            <p style="max-width:42em;">Ready to see how <span style="white-space: nowrap">La-Z-Boy</span> furniture will look in your home? Thanks to augmented reality (AR), you can now get an instant sneak preview right on your phone.</p>
         </section>
         <section id="how-it-works" class="full-width">
             <h2>How it Works</h2>
-            <div class="steps">
+            <div class="steps" data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": false,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
                 <div>
-                    <div class="image"><img src="/Images/npc/augmented-reality/step-01.png" alt=""></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/step-01.png" alt=""></div>
                     <h3>Step 1</h3>
                     <p>Go to the product page of the furniture you&rsquo;d like to see in your&nbsp;room.</p>
                 </div>
                 <div>
-                    <div class="image"><img src="/Images/npc/augmented-reality/step-02.png" alt=""></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/step-02.png" alt=""></div>
                     <h3>Step 2</h3>
                     <p>Customize the piece with your choice of fabric, leather or welt&nbsp;trim.</p>
                 </div>
                 <div>
-                    <div class="image"><img src="/Images/npc/augmented-reality/step-03.png" alt=""></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/step-03.png" alt=""></div>
                     <h3>Step 3</h3>
                     <p>Tap &ldquo;View Virtually in Your Space&rdquo; to see the product appear in your&nbsp;home.</p>
                 </div>
                 <div>
-                    <div class="image"><img src="/Images/npc/augmented-reality/step-04.png" alt=""></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/step-04.png" alt=""></div>
                     <h3>Step 4</h3>
                     <p>Follow the on-screen instructions to begin your AR experience.</p>
                 </div>
                 <div>
-                    <div class="image"><img src="/Images/npc/augmented-reality/step-05.png" alt=""></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/step-05.png" alt=""></div>
                     <h3>Step 5</h3>
                     <p>Snap a photo to share with friends or go back to the product page to purchase online.</p>
                 </div>
@@ -244,12 +279,12 @@
         </section>
         <section id="shop-by-category">
             <h2>Shop by Category</h2>
-            <a href="/b/_/N-1bzxwkq">View Chairs in AR</a>
-            <a href="/b/_/N-afgfhj">View Recliners in AR</a>
-            <a href="/b/_/N-1xjgdgn">View Sofas in AR</a>
-            <a href="/b/_/N-12xfkyy">View Loveseats in AR</a>
+            <a href="/b/_/N-1sf837x">View Chairs in AR</a>
+            <a href="/b/_/N-1oioftz">View Recliners in AR</a>
+            <a href="/b/_/N-xnx48b">View Sofas in AR</a>
+            <a href="/b/_/N-4ugfz2">View Loveseats in AR</a>
             <!-- <a href="">View Sectionals in AR</a> -->
-            <a href="/b/_/N-1r6cq9j">View Ottomans in AR</a>
+            <a href="/b/_/N-191b98">View Ottomans in AR</a>
         </section>
         <section id="faq">
             <h2>Frequently Asked Questions</h2>
@@ -295,9 +330,22 @@
             </div>
         </section>
     </div>
-
     <script>
+        var device = navigator.userAgent;
+        if (device.match(/iPhone|iPod/i)) {
+            document.body.classList.add("iphone");
+        } else if (device.match(/Android/i) && !device.match(/Tablet/i)) {
+            document.body.classList.add("android-phone");
+            // } else {
+            //     document.body.classList.add("not-phone");
+        }
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/flickity.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/flickity.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
     </script>
-
     <!-- end BCC content -->
 </body>

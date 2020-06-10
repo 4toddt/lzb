@@ -8,8 +8,7 @@
         dmiStickyNav.className = "primary-nav";
     }
 </script>
-<link rel="stylesheet" href="https://use.typekit.net/goe4ivi.css">
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/pou1zjg.css">
 <style>
     body {
         margin: 0;
@@ -97,6 +96,15 @@
         clear: both;
     }
     
+    .no-wrap {
+        white-space: nowrap;
+    }
+    
+    body.retail .not-retail,
+    body:not(.retail) .retail-only {
+        display: none !important;
+    }
+    
     .arrow-right {
         /* place <span class="arrow-right"></span> around last word to keep arrow with word */
         display: inline-block;
@@ -163,60 +171,119 @@
     }
     
     .bcc-fbt header {
-        width: auto;
+        width: 100%;
+        max-width: 980px;
+        height: 460px;
+        margin: 5px auto 0;
+        background-image: url(https://content.la-z-boy.com/Images/npc/design-services/hero.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
     }
     
-    .bcc-fbt header .container {
-        padding: 0;
-    }
-    
-    .bcc-fbt header img {
-        margin-top: 5px;
-    }
-    
-    @media only screen and (min-width: 768px) {
-        .bcc-fbt header img {
-            margin: 35px 0 2em;
-        }
-    }
-    
-    .bcc-fbt header .text-box {
+    .bcc-fbt header .copy {
+        display: inline-block;
         position: absolute;
-        top: 25%;
-        left: 52.2%;
-        width: 17em;
-        height: 14em;
+        top: 16%;
+        left: 50%;
+        width: 260px;
+        min-width: 60%;
+        text-align: center;
         transform: translate(-50%, -50%);
+        font-size: 20px;
         color: #373838;
-        font-size: 10.72px;
-        font-size: 3.35vw;
+        text-shadow: 0 0 .5em #fff, 0 0 1em #fff, 0 0 1.5em #fff, 0 0 2em #fff, 0 0 2.5em #fff;
     }
     
     .bcc-fbt header h1 {
-        font-family: "house-script", sans-serif;
-        font-size: 2.9em;
-        line-height: 1;
-        font-weight: normal;
+        font-size: 1.8em;
+        line-height: 1.1;
         margin: 0;
+        font-weight: 600;
     }
     
-    .bcc-fbt header strong {
+    .bcc-fbt header .strong {
         text-transform: uppercase;
+        font-weight: bold;
     }
     
     .bcc-fbt header p {
-        margin: 0.6em 0;
+        margin: .2em 0 0;
+        line-height: 1.4;
     }
     
-    .bcc-fbt header .lzb-button {
-        display: inline-block;
-        padding: 0.5em 0.55em;
-        line-height: 1.5em;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-color: #6a6a6a;
-        border-style: solid;
-        border-width: 1px;
-        margin: 0.3em 0;
+    @media only screen and (min-width: 768px) {
+        .bcc-fbt header {
+            height: 630px;
+            margin: 35px auto 2em;
+        }
+        .bcc-fbt header h1 {
+            font-size: 2.7em;
+        }
+        .bcc-fbt header p {
+            font-size: 1.175em;
+        }
+    }
+    
+    #choose-interaction {
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 10px;
+        margin: 35px auto;
+        text-align: center;
+    }
+    
+    #choose-interaction>p {
+        font-size: 18px;
+        margin: 0;
+    }
+    
+    @media only screen and (min-width: 768px) {
+        #choose-interaction {
+            margin-bottom: 47px;
+        }
+        #choose-interaction>p {
+            font-size: 21px;
+        }
+    }
+    
+    #link-modules {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -7px;
+        font-size: 23px;
+        font-weight: 300;
+    }
+    
+    #link-modules>div {
+        padding: 0 7px;
+        flex: 0 1 330px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #link-modules img {
+        height: 94px;
+        width: auto;
+        margin: 0 auto;
+    }
+    
+    #link-modules p {
+        line-height: 1.1;
+        margin-bottom: auto;
+    }
+    
+    #link-modules a {
+        display: block;
+        margin-top: 1em;
+        padding: 1em 0;
+        text-decoration: none;
+        background-color: #aeccc8;
+        color: white;
+        font-weight: 600;
     }
     
     .bcc-fbt .boxes {
@@ -496,52 +563,6 @@
             font-size: 23.5px;
         }
     }
-    /* #houzz-award img {
-        position: absolute;
-        width: 85px;
-        height: 85px;
-        margin: 0;
-        bottom: 0;
-        right: 0;
-    }
-    
-    #houzz-award p {
-        position: absolute;
-        bottom: 0;
-        right: 85px;
-        font-size: 16px;
-        padding: .5em;
-        margin: 0;
-        background-color: rgba(255, 255, 255, 0.6);
-        text-align: right;
-        max-width: 19.5em;
-    } 
-    
-    body header.mobile {
-        position: relative;
-    }
-    
-    @media only screen and (max-width:567px) {
-        body #houzz-award {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        body #houzz-award img {
-            position: static;
-            width: 23.4375%;
-            padding-bottom: 23.4375%;
-            height: 0;
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-image: url('https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg');
-        }
-        body #houzz-award p {
-            position: static;
-            font-size: 18px;
-            padding: 0 10px 0 0;
-        }
-    } */
     /*****************************************************/
     /***************** Video Modal ***********************/
     /*****************************************************/
@@ -626,43 +647,38 @@
             </a>
         </div>
     </nav>
-    <header class="mobile">
-        <div class="container">
-            <img src="https://content.la-z-boy.com/Images/npc/design-services/mobile/pano_v3.jpg" alt="Free Design Services">
-            <div class="text-box">
-                <h1>The Design Studio</h1>
-                <p>Get the room of your dreams with
-                    <strong>free</strong> Design Services.</p>
-                <p>From small style updates to complete transformations, our expert designers will guide you through every step.
-                </p>
-                <a class="lzb-button arrow-right design-consultation dsr-redirect" href="javascript:void(0);">Book my
-                    <strong>free</strong> design consultation</a>
-            </div>
-        </div>
-        <!-- <span id="houzz-award">
-            <p>Thank you Houzz community for choosing us as one of the best in the&nbsp;industry!</p>
-            <img src="https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg" alt="Best of houzz 2018 - Design Award">
-        </span> -->
-    </header>
-    <header class="desktop">
-        <div class="container">
-            <img src="https://content.la-z-boy.com/Images/npc/design-services/desktop/pano_v3.jpg" alt="Free Design Services">
-            <div class="text-box">
-                <h1>The Design Studio</h1>
-                <p>Get the room of your dreams with
-                    <strong>free</strong> Design Services.</p>
-                <p>From small style updates to complete transformations, our expert designers will guide you through every step.
-                </p>
-                <a class="lzb-button arrow-right design-consultation dsr-redirect" href="javascript:void(0);">Book my
-                    <strong>free</strong> design consultation</a>
-            </div>
-            <!-- <span id="houzz-award">
-                <p>Thank you Houzz community for choosing
-                    <br>us as one of the best in the&nbsp;industry!</p>
-                <img src="https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg" alt="Best of houzz 2018 - Design Award">
-            </span> -->
+    <header>
+        <div class="copy">
+            <h1>The La-Z-Boy<br>Design Studio</h1>
+            <p>Take advantage of our <span class="no-wrap"><span class="strong">free</span> Design Services</span>
+            </p>
         </div>
     </header>
+    <section id="choose-interaction">
+        <p>Collaborate with one of our Interior Designers to create the room of your dreams. We will guide you every step of the way. Simply choose the method of interaction you are most comfortable&nbsp;with.</p>
+        <div id="link-modules">
+            <div class="multiple-stores">
+                <div class="image"><img src="https://content.la-z-boy.com/Images/npc/design-services/store.png" alt="Local store badge"></div>
+                <p>Visit your local La-Z-Boy to work with one of our <span class="no-wrap">Interior Designers.</span></p>
+                <a href="/storeLocator/storeLocator.jsp" class="arrow-right">Find a Store Near You</a>
+            </div>
+            <div>
+                <div class="image"><img src="https://content.la-z-boy.com/Images/npc/design-services/form.png" alt="Design request form badge"></div>
+                <p>Discuss your design preferences and your project with your <span class="no-wrap">Interior Designer.</span></p>
+                <a href="/content/design-services/design-request-form" class="arrow-right">Book Your Consultation</a>
+            </div>
+            <div class="retail-only">
+                <div class="image"><img src="https://content.la-z-boy.com/Images/npc/design-services/virtual.png" alt="Virtual design badge"></div>
+                <p>Work virtually with an Interior Designer from the comfort of <span class="no-wrap">your home.</span></p>
+                <a href="/content/design-services/free-virtual-design" class="arrow-right">Set Your Appointment</a>
+            </div>
+            <div class="not-retail">
+                <div class="image"><img src="https://content.la-z-boy.com/Images/npc/design-services/inspiration.png" alt="Design inspirations badge"></div>
+                <p>Get inspired by creative home ideas, tips and complete looks for <span class="no-wrap">your space.</span></p>
+                <a href="/content/DesignInspirations" class="arrow-right">Find Inspiration</a>
+            </div>
+        </div>
+    </section>
     <section class="boxes">
         <div class="lzb-triangle-down"></div>
         <div class="container">
@@ -726,8 +742,7 @@
             <div class="box-outer">
                 <img src="https://content.la-z-boy.com/Images/npc/design-services/1_left.png" alt="1">
                 <h2>Consultation</h2>
-                <p>Whether you want a complete room transformation or just need a little advice, our design experts can help. Work with a professional in store, or schedule a free consultation and we’ll come right to you.
-                </p>
+                <p>Whether you want a complete room transformation or just need a little advice, our design experts can help. Work with a professional in store, or schedule a free consultation and we’ll come right to you.</p>
             </div>
             <div class="box-outer">
                 <img src="https://content.la-z-boy.com/Images/npc/design-services/2_left.png" alt="2">

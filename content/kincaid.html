@@ -1,0 +1,335 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Kincaid TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /***************************************/
+        /*********** Mobile Resets *************/
+        /***************************************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        
+        #npc-content .right,
+        #npc-content .left {
+            float: none !important;
+        }
+        /***************************************/
+        /************* NPC Defaults ************/
+        /***************************************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        /********** Responsive Hidden Elements *********/
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /***************** Custom CSS ******************/
+        
+        #header {
+            border-bottom: 1px solid #c1c1c1;
+        }
+        
+        #header .logo {
+            width: 170px;
+            margin: 30px auto;
+        }
+        
+        section#hero {
+            height: 430px;
+            background-image: url(/Images/kincaid/hero.png);
+            background-size: auto 480px;
+            background-position: 90% 0%;
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        #hero .copy-outer {
+            background-color: rgba(255, 255, 255, .6);
+            padding: 20px 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+        }
+        
+        #hero .copy {
+            background-color: white;
+            text-align: center;
+            width: 290px;
+            padding: 10px 35px;
+        }
+        
+        #hero h1 {
+            font-size: 1.4em;
+            line-height: 1.25;
+        }
+        
+        #hero p {
+            font-size: .8em;
+            margin-top: .2em;
+            line-height: 1.5;
+        }
+        
+        #features .two-col>div {
+            text-align: center;
+        }
+        
+        #features .two-col>div>div {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        #features h2 {
+            font-size: 1.4em;
+            margin-top: 20px;
+        }
+        
+        #features p {
+            font-size: .8em;
+            line-height: 1.1;
+            margin-top: .5em;
+        }
+        
+        #feature02 {
+            padding-bottom: 114.893617%;
+            background-color: yellow;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #header .logo {
+                margin: 30px 10px 20px;
+            }
+            section#hero {
+                margin-top: 20px;
+            }
+            #features .two-col {
+                display: flex;
+            }
+            #features .two-col>div {
+                flex: 0 0 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                margin-top: 20px;
+            }
+            #features .gutter-20-40 {
+                margin-left: -10px;
+                margin-right: -10px;
+            }
+            #features .gutter-20-40>div {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #feature02 {
+                height: 100%;
+            }
+        }
+        
+        @media only screen and (min-width: 700px) {
+            section#hero {
+                background-image: url(/Images/kincaid/hero-flipped.png);
+                background-size: cover;
+                background-position: 0 0;
+                height: 500px;
+            }
+            #hero .copy-outer {
+                transform: none;
+                padding: 40px 0;
+                top: 40px;
+                left: 40px;
+                bottom: 40px;
+            }
+            #hero .copy {
+                width: 300px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            #hero h1 {
+                font-size: 2em;
+            }
+            #hero p {
+                font-size: 1em;
+                margin-top: .5em;
+            }
+            #features .two-col>div {
+                flex-direction: column-reverse;
+                justify-content: flex-end;
+            }
+            #features .gutter-20-40 {
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            #features .gutter-20-40>div {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            section#hero {}
+        }
+    </style>
+
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">Kincaid</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Kincaid</li>
+        </ul>
+    </nav>
+
+    <div id="npc-content">
+        <section id="header" class="full-width">
+            <img class="logo" src="/Images/kincaid/logo.png" alt="">
+        </section>
+        <section id="hero" class="full-width" role="img" aria-label="">
+            <div class="copy-outer">
+                <div class="copy">
+                    <h1>Ingrained Quality</h1>
+                    <p>Solid wood furniture, made with time-<span class="no-wrap">honored techniques.</span></p>
+                </div>
+            </div>
+        </section>
+        <section id="features">
+            <div class="two-col gutter-20-40">
+                <div>
+                    <div class="copy">
+                        <h2>The Kincaid Difference</h2>
+                        <p>Since 1946, Kincaid has made solid wood furniture the way it&rsquo;s supposed to be made, using old world craftsmanship to create exceptional beauty and quality you can see <span class="no-wrap">for yourself.</span></p>
+                    </div>
+                    <div class="image"><img src="/Images/kincaid/feature01.png" alt=""></div>
+                </div>
+                <div>
+                    <div class="image">
+                        <div id="feature02" role="img" aria-label=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>

@@ -1,0 +1,386 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="mobile-site">
+    <!-- begin NPC content -->
+    <!-- Red Tag Sale TT -->
+    <style>
+        /*********** Import Fonts **********/
+        
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /*********** Mobile Resets *************/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .breadcrumbs {
+            max-width: 62.5rem;
+            margin: 0.625rem auto;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        /****** desktop resets ******/
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        
+        .two-column-first [role="region"] section {
+            display: block;
+        }
+        /****** BCC content resets ******/
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /************* NPC Defaults ************/
+        
+        #npc-content {
+            width: 100%;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        body.mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /*********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        body:not(.mobile-site) .hidden-desktop {
+            display: none !important;
+        }
+        
+        body.mobile-site .hidden-mobile {
+            display: none !important;
+        }
+        /***************** Custom CSS ******************/
+        
+        #npc-content section {
+            margin-top: 10px;
+        }
+        
+        section#hero {
+            margin-top: 0;
+        }
+        
+        #npc-content .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -15px;
+        }
+        
+        #npc-content .two-col>a {
+            display: flex;
+            flex-direction: column;
+            padding: 0 15px;
+            flex: 1 0 300px;
+            max-width: 475px;
+            margin-top: 25px;
+        }
+        
+        #npc-content .two-col .image {
+            height: 310px;
+            background-size: cover;
+            background-position: left;
+            position: relative;
+            text-align: center;
+        }
+        
+        #npc-content .two-col .image p {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            color: white;
+            line-height: 1.2;
+            font-weight: bold;
+            padding: 20px;
+        }
+        
+        #hot-buys .image p {
+            font-size: 1.15em;
+        }
+        
+        #npc-content .subtitle {
+            display: block;
+            font-size: .75em;
+            font-weight: normal;
+        }
+        
+        #npc-content .image+p {
+            text-align: center;
+            line-height: 1.3;
+            font-weight: bold;
+            margin-top: .8em;
+        }
+        
+        #npc-content h2 {
+            font-size: 1.2em;
+            line-height: 1.25;
+            margin-top: 1.5em;
+            text-align: center;
+        }
+        
+        #npc-content .three-col {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -20px;
+        }
+        
+        #npc-content .three-col>a {
+            display: flex;
+            flex-direction: column;
+            padding: 0 20px;
+            flex: 0 0 340px;
+            margin-top: 35px;
+        }
+        
+        #npc-content .three-col .image {
+            margin: auto 0;
+        }
+        
+        #npc-content sup {
+            line-height: 0;
+            vertical-align: super;
+            font-size: .5em;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #npc-content .two-col>a {
+                flex: 1 0 370px;
+                max-width: 505px;
+                margin-top: 35px;
+            }
+            #npc-content .two-col .image {
+                height: 330px;
+                text-align: right;
+            }
+            #npc-content .two-col .image p {
+                width: auto;
+                text-align: right;
+                right: 0;
+            }
+            #hot-buys .image p {
+                font-size: 1.35em;
+            }
+            #npc-content p {
+                font-size: 1.2em;
+            }
+            #npc-content h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
+        <ul class="breadcrumb">
+            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
+            <li><span class="crumb active">Red Tag Sale</span></li>
+        </ul>
+    </section>
+    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Red Tag Sale</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <div class="image">
+                <picture>
+                    <source media="(min-width: 750px)" srcset="https://www.la-z-boy.com/Images/npc/memorial-day/2020/hero-ca.jpg">
+                    <source media="(min-width: 500px)" srcset="https://www.la-z-boy.com/Images/npc/memorial-day/2020/hero-ca-md.jpg">
+                    <source srcset="https://www.la-z-boy.com/Images/npc/memorial-day/2020/hero-ca-sm.jpg">
+                    <img src="https://www.la-z-boy.com/Images/npc/memorial-day/2020/hero-ca.jpg" alt="Red Tag Sale - Save on the comforts of home. Empty room with Collage, Casey, Vail and Conner Rocking Recliners">
+                </picture>
+            </div>
+        </section>
+        <section id="hot-buys">
+            <div class="two-col">
+                <a href="/p/recliners/collage-rocking-recliner/_/R-010734">
+                    <div class="image" style="background-image: url(https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod01.jpg);" role="img" aria-label="Room with Collage Rocking Recliner">
+                        <p>Collage Rocking Recliner
+                            <!-- <span class="subtitle">When you save, everything just<br>feels right</span> -->
+                            <span class="subtitle">Slim, sleek, and relaxing<br>in any space</span>
+                        </p>
+                    </div>
+                    <p>Starting at $549
+                        <span class="subtitle arrow-right">Shop Collage Rocking Recliner</span>
+                    </p>
+                </a>
+                <a href="/p/recliners/casey-rocking-recliner/_/R-010767">
+                    <div class="image" style="background-image: url(https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod02.jpg);" role="img" aria-label="Room with Casey Rocking Recliner">
+                        <p>Casey Rocking Recliner
+                            <!-- <span class="subtitle">Your wallet deserves convenient,<br>comfortable results</span> -->
+                            <span class="subtitle">Contemporary style with<br>classic reclining comfort</span>
+                        </p>
+                    </div>
+                    <p>Starting at $599
+                        <span class="subtitle arrow-right">Shop Casey Rocking Recliner</span>
+                    </p>
+                </a>
+                <a href="/p/recliners/vail-rocking-recliner/_/R-010403">
+                    <div class="image" style="background-image: url(https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod03.jpg);" role="img" aria-label="Room with Vail Rocking Recliner">
+                        <p>Vail Rocking Recliner
+                            <!-- <span class="subtitle">Achieving your feeling with style,<br>comfort and savings</span> -->
+                            <span class="subtitle">This small scale, soothing rocker<br>is rich in beauty</span>
+                        </p>
+                    </div>
+                    <p>Starting at $599
+                        <span class="subtitle arrow-right">Shop Vail Rocking Recliner</span>
+                    </p>
+                </a>
+                <a href="/p/recliners/conner-rocking-recliner/_/R-010535">
+                    <div class="image" style="background-image: url(https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod04.jpg);" role="img" aria-label="Room with Conner Rocking Recliner">
+                        <p>Conner Rocking Recliner
+                            <!-- <span class="subtitle">We help your kick-back, you do<br>the relaxing</span> -->
+                            <span class="subtitle">Make yourself at home with<br>this modern retreat</span>
+                        </p>
+                    </div>
+                    <p>Starting at $599
+                        <span class="subtitle arrow-right">Shop Conner Rocking Recliner</span>
+                    </p>
+                </a>
+            </div>
+        </section>
+        <section>
+            <h2>There&rsquo;s no style like yours. Cozy up to great&nbsp;savings!</h2>
+            <div class="two-col">
+                <a href="/p/sofas/dixie-sofa/_/R-610634">
+                    <div class="image" style="background-image: url(https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod05.jpg);" role="img" aria-label="Room with Dixie Sofa">
+                        <p class="arrow-right">Shop Dixie Sofa</p>
+                    </div>
+                </a>
+                <a href="/p/sofas/meyer-sofa/_/R-610694">
+                    <div class="image" style="background-image: url(https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod06.jpg);" role="img" aria-label="Room with Meyer Sofa">
+                        <p class="arrow-right">Shop Meyer Sofa</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section>
+            <div class="three-col">
+                <a href="/p/sofas/hayes-reclining-sofa/_/R-440537">
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod07.jpg" alt="Hayes Reclining Sofa"></div>
+                    <p>Shop Hayes <span class="subtitle arrow-right">Reclining Sofa</span></p>
+                </a>
+                <a href="/p/sofas/trouper-reclining-sofa/_/R-440724">
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod08.jpg" alt="Trouper Reclining Sofa"></div>
+                    <p>Shop Trouper <span class="subtitle arrow-right">Reclining Sofa</span></p>
+                </a>
+                <a href="/p/sofas/bexley-sofa/_/R-610681">
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod09.jpg" alt="Bexley Stationary Sofa"></div>
+                    <p>Shop Bexley <span class="subtitle arrow-right">Stationary Sofa</span></p>
+                </a>
+                <a href="/p/recliners/brooks-rocking-recliner/_/R-010727">
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod10.jpg" alt="Brooks Rocking Recliner"></div>
+                    <p>Shop Brooks <span class="subtitle arrow-right">Rocking Recliner</span></p>
+                </a>
+                <a href="/p/recliners/murray-rocking-recliner/_/R-010748">
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod11.jpg" alt="Murray Rocking Recliner"></div>
+                    <p>Shop Murray <span class="subtitle arrow-right">Rocking Recliner</span></p>
+                </a>
+                <a href="/p/recliners/jasper-rocking-recliner/_/R-010709">
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod12.jpg" alt="Jasper Rocking Recliner"></div>
+                    <p>Shop Jasper <span class="subtitle arrow-right">Rocking Recliner</span></p>
+                </a>
+            </div>
+        </section>
+        <section>
+            <div class="two-col">
+                <a href="/p/sofas/bennett-duo-reclining-sofa/_/R-91P899">
+                    <div class="image" style="background-image: url(https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod13.jpg);" role="img" aria-label="Room with Bennet duo&reg; Reclining Sofa">
+                        <p class="arrow-right">Shop Bennet duo<sup>&reg;</sup> Reclining&nbsp;Sofa</p>
+                    </div>
+                </a>
+                <a href="/p/sectionals/paxton-sectional/_/R-xxs663Style1">
+                    <div class="image" style="background-image: url(https://www.la-z-boy.com/Images/npc/memorial-day/2020/prod14.jpg);" role="img" aria-label="Room with Paxton Sectional">
+                        <p class="arrow-right">Shop Paxton Sectional</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>
