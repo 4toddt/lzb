@@ -1,0 +1,180 @@
+.facet-menu {
+	width: 100%;
+	@include rem-size(padding-bottom, 5px);
+
+	.facet-group + .facet-group {
+		@include rem-size(margin-top, 30px);
+	}
+	.facet-title {
+		@include rem-size(padding, 15px);
+		@include font-size(16px);
+		color: $base-black;
+		cursor: pointer;
+		@include border(bottom, 1px, solid, $light-gray);
+		@include clearfix;
+
+		&.active {
+			font-weight: $bold;
+		}
+		&.selected {
+			@include rem-size(padding, 5px 15px);
+
+			.icon {
+				@include rem-size(line-height, 44px);
+			}
+		}
+		.facet-title-label {
+			float: $default-float;
+		}
+		.selected-facets {
+			@include font-size(12px);
+			@include rem-size(line-height, 20px);
+			font-weight: $regular;
+			color: $medium-gray;
+		}
+	}
+	.facet-body {
+		padding-bottom: 1px;
+	}
+}
+
+.facet-list {
+	@include rem-size(padding, 0px 15px 10px 15px);
+	@include border(bottom, 1px, solid, $light-gray);
+	@include clearfix;
+
+	.facet {
+		@include font-size(14px);
+		@include rem-size(line-height, 26px);
+		@include rem-size(margin, 20px 0px);
+		color: $medium-gray;
+
+		&:hover, &:focus {
+			color: $base-black;
+		}
+		&.unavailable {
+			opacity: 0.3;
+			pointer-events: none;
+			cursor: default;
+
+			label:before {
+				background-color: $light-gray;
+			}
+		}
+		.ref-count {
+			font-size: inherit;
+		}
+	}
+	&.links {
+		padding: 0;
+		.active {
+			background: lighten($base-black, 30);
+			color: $base-white;
+			&:hover {
+				background: lighten($base-black, 30);
+			}
+		}
+		.unavailable {
+			opacity: 0.2;
+			pointer-events: none;
+			cursor: default;
+		}
+	}
+	&.swatches {
+		.facet-swatch {
+			width: 38px;
+			height: 38px;
+		}
+	}
+	&.tiles {
+		.tile-facet-items {
+			cursor: pointer;
+			float: left;
+			width: 22%;
+			text-align: center;
+			margin: 0 2% 2% 0;
+			padding: 10px 0;
+			color: lighten($base-black, 40);
+			border: 1px solid $border-color;
+			@include font-size(14px);
+			font-weight: $bold;
+			&:hover {
+				background: lighten($base-black, 90);
+				border: 1px solid transparent;	 		}
+		}
+		.active {
+			background: lighten($base-black, 40);
+			color: $base-white;
+			&:hover {
+				background: lighten($base-black, 40);
+			}
+		}
+		.unavailable {
+			opacity: 0.2;
+			pointer-events: none;
+			cursor: default;
+		}
+	}
+}
+
+/* Applied Facet Nav
+_________________________________________*/
+.applied-facets {
+	@include border(bottom, 1px, solid, $light-gray);
+	background-color: $base-white;
+	display: none;
+
+	#applied-facet-title {
+		@include rem-size(padding, 16px 20px);
+		@include font-size(16px);
+		color: $medium-gray;
+	}
+	#applied-facet-body {
+		@include rem-size(padding, 0px 20px 10px 20px);
+	}
+
+	.applied-facet {
+		display: inline-block;
+		@include rem-size(padding-top, 10px);
+		@include rem-size(margin-right, 5px);
+
+		.applied-facet-item {
+			@include font-size(16px);
+			@include rem-size(line-height, 20px);
+			@include rem-size(padding, 5px 10px);
+			color: $medium-gray;
+			display: block;
+			text-decoration: none;
+			border: 1px solid $light-gray;
+
+			.icon-remove {
+				position: relative;
+				top: -1px;
+				cursor: pointer;
+				@include font-size(10px);
+				@include rem-size(padding-right, 5px);
+			}
+			&:hover {
+				opacity: .5;
+			}
+			&.disabled {
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.clear-facet-actions {
+		@include rem-size(margin, 20px 0px 10px 0px);
+		@include font-size(16px);
+		text-align: center;
+
+		a {
+			@include rem-size(padding, 10px);
+		}
+		.divider {
+			color: $light-gray;
+		}
+	}
+}
+

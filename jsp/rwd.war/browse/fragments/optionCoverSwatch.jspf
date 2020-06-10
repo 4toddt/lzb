@@ -1,0 +1,16 @@
+<div class="option-cover-swatch ${filteredSelectedClass}">
+    <c:choose>
+        <c:when test="${optionName eq 'Pillow Options'}">
+            <input id="pillow-${swatchSet}-${fn:split(optionCover,'~')[0]}" type="radio" class="option-pillow-swatch-radio" data-type="optionCover" name="pillow-swatch-${swatchSet}" autocomplete="off" data-family-color="${colorFamilyName}" data-pattern="${coverPatternName}" data-value="${fn:split(optionCover,'~')[0]}" value="${fn:split(optionCover,'~')[0]}" ${baseChecked}>
+            <label for="pillow-${swatchSet}-${fn:split(optionCover,'~')[0]}" role="button" aria-label="click to select ${fn:split(optionCover,'~')[2]} pillow option" class="options-label-button" tabindex="0">
+                <img class="swatch-image" src="${contentHostName}${storeConfig.coverThumbnailBaseUrl}${fn:split(optionCover,'~')[0]}.jpg" alt="${fn:split(optionCover,'~')[2]}" />
+            </label>
+        </c:when>
+        <c:otherwise>
+            <input id="welt${fn:split(optionCover,'~')[0]}" type="radio" class="option" data-type="optionCover" name="Welt" autocomplete="off" data-family-color="${colorFamilyName}" data-pattern="${coverPatternName}" data-value="${fn:split(optionCover,'~')[0]}" value="${fn:split(optionCover,'~')[0]}" ${baseCheckedWelt}>
+            <label for="welt${fn:split(optionCover,'~')[0]}" role="button" aria-label="click to select ${fn:split(optionCover,'~')[2]} welt option" class="options-label-button" tabindex="0">
+                <img class="swatch-image" src="${contentHostName}${storeConfig.coverThumbnailBaseUrl }${fn:split(optionCover,'~')[0]}.jpg" alt="${fn:split(optionCover,'~')[2]}" />
+            </label>
+        </c:otherwise>
+    </c:choose>
+</div>

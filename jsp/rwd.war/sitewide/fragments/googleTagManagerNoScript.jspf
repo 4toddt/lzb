@@ -1,0 +1,12 @@
+<!-- Google Tag Manager (noscript) -->
+<c:choose>
+    <c:when test="${!isMobile && section eq 'checkout'}">
+        <%-- render for desktop --%>
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WH6XQG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </c:when>
+    <c:otherwise>
+        <%-- render for mobile --%>
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N6L8PS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </c:otherwise>
+</c:choose>
+<!-- End Google Tag Manager (noscript) -->

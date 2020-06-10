@@ -1,0 +1,64 @@
+/* only use styles in here that you want to apply to all typea on the site. Otherwise contextually style
+(.parentClass .accordion) or add addtional classes to the accordion element. */
+
+.typeahead {
+	@include grid-row();
+
+	position: absolute;
+	width: 650px;
+	background-color: #fff;
+	z-index: 101;
+}
+
+.typeahead-suggestions {
+	@include grid-column(12);
+	@include media(medium-up) {
+		width:33.333%
+	}
+}
+
+.typeahead-results {
+	@include grid-column(12);
+	@include media(medium-up) {
+		width:66.666%
+	}
+}
+
+.typeahead-results-top,
+.typeahead-results-bottom {
+	@include grid-row();
+}
+
+.typeahead-results-top-grid {
+	@include block-grid(
+	$per-row: 1,
+	$spacing: 20px,
+	$base-style: true
+	);
+	@include media(medium-up) {
+		@include block-grid(
+		$per-row: 3,
+		$spacing: 20px,
+		$base-style: false
+		);
+	}
+}
+
+.typeahead-results-bottom-grid {
+	@include block-grid(
+	$per-row: 1,
+	$spacing: 20px,
+	$base-style: true
+	);
+	@include media(medium-up) {
+		@include block-grid(
+		$per-row: 2,
+		$spacing: 20px,
+		$base-style: false
+		);
+	}
+}
+
+.typeahead-no-suggestions-mobile {
+	display: none;
+}

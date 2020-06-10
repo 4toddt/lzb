@@ -1,0 +1,18 @@
+<%--
+  Page sets resource bundle from the site context or 
+  configuration file.
+  
+  Required Parameters:
+    None
+    
+  Optional Parameters:
+    None
+ --%>
+
+<dsp:importbean var="requestLocale" bean="/atg/dynamo/servlet/RequestLocale" />
+<dsp:importbean bean="/atg/multisite/SiteContext"/>
+<dsp:getvalueof var="orginatingRequest" bean="/OriginatingRequest"/>
+<%-- 
+<dsp:getvalueof var="resourceBundle" bean="SiteContext.site.resourceBundle" />--%>
+<dsp:importbean bean="/atg/store/LZBStoreConfiguration" var="currentStoreConfiguration"/>
+<dsp:layerBundle basename="${currentStoreConfiguration.defaultResourceBundle}" locale="${requestLocale.locale}"/>

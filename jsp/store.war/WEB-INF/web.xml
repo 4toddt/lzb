@@ -1,0 +1,344 @@
+<?xml version="1.0" ?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+id="WebApp_ID" version="3.0">
+	
+	<!-- You must include a display name with the web application.  If you do not then when
+		you run your web application on JBoss (or other app server) you will be graced with
+		a NullPointerException from within the NucleusServlet
+	
+		java.lang.NullPointerException
+		atg.servlet.NameContextManager.initializeSessionNameContext(NameContextManager.java:504)
+		atg.taglib.dspjsp.Utils.checkParentSessionNameContext(Unknown Source)
+		atg.filter.dspjsp.PageFilter.doFilter(Unknown Source)
+		org.jboss.web.tomcat.filters.ReplyHeaderFilter.doFilter(ReplyHeaderFilter.java:75)
+	-->
+	<display-name>Lazboy Stores</display-name>
+	
+	<!-- This setting tells JBoss that it needs to manage session replication.  If you
+		deploy this web application on a non-farmed JBoss server you will see this
+		error message in the server console:
+	
+		13:04:35,751 ERROR [JBossCacheManager] JBossCacheService to Tomcat clustering not found
+		13:04:35,751 ERROR [TomcatDeployer] Failed to setup clustering, clustering disabled
+	
+		<distributable/>
+	-->
+	
+	<!--
+		This is the name/value of the "parent web application", i.e. the name
+		of a web application, which has a SessionNameContextServlet defined in it
+		that will define the session scope for this web application.
+		Setting this here allows the child application to share the same session
+		scope with the above application.  Meaning these two apps share session.
+		The parent web application OOTB is DafEar.base.
+	-->
+	
+	<context-param>
+		<param-name>atg.session.parentContextName</param-name>
+		<param-value>/dyn</param-value>
+	</context-param>
+	
+	
+	<context-param>
+		<param-name>atg.dafear.bootstrapContextName</param-name>
+		<param-value>/dyn</param-value>
+	</context-param>
+	
+	
+	<!--
+		If context-root is set here, then ServletContextWebAppRegistry will use
+		this setting as the context-root for this WebApp. This must match
+		the context-root setting in application.xml.
+	-->
+	<context-param>
+		<param-name>context-root</param-name>
+		<param-value>/</param-value>
+	</context-param>
+	<context-param>
+		<param-name>atg.assembler</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	
+<context-param>
+	  <param-name>contextConfigLocation</param-name>
+	  <param-value>/WEB-INF/spring-context.xml</param-value>
+</context-param>
+
+	<!--
+		Called when a request is for a .jsp file, the PageFilter servlet is
+		the entry point into the DAF pipeline.  PageFilter calls
+		atg/dynamo/servlet/dafpipeline/DynamoHandler to start the DAF servlet
+		pipeline for JSP requests. The DAF servlet pipeline relies on JBoss
+		to handle the complete page compilation process.
+	-->
+	
+	
+	
+	<filter>
+		<filter-name>PageFilter</filter-name>
+		<filter-class>atg.filter.dspjsp.PageFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>ForwardFilter</filter-name>
+		<filter-class>atg.servlet.ForwardFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>ErrorFilter</filter-name>
+		<filter-class>atg.servlet.ErrorFilter</filter-class>
+	</filter>
+	
+	<!-- finished add url rewrite -->
+	<filter-mapping>
+		<filter-name>ErrorFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>PageFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ForwardFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+	
+	<!-- Health Check Filter -->
+	<filter>
+		<filter-name>HealthCheckFilter</filter-name>
+		<filter-class>com.nm.servlet.filter.HealthCheckFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HealthCheckFilter</filter-name>
+		<url-pattern>/healthCheck.html</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	<!--  XSS filter -->			
+  <filter>
+        <filter-name>LZBXSSFilter</filter-name>
+        <filter-class>com.lzb.servlet.filter.LZBXSSFilter</filter-class>
+        <init-param>
+            <param-name>REDIRECTION_PAGE</param-name>
+            <param-value>/global/pageNotFound.jsp</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LZBXSSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>	
+		
+	<!-- FOR SEO COMPLIANCE -->
+	<servlet>
+		<servlet-name>MappedJumpServlet</servlet-name>
+		<servlet-class>
+		atg.repository.seo.MappedJumpServlet
+		</servlet-class>
+		<init-param>
+		<param-name>loggingDebug</param-name>
+		<param-value>true</param-value>
+		</init-param>
+		<init-param>
+		<param-name>jumpServlet</param-name>
+		<param-value>
+			ctx:dynamo:/atg/dynamo/servlet/dafpipeline/JumpServlet
+		</param-value>
+		</init-param>
+	</servlet>
+	
+	<!--
+		To use ATG platform functionality, a Web application on a 3rd party application
+		server needs to start Nucleus by invoking NucleusSerlvet. This servlet does not
+		need to have any paths mapped to it, but must have the load-on-startup flag set
+		to 1 so that it runs before any other ATG component. The NucleusServlet creates
+		an instance of Nucleus and sets it as an attribute of the web application.
+	-->
+	
+	<servlet>
+		<servlet-name>NucleusServlet</servlet-name>
+		<servlet-class>
+		atg.nucleus.servlet.NucleusServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<!--
+		This servlet exposes the dynamo servlet pipeline.  It is necessary if
+		you want to support serving JHTML pages on your site.  The context path
+		and servlet path used by this servlet are prepended onto all URLs
+		for JHTML pages on your site.
+	-->
+	
+	<servlet>
+		<servlet-name>DynamoProxyServlet</servlet-name>
+		<servlet-class>
+		atg.nucleus.servlet.NucleusProxyServlet
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet>
+        <servlet-name>LZBCaptchaGeneratorServlet</servlet-name>
+        <servlet-class>com.lzb.service.captcha.LZBCaptchaGeneratorServlet </servlet-class>
+    </servlet>
+	
+	<!-- GE Synchrony Secondary Response traffic -->
+	<servlet>
+		<servlet-name>NotificationReceiverServlet</servlet-name>
+		<servlet-class>com.lzb.ge.service.NotificationReceiverServlet</servlet-class>
+	</servlet>
+
+	
+	<!-- 'CybersourceDMPushServlet' servlet is used by the Cybersource to push changes made to order state in  desicion manager -->
+	  <servlet>
+	    <servlet-name>CybersourceDMPushServlet</servlet-name>
+	    <servlet-class>atg.integrations.cybersourcesoap.afs.decision.DecisionManagerPushResultsServlet</servlet-class>
+	  </servlet>
+	
+	  <servlet-mapping>
+	    <servlet-name>CybersourceDMPushServlet</servlet-name>
+	    <url-pattern>/dmPush/*</url-pattern>
+	  </servlet-mapping>
+ 	 <!-- 'CybersourceDMPushServlet' END -->
+ 	 
+ 	 <servlet>
+		<servlet-name>SectionalsDisplayServlet</servlet-name>
+		<servlet-class>
+		com.lzb.servlet.LZBSectionalsDisplayServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>SectionalsDisplayServlet</servlet-name>
+		<url-pattern>/sectionalServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!--Mapping for GE Synchrony-->
+	<servlet-mapping>
+		<servlet-name>NotificationReceiverServlet</servlet-name>
+		<url-pattern>/ge/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>DynamoProxyServlet</servlet-name>
+		<url-pattern>/dyn/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- For diagnostic purposes only  -->
+	<servlet-mapping>
+		<servlet-name>NucleusServlet</servlet-name>
+		<url-pattern>/nucleus/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- FOR SEO COMPLIANCE -->
+	<servlet-mapping>
+		<servlet-name>MappedJumpServlet</servlet-name>
+		<url-pattern>/products/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>MappedJumpServlet</servlet-name>
+		<url-pattern>/content/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>LZBCaptchaGeneratorServlet</servlet-name>
+        <url-pattern>/contactus/captchaImage.jpg</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+        <servlet-name>LZBCaptchaGeneratorServlet</servlet-name>
+        <url-pattern>/account/captchaImage.jpg</url-pattern>
+     </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>LZBCaptchaGeneratorServlet</servlet-name>
+        <url-pattern>/global/includes/captchaImage.jpg</url-pattern>
+     </servlet-mapping>
+
+		
+	<listener>
+		<listener-class>atg.taglib.dspjsp.RegisterELResolverServletContextListener</listener-class>
+	</listener>
+		<listener>
+  <listener-class>
+    org.springframework.web.context.ContextLoaderListener
+  </listener-class>
+</listener>
+	<session-config>
+	        <session-timeout>30</session-timeout>
+	</session-config>
+
+
+	
+	<welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>400</error-code>
+        <location>/global/pageNotFound.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/global/pageNotFound.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/global/pageNotFound.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/global/pageNotFound.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/global/serverError.jsp?error=500</location>
+    </error-page>
+    <error-page>
+        <error-code>501</error-code>
+        <location>/global/serverError.jsp?error=501</location>
+    </error-page>
+    <error-page>
+        <error-code>502</error-code>
+        <location>/global/serverError.jsp?error=502</location>
+    </error-page>        
+    <!-- the 409 error page (Session Expired)-->
+    <error-page>
+        <error-code>409</error-code>
+        <location>/global/sessionExpired.jsp</location>
+    </error-page>
+    <error-page>
+		<error-code>503</error-code>
+		<location>/global/serverError.jsp?error=503</location>
+	</error-page>
+    
+    <!--
+		For internal errors.  This should really never happen, but just in case...
+	-->
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/global/serverError.jsp?error=exception</location>
+	</error-page>
+	
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+            <scripting-invalid>false</scripting-invalid>
+            <include-prelude>/includes/prelude.jspf</include-prelude>
+            <trim-directive-whitespaces>true</trim-directive-whitespaces>
+        </jsp-property-group>
+    </jsp-config>
+
+</web-app>

@@ -1,0 +1,91 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+// Utility navbar definitions
+.utility-nav {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: $nav-color;
+	@include box-shadow(0, -2px, 5px, $medium-gray, true);
+	@include rem-size(height, 24px);
+	@include clearfix;
+
+	nav {
+		max-width: $row-width;
+		margin: 0 auto;
+
+		> ul {
+			float:right;
+			display: block;
+			list-style: outside none disc;
+			margin:0;
+			padding:0;
+		}
+	}
+}
+
+.utility-nav-item {
+	display: block;
+	float:left;
+	vertical-align: middle;
+}
+
+.utility-nav-header {
+	border-color: transparent;
+	border-width: 1px 1px 0px 1px;
+	border-style: solid;
+	position:relative;
+	z-index:200;
+	> a {
+		@include font-size(12px);
+		@include rem-size(line-height, 24px);
+		display:block;
+		padding: 0 1.5rem;
+		text-decoration: none;
+		color: $base-black;
+		text-align:center;
+
+	}
+	.active & {
+		border-color:#ccc;
+		background-color: $base-white;
+	}
+}
+.utility-nav-menu {
+	background-color: $base-white;
+	border:solid 1px $border-color;
+	margin-top:-1px;
+	min-width:200px;
+	z-index: 99;
+}
+
+.utility {
+	ul {
+		@include block-grid(
+			$per-row: 1,
+			$spacing: 0px,
+			$base-style: true
+		);
+		background-color: $nav-color;
+    	border: 1px solid $border-color;
+    	li {
+    		@include rem-size(padding, 0px 20px);
+    		position: relative;
+    		a {
+    			@include font-size(16px);
+    			@include rem-size(padding, 0px 10px);
+    			border-bottom: 1px solid $light-gray;
+    			color: $almost-black;
+    			display: block;
+    			font-weight: $bold;
+    			@include rem-size(line-height, 48px);
+    			.icon {
+    				float: right;
+    				top: 16px;
+    				position: relative;
+    			}
+    		}
+    	}
+	}
+}

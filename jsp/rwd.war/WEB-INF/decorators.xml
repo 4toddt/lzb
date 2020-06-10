@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+	<decorator name="default" page="default.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+  <decorator name="proxy" page="proxy.jsp">
+    <pattern>/proxy/*</pattern>
+  </decorator>
+  <decorator name="ajax" page="ajax.jsp">
+    <pattern>/ajax/*</pattern>
+    <pattern>/browse/ajax/quickViewModal.jsp</pattern>
+    <pattern>/checkout/addToCartConfirmation.jsp</pattern>
+  </decorator>
+  <decorator name="documentation" page="documentation.jsp">
+    <pattern>/documentation/*</pattern>
+  </decorator>
+    <decorator name="sandbox" page="sandbox.jsp">
+        <pattern>/sandbox/*</pattern>
+    </decorator>
+	<excludes>
+		<pattern>*/includes/*.jsp</pattern>
+	</excludes>
+</decorators>

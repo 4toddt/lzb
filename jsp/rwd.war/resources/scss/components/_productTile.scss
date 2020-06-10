@@ -1,0 +1,136 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+// Product tile definitions
+
+.product-tile {
+	height: auto !important;
+	overflow: hidden;
+	position: relative;
+	@include transition;
+
+	.button-quickview {
+		width: 65%;
+		background: rgba(255,255,255,0.85);
+		border: 2px solid rgba(255,255,255,0.95);
+		color: #999;
+		position: absolute;
+		// left/right added to allow use of abs positioning to center btn
+	  	left: 0;
+    	right: 0;
+		margin: 0 auto;
+		bottom: 20px;
+		text-transform: uppercase;
+		@include font-size(16px);
+		@include opacity(0);
+		&:hover {
+			background: rgba(255,255,255,0.95);
+		}
+	}
+	.product-image {
+		position:relative;
+		img {
+			margin: 0 auto;
+			display: block;
+		}
+		&:hover .button-quickview {
+			@include opacity(100);
+			bottom: 10px;
+		}
+		.badge {
+		    position: absolute;
+		    z-index: 1;
+			@include rem-size(max-width, 140px);
+
+			&.badge-top-left {
+				top: 0;
+				left: 0;
+			}
+			&.badge-bottom-left {
+				bottom: 0;
+				left: 0;
+			}
+		}
+		.add-to-wishlist {
+			position: absolute;
+			top: 0;
+			right: 0;
+			@include font-size(19px);
+		    z-index: 1;
+		}
+	}
+	.unavailable {
+		opacity: 0.2;
+    	pointer-events: none;
+    	cursor: default;
+	}
+	.active {
+		border: 2px solid $base-black;
+	}
+	.product-details-container {
+		@include rem-size(margin, 12px 0px);
+		color: $base-black;
+		text-align: center;
+	}
+	.product-name {
+		@include font-size(14px);
+		@include rem-size(line-height, 20px);
+		letter-spacing: 1.1px;
+		font-weight: $regular;
+
+		a {
+			color: $deep-gray;
+		}
+	}
+
+	.price {
+		@include rem-size(margin-top, 5px);
+		@include font-size(20px);
+		@include clearfix;
+	}
+
+	.regular-label, .sale-label, .original-label  {
+		@include font-size(12px);
+
+		& + .regular-price,
+		& + .sale-price {
+			@include rem-size(margin-top, 0px);
+		}
+	}
+	.regular-price {
+		@include rem-size(margin-top, 5px);
+	}
+	.sale-price {
+		@include rem-size(margin-top, 24px);
+	}
+	.cdp-monthly-pricing {
+		@include font-size(12px);
+		color: $medium-gray;
+		@include rem-size(line-height, 18px);
+		
+		a {
+			@include font-size(12px);
+			color: $medium-gray;
+			text-decoration: none;
+		}
+	}
+	.no-wrap-text {
+		white-space: nowrap;
+	}
+	.question-icon {
+		width: 15px;
+		height: 15px;
+		margin: 0;
+		@include font-size(11px);
+		font-weight: $bold;
+		display: inline-block;	
+		border: 1px solid $medium-gray;
+		cursor: pointer;
+		border-radius: 50%;
+		@include rem-size(line-height, 12px);
+		@include rem-size(margin-left, 3px);
+		position: relative;
+		top: -2px;
+	}
+}
+

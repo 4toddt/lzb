@@ -1,0 +1,194 @@
+<dsp:page>
+
+	<%-- Imports --%>
+	<dsp:importbean bean="/com/lzb/droplet/LZBPDPURLDroplet" />
+	<dsp:importbean bean="/atg/commerce/gifts/GiftlistFormHandler" />
+	<dsp:importbean bean="/com/lzb/commerce/droplet/LZBItemDetailsDroplet"/>
+	<dsp:importbean bean="/atg/dynamo/droplet/ForEach"/>
+	<dsp:importbean bean="/com/lzb/common/LZBImageURLBuilder"/>
+	<dsp:importbean bean="/atg/commerce/catalog/ProductLookup"/>
+	<dsp:importbean bean="/atg/commerce/catalog/SKULookup"/>
+	<dsp:importbean bean="/atg/userprofiling/Profile" />
+	<dsp:importbean bean="/atg/userprofiling/ProfileTools" />
+	<dsp:importbean var="storeConfig" bean="/atg/store/LZBStoreConfiguration"/>
+
+	<%-- Page Variables --%>
+	<dsp:getvalueof id="requestURL" idtype="java.lang.String" bean="/OriginatingRequest.requestURI"/>
+	<dsp:getvalueof var="giftItemId" vartype="java.lang.String" param="wishlistItem.repositoryId"/>
+	<dsp:getvalueof var="productId" param="wishlistItem.productId" />
+	<dsp:getvalueof var="productName" param="wishlistItem.description" />
+	<dsp:getvalueof var="productDisplayName" param="wishlistItem.displayName"/>
+	<dsp:getvalueof var="catalogRefId" param="wishlistItem.catalogRefId" />
+	<c:set var="contentHostName" value="//${storeConfig.contentHostName}"/>
+	<c:set var="imagePath" value="${storeConfig.imagePath}" />
+	<c:set var="productPagePath" value="${storeConfig.mobileProductUrl}" />
+
+	<dsp:droplet name="LZBPDPURLDroplet">
+		<dsp:param name="productId" param="wishlistItem.catalogRefId" />
+		<dsp:param name="prodName"  param="wishlistItem.displayName" />
+		<dsp:param name="fromCDP" value="true" />
+		<dsp:param name="isMobile" value="true" />
+		<dsp:param name="elementName" value="url" />
+		<dsp:oparam name="output">
+			<dsp:getvalueof var="url" param="url"/>
+		</dsp:oparam>
+	</dsp:droplet>
+	
+	<dsp:getvalueof var="pdpurl" value="${url}?giftId=${giftItemId}" />
+	
+	<dsp:droplet name="SKULookup">
+		<dsp:param name="id" param="wishlistItem.catalogRefId" />
+		<dsp:setvalue param="sku" paramvalue="element" />
+		<dsp:oparam name="output">
+			<dsp:getvalueof var="sku" param="sku"/>
+			
+			<%-- Remove this if filterByCatalog in SKULookup droplet is set to true --%>
+			<dsp:getvalueof var="productName" param="sku.displayName" />
+		</dsp:oparam>
+		<dsp:oparam name="wrongCatalog">
+			<dsp:getvalueof var="sku" param="sku"/>
+			<dsp:getvalueof var="productName" param="sku.displayName" />
+		</dsp:oparam>
+	</dsp:droplet>
+	
+	<%-- <c:set var="isActive" value="A" scope="request"/>
+	<c:set var="isPurchasable" value="true" scope="request"/>
+	<c:choose>
+		<c:when test="${empty sku.status}">
+			<c:set var="isActive" value="D" scope="request" />
+		</c:when>
+		<c:otherwise>
+			<c:set var="isActive" value="${sku.status}" scope="request" />
+		</c:otherwise>
+	</c:choose>
+	
+    <c:choose>
+        <c:when test="${empty sku.isPurchaseable}">
+            <c:set var="isPurchasable" value="false" scope="request" />
+        </c:when>
+        <c:otherwise>
+            <c:set var="isPurchasable" value="${sku.isPurchaseable}" scope="request" />
+        </c:otherwise>
+    </c:choose>
+	<c:set var="validMarxentProduct" value="false"/>
+    <c:if test="${(sku.type eq 'configurableSku' && isPurchasable eq 'true' && isActive eq 'A') || (product.type eq 'sectional' && isActive eq 'A')}">
+        <c:set var="validMarxentProduct" value="true"/>
+    </c:if> --%>
+
+	<%-- Droplet used to build Marxent Imager URL --%>
+	<c:choose>
+		<c:when test="${storeConfig.marxentImagerEnabled}">
+			<dsp:getvalueof var="marxentImageURL" value="/"/>
+			<dsp:droplet name="LZBImageURLBuilder">
+				<dsp:param name="json" param="wishlistItem.requestJson"/>
+				<dsp:param name="width" value="75"/>
+				<dsp:param name="height" value="75"/>
+				<dsp:param name="bg" value="white"/>
+				<dsp:param name="padding" value="0"/>
+				<dsp:param name="trim" value="true"/>
+				<dsp:param name="crop" value="false"/>
+				<dsp:param name="secureURL" value="true"/>
+				<dsp:oparam name="output">
+					<dsp:getvalueof var="marxentImageURL" param="elements"/>
+				</dsp:oparam>
+			</dsp:droplet>
+		</c:when>
+		<c:otherwise>
+			<!-- when Marxent Imager is disabled or it is not an Marxent product use a fallback image -->
+			<c:set var="contentHostName" value="${pageContext.request.scheme}://${storeConfig.contentHostName}"/>
+			<c:set var="storeConfigHostName" value="${contentHostName}" />
+			<c:set var="imagePath" value="${storeConfig.imagePath}"/>
+			<c:choose>
+				<c:when test="${not empty product.type && product.type eq 'sectional'}">
+					<c:set var="cdpImage" value="${product.cdpImage}"/>
+				</c:when>
+				<c:otherwise>
+					<c:set var="cdpImage" value="${sku.cdpDefaultImage}"/>
+				</c:otherwise>
+			</c:choose>
+			<c:set var="marxentImageURL" value="${storeConfigHostName}${imagePath}${cdpImage}"/>
+		</c:otherwise>
+	</c:choose>
+
+	<div class="order-item">
+		<div class="item-image order-item-section">
+			<a href="${url}" title="${productDisplayName}">
+				<img src="${marxentImageURL}" width="75" alt="${productDisplayName}" />
+				<meta property="og:image" content="${marxentImageURL}" />
+			</a>
+		</div>
+		<div class="item-details order-item-section">
+			<div class="product-name">
+				<a href="${url}" title="${productDisplayName}">
+					${productName}
+				</a>
+			</div>
+			<div class="price">
+				<dsp:droplet name="/atg/commerce/pricing/PriceItem">
+					<dsp:param name="item" param="wishlistItem.catalogRefId" />
+					<dsp:param name="quantity" param="wishlistItem.quantityDesired" />
+					<dsp:param name="product" param="wishlistItem.productId" />
+					<dsp:param name="jsonString" param="wishlistItem.requestJson" />
+					<dsp:param name="profile" bean="Profile" />
+					<dsp:param name="dealerId" bean="ProfileTools.priceListId" />
+					<dsp:param value="pricedItem" name="elementName" />
+					<dsp:oparam name="output">
+						<!-- Price -->
+						<dsp:getvalueof var="listPrice" param="pricedItem.priceInfo.listPrice" />
+						<dsp:getvalueof var="salePrice" param="pricedItem.priceInfo.salePrice" />
+						<c:choose>
+							<c:when test="${empty salePrice || salePrice <= 0.0}">
+								<span>
+									<dsp:include page="/global/includes/formattedPrice.jsp">
+										<dsp:param name="price" value="${listPrice}" />
+									</dsp:include>
+								</span>
+							</c:when>
+							<c:otherwise>
+								<span>
+									<dsp:include page="/global/includes/formattedPrice.jsp">
+										<dsp:param name="price" value="${listPrice}" />
+									</dsp:include>
+								 	</br>
+								 	<dsp:include page="/global/includes/formattedPrice.jsp">
+										<dsp:param name="price" value="${salePrice}" />
+									</dsp:include>
+								</span>
+							</c:otherwise>
+						</c:choose>
+					</dsp:oparam>
+				</dsp:droplet>
+			</div>
+			<div class="product-sku">
+				
+			</div>
+			<div class="product-creation-date">
+				<dsp:valueof param="wishlistItem.creationDate" date="yyyy-MM-dd">null</dsp:valueof>
+			</div>
+			
+		</div>
+		
+		<div class="item-action-links order-item-section">
+			<a href="" class="primary add-to-cart" title="${wishlistItemId}" data-giftlistid="${wishlistItemId}" data-coverid="" data-prodname="${productName}"> 
+				<fmt:message key="account.wishlist.addItemsToCart" />
+				<dsp:param name="addFromWishList" value="true" />
+			</a>
+			<%-- REMOVE --%>
+			<a id="removeWishListAnchorId_${wishlistItemId}" class="remove-item-from-wishlist"  href="${contextPath}/account/wish_list_items.jsp" title="${wishlistItemId}" data-giftlistid="${wishlistItemId}">
+				<fmt:message key="account.wishlist.remove"/>
+			</a>
+			
+			<%-- SHARE --%>
+			<dsp:a href="${contextPath}/account/ajax/wishlist-item-share.jsp" class="modal-trigger share-item-link" data-dismiss="modal" data-target="share-item-modal" aria-label="wishlist item share" tabindex="0">
+				<%-- <dsp:tagAttribute name="wishListItemId" value="${wishlistItemId}"/>
+           		<dsp:tagAttribute name="productName" value="${productName}"/>
+           		<dsp:tagAttribute name="categoryName" value=""/>
+           		<dsp:tagAttribute name="catalogrefId" value="${catalogRefId}"/>
+           		<dsp:tagAttribute name="url" value="${url}"/> --%>
+				<fmt:message key="account.wishlist.shareItem" />
+			</dsp:a>
+		</div>
+
+	</div>
+
+</dsp:page>

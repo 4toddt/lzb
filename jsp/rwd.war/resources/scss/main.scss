@@ -1,0 +1,72 @@
+// This is the primary Sass file.
+// Import global, components and vendor files. then the company sass file.
+// ONLY @import partials to this file.
+
+// For degrading to IE8
+$supports-mq: true !default;
+$supports-rem: true !default;
+
+// Globals and Variables //
+// Import Sass from files in the globals folder
+@import "globals/all";
+
+
+// Import Layout essentials including reset and responsive grids
+@import "layout/normalize";
+@import "layout/base";
+@import "layout/grids";
+@import "layout/blockGrids";
+@import "layout/columns";
+
+// Modules
+// Make sure any custom module files you add are represented here,
+// otherwise the styles won't be compiled.
+@import "components/accordion";
+@import "components/accountMenu";
+@import "components/alerts";
+@import "components/backToTop";
+@import "components/breadcrumbs";
+@import "components/buttons";
+@import "components/cartridges";
+@import "components/changeQuantity";
+@import "components/drilldown";
+@import "components/dropdowns";
+@import "components/facets";
+@import "components/forms";
+@import "components/icons";
+@import "components/loader";
+@import "components/media";
+@import "components/miniCart";
+@import "components/modals";
+@import "components/offCanvas";
+@import "components/orderItem";
+@import "components/pagination";
+@import "components/priceTreatment";
+@import "components/primaryNav";
+@import "components/productTile";
+@import "components/promoCode";
+@import "components/skuPicker";
+@import "components/sliders";
+@import "components/swatches";
+@import "components/tabs";
+@import "components/thumbs";
+@import "components/totals";
+@import "components/tooltip";
+@import "components/typeahead";
+@import "components/utilityNav";
+@import "components/videoPlayer";
+@import "components/legacy";
+
+
+// Third-party //
+//Import Sass styles created by 3rd party vendors. I.E. colorpicker, jquery.ui
+@import "vendor/slick";
+@import "vendor/turnTo";
+
+/* Pages */
+@import "pages/sitewide";
+@import "pages/account";
+@import "pages/browse";
+@import "pages/checkout";
+@import "pages/coverSearch";
+@import "pages/static";

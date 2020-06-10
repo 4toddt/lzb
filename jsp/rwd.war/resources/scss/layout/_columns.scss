@@ -1,0 +1,40 @@
+/* column styles are shared between category, search and secondary pages */
+
+/* One-column & Two-column Container Layout
+   ========================================================= */
+.one-column-container, .two-column-container {
+    @include grid-row();
+}
+
+/* One-column Layout
+   ========================================================= */
+.one-column-container {
+    @include rem-size(padding, 0px $outside-padding);
+}
+
+/* Two-column Layout
+   ========================================================= */
+.two-column-container {
+   	.two-column-left {
+   		@include grid-column(12);
+        display: none;
+		padding: 0;
+
+		/* set styles for medium screens */
+		@include media(medium-up) {
+			width: 25%;
+			display: block;
+			@include rem-size(padding, 0px $outside-padding);
+		}
+
+   	}
+   	.two-column-right {
+   		@include grid-column(12);
+        @include rem-size(padding, 0px $outside-padding);
+
+		/* set styles for medium screens */
+		@include media(medium-up) {
+			width: 75%;
+		}
+   	}
+}

@@ -1,0 +1,65 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+// Alert box notifications definitions
+
+
+.alert-box {
+	position: relative;
+	@include rem-size(margin, 20px 0px);
+	@include rem-size(padding, 5px 30px 5px 5px);
+	@include font-size(15px);
+
+	p {
+		margin: 0;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	p + p {
+		@include rem-size(margin-top, 16px);
+	}
+	&.error {
+		border: solid 4px $alert-color;
+	}
+	&.info {
+		border: solid 4px $info-color
+	}
+	&.success {
+		border: solid 4px $success-color;
+	}
+	&.simple-box {
+		border: none;
+
+		p {
+			color: $alert-color;
+		}
+	}
+	.icon-close {
+		position: absolute;
+		margin-top:0;
+		right: 0;
+		top: 0;
+		cursor:pointer !important;
+	}
+	.error-message, .info-message, .success-message {
+		display: table-row;
+		@include rem-size(line-height, 20px);
+
+		ul {
+			margin: 0;
+		}
+	}
+	.icon-error, .icon-alert, .icon-info, .icon-valid {
+		display: table-cell;
+		@include rem-size(padding, 0px 10px);
+		vertical-align: top;
+	}
+}
+
+/* Product Detail Page: Alert Box
+   ========================================================= */
+.product {
+	.alert-box {
+	   @include rem-size(margin, 20px $outside-padding);
+	}
+}

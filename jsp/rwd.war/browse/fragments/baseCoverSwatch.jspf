@@ -1,0 +1,35 @@
+<c:set var="coverSelectionDetailsClasses" value="${colorFamilyData} ${coverTypeData} ${coverPatternData} ${filteredSelectedClass} ${coverInStock}" />
+<c:set var="coverClasses" value="${customClass} ${selectedClass}" />
+<div class="cover-selection-details ${coverSelectionDetailsClasses}"
+    data-color-name="${colorName}"
+    data-color-family="${colorFamilyData}"
+    data-cover-type="${coverTypeData}"
+    data-cover-inStock="${coverInStock}"
+    data-coverid="${coverId}"
+    data-cover-cap-code="${capCode}"
+    data-cover-pattern="${coverPatternData}"
+    >
+    <a href="#"
+        data-color-name="${colorName}"
+        data-color-family="${colorFamilyData}"
+        data-color-pattern="${coverPatternData}"
+        data-price-formatted="${formatCoverOptionPrice}"
+        data-price="${priceGrade.key}"
+        data-covername="${coverArr[1]}"
+        data-coverid="${coverArr[0]}"
+        data-cover-type="${coverTypeData}"
+	    data-cover-inStock="${coverInStock}"
+        data-skuid="${productSkuId}"
+        data-dealerid="${dealerId}"
+        data-vnt="${productVNT}"
+        data-giftItemId='${giftItemId}'
+        data-wishlist='${wishlistFlag}'
+        data-type="cover"
+        data-cover-cap-code="${capCode}"
+        data-swatch="${contentHostName}${storeConfig.coverThumbnailBaseUrl}${coverArr[0]}.jpg"
+        class="cover ${coverClasses}"
+        title="${colorName}">
+        <span style="display:none;">${coverArr[0]}</span>
+        <img data-lazy="${contentHostName}${storeConfig.coverThumbnailBaseUrl}${coverArr[0]}.jpg" alt="cover color: ${colorName}" />
+    </a>
+</div>

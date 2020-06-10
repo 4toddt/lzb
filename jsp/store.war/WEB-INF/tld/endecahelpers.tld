@@ -1,0 +1,14 @@
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<description>A tag library that serves as a helper in getting Endeca data massaged for search and navigation.</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>EndecaHelpersLibrary</short-name>
+	<uri>/endecahelpers</uri>
+<function>
+	<name>pagination</name>
+	<function-class>com.lzb.endeca.utils.UtilityTags</function-class>
+	<function-signature>com.lzb.endeca.vo.Pagination getPagination(com.endeca.infront.cartridge.ResultsList,boolean hasPromoSlot)</function-signature>
+</function>
+</taglib>

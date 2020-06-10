@@ -1,0 +1,599 @@
+/* ============= Variables ============= */
+
+// TODO: put all reusable values here, and convert all but the base size to ems
+$responsiveBaseSize: 4.5vw;
+$coverSearchDetailsShadow: rgba(0, 0, 0, 0.2);
+$coverSearchDesktopThumbnailSize: 140px;
+$coverSearchMobileThumbnailSize: 90px;
+$coverSearchLineWidth: 1px;
+$coverSearchThickLineWidth: 3px;
+$coverSearchRadius: 3px;
+$coverSearchSmallGap: 2px;
+$coverSearchGap: 10px;
+$coverSearchLargeGap: 20px;
+$coverSearchXLGap: 40px;
+$coverSearchSelectHeight: 2.5em;
+$coverSearchIconSize: 1.5em;
+$coverSearchFontFamily: 'Lato', sans-serif;
+
+/* ============= External Elements ============= */
+
+.section-title.section-title--coverSearch h1 {
+  border: none;
+  color: $brand-gray30;
+  font-family: $coverSearchFontFamily;
+  font-weight: normal;
+  font-size: 2em;
+  margin: 0;
+  text-align: center;
+  text-transform: none;
+}
+
+.section-content.section-content--coverSearch {
+  padding: 0;
+}
+
+.coverDisclaimer__text {
+  margin: 0;
+  padding: $coverSearchSmallGap $coverSearchLargeGap;
+}
+
+.cust-support.coverSearch {
+
+  /* ============= (Overall) Cover Search Block ============= */
+  box-sizing: border-box;
+  color: $brand-gray30;
+  font-family: $coverSearchFontFamily;
+  margin: 0 auto;
+  max-width: lower-bound($large-range);
+  width: 100%;
+
+  @include media(xsmall-only) {
+    font-size: $responsiveBaseSize;
+  }
+
+  *:focus {
+    box-shadow: 0 0 3px $brand-blue;
+    outline: none;
+  }
+
+  .screenReader {
+    opacity: 0;
+    position: absolute;
+    z-index: -99999;
+  }
+
+  .coverSearch__selectIcon {
+    position: absolute;
+    right: 0.25em;
+    top: 0;
+    z-index: -1;
+  }
+
+  .coverSearch__selectIcon::before {
+    color: $brand-blue;
+    content: '\e905';
+    font-family: 'lzb-icons';
+    line-height: $coverSearchSelectHeight;
+  }
+
+  .coverSearch__search {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: $coverSearchLargeGap;
+
+    @include media(medium-up) {
+      border-bottom: $coverSearchThickLineWidth solid $brand-gray90;
+      margin-bottom: $coverSearchXLGap;
+    }
+
+    @include media(large-up) {
+      grid-template-columns: auto auto;
+    }
+  }
+
+  .coverSearch__text {
+    line-height: 1.8em;
+    margin: 0;
+    padding: $coverSearchLargeGap;
+    padding-top: 0;
+    text-align: center;
+
+    @include media(large-up) {
+      grid-column: span 2;
+    }
+  }
+
+  .coverSearch__covers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5em;
+    padding: $coverSearchLargeGap;
+
+    @include media(medium-up) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include media(large-up) {
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: $coverSearchLargeGap;
+    }
+  }
+
+  .coverSearch__noResults {
+    grid-column: 1 / -1;
+    font-weight: bold;
+    color: #a52d2d;
+  }
+
+  /* ============= (Each) Cover Block ============= */
+
+  .cover {
+    position: relative;
+    width: 100%;
+  }
+
+  .cover__link,
+  .cover__link:hover,
+  .cover__link:active,
+  .cover__link:visited {
+    color: $brand-gray30;
+    display: block;
+    text-decoration: none;
+  }
+
+  .cover__container {
+    margin: 0;
+  }
+
+  .cover__thumbnail {
+    object-fit: cover;
+    height: $coverSearchMobileThumbnailSize;
+    width: 100%;
+
+    @include media(medium-up) {
+      height: $coverSearchDesktopThumbnailSize;
+    }
+  }
+
+  .cover__title {
+    margin: 0;
+    padding: $coverSearchGap 0;
+  }
+
+  .cover__allDetails {
+    background-color: $base-white;
+    box-shadow: 0 $coverSearchRadius 0 $coverSearchDetailsShadow;
+    box-sizing: border-box;
+    border: $coverSearchLineWidth solid $brand-gray90;
+    border-bottom: $coverSearchThickLineWidth solid $brand-blue;
+    display: none;
+    left: $coverSearchGap*-1;
+    padding: $coverSearchGap;
+    position: absolute;
+    top: $coverSearchMobileThumbnailSize;
+    width: calc(100% + #{$coverSearchLargeGap});
+    z-index: 1;
+
+    @include media(medium-up) {
+      top: $coverSearchDesktopThumbnailSize;
+    }
+  }
+
+  // this may eventually be a desired feature, but not yet.
+  // Soft-removing this block in case it needs added again.
+
+  // .cover:hover .cover__allDetails,
+  // .cover__allDetails:hover {
+  //   display: block;
+  // }
+
+  .cover__detail {
+    margin: 0;
+  }
+
+  .cover__detailTitle {
+    font-weight: bold;
+  }
+
+  .cover__allDetailsTitle {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 0;
+    padding-bottom: $coverSearchLargeGap;
+  }
+
+  .cover__saveBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .cover__saveIcon {
+    display: inline-block;
+    height: $coverSearchIconSize;
+    line-height: $coverSearchIconSize;
+    position: relative;
+    width: $coverSearchIconSize;
+  }
+
+  .cover__saveIcon::after {
+    color: $brand-blue;
+    content: '\2661';
+    display: block;
+    font-family: 'lzb-icons';
+    font-size: $coverSearchIconSize;
+    text-align: center;
+  }
+
+  .cover__saveIcon--inWishlist::after {
+    content: '\2665';
+  }
+
+  .cover__detail {
+    padding-bottom: $coverSearchGap;
+  }
+
+  /* ============= Filter Bar Block ============= */
+
+  .filterBar.filterBar--desktop {
+    display: none;
+
+    @include media(medium-up) {
+      display: block;
+      display: grid;
+      padding: $coverSearchGap;
+    }
+  }
+
+  .filterBar.filterBar--mobile {
+    display: block;
+    display: grid;
+
+    @include media(medium-up) {
+      display: none;
+    }
+  }
+
+  .filterBar {
+    grid-template-columns: 1fr;
+    grid-gap: $coverSearchGap;
+
+    @include media(medium-up) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: $coverSearchXLGap;
+    }
+  }
+
+  .filterBar__accordionBtn {
+    background-color: $brand-gray90;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    margin: $coverSearchSmallGap;
+    padding: $coverSearchGap;
+    position: relative;
+    text-align: left;
+    width: 100%;
+  }
+
+  .filterBar__accordionBtn--outer {
+    background-color: $base-white;
+    border: $coverSearchLineWidth solid $brand-gray75;
+    border-radius: $coverSearchRadius;
+    margin: 0 $coverSearchGap;
+    width: calc(100% - #{$coverSearchLargeGap});
+  }
+
+  .filterBar__accordionBtn::after {
+    content: '+';
+  }
+
+  .filterBar__accordionBtn[aria-expanded="true"]::after {
+    content: '\2013';
+  }
+
+  .filterBar__accordionBtn::after {
+    color: $brand-blue;
+    display: block;
+    font-size: 1.5em;
+    height: 100%;
+    line-height: 36px;
+    position: absolute;
+    right: $coverSearchGap;
+    top: 0;
+  }
+
+  .filterBar__accordionChild[aria-hidden="true"] {
+    display: none;
+  }
+
+  .filterBar__option {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    padding: $coverSearchGap $coverSearchLargeGap;
+    text-align: left;
+    width: 100%;
+  }
+
+  .filterBar__option[aria-selected="true"] {
+    color: $brand-blue;
+    font-weight: bold;
+  }
+
+  .filterBar__selectContainer {
+    position: relative;
+  }
+
+  .filterBar__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    padding: 0 $coverSearchIconSize 0 $coverSearchGap;
+    position: relative;
+  }
+
+  .filterBar__select::-ms-expand {
+    display: none;
+  }
+
+  /* ============= Search Bar Block ============= */
+
+  .searchBar {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: $coverSearchGap;
+
+    @include media(medium-up) {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  .searchBar__searchContainer {
+    position: relative;
+  }
+
+  .searchBar__search {
+    background-color: #f8f8f8;
+    border: $coverSearchLineWidth solid $brand-gray75;
+    border-radius: $coverSearchRadius;
+    width: 100%;
+  }
+
+  .searchBar__select,
+  .searchBar__search,
+  .searchBar__searchBtn,
+  .searchBar__items {
+    background-color: transparent;
+    border: none;
+    font-size: 1em;
+    padding: $coverSearchGap;
+    width: auto;
+  }
+
+  .searchBar__search {
+    background-color: #fafafa;
+    border: $coverSearchLineWidth solid $brand-gray75;
+    width: 100%;
+  }
+
+  .searchBar__searchBtn {
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .searchBar__searchBtn::before {
+    color: $brand-blue;
+    content: '\e929';
+    display: block;
+    font-family: 'lzb-icons';
+    height: 1em;
+    width: 1em;
+  }
+
+  .searchBar__select {
+    padding: 0 $coverSearchGap;
+  }
+
+  .searchBar__itemsContainer {
+    border-top: $coverSearchSmallGap solid $brand-gray90;
+    margin-top: $coverSearchLargeGap;
+    padding-top: $coverSearchLargeGap;
+
+    @include media(medium-up) {
+      border: none;
+      margin: 0;
+      padding: 0 0 0 $coverSearchGap;
+    }
+  }
+
+  .searchBar__selectContainer {
+    border: $coverSearchLineWidth solid $brand-gray75;
+    border-radius: $coverSearchRadius;
+    display: inline-block;
+    height: $coverSearchSelectHeight;
+    padding: 0 $coverSearchGap;
+    position: relative;
+
+    @include media(medium-up) {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  .searchBar__selectContainer:focus-within {
+    box-shadow: 0 0 3px $brand-blue;
+    outline: none;
+  }
+
+  .searchBar__label {
+    cursor: default;
+    display: inline-block;
+    font-size: 1em;
+    height: 100%;
+    line-height: $coverSearchSelectHeight;
+    margin: 0;
+    padding-right: 4em;
+    vertical-align: middle;
+  }
+
+  .searchBar__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: $coverSearchSelectHeight;
+    left: 0;
+    line-height: $coverSearchSelectHeight;
+    padding: 0 1.5em 0 3.5em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    @include media(medium-up) {
+      padding-left: 3em;
+    }
+  }
+
+  .searchBar__select::-ms-expand {
+    display: none;
+  }
+
+  .searchBar__select:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .searchBar__items {
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0;
+  }
+
+  /* ============= Pagination Block ============= */
+
+  .coverPagination {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 0.375em;
+    padding: $coverSearchLargeGap;
+
+    @include media(medium-up) {
+      float: right;
+    }
+  }
+
+  .coverPagination__prev,
+  .coverPagination__next,
+  .coverPagination__number,
+  .coverPagination__prev:hover,
+  .coverPagination__next:hover,
+  .coverPagination__number:hover,
+  .coverPagination__prev:active,
+  .coverPagination__next:active,
+  .coverPagination__number:active,
+  .coverPagination__prev:visited,
+  .coverPagination__next:visited,
+  .coverPagination__number:visited,
+  .coverPagination__ellipsis {
+    color: inherit;
+    line-height: 2em;
+    text-decoration: none;
+  }
+
+  .coverPagination__prev,
+  .coverPagination__next {
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .coverPagination__prev::before {
+    content: '< ';
+  }
+
+  .coverPagination__next::after {
+    content: ' >';
+  }
+
+  .coverPagination__numbers {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.375em;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .coverPagination__number {
+    height: 2em;
+    width: 2em;
+  }
+
+  .coverPagination__number--current,
+  .coverPagination__number--current:hover,
+  .coverPagination__number--current:active,
+  .coverPagination__number--current:visited {
+    border: $coverSearchLineWidth solid $brand-gray75;
+    border-radius: 50%;
+    color: $brand-blue;
+  }
+
+  .coverPagination--hidden {
+    display: none!important;
+  }
+
+}
+
+/* ie10 and ie11 styles only */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  .mainCoverSearchContainer.coverSearch {
+
+    /* make up for lack of grid support by using inline-block layouts */
+    .coverSearch__covers,
+    .cover__allDetailsTitle,
+    .coverPagination,
+    .coverPagination__numbers {
+      font-size: 0;
+    }
+    .coverSearch__covers > *,
+    .cover__allDetailsTitle > *,
+    .coverPagination > *,
+    .coverPagination__numbers > * {
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    /* determine each element's width (to replace grid columns) */
+    .coverPagination__numbers > * {
+      width: 20%;
+    }
+    .coverSearch__covers > *,
+    .coverPagination > * {
+      width: 33%;
+    }
+    .cover__allDetailsTitle > * {
+      width: 50%;
+    }
+
+    /* determine each element's margins (to replace grid gap) */
+    .coverSearch__covers > *:not(:last-child) {
+      margin-right: 20px;
+      width: calc(20% - 20px);
+    }
+    .coverPagination > *:not(:last-child),
+    .coverPagination__numbers > *:not(:last-child) {
+      margin-right: 0.375em;
+      width: calc(33% - 0.375em);
+    }
+  }
+
+}

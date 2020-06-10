@@ -1,0 +1,228 @@
+/* Mobile Sign In
+======================================================*/
+.signin-menu {
+	.signin-dropdown,
+	.content {
+		text-align: center;
+	}
+	h4 {
+		@include rem-size(margin-bottom, 15px);
+    	@include rem-size(padding-bottom, 15px);
+    	border-bottom: solid 1px $light-gray;
+    	color: $almost-black;
+	}
+	.forgot-password-click {
+		border-bottom: none !important;
+	}
+	.fb-signin-section {
+		@include rem-size(margin, 10px 24px);
+    	height: auto;
+    	#status {
+		    display: none
+		}
+    	a {
+    		width: 100%;
+    		@include button-color(#3c5a97,$base-white);
+    		@include font-size(16px);
+    		.icon-facebook {
+    			position: relative;
+    			top: 2px;
+    			@include font-size(20px);
+    			@include rem-size(margin-right, 10px);
+    		}
+    	}
+	}
+	.create-account {
+		@include rem-size(margin, 30px 15px);
+		a {
+			@include rem-size(margin-top, 10px);
+    		width: 100%;
+		}
+		p {
+    		@include font-size(14px);
+    	}
+	}
+	.signin-dropdown {
+	    @include rem-size(padding, 0px 15px);
+	    .field-group {
+	    	.error {
+		    	text-align: left;
+		    	.icon-error {
+		    		@include rem-size(margin-right, 5px);
+		    	}
+		    }
+		}
+	    .signin{
+	    	h4 {
+	    		.modal &{
+	    			display: none;
+	    		}
+	    		.account &{
+	    			display: none;
+	    		}
+	    	}
+	    	.button {
+				width: 100%;
+			}
+	    	@include rem-size(margin, 0px);
+		    width: auto;
+		    min-height: initial;
+		    fieldset {
+		   		border: none;
+		   		@include rem-size(padding, 10px 0px);
+		    }
+
+		    @include placeholder{
+				font-style: normal;
+			}
+
+		    input {
+		   		height: 45px;
+	    		@include rem-size(border-radius, 4px);
+		    }
+		    label[for=remember] {
+		    	width: auto;
+			    @include font-size(14px);
+			    color: $medium-gray;
+			    cursor: pointer;
+			    display: inline-block;
+			    background: none;
+			    @include rem-size(padding-left, 0px);
+			    @include rem-size(padding-right, 10px);
+			    border: none;
+			    text-transform: capitalize;
+			    &:before {
+			    	top: 3px !important;
+			    }
+		    }
+		    label:not([for=remember]) {
+			    display: none;
+			    .login-modal & {
+			    	display: block;
+			    }
+			    background: none;
+			    border-top: none;
+			    color: $almost-black;
+			    text-transform: capitalize;
+				text-align: left;
+				font-weight: normal;
+				@include rem-size(padding, 0px);
+			}
+			label[for=loginRemember] {
+				display: inline-block;
+			}
+			.custom-checkbox {
+				position: relative;
+			    display: inline-block;
+			    input[type="checkbox"] {
+				    width: 25px;
+				    height: 25px;
+				    position: absolute;
+				    vertical-align: top;
+				    left: -3px;
+    				top: 3px;
+    				.login-modal & {
+						position: absolute;
+					}
+				}
+			}
+		    .submitBtn {
+		    	@include rem-size(margin, 10px 0px 3px 0px);
+	    		@include media(small-only) {
+					width: 100%;
+				}
+		    }
+		    .has-tip.icon-info:before {
+			    color: $base-gray;
+			}
+	    }
+	}
+	/*@include media(large-up){
+		.signin-dropdown {
+			width: 60%;
+	    	float: left;
+	    	.forgot-password-click {
+	    		float: right;
+	    	}
+	    	h4 {
+	    		display: none;
+	    	}
+	    	.custom-checkbox {
+	    		margin-left: 35px;
+	    		float: left;
+	    	}
+	    	.submitBtn {
+	    		float: right;
+	    	}
+	    }
+	    .fb-signin-section {
+	    	float: right;
+	    }
+	    .create-account {
+	    	float: left;
+    		text-align: left;
+    		.create-account-click {
+    			width: auto;
+    		}
+	    }
+	}*/
+}
+
+/* My Account dropdown
+======================================================*/
+
+.account-menu {
+	height: auto !important;
+  	padding: 0;
+  	font-size: 14px;
+  	ul.account-list {
+  		list-style: none;
+  		padding: 30px;
+    	height: auto;
+    	li {
+    		padding-top: 10px;
+    		&:first-child {
+    			padding-top: 0;
+    		}
+    	}
+  	}
+}
+
+/* forgot password section
+	======================================================*/
+.forgot-password-modal {
+	.forgot-password {
+		@include rem-size(font-size, 14px);
+		@include rem-size(padding, 0px 10px);
+		input {
+	   		height: 45px;
+			@include rem-size(border-radius, 4px);
+			border: 1px solid $light-gray;
+	    }
+		.button {
+			width: 100%;
+		}
+	}
+}
+
+/* create account modal section
+	======================================================*/
+.register-modal {
+	h2 {
+		@include rem-size(font-size, 20px);
+		font-weight: $bold;
+	}
+	 label[for=ZipCode],
+	 label[for=promoCheck] {
+	 	display: inline-block;
+	 }
+	.required-note {
+		color: $base-black; 
+		font-weight: $bold;
+	}
+	.already-account {
+		.create-account-click {
+			text-decoration: underline;
+		}
+	}
+}

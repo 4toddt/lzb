@@ -1,0 +1,701 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+.modal {
+	display: none;
+	position: absolute;
+	left: 0px; top: 0px;
+	width:100%; height:100%;
+	text-align: center;
+	z-index: 2001;
+}
+
+.modal-backdrop {
+	background: $base-black;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2000;
+}
+/*TODO: fallback
+.no-rgba .modal-backdrop { background: url('../images/bg/overlay.png');}
+ */
+.modal-backdrop.fade.in {
+	opacity: 0.4;
+}
+.modal-window {
+	background: none repeat scroll 0 0 white;
+	border: 1px solid $border-color;
+	@include box-shadow(0, 0, 9px, rgba(0, 0, 0, 0.18));
+	left: 50%;
+	top: 19.5%;
+	opacity: 0;
+	position: absolute;
+	text-align: left;
+	z-index: 2000;
+	width:100%;
+	margin-left:-50%;
+	
+	&.x-small {
+		width: 300px;
+		margin-left: -150px;
+	}
+	@include media(medium-up) {
+		width: 70%;
+		margin-left: -35%;
+
+		&.small {
+			width: 500px;
+			margin-left: -250px;
+		}
+		&.medium {
+			width: 700px;
+			margin-left: -350px;
+		}
+	}
+	@include media(large-up) {
+		width: $row-width;
+		margin-left: -$row-width/2;
+	}
+
+	@include media(medium-up) {
+		width:70%;
+		margin-left:-35%;
+	}
+}
+.modal-window.fade.in {
+	opacity: 1;
+}
+.modal-close {
+	position: absolute;
+	@include rem-size(top, 10px);
+	@include rem-size(right, 10px);
+	cursor: pointer !important;
+
+	@include media(medium-up) {
+		@include rem-size(top, 15px);
+		@include rem-size(right, 15px);
+	}
+}
+.modal-content {
+	@include rem-size(margin, 10px);
+	@include media(medium-up) {
+		@include rem-size(margin, 25px);
+	}
+}
+.modal-content.fade.in {
+	opacity: 1;
+}
+.modal-header {
+	border-bottom: solid 1px $light-gray;
+
+	& + .modal-body {
+		@include rem-size(margin-top, 20px);
+	}
+
+	.title-bar {
+		width: 100%;
+		@include rem-size(padding, 0px 25px 5px 0px);
+	}
+	h1, h2 {
+		margin: 0;
+		padding: 0;
+	}
+}
+.modal-body {
+	@include rem-size(margin-top, 40px);
+
+	@include media(medium-up) {
+		@include rem-size(margin-top, 50px);
+	}
+}
+.modal-footer {
+	@include rem-size(margin-top, 20px);
+	@include border(top, 1px, solid, $light-gray);
+
+	p {
+		@include font-size(14px);
+	}
+}
+.modal-close {
+	.icon-close {
+		@include font-size(16px);
+		color: $base-black;
+
+		@include media(medium-up) {
+			@include font-size(24px);
+		}
+	}
+	button {
+		padding: 0;
+    	background-color: transparent;
+    	border: 0;
+    	-webkit-appearance: none;
+	}
+}
+
+/* Video Modal
+   ========================================================= */
+.modal {
+	.video-content {
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			@include rem-size(padding-top, 30px);
+			height: 0;
+			overflow: hidden;
+
+			iframe, object, embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+/* Image Modal
+   ========================================================= */
+.modal {
+	.image-content {
+		.image-container {
+			text-align: center;
+		}
+	}
+}
+
+/* Product Details Page: Add to Cart Modal
+   ========================================================= */
+.modal {
+	.add-to-cart-modal {
+		.modal-header {
+			h2 {
+				@include font-size(22px);
+
+				@include media(medium-up) {
+					@include font-size(26px);
+				}
+			}
+		}
+		.modal-body {
+			@include clearfix();
+		}
+		.purchased-details {
+			.cart-success-buttons {
+				.button {
+					display: inline-block;
+					width: calc(50% - 10px);
+					@include rem-size(padding-left, 15px);
+					@include rem-size(padding-right, 15px);
+				}
+				a {
+					@include rem-size(margin-right, 20px);
+				}
+				@media only screen and (max-width: 22.500em) {
+					.button {
+						display: block;
+						width: 100%;
+					}
+					a {
+						margin-right: 0;
+						@include rem-size(margin-bottom, 15px);
+					}
+				}
+			}
+		}
+		.purchased-item {
+			@include clearfix();
+
+			h3 {
+				font-weight: $heavy-bold;
+				@include rem-size(margin, 20px 0px);
+			}
+			.purchased-image {
+				@include grid-column(4);
+				padding-left: 0;
+
+				@include media(medium-up) {
+					width: 50%;
+				}
+				img {
+					border: 1px solid $base-gray;
+				}
+			}
+			.protection-plan {
+				@include grid-column(8);
+				@include font-size(12px);
+				@include rem-size(line-height, 18px);
+				padding-right: 0;
+
+				@include media(medium-up) {
+					width: 50%;
+				}
+				img {
+					float: $default-float;
+					@include rem-size(width, 50px);
+					@include rem-size(margin-right, 10px);
+				}
+				p {
+					@include font-size(12px);
+					@include rem-size(line-height, 18px);
+				}
+				.button.add-plan {
+					@include rem-size(margin-left, 20px);
+
+					@media only screen and (max-width: 22.500em) {
+						margin-left: 0;
+						display: block;
+						@include rem-size(margin-top, 10px);
+					}
+				}
+
+			}
+		}
+		.also-available {
+			h4 {
+				font-weight: $bold;
+			}
+			ul {
+				@include block-grid(
+				$per-row: 2,
+				$spacing: 20px,
+				$base-style: true
+				);
+				@include media(medium-up) {
+					@include block-grid(
+					$per-row: 3,
+					$spacing: 20px,
+					$base-style: false
+					);
+				}
+				@include media(large-up) {
+					@include block-grid(
+					$per-row: 5,
+					$spacing: 20px,
+					$base-style: false
+					);
+				}
+			}
+			.also-available-prod {
+				text-align: center;
+
+				.also-available-prod-name {
+					@include font-size(12px);
+					@include rem-size(line-height, 18px);
+
+					@include media(medium-up) {
+						@include font-size(14px);
+						@include rem-size(line-height, 20px);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Product Details Page: View Cover Details Modal
+   ========================================================= */
+.modal {
+	.view-cover-details-modal {
+		.modal-header {
+			border-bottom: none;
+			@include rem-size(margin-left, 10px);
+			
+			h2 {
+				@include font-size(22px);
+
+				@include media(medium-up) {
+					@include font-size(26px);
+				}
+			}
+		}
+		.modal-body {
+			@include clearfix();
+			color: $almost-black;
+			margin-top: 0;
+			@include rem-size(margin-left, 10px);
+			@include rem-size(margin-right, 10px);
+		}
+		.free-swatches-link {
+			width: 100%;
+			display: block;
+			text-align: center;
+			@include rem-size(margin-top, 15px);
+			@include rem-size(margin-bottom, 10px);
+		}
+		.cover-name {
+			@include font-size(18px);
+			font-weight: $bold;
+			text-transform: capitalize;
+		}
+		.cover-id {
+			@include font-size(14px);
+			font-weight: $bold;
+		}
+		.swatch-image {
+			width: 400px;
+		}
+		ul.cover-care-grid {
+			@include block-grid(
+				$per-row: 2,
+				$spacing: 20px,
+				$base-style: true
+			);
+			
+			list-style: none;
+			@include rem-size(margin-top, 20px);
+			color: $medium-gray;
+			
+			&>li {
+				@include rem-size(padding-bottom, 10px);
+				@include font-size(14px);
+			}
+			
+			img {
+				@include rem-size(margin-right, 10px);
+				float: left;
+				width: 40px;
+				height: auto;
+			}
+			
+			.cover-care-name {
+				@include rem-size(line-height, 18px);
+				display: block;
+			}
+		}
+		.cover-details {
+			@include font-size(14px);
+			@include rem-size(line-height, 18px);
+			@include rem-size(margin-top, 10px);
+			clear: both;
+		}
+		#swatch-image-section { 
+			text-align: center; 
+			
+			.panzoom { 
+				width: 100%; 
+				height: 100%; 
+			}
+			
+			.panzoom-in, .panzoom-out { 
+				color: $light-gray; 
+				@include rem-size(padding-left, 15px);
+				@include rem-size(padding-right, 15px);
+				@include rem-size(padding-top, 10px);
+				@include font-size(18px);
+			}
+		}	
+	}
+}
+
+/* Product Details Page: Estimate Shipping Modal
+   ========================================================= */
+.modal {
+	.estimate-shipping-cost-modal {
+		height: 100% !important;
+		.title {
+			text-align: center;
+	    	@include rem-size(padding, 20px 0px);
+	    	@include font-size(22px);
+		}
+		form {
+			 @include placeholder{
+				font-style: normal;
+				@include font-size(14px);
+			}
+			@include border(bottom, 1px, solid, $light-gray);
+			@include rem-size(padding-bottom, 10px);
+			input {
+				width: 100%;
+				height: 45px;
+				@include rem-size(border-radius, 4px);
+			}
+			.field-error-text {
+				min-width: 214px;
+			}
+		}
+		.results {
+			@include font-size(16px);
+			.shipping-methods {
+				@include rem-size(padding, 10px);
+	    		border-bottom: 1px solid $light-gray;
+	    		div {
+	    			@include rem-size(padding, 5px 10px);
+	    			span {
+	    				display: inline-block;
+	    			}
+	    		}
+	    		.price {
+	    			@include rem-size(margin-right, 20px);
+	    		}
+			}
+		}
+		.shipping-cost-disclaimer {
+			@include font-size(14px);
+		}
+		.modal-footer {
+			@include rem-size(margin, 50px 0px);
+			button {
+				width: 100%;
+			}
+		}
+	}
+}
+
+/* Product Details Page: Social Share Modal
+   ========================================================= */
+.modal {
+	&#social-share-modal {
+		.modal-window {
+			@include media(medium-up) {
+				@include rem-size(width, 300px);
+				margin: 0 auto;
+				/*position: relative;*/
+			}
+		}
+		#social-share {
+			color: $brand-blue;
+			h2 {
+				@include font-size(16px);
+				text-align: center;
+				text-transform: uppercase;
+			}
+			ul {
+				list-style: none;
+				padding-inline-start: 0;
+				.icon {
+					@include font-size(35px);
+				}
+				li {
+					@include font-size(14px);
+					@include rem-size(line-height, 35px);
+					@include rem-size(padding, 10px 30px);
+					vertical-align: middle;
+					border-bottom: 1px solid $light-gray;
+					text-align: center;
+					button, a {
+						@include rem-size(width, 150px);
+						span {
+							@include rem-size(margin, 0px 8px);
+							vertical-align: middle;
+							display: inline-block;
+							@include font-size(16px);
+							&:last-child {
+								@include rem-size(width, 65px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Checkout: Financial Stack Modal
+   ========================================================= */
+.modal {
+	&#financial-stack-modal {
+	   	.modal-window {
+	   		width: 80%;
+	   		margin-left: -40%;
+	   		margin-right: -40%;
+	   	}
+	   	.modal-content {
+	   		@include rem-size(margin, 30px 20px);
+	   		@include font-size(12px);
+	   		color: $medium-gray;
+	   		@include rem-size(line-height, 16px);
+
+	   		p {
+	   			font-weight: $bold;
+	   			color: $almost-black;
+	   		}
+	   	}
+	   	.modal-close {
+	   		@include rem-size(top, 15px);
+	   		@include rem-size(right, 15px);
+
+	   		.icon-close {
+	   			@include font-size(12px);
+	   			color: $medium-blue;
+	   			font-weight: $bold;
+	   		}
+	   	}
+	}
+}
+
+/* Checkout: Remove Item Modal
+   ========================================================= */
+.modal {
+   	&#remove-item-modal {
+	   	.modal-window {
+	   		width: 90%;
+	   		margin-left: -45%;
+	   		margin-right: -45%;
+
+	   		@include media(medium-up) {
+	   			width: 300px;
+	   			@include rem-size(margin, -150px);
+	   			margin-right: 0;
+	   			left: 50%;
+	   		}
+	   	}
+	   	.modal-body {
+	   		margin-top: 0;
+	   	}
+	   	.modal-content {
+	   		@include rem-size(margin, 30px);
+	   		@include font-size(14px);
+	   		color: $medium-gray;
+	   		@include rem-size(line-height, 16px);
+	   		text-align: center;
+	   		overflow: hidden;
+	   	}
+	   	.modal-close {
+	   		@include rem-size(top, 15px);
+	   		@include rem-size(right, 15px);
+
+	   		.icon-close {
+	   			@include font-size(12px);
+	   			color: $medium-blue;
+	   			font-weight: $bold;
+	   		}
+	   	}
+	   	.button {
+	   		width: 48%;
+	   		float: left;
+	   		padding-left: 0;
+	   		padding-right: 0;
+	   		text-transform: uppercase;
+	   	}
+	   	.remove-item-no-btn {
+	   		float: right;
+	   	}
+	}
+}
+
+/* Checkout: Change Delivery Charge Modal
+   ========================================================= */
+.modal {
+	.change-delivery-charge-modal {
+		.text-msg {
+			@include font-size(12px);
+			color: $alert-color;
+			@include rem-size(line-height, 16px);
+		}
+		.bold {
+			font-weight: $bold;
+		}
+		.delivery-charge-table {
+			display: table;
+			width: 100%;
+		}
+		.delivery-charge-row {
+			display: table-row;
+		}
+		.delivery-charge-cell {
+			display: table-cell;
+			@include font-size(14px);
+			border-bottom: 1px solid $light-gray;
+			@include rem-size(line-height, 30px);
+		}
+		.charge-info {
+			width: 64%;
+		}
+		.from-price {
+			width: 18%;
+		}
+		.to-price {
+			width: 18%;
+			text-align: right;
+			font-weight: $bold;
+		}
+		.stock-change-message {
+			@include font-size(12px);
+			font-style: italic;
+			@include rem-size(line-height, 16px);
+			@include rem-size(padding, 10px 20px 10px);
+			@include rem-size(margin-top, -10px);
+			@include rem-size(margin-right, -150px);
+			color: $brand-gray30;
+		}
+		.promo-msg {
+			background-color: $light-gray;
+			text-align: center;
+			@include rem-size(margin, 10px 0px);
+			@include font-size(14px);
+			@include rem-size(line-height, 30px);
+		}
+		.zip-code-buttons {
+			text-align: right;
+			@include rem-size(padding-top, 10px);
+		}
+		.accept-btn, .cancel-link {
+			text-transform: uppercase;
+			@include font-size(14px);
+		}
+		.accept-btn {
+			@include rem-size(margin-left, 10px);
+		}
+	}
+}
+
+/* Checkout: Credit Card Security Code Modal
+   ========================================================= */
+.modal {
+	.cc-secCode-modal {
+		.cc-example {
+			@include grid-row();
+			@include rem-size(margin, 20px 0px);
+
+			.image, .description {
+				@include media(medium-up) {
+					@include grid-column(6);
+				}
+			}
+			.image {
+				padding-left: 0;
+
+				@include media(medium-up) {
+					img {
+						width: 100%;
+					}
+				}
+			}
+			.description {
+				padding-right: 0;
+				@include rem-size(margin-top, 20px);
+
+				@include media(medium-up) {
+					margin-top: 0;
+				}
+				h5 {
+					@include rem-size(margin, 0px 0px 10px 0px);
+				}
+				p {
+					margin-top: 0;
+				}
+			}
+		}
+		p {
+			@include font-size(14px);
+		}
+	}
+}
+
+/* Checkout: Terms And Conditions Modal
+   ========================================================= */
+.modal {
+	.terms-and-conditions-modal {
+		h3 {
+			@include border(bottom, 1px, solid, $light-gray);
+		}
+		p {
+			@include font-size(14px);
+		}
+	}
+}

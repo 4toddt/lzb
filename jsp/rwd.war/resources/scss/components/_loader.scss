@@ -1,0 +1,52 @@
+//
+// @variables
+//
+$loading-graphic-width: 46px;
+$loading-graphic-height: 46px;
+$loading-graphic-background: #fff;
+$loading-graphic-padding: 7px;
+$overlay-color: #eee;
+$overlay-opacity: 0.8;
+
+.loader {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	z-index: 2000;
+}
+
+.loader-backdrop {
+	background: $overlay-color;
+	@include opacity($overlay-opacity);
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.loader-animation {
+
+}
+.loader-content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 10;
+	background-color: $loading-graphic-background;
+	@include rounded();
+	width: $loading-graphic-width + $loading-graphic-padding * 2;
+	height: $loading-graphic-height + $loading-graphic-padding * 2;
+	margin-left:-($loading-graphic-width/2 + $loading-graphic-padding);
+	margin-top:-($loading-graphic-height/2 + $loading-graphic-padding);
+	padding: $loading-graphic-padding;
+}
+
+.loader-text {
+	@include sr-only;
+}

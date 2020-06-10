@@ -1,0 +1,62 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+// Tabs definitions
+.tabs {
+
+	.tabs-container {
+		padding: 0;
+		font-size: 0;
+		text-align: center;
+		@include rem-size(margin-bottom, 16px);
+
+		li {
+			display: inline-block;
+		}
+	}
+	.tab-title {
+		display: inline-block;
+		@include rem-size(padding, 10px 15px);
+		cursor: pointer;
+		@include font-size(16px);
+		color: $deep-gray;
+		text-decoration: none;
+
+		&:hover {
+			color: $link-color;
+			@include rem-size(padding, 10px 15px 6px 15px);
+			@include border(bottom, 4px, solid, $deep-gray);
+		}
+		&.active {
+			font-weight: $heavy-bold;
+			@include rem-size(padding, 10px 15px 6px 15px);
+			@include border(bottom, 4px, solid, $link-color);
+		}
+	}
+	.tabs-content {
+		@include rem-size(margin-top, 16px);
+		@include rem-size(padding, 0px 15px);
+	}
+	.tab-body {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}
+
+/* Product Page - Product Detail Tabs
+   ========================================================= */
+.product .product-details {
+
+	/* reduces padding for smallest screen devices */
+	@media screen and (max-width: 22em) {
+		.tab-title {
+			@include rem-size(padding, 10px 8px);
+
+			&:hover, &.active {
+				@include rem-size(padding, 10px 8px 6px 8px);
+			}
+		}
+	}
+}

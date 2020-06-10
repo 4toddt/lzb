@@ -1,0 +1,68 @@
+.pagination {
+	display: inline-block;
+	@include clearfix;
+
+	a {
+		@include transition;
+		@include font-size(18px);
+        @include rem-size(line-height, 22px);
+        @include rem-size(padding, 5px);
+        @include rem-size(margin, 0px 5px);
+		@include rem-size(min-width, 36px);
+		background: $base-white;
+		border: 2px solid $link-color;
+		color: $link-color;
+		text-decoration: none;
+		display: block;
+		float: $default-float;
+		cursor: pointer;
+
+		// responsive adjustment for smallest screens.
+		@media screen and (max-width: 23.375em) {
+			@include rem-size(margin, 0px 4px);
+			@include rem-size(min-width, 29px);
+		}
+
+		/* show for medium-up screens */
+		@include media(medium-up) {
+			@include rem-size(margin, 0px 8px);
+		}
+
+		&:hover{
+			text-decoration: none;
+			color: $link-color;
+			background-color: lighten($border-color, 20);
+		}
+		&.active {
+			text-decoration: none;
+			border-color: transparent;
+			color: $base-white;
+			background-color: $link-color;
+			pointer-events: none;
+			cursor: default;
+		}
+		&.disabled {
+			color: $disabled-link-color;
+			text-decoration: none;
+			border-color: $light-gray;
+			pointer-events: none;
+			background-color: $light-gray;
+			opacity: .8;
+			cursor: default;
+		}
+		&.more-pages {
+			background: none;
+			border: none;
+			pointer-events: none;
+			cursor: default;
+		}
+		&.pagination-prev, &.pagination-next {
+			@include rem-size(padding, 5px 7px);
+
+			// responsive adjustment for smallest screens.
+			@media screen and (max-width: 23.375em) {
+				@include rem-size(padding, 5px 2px);
+			}
+		}
+	}
+}

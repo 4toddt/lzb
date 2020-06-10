@@ -1,0 +1,7 @@
+<div class="changeQuantity" data-quantify>
+	<div class="quantity-group">
+		<div class="minus-icon inactive">-</div>
+		<div class="current-quantity"><input type="text" class="counter" value="0" /></div>
+		<div class="plus-icon">+</div>
+	</div>
+</div>

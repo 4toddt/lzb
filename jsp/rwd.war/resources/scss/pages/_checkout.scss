@@ -1,0 +1,2208 @@
+.checkout {
+	&:not(.cart){
+		.footer-promos {
+			display: none;
+		}
+	}
+
+	input[type="email"] {
+		&:first-of-type {
+			@include rem-size(margin-bottom, 10px);
+		}
+	}
+	
+	.tooltip {
+		background-color: $base-white;
+		color: $medium-gray;
+		border: 1px solid $light-gray;
+		@include rem-size(padding, 10px 20px 20px);
+		@include font-size(10px);
+		@include box-shadow(0, 0, 9px, rgba(0, 0, 0, 0.18));
+	}
+
+	.promo-and-totals {
+		@include grid-row();
+		padding: 0;
+		
+		@include media(medium-up) {
+			padding: 0;
+			border-top: 1px solid $light-gray;
+		}
+		
+		.totals-container {
+			border-top: 1px solid $light-gray;
+			width: 100%;
+			@include rem-size(padding, 20px 0px 0px);
+			
+			@include media(medium-up) {
+				@include rem-size(padding, 50px 0px 0px);
+				border-top: none;
+			}
+
+			& + .deposit-section {
+				@include rem-size(margin-top, 20px);
+
+				@include media(medium-up) {
+					margin-top: 0;
+				}
+			}
+		}
+		
+		.totals {
+			font-weight: $regular;
+			color: $medium-gray;
+			@include font-size(14px);
+			border-collapse: collapse;
+			
+			.subtotal {
+				@include media(medium-up) {
+					background-color: rgba(233, 233, 233, 0.3);
+					@include font-size(16px);
+					font-weight: $medium-light;
+					color: $almost-black;
+					@include rem-size(line-height, 48px);
+				}
+			}
+			
+			.total-label {
+				text-align: left;
+				@include rem-size(padding, 5px 5px 5px 20px);
+			}
+			
+			.total-amount {
+				@include rem-size(padding, 5px 18px 5px 5px);
+			}
+			
+			.shipping {
+				@include media(medium-up) {
+					@include font-size(14px);
+					color: $medium-gray;
+					@include rem-size(line-height, 20px);
+				}
+				
+				.total-label, .total-amount {
+					@include media(medium-up) {
+						@include rem-size(padding-top, 15px);
+					}
+				}
+			}
+			
+			.total {
+				border-top: 2px solid $medium-blue;
+				border-bottom: 2px solid $medium-blue;
+				background-color: $base-white;
+				color: $almost-black;
+				@include rem-size(line-height, 55px);
+				@include font-size(16px);
+				
+				.total-amount {
+					font-weight: $bold;
+				}
+			}
+
+			.icon-info {
+				@include font-size(12px);
+				@include rem-size(padding-left, 10px);
+
+				&:before {
+					color: $medium-blue;
+				}
+			}
+			
+			.tax {
+				.tax-down-msg {
+					@include rem-size(padding, 5px 0px 5px 20px);
+					display: table-cell;
+					@include font-size(12px);
+					
+					p {
+						font-weight: $bold;
+					}
+				}
+
+				.icon-info {
+					vertical-align: top;
+				}
+			}
+
+			.recycling-fee {
+				.has-tip.icon-info {
+					display: none;
+
+					@include media(large-up) {
+						display: inline-block;
+					}
+				}
+				a.modal-trigger {
+					@include media(large-up) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	
+	.wysk-section {
+		background-color: rgba(233, 233, 233, 0.3);
+		@include rem-size(padding, 25px 35px);
+		color: $almost-black;
+		
+		@include media(medium-up) {
+			width: 100%;
+			float: right;
+			clear: both;
+			@include rem-size(padding, 20px);
+			@include rem-size(margin, 20px 0px 50px);
+		}
+		
+		.title {
+			@include font-size(16px);
+			font-weight: $medium-light;
+		}
+		
+		a {
+			@include font-size(12px);
+			font-weight: $regular;
+			@include rem-size(padding-top, 15px);
+			display: block;
+			color: $almost-black;
+			text-decoration: underline;
+		}
+	}
+	
+	.deposit-section {
+		@include rem-size(padding, 25px 20px);
+		background-color: rgba(233, 233, 233, 0.3);
+		@include font-size(14px);
+		color: $medium-gray;
+		font-weight: $regular;
+		overflow: hidden;
+		clear: both;
+		
+		@include media(medium-up) {
+			margin: 0;
+			background: none;
+			@include rem-size(padding, 15px 18px 0px 20px);
+		}
+		
+		.icon-info {
+			@include font-size(12px);
+			@include rem-size(padding-left, 10px);
+			
+			&:before {
+				color: $medium-blue;
+			}
+		}
+		
+		.label {
+			float: left;
+			width: 50%;
+			@include rem-size(line-height, 30px);
+			
+			.icon-info {
+				display: none;
+				
+				@include media(large-up) {
+					display: inline-block !important;
+					@include rem-size(padding-right, 5px);
+					padding-left: 0;
+				}
+			}
+		}
+		
+		.deposit-amount, .balance-amount {
+			float: right;
+			width: 50%;
+			text-align: right;
+			@include rem-size(line-height, 30px);
+			
+			.icon-info {
+				@include media(large-up) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.credit-card {
+		.icon:not(.icon-error) {
+			@include font-size(16px);
+			@include rem-size(margin-left, 10px);
+		}
+	}
+}
+	
+/* =========================================================
+/* Cart
+   ========================================================= */
+
+.cart {
+	.shopping-cart-content {
+		border-top: 1px solid $light-gray;
+		@include rem-size(padding, 0px 35px);
+		clear: both;
+		
+		@include media(medium-up) {
+			border-top: none;
+			@include grid-row();
+			@include rem-size(padding, 0px 10px);
+		}
+		
+		h1 {
+			&.title {
+				@include font-size(20px);
+				font-weight: $medium-light;
+				@include rem-size(margin, 30px 0px 0px 0px);
+				color: $almost-black;
+				
+				@include media(medium-up) {
+					@include font-size(24px);
+					color: $dark-gray;
+				}
+			}
+		}
+		
+		.empty-cart-description {
+			@include font-size(16px);
+			color: $dark-gray;
+			font-weight: $medium-light;
+			text-align: center;
+			@include rem-size(margin-top, 26px);
+			
+			@include media(medium-up) {
+				@include font-size(24px);
+				color: $almost-black;
+				font-weight: $medium-light;
+				@include rem-size(margin-top, 70px);
+			}
+		}
+		
+		.top-content {
+			@include media(medium-up) {
+				@include rem-size(margin, 56px 57px 140px 57px);
+			}
+		}
+		
+		.content-grid-row {
+			@include media(medium-up) {
+				display: table;
+			}
+		}
+		
+		.content-grid-container {
+			text-align: center;
+			position: relative;
+			@include rem-size(padding-bottom, 16px);
+			
+			@include media(medium-up) {
+			    display: table-cell;
+			    @include rem-size(padding-bottom, 70px);
+			    position: relative;
+			    margin-bottom: 0;
+			}
+			
+			.grid-title {
+				@include font-size(14px);
+				color: $base-black;
+				font-weight: $medium-light;
+				text-align: center;
+				
+				@include media(medium-up) {
+					color: $dark-gray;
+				}
+			}
+			
+			a {
+				&.button {
+					text-transform: uppercase;
+					width: 100%;
+					
+					@include media(medium-up) {
+						position: absolute;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						margin-left: auto;
+						margin-right: auto;
+						width: 68%;
+						max-width: 180px;
+					}
+				}
+			}
+			
+			&.col1 {
+				width: 100%;
+			}
+				
+			&.col2 {
+				width: 100%;
+				
+				@include media(medium-up) {
+					width: 50%;
+				}
+			}
+				
+			&.col3 {
+				width: 100%;
+				
+				@include media(medium-up) {
+					width: 33.333%;
+				}
+			}
+			
+			&.col4 {
+				width: 100%;
+				
+				@include media(medium-up) {
+					width: 25%;
+				}
+			}
+		}
+		
+		.bottom-content {
+			@include media(medium-up) {
+				@include rem-size(margin-top, 130px);
+				@include rem-size(margin-bottom, 200px);
+			}
+			
+			.heading {
+				@include font-size(22px);	
+				width: 100%;
+				font-weight: $medium-light;
+				color: $almost-black;
+				@include rem-size(margin-bottom, 15px);
+				display: block;
+				
+				@include media(medium-up) {
+					text-align: center;
+					text-transform: uppercase;
+					@include font-size(14px);
+					font-weight: $bold;
+					color: $medium-gray;
+					@include rem-size(margin-bottom, 22px);
+				}
+			}
+			
+			.bottom-content-grid-row {
+				
+				&.col1 {
+					@include block-grid(
+						$per-row: 1,
+						$spacing: 20px,
+						$base-style: true
+					);
+					
+					@include media(medium-up) {
+						@include block-grid(
+							$per-row: 1,
+							$spacing: 20px,
+							$base-style: true
+						);
+					}
+				}
+					
+				&.col2 {
+					@include block-grid(
+						$per-row: 1,
+						$spacing: 20px,
+						$base-style: true
+					);
+					
+					@include media(medium-up) {
+						@include block-grid(
+							$per-row: 2,
+							$spacing: 20px,
+							$base-style: true
+						);
+					}
+				}
+					
+				&.col3 {
+					@include block-grid(
+						$per-row: 1,
+						$spacing: 20px,
+						$base-style: true
+					);
+					
+					@include media(medium-up) {
+						@include block-grid(
+							$per-row: 3,
+							$spacing: 20px,
+							$base-style: true
+						);
+					}
+				}
+				
+				&.col4 {
+					@include block-grid(
+						$per-row: 1,
+						$spacing: 20px,
+						$base-style: true
+					);
+					
+					@include media(medium-up) {
+						@include block-grid(
+							$per-row: 4,
+							$spacing: 20px,
+							$base-style: true
+						);
+					}
+				}
+				
+				.bottom-content-grid-container {
+					.title {
+						@include font-size(14px);
+						color: $dark-gray;
+						text-transform: uppercase;
+						font-weight: $regular;
+						@include rem-size(margin-bottom, 5px);
+						@include rem-size(margin-top, 5px);
+						display: block;
+						
+						@include media(medium-up) {
+							@include font-size(14px);
+							text-align: center;
+							text-transform: none;
+							font-weight: $medium-light;
+							margin-bottom: 0;
+							@include rem-size(margin-top, 12px);
+						}
+					}
+					
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	
+	.cart-header-row {
+		@include grid-row();
+		@include rem-size(padding-top, 20px);
+		color: $medium-gray;
+		@include font-size(11px);
+		font-weight: $medium-light;
+		text-transform: uppercase;
+	}
+	
+	.cart-header-item, .cart-header-price, .cart-header-quantity, .cart-header-total {
+		@include grid-column();
+		padding: 0;
+		line-height: 1.45;
+	}
+
+	.cart-header-item {
+		@include media(medium-up) {
+			width: 71%;
+		}
+	}
+	
+	.cart-header-quantity {
+		@include media(medium-up) {
+			width: 8%;
+			text-align: center;
+		}
+	}
+
+	.cart-header-price {
+		@include media(medium-up) {
+			width: 21%;
+			text-align: right;
+			padding-right: 2%;
+		}
+	}
+	
+	.shopping-cart {
+		.order-item {
+			@include rem-size(padding, 25px 0px);
+			@include font-size(14px);
+			
+			&:first-of-type {
+				@include rem-size(padding-top, 20px);
+				
+				@include media(medium-up) {
+					@include rem-size(padding-top, 15px);
+				}
+			}
+		}
+		
+		.order-item + .order-item {
+			border-top: 1px solid $light-gray;
+			@include rem-size(padding-top, 25px);
+			
+			@include media(medium-up) {
+				@include rem-size(padding-top, 30px);
+			}
+		}
+		
+		.item-image {
+			width: 53%;
+			padding-left: 0;
+			@include rem-size(padding-right, 20px);
+			
+			@include media(medium-up) {
+				width: 23%;
+				@include rem-size(padding-right, 15px);
+			}
+			a {
+				display: inline-block;
+			}
+			img {
+				width: 100%;
+			}
+		}
+		
+		.product-name {
+			color: $medium-blue;
+			@include font-size(16px);
+			font-weight: $medium-light !important;
+			@include rem-size(line-height, 20px);
+			@include rem-size(padding-bottom, 15px);
+			display: block;
+			text-decoration: none;
+			
+			@include media(medium-up) {
+				@include rem-size(padding-bottom, 10px);
+			}
+		}
+		
+		.item-details {
+			width: 47%;
+			padding: 0;
+			color: $almost-black;
+			
+			@include media(medium-up) {
+				width: 77%;
+			}
+			
+			.product-name-details {
+				overflow: hidden;
+				width: 100%;
+				float: left;
+				
+				@include media(medium-up) {
+					width: 62%;
+				}
+			}
+			
+			.accordion {
+				@include rem-size(margin-bottom, 20px);
+			}
+			
+			.accordion-container {
+				@include media(medium-up) {
+					width: 100%;
+					float: left;
+				}
+			}
+			
+			.accordion-title {
+				@include media(medium-up) {
+					width: 100px;
+				}
+				
+				.icon-arrow-down {
+					@include media(medium-up) {
+						@include font-size(11px);
+					}
+				}
+			}
+			
+			.product-name {
+				display: none;
+				
+				@include media(medium-up) {
+					display: block;
+				}
+			}
+		}
+		
+		.item-protection-plan {
+			width: 100%;
+			border: 1px solid $light-gray;
+			@include font-size(12px);
+			font-weight: $medium-light;
+			@include rem-size(padding, 0px 8px);
+			@include rem-size(margin-top, 30px);
+			@include rem-size(line-height, 18px);
+			float: left;
+			
+			@include media(medium-up) {
+				width: 77%;
+				border: none;
+				@include rem-size(margin-top, 20px);
+				padding: 0;
+			}
+			
+			img {
+				@include rem-size(margin-right, 10px);
+				@include rem-size(max-width, 50px);
+			}
+
+			&.unapplied {
+				color: $base-gray;
+				img {
+					opacity: .5;
+				}
+			}
+		}
+		
+		.item-protection-plan-detail {
+			@include rem-size(padding, 6px 0px);
+		}
+		
+		.protection-plan-price {
+			@include media(medium-up) {
+				display: block;
+				float: right;
+				@include font-size(14px);
+			}
+		}
+		
+		div.total-plan-price {
+			@include media(medium-up) {
+				display: inline-block;
+				@include rem-size(padding-right, 5px);
+				@include font-size(14px);
+				float: right;
+			}
+		}
+		
+		span.total-plan-price {
+			@include font-size(12px);
+		}
+		
+		.add-remove-plan {
+			display: block;
+			font-weight: $regular;
+			text-decoration: underline;
+			
+			@include media(medium-up) {
+				display: inline-block;
+				@include rem-size(padding-left, 10px);
+			}
+		}
+		
+		.item-actions {
+			width: 100%;
+			padding: 0;
+			overflow: hidden;
+			
+			@include media(medium-up) {
+				width: 77%;
+			}
+		}
+		
+		.item-action {
+			width: 50%;
+			text-align: right; /* change back to 'center' when save for later link functionality is added */
+			float: right;
+			@include rem-size(padding-top, 20px);
+			
+			@include media(medium-up) {
+				@include rem-size(padding-top, 30px);
+				text-align: right;
+				width: auto;
+				@include rem-size(margin-left, 20px);
+			}
+			
+			a {
+				@include font-size(12px);
+				text-decoration: underline;
+				
+				@include media(medium-up) {
+					@include font-size(11px);
+				}
+			}
+		}
+		
+		.product-details {
+			@include font-size(14px);
+			@include rem-size(line-height, 14px);
+			@include rem-size(margin-bottom, 10px);
+			font-weight: $medium-light;
+			
+			@include media(medium-up) {
+				@include font-size(12px);
+				font-weight: $regular;
+			}
+		}
+		
+		.item-detail {
+			width: 100%;
+			@include font-size(12px);
+			color: $medium-gray;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			@include rem-size(line-height, 20px);
+			
+			@include media(medium-up) {
+				width: 50%;
+				float: left;
+				@include rem-size(padding-right, 10px);
+			}
+			
+			ul {
+				list-style-type: disc;
+				@include rem-size(padding-left, 15px);
+			}
+		}
+		
+		.item-price-unit {
+			overflow: hidden;
+			padding: 0;
+			width: 100%;
+			font-weight: $medium-light;
+			
+			@include media(medium-up) {
+				width: 26%;
+				float: left;
+				text-align: right;
+			}
+			
+			.price-text {
+				float: left;
+				@include media(medium-up) {
+					display: none;
+					float: none;
+				}
+			}
+			
+			.price {
+				float: left;
+				width: auto;
+				color: $almost-black;
+				
+				@include media(medium-up) {
+					width: 100%;
+				}
+			}
+			
+			.item-total-price, .sale-price, .regular-price {
+				display: block;
+				@include font-size(14px);
+				
+				@include media(medium-up) {
+					display: inline-block;
+					@include rem-size(padding-right, 5px);
+					@include font-size(16px);
+				}
+			}
+			
+			.regular-price {
+				text-decoration: line-through;
+			}
+		}
+		
+		.quantity {
+			@include font-size(14px);
+			color: $almost-black;
+			font-weight: $medium-light;
+			@include rem-size(margin-bottom, 20px);
+			float: left;
+			
+			@include media(medium-up) {
+				text-align: center;
+				width: 12%;
+			}
+			label {
+				display: inline-block;
+				@include rem-size(padding-right, 4px);
+			}
+			.custom-select {
+				width: 58px;
+				display: inline-block;
+
+				select {
+					@include font-size(16px);
+					height: 36px;
+					border-radius: 4px;
+
+					@include media(medium-up) {
+						height: 30px;
+						border-radius: 8px;
+					}
+				}
+			}
+			.icon-dropdown-arrow {
+				@include font-size(10px);
+				top: 14px;
+
+				@include media(medium-up) {
+					@include font-size(7px);
+					top: 12px;
+				}
+			}
+		}
+
+		.cart-content-item-error {
+			width: 100%;
+			color: $red;
+			@include font-size(12px);
+			float: left;
+			@include rem-size(padding-top, 10px);
+			display: table-row;
+			
+			@include media(medium-up) {
+				width: 77%;
+			}
+			
+			.icon-error {
+				display: table-cell;
+				@include font-size(14px);
+				vertical-align: top;
+				@include rem-size(padding-top, 1px);
+			}
+			
+			.error-msg {
+				display: table-cell;
+				vertical-align: middle;
+				@include rem-size(padding-left, 5px);
+				@include rem-size(line-height, 16px);
+			}
+		}
+	}
+	
+	.promo-and-totals {
+		@include rem-size(padding, 0px 35px);
+		
+		@include media(medium-up) {
+			padding: 0;
+		}
+		
+		.totals-and-deposits-container {
+			@include media(medium-up) {
+				width: 32%;
+				float: right;
+			}
+		}
+		
+		.lzb-cc-financing {
+			@include rem-size(margin-top, 20px);
+			
+			@include media(medium-only) {
+				width: 60%;
+				float: left;
+				@include rem-size(padding-left, 10px);
+				margin-top: 0;
+			}
+			
+			@include media(large-up) {
+				width: 50%;
+				margin-top: 0;
+			}
+			
+			.lzb-cc-container {
+				@include media(medium-up) {
+					width: 100%;
+					@include rem-size(padding, 50px 0px 40px 0px);
+				}
+				
+				img {
+					@include rem-size(margin, 0px 10px 80px 0px);
+					width: 50px;
+					
+					@include media(medium-up) {
+						@include rem-size(margin, 0px 20px 50px 0px);
+					}
+				}
+				
+				.lzb-cc-details {
+					color: $medium-gray;
+					@include font-size(12px);
+					@include rem-size(line-height, 16px);
+					
+					p {
+						margin-top: 0;
+						@include rem-size(margin, 0px 0px 5px 0px);
+						font-weight: $bold;
+						@include font-size(14px);
+						@include rem-size(line-height, 20px);
+						
+						@include media(medium-up) {
+							@include rem-size(line-height, 14px);
+						}
+					}
+					
+					a {
+						@include rem-size(padding-top, 10px);
+						display: block;
+						text-decoration: underline;
+						
+						@include media(medium-up) {
+							padding-top: 0;
+						}
+					}
+				}
+			}
+			
+			.lzb-financing-container {
+				width: 100%;
+				overflow: hidden;
+				border: 1px solid $light-gray;
+				border-radius: 5px;
+				@include rem-size(padding, 15px);
+				@include rem-size(margin-top, 20px);
+				
+				@include media(medium-up) {
+					margin-top: 0;
+					@include rem-size(padding, 30px 20px);
+				}
+				
+				@include media(large-up) {
+					margin-top: 0;
+					@include rem-size(padding, 20px 20px 30px);
+				}
+				
+				.lzb-financing-cost {
+					float: left;
+					font-weight: $bold;
+					@include font-size(12px);
+					@include rem-size(padding, 0px 10px 0px 0px);
+					text-align: center;
+					width: 40%;
+					@include rem-size(line-height, 16px);
+					
+					@include media(medium-only) {
+						text-align: right;
+						width: 28%;
+					}
+					
+					@include media(large-up) {
+						width: 23%;
+					}
+					
+					.payment-amount {
+						@include font-size(16px);
+						@include rem-size(line-height, 22px);
+					}
+				}
+				
+				.lzb-financing-details {
+					float: left;
+					color: $medium-gray;
+					@include font-size(12px);
+					border-left: 1px solid $light-gray;
+					@include rem-size(padding-left, 10px);
+					@include rem-size(line-height, 16px);
+					width: 60%;
+					
+					@include media(medium-up) {
+						width: 72%;
+					}
+					
+					@include media(large-up) {
+						width: 77%;
+						@include rem-size(margin-top, 10px);
+					}
+					
+					p {
+						margin-top: 0;
+						@include rem-size(margin, 0px 0px 5px 0px);
+						font-weight: $bold;
+						@include font-size(14px);
+						@include rem-size(line-height, 20px);
+						
+						@include media(medium-up) {
+							@include rem-size(line-height, 14px);
+						}
+					}
+					
+					.financing-months {
+						@include font-size(16px);
+					}
+					
+					a {
+						display: block;
+						@include rem-size(padding-top, 10px);
+					}
+				}
+			}
+		}
+	}
+	
+	.cart-actions {
+		@include rem-size(padding, 20px 35px 30px);
+		
+		@include media(medium-up) {
+			width: 32%;
+			float: right;
+			clear: both;
+			@include rem-size(padding, 30px 0px 10px 0px);
+		}
+		
+		.to-checkout-btn {
+			width: 100%;
+			text-transform: uppercase;
+			@include font-size(12px);
+		}
+		
+		.to-digitalbuy-btn {
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		
+		.or-text {
+			text-align: center;
+			@include rem-size(line-height, 45px);
+			display: block;
+		}
+		
+		p {
+			text-align: center;
+		}
+	}
+	
+	.wysk-section {
+		@include media(medium-up) {
+			width: 32%;
+		}
+	}
+}
+
+/* =========================================================
+/* Login
+   ========================================================= */
+.checkout {
+	&.login {
+		.breadcrumbs {
+			@include media(small-only) {
+				display: none;
+			}
+		}
+		
+		.secure-transaction {
+			@include media(small-only) {
+				width: 100%;
+				text-align: center;
+				background-color: rgba(233, 233, 233, 0.8);
+				margin: 0;
+				@include rem-size(line-height, 30px);
+			}
+		}
+		
+		.section-content {
+			@include media(medium-up) {
+				@include rem-size(padding-top, 45px);
+			}
+		}
+		
+		.login-form, .guest-checkout-form {
+			@include grid-column(12);
+			
+			@include media(medium-up) {
+				width: 50%;
+			}
+			
+			h1, h2 {
+				@include font-size(18px);
+				@include rem-size(line-height, 30px);
+				@include rem-size(margin, 15px 0px);
+				font-weight: $medium-light;
+				color: $almost-black;
+				text-align: center;
+				
+				@include media(medium-up) {
+					@include font-size(24px);
+					@include rem-size(margin, 20px 0px);
+					text-align: left;
+				}
+			}
+		}
+		
+		.login-form {
+			@include rem-size(padding, 0px 25px);
+			
+			@include media(medium-up) {
+				@include rem-size(padding-right, 50px);
+				border-right: 1px solid $light-gray;
+			}
+			label {
+				@include font-size(12px);
+				color: $medium-gray;
+				
+				@include media(medium-up) {
+					@include font-size(11px);
+				}
+			}
+		}
+		
+		.guest-checkout-form {
+			@include rem-size(padding, 0px 25px 40px 25px);
+			
+			@include media(medium-up) {
+				@include rem-size(padding-left, 51px);
+			}
+		}
+		
+		.fb-signin-section {
+			@include rem-size(padding-bottom, 40px);
+			border-bottom: 1px solid $light-gray;
+			
+			@include media(medium-up) {
+				border-bottom: none;
+			}
+		}
+		
+		
+		.login-form {
+			.forgot-password {
+				text-decoration: underline;
+			}
+		}
+		.forgot-password {
+			@include font-size(12px);
+			text-align: center;
+			display: block;
+			
+			@include media(medium-up) {
+				@include font-size(11px);
+				text-align: left;
+			}
+		}
+		
+		.signin-btn {
+			width: 100%;
+			text-transform: uppercase;
+			@include font-size(12px);
+			@include rem-size(margin-top, 7px);
+			
+			@include media(medium-up) {
+				margin-top: 0;
+				margin-left: 0;
+			}
+		}
+		
+		.fb_iframe_widget {
+			display: block;
+		}
+		
+		.or-text {
+			color: $almost-black;
+			@include font-size(14px);
+			text-transform: uppercase;
+			@include rem-size(line-height, 50px);
+			text-align: center;
+			width: 100%;
+			
+			@include media(medium-up) {
+				@include font-size(10px);
+				@include rem-size(line-height, 44px);
+			}
+		}
+		
+		.checkout-as-guest-btn {
+			width: 100%;
+			text-transform: uppercase;
+			@include font-size(12px);
+			@include rem-size(margin-bottom, 7px);
+			
+			@include media(medium-up) {
+				@include rem-size(margin-top, 10px);
+				@include rem-size(margin-bottom, 15px);
+			}
+		}
+		
+		.signup-details {
+			@include font-size(14px);
+			@include rem-size(line-height, 18px);
+			color: $medium-gray;
+			text-align: center;
+			
+			@include media(medium-up) {
+				text-align: left;
+			}
+		}
+		
+		.create-account-btn {
+			width: 100%;
+			text-transform: uppercase;
+			@include font-size(12px);
+			@include rem-size(margin-top, 20px);
+			
+			@include media(medium-up) {
+				@include rem-size(margin-top, 40px);
+			}
+		}
+	}
+}
+   
+/* =========================================================
+/* Checkout
+   ========================================================= */
+.checkout {
+	&.checkout {
+		.site-wrapper {
+			@include rem-size(max-width, 980px);
+		}
+		
+		.checkout-header {
+			position: relative;
+			@include clearfix;
+			
+			@include media(medium-up) {
+				height: 70px;
+				overflow: hidden;
+			}
+		}
+		
+		.logo-section {
+			width: 67%;
+			background-color: $medium-blue;
+			float: left;
+			height: 50px;
+			
+			@include media(medium-up) {
+				width: 80%;
+				height: 100%;
+			}
+			@include media(medium-only) {
+				width: 73%;
+				height: 100%;
+			}
+			
+			a {
+				color: $base-white;
+			}
+			
+			.icon-lzb-logo {
+				padding-left: 5%;
+				@include rem-size(line-height, 50px);
+				@include font-size(20px);
+				
+				@include media(medium-up) {
+					@include rem-size(line-height, 70px);
+					@include font-size(25px);
+				}
+				.path1, .path2 {
+					&:before {
+						color: $base-white;
+					}
+				}
+			}
+		}
+		
+		.header-help-section {
+			text-align: center;
+			width: 33%;
+			float: left;
+			height: 50px;
+		}
+		
+		.header-help-link {
+			width: 80%;
+			border: 2px solid $brand-orange;
+			@include font-size(11px);
+			text-transform: uppercase;
+			color: $almost-black;
+			@include rem-size(line-height, 34px);
+			display: block;
+			margin: 6px auto;
+		}
+		
+		.header-help-content {
+			display: block;
+		}
+		
+		.header-help-content-container {
+			display: none;
+			position: absolute;
+			top: 50px;
+			right: 0px;
+			z-index: 10;
+			width: 100%;
+			background-color: $base-white;
+			@include rem-size(padding, 20px 35px 25px);
+			@include box-shadow(0px, 2px, 5px, rgba(0, 0, 0, 0.17));
+			
+			.icon-close {
+				@include font-size(14px);
+				top: 10px;
+				right: 10px;
+				position: absolute;
+			}
+		}
+		
+		.secure-transaction-section {
+			width: 100%;
+			text-align: center;
+			background-color: $almost-white;
+			color: $dark-gray;
+			float: left;
+			@include font-size(12px);
+			@include rem-size(line-height, 30px);
+			
+			@include media(medium-up) {
+				width: 20%;
+				height: 100%;
+				@include rem-size(line-height, 70px);
+			}
+			@include media(medium-only) {
+				width: 27%;
+			}
+			.icon-lock {
+				@include rem-size(padding-right, 5px);
+			}
+		}
+	}
+}
+
+.checkout-breadcrumbs {
+	text-align: center;
+	width: 100%;
+	@include rem-size(padding, 0px 35px 5px);
+	
+	@include media(medium-up) {
+		width: 53%;
+		padding: 0;
+	}
+	
+	.checkout-progress {
+		float: left;
+		width: 33.33%;
+		@include font-size(14px);
+		@include rem-size(padding, 20px 0px);
+		
+		color: $medium-blue;
+		font-weight: $medium-light;
+		
+		@include media(medium-up) {
+			@include font-size(18px);
+		}
+		
+		&:hover {
+			text-decoration: none;
+		}
+		
+		.status-step {
+			display: table;
+			width: 100%;
+			@include rem-size(margin-top, 13px);
+		}
+		
+		hr {
+			height: 3px;
+			border: 0;
+			background-color: $medium-blue;
+			@include rem-size(margin, 8px 2px);
+		}
+		
+		.status-step-num {
+			display: table-cell;
+			width: 19px;
+			height: 19px;
+			@include font-size(11px);
+			font-weight: $bold;
+			vertical-align: middle;
+			color: $base-white;
+			text-align: center;
+			line-height: 0;
+			border-radius: 50%;
+			background: $medium-blue;
+		}
+		
+		&.isDisabled {
+			color: $medium-gray;
+			
+			.status-step {
+				opacity: 0.3;
+			}
+			
+			hr {
+				background-color: $medium-gray;
+			}
+			
+			.status-step-num {
+				background: $medium-gray;
+			}
+		}
+	}
+}
+
+.checkout-two-column {
+	overflow: hidden;
+	@include media(medium-only) {
+		@include rem-size(padding-right, 10px);
+		@include rem-size(padding-left, 10px);
+	}
+
+	.field-group {
+		@include rem-size(margin-bottom, 17px);
+	}
+	
+	.field {
+		width: 100%;
+		padding: 0;
+		
+		@include media(medium-up) {
+			width: 50%;
+			@include rem-size(padding, 0px 8px);
+		}
+		
+		&:first-child {
+			padding-left: 0;
+		}
+		
+		&:last-child {
+			padding-right: 0;
+			@include rem-size(margin-top, 17px);
+			
+			@include media(medium-up) {
+				margin-top: 0;
+			}
+		}
+	}
+	
+	label, .textCounterContainer {
+		@include font-size(12px);
+		color: $medium-gray;
+		
+		@include media(medium-up) {
+			@include font-size(11px);
+		}
+	}
+	
+	.custom-checkbox {
+		input[type="checkbox"] {
+			width: 14px;
+			height: 14px;
+			
+			& + input[type="hidden"] + label, /* for usage of dsp html */
+			& + .error + input[type="hidden"] + label, /* for usage of dsp html */
+        	& + label, /* for usage of standard html */
+			& + .error + label /* for usage of standard html */ {
+				&:before {
+                	@include font-size(14px);
+                	left: -24px;
+                	top: 5px;
+				}
+        	}
+        
+        	&:checked + input[type="hidden"] + label, /* for usage of dsp html */
+        	&:checked + .error + input[type="hidden"] + label, /* for usage of dsp html */
+        	&:checked + label, /* for usage of standard html */
+			&:checked + .error + label /* for usage of standard html */ {
+      			&:before {
+                	@include font-size(14px);
+                	left: -24px;
+                	top: 5px;
+            	}
+        	}
+		}
+		
+		label {
+			@include rem-size(margin-left, 25px);
+		}
+	}
+	
+	.edit-link {
+		@include font-size(12px);
+		text-decoration: underline;
+	}
+	
+	.order-items {
+		overflow: hidden;
+		clear: both;
+	}
+	
+	.order-item {
+		overflow: hidden;
+		@include rem-size(padding-bottom, 5px);
+	}
+	
+	.item-image {
+		width: 25%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+	.item-details {
+		width: 75%;
+		@include font-size(14px);
+		color: $almost-black;
+		@include rem-size(line-height, 20px);
+		@include rem-size(padding, 5px 0px 0px 20px);
+		
+		.product-name {
+			width: 100%;  
+  			text-overflow:ellipsis;
+  			overflow: hidden;
+  			white-space:nowrap;
+		}
+	}
+	
+	.item-protection-plan {
+		@include font-size(12px);
+		@include rem-size(line-height, 30px);
+	}
+	
+	.promo-and-totals {
+		border-top: none;
+		
+		.totals-container {
+			@include rem-size(padding-top, 20px);
+		}
+	}
+	
+	.order-summary-title {
+		@include font-size(24px);
+		font-weight: $medium-light;
+		color: $medium-blue;
+		float: left;
+		@include rem-size(padding-bottom, 20px);
+		
+		@include media(medium-up) {
+			color: $almost-black;
+		}
+	}
+	
+	.order-edit-link {
+		@include font-size(11px);
+		float: right;
+		text-decoration: underline;
+	}
+	
+	.checkout-order-summary-accordion {
+		border-top: 1px solid $light-gray;
+		border-bottom: 1px solid $light-gray;
+		@include font-size(14px);
+		color: $medium-gray;
+		@include rem-size(padding, 15px 0px);
+		overflow: hidden;
+		
+		&.active {
+			border-bottom: none;
+		}
+		
+		.num-of-items {
+			float: left;
+			width: 50%;
+		}
+		
+		.order-total {
+			font-weight: $bold;
+			float: left;
+			width: 40%;
+		}
+	}
+	
+	.checkout-order-summary-accordion-body {
+		@include media(medium-up) {
+			display: block;
+		}
+	}
+}
+
+.checkout-two-column-left {
+	@include rem-size(padding, 0px 35px);
+	width: 100%;
+	
+	@include media(medium-up) {
+		width: 50%;
+		float: left !important;
+		padding: 0;
+	}
+}
+
+.checkout-two-column-right {
+	@include rem-size(padding, 0px 35px);
+	width: 100%;
+	
+	@include media(medium-up) {
+		width: 35%;
+		float: right;
+		@include rem-size(padding, 22px 0px 0px 0px);
+	}
+}
+
+.js-info-content {
+	display: none;
+}
+
+.checkout-title {
+	color: $almost-black;
+	font-weight: $medium-light;
+	@include font-size(24px);
+	@include rem-size(line-height, 36px);
+	@include rem-size(margin-bottom, 15px);
+	
+	@include media(medium-up) {
+		@include rem-size(margin-bottom, 20px);
+	}
+	
+	.status-step-num {
+		display: inline-block;
+		width: 19px;
+		height: 19px;
+		@include font-size(11px);
+		font-weight: $bold;
+		color: $base-white;
+		text-align: center;
+		@include rem-size(line-height, 18px);
+		@include rem-size(margin-top, -5px);
+		@include rem-size(margin-right, 10px);
+		border-radius: 50%;
+		background: $medium-blue;
+		vertical-align: middle;
+	}
+}
+
+.not-started {
+	.checkout-title {
+		color: $medium-gray;
+		
+		.status-step-num {
+			background-color: $medium-gray;
+		}
+	}
+}
+
+.lzb-cc {
+	width: 35px;
+	@include rem-size(margin-right, 10px);
+}
+.lzb-cc-text {
+	color: $almost-black;
+	font-weight: $medium-light;
+	@include rem-size(line-height, 20px);
+	display: block;
+	@include font-size(14px);
+	
+	span {
+		display: inline-block;
+	}
+	
+	a {
+		text-decoration: underline;
+		@include font-size(12px);
+	
+		&.apply-now-link {
+			display: inline-block;
+			@include font-size(14px);
+			@include rem-size(padding-left, 5px);
+			font-weight: $regular;
+		}
+	}
+}
+
+.lzb-cc-selected {
+	@include rem-size(margin-bottom, 10px);
+}
+
+.to-digitalbuy-checkout-btn {
+	width: 314px;
+	@include rem-size(margin-bottom, 10px);
+}
+
+.lzb-card-apply {
+	color: $medium-gray;
+	@include font-size(12px);
+	display: block;
+	@include rem-size(margin-top, 5px);
+	
+	a {
+		text-decoration: underline;
+	}
+}
+
+.checkout-btn {
+	width: 100%;
+	margin-left: 0;
+	@include rem-size(margin-top, 23px);
+}
+
+.checkout-shipping, .checkout-payment, .checkout-review {
+	width: 100%;
+	border-bottom: 1px solid $light-gray;
+	
+	@include media(medium-up) {
+		@include rem-size(padding-bottom, 20px);
+		@include rem-size(margin-top, -8px);
+	}
+}
+
+.checkout-shipping {
+	@include media(medium-up) {
+		@include rem-size(padding-bottom, 30px);
+	}
+}
+
+.checkout-review {
+	@include rem-size(margin-bottom, 30px);
+	
+	.checkout-btn.db-btn {
+		padding-left: 0;
+		padding-right: 0;
+		@include font-size(10px);
+		
+		@include media(medium-up) {
+			@include rem-size(padding-left, 24px);
+			@include rem-size(padding-right, 24px);
+			@include font-size(14px);
+		}
+		
+		@include media(medium-only) {
+			@include font-size(12px);
+		}
+	}
+}
+
+.shipping-address-review-panel, .payment-review-panel {
+	display: none;
+	@include font-size(12px);
+	color: $dark-gray;
+	@include rem-size(line-height, 18px);
+	overflow: hidden;
+	
+	p {
+		@include rem-size(margin, 10px 0px 40px 0px);
+		
+		@include media(medium-up) {
+			@include rem-size(margin, 10px 0px);
+		}
+	}
+	
+	.customer-name, .credit-card-num, .charge-amount {
+		@include font-size(16px);
+		color: $almost-black;
+	}
+	
+	.email {
+		text-transform: none;
+	}
+	
+	.checkout-title {
+		color: $medium-blue;
+	}
+	
+	.edit-link {
+		float: right;
+		
+		@include media(medium-up) {
+			float: left;
+		}
+	}
+	
+	.payment-method {
+		@include rem-size(margin-bottom, 20px);
+	}
+}
+
+.specialDeliveryInstructions {
+	display: none;
+	
+	.textCounterContainer {
+		float: right;
+	}
+	
+	textarea {
+		min-height: 100px;
+	}
+}
+
+.review-panel {
+	.review-instruction {
+		@include font-size(18px);
+		color: $almost-black;
+		font-weight: $medium-light;
+	}
+	
+	.checkout-btn {
+		@include rem-size(margin-bottom, 30px);
+	}
+}
+
+.payment-form-panel {
+	.field-group {
+		&.credit-card {
+			width: 100%;
+			margin-left: 0;
+
+			@include media(medium-up) {
+				width: 66%;
+			}
+
+			.field {
+				width: 50%;
+				@include rem-size(padding, 0px 8px);
+
+				&:first-child {
+					padding-left: 0;
+				}
+				&:last-child {
+					margin-top: 0;
+					padding-right: 0;
+				}
+			}
+			.secCode-info-link {
+				position: absolute;
+				top: 0;
+				right: 0;
+
+				.icon-info {
+					@include font-size(12px);
+					&:before {
+						color: $medium-blue;
+					}
+				}
+			}
+		}
+	}
+	
+	#paymentForm, .billing-address, .billing-address-2 {
+		display: none;
+	}
+}
+
+.second-card-container, .user-delivery-address-2 {
+	display: none;
+}
+
+.split-payment-title, .first-card-billing-addr {
+	@include font-size(24px);
+	font-weight: $medium-light;
+	color: $almost-black;
+	@include rem-size(margin-bottom, 25px);
+	
+	@include media(medium-up) {
+		@include font-size(22px);
+		color: $dark-gray;
+		@include rem-size(margin-bottom, 20px);
+	}
+}
+
+.split-payment-message {
+	display: none;
+	@include font-size(12px);
+	color: $medium-gray;
+	@include rem-size(margin-bottom, 20px);
+	@include rem-size(line-height, 16px);
+}
+
+.credit-card-types {
+	@include rem-size(margin, 10px 0px);
+
+	div {
+		display: inline-block;
+		@include rem-size(padding, 0px 10px);
+
+		&:first-of-type {
+			padding-left: 0;
+		}
+		&:last-of-type {
+			padding-right: 0;
+		}
+		.icon {
+			@include font-size(35px);
+		}
+	}
+	
+	.lzb-cc-text {
+		display: block;
+	}
+	
+	.lzb-cc {
+		@include rem-size(margin-left, 10px);
+		@include rem-size(margin-top, 10px);
+		display: block;
+	}
+	
+	.or-text {
+		@include rem-size(margin-left, 10px);
+		@include rem-size(margin-top, 10px);
+		width: 100%;
+	}
+}
+.credit-card {
+	input[type="tel"] {
+		@include rem-size(padding-right, 50px);
+
+		&:-webkit-autofill [class^='cardtype-'],
+		&:-webkit-autofill [class*=' cardtype-'] {
+		    background-image: url("../images/sprites/payment-types.png");
+		}
+
+		&[class^='cardtype-'] ~ span.cc-img,
+		&[class*=' cardtype-'] ~ span.cc-img {
+		    background-image: url("../images/sprites/payment-types.png");
+		    background-repeat: no-repeat;
+		    background-size: 38px;
+		}
+		&.cardtype-unknown ~ span.cc-img {
+		    background-position: right 3px top 8px;
+			opacity: .2;
+		}
+		&.cardtype-visa ~ span.cc-img {
+		    background-position: right 3px top -42px;
+		}
+		&.cardtype-amex ~ span.cc-img {
+		    background-position: right 3px top -95px;
+		}
+		&.cardtype-mastercard ~ span.cc-img {
+		    background-position: right 3px top -147px;
+		}
+	}
+	span.cc-img {
+		@include rem-size(top, 24px);
+		@include rem-size(margin-right, 2px);
+		@include rem-size(margin-top, 1px);
+	    position: absolute;
+	    right: 0;
+	    width: 45px;
+	    height: 40px;
+	}
+}
+
+/* =========================================================
+/* Order Confirmation
+   ========================================================= */
+.orderConfirmation {
+	.breadcrumbs {
+		width: 45%;
+		float: left;
+	}
+
+	.secure-transaction {
+		width: 55%;
+		@include rem-size(margin, 10px 0px);
+	    @include rem-size(padding, 0px $outside-padding);
+		color: $dark-gray;
+		@include font-size(12px);
+		@include rem-size(line-height, 20px);
+		float: right;
+		text-align: right;
+
+		.icon {
+			@include rem-size(padding-right, 5px);
+		}
+	}
+
+	.header-image {
+		width: 100%;
+		@include rem-size(padding-bottom, 20px);
+		
+		@include media(medium-up) {
+			@include rem-size(padding, 18px 10px 35px);
+		}
+	}
+	
+	.heading-text {
+		@include font-size(18px);
+		text-align: center;
+		color: $almost-black;
+		@include rem-size(padding-top, 25px);
+		background-color: rgba(233, 233, 233, 0.3);
+		font-weight: $bold;
+			
+		@include media(medium-up) {
+			@include font-size(24px);
+			color: $dark-gray;
+			@include rem-size(padding, 40px 0px 20px);
+			@include rem-size(margin, 0px 10px);
+		}
+	}
+	
+	.order-info {
+		background-color: rgba(233, 233, 233, 0.3);
+		text-align: center;
+		color: $almost-black;
+		@include font-size(16px);
+		font-weight: $medium-light;
+		@include rem-size(padding, 20px 35px 35px);
+		
+		@include media(medium-up) {
+			font-weight: $regular;
+			@include rem-size(padding-bottom, 45px);
+			@include rem-size(margin, 0px 10px);
+			padding-top: 0;
+		}
+
+		&.related-order {
+			@include rem-size(padding, 35px);
+			@include rem-size(margin-top, 20px);
+
+			@include media(medium-up) {
+				@include rem-size(padding-top, 45px);
+				@include rem-size(margin-top, 35px);
+			}
+		}
+		
+		p {
+			@include font-size(18px);
+			margin-top: 0;
+			@include rem-size(margin-bottom, 10px);
+			
+			@include media(medium-up) {
+				@include font-size(24px);
+			}
+		}
+		
+		.order-num {
+			color: $medium-blue;
+			font-weight: $bold;
+		}
+	}
+		
+	.order-confirmation-content {
+		@include rem-size(padding, 0px 35px);
+		clear: both;
+		
+		@include media(medium-up) {
+			border-top: none;
+			@include grid-row();
+			@include rem-size(padding, 0px 10px);
+		}
+		
+		h2 {
+			&.title {
+				@include font-size(24px);
+				font-weight: $medium-light;
+				@include rem-size(margin, 30px 0px 0px 0px);
+				color: $almost-black;
+				
+			}
+		}
+		
+		.order-item {
+			@include font-size(16px);
+			color: $almost-black;
+			font-weight: $medium-light;
+			@include rem-size(padding, 20px 0px);
+			border-bottom: 1px solid $light-gray;
+		}
+		
+		.item-image {
+			width: 53%;
+			padding-left: 0;
+			@include rem-size(padding-right, 20px);
+				
+			@include media(medium-up) {
+				width: 23%;
+				@include rem-size(padding-right, 15px);
+			}
+				
+			img {
+				width: 100%;
+			}
+		}
+			
+		.item-details {
+			width: 47%;
+			padding: 0;
+			
+			@include media(medium-up) {
+				width: 77%;
+				@include rem-size(padding-top, 65px);
+			}
+		}
+			
+		.product-name {
+			overflow: hidden;
+			width: 100%;
+			float: left;
+			@include rem-size(padding-bottom, 15px);
+				
+			@include media(medium-up) {
+				width: 62%;
+				padding-bottom: 0;
+			}
+		}
+			
+		.quantity-hide-for-small {
+			display: none;
+				
+			@include media(medium-up) {
+				display: block;
+				@include rem-size(margin-bottom, 20px);
+				float: left;
+				text-align: center;
+				width: 12%;
+			}
+		}
+		
+		.quantity-hide-for-medium {
+			@include rem-size(margin-bottom, 20px);
+			float: left;
+			@include font-size(14px);
+				
+			@include media(medium-up) {
+				display: none;
+			}
+		}
+			
+		.item-price-unit {
+			overflow: hidden;
+			padding: 0;
+			width: 100%;
+			@include font-size(14px);
+			
+			@include media(medium-up) {
+				width: 26%;
+				float: left;
+				text-align: right;
+				@include font-size(16px);
+			}
+		}
+			
+		.item-protection-plan {
+			width: 100%;
+			@include font-size(12px);
+			@include rem-size(padding, 0px 8px);
+			@include rem-size(margin-top, 15px);
+			float: left;
+			border: 1px solid $light-gray;
+			
+			@include media(medium-up) {
+				@include font-size(14px);
+				width: 77%;
+				@include rem-size(margin-top, 20px);
+				padding: 0;
+				border: none;
+			}
+			
+			img {
+				@include rem-size(margin-right, 10px);
+				@include rem-size(max-width, 50px);
+			}
+		}
+			
+		.item-protection-plan-detail {
+			@include rem-size(padding, 6px 0px);
+			@include rem-size(line-height, 38px);
+		}
+		
+		.protection-plan-price {
+			@include media(medium-up) {
+				display: block;
+				float: right;
+			}
+		}
+			
+		div.total-plan-price {
+			@include media(medium-up) {
+				display: inline-block;
+				float: right;
+			}
+		}
+	}
+
+	.promo-and-totals {
+		@include rem-size(padding, 20px 35px);
+		border-top: none;
+
+		@include media(medium-up) {
+			padding: 0;
+		}
+		.totals-container {
+			border-top: none;
+
+			@include media(medium-up) {
+				width: 32%;
+				float: right;
+			}
+		}
+	}
+}

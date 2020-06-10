@@ -1,0 +1,294 @@
+@font-face {
+  font-family: 'lzb-icons';
+  src:  url('fonts/lzb-icons.eot?r0waeq');
+  src:  url('fonts/lzb-icons.eot?r0waeq#iefix') format('embedded-opentype'),
+    url('fonts/lzb-icons.ttf?r0waeq') format('truetype'),
+    url('fonts/lzb-icons.woff?r0waeq') format('woff'),
+    url('fonts/lzb-icons.svg?r0waeq#lzb-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'lzb-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-3D-spin:before {
+  content: "\e84d";
+}
+.icon-phone:before {
+  content: "\e0cd";
+}
+.icon-fullscreen:before {
+  content: "\e5d0";
+}
+.icon-globe:before {
+  content: "\e894";
+}
+.icon-mail_outline:before {
+  content: "\e0e1";
+}
+.icon-radio-unchecked:before {
+  content: "\e836";
+}
+.icon-pause:before {
+  content: "\e034";
+}
+.icon-play:before {
+  content: "\e037";
+}
+.icon-play-filled:before {
+  content: "\e038";
+}
+.icon-play-outline:before {
+  content: "\e039";
+}
+.icon-radio-checked:before {
+  content: "\e837";
+}
+.icon-volume-off:before {
+  content: "\e04f";
+}
+.icon-volume-up:before {
+  content: "\e050";
+}
+.icon-lzb-logo-tagline:before {
+  content: "\e92e";
+}
+.icon-lzb-logo .path1:before {
+  content: "\e92f";
+  color: rgb(0, 112, 174);
+}
+.icon-lzb-logo .path2:before {
+  content: "\e930";
+  margin-left: -6.5458984375em;
+  color: rgb(35, 31, 32);
+}
+.icon-error:before {
+  content: "\e900";
+}
+.icon-amex .path1:before {
+  content: "\e901";
+  color: rgb(0, 126, 205);
+}
+.icon-amex .path2:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-android-pay:before {
+  content: "\e903";
+}
+.icon-apple-pay:before {
+  content: "\e904";
+}
+.icon-arrow-down:before {
+  content: "\e905";
+}
+.icon-arrow-left:before {
+  content: "\e906";
+}
+.icon-arrow-right:before {
+  content: "\e907";
+}
+.icon-arrow-up:before {
+  content: "\e908";
+}
+.icon-back-arrow:before {
+  content: "\e909";
+}
+.icon-cart:before {
+  content: "\e90a";
+}
+.icon-valid:before {
+  content: "\e90b";
+}
+.icon-checkbox-empty:before {
+  content: "\e90c";
+}
+.icon-checkbox-checked:before {
+  content: "\e90d";
+}
+.icon-close:before {
+  content: "\e90e";
+}
+.icon-credit-card:before {
+  content: "\e90f";
+}
+.icon-dropdown-arrow:before {
+  content: "\e910";
+}
+.icon-plus-large:before {
+  content: "\e911";
+}
+.icon-facebook:before {
+  content: "\e912";
+}
+.icon-filter:before {
+  content: "\e913";
+}
+.icon-menu:before {
+  content: "\e914";
+}
+.icon-heart-empty:before {
+  content: "\e915";
+}
+.icon-heart-filled:before {
+  content: "\e916";
+}
+.icon-info:before {
+  content: "\e917";
+}
+.icon-lazboy .path1:before {
+  content: "\e918";
+  color: rgb(0, 111, 177);
+}
+.icon-lazboy .path2:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-lazboy .path3:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-lazboy .path4:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-lazboy .path5:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-lazboy .path6:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-lazboy .path7:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-lazboy .path8:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-lock:before {
+  content: "\e920";
+}
+.icon-mastercard .path1:before {
+  content: "\e921";
+  color: rgb(53, 58, 72);
+}
+.icon-mastercard .path2:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(255, 94, 0);
+}
+.icon-mastercard .path3:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(237, 0, 6);
+}
+.icon-mastercard .path4:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(249, 160, 0);
+}
+.icon-dot-large:before {
+  content: "\e925";
+}
+.icon-paypal:before {
+  content: "\e926";
+}
+.icon-locator:before {
+  content: "\e927";
+}
+.icon-questions:before {
+  content: "\e928";
+}
+.icon-search:before {
+  content: "\e929";
+}
+.icon-share:before {
+  content: "\e92a";
+}
+.icon-sort:before {
+  content: "\e92b";
+}
+.icon-visa .path1:before {
+  content: "\e92c";
+  color: rgb(34, 77, 186);
+}
+.icon-visa .path2:before {
+  content: "\e92d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-youtube-play-square:before {
+  content: "\e939";
+}
+.icon-email-square:before {
+  content: "\e938";
+}
+.icon-houzz-square:before {
+  content: "\e937";
+}
+.icon-instagram-square:before {
+  content: "\e936";
+}
+.icon-facebook-square:before {
+  content: "\e931";
+}
+.icon-youtube-square:before {
+  content: "\e932";
+}
+.icon-google-plus-square:before {
+  content: "\e933";
+}
+.icon-pinterest-square:before {
+  content: "\e934";
+}
+.icon-twitter-square:before {
+  content: "\e935";
+}
+.icon-recliner-dimension:before {
+  content: "\e93a";
+}
+.icon-close-round:before {
+  content: "\e604";
+}
+.icon-dot:before {
+  content: "\e613";
+}
+.icon-locator-small:before {
+  content: "\e607";
+}
+.icon-minus:before {
+  content: "\e60a";
+}
+.icon-plus:before {
+  content: "\e60b";
+}
+.icon-print:before {
+  content: "\e60c";
+}
+.icon-wishlist:before {
+  content: "\e60e";
+}

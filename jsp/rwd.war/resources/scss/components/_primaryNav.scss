@@ -1,0 +1,141 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+// Primary navbar definitions
+
+$dropdown-width: 200px;
+.primary-nav {
+	border-top:solid 1px #ccc;
+	border-bottom:solid 1px #ccc;
+	background-color: $primary-color;
+	@include clearfix;
+
+	nav {
+		max-width: $row-width;
+		margin: 0 auto;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.primary-nav-item {
+	display:inline-block;
+	position: relative;
+	@include rem-size(line-height, 32px);
+}
+
+.primary-nav-item.active {
+	@include box-shadow(0, -3px, 3px, rgba(0, 0, 0, 0.35));
+}
+
+.primary-nav-button {
+	@include font-size(16px);
+	font-weight:normal;
+	margin:0;
+	padding:0;
+	position:relative;
+	z-index: 100;
+
+	.active & {
+		background-color:#fff;
+		margin-top:-4px;
+	}
+	.icon {
+		position: absolute;
+		right: 0;
+		@include rem-size(top, 19px);
+	}
+}
+
+
+.primary-nav-menu {
+	margin:0;
+	padding: 0;
+	list-style:none;
+	background: none repeat scroll 0 0 #fff;
+	display: block;
+	left: -9999px;
+	overflow: hidden;
+	position: absolute;
+	width: $dropdown-width;
+	z-index: 99;
+	min-width:178px;
+	@include box-shadow(0, 0, 3px, rgba(0, 0, 0, 0.35));
+
+	li {
+		display: block;
+	}
+
+	.active > .sub-nav-button {
+		background-color: #e1e1e1;
+		a {
+			color: $base-black;
+		}
+	}
+}
+
+/* all links have this class, they can be styled individually by referencing the parent class */
+.nav-link {
+	@include rem-size(line-height, 24px);
+	@include rem-size(padding, 8px 16px);
+	display: block;
+
+	.primary-nav-button & {
+		@include font-size(16px);
+		@include rem-size(line-height, 32px);
+		padding-bottom: 0;
+		padding-top: 0;
+		color: $base-white;
+		padding-right: 30px;
+		.active & {
+			color: $base-black;
+		}
+	}
+
+	.sub-nav-button & {
+		@include font-size(14px);
+		color: $base-black;
+		font-weight: normal;
+	}
+
+	.sub-nav-list & {
+		color: $base-black;
+	}
+	.sub-nav-title & {
+		color: $base-black;
+	}
+}
+
+.sub-nav-menu {
+	background-color: #e1e1e1;
+	border: 0 none;
+	width: 548px;
+	left: -9999px;
+	margin: -1px 0 0 -1px;
+	min-width: 422px;
+	overflow: visible;
+	position: absolute;
+	text-align: left;
+	z-index: 99;
+	@include clearfix();
+	section {
+		@include grid-column();
+	}
+	//when the title is outside of the section, needs padding to align with section.
+	> .sub-nav-title {
+		@include rem-size(padding-left, 10px);
+	}
+}
+
+.sub-nav-button {
+	margin:0;
+	padding:0;
+	width:$dropdown-width;
+}
+.sub-nav-list {
+	margin:0;
+	padding:0;
+	list-style:none;
+}

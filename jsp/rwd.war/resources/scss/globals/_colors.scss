@@ -1,0 +1,87 @@
+// Globals folder is reserved for things like mixin declarations, functions & variables.
+// Please do NOT use this folder for declaring Sass code that actually outputs CSS.
+
+// This file reserved for all color presets.
+
+/* LZB Brand Palette */
+$brand-blue: #006FB1;
+$brand-blue-secondary: #7297A9;
+$brand-light-blue: #e8f2f8;
+$brand-red: #CC3322;
+$brand-yellow: #FFC559;
+$brand-orange: #fa913f;
+$brand-green: #8cb324;
+$brand-gray20: #333333;
+$brand-gray30: #555555;
+$brand-gray50: #777777;
+$brand-gray60: #999999;
+$brand-gray75: #CCCCCC;
+$brand-gray90: #EEEEEE;
+
+/* Color Palette */
+$base-black: #000000;
+$light-black: #232323;
+$almost-black: $brand-gray20;
+$dark-gray: #4C4C4C;
+$deep-gray: $brand-gray30;
+$medium-gray: #666666; /* changed from $brand-gray50 to make ADA compliant */
+$base-gray: $brand-gray60;
+$light-gray: $brand-gray75;
+$almost-white: $brand-gray90;
+$base-white: #FFFFFF;
+$green: $brand-green;
+$red: $brand-red;
+$yellow: $brand-yellow;
+$orange: $brand-orange;
+$medium-blue: $brand-blue;
+$light-blue: $brand-light-blue;
+$bright-blue: #21A6FF;
+$bright-green: #02CA99;
+$sky-blue: #4894DA;
+
+/* Primaries */
+$primary-color: #666;
+$secondary-color: #aaa;
+
+/* element settings */
+$base-font-color: #000000;
+$link-color: $brand-blue;
+$disabled-link-color: $medium-gray;
+$sale-color: $red;
+$nav-color: lighten( #ccc, 10 );
+$border-color: $medium-gray;
+$formfield-border-color: $light-gray;
+$line-separator: #979797;
+$secondary-nav-color: #D7D7D7;
+$gray-heading: #f3f3f3;
+$gray-background: #F7F7F7;
+
+/* Messaging Palette */
+$alert-color: $red;
+$success-color: $bright-green;
+$info-color: $bright-blue;
+
+/* buttons */
+$btn-primary: $brand-blue;
+$btn-secondary: $base-white;
+$btn-tertiary: $brand-green;
+
+// Mixin presets //
+@mixin nav-color ($arg1, $arg2) {
+	background-color: $arg1;
+	color: $arg2;
+}
+
+@mixin button-color ($arg1, $arg2) {
+	background-color: $arg1;
+	color: $arg2;
+}
+
+@mixin tile-color ($arg1, $arg2) {
+	background-color: $arg1;
+	color: $arg2;
+}
+
+
+
+
