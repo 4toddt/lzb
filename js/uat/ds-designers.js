@@ -7,14 +7,14 @@ var designers = [{
         room: "/Images/npc/designer/list/amanda-room.jpg",
         page: "/content/design-services/amanda"
     },
-    // {
-    //     name: "Sharon",
-    //     location: "Vaughan, ON",
-    //     longitude: "-79.508278",
-    //     portrait: "/Images/npc/designer/list/sharon.png",
-    //     room: "/Images/npc/designer/list/sharon-room.jpg",
-    //     page: "/content/design-services/sharon"
-    // },
+    {
+        name: "Sharon",
+        location: "Vaughan, ON",
+        longitude: "-79.508278",
+        portrait: "/Images/npc/designer/list/sharon.png",
+        room: "/Images/npc/designer/list/sharon-room.jpg",
+        page: "/content/design-services/sharon"
+    },
     {
         name: "Everton",
         location: "Manchester, CT",

@@ -180,11 +180,12 @@
         cursor: pointer;
     }
     /***************************************/
-    /******** Design Services Nav Bar *******/
+    /******* Design Services Defaults ******/
     /***************************************/
     
     #ds-nav {
         font-size: .8em;
+        background-color: #FBFBFB;
     }
     
     #ds-nav a {
@@ -203,6 +204,41 @@
     #ds-nav a.active~a {
         border: none;
         border-bottom: 1px solid #cbcbcb;
+    }
+    
+    #npc-content h1 {
+        font-size: 1.3em;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: .75em;
+        line-height: 1.25;
+    }
+    
+    #npc-content h2 {
+        font-family: 'Playfair Display', playfair-display, serif;
+    }
+    
+    #npc-content h2::after {
+        content: "";
+        display: block;
+        width: 1.4em;
+        border-bottom: 3px solid #4A4A4A;
+    }
+    
+    #npc-content .background-image {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    section#hero {
+        margin-top: 15px;
+    }
+    
+    @media only screen and (min-width: 500px) {
+        #npc-content h1 {
+            font-size: 1.8em;
+        }
     }
     
     @media only screen and (min-width: 700px) {
@@ -237,17 +273,20 @@
         #ds-nav#ds-nav a {
             border: none;
         }
+        #npc-content h1 {
+            border-bottom: 1px solid #DBDAD9;
+            padding-bottom: .1em;
+        }
+        #npc-content .two-col {
+            display: flex;
+        }
     }
     
     @media only screen and (min-width: 850px) {
         #ds-nav {
             font-size: 1em;
         }
-    }
-    /***************************************/
-    /******* Design Service Defaults *******/
-    /***************************************/
-    
-    #npc-content h2 {
-        font-family: 'Playfair Display', playfair-display, serif;
+        #npc-content h1 {
+            font-size: 2.4em;
+        }
     }

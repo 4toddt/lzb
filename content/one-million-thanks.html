@@ -392,16 +392,35 @@
             background-position: center;
         }
         
-        #ideas01 {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas01-sm.jpg);
+        #ideas #ideas01,
+        #npc-content #chalk .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas01.jpg);
         }
         
-        #ideas02 {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas02-sm.jpg);
+        #ideas #ideas02,
+        #npc-content #coloring .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas02.jpg);
         }
         
-        #ideas03 {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas03-sm.jpg);
+        #ideas #ideas03,
+        #npc-content #stencil .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas03.jpg);
+        }
+        
+        #ideas #ideas04,
+        #npc-content #haiku .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas04.jpg);
+        }
+        
+        #ideas #ideas05,
+        #npc-content #origami .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas05.jpg);
+            background-position: right;
+        }
+        
+        #ideas #ideas06,
+        #npc-content #card .image {
+            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas06.jpg);
         }
         
         #ideas .copy {
@@ -521,16 +540,17 @@
             margin-top: .5em;
         }
         
-        #chalk .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas01-sm.jpg);
+        #faqs h3 {
+            font-size: .9em;
+            font-weight: 700;
+            font-style: italic;
+            color: #0070AF;
+            margin-top: 1.5em;
+            line-height: 1.375;
         }
         
-        #coloring .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas02-sm.jpg);
-        }
-        
-        #stencil .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas03-sm.jpg);
+        #faqs p {
+            margin-top: .5em;
         }
         
         @media only screen and (min-width: 500px) {
@@ -553,6 +573,9 @@
             #npc-content .idea-modal {
                 padding: 40px 20px;
             }
+            /* #faqs h3 {
+                font-size: 1.2em;
+            } */
         }
         
         @media only screen and (min-width: 750px) {
@@ -564,22 +587,13 @@
                 display: flex;
                 margin-top: 50px;
             }
-            #ideas .row.reverse {
+            #ideas .row:nth-child(odd) {
                 flex-direction: row-reverse;
             }
             #ideas .image {
                 height: 355px;
                 padding-bottom: 0;
                 flex: 0 1 580px;
-            }
-            #ideas01 {
-                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas01.jpg);
-            }
-            #ideas02 {
-                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas02.jpg);
-            }
-            #ideas03 {
-                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas03.jpg);
             }
             #ideas .copy {
                 flex: 0 1 400px;
@@ -640,17 +654,17 @@
             <div id="sky" class="image"></div>
             <div class="grid">
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join01.png" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join01.png" alt="Camera icon"></div>
                     <h3>Create</h3>
                     <p>Use your imagination to come up with a creative show of support. Take photos or capture the whole thing on video.</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join02.png" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join02.png" alt="Phone upload icon"></div>
                     <h3>Share</h3>
                     <p>Post your message on your social media channels with #OneMillionThanks.</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join03.png" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join03.png" alt="Eye icon"></div>
                     <h3>Watch</h3>
                     <p>Check back often to see what others are sharing and to see if your message is included in our compilation video.</p>
                 </div>
@@ -659,6 +673,30 @@
         <section id="ideas">
             <h2>Ideas for Showing Thanks</h2>
             <div class="row">
+                <div id="ideas04" class="image"></div>
+                <div class="copy">
+                    <h3>Write Your Own Haiku</h3>
+                    <p>A great way to thank healthcare workers for all they&rsquo;ve done is to tell them with kind words. You can record a message, sing a song, or write a haiku.</p>
+                    <a onclick="return showThat('haiku')" class="arrow-right" href="">Read more</a>
+                </div>
+            </div>
+            <div class="row">
+                <div id="ideas05" class="image"></div>
+                <div class="copy">
+                    <h3>Origami Hearts</h3>
+                    <p>Origami art is a decorative show of support to healthcare workers. You can make almost anything you want. All you need is a piece of paper.</p>
+                    <a onclick="return showThat('origami')" class="arrow-right" href="">Read more</a>
+                </div>
+            </div>
+            <div class="row">
+                <div id="ideas06" class="image"></div>
+                <div class="copy">
+                    <h3>Thank-You Card</h3>
+                    <p>You might not be able to mail healthcare workers a thank-you card, but you can send them your love with one all the same. Make a card, and send it to all of them with #OneMillionThanks.</p>
+                    <a onclick="return showThat('card')" class="arrow-right" href="">Read more</a>
+                </div>
+            </div>
+            <div class="row">
                 <div id="ideas01" class="image"></div>
                 <div class="copy">
                     <h3>DIY Sidewalk Chalk Paint</h3>
@@ -666,7 +704,7 @@
                     <a onclick="return showThat('chalk')" class="arrow-right" href="">Read more</a>
                 </div>
             </div>
-            <div class="row reverse">
+            <div class="row">
                 <div id="ideas02" class="image"></div>
                 <div class="copy">
                     <h3>Downloadable Coloring Page</h3>
@@ -690,7 +728,7 @@
         </section>
         <section id="lzb-cares" class="full-width">
             <h2>How we&rsquo;re helping</h2>
-            <div id="heart" class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/lzb-cares.png" alt=""></div>
+            <div id="heart" class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/lzb-cares.png" alt="La-Z-Boy cares logo"></div>
             <div data-flickity='{
                 "freeScrollFriction": 0.1,
                 "pageDots": false,
@@ -700,48 +738,60 @@
                 "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
                 }'>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care01.jpg" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care01.jpg" alt="Pallets of food and workers providing meals"></div>
                     <div class="copy">
                         <p>The La-Z-Boy Foundation provided a grant to the Pandemic Response Program, providing meals for those in need and temporary housing for the&nbsp;homeless.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care02.jpg" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care02.jpg" alt="Kitchen staff packing suppers"></div>
                     <div class="copy">
                         <p>The La-Z-Boy Foundation has provided a $50,000 grant to assist with free supper&nbsp;programs.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care03.jpg" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care03.jpg" alt="Police officer wearing face shield"></div>
                     <div class="copy">
                         <p>The La-Z-Boy Foundation is keeping first responders safe by providing grants for face&nbsp;shields.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care04.jpg" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care04.jpg" alt="La-Z-Boy team delivering masks to hospital worker"></div>
                     <div class="copy">
                         <p>Our facility in Saltillo, Mexico, has been producing masks for local&nbsp;hospitals.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care05.jpg" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care05.jpg" alt="La-Z-Boy employees providing protective gear to sherrif"></div>
                     <div class="copy">
                         <p>Our facility in Newton, Mississippi, has been producing protective gear to assist the local sheriff&rsquo;s&nbsp;department.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care06.jpg" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care06.jpg" alt="Worker with face mask carrying a box outside of Salvation Army"></div>
                     <div class="copy">
                         <p>The La-Z-Boy Foundation has provided grants to ensure local nonprofits can keep their staff safe while serving the&nbsp;community.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care07.jpg" alt=""></div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care07.jpg" alt="Workers behind bags and boxes of personal protective equipment"></div>
                     <div class="copy">
                         <p>Our facility in Newton, Mississippi, has been providing Rush Medical Systems with masks to assist them with their vital&nbsp;work.</p>
                     </div>
                 </div>
             </div>
+        </section>
+        <section id="faqs">
+            <h2>Frequently Asked Questions</h2>
+            <h3>I am a frontline nurse and would like to know, how do I receive a furniture donation?</h3>
+            <p>There is no need to apply. We are working with local hospitals and the American Nurses Association. Nurses selected will be notified directly.</p>
+            <h3>How do I participate in the One Million Thanks campaign and show thanks to frontline healthcare workers?</h3>
+            <p>If you would like to show your appreciation to frontline healthcare workers and participate in <span class="no-wrap">La-Z-Boy&rsquo;s</span> One Million Thanks campaign, simply use your imagination to come up with a creative show of support,
+                take photos or video, and post your message on your social media channels with #OneMillionThanks.</p>
+            <h3>How are frontline nurses who receive a furniture donation being selected?</h3>
+            <p>La-Z-Boy is working with local hospitals and the American Nurses Association to randomly select nurses across the country to receive the furniture donation.</p>
+            <h3>Do you have any recommendations on creative ways to show support for frontline nurses?</h3>
+            <p>Yes! On this page, above, we have a couple of creative ways that you can show your support.</p>
         </section>
 
         <div id="chalk" class="idea-modal" onclick="hideThis(event,this)">
@@ -824,6 +874,65 @@
                             <li><strong>Gather your things</strong><br>Just print the coloring page, then give it your own personal touch. Keep a few blank pages on hand, because you just might get inspired to create something completely new.</li>
                             <li><strong>Share</strong><br>Be sure to share your art work on social media with #OneMillionThanks. You might inspire your friends to show their support for healthcare workers, too.</li>
                         </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="haiku" class="idea-modal" onclick="hideThis(event,this)">
+            <div class="idea-modal-content">
+                <span class="close" onclick="hideThat('haiku')">&times;</span>
+                <div class="two-col">
+                    <div class="image"></div>
+                    <div class="copy">
+                        <h2>Write Your Own Haiku</h2>
+                        <p>Haikus are short poems that even a beginner can write. They consist of three lines with specific lengths, which don&rsquo;t necessarily have to rhyme.</p>
+                        <p>5 Syllables<br> 7 Syllables<br> 5 Syllables<br></p>
+                        <p>Record yourself reading your poem or, if you are shy, write it down on a piece of paper and snap a picture. Then share with #OneMillionThanks.</p>
+                        <p>If you think of something longer than a haiku, even better! There is no one way to say thank you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="origami" class="idea-modal" onclick="hideThis(event,this)">
+            <div class="idea-modal-content">
+                <span class="close" onclick="hideThat('origami')">&times;</span>
+                <div class="two-col">
+                    <div class="image"></div>
+                    <div class="copy">
+                        <a href="https://www.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanks_origami.pdf" target="_blank">Download</a>
+                        <h2>Origami Hearts</h2>
+                        <h3>What you&rsquo;ll need</h3>
+                        <ol>
+                            <li>Square paper (A4 paper works, but also coloring paper, or gift wrap with a nice pattern.)</li>
+                        </ol>
+                        <h3>Steps</h3>
+                        <ol>
+                            <li>Lay your paper so that the color or pattern is facing down.</li>
+                            <li>Fold the paper in half to form a triangle.</li>
+                            <li>Open it and fold in half again the other way.</li>
+                            <li>The paper should now be divided into four triangles.</li>
+                            <li>Fold the top point down to meet the center point where your previous folds meet.</li>
+                            <li>Take the bottom point and fold it up to meet the top of your paper.</li>
+                            <li>Take the right-hand side of your paper and fold it up to meet the center crease.</li>
+                            <li>Repeat the last step on the left. You should now be able to see a heart shape.</li>
+                            <li>Flip your heart over and fold over the left and right points.</li>
+                            <li>Do the same for the top two points and flip it back over. Now you have an origami heart.</li>
+                            <li>Make as many hearts as you want and use them to decorate your room, or tape them to a window so everyone can see.</li>
+                            <li>Take pictures or videos and share with #OneMillionThanks.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="card" class="idea-modal" onclick="hideThis(event,this)">
+            <div class="idea-modal-content">
+                <span class="close" onclick="hideThat('card')">&times;</span>
+                <div class="two-col">
+                    <div class="image"></div>
+                    <div class="copy">
+                        <h2>Thank-You Card</h2>
+                        <p>There is no one way to make a thank-you card from your heart. Just start with a piece of paper and make it as simple or creative as you&rsquo;d like. When you&rsquo;re done, snap a picture of your handwritten message, or record
+                            yourself reading it aloud. When you share with #OneMillionThanks, your message will have the potential to reach millions.</p>
                     </div>
                 </div>
             </div>

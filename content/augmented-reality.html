@@ -63,19 +63,10 @@
             display: inline-block;
         }
         
-        body.mobile-site .hidden-mobile {
-            display: none !important;
-        }
-        
-        body:not(.mobile-site) .hidden-desktop {
-            display: none !important;
-        }
-        
-        body.apple .hidden-apple {
-            display: none !important;
-        }
-        
-        body.android .hidden-android {
+        body:not(.iphone) .iphone,
+        body:not(.android-phone) .android-phone,
+        body.iphone .not-phone,
+        body.android-phone .not-phone {
             display: none !important;
         }
         
@@ -227,18 +218,26 @@
         </section>
         <section id="try-it">
             <h2>Try it now!</h2>
-            <p class="subtitle hidden-mobile">Download <span style="white-space: nowrap">La-Z-Boy</span> AR from the<br>iTunes App Store or Google Play.</p>
-            <div class="image hidden-mobile">
-                <a href="https://apps.apple.com/us/app/la-z-boy-ar/id1468901467"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt="Download on the App Store"></a>
+            <p class="subtitle not-phone">Download <span style="white-space: nowrap">La-Z-Boy</span> AR from the<br>iTunes App Store or Google Play.</p>
+            <div class="image not-phone">
+                <a href="https://apps.apple.com/us/app/la-z-boy-ar/id1468901467">
+                    <img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt="Download on the App Store">
+                </a>
             </div>
-            <div class="image hidden-mobile">
-                <a href="https://play.google.com/store/apps/details?id=us.zoom.videomeetings"><img alt='Get it on Google Play' src='https://www.la-z-boy.com/Images/npc/augmented-reality/en_badge_web_generic.png'></a>
+            <div class="image not-phone">
+                <a href="http://play.google.com/store/apps/details?id=com.la_z_boy.retail">
+                    <img alt='Get it on Google Play' src='https://content.la-z-boy.com/Images/npc/augmented-reality/en_badge_web_generic.png'>
+                </a>
             </div>
-            <div class="image hidden-android hidden-desktop">
-                <a href="itms-apps://itunes.apple.com/us/app/la-z-boy-ar/id1468901467"><img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt="Download on the App Store"></a>
+            <div class="image iphone">
+                <a href="https://ar.la-z-boy.com/visualize/products">
+                    <img src="https://content.la-z-boy.com/Images/npc/augmented-reality/download.svg" alt="Download on the App Store">
+                </a>
             </div>
-            <div class="image hidden-apple hidden-desktop">
-                <a href="https://ar.la-z-boy.com/visualize/products"><img alt='Get it on Google Play' src='https://www.la-z-boy.com/Images/npc/augmented-reality/en_badge_web_generic.png'></a>
+            <div class="image android-phone">
+                <a href="https://ar.la-z-boy.com/visualize/products">
+                    <img alt='Get it on Google Play' src='https://content.la-z-boy.com/Images/npc/augmented-reality/en_badge_web_generic.png'>
+                </a>
             </div>
             <p style="max-width:42em;">Ready to see how <span style="white-space: nowrap">La-Z-Boy</span> furniture will look in your home? Thanks to augmented reality (AR), you can now get an instant sneak preview right on your phone.</p>
         </section>
@@ -332,10 +331,13 @@
         </section>
     </div>
     <script>
-        if (navigator.userAgent.match(/iPhone|iPod/i)) {
-            document.body.classList.add("apple");
-        } else if (navigator.userAgent.match(/Android/i)) {
-            document.body.classList.add("android");
+        var device = navigator.userAgent;
+        if (device.match(/iPhone|iPod/i)) {
+            document.body.classList.add("iphone");
+        } else if (device.match(/Android/i) && !device.match(/Tablet/i)) {
+            document.body.classList.add("android-phone");
+            // } else {
+            //     document.body.classList.add("not-phone");
         }
         if (typeof define == 'function' && define.amd) {
             require(["/js/flickity.js"]);

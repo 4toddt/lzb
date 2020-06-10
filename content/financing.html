@@ -10,7 +10,7 @@
     <style>
         /*********** Import Fonts **********/
         
-        @import url("https://use.typekit.net/pou1zjg.css");
+        @import url("https://use.typekit.net/oxd7mfn.css");
         @font-face {
             font-family: 'LZB Icons';
             src: url('/css/fonts/lzb-icons.eot?jebkb3');
@@ -51,6 +51,8 @@
         #npc-content {
             font-family: 'lato', 'OpenSans', sans-serif;
             font-size: 20px;
+            overflow: hidden;
+            color: #444;
         }
         
         body.mobile-site #npc-content {
@@ -74,6 +76,10 @@
         #npc-content sup {
             line-height: 0;
             font-size: 0.5em;
+            color: inherit;
+            margin: 0;
+            position: static;
+            vertical-align: super;
         }
         /*********** Utility Classes ************/
         
@@ -94,6 +100,19 @@
         body.mobile-site .hidden-mobile {
             display: none !important;
         }
+        
+        #npc-content .anchor {
+            /* use like <span class="anchor" id="whatever"></span> */
+            position: relative;
+            display: block;
+            height: 0;
+            width: 0;
+            top: -90px;
+        }
+        
+        body.mobile-site #npc-content .anchor {
+            top: -60px;
+        }
         /***************** Custom CSS ******************/
         
         #hero {
@@ -101,10 +120,17 @@
         }
         
         #hero .image {
-            background-image: url(/Images/financing/hero.png);
+            background-image: url(https://content.la-z-boy.com/Images/npc/financing/hero-sm.jpg);
             height: 460px;
             background-size: cover;
             background-position: left;
+        }
+        
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+            #hero .image {
+                background-image: url(https://content.la-z-boy.com/Images/npc/financing/hero.jpg);
+            }
         }
         
         #hero .copy {
@@ -124,54 +150,259 @@
             padding: .5em;
             margin: 0;
             line-height: 1.25;
+            font-weight: bold;
+            font-family: 'lato', 'OpenSans', sans-serif;
+        }
+        
+        #npc-content p {
+            font-size: .8em;
+            margin: .5em 0 0;
+            line-height: 1.45;
         }
         
         #hero p {
-            margin: 0;
             font-size: 0.75em;
         }
         
-        #hero a {
+        #npc-content a.apply-now {
             margin-top: 1em;
             display: inline-block;
             background-color: #0064B1;
             color: white;
-            line-height: 2.5;
+            line-height: 2.8;
             border-radius: 3px;
             width: 185px;
             text-align: center;
+            font-size: .8em;
         }
         
-        #details .column {
+        section#details {
+            padding: 0 5px;
+        }
+        
+        #details>div {
             margin-top: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
         
-        #details h2 {
+        #npc-content h2 {
+            font-family: 'lato', 'OpenSans', sans-serif;
             font-weight: normal;
-            font-size: 1.3em;
-            line-height: 1.4;
+            font-size: 1.2em;
+            line-height: 1.3;
             margin: 0;
         }
         
         #details h3 {
-            font-weight: normal;
+            font-family: 'lato', 'OpenSans', sans-serif;
+            font-weight: bold;
             line-height: 1.4;
             margin: 1.5em 0 0;
         }
         
-        #details ul {
+        #npc-content ul {
             font-size: .8em;
             margin: 0;
         }
         
-        #details li {
+        #npc-content li {
             margin-top: .6em;
             line-height: 1.25;
         }
         
-        #details li a {
+        #npc-content li a {
             font-size: .9em;
             text-decoration: underline;
+        }
+        
+        #cc-box {
+            padding-top: 54px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #cc-box .copy {
+            border: 2px solid #436479;
+            padding: 18px;
+        }
+        
+        #cc-box .inner {
+            text-align: center;
+            background-color: #F0F8FD;
+            padding: 0 10px 30px;
+        }
+        
+        #cc-box .image {
+            margin: 0 auto -63px;
+            position: relative;
+            top: -72px;
+            width: 267px;
+            max-width: 90%;
+        }
+        
+        #npc-content img {
+            max-width: 100%;
+        }
+        
+        #cc-box p {
+            padding: 0 15px;
+            margin-top: 1em;
+        }
+        
+        #cc-box p a {
+            text-decoration: underline;
+            font-weight: bold;
+            color: inherit;
+        }
+        
+        #cc-box .fine {
+            font-size: .6em;
+            margin-top: 3em;
+        }
+        
+        #calculate {
+            background-color: #436479;
+            margin-top: 73px;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+        
+        #calculate .image {
+            width: 100px;
+            margin: 0 auto;
+            position: relative;
+            top: -33px;
+            margin-bottom: -33px;
+        }
+        
+        #calculate h2 {
+            max-width: 27em;
+            text-align: center;
+            margin: .5em auto 0;
+            padding: 0 1em;
+            color: white;
+        }
+        
+        #npc-content a.calc-now {
+            margin-top: 1em;
+            display: inline-block;
+            color: white;
+            line-height: 2.8;
+            border-radius: 3px;
+            width: 185px;
+            text-align: center;
+            font-size: .8em;
+            border: 2px solid white;
+        }
+        
+        #promos>div {
+            text-align: center;
+        }
+        
+        #promos>div>div {
+            margin-top: 40px;
+        }
+        
+        body.retail .not-retail {
+            display: none;
+        }
+        
+        body:not(.retail) .retail {
+            display: none;
+        }
+        
+        #promos>div>div:last-child {
+            border-top: 1px solid #436479;
+            padding-top: 40px;
+        }
+        
+        #promos .pre {
+            font-size: .8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+            color: #0064B1;
+        }
+        
+        #promos p {
+            font-size: .75em;
+        }
+        
+        #faqs h2 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.4em;
+            margin-top: 1.5em;
+        }
+        
+        #faqs>div {
+            border: 1px solid #979797;
+            background-color: #f5f5f5;
+            padding: 25px;
+            margin-top: 25px;
+        }
+        
+        #faqs input {
+            display: none;
+        }
+        
+        #faqs label {
+            font-size: .8em;
+            font-weight: bold;
+            display: block;
+            padding-right: 1.5em;
+            position: relative;
+            line-height: 1.45;
+            margin: 0;
+            vertical-align: baseline;
+            width: auto;
+        }
+        
+        #faqs label::after {
+            position: absolute;
+            right: 4px;
+            top: 9px;
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+            font-size: 1.4em;
+        }
+        
+        #faqs :checked~label::after {
+            transform: rotate(90deg);
+            right: 0;
+            top: 10px;
+        }
+        
+        #faqs :not(:checked)~label~* {
+            display: none;
+        }
+        
+        #faqs a {
+            text-decoration: underline;
+        }
+        
+        #faqs .two-col {
+            margin: 0 -15px;
+        }
+        
+        #faqs .two-col>div {
+            padding: 0 15px;
+        }
+        
+        #faqs .two-col strong {
+            display: inline-block;
+            margin-top: 1em;
+        }
+        
+        section#fine-print {
+            margin-top: 40px;
+        }
+        
+        #fine-print p {
+            font-size: .6em;
         }
         
         @media only screen and (min-width: 500px) {
@@ -201,7 +432,6 @@
                 width: auto;
             }
             #hero p {
-                margin-top: .5em;
                 line-height: 1.25;
                 font-size: .7em;
             }
@@ -228,15 +458,32 @@
             #hero p {
                 font-size: .8em;
             }
-            #details .column {
+            #details>div {
                 margin-top: 60px;
             }
-            #details h2 {
+            #npc-content h2 {
                 font-size: 1.5em;
                 line-height: 1.5;
             }
-            #details .two-col {
+            #npc-content .two-col {
                 display: flex;
+            }
+            #promos>div {
+                margin: 0 -40px;
+                display: flex;
+            }
+            #promos>div>div,
+            #promos>div>div:last-child {
+                padding: 50px 40px;
+                margin-top: 60px;
+                flex: 0 1 530px;
+            }
+            #promos>div>div:last-child {
+                border-top: none;
+                border-left: 1px solid #436479;
+            }
+            #faqs h2 {
+                font-size: 2em;
             }
         }
         
@@ -246,8 +493,17 @@
                 border: 2px solid #436479;
             }
             #hero .inner {
-                padding: 60px 25px 40px;
+                padding: 50px 25px 40px;
                 width: 410px;
+            }
+            #details {
+                display: flex;
+            }
+            #details>div:first-child {
+                flex: 0 1 590px;
+            }
+            #cc-box {
+                flex: 0 1 390px;
             }
         }
     </style>
@@ -265,23 +521,23 @@
     </nav>
     <div id="npc-content">
         <section id="hero" class="full-width">
-            <div class="image" role="img" aria-label=""></div>
+            <div class="image" role="img" aria-label="Living room with La-Z-Boy furniture and accessories"></div>
             <div class="copy">
                 <div class="inner">
                     <h1>No Interest for 12&nbsp;Months*</h1>
                     <p>On online or in-store purchases made with your <span class="no-wrap">La-Z-Boy</span> Furniture Galleries credit card. Equal monthly payments required for 12 months. Minimum purchase <span class="no-wrap">may apply.</span></p>
-                    <a href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=3FCBEDF2AEB5DB5367FE85B61761D567CC04E21E3BF1FEB7&client=La-Z-Boy%20Furniture%20Galleries">Apply Now</a>
+                    <a class="apply-now" href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=3FCBEDF2AEB5DB5367FE85B61761D567CC04E21E3BF1FEB7&client=La-Z-Boy%20Furniture%20Galleries">Apply Now</a>
                 </div>
             </div>
         </section>
         <section id="details">
-            <div class="column">
+            <div>
                 <h2>A dedicated credit limit to use again and again at <span class="no-wrap">La-Z-Boy</span> <span class="no-wrap"></span>Furniture Galleries<sup>1</sup></h2>
                 <ul>
-                    <li>Convenient monthly payments <a href="">Calculate your payments</a></li>
+                    <li>Convenient monthly payments <a href="https://www.mysynchrony.com/payment-calculator.html" target="_blank">Calculate your payments</a></li>
                     <li>Payment options—online or by mail</li>
                     <li>Special financing available from Synchrony Bank**</li>
-                    <li>Special in-store & online deals <a href="">Find a Store</a></li>
+                    <li>Special in-store & online deals <a href="/storeLocator/storeLocator.jsp">Find a Store</a></li>
                 </ul>
                 <div class="two-col">
                     <div>
@@ -303,6 +559,93 @@
                     </div>
                 </div>
             </div>
+            <div id="cc-box">
+                <div class="copy">
+                    <div class="inner">
+                        <div class="image"><img src="http://content.la-z-boy.com/Images/synchronyFinancing/card.jpg" alt="La-Z-Boy Furniture Galleries Credit Card"></div>
+                        <a class="apply-now" href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=3FCBEDF2AEB5DB5367FE85B61761D567CC04E21E3BF1FEB7&client=La-Z-Boy%20Furniture%20Galleries">Apply Now</a>
+                        <p>Already have a La-Z-Boy Furniture Galleries Credit&nbsp;Card?<br>
+                            <a href="https://www.mysynchrony.com/cmp-index.html">Manage your account</a></p>
+                        <p class="fine">This is a revolving credit limit that can be used for any purchase up to the maximum of amount of credit approved. Credit promotions are always available with this&nbsp;program.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="calculate">
+            <section>
+                <div class="image"><img src="https://content.la-z-boy.com/Images/npc/financing/calculator.png" alt="calculator"></div>
+                <h2>Calculate your estimated monthly payment available with promotional financing.</h2>
+                <a href="https://www.mysynchrony.com/payment-calculator.html" target="_blank" class="calc-now">Calculate-now</a>
+            </section>
+        </div>
+        <span class="anchor" id="promotions"></span>
+        <section id="promos">
+            <div>
+                <div class="retail">
+                    <p class="pre">in-store only</p>
+                    <h2>No Interest for 36&nbsp;Months*</h2>
+                    <p>On in-store purchases made with your <span class="no-wrap">La-Z-Boy</span> Furniture Galleries Credit Card between 6/1/20 and 6/30/20. Equal monthly payments required for 36 months. Minimum purchase may apply.</p>
+                </div>
+                <div class="not-retail">
+                    <p class="pre">in-store only</p>
+                    <h2>No Interest for 48&nbsp;Months*</h2>
+                    <p>On in-store purchases made with your <span class="no-wrap">La-Z-Boy</span> Furniture Galleries Credit Card between 6/1/20 and 6/30/20. Equal monthly payments required for 48 months. Minimum purchase may apply.</p>
+                </div>
+                <div>
+                    <p class="pre">in-store & online</p>
+                    <h2>No Interest for 12&nbsp;Months*</h2>
+                    <p>On online or in-store purchases made with your <span class="no-wrap">La-Z-Boy</span> Furniture Galleries credit card. Equal monthly payments required for 12 months. Minimum purchase may apply.</p>
+                </div>
+            </div>
+        </section>
+        <section id="faqs">
+            <h2>Frequently Asked Questions</h2>
+            <div>
+                <input type="checkbox" id="faq01" checked>
+                <label for="faq01">What is the <span class="no-wrap">La-Z-Boy</span> Furniture Galleries Credit Card?</label>
+                <p>La-Z-Boy Furniture Galleries offers customers a credit card through Synchrony Bank with a revolving credit limit to use again and again at <span class="no-wrap">la-z-boy.com</span> and <span class="no-wrap">La-Z-Boy</span> Retail locations.*</p>
+            </div>
+            <div>
+                <input type="checkbox" id="faq02">
+                <label for="faq02">How do I apply for a <span class="no-wrap">La-Z-Boy</span> Furniture Galleries Credit Card?</label>
+                <p>You can apply for a La-Z-Boy Furniture Galleries Credit Card by applying online or at any of our participating retailer locations. Click <a href="https://etail.mysynchrony.com/eapply/eapply.action?uniqueId=3FCBEDF2AEB5DB5367FE85B61761D567CC04E21E3BF1FEB7&client=La-Z-Boy%20Furniture%20Galleries">here</a>                    to apply online or <a href="/storeLocator/storeLocator.jsp">here</a> to find your nearest participating store location.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="faq03">
+                <label for="faq03">Where do I check the status of my account?</label>
+                <p>To check the status of your <span class="no-wrap">La-Z-Boy</span> Furniture Galleries Credit Card account, click <a href="https://www.mysynchrony.com/cmp-index.html">here</a> to go to the Synchrony Bank website. After logging into your
+                    account, you will be able to:
+                </p>
+                <ul>
+                    <li>Make a payment</li>
+                    <li>View your balance</li>
+                    <li>Update your account information</li>
+                    <li>Schedule up to 12 future payments</li>
+                </ul>
+            </div>
+            <div>
+                <input type="checkbox" id="faq04">
+                <label for="faq04">How can I make a payment on my <span class="no-wrap">La-Z-Boy</span> Furniture Galleries Credit Card?</label>
+                <p>There are three convenient ways to pay your bill.</p>
+                <div class="two-col">
+                    <div>
+                        <p><strong>Pay Online:</strong> and make payments online.</p>
+                        <p><strong>Pay by Phone:</strong> Contact Synchrony Bank Customer Service <span class="no-wrap">1-844-335-5909</span> during the hours listed below to make a payment by phone.</p>
+                        <p>Monday – Sunday 7:30 am to 12:00 midnight EST</p>
+                    </div>
+                    <div>
+                        <p><strong>Pay by Mail:</strong> Mail payments to the address below. Ensure that you have plenty of time for your payment to arrive prior to the due date.</p>
+                        <p>Synchrony Bank<br>PO Box 960061<br>Orlando, FL 32896-0061</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="fine-print">
+            <p>*Qualifying purchase amount must be on one receipt. No interest will be charged and equal monthly payments are required on promo purchase until it is paid in full. These payments equal the total promo purchase amount divided by the number
+                of months in the promo period and rounded up to the next whole dollar. These payments may be higher than the payments that would be required if this purchase was a non-promo purchase. Regular account terms apply to non-promo purchases.
+                For new accounts: Purchase APR is 29.99%. Minimum interest charge is $2. Existing cardholders: See your credit card agreement terms. Subject to credit approval.</p>
+            <p>** Subject to credit approval.</p>
+            <p>1 Available credit is subject to change depending on account activity.</p>
         </section>
     </div>
     <!-- end NPC content -->

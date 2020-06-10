@@ -10,15 +10,15 @@ function widenPath(URL) {
 }
 
 function slugify(phrase) {
-    return phrase.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '') || "no-name" + ".jpg";
+    return phrase.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '') || "no-name";
 }
 
 function HRSrc(path, name) {
-    return path + "/" + name + "?q=85";
+    return path + "/" + name + ".jpg?q=85";
 }
 
 function HRSrcset(path, name) {
-    return path + "@2x/" + name + "?q=50 2x, " + path + "/" + name + "?q=85 1x";
+    return path + "@2x/" + name + ".jpg?q=50 2x, " + path + "/" + name + ".jpg?q=85 1x";
 }
 
 function HRSource(lowResSource, name) {

@@ -1,12 +1,12 @@
 // Data needed to generate designer HTML
-var designers = [{
-        name: "Amanda",
-        location: "Raleigh, NC",
-        longitude: "-78.638176",
-        portrait: "/Images/npc/designer/list/amanda.png",
-        room: "/Images/npc/designer/list/amanda-room.jpg",
-        page: "/content/design-services/amanda"
-    },
+var designers = [ //{
+    //     name: "Amanda",
+    //     location: "Raleigh, NC",
+    //     longitude: "-78.638176",
+    //     portrait: "/Images/npc/designer/list/amanda.png",
+    //     room: "/Images/npc/designer/list/amanda-room.jpg",
+    //     page: "/content/design-services/amanda"
+    // },
     // {
     //     name: "Sharon",
     //     location: "Vaughan, ON",
