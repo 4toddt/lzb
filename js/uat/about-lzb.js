@@ -13,6 +13,8 @@ var navigation = {
         "Investor Relations": "https://lazboy.gcs-web.com/"
     },
     "Environmental": {
+        "Sustainability at a Glance": "/content/AboutLaZBoy/sustainability-at-a-glance",
+        "SASB Standards": "/content/AboutLaZBoy/sasb-standards",
         "Environment": "/content/AboutLaZBoy/sustainability",
         "Carbon & Climate": "/content/AboutLaZBoy/carbon-and-climate",
         "Natural Resources": "/content/AboutLaZBoy/natural-resources",

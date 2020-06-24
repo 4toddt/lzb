@@ -368,6 +368,63 @@
             margin-top: .5em;
         }
         
+        section#thank-you {
+            max-width: 1020px;
+            padding: 0 20px;
+        }
+        
+        #thank-you .row {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #thank-you .image {
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/video01.jpg);
+            background-size: cover;
+            background-position: left center;
+            padding-bottom: 88%;
+        }
+        
+        #thank-you .copy {
+            background-color: #94c7e5;
+            padding: 30px 35px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #thank-you p {
+            font-size: 1em;
+            color: white;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        #thank-you a {
+            display: inline-block;
+            height: 70px;
+            width: 70px;
+            flex: 0 0 70px;
+            margin-top: 20px;
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/play.png);
+            background-size: cover;
+        }
+        
+        #thank-you-video .youtube {
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        
+        #thank-you-video .youtube iframe {
+            min-height: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
         section#ideas {
             max-width: 1020px;
             padding: 0 20px;
@@ -381,7 +438,8 @@
             text-align: center;
         }
         
-        #ideas .row {
+        #ideas .row,
+        #thank-you .row {
             margin-top: 30px;
         }
         
@@ -466,7 +524,7 @@
             padding: 0 5px;
         }
         
-        #npc-content .idea-modal {
+        #npc-content .my-modal {
             display: none;
             position: fixed;
             z-index: 1500000;
@@ -479,7 +537,16 @@
             background-color: rgba(255, 255, 255, 0.75);
         }
         
-        #npc-content .idea-modal-content {
+        #npc-content .my-modal .close {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            line-height: 20px;
+            font-size: 37px;
+            cursor: pointer;
+        }
+        
+        #npc-content .my-modal-content {
             background-color: #fefefe;
             width: 100%;
             max-width: 1000px;
@@ -490,26 +557,17 @@
             box-shadow: 0 2px 20px rgba(0, 0, 0, .18);
         }
         
-        #npc-content .close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            line-height: 20px;
-            font-size: 37px;
-            cursor: pointer;
-        }
-        
-        #npc-content .idea-modal .two-col>div {
+        #npc-content .my-modal .two-col>div {
             margin-top: 30px;
         }
         
-        #npc-content .idea-modal .image {
+        #npc-content .my-modal .image {
             height: 268px;
             background-size: cover;
             background-position: center;
         }
         
-        #npc-content .idea-modal a {
+        #npc-content .my-modal a {
             background-color: #006FB1;
             color: white;
             border-radius: 4px;
@@ -519,22 +577,22 @@
             font-size: .8em;
         }
         
-        #npc-content .idea-modal h2 {
+        #npc-content .my-modal h2 {
             text-align: left;
             margin-top: 0;
         }
         
-        #npc-content .idea-modal h3 {
+        #npc-content .my-modal h3 {
             font-weight: bold;
             font-size: .9em;
             margin-top: 1em;
         }
         
-        #npc-content .idea-modal ol {
+        #npc-content .my-modal ol {
             padding-inline-start: 30px;
         }
         
-        #npc-content .idea-modal li {
+        #npc-content .my-modal li {
             font-size: .8em;
             line-height: 1.25;
             margin-top: .5em;
@@ -570,12 +628,17 @@
             #lzb-cares h2 {
                 font-size: 1.5em;
             }
-            #npc-content .idea-modal {
+            #npc-content .my-modal {
                 padding: 40px 20px;
             }
-            /* #faqs h3 {
-                font-size: 1.2em;
-            } */
+            #thank-you .row {
+                flex-direction: row;
+            }
+            #thank-you .image {
+                padding-bottom: 250px;
+                flex: 1 0 29%;
+                min-width: 220px;
+            }
         }
         
         @media only screen and (min-width: 750px) {
@@ -583,7 +646,16 @@
                 height: 526px;
                 background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/hero.jpg);
             }
-            #ideas .row {
+            #thank-you .copy {
+                flex-direction: row;
+                text-align: left;
+                font-size: 1.2em;
+            }
+            #thank-you .copy>* {
+                margin: 30px;
+            }
+            #ideas .row,
+            #video .row {
                 display: flex;
                 margin-top: 50px;
             }
@@ -599,29 +671,35 @@
                 flex: 0 1 400px;
                 padding: 40px 30px;
             }
-            #npc-content .idea-modal .two-col {
+            #npc-content .my-modal .two-col {
                 display: flex;
                 align-items: flex-start;
                 justify-content: center;
             }
-            #npc-content .idea-modal .image {
+            #npc-content .my-modal .image {
                 height: 360px;
                 flex: 0 1 340px;
             }
-            #npc-content .idea-modal .copy {
+            #npc-content .my-modal .copy {
                 padding-left: 20px;
                 flex: 0 1 500px;
             }
         }
         
         @media only screen and (min-width: 850px) {
-            #npc-content .idea-modal-content {
+            #thank-you .copy {
+                font-size: 1.5em;
+            }
+            #npc-content .my-modal .close {
+                top: 20px;
+            }
+            #npc-content .my-modal-content {
                 padding: 50px 40px 80px;
             }
-            #npc-content .idea-modal .copy {
+            #npc-content .my-modal .copy {
                 padding-left: 40px;
             }
-            #npc-content .idea-modal {
+            #npc-content .my-modal {
                 padding: 80px 20px;
             }
         }
@@ -670,6 +748,16 @@
                 </div>
             </div>
         </section>
+        <section id="thank-you">
+            <div class="row">
+                <div class="image">
+                </div>
+                <div class="copy">
+                    <p>See how people are helping us send #OneMillionThanks to healthcare workers.</p>
+                    <a data-show-modal="thank-you-video" class="play-button" href=""></a>
+                </div>
+            </div>
+        </section>
         <section id="ideas">
             <h2>Ideas for Showing Thanks</h2>
             <div class="row">
@@ -677,7 +765,7 @@
                 <div class="copy">
                     <h3>Write Your Own Haiku</h3>
                     <p>A great way to thank healthcare workers for all they&rsquo;ve done is to tell them with kind words. You can record a message, sing a song, or write a haiku.</p>
-                    <a onclick="return showThat('haiku')" class="arrow-right" href="">Read more</a>
+                    <a data-show-modal="haiku" class="arrow-right" href="">Read more</a>
                 </div>
             </div>
             <div class="row">
@@ -685,7 +773,7 @@
                 <div class="copy">
                     <h3>Origami Hearts</h3>
                     <p>Origami art is a decorative show of support to healthcare workers. You can make almost anything you want. All you need is a piece of paper.</p>
-                    <a onclick="return showThat('origami')" class="arrow-right" href="">Read more</a>
+                    <a data-show-modal="origami" class="arrow-right" href="">Read more</a>
                 </div>
             </div>
             <div class="row">
@@ -693,7 +781,7 @@
                 <div class="copy">
                     <h3>Thank-You Card</h3>
                     <p>You might not be able to mail healthcare workers a thank-you card, but you can send them your love with one all the same. Make a card, and send it to all of them with #OneMillionThanks.</p>
-                    <a onclick="return showThat('card')" class="arrow-right" href="">Read more</a>
+                    <a data-show-modal="card" class="arrow-right" href="">Read more</a>
                 </div>
             </div>
             <div class="row">
@@ -701,7 +789,7 @@
                 <div class="copy">
                     <h3>DIY Sidewalk Chalk Paint</h3>
                     <p>You can send healthcare workers a colorful message of appreciation using items you have around the house. All you need is cornstarch, food coloring, and a little creativity.</p>
-                    <a onclick="return showThat('chalk')" class="arrow-right" href="">Read more</a>
+                    <a data-show-modal="chalk" class="arrow-right" href="">Read more</a>
                 </div>
             </div>
             <div class="row">
@@ -709,7 +797,7 @@
                 <div class="copy">
                     <h3>Downloadable Coloring Page</h3>
                     <p>An art piece is a creative way to show healthcare workers how much you appreciate all they do. This coloring page is a simple and fun way for your kids to get involved.</p>
-                    <a onclick="return showThat('coloring')" class="arrow-right" href="">Read more</a>
+                    <a data-show-modal="coloring" class="arrow-right" href="">Read more</a>
                 </div>
             </div>
             <div class="row">
@@ -717,7 +805,7 @@
                 <div class="copy">
                     <h3>Downloadable Stencil</h3>
                     <p>Use this stencil to turn any fabric into a show of support. You can decorate a tote bag, or make your own #OneMillionThanks shirt that you can wear while you record your message to healthcare workers.</p>
-                    <a onclick="return showThat('stencil')" class="arrow-right" href="">Read more</a>
+                    <a data-show-modal="stencil" class="arrow-right" href="">Read more</a>
                 </div>
             </div>
         </section>
@@ -794,9 +882,9 @@
             <p>Yes! On this page, above, we have a couple of creative ways that you can show your support.</p>
         </section>
 
-        <div id="chalk" class="idea-modal" onclick="hideThis(event,this)">
-            <div class="idea-modal-content">
-                <span class="close" onclick="hideThat('chalk')">&times;</span>
+        <div id="chalk" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
@@ -820,9 +908,9 @@
                 </div>
             </div>
         </div>
-        <div id="stencil" class="idea-modal" onclick="hideThis(event,this)">
-            <div class="idea-modal-content">
-                <span class="close" onclick="hideThat('stencil')">&times;</span>
+        <div id="stencil" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
@@ -856,9 +944,9 @@
                 </div>
             </div>
         </div>
-        <div id="coloring" class="idea-modal" onclick="hideThis(event,this)">
-            <div class="idea-modal-content">
-                <span class="close" onclick="hideThat('coloring')">&times;</span>
+        <div id="coloring" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
@@ -878,9 +966,9 @@
                 </div>
             </div>
         </div>
-        <div id="haiku" class="idea-modal" onclick="hideThis(event,this)">
-            <div class="idea-modal-content">
-                <span class="close" onclick="hideThat('haiku')">&times;</span>
+        <div id="haiku" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
@@ -893,9 +981,9 @@
                 </div>
             </div>
         </div>
-        <div id="origami" class="idea-modal" onclick="hideThis(event,this)">
-            <div class="idea-modal-content">
-                <span class="close" onclick="hideThat('origami')">&times;</span>
+        <div id="origami" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
@@ -924,9 +1012,9 @@
                 </div>
             </div>
         </div>
-        <div id="card" class="idea-modal" onclick="hideThis(event,this)">
-            <div class="idea-modal-content">
-                <span class="close" onclick="hideThat('card')">&times;</span>
+        <div id="card" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
@@ -937,6 +1025,15 @@
                 </div>
             </div>
         </div>
+        <div id="thank-you-video" class="my-modal my-video">
+            <div class="my-modal-content">
+                <div class="youtube">
+                    <iframe data-url="https://www.youtube.com/embed/f8McQMgsLqc?rel=0&ecver=2&enablejsapi=1&showinfo=0&autoplay=1" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+    </div>
     </div>
     <script>
         if (typeof define == 'function' && define.amd) {
@@ -948,22 +1045,6 @@
         }
     </script>
     <script>
-        function showThat(id) {
-            document.getElementById(id).style.display = "block";
-            return false;
-        }
-
-        function hideThis(e, t) {
-            if (e.target == t) {
-                t.style.display = "none";
-            }
-            return false;
-        }
-
-        function hideThat(id) {
-            document.getElementById(id).style.display = "none";
-            return false;
-        }
         (function() {
             // Create array of query string values
             var params = [],
@@ -977,9 +1058,52 @@
                     params[hash[0]] = hash[1];
                 }
             }
-            // Open the modal
-            if (document.getElementById(params['modal']) != null) {
-                showThat(params['modal']);
+            // Open the modal in the query string
+            if (modal = document.getElementById(params['modal'])) {
+                modal.style.display = "block";
+                if (player = modal.getElementsByTagName('IFRAME')[0]) {
+                    player.src = player.dataset.url;
+                }
+            }
+
+            // Open modals
+            function showModal(el) {
+                el.addEventListener('click', e => {
+                    e.preventDefault();
+                    var modal = document.getElementById(el.dataset.showModal);
+                    modal.style.display = "block";
+                    if (player = modal.getElementsByTagName('IFRAME')[0]) {
+                        player.src = player.dataset.url;
+                    }
+                });
+            }
+            var myModalLinks = document.querySelectorAll('[data-show-modal]');
+            for (var i = 0; i < myModalLinks.length; i++) {
+                showModal(myModalLinks[i]);
+            }
+
+            // Close modals
+            function addCloseOnClick(el) {
+                var player = el.getElementsByTagName('IFRAME')[0];
+                el.addEventListener('click', function() {
+                    el.style.display = "none";
+                    if (player) {
+                        player.src = '';
+                    }
+                });
+                el.querySelector('.my-modal-content').addEventListener('click', e => {
+                    e.stopPropagation();
+                });
+                el.querySelector('.close').addEventListener('click', function() {
+                    el.style.display = "none";
+                    if (player) {
+                        player.src = '';
+                    }
+                });
+            }
+            var myModals = document.querySelectorAll('.my-modal');
+            for (var i = 0; i < myModals.length; i++) {
+                addCloseOnClick(myModals[i]);
             }
         })();
     </script>

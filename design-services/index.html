@@ -9,13 +9,75 @@
     <!-- Design Services TT -->
     <style>
         #hero .background-image {
+            flex: 0 1 655px;
             background-image: url(/Images/design-services/hero.png);
             padding-bottom: 83%;
+        }
+        
+        #hero .story {
+            flex: 0 0 325px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            align-content: flex-end;
+            margin: 0 -7.5px;
+        }
+        
+        #hero .story>* {
+            padding: 0 7.5px;
+            margin-top: 20px;
+        }
+        
+        #hero .story .image {
+            width: 165px;
+        }
+        
+        #hero .story h2 {
+            flex: 1 0 150px;
+        }
+        
+        #hero .story p {
+            width: 100%;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero .background-image {
+                padding-bottom: 400px;
+            }
+            #hero .story {
+                height: 170px;
+                padding-left: 165px;
+                position: relative;
+            }
+            #hero .story .image {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
         
         @media only screen and (min-width: 700px) {
             #hero .background-image {
                 padding-bottom: 550px;
+            }
+            #hero .story {
+                height: auto;
+                padding-left: 25px;
+                align-content: center;
+                justify-content: left;
+                margin: 0;
+            }
+            #hero .story>* {
+                padding: 0;
+            }
+            #hero .story h2 {
+                flex: 1 0 100%;
+                font-size: 1.8em;
+            }
+            #hero .story .image {
+                position: static;
+                width: 250px;
+                order: 2;
             }
         }
     </style>
@@ -43,10 +105,10 @@
         </nav>
         <h1>Free design services</h1>
         <section id="hero" class="two-col">
-            <div class="background-image" style="flex:0 1 655px"></div>
-            <div style="flex:0 0 325px">
-                <div class="image"><img src="" alt=""></div>
-                <h2>Create A space you&rsquo;ll love</h2>
+            <div class="background-image"></div>
+            <div class="story">
+                <div class="image"><img src="/Images/design-services/cathy.png" alt="Cathy"></div>
+                <h2>Create A&nbsp;space you&rsquo;ll love</h2>
                 <p>La-Z-Boy offers Free Design Services to help you create the room of your&nbsp;dreams.</p>
             </div>
         </section>

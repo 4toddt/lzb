@@ -1,0 +1,83 @@
+<body>
+    <div class="gray">
+        <div class="page-width">
+            <nav id="topnav">
+                <div class="logo">
+                    <a href="https://www.la-z-boy.com" target="_blank">
+                        <img src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/logo.png" alt="La-Z-Boy logo">
+                    </a>
+                </div>
+                <input type="checkbox" id="hamburger-toggle" style="display: none;">
+                <label for="hamburger-toggle" class="hamburger" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </label>
+                <ul>
+                    <li class="parent">
+                        <input type="radio" id="commitment-radio" name="show-submenu" style="display: none;">
+                        <label for="commitment-radio">Commitment</label>
+                        <ul>
+                            <li><a href="/content/AboutLaZBoy/corporate-commitment">Our Commitment</a></li>
+                            <li><a href="/content/AboutLaZBoy/NewsRoom">News Room</a></li>
+                            <li><a href="/content/AboutLaZBoy/OurBrands">Our Brands</a></li>
+                            <li><a href="/content/AboutLaZBoy/supplier-requirements">Supplier Requirements</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <input type="radio" id="financial-radio" name="show-submenu" style="display: none;">
+                        <label for="financial-radio">Financial</label>
+                        <ul>
+                            <li><a href="/content/AboutLaZBoy/financial-responsibility">Financial Responsibility</a></li>
+                            <li><a href="https://lazboy.gcs-web.com/" target="_blank">Investor Relations</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <input type="radio" id="environmental-radio" name="show-submenu" style="display: none;">
+                        <label for="environmental-radio">Environmental</label>
+                        <ul>
+                            <li><a href="/content/AboutLaZBoy/sustainability-at-a-glance">Sustainability at a Glance</a></li>
+                            <li><a href="/content/AboutLaZBoy/sasb-standards">SASB Standards</a></li>
+                            <li><a href="/content/AboutLaZBoy/sustainability">Environment</a></li>
+                            <li><a href="/content/AboutLaZBoy/carbon-and-climate">Carbon &amp; Climate</a></li>
+                            <li><a href="/content/AboutLaZBoy/natural-resources">Natural Resources</a></li>
+                            <li><a href="/content/AboutLaZBoy/waste-and-toxicity">Waste &amp; Toxicity</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <input type="radio" id="people-radio" name="show-submenu" style="display: none;">
+                        <label for="people-radio">People</label>
+                        <ul>
+                            <li><a href="/content/AboutLaZBoy/investing-in-employees">Our Employees</a></li>
+                            <li><a href="/content/AboutLaZBoy/leadership">Leadership</a></li>
+                            <li><a href="/content/AboutLaZBoy/corporate-giving">Corporate Giving</a></li>
+                            <li><a href="/content/AboutLaZBoy/made-in-america">Made In America</a></li>
+                            <li><a href="/content/AboutLaZBoy/Careers">Careers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <script>
+        (function() {
+            var currentLink = document.querySelector('#topnav [href="' + window.location.pathname.match(/^(\/O:|\/mobile)?(.*?)(\..*)?$/)[2] + '"]');
+            currentLink.removeAttribute('href');
+            currentLink.classList.add('current-page');
+            currentLink.closest('.parent').querySelector('label').classList.add('current-page');
+            currentLink.closest('.parent').querySelector('input').checked = true;
+            //open external links in new tab
+            for (var links = document.links, i = 0, a; a = links[i]; i++) {
+                if (a.host !== location.host) {
+                    a.target = '_blank';
+                }
+            }
+        })();
+    </script>
+
+
+
+    <!-- copy above this line since Footer cartridge has closing body tag -->
+    <!-- copy above this line since Footer cartridge has closing body tag -->
+    <!-- copy above this line since Footer cartridge has closing body tag -->
+</body>

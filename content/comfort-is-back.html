@@ -333,11 +333,14 @@
         #stores[data-state="kansas"] tr:not([data-state="kansas"]),
         #stores[data-state="kentucky"] tr:not([data-state="kentucky"]),
         #stores[data-state="maryland"] tr:not([data-state="maryland"]),
+        #stores[data-state="massachusetts"] tr:not([data-state="massachusetts"]),
         #stores[data-state="michigan"] tr:not([data-state="michigan"]),
         #stores[data-state="minnesota"] tr:not([data-state="minnesota"]),
         #stores[data-state="missouri"] tr:not([data-state="missouri"]),
         #stores[data-state="nevada"] tr:not([data-state="nevada"]),
         #stores[data-state="new-hampshire"] tr:not([data-state="new-hampshire"]),
+        #stores[data-state="new-jersey"] tr:not([data-state="new-jersey"]),
+        #stores[data-state="new-york"] tr:not([data-state="new-york"]),
         #stores[data-state="north-carolina"] tr:not([data-state="north-carolina"]),
         #stores[data-state="ohio"] tr:not([data-state="ohio"]),
         #stores[data-state="pennsylvania"] tr:not([data-state="pennsylvania"]),
@@ -408,8 +411,8 @@
                 font-size: 2em;
             }
             /* #npc-content p {
-            font-size: 1.15em;
-        } */
+        font-size: 1.15em;
+    } */
             #announcement .link-modules,
             #open-stores select {
                 font-size: 1.15em;
@@ -475,9 +478,9 @@
             <h1>Comfort is back in your neighborhood!</h1>
         </section>
         <!--        <section id="extended-hours">
-        <h2>Extended hours this weekend&nbsp;only</h2>
-        <p><span class="no-wrap">Thursday - Saturday 10am - 8pm,</span> <span class="no-wrap">Sunday 11am - 7pm,</span> <span class="no-wrap">Monday 10am - 8pm</span></p>
-    </section>-->
+    <h2>Extended hours this weekend&nbsp;only</h2>
+    <p><span class="no-wrap">Thursday - Saturday 10am - 8pm,</span> <span class="no-wrap">Sunday 11am - 7pm,</span> <span class="no-wrap">Monday 10am - 8pm</span></p>
+</section>-->
         <section id="announcement">
             <div class="two-col gutter-30">
                 <div>
@@ -485,6 +488,7 @@
                         the store at a time. Some stores are open only for private shopping appointments.</p>
                     <p>In addition, all of our delivery teams and warehouse technicians are wearing masks to ensure safety, and we are able to make garage or porch drop-offs for added peace of&nbsp;mind.</p>
                     <p>When your order is ready, we will call to schedule a delivery time and discuss any delivery details for added safety and&nbsp;comfort.</p>
+                    <p>Masks are required in our stores based on state/county regulations. We are also providing masks for shoppers free of&nbsp;charge.</p>
                 </div>
                 <div>
                     <div class="my-callout">
@@ -516,409 +520,488 @@
             <h2>Choose your&nbsp;location</h2>
             <div class="select">
                 <select id="states" class="no-state" onchange="document.getElementById('stores').setAttribute('data-state',this.value)">
-                <option value="no-state">Select your state</option>
-                <option value="california">California</option>
-                <option value="colorado">Colorado</option>
-                <option value="connecticut">Connecticut</option>
-                <option value="delaware">Delaware</option>
-                <option value="florida">Florida</option>
-                <option value="illinois">Illinois</option>
-                <option value="indiana">Indiana</option>
-                <option value="iowa">Iowa</option>
-                <option value="kansas">Kansas</option>
-                <option value="kentucky">Kentucky</option>
-                <label for="maryland-radio">Maryland</label>
-                <option value="michigan">Michigan</option>
-                <option value="minnesota">Minnesota</option>
-                <option value="missouri">Missouri</option>
-                <option value="nevada">Nevada</option>
-                <option value="new-hampshire">New Hampshire</option>
-                <label for="new-jersey-radio">New Jersey</label>
-                <option value="north-carolina">North Carolina</option>
-                <option value="ohio">Ohio</option>
-                <option value="pennsylvania">Pennsylvania</option>
-                <option value="rhode-island">Rhode Island</option>
-                <option value="south-carolina">South Carolina</option>
-                <option value="virginia">Virginia</option>
-                <option value="wisconsin">Wisconsin</option>
-            </select>
+            <option value="no-state">Select your state</option>
+            <option value="california">California</option>
+            <option value="colorado">Colorado</option>
+            <option value="connecticut">Connecticut</option>
+            <option value="delaware">Delaware</option>
+            <option value="florida">Florida</option>
+            <option value="illinois">Illinois</option>
+            <option value="indiana">Indiana</option>
+            <option value="iowa">Iowa</option>
+            <option value="kansas">Kansas</option>
+            <option value="kentucky">Kentucky</option>
+            <option value="maryland">Maryland</option>
+            <option value="massachusetts">Massachusetts</option>
+            <option value="michigan">Michigan</option>
+            <option value="minnesota">Minnesota</option>
+            <option value="missouri">Missouri</option>
+            <option value="nevada">Nevada</option>
+            <option value="new-hampshire">New Hampshire</option>
+            <option value="new-jersey">New Jersey</option>
+            <option value="new-york">New York</option>
+            <option value="north-carolina">North Carolina</option>
+            <option value="ohio">Ohio</option>
+            <option value="pennsylvania">Pennsylvania</option>
+            <option value="rhode-island">Rhode Island</option>
+            <option value="south-carolina">South Carolina</option>
+            <option value="virginia">Virginia</option>
+            <option value="wisconsin">Wisconsin</option>
+        </select>
             </div>
             <table id="stores" data-state="no-state">
                 <tr data-state="california">
                     <td>Agoura Hills</td>
                     <td>28207 Canwood</td>
-                    <td><a href="tel:+18185974670">(818) 597-4670</a></td>
-                    <td><a href="tel:+18185974670">(818) 597-4670</a></td>
-                    <td><a href="tel:+18185974670">(818) 597-4670</a></td>
+                    <td>(818) 597-4670</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr130/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr130/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>Cerritos</td>
                     <td>11175 183rd St</td>
-                    <td><a href="tel:+15628607744">(562) 860-7744</a></td>
+                    <td>(562) 860-7744</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr127/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr127/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>Costa Mesa</td>
                     <td>3303 Hyland Ave., Bldg #E</td>
-                    <td><a href="tel:+17144340744">(714) 434-0744</a></td>
+                    <td>(714) 434-0744</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore129/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore129/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>Duarte</td>
                     <td>968 Hamilton Road</td>
-                    <td><a href="tel:+16264719999">(626) 471-9999</a></td>
-                    <td><a href="tel:+16264719999">(626) 471-9999</a></td>
-                    <td><a href="tel:+16264719999">(626) 471-9999</a></td>
+                    <td>(626) 471-9999</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr135/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr135/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>La Mesa</td>
                     <td>8185 Fletcher Parkway</td>
-                    <td><a href="tel:+16194612846">(619) 461-2846</a></td>
+                    <td>(619) 461-2846</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr163/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr163/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>Mission Viejo</td>
                     <td>28565 Maguerite Parkway</td>
-                    <td><a href="tel:+19493650744">(949) 365-0744</a></td>
-                    <td><a href="tel:+19493650744">(949) 365-0744</a></td>
-                    <td><a href="tel:+19493650744">(949) 365-0744</a></td>
+                    <td>(949) 365-0744</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-store134/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-store134/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="california">
+                    <td>Northridge</td>
+                    <td>19478 Nordhoff St</td>
+                    <td>(818) 773-0744</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr125/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr125/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>Ontario</td>
                     <td>4364 E. Mills Circle</td>
-                    <td><a href="tel:+19095811944">(909) 581-1944</a></td>
+                    <td>(909) 581-1944</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore249/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore249/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>Oxnard</td>
                     <td>2100 North Rose Ave</td>
-                    <td><a href="tel:+18056044484">(805) 604-4484</a></td>
-                    <td><a href="tel:+18056044484">(805) 604-4484</a></td>
-                    <td><a href="tel:+18056044484">(805) 604-4484</a></td>
+                    <td>(805) 604-4484</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr140/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr140/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>San Bernardino</td>
                     <td>495 E. Hospitality Lane</td>
-                    <td><a href="tel:+19098255322">(909) 825-5322</a></td>
+                    <td>(909) 825-5322</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-sanbernardino/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-sanbernardino/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>San Diego</td>
                     <td>1640 Camino De La Reina</td>
-                    <td><a href="tel:+16192093690">(619) 209-3690</a></td>
+                    <td>(619) 209-3690</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore138/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore138/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>San Marcos</td>
                     <td>188 Knoll Rd</td>
-                    <td><a href="tel:+17605108161">(760) 510-8161</a></td>
-                    <td><a href="tel:+17605108161">(760) 510-8161</a></td>
-                    <td><a href="tel:+17605108161">(760) 510-8161</a></td>
+                    <td>(760) 510-8161</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr137/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr137/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
                     <td>Temecula</td>
                     <td>40551 Margarita Rd</td>
-                    <td><a href="tel:+19515068960">(951) 506-8960</a></td>
+                    <td>(951) 506-8960</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr252/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr252/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="california">
+                    <td>Torrance</td>
+                    <td>22740 Hawthorne Blvd</td>
+                    <td>(310) 375-8121</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr128/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr128/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="california">
                     <td>Yorba Linda</td>
                     <td>23029 Eastpark Drive</td>
-                    <td><a href="tel:+17149215144">(714) 921-5144</a></td>
+                    <td>(714) 921-5144</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr132/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr132/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="colorado">
                     <td>Fort Collins</td>
                     <td>4621 S Timberline Rd</td>
-                    <td><a href="tel:+19702263131">(970) 226-3131</a></td>
+                    <td>(970) 226-3131</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore296/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore296/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="connecticut">
                     <td>Brookfield</td>
                     <td>227 Federal Rd Unit 7</td>
-                    <td><a href="tel:+12037401664">(203) 740-1664</a></td>
-                    <td><a href="tel:+12037401664">(203) 740-1664</a></td>
-                    <td><a href="tel:+12037401664">(203) 740-1664</a></td>
+                    <td>(203) 740-1664</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr177/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr177/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="connecticut">
                     <td>Manchester</td>
                     <td>233 Buckland Hills Dr</td>
-                    <td><a href="tel:+18606488935">(860) 648-8935</a></td>
+                    <td>(860) 648-8935</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/la-z-boy-manchester-ct/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/la-z-boy-manchester-ct/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="connecticut">
                     <td>Milford</td>
                     <td>1750 Boston Post Rd</td>
-                    <td><a href="tel:+12033010312">(203) 301-0312</a></td>
+                    <td>(203) 301-0312</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr076/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr076/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="connecticut">
                     <td>Newington</td>
                     <td>3050 Berlin Tpke</td>
-                    <td><a href="tel:+18606650249">(860) 665-0249</a></td>
-                    <td><a href="tel:+18606650249">(860) 665-0249</a></td>
-                    <td><a href="tel:+18606650249">(860) 665-0249</a></td>
+                    <td>(860) 665-0249</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore077/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore077/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="delaware">
                     <td>Newark</td>
                     <td>1277 New Churchmans Rd</td>
-                    <td><a href="tel:+13022242144">(302) 224-2144</a></td>
-                    <td><a href="tel:+13022242144">(302) 224-2144</a></td>
-                    <td><a href="tel:+13022242144">(302) 224-2144</a></td>
+                    <td>(302) 224-2144</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr002/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr002/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="florida">
                     <td>Boca Raton</td>
                     <td>6500 N Federal Hwy</td>
-                    <td><a href="tel:+15612412443">(561) 241-2443</a></td>
+                    <td>(561) 241-2443</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr066/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr066/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="florida">
                     <td>Jensen Beach</td>
                     <td>4360 N Federal Hwy</td>
-                    <td><a href="tel:+17726929988">(772) 692-9988</a></td>
+                    <td>(772) 692-9988</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore082/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore082/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="florida">
                     <td>Miami</td>
                     <td>49261 W Flagler St</td>
-                    <td><a href="tel:+13055525157">(305) 552-5157</a></td>
-                    <td><a href="tel:+13055525157">(305) 552-5157</a></td>
-                    <td><a href="tel:+13055525157">(305) 552-5157</a></td>
+                    <td>(305) 552-5157</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr215/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr215/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="florida">
                     <td>Palm Beach Garden</td>
                     <td>3901 Design Center Dr</td>
-                    <td><a href="tel:+15616300196">(561) 630-0196</a></td>
+                    <td>(561) 630-0196</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore069/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore069/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="florida">
                     <td>Pembroke Pines</td>
                     <td>11533 Pines Blvd</td>
-                    <td><a href="tel:+19544433766">(954) 443-3766</a></td>
+                    <td>(954) 443-3766</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore070/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore070/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="florida">
                     <td>Royal Palm Beach</td>
                     <td>410 S State Rd 7</td>
-                    <td><a href="tel:+15617930288">(561) 793-0288</a></td>
+                    <td>(561) 793-0288</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr208/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr208/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>Algonquin</td>
                     <td>1565 S Randall Rd</td>
-                    <td><a href="tel:+18474580036">(847) 458-0036</a></td>
-                    <td></td>
+                    <td>(847) 458-0036</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr090/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr090/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>Bolingbrook</td>
                     <td>825 East Boughton Rd</td>
-                    <td><a href="tel:+16307392261">(630) 739-2261</a></td>
-                    <td></td>
+                    <td>(630) 739-2261</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzbstore086/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzbstore086/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>Glenview</td>
                     <td>2830 Patriot Blvd</td>
-                    <td><a href="tel:+18475040134">(847) 504-0134</a></td>
-                    <td></td>
+                    <td>(847) 504-0134</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr060/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr060/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>Gurnee</td>
                     <td>6609 Grand Ave</td>
-                    <td><a href="tel:+18478568577">(847) 856-8577</a></td>
-                    <td></td>
+                    <td>(847) 856-8577</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr050/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr050/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>Lake Zurich</td>
                     <td>935 S Rand Road</td>
-                    <td><a href="tel:+18475400202">(847) 540-0202</a></td>
-                    <td><a href="tel:+18475400202">(847) 540-0202</a></td>
-                    <td><a href="tel:+18475400202">(847) 540-0202</a></td>
+                    <td>(847) 540-0202</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-store074/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-store074/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>Naperville</td>
                     <td>892 S Rte 59</td>
-                    <td><a href="tel:+16305483410">(630) 548-3410</a></td>
-                    <td></td>
+                    <td>(630) 548-3410</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-store048/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-store048/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>Oak Brook</td>
                     <td>2155 West 22nd St</td>
-                    <td><a href="tel:+16307063611">(630) 706-3611</a></td>
-                    <td></td>
+                    <td>(630) 706-3611</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr081/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr081/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>O'Fallon</td>
                     <td>1238 Central Pk Dr</td>
-                    <td><a href="tel:+16186286399">(618) 628-6399</a></td>
+                    <td>(618) 628-6399</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzbstoremgr073/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzbstoremgr073/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
+                    <td>Orland Park</td>
+                    <td>16011 S La Grange Rd</td>
+                    <td>(708) 873-0066</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr042/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr042/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="illinois">
+                    <td>Rockford</td>
+                    <td>525 S Perryville Rd</td>
+                    <td>(815) 397-6829</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr318/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr318/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="illinois">
                     <td>Schaumburg</td>
                     <td>905 E Golf Road</td>
-                    <td><a href="tel:+18473067062">(847) 306-7062</a></td>
-                    <td></td>
+                    <td>(847) 306-7062</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr325/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr325/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>South Elgin</td>
                     <td>422 Randall Way</td>
-                    <td><a href="tel:+18478416632">(847) 841-6632</a></td>
-                    <td></td>
-                    <td><a class="arrow-right" href="https://www.calendly.com/southelginlzb/personal-shopping">Set personal appointment</a></td>
+                    <td>(847) 841-6632</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore085/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore085/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="indiana">
                     <td>Merrillville</td>
                     <td>1530 E Lincoln Hwy</td>
-                    <td><a href="tel:+12197697664">(219) 769-7664</a></td>
+                    <td>(219) 769-7664</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr315/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr315/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="indiana">
                     <td>Mishawaka</td>
                     <td>5209 N Main St</td>
-                    <td><a href="tel:+15742431766">(574) 243-1766</a></td>
+                    <td>(574) 243-1766</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr243/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr243/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="iowa">
                     <td>Cedar Rapids</td>
                     <td>4601 1st Avenue SE</td>
-                    <td><a href="tel:+13193930928">(319) 393-0928</a></td>
+                    <td>(319) 393-0928</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr317/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr317/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="kansas">
                     <td>Overland Park</td>
                     <td>7540 W 135th St</td>
-                    <td><a href="tel:+19138147490">(913) 814-7490</a></td>
+                    <td>(913) 814-7490</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore026/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore026/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="kansas">
                     <td>Wichita</td>
                     <td>1611 N. Rock Rd</td>
-                    <td><a href="tel:+13166834311">(316) 683-4311</a></td>
+                    <td>(316) 683-4311</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore088/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore088/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="kentucky">
                     <td>Florence</td>
                     <td>7991 Mall Rd</td>
-                    <td><a href="tel:+18593713800">(859) 371-3800</a></td>
+                    <td>(859) 371-3800</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore026/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore026/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="maryland">
                     <td>Annapolis</td>
                     <td>163 Jennifer Rd</td>
-                    <td><a href="tel:+14105731307">(410) 573-1307</a></td>
+                    <td>(410) 573-1307</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr006/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr006/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="maryland">
                     <td>Bel Air</td>
                     <td>541 Market Place Dr</td>
-                    <td><a href="tel:+14106380035">(410) 638-0035</a></td>
+                    <td>(410) 638-0035</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr034/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr034/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="maryland">
                     <td>Columbia</td>
                     <td>6181 Old Dobbin Lane</td>
-                    <td><a href="tel:+14432850200">(443) 285-0200</a></td>
+                    <td>(443) 285-0200</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr030/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr030/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="maryland">
                     <td>Owings Mills</td>
                     <td>10070 Reisterstown Rd</td>
-                    <td><a href="tel:+14103564982">(410) 356-4982</a></td>
+                    <td>(410) 356-4982</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr288/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr288/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="maryland">
+                    <td>Rockville</td>
+                    <td>5060 Nicholson Lane</td>
+                    <td>(301) 770-1658</td>
+                    <td><a href="tel:+13017701658">(301) 770-1658</a></td>
+                    <td><a href="tel:+13017701658">(301) 770-1658</a></td>
+                </tr>
+                <tr data-state="maryland">
+                    <td>Rosedale</td>
+                    <td>8647 Pulaski Hwy</td>
+                    <td>(410) 918-0480</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr033/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr033/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="maryland">
                     <td>Severn</td>
                     <td>408 George Clauss Blvd</td>
-                    <td><a href="tel:+14108637383">(410) 863-7383</a></td>
+                    <td>(410) 863-7383</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr031/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr031/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="maryland">
                     <td>Timonium</td>
                     <td>2301 York Rd</td>
-                    <td><a href="tel:+14102528960">(410) 252-8960</a></td>
-                    <td><a href="tel:+14102528960">(410) 252-8960</a></td>
-                    <td><a href="tel:+14102528960">(410) 252-8960</a></td>
+                    <td>(410) 252-8960</td>
+                    <td><a class="arrow-right" href="c/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://calendly.com/lzb-storemgr209-1/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="maryland">
                     <td>Waldorf</td>
                     <td>12100 Jefferson Farm Pl</td>
-                    <td><a href="tel:+13016384417">(301) 638-4417</a></td>
-                    <td><a href="tel:+13016384417">(301) 638-4417</a></td>
-                    <td><a href="tel:+13016384417">(301) 638-4417</a></td>
+                    <td>(301) 638-4417</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr025/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr025/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="massachusetts">
+                    <td>Attleboro</td>
+                    <td>241 Washington Street</td>
+                    <td>(508) 399-8223</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr144/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr144/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="massachusetts">
+                    <td>Natick</td>
+                    <td>1398 Worcester Rd</td>
+                    <td>(508) 647-0330</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr038/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr038/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="massachusetts">
+                    <td>North Dartmouth</td>
+                    <td>110 Faunce Corner Rd</td>
+                    <td>(508) 993-9092</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore352/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore352/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="massachusetts">
+                    <td>Plymouth</td>
+                    <td>238 Colony Place</td>
+                    <td>(508) 732-0093</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-plymouth/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-plymouth/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="massachusetts">
+                    <td>Saugus</td>
+                    <td>358A Broadway</td>
+                    <td>(781) 233-6599</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboysaugus022/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboysaugus022/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="michigan">
                     <td>Canton</td>
                     <td>42728 Ford Rd</td>
-                    <td><a href="tel:+17348441565">(734) 844-1565</a></td>
+                    <td>(734) 844-1565</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr203/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr203/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="michigan">
                     <td>Grand Rapids</td>
                     <td>4445 28th St SE</td>
-                    <td><a href="tel:+16169573040">(616) 957-3040</a></td>
+                    <td>(616) 957-3040</td>
                     <td><a href="tel:+16169573040">(616) 957-3040</a></td>
                     <td><a href="tel:+16169573040">(616) 957-3040</a></td>
                 </tr>
                 <tr data-state="michigan">
                     <td>Lake Orion</td>
                     <td>4829 S. Baldwin Road</td>
-                    <td><a href="tel:+12486392212">(248) 639-2212</a></td>
+                    <td>(248) 639-2212</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr333/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr333/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="michigan">
                     <td>Novi</td>
                     <td>27754 Novi Rd</td>
-                    <td><a href="tel:+12484491490">(248) 449-1490</a></td>
+                    <td>(248) 449-1490</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzbstoremgr178/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzbstoremgr178/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="michigan">
                     <td>Sterling Heights</td>
                     <td>14405 Lakeside Cir</td>
-                    <td><a href="tel:+15865661343">(586) 566-1343</a></td>
+                    <td>(586) 566-1343</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr179/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr179/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="michigan">
                     <td>Taylor</td>
                     <td>21300 Eureka Rd</td>
-                    <td><a href="tel:+17342870705">(734) 287-0705</a></td>
+                    <td>(734) 287-0705</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr297/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr297/personal-shopping">Set personal appointment</a></td>
                 </tr>
@@ -926,387 +1009,511 @@
                 <tr data-state="michigan">
                     <td>Troy</td>
                     <td>1475 W Big Beaver Rd</td>
-                    <td><a href="tel:+12486496787">(248) 649-6787</a></td>
-                    <td><a href="tel:+12486496787">(248) 649-6787</a></td>
-                    <td><a href="tel:+12486496787">(248) 649-6787</a></td>
+                    <td>(248) 649-6787</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr183/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr183/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="minnesota">
                     <td>Edina</td>
                     <td>7595 France Ave S</td>
-                    <td><a href="tel:+19528351722">(952) 835-1722</a></td>
+                    <td>(952) 835-1722</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore233/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore233/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="minnesota">
                     <td>Maple Grove</td>
                     <td>11601 Fountains Way North</td>
-                    <td>
-                        <a href="tel:+17633154177"></a>(763) 315-4177</a>
-                    </td>
+                    <td>(763) 315-4177 </td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr248/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr248/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="minnesota">
                     <td>Woodbury</td>
                     <td>325 Radio Dr</td>
-                    <td><a href="tel:+16517316485">(651) 731-6485</a></td>
+                    <td>(651) 731-6485</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr265/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr265/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="missouri">
                     <td>Brentwood</td>
                     <td>8324 Eager Road</td>
-                    <td><a href="tel:+13146472121">(314) 647-2121</a></td>
+                    <td>(314) 647-2121</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr156/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr156/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="missouri">
+                    <td>Kansas City</td>
+                    <td>8600 NE Flintlock Rd</td>
+                    <td>(816) 792-9901</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr207/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr207/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="missouri">
+                    <td>Manchester</td>
+                    <td>14177 Manchester Road</td>
+                    <td>(636) 394-7447</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr011/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr011/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="missouri">
                     <td>O'Fallon</td>
                     <td>1690 Highway K</td>
-                    <td><a href="tel:+16363793945">(636) 379-3945</a></td>
+                    <td>(636) 379-3945</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr063/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr063/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="missouri">
                     <td>Saint Louis</td>
                     <td>4110 Von Talge Rd</td>
-                    <td><a href="tel:+13144164661">(314) 416-4661</a></td>
+                    <td>(314) 416-4661</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboysouthcounty/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboysouthcounty/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="nevada">
                     <td>Henderson</td>
                     <td>631 Mall Ring Circle</td>
-                    <td><a href="tel:+17024342616">(702) 434-2616</a></td>
+                    <td>(702) 434-2616</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr185/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr185/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="nevada">
                     <td>Las Vegas</td>
                     <td>5700 Centennial Center</td>
-                    <td><a href="tel:+17022593839">(702) 259-3839</a></td>
-                    <td><a href="tel:+17022593839">(702) 259-3839</a></td>
-                    <td><a href="tel:+17022593839">(702) 259-3839</a></td>
+                    <td>(702) 259-3839</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr186/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr186/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="nevada">
                     <td>Las Vegas</td>
                     <td>10012 W Flamingo Rd</td>
-                    <td><a href="tel:+17029325730">(702) 932-5730</a></td>
-                    <td><a href="tel:+17029325730">(702) 932-5730</a></td>
-                    <td><a href="tel:+17029325730">(702) 932-5730</a></td>
+                    <td>(702) 932-5730</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-salesmgr187/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-salesmgr187/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="nevada">
                     <td>Reno</td>
                     <td>9095 S Virginia St</td>
-                    <td><a href="tel:+17758289800">(775) 828-9800</a></td>
+                    <td>(775) 828-9800</td>
                     <td><a href="tel:+17758289800">(775) 828-9800</a></td>
                     <td><a href="tel:+17758289800">(775) 828-9800</a></td>
                 </tr>
                 <tr data-state="new-hampshire">
                     <td>Nashua</td>
                     <td>225 Daniel Webster Hwy</td>
-                    <td><a href="tel:+16038912003">(603) 891-2003</a></td>
-                    <td><a href="tel:+16038912003">(603) 891-2003</a></td>
-                    <td><a href="tel:+16038912003">(603) 891-2003</a></td>
+                    <td>(603) 891-2003</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr080/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr080/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="new-jersey">
                     <td>Cherry Hill</td>
                     <td>340 Haddonfield Road</td>
-                    <td><a href="tel:+18569101781">(856) 910-1781</a></td>
+                    <td>(856) 910-1781</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr087/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr087/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="new-jersey">
                     <td>Dover</td>
                     <td>500 Mount Pleasant Ave</td>
-                    <td><a href="tel:+19738911857">(973) 891-1857</a></td>
+                    <td>(973) 891-1857</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-dover/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-dover/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="new-jersey">
+                    <td>Egg Harbor Township</td>
+                    <td>6032 Black Horse Pike</td>
+                    <td>(609) 641-5000</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore065/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore065/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="new-jersey">
                     <td>Marlton</td>
                     <td>981 Route 73 South</td>
-                    <td><a href="tel:+18568171171">(856) 817-1171</a></td>
+                    <td>(856) 817-1171</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr084/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr084/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="new-jersey">
                     <td>North Plainfield</td>
                     <td>1240 Route 22 E</td>
-                    <td><a href="tel:+19087694783">(908) 769-4783</a></td>
+                    <td>(908) 769-4783</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr283/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr283/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="new-jersey">
                     <td>Paramus</td>
                     <td>332 Route 4 East</td>
-                    <td><a href="tel:+12016781002">(201) 678-1002</a></td>
-                    <td><a href="tel:+12016781002">(201) 678-1002</a></td>
-                    <td><a href="tel:+12016781002">(201) 678-1002</a></td>
+                    <td>(201) 678-1002</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr019/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr019/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="new-jersey">
+                    <td>Wayne</td>
+                    <td>89 NJ-23</td>
+                    <td>(973) 890-2367</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr256/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr256/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="new-york">
+                    <td>Amherst</td>
+                    <td>3521 Sheridan Dr</td>
+                    <td>(716) 862-8235</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr188/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr188/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="new-york">
+                    <td>Hartsdale</td>
+                    <td>130 S Central Ave</td>
+                    <td>(914) 448-4890</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr222/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr222/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="new-york">
+                    <td>Middletown</td>
+                    <td>505 Schutt Rd, Ste 2</td>
+                    <td>(845) 346-4636</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr305/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr305/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="north-carolina">
                     <td>Wilmington</td>
                     <td>4116 Oleander Dr</td>
-                    <td><a href="tel:+19107960089">(910) 796-0089</a></td>
+                    <td>(910) 796-0089</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr271/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr271/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Beachwood</td>
                     <td>4087 Richmond Rd</td>
-                    <td><a href="tel:+12164641500">(216) 464-1500</a></td>
+                    <td>(216) 464-1500</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr275/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr275/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Beavercreek</td>
                     <td>2476 Commons Blvd</td>
-                    <td><a href="tel:+19374319093">(937) 431-9093</a></td>
+                    <td>(937) 431-9093</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore167/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore167/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Boardman</td>
                     <td>770 Boardman Poland Rd</td>
-                    <td><a href="tel:+13307587546">(330) 758-7546</a></td>
+                    <td>(330) 758-7546</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/boardmanlzb205/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/boardmanlzb205/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Canton</td>
                     <td>5828 Dressler Rd NW</td>
-                    <td><a href="tel:+13304948085">(330) 494-8085</a></td>
+                    <td>(330) 494-8085</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr289/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr289/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Cincinnati</td>
                     <td>9891 Colerain Ave</td>
-                    <td><a href="tel:+15139234455">(513) 923-4455</a></td>
+                    <td>(513) 923-4455</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr168/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr168/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Cincinnati</td>
                     <td>802 Eastgate South Drive</td>
-                    <td><a href="tel:+15137186072">(513) 718-6072</a></td>
+                    <td>(513) 718-6072</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr326/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr326/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Columbus</td>
                     <td>4228 Easton Gateway</td>
-                    <td><a href="tel:+16143371249">(614) 337-1249</a></td>
+                    <td>(614) 337-1249</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore236/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore236/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Columbus</td>
                     <td>1131 Polaris Pkwy</td>
-                    <td><a href="tel:+16143100077">(614) 310-0077</a></td>
+                    <td>(614) 310-0077</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr170/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr170/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Cuyahoga Falls</td>
                     <td>172 Howe Ave</td>
-                    <td><a href="tel:+13309297632">(330) 929-7632</a></td>
+                    <td>(330) 929-7632</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr278/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr278/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Dublin</td>
                     <td>5915 Britton Pkwy</td>
-                    <td><a href="tel:+16147667760">(614) 766-7760</a></td>
+                    <td>(614) 766-7760</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr313/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr313/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Howland</td>
                     <td>2075 Niles Cortland Rd SE</td>
-                    <td><a href="tel:+13305444474">(330) 544-4474</a></td>
+                    <td>(330) 544-4474</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-howland206/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-howland206/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Loveland</td>
                     <td>12189 Montgomery Rd</td>
-                    <td><a href="tel:+15136770008">(513) 677-0008</a></td>
+                    <td>(513) 677-0008</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr173/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr173/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Mentor</td>
                     <td>7790 Mentor Ave</td>
-                    <td><a href="tel:+14409517632">(440) 951-7632</a></td>
+                    <td>(440) 951-7632</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzbstoremgr279/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzbstoremgr279/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>North Olmsted</td>
                     <td>24954 Brookpark Rd</td>
-                    <td><a href="tel:+14407347632">(440) 734-7632</a></td>
+                    <td>(440) 734-7632</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/store280/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/store280/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>Strongsville</td>
                     <td>16720 Royalton Rd</td>
-                    <td><a href="tel:+14402383008">(440) 238-3008</a></td>
+                    <td>(440) 238-3008</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr281/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr281/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="ohio">
                     <td>West Carrollton</td>
                     <td>118 Springboro Pike</td>
-                    <td><a href="tel:+19374330570">(937) 433-0570</a></td>
+                    <td>(937) 433-0570</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore174/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore174/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="pennsylvania">
+                    <td>Abington</td>
+                    <td>1752 Old York Rd</td>
+                    <td>(215) 659-2501</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr091/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr091/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
                     <td>Cranberry Township</td>
                     <td>2035 Mackenzie Way</td>
-                    <td><a href="tel:+17247791400">(724) 779-1400</a></td>
+                    <td>(724) 779-1400</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr166/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr166/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="pennsylvania">
+                    <td>Exton</td>
+                    <td>101 Iron Lake Blvd</td>
+                    <td>(610) 363-7473</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr273/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr273/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
+                    <td>Harrisburg</td>
+                    <td>5125 Jonestown Rd</td>
+                    <td>(717) 412-3620</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr306/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr306/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
+                    <td>Lancaster</td>
+                    <td>1484 Harrisburg Pike</td>
+                    <td>(717) 396-9535</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr307/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr307/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
+                    <td>Langhorne</td>
+                    <td>2328 E Lincoln Hwy</td>
+                    <td>(215) 741-1543</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr028/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr028/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
                     <td>Mechanicsburg</td>
                     <td>6390 Carlisle Pike</td>
-                    <td><a href="tel:+17176015483">(717) 601-5483</a></td>
+                    <td>(717) 601-5483</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr316/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr316/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="pennsylvania">
                     <td>Monroeville</td>
                     <td>4054 William Penn Hwy</td>
-                    <td><a href="tel:+14123733834">(412) 373-3834</a></td>
+                    <td>(412) 373-3834</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr165/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr165/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="pennsylvania">
+                    <td>Montgomeryville</td>
+                    <td>976 Bethlehem Pike</td>
+                    <td>(267) 413-0901</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr003/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr003/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
                     <td>Pittsburgh</td>
                     <td>100 Quinn Drive</td>
-                    <td><a href="tel:+14127885302">(412) 788-5302</a></td>
+                    <td>(412) 788-5302</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr164/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr164/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="pennsylvania">
+                    <td>Scranton</td>
+                    <td>919 Viewmont Dr</td>
+                    <td>(570) 207-4500</td>
+                    <td><a href="tel:+15702074500">(570) 207-4500</a></td>
+                    <td><a href="tel:+15702074500">(570) 207-4500</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
+                    <td>Springfield</td>
+                    <td>121 Baltimore Pike</td>
+                    <td>(610) 544-9162</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr018/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr018/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
+                    <td>Whitehall</td>
+                    <td>2816 Macarthur Rd</td>
+                    <td>(610) 437-4104</td>
+                    <td><a href="tel:+16104374104">(610) 437-4104</a></td>
+                    <td><a href="tel:+16104374104">(610) 437-4104</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
+                    <td>Wilkes Barre</td>
+                    <td>2035 Mackenzie Way</td>
+                    <td>(724) 779-1400</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/la-z-boywb/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/la-z-boywb/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
+                    <td>Wyomissing</td>
+                    <td>2500 Paper Mill Rd</td>
+                    <td>(610) 775-3330</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr311/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr311/personal-shopping">Set personal appointment</a></td>
+                </tr>
+                <tr data-state="pennsylvania">
                     <td>York</td>
                     <td>728 Loucks Rd</td>
-                    <td><a href="tel:+17174306396">(717) 430-6396</a></td>
-                    <td><a href="tel:+17174306396">(717) 430-6396</a></td>
-                    <td><a href="tel:+17174306396">(717) 430-6396</a></td>
+                    <td>(717) 430-6396</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr312/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr312/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="rhode-island">
                     <td>Warwick</td>
                     <td>1755 Baldhill Rd</td>
-                    <td><a href="tel:+14018230390">(401) 823-0390</a></td>
+                    <td>(401) 823-0390</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore083/60min">Set private appointment</a></td>
-                    <td></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore083/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="south-carolina">
                     <td>Myrtle Beach</td>
                     <td>565 Market Ct</td>
-                    <td><a href="tel:+18438395410">(843) 839-5410</a></td>
+                    <td>(843) 839-5410</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr270/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr270/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Alexandria</td>
                     <td>6003 Kingstown Village Pkwy</td>
-                    <td><a href="tel:+17039715065">(703) 971-5065</a></td>
+                    <td>(703) 971-5065</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore005/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore005/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Chesapeake</td>
                     <td>1436 Greenbrier Parkway</td>
-                    <td><a href="tel:+17574202252">(757) 420-2252</a></td>
+                    <td>(757) 420-2252</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore007/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore007/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Fairfax</td>
                     <td>10900 Fairfax Blvd</td>
-                    <td><a href="tel:+17032736133">(703) 273-6133</a></td>
+                    <td>(703) 273-6133</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore004/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore004/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Fredericksburg</td>
                     <td>3104 Plank Rd</td>
-                    <td><a href="tel:+15407850747">(540) 785-0747</a></td>
+                    <td>(540) 785-0747</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr231/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr231/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Gainesville</td>
                     <td>7311 Atlas Walk Way</td>
-                    <td><a href="tel:+15712615680">(571) 261-5680</a></td>
+                    <td>(571) 261-5680</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore061/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore061/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Midlothian</td>
                     <td>12601 Stone Village Way</td>
-                    <td><a href="tel:+18047943683">(804) 794-3683</a></td>
+                    <td>(804) 794-3683</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-stormgr286/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-stormgr286/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Newport News</td>
                     <td>11967 Jefferson Ave</td>
-                    <td><a href="tel:+17572492500">(757) 249-2500</a></td>
+                    <td>(757) 249-2500</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore017/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore017/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Richmond</td>
                     <td>11541 W. Broad St</td>
-                    <td><a href="tel:+18043605272">(804) 360-5272</a></td>
+                    <td>(804) 360-5272</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore015/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore015/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Sterling</td>
                     <td>21320 Signal Hill Plaza</td>
-                    <td><a href="tel:+15714347687">(571) 434-7687</a></td>
+                    <td>(571) 434-7687</td>
                     <td><a href="tel:+15714347687">(571) 434-7687</a></td>
                     <td><a href="tel:+15714347687">(571) 434-7687</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Virginia Beach</td>
                     <td>5300 Virginia Beach Blvd</td>
-                    <td><a href="tel:+17574906057">(757) 490-6057</a></td>
-                    <td><a href="tel:+17544906057">(757) 490-6057</a></td>
-                    <td><a href="tel:+17544906057">(757) 490-6057</a></td>
+                    <td>(757) 490-6057</td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore007/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore007/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="wisconsin">
                     <td>Appleton</td>
                     <td>4914 W Integrity Way</td>
-                    <td><a href="tel:+19205603300">(920) 560-3300</a></td>
+                    <td>(920) 560-3300</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore268/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore268/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="wisconsin">
                     <td>Green Bay</td>
                     <td>2665 S Oneida St</td>
-                    <td><a href="tel:+19205933870">(920) 593-3870</a></td>
+                    <td>(920) 593-3870</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr269/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr269/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="wisconsin">
                     <td>Greenfield</td>
                     <td>7900 W. Layton Ave</td>
-                    <td><a href="tel:+14142826124">(414) 282-6124</a></td>
+                    <td>(414) 282-6124</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore152/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore152/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="wisconsin">
                     <td>Wauwatosa</td>
                     <td>10830 W Burleigh St</td>
-                    <td><a href="tel:+14147715334">(414) 771-5334</a></td>
+                    <td>(414) 771-5334</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore232/60min">Set private appointment</a></td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lazboystore232/personal-shopping">Set personal appointment</a></td>
                 </tr>

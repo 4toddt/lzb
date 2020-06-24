@@ -1,3 +1,9 @@
+[class^="two-column"] section,
+[class^="two-column"] aside {
+    /* reset the display property of section and aside elements */
+    display: block;
+}
+
 body.mobile-site section.cust-support {
     margin-top: 0;
 }
@@ -31,7 +37,8 @@ nav.ds-topnav a {
     transition: background-color .2s ease-out, color .2s ease-out;
 }
 
-nav.ds-topnav a:hover, nav.ds-topnav a.current-page {
+nav.ds-topnav a:hover,
+nav.ds-topnav a.current-page {
     color: #7b7777;
     text-decoration: none;
 }

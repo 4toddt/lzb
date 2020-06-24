@@ -217,6 +217,9 @@
     
     #npc-content h2 {
         font-family: 'Playfair Display', playfair-display, serif;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        line-height: 1.2;
     }
     
     #npc-content h2::after {
@@ -224,6 +227,12 @@
         display: block;
         width: 1.4em;
         border-bottom: 3px solid #4A4A4A;
+        margin-top: .25em;
+    }
+    
+    #npc-content p {
+        font-size: .8em;
+        line-height: 1.75;
     }
     
     #npc-content .background-image {
@@ -279,6 +288,9 @@
         }
         #npc-content .two-col {
             display: flex;
+        }
+        #npc-content .two-col>div {
+            width: 50%;
         }
     }
     

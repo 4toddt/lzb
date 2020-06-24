@@ -1,292 +1,222 @@
-<body>
-    <section class="cust-support">
-        <!-- Content for full blank template -->
-        <!-- Content for full blank template -->
-        <!-- Content for full blank template -->
-
-        <!-- Corporate Giving Form v4 TT -->
-        <style>
-            body>.above-header-targeters,
-            body>.util-nav,
-            .create-account,
-            .cart-link,
-            .micro-cart-items,
-            .masthead,
-            .primary-nav,
-            .breadcrumb-wrapper,
-            .cust-support>h1:first-child,
-            .cust-support>hr:first-child,
-            #site-menu,
-            #skip-to-content,
-            #mobile-header-container,
-            .off-canvas-heading,
-            #off-canvas-menu,
-            #off-canvas-search,
-            #off-canvas-locator,
-            .breadcrumbs,
-            .section-title,
-            footer,
-            .back-to-top,
-            .loader,
-            .tooltip,
-            body>nav,
-            body>header,
-            nav.breadcrumb,
-            .your-store {
-                display: none !important;
-            }
-        </style>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        <script src="/js/about-lzb.js"></script>
-        <link rel="stylesheet" type="text/css" href="/css/about-lzb.css">
-        <link rel="stylesheet" type="text/css" href="/css/datepicker.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab|Open+Sans" rel="stylesheet">
-        <script>
-            var givingFormSubmitted = false;
-        </script>
-        <style>
-            /******************* Forms *********************************/
-            
-            form {
-                margin: 0 10px;
-            }
-            
-            form p {
-                margin-top: .5em;
-            }
-            
-            .text-field,
-            .form-submit {
-                position: relative;
-                margin-top: 1em;
-                max-width: 888px;
-                font-family: 'Open Sans', sans-serif;
-                font-size: .9em;
-            }
-            
-            .text-field textarea,
-            .text-field input,
-            .form-submit input {
-                /* min-height: 3.5em; */
-                width: 100%;
-                height: 3.5em;
-                font-size: 1em;
-                line-height: 1.2;
-                border: solid 1px #979797;
-                padding: 1.623em 1em 0.6em;
-            }
-            
-            .form-submit input {
-                background-color: #0070AF;
-                color: white;
-                padding: 0;
-                height: 3em;
-                width: 13em;
-            }
-            
-            .text-field textarea {
-                resize: vertical;
-            }
-            
-            .text-field label {
-                /* Prevent user from selecting label text. Helpful for using label inside text input */
-                -webkit-user-select: none;
-                /* Chrome all / Safari all */
-                -moz-user-select: none;
-                /* Firefox all */
-                -ms-user-select: none;
-                /* IE 10+ */
-                user-select: none;
-                /* Likely future */
-                color: #9B9B9B;
-                position: absolute;
-                width: auto;
-                margin: 0 1em;
-                top: 48%;
-                left: 0;
-                transform: translateY(-50%);
-                line-height: 1.2;
-                transition: all .2s ease-out;
-            }
-            
-            .text-field.active label,
-            .text-field.filled label {
-                font-size: .8em;
-                top: 1em;
-                margin: 0 .7em;
-                white-space: nowrap;
-                max-width: 90%;
-                max-width: calc(100% - 2em);
-                overflow: hidden;
-            }
-            /* Validation hints */
-            
-            .text-field.filled :invalid {
-                outline: red solid 1px !important;
-                outline-offset: 0;
-            }
-            
-            .text-field :invalid:focus {
-                outline: #4d90fe solid 1px !important;
-                outline-offset: 0;
-            }
-            
-            .text-field :valid:focus {
-                outline: green solid 1px !important;
-                outline-offset: 0;
-            }
-            
-            .text-field .rules {
-                display: none;
-            }
-            
-            .text-field.filled :invalid+*>.rules {
-                color: red;
-                display: inline;
-            }
-            
-            .text-field.filled :invalid+*>.rules::before {
-                content: "Error (";
-                /* color: red; */
-                padding-left: 1.5em;
-                margin-left: .3em;
-                background-image: url(/Images/npc/error.svg);
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-            
-            .text-field.filled :invalid+*>.rules::after {
-                content: ")";
-            }
-            
-            .text-field.active :invalid+*>.rules {
-                display: inline;
-            }
-            
-            .text-field.active :invalid+*>.rules::before {
-                content: " (";
-            }
-            
-            .text-field.active :invalid+*>.rules::after {
-                content: ")";
-            }
-            
-            .ui-datepicker-calendar td {
-                width: 47px;
-            }
-            
-            @media only screen and (min-width: 600px) {
-                h1 {
-                    left: auto;
-                    right: 5%;
-                    background-color: #ffffff80;
-                    box-shadow: 0 0 2em 1em #ffffff88;
-                }
-            }
-            
-            @media only screen and (min-width: 900px) {
-                .lzb-cares.grid {
-                    display: flex;
-                    flex-wrap: nowrap;
-                }
-                .lzb-cares.grid .image {
-                    padding-top: 10%;
-                }
-                .lzb-cares.grid .block:nth-child(2) {
-                    order: -1;
-                }
-            }
-        </style>
-        <div class="gray">
-            <div class="page-width">
-                <nav id="topnav">
-                    <div class="logo">
-                        <a href="https://www.la-z-boy.com">
-                            <img src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/logo.png" alt="">
-                        </a>
-                    </div>
-                    <button class="hamburger hamburger--boring" type="button">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                    <script>
-                        insertNavHere();
-                    </script>
-                </nav>
+<link rel="stylesheet" type="text/css" href="/css/datepicker.css">
+<script>
+    var givingFormSubmitted = false;
+</script>
+<style>
+    /******************* Forms *********************************/
+    
+    form {
+        margin: 0 10px;
+    }
+    
+    form p {
+        margin-top: .5em;
+    }
+    
+    .text-field,
+    .form-submit {
+        position: relative;
+        margin-top: 1em;
+        max-width: 888px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: .9em;
+    }
+    
+    .text-field textarea,
+    .text-field input,
+    .form-submit input {
+        /* min-height: 3.5em; */
+        width: 100%;
+        height: 3.5em;
+        font-size: 1em;
+        line-height: 1.2;
+        border: solid 1px #979797;
+        padding: 1.623em 1em 0.6em;
+    }
+    
+    .form-submit input {
+        background-color: #0070AF;
+        color: white;
+        padding: 0;
+        height: 3em;
+        width: 13em;
+    }
+    
+    .text-field textarea {
+        resize: vertical;
+    }
+    
+    .text-field label {
+        /* Prevent user from selecting label text. Helpful for using label inside text input */
+        -webkit-user-select: none;
+        /* Chrome all / Safari all */
+        -moz-user-select: none;
+        /* Firefox all */
+        -ms-user-select: none;
+        /* IE 10+ */
+        user-select: none;
+        /* Likely future */
+        color: #9B9B9B;
+        position: absolute;
+        width: auto;
+        margin: 0 1em;
+        top: 48%;
+        left: 0;
+        transform: translateY(-50%);
+        line-height: 1.2;
+        transition: all .2s ease-out;
+    }
+    
+    .text-field.active label,
+    .text-field.filled label {
+        font-size: .8em;
+        top: 1em;
+        margin: 0 .7em;
+        white-space: nowrap;
+        max-width: 90%;
+        max-width: calc(100% - 2em);
+        overflow: hidden;
+    }
+    /* Validation hints */
+    
+    .text-field.filled :invalid {
+        outline: red solid 1px !important;
+        outline-offset: 0;
+    }
+    
+    .text-field :invalid:focus {
+        outline: #4d90fe solid 1px !important;
+        outline-offset: 0;
+    }
+    
+    .text-field :valid:focus {
+        outline: green solid 1px !important;
+        outline-offset: 0;
+    }
+    
+    .text-field .rules {
+        display: none;
+    }
+    
+    .text-field.filled :invalid+*>.rules {
+        color: red;
+        display: inline;
+    }
+    
+    .text-field.filled :invalid+*>.rules::before {
+        content: "Error (";
+        /* color: red; */
+        padding-left: 1.5em;
+        margin-left: .3em;
+        background-image: url(/Images/npc/error.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .text-field.filled :invalid+*>.rules::after {
+        content: ")";
+    }
+    
+    .text-field.active :invalid+*>.rules {
+        display: inline;
+    }
+    
+    .text-field.active :invalid+*>.rules::before {
+        content: " (";
+    }
+    
+    .text-field.active :invalid+*>.rules::after {
+        content: ")";
+    }
+    
+    .ui-datepicker-calendar td {
+        width: 47px;
+    }
+    
+    @media only screen and (min-width: 600px) {
+        #hero h1 {
+            text-shadow: 0 0 1em white;
+        }
+    }
+    
+    @media only screen and (min-width: 900px) {
+        .lzb-cares.grid {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .lzb-cares.grid .image {
+            padding-top: 10%;
+        }
+        .lzb-cares.grid .block:nth-child(2) {
+            order: -1;
+        }
+    }
+</style>
+<div class="blue hero-background"></div>
+<div class="page-width">
+    <div id="hero">
+        <img class="mobile" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/mobile/hero.jpg" alt="">
+        <img class="tablet-desktop" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/desktop/hero.jpg" alt="">
+        <h1>Online request&nbsp;form</h1>
+    </div>
+    <form id="lzb-form" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSesQkFzCDxlA-iSI3pgq_mMV819NRhSraq2HQjYzj9cyh7cYA/formResponse" target="hidden_iframe" onsubmit="givingFormSubmitted=true;">
+        <section>
+            <h2>Personal information</h2>
+            <div class="text-field">
+                <input class="move-the-label" id="name" name="entry.1080354842" type="text" minlength="3" maxlength="100" value="" required>
+                <label for="name">Name<span class="rules">required</span></label>
             </div>
-        </div>
-        <div class="blue hero-background"></div>
-        <div class="page-width">
-            <div id="hero">
-                <img class="mobile" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/mobile/hero.jpg" alt="">
-                <img class="tablet-desktop" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/desktop/hero.jpg" alt="">
-                <h1>Online request&nbsp;form</h1>
-            </div>
-            <form id="lzb-form" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSesQkFzCDxlA-iSI3pgq_mMV819NRhSraq2HQjYzj9cyh7cYA/formResponse" target="hidden_iframe" onsubmit="givingFormSubmitted=true;">
-                <section>
-                    <h2>Personal information</h2>
-                    <div class="text-field">
-                        <input class="move-the-label" id="name" name="entry.1080354842" type="text" minlength="3" maxlength="100" value="" required>
-                        <label for="name">Name<span class="rules">required</span></label>
-                    </div>
-                    <div class="text-field">
-                        <input class="move-the-label" id="address" name="entry.463118532" type="text" pattern=".{10,}(\d\d\d\d\d|[a-zA-Z]\d[a-zA-Z] \d[a-zA-Z]\d)" maxlength="100" value="" required>
-                        <label for="address">Complete address<span class="rules">like &ldquo;123 Fourth St, Dover, SC
+            <div class="text-field">
+                <input class="move-the-label" id="address" name="entry.463118532" type="text" pattern=".{10,}(\d\d\d\d\d|[a-zA-Z]\d[a-zA-Z] \d[a-zA-Z]\d)" maxlength="100" value="" required>
+                <label for="address">Complete address<span class="rules">like &ldquo;123 Fourth St, Dover, SC
                                 55555&rdquo;</span>
                         </label>
-                    </div>
-                    <div class="text-field">
-                        <input class="move-the-label" id="phone" name="entry.753189295" type="tel" pattern="[0-9]{3}.*?[0-9]{3}.*?[0-9]{4}" maxlength="20" value="" required>
-                        <label for="phone">Phone number<span class="rules">like &ldquo;555-555-5555&rdquo;</span>
-                        </label>
-                    </div>
-                    <div class="text-field">
-                        <input class="move-the-label" id="name" name="emailAddress" type="text" minlength="3" maxlength="100" pattern="^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+(?:[a-zA-Z]{2}|aero|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel)$"
-                            value="" required>
-                        <label for="name">Email address<span class="rules">required</span></label>
-                    </div>
-                    <div class="text-field">
-                        <textarea class="move-the-label" id="whyAssist" name="entry.637663556" minlength="10" maxlength="1000" value="" required></textarea>
-                        <label for="whyAssist">Why is assistance needed?<span class="rules">required</span></label>
-                    </div>
-                    <div class="form-submit">
-                        <input id="lzb-submit" type="submit" value="Submit Application">
-                    </div>
-                </section>
-            </form>
-            <div id="thank-you" style="display:none;" class="indent">
-                <h2>Thank you!</h2>
-                <p>Thank you for your interest in <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated. Although we support many worthwhile programs, your application may be declined because it fell into one of the following categories outside
-                    of our eligible&nbsp;criteria:</p>
-                <ul>
-                    <li>Individual needs (Including emergency relief, or furniture&nbsp;donations)</li>
-                    <li>Travel expenses</li>
-                    <li>Political organizations</li>
-                    <li>Scholarships</li>
-                    <li>Fraternities and sororities</li>
-                    <li>Personal fundraising initiatives</li>
-                    <li>Travel funds for tours</li>
-                    <li>Expeditions or trips</li>
-                    <li>Beauty contest candidates</li>
-                    <li>Mission trips</li>
-                    <li>Loans</li>
-                    <li>Membership dues</li>
-                    <li>Start-up funds or seed money</li>
-                </ul>
-                <p>La-Z-Boy donates through non-profit organizations such as the Ronald McDonald House, United Way, American Red Cross and Relay For Life and not directly to individuals. This enables us to reach many people in need. However, many of our
-                    dealers are independently owned and operated and set their own donation policies. Your nearest <span style="white-space: nowrap;">La-Z-Boy</span> dealer can be located by visiting our website at <span style="white-space: nowrap;">www.la-z-boy.com</span>                    and clicking on the &ldquo;find a dealer&rdquo;&nbsp;section.</p>
-                <p>If your request falls under any other category inside our eligible criteria, your application will be reviewed and you will be notified within 1 month of approval. <strong>Only applications that are approved will receive&nbsp;communication.</strong></p>
             </div>
-        </div>
-
-        <div class="gray footer">
-            <p>&copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script> <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated</p>
-        </div>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if (givingFormSubmitted) {
+            <div class="text-field">
+                <input class="move-the-label" id="phone" name="entry.753189295" type="tel" pattern="[0-9]{3}.*?[0-9]{3}.*?[0-9]{4}" maxlength="20" value="" required>
+                <label for="phone">Phone number<span class="rules">like &ldquo;555-555-5555&rdquo;</span>
+                        </label>
+            </div>
+            <div class="text-field">
+                <input class="move-the-label" id="name" name="emailAddress" type="text" minlength="3" maxlength="100" pattern="^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+(?:[a-zA-Z]{2}|aero|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel)$"
+                    value="" required>
+                <label for="name">Email address<span class="rules">required</span></label>
+            </div>
+            <div class="text-field">
+                <textarea class="move-the-label" id="whyAssist" name="entry.637663556" minlength="10" maxlength="1000" value="" required></textarea>
+                <label for="whyAssist">Why is assistance needed?<span class="rules">required</span></label>
+            </div>
+            <div class="form-submit">
+                <input id="lzb-submit" type="submit" value="Submit Application">
+            </div>
+        </section>
+    </form>
+    <div id="thank-you" style="display:none;" class="indent">
+        <h2>Thank you!</h2>
+        <p>Thank you for your interest in <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated. Although we support many worthwhile programs, your application may be declined because it fell into one of the following categories outside of our
+            eligible&nbsp;criteria:
+        </p>
+        <ul>
+            <li>Individual needs (Including emergency relief, or furniture&nbsp;donations)</li>
+            <li>Travel expenses</li>
+            <li>Political organizations</li>
+            <li>Scholarships</li>
+            <li>Fraternities and sororities</li>
+            <li>Personal fundraising initiatives</li>
+            <li>Travel funds for tours</li>
+            <li>Expeditions or trips</li>
+            <li>Beauty contest candidates</li>
+            <li>Mission trips</li>
+            <li>Loans</li>
+            <li>Membership dues</li>
+            <li>Start-up funds or seed money</li>
+        </ul>
+        <p>La-Z-Boy donates through non-profit organizations such as the Ronald McDonald House, United Way, American Red Cross and Relay For Life and not directly to individuals. This enables us to reach many people in need. However, many of our dealers
+            are independently owned and operated and set their own donation policies. Your nearest <span style="white-space: nowrap;">La-Z-Boy</span> dealer can be located by visiting our website at <span style="white-space: nowrap;">www.la-z-boy.com</span>            and clicking on the &ldquo;find a dealer&rdquo;&nbsp;section.</p>
+        <p>If your request falls under any other category inside our eligible criteria, your application will be reviewed and you will be notified within 1 month of approval. <strong>Only applications that are approved will receive&nbsp;communication.</strong></p>
+    </div>
+</div>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if (givingFormSubmitted) {
             parent.document.getElementById('lzb-submit').disabled = true;
             parent.document.getElementById('lzb-submit').value = 'Thank you!';
             parent.document.getElementById('lzb-submit').style.backgroundColor = 'gray';
@@ -301,84 +231,74 @@
                  }, 1000);
             
         }"></iframe>
-        <script>
-            runAfterDOM();
-        </script>
 
-        <script>
-            // Control text field label position and size
-            var inputs = document.getElementsByClassName('move-the-label');
-            for (var i = 0; i < inputs.length; i++) {
-                input = inputs[i];
-                input.onfocus = function() {
-                    this.parentElement.className = 'text-field active';
-                };
-                input.onblur = function() {
-                    if (this.value == '') {
-                        this.parentElement.className = 'text-field';
-                    } else {
-                        this.parentElement.className = 'text-field filled';
-                    }
-                }
+<script>
+    // Control text field label position and size
+    var inputs = document.getElementsByClassName('move-the-label');
+    for (var i = 0; i < inputs.length; i++) {
+        input = inputs[i];
+        input.onfocus = function() {
+            this.parentElement.className = 'text-field active';
+        };
+        input.onblur = function() {
+            if (this.value == '') {
+                this.parentElement.className = 'text-field';
+            } else {
+                this.parentElement.className = 'text-field filled';
             }
+        }
+    }
 
-            //var JQREADY = false;
-            function jqIsReady() {
-                if (typeof jQuery === "undefined") {
-                    //if (!JQREADY)
-                    return false;
-                }
-                return true;
-            }
+    //var JQREADY = false;
+    function jqIsReady() {
+        if (typeof jQuery === "undefined") {
+            //if (!JQREADY)
+            return false;
+        }
+        return true;
+    }
 
 
 
-            (function jqCheck() {
-                if (!jqIsReady()) {
-                    setTimeout(jqCheck, 10);
-                    return;
-                } else {
-                    if (typeof requirejs === "undefined") {
-                        $.getScript("/js/datepicker.js")
-                            .done(function() {
-                                $('section.cust-support .datepicker').datepicker({
-                                    onClose: function() {
-                                        if (this.value == '') {
-                                            this.parentElement.className = 'text-field';
-                                        } else {
-                                            this.parentElement.className = 'text-field filled';
-                                        }
-                                        $(this).focus();
-                                    }
-                                });
-                            });
-                    } else {
-                        requirejs(['jqueryDatepicker'], function() {
-                            $('section.cust-support .datepicker').datepicker({
-                                onClose: function() {
-                                    if (this.value == '') {
-                                        this.parentElement.className = 'text-field';
-                                    } else {
-                                        this.parentElement.className = 'text-field filled';
-                                    }
-                                    $(this).focus();
+    (function jqCheck() {
+        if (!jqIsReady()) {
+            setTimeout(jqCheck, 10);
+            return;
+        } else {
+            if (typeof requirejs === "undefined") {
+                $.getScript("/js/datepicker.js")
+                    .done(function() {
+                        $('section.cust-support .datepicker').datepicker({
+                            onClose: function() {
+                                if (this.value == '') {
+                                    this.parentElement.className = 'text-field';
+                                } else {
+                                    this.parentElement.className = 'text-field filled';
                                 }
-                            });
+                                $(this).focus();
+                            }
                         });
-                    }
-
-                    $('section.cust-support textarea').css('overflow', 'hidden').css('resize', 'none');
-
-                    $('section.cust-support textarea').on('keyup input', function() {
-                        $(this).css('height', '0').css('height', (this.scrollHeight + 2) / parseFloat($(this).css('font-size')) + 'em');
                     });
-                }
-            })();
-        </script>
+            } else {
+                requirejs(['jqueryDatepicker'], function() {
+                    $('section.cust-support .datepicker').datepicker({
+                        onClose: function() {
+                            if (this.value == '') {
+                                this.parentElement.className = 'text-field';
+                            } else {
+                                this.parentElement.className = 'text-field filled';
+                            }
+                            $(this).focus();
+                        }
+                    });
+                });
+            }
 
+            $('section.cust-support textarea').css('overflow', 'hidden').css('resize', 'none');
 
-        <!-- End content for full blank template -->
-        <!-- End content for full blank template -->
-        <!-- End content for full blank template -->
-    </section>
-</body>
+            $('section.cust-support textarea').on('keyup input', function() {
+                $(this).css('height', '0').css('height', (this.scrollHeight + 2) / parseFloat($(this).css('font-size')) + 'em');
+            });
+        }
+    })();
+</script>

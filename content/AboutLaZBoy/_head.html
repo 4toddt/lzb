@@ -1,239 +1,10 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        var navigation = {
-            "Commitment": {
-                "Our Commitment": "/content/AboutLaZBoy/corporate-commitment",
-                "News Room": "/content/AboutLaZBoy/NewsRoom",
-                "Our Brands": "/content/AboutLaZBoy/OurBrands",
-                "Supplier Requirements": "/content/AboutLaZBoy/supplier-requirements"
-            },
-            "Financial": {
-                "Financial Responsibility": "/content/AboutLaZBoy/financial-responsibility",
-                //"Investor Relations": "/content/AboutLaZBoy/InvestorRelations"
-                "Investor Relations": "https://lazboy.gcs-web.com/"
-            },
-            "Environmental": {
-                "Sustainability at a Glance": "/content/AboutLaZBoy/sustainability-at-a-glance",
-                "SASB Standards": "/content/AboutLaZBoy/sasb-standards",
-                "Environment": "/content/AboutLaZBoy/sustainability",
-                "Carbon & Climate": "/content/AboutLaZBoy/carbon-and-climate",
-                "Natural Resources": "/content/AboutLaZBoy/natural-resources",
-                "Waste & Toxicity": "/content/AboutLaZBoy/waste-and-toxicity"
-            },
-            "People": {
-                "Our Employees": "/content/AboutLaZBoy/investing-in-employees",
-                "Leadership": "/content/AboutLaZBoy/leadership",
-                "Corporate Giving": "/content/AboutLaZBoy/corporate-giving",
-                "Made In America": "/content/AboutLaZBoy/made-in-america",
-                "Careers": "/content/AboutLaZBoy/Careers"
-            }
-        }
-
-        var pagePath = window.location.pathname.match(/(.*\/mobile)?(.*)/)[2];
-
-        // Return HTML for navJSON
-        function buildNavigation(navJSON) {
-            var menu = document.createElement('ul');
-            for (navName in navJSON) {
-                var navLink = navJSON[navName];
-                if (typeof(navLink) === "string") {
-                    if (navLink === pagePath) {
-                        menu.innerHTML += '<li><a class="current-page">' + navName + '</a></li>';
-                    } else {
-                        menu.innerHTML += '<li><a href="' + navLink + '">' + navName + '</a></li>';
-                    }
-                } else if (typeof(navLink) === "object") {
-                    var hasCurrentpage = false;
-                    for (i in navLink) {
-                        hasCurrentpage = (hasCurrentpage || (navLink[i] === pagePath))
-                    }
-                    if (hasCurrentpage) {
-                        menu.innerHTML += '<li class="parent show-submenu"><a class="current-page">' + navName + '</a>' + buildNavigation(navLink) + '</li>';
-                    } else {
-                        menu.innerHTML += '<li class="parent"><a>' + navName + '</a>' + buildNavigation(navLink) + '</li>';
-                    }
-                }
-            }
-            var temp = document.createElement('div');
-            temp.appendChild(menu);
-            return temp.innerHTML;
-        }
-
-        function hasClass(ele, cls) {
-            if (!!(ele && cls)) {
-                var classArr = ele.className.trim().split(/ +/);
-                return (classArr.indexOf(cls) > -1);
-            } else {
-                return null;
-            }
-        }
-
-        function addClass(ele, cls) {
-            if (ele && cls) {
-                var classArr = ele.className.trim().split(/ +/);
-                if (classArr.indexOf(cls) == -1) {
-                    classArr.push(cls);
-                    ele.className = classArr.join(' ').trim();
-                }
-            }
-        }
-
-        function removeClass(ele, cls) {
-            if (ele && cls) {
-                var classArr = ele.className.trim().split(/ +/);
-                var index = classArr.indexOf(cls);
-                if (index > -1) {
-                    classArr.splice(index, 1);
-                    ele.className = classArr.join(' ').trim();
-                }
-            }
-        }
-
-        function removeClassAll(nodeList, cls) {
-            if (nodeList && cls) {
-                for (i = 0; i < nodeList.length; i++) {
-                    removeClass(nodeList[i], cls);
-                }
-            }
-        }
-
-        function toggleClass(ele, cls) {
-            if (hasClass(ele, cls)) {
-                removeClass(ele, cls);
-            } else {
-                addClass(ele, cls);
-            }
-        }
-
-        function stopPropagation(evt) {
-            if (typeof evt.stopPropagation == "function") {
-                evt.stopPropagation();
-            } else {
-                evt.cancelBubble = true;
-            }
-        }
-
-        function myEventListener(el, eventName, handler) {
-            if (el.addEventListener) {
-                el.addEventListener(eventName, handler);
-            } else {
-                el.attachEvent('on' + eventName, function() {
-                    handler.call(el);
-                });
-            }
-        }
-
-        //Function to remove the modal.
-        function removeModal() {
-            document.body.removeChild(document.getElementById('npc-modal'));
-        }
-
-        // Function to play a video in a modal. Test video is 'P1li3aQv3eQ'.
-        function videoModal(srcID) {
-            var div = document.createElement('div');
-            div.innerHTML =
-                '<section id="npc-modal" class="video" onclick="removeModal();"><div id="npc-modal-container">\
-        <div id="npc-modal-content">\
-            <iframe src="https://www.youtube.com/embed/' + srcID + '?rel=0&amp;amp;ecver=2&amp;amp;enablejsapi=1&amp;amp;showinfo=0&amp;amp;autoplay=1" frameborder="0" allowfullscreen></iframe>\
-        </div>\
-        <img id="npc-modal-close" src="https://www.la-z-boy.com/Images/npc/modal-close.svg">\
-    </section>';
-            var modal = div.firstChild;
-
-            document.body.insertBefore(modal, document.body.firstChild);
-
-            return false;
-        }
-
-        // Create array of query string values
-        var params = [],
-            hash;
-        var q = document.URL.split('?')[1];
-        if (q != undefined) {
-            q = q.split('&');
-            for (var i = 0; i < q.length; i++) {
-                hash = q[i].split('=');
-                params.push(hash[1]);
-                params[hash[0]] = hash[1];
-            }
-        }
+    <!-- copy below this line since Head cartridge has opening head tag -->
+    <!-- copy below this line since Head cartridge has opening head tag -->
+    <!-- copy below this line since Head cartridge has opening head tag -->
 
 
-        // Writes navigation HTML to page, adds classes and event listeners.
-        function insertNavHere() {
-            document.write(buildNavigation(navigation));
 
-            var topNav = document.getElementById('topnav');
-            var parentLIs = topNav.querySelectorAll('li.parent');
-            var parentLinks = topNav.querySelectorAll('li.parent>a');
-
-            for (i = 0; i < parentLinks.length; i++) {
-                parentLinks[i].addEventListener('click', function() {
-                    var evt = evt || window.event; // For IE
-                    stopPropagation(evt);
-                    if (hasClass(this.parentNode, 'show-submenu')) {
-                        removeClass(this.parentNode, 'show-submenu');
-                    } else {
-                        removeClassAll(parentLIs, 'show-submenu');
-                        addClass(this.parentNode, 'show-submenu');
-                    }
-                    // menu.style.maxHeight = menu.scrollHeight;
-                });
-            }
-            //open external links in new tab
-            for (var links = document.links, i = 0, a; a = links[i]; i++) {
-                if (a.host !== location.host) {
-                    a.target = '_blank';
-                }
-            }
-        }
-
-        function runAfterDOM() {
-            // Look for .hamburger
-            var topNav = document.getElementById('topnav');
-            var hamburger = topNav.querySelector('.hamburger');
-            var menu = topNav.querySelector('ul');
-            // On click
-            hamburger.addEventListener("mousedown", function() {
-                // Toggle class "show-menu"
-                var evt = evt || window.event; // For IE
-                evt.preventDefault ? evt.preventDefault() : (evt.returnValue = false);
-                if (hasClass(topNav, 'show-menu')) {
-                    removeClass(topNav, 'show-menu');
-                } else {
-                    addClass(topNav, 'show-menu');
-                }
-            });
-
-            // Play the video in the query string
-            if (params['video'] != null) {
-                videoModal(params['video']);
-            }
-
-            // Add click and keyboard events to videoModal elements
-            var videoLinks = document.querySelectorAll('[videoModal]');
-            for (i = 0; i < videoLinks.length; i++) {
-                (function() {
-                    var currentVideoLink = videoLinks[i];
-                    var srcID = currentVideoLink.getAttribute('videoModal');
-
-                    currentVideoLink.setAttribute("tabIndex", "0");
-
-                    myEventListener(currentVideoLink, "click", function() {
-                        videoModal(srcID);
-                    })
-
-                    myEventListener(currentVideoLink, 'keypress', function(event) {
-                        var code = event.charCode || event.keyCode;
-                        if ((code === 32) || (code === 13)) {
-                            videoModal(srcID);
-                        }
-                    });
-                })();
-            }
-        }
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab');
         @font-face {
@@ -248,7 +19,8 @@
         [class*=" icon-"],
         .arrow-right:after,
         .download::after,
-        #topnav li.parent>a:after {
+        #topnav li.parent>a:after,
+        #topnav li.parent>label:after {
             font-family: 'icomoon' !important;
             font-style: normal;
             font-weight: normal;
@@ -435,16 +207,16 @@
             bottom: -9px;
         }
         
-        #topnav.show-menu .hamburger-inner {
+        #hamburger-toggle:checked~.hamburger .hamburger-inner {
             background-size: 0 3px;
         }
         
-        #topnav.show-menu .hamburger-inner::before {
+        #hamburger-toggle:checked~.hamburger .hamburger-inner::before {
             top: 0;
             transform: rotate(45deg);
         }
         
-        #topnav.show-menu .hamburger-inner::after {
+        #hamburger-toggle:checked~.hamburger .hamburger-inner::after {
             bottom: 0;
             transform: rotate(-45deg);
         }
@@ -479,7 +251,7 @@
             transition-timing-function: ease-out;
         }
         
-        #topnav.show-menu>ul:before {
+        #hamburger-toggle:checked~ul:before {
             padding: .6em 2.2em .6em 0;
             max-height: 54px;
             color: #494949;
@@ -499,34 +271,35 @@
             cursor: pointer;
         }
         
-        #topnav.show-menu li {
+        #hamburger-toggle:checked~ul li {
             border-width: 1px;
         }
         
-        #topnav li a {
-            text-decoration: none;
+        #topnav li a,
+        #topnav li label {
             color: #494949;
-            white-space: nowrap;
             display: block;
-            position: relative;
             padding: 0;
             max-height: 0;
             overflow: hidden;
             transition-property: max-height, padding;
             transition-duration: .2s;
             transition-timing-function: ease-out;
+            cursor: pointer;
         }
         
         #topnav li a:hover,
-        #topnav li.show-submenu>a {
+        #topnav label:hover,
+        #topnav [name="show-submenu"]:checked+label {
             color: #0070AF;
         }
         
-        #topnav li a.current-page {
+        #topnav li .current-page {
             font-weight: bold;
         }
         
-        #topnav.show-menu li a {
+        #hamburger-toggle:checked~ul li a,
+        #hamburger-toggle:checked~ul li label {
             max-height: 3em;
             padding: 1em 0;
         }
@@ -544,24 +317,24 @@
             cursor: default;
         }
         
-        #topnav.show-menu li li a {
+        #hamburger-toggle:checked~ul li li a {
             padding: 0;
             max-height: 0;
         }
         
-        #topnav.show-menu li.show-submenu li a {
+        #hamburger-toggle:checked~ul [name="show-submenu"]:checked~ul a {
             padding-bottom: 1em;
             max-height: 2em;
         }
         
-        #topnav li.parent>a:after {
+        #topnav li label:after {
             content: "\00a0\e907";
             font-size: 0.8em;
             transition: transform .2s ease-out;
             display: inline-block;
         }
         
-        #topnav li.parent.show-submenu>a:after {
+        #topnav [name="show-submenu"]:checked+label:after {
             transform: scaleY(-1);
         }
         
@@ -1309,156 +1082,3 @@
         }
     </style>
 </head>
-
-<body>
-    <style>
-        .bio {
-            flex: 0 0 170px;
-            font-size: .75em;
-            margin: 50px 15px 0;
-        }
-        
-        .bio h2 {
-            font-size: 1.25em;
-            margin-top: .5em;
-            text-align: center;
-        }
-        
-        .bio a {
-            text-decoration: underline;
-        }
-        
-        .bio p {
-            margin-top: .5em;
-            text-align: center;
-        }
-        
-        #hero-copy {
-            padding: 3em 1em;
-        }
-        
-        #hero-copy h1 {
-            font-size: 2em;
-            margin: 0;
-            color: white;
-            text-align: center;
-        }
-        
-        #hero-copy p {
-            line-height: 1.7;
-            margin-top: 1em;
-            color: white;
-            text-align: center;
-        }
-        
-        @media only screen and (min-width: 900px) {
-            #hero-copy {
-                padding: 4.2em 1em;
-            }
-            #hero-copy h1 {
-                font-size: 2.8em;
-            }
-        }
-    </style>
-    <div class="gray">
-        <div class="page-width">
-            <nav id="topnav">
-                <div class="logo">
-                    <a href="https://www.la-z-boy.com">
-                        <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/logo.png" alt="">
-                    </a>
-                </div>
-                <button class="hamburger" type="button">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                <script>
-                    insertNavHere();
-                </script>
-            </nav>
-        </div>
-    </div>
-    <div class="blue">
-        <div id="hero-copy" class="page-width">
-            <h1>Leadership Team</h1>
-            <p><span style="white-space: nowrap;">La-Z-Boy</span> was founded in 1927 on the principles of quality and innovation. Those values continue today with our current leadership team, bringing expertise and integrity to all aspects of our&nbsp;operations.</p>
-        </div>
-    </div>
-    <div class="page-width">
-        <div class="grid">
-            <div class="gutter-30">
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/kurt.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/KurtDarrow.pdf" target="_blank">Kurt L. Darrow</a></h2>
-                    <p>Chairman, President, and<br>Chief Executive Officer</p>
-                </div>
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/melinda.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/MelindaWhittington.pdf" target="_blank">Melinda Whittington</a></h2>
-                    <p>Chief Financial Officer</p>
-                </div>
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/darrell.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/DarrellEdwards.pdf" target="_blank">Darrell D. Edwards</a></h2>
-                    <p>Senior Vice President and<br>Chief Operating Officer</p>
-                </div>
-                <!-- <div class="bio">
-                        <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/doug.jpg" alt="">
-                        <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/DougCollier.pdf" target="_blank">Doug Collier</a></h2>
-                        <p>Senior Vice President,<br>Chief Commercial Officer and<br>President, International</p>
-                    </div> -->
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/otis.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/OtisSawyer.pdf" target="_blank">Otis Sawyer</a></h2>
-                    <p>Senior Vice President,<br>La-Z-Boy, Inc., and<br>President, La-Z-Boy<br>Portfolio Brands</p>
-                </div>
-                <!-- <div class="bio">
-                        <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/daniel.jpg" alt="">
-                        <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/DanielKing.pdf" target="_blank">Daniel King</a></h2>
-                        <p>President, Retail Division</p>
-                    </div> -->
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/tj.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/TjLinz.pdf" target="_blank">Tj Linz</a></h2>
-                    <p>President, Retail Division</p>
-                </div>
-                <div class="bio">
-                    <img alt="KeithWilson" src="https://embed.widencdn.net/img/lazboy/vn4hhf4epr/170x200px@2x/keith.jpg?q=85">
-                    <h2><a href="https://p.widencdn.net/kmej2z/KeithWilson" target="_blank">Keith Wilson</a></h2>
-                    <p>President, International</p>
-                </div>
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/stephen.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/StephenKrull.pdf" target="_blank">Stephen Krull</a></h2>
-                    <p>Vice President and<br>General Counsel</p>
-                </div>
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/aaron.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/AaronBrown.pdf" target="_blank">Aaron T. Brown</a></h2>
-                    <p>Vice President,<br>Strategy and Analytics;<br>President of Joybird;<br>Officer, La-Z-Boy Investments
-                    </p>
-                </div>
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/katie.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/KatieVanderjagt.pdf" target="_blank">Katie Vanderjagt</a></h2>
-                    <p>Vice President and<br>Chief Human Resources Officer</p>
-                </div>
-                <div class="bio">
-                    <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/david.jpg" alt="">
-                    <h2><a href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/leadership/DavidBehen.pdf" target="_blank">David Behen</a></h2>
-                    <p>Vice President and<br>Chief Information Officer</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="gray footer">
-        <p>&copy;
-            <script>
-                document.write(new Date().getFullYear())
-            </script> <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated</p>
-    </div>
-    <script>
-        runAfterDOM();
-    </script>
-</body>
