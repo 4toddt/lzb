@@ -1,0 +1,134 @@
+/* only use styles in here that you want to apply to all video players on the site. Otherwise contextually style
+(ex: .parentClass .video-player-container) or add additional classes to the video player element. */
+
+.video-player-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: $base-white;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .video-container {
+        width: 100%;
+        height: 100%;
+        background-color: $almost-white;
+    }
+    .video-media {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+    .controls-container {
+        display: flex;
+        width: 100%;
+        height: 40px;
+        background-color: $gray-heading;
+        flex-direction: row;
+        align-items: stretch;
+        @include border(top, 1px, solid, $line-separator);
+
+        button {
+            border: none;
+            background: none;
+            color: $link-color;
+        }
+        .icon {
+            @include font-size(22px);
+
+            @include media(xsmall-only) {
+                @include font-size(16px);
+            }
+            @include media(medium-only) {
+                @include font-size(16px);
+            }
+        }
+        .play-control, .volume-control {
+            width: 40px;
+            height: 39px;
+            display: inline-block;
+            cursor: pointer;
+            float: left;
+            vertical-align: middle;
+            text-align: center;
+            @include border(right, 1px, solid, $line-separator);
+        }
+        .indicator {
+            display: inline-block;
+            width: 80px;
+            height: 39px;
+            text-align: center;
+            float: left;
+            line-height: 39px;
+            @include font-size(11px);
+            @include border(right, 1px, solid, $line-separator);
+        }
+        .progress {
+            display: inline-block;
+            position: relative;
+            width: calc(50% - 20px);
+            height: 39px;
+            float: left;
+            flex: 1;
+            @include rem-size(margin, 0px 10px);
+        }
+        .progress-background {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: $base-gray;
+            @include rem-size(margin-top, 20px);
+        }
+        .progress-over {
+            position: absolute;
+            width: 0;
+            height: 4px;
+            background-color: $medium-blue;
+            @include rem-size(margin-top, 20px);
+        }
+        .progress-hidden {
+            position: absolute;
+            width: 100%;
+            height: 39px;
+            cursor: pointer;
+        }
+        .fullscreen-control {
+            width: 40px;
+            height: 39px;
+            display: inline-block;
+            cursor: pointer;
+            float: right;
+            vertical-align: middle;
+            text-align: center;
+            @include border(left, 1px, solid, $line-separator);
+        }
+    }
+}
+
+/* Browse Product Image Slider
+   ========================================================= */
+.product-images-slider {
+    .video-player-container {
+        // Video is hidden in by default to hide on page render.
+        visibility: hidden;
+
+        // maintains aspect ratio with width of container
+        .video-container {
+            position: relative;
+            padding-top: calc(100% - 40px);
+        }
+        .video-media {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}

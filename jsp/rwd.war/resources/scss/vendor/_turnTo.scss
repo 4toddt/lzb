@@ -1,0 +1,147 @@
+/* Use this file to override TurnTo Stylesheet Styles */
+
+/* Product Page / Quickview - stars-only and review count
+   ========================================================= */
+
+.TTrating-0-0 {
+    background-position: 0 -1377px
+}
+
+.TTrating-0-5 {
+    background-position: 0 -1396px
+}
+
+.TTrating-1-0 {
+    background-position: 0 -1415px
+}
+
+.TTrating-1-5 {
+    background-position: 0 -1434px
+}
+
+.TTrating-2-0 {
+    background-position: 0 -1453px
+}
+
+.TTrating-2-5 {
+    background-position: 0 -1472px
+}
+
+.TTrating-3-0 {
+    background-position: 0 -1491px
+}
+
+.TTrating-3-5 {
+    background-position: 0 -1510px
+}
+
+.TTrating-4-0 {
+    background-position: 0 -1529px
+}
+
+.TTrating-4-5 {
+    background-position: 0 -1548px
+}
+
+.TTrating-5-0 {
+    background-position: 0 -1567px
+}
+
+.turnto-container .tabs {
+  width: 100%;
+  text-align: center; }
+
+.turnto-container .pdp-block-container {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: relative; }
+
+.turnto-container li {
+	list-style-type: none;
+  outline: 0 !important; }
+
+.tt-tabs-headings {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+.tt-tabs-headings li {
+  padding: 0 10px; }
+
+/* Top mini star rating & review count */
+.turnto-star-rating {
+  clear: both;
+  display: inline-block;
+  cursor: pointer;
+  a {
+	  text-decoration: none;
+	  :hover {
+		  color: $brand-blue;
+	  }
+  }
+}
+
+.tt-stars {
+  float: right; }
+
+.tt-reviews-count {
+  float: right;
+  color: #006fb1;
+  padding-left: 10px;
+  margin-top: -3px; }
+
+.qv-panel .tt-reviews-count {
+  margin-top: 0;
+  padding-top: 0; }
+
+.TTrating-0-0,
+.TTrating-0-5,
+.TTrating-1-0,
+.TTrating-1-5,
+.TTrating-2-0,
+.TTrating-2-5,
+.TTrating-3-0,
+.TTrating-3-5,
+.TTrating-4-0,
+.TTrating-4-5,
+.TTrating-5-0 {
+    background-image: url("/img/turnto-sprite1x.png") !important;
+    background-repeat: no-repeat !important;
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+    .TTrating-0-0,
+    .TTrating-0-5,
+    .TTrating-1-0,
+    .TTrating-1-5,
+    .TTrating-2-0,
+    .TTrating-2-5,
+    .TTrating-3-0,
+    .TTrating-3-5,
+    .TTrating-4-0,
+    .TTrating-4-5,
+    .TTrating-5-0 {
+        background-image: url("/img/turnto-sprite2x.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: 298px 4152px !important;
+    }
+}
+
+/* modal is at a different tree level than pdp for ratings*/
+.qv-panel .TTrating-0-0,
+.qv-panel .TTrating-0-5,
+.qv-panel .TTrating-1-0,
+.qv-panel .TTrating-1-5,
+.qv-panel .TTrating-2-0,
+.qv-panel .TTrating-2-5,
+.qv-panel .TTrating-3-0,
+.qv-panel .TTrating-3-5,
+.qv-panel .TTrating-4-0,
+.qv-panel .TTrating-4-5,
+.qv-panel .TTrating-5-0 {
+  height: 15px;
+  width: 90px; }

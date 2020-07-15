@@ -1,0 +1,12 @@
+server: http://localhost:4224
+
+load:
+  - ../core/lzb.config.js
+  - ../core/jquery-1.11.1.js
+  - ../core/lzb.mediator.js
+  - ../modules/lzb.profile.js
+
+test:
+  - lzb.profile.tests.js
+
+timeout: 90

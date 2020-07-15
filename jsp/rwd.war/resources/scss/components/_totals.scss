@@ -1,0 +1,33 @@
+.totals {
+	font-weight: $bold;
+	display:table;
+	width:100%;
+
+	.total-row {
+		display:table-row;
+		@include font-size(14px);
+		@include rem-size(line-height, 16px);
+	}
+	.total-label, .total-amount {
+		display:table-cell;
+		text-align:right;
+		vertical-align:top;
+		padding: 4px 10px;
+
+	}
+	.note {
+		font-weight: $regular;
+		color: lighten($base-black, 40);
+		display:block;
+		margin:0;
+	}
+
+	.savings {
+		@include font-size(18px);
+	}
+	.total {
+		background: #666;
+		color: $base-white;
+		@include font-size(18px);
+	}
+}

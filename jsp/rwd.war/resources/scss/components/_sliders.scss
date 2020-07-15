@@ -1,0 +1,98 @@
+/* overall wrapper */
+.slider-container {
+	@include grid-row();
+	padding: 11px 0 14px;
+
+	/* overrides for product tile when in the slider */
+	.product-tile {
+		margin:10px;
+	}
+}
+
+//title bar above slick component
+.slider-title {
+	@include font-size(18px);
+	text-transform: uppercase;
+	margin-bottom:15px;
+	border-bottom:solid 1px $border-color;
+}
+
+// optional link to view all items
+.slider-link {
+	@include font-size(12px);
+	@include rem-size(padding-left, 8px);
+	font-weight: $regular;
+	line-height: 1;
+}
+/* wraps around slick component and keeps nav arrows from overhanging if arrows are to the left and right of slider
+(optional depending on arrow placement) */
+.slider-content {
+	margin: 0 40px;
+}
+
+/* PDP Main Product Images Slider
+   ========================================================= */
+.product-images .product-images-slider {
+	.slick-prev, .slick-next {
+		width: 30px !important;
+		height: 30px !important;
+	}
+	.slick-prev {
+		left: -30px !important;
+	}
+	.slick-next {
+		right: -30px !important;
+	}
+	.slick-prev:before, .slick-next:before {
+		font-size: 20px !important;
+	}
+	.slick-dots {
+		bottom: -20px !important;
+
+		li {
+			margin: 0px !important;
+		}
+	}
+}
+
+/* PDP Covers Slider
+   ========================================================= */
+.cover-selection-swatches, .option-cover-swatches {
+	.slick-prev, .slick-next {
+		width: 30px !important;
+		height: 30px !important;
+	}
+	.slick-prev {
+		left: -30px !important;
+	}
+	.slick-next {
+		right: -30px !important;
+	}
+	.slick-prev:before, .slick-next:before {
+		font-size: 20px !important;
+	}
+}
+
+/* Cross Sell Slider
+   ========================================================= */
+.cross-sell {
+	.slider-content {
+		margin: 0 30px !important;
+	}
+	.slick-slider {
+		margin-bottom: 0 !important;
+	}
+   	.slick-prev, .slick-next {
+   		width: 30px !important;
+   		height: 30px !important;
+   	}
+   	.slick-prev {
+   		left: -30px !important;
+   	}
+   	.slick-next {
+   		right: -30px !important;
+   	}
+   	.slick-prev:before, .slick-next:before {
+   		font-size: 20px !important;
+   	}
+}

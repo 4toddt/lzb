@@ -1,0 +1,39 @@
+/* Breadcrumbs
+   ========================================================= */
+.breadcrumbs {
+    @include rem-size(margin, 10px 0px);
+    @include rem-size(padding, 0px $outside-padding);
+    @include clearfix();
+
+	ul {
+		@include grid-row();
+		@include unlist();
+		display: block;
+
+        li:first-of-type .crumb {
+            padding-left: 0;
+        }
+	}
+	.crumb {
+        font-weight: $regular;
+        text-transform: capitalize;
+		color: $deep-gray;
+		display: inline-block;
+		float: $default-float;
+		@include rem-size(padding-left, 6px);
+        @include font-size(12px);
+        @include rem-size(line-height, 20px);
+	}
+	li:not(:first-of-type) .crumb:before {
+		font-family: 'lzb-icons';
+        content: "\e907";
+		display: inline-block;
+		@include rem-size(padding-right, 6px);
+        @include font-size(10px);
+		color: $medium-gray;
+        text-decoration: none;
+	}
+	.active {
+        color: $medium-gray;
+	}
+}

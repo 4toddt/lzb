@@ -1,0 +1,128 @@
+/* General: The Basics
+-------------------------------------------------------------- */
+html, body { height: 100%;}
+
+// Set box-sizing globally to handle padding and border widths
+*, *:before, *:after {@include box-sizing;}
+html, body { font-size: $base-font-size; }
+
+// Default body styles
+body {
+	background: #fff;
+	color: $base-font-color;
+	padding: 0;
+	margin: 0;
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	font-style: normal;
+	line-height: $base-line-height;
+	position: relative;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+	&:hover, &:focus {
+		color: lighten($link-color, 10);
+		text-decoration: underline;
+	}
+	&:active, &:hover {
+		outline: 0 none;
+	}
+}
+
+
+// Some img styles for responsive
+img {
+	max-width: 100%;
+	height: auto;
+	-ms-interpolation-mode: bicubic;
+	display: inline-block; // Get rid of gap under images by making them display: inline-block; by default
+	vertical-align: middle;
+}
+
+
+/* General: Forms
+-------------------------------------------------------------- */
+
+// Make sure textarea takes on height automatically
+textarea { height: auto; min-height: 50px; }
+
+// Make select elements 100% width by default
+select { width: 100%; }
+
+
+
+/* General: Typography
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+}
+h1 {
+	@include font-size(36px);
+	@include rem-size(line-height, 40px);
+}
+h2 {
+	@include font-size(28px);
+	@include rem-size(line-height, 30px);
+}
+h3 {
+	@include font-size(24px);
+	@include rem-size(line-height, 26px);
+}
+h4 {
+	@include font-size(18px);
+	@include rem-size(line-height, 22px);
+}
+h5 {
+	@include font-size(16px);
+	@include rem-size(line-height, 20px);
+	font-weight: $bold;
+}
+h6 {
+	@include font-size(14px);
+	@include rem-size(line-height, 18px);
+	font-weight: $bold;
+}
+.small {
+	@include font-size(12px);
+	@include rem-size(line-height, 18px);
+}
+
+/* General: Utility Classes
+-------------------------------------------------------------- */
+// Miscellaneous useful HTML classes
+.left { float: $default-float !important; }
+.right { float: $opposite-direction !important; }
+.clearfix { @include clearfix; }
+.hide {  display: none !important; }
+.align-center { text-align: center !important; }
+.sr-only {
+	@include sr-only;
+}
+.sr-only-focusable {
+	@include sr-only-focusable;
+}
+
+.hide-for-large {
+	@include media(large-up) {
+		display: none;
+	}
+}
+.hide-for-medium {
+	@include media(medium-up) {
+		display: none !important;
+	}
+}
+.hide-for-small {
+	display: none !important;
+	
+	@include media(medium-up) {
+		display: block !important;
+	}
+}
+
+
+
+

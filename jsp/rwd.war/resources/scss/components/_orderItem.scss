@@ -1,0 +1,19 @@
+.order-item, .checkout-order-item {
+	@include grid-row();
+}
+
+.item-image, .item-details, .item-price-subtotal, .item-shipping-options, .item-price-unit, .item-quantity {
+	@include grid-column();
+}
+
+.item-details {
+	.label {
+		font-weight:$bold;
+	}
+}
+
+.item-price-subtotal {
+	text-align: right;
+}
+
+// CHECKOUT ORDER ITEM STYLES ARE IN _checkout.scss

@@ -1,0 +1,468 @@
+/* My Account dashboard
+======================================================*/
+
+.account {
+	.account-two-column-container {
+		.account-two-column-left, 
+		.account-two-column-right {
+			@include rem-size(padding, 0px 10px);
+			width: 100%;
+		}
+		@include media(large-up) {
+			.account-two-column-left {
+				float: left;
+				width: 25%;
+			}
+			.account-two-column-right {
+				float: left;
+				width: 75%;
+			}
+		}
+	}
+	.section-title {
+		h1 {
+			text-transform: capitalize;
+			@include rem-size(font-size, 24px);
+    		font-weight: $bold;
+		}
+	}
+	.secondary-nav {
+		.nav-title {
+			font-weight: $bold;
+    		@include rem-size(margin-bottom, 10px);
+		}
+		ul {
+			background-color: $almost-white;
+		    border: $light-gray 1px solid;
+		    list-style-type: none;
+		    @include rem-size(margin-bottom, 30px);
+		    @include rem-size(padding, 4px 0px 0px 0px);
+		    
+		    li {
+		    	border-bottom: 1px solid $base-white;
+			    @include rem-size(line-height, 20px);
+			    @include rem-size(margin, 10px 10px 4px);
+			    @include rem-size(padding, 0px 10px 5px 0px);
+			    &:last-child {
+	    			border-bottom: none;
+	    		}
+			    span.icon {
+					float: right;
+				}
+		    }
+		}
+	}
+
+	.my-account-content {
+		@include rem-size(margin-bottom, 16px);
+	}
+	.content-options {
+		display: inline-block;
+		@include rem-size(padding, 20px);
+		background-color: $almost-white;
+		border: 1px solid $light-gray;
+		
+		.options-wrapper {
+			border-bottom: 1px solid $base-white;
+			@include rem-size(margin, 10px 0px);
+			&:last-child {
+    			border-bottom: none;
+    		}
+			span.icon {
+				float: right;
+			}
+		}
+	}
+	@include media(medium-up){
+		.content-options {
+			background-color: $base-white;
+			.options-wrapper {
+				border-bottom: none;
+				width: 50%;
+    			float: left;
+    			min-height: 130px;
+				span.icon {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	input,
+	select {
+   		height: 45px;
+		@include rem-size(border-radius, 4px);
+		border: 1px solid $light-gray;
+    }
+    .button {
+    	text-transform: uppercase;
+    }
+	
+	/* profile form section
+	======================================================*/
+	.profile-account-content {
+		h2 {
+			@include rem-size(font-size, 16px);
+			font-weight: $bold;
+		}
+		p {
+			@include rem-size(font-size, 14px);
+		}
+		.button {
+			width: 100%;
+		}
+		.change-email,
+		.change-password {
+			width: 100%;
+			.dropdown-menu {
+				position: relative;
+				border: none;
+			}
+		}
+	}
+	
+	/* deactivate account section
+	======================================================*/
+	.deactivate-account-content {
+		@include rem-size(margin-bottom, 10px);
+		.text-area {
+			display: none;
+		}
+		h2 {
+			@include rem-size(font-size, 16px);
+			font-weight: $bold;
+		}
+		p {
+			@include rem-size(font-size, 14px);
+		}
+		.button {
+			width: 48%;
+		}
+		input.button {
+			@include rem-size(margin-left, 13px);
+		}
+	}
+}
+
+/* sign up form section
+	======================================================*/
+.required-note {
+	color: $red;
+}
+
+.sign-up-benefit {
+	display: block;
+	.icon-arrow-down {
+		vertical-align: middle;
+		@include rem-size(margin-left, 5px);
+	}
+	.dropdown-menu {
+		border: none;
+		position: relative;
+	}
+	.member-benefits {
+	    @include rem-size(margin-top, 12px);
+	    @include rem-size(padding, 16px);
+	    background: $almost-white;
+	    h2 {
+	    	@include rem-size(margin, 0px);
+	    }
+	    ul {
+	    	@include rem-size(padding, 0px 12px);
+	    }
+	}
+}
+.signup-form-section {
+	 @include rem-size(margin, 10px 16px);
+	 label[for=ZipCode],
+	 label[for=promoCheck] {
+	 	display: inline-block;
+	 }
+	 .custom-checkbox {
+	 	span {
+	 		display: inline-block;
+	 		&:first-child {
+	 			@include rem-size(margin-left, -16px);
+	 		}
+	 	}
+	 }
+	input {
+   		height: 45px;
+		@include rem-size(border-radius, 4px);
+    }
+	.createuser {
+		width: 100%;
+	}
+	.field-group {
+		.icon-info {
+			@include font-size(16px);
+		}
+		.has-tip.icon-info:before {
+		    color: $base-gray;
+		}
+	}
+}
+
+/* peferred store section
+	======================================================*/
+.preferredStore {
+	.store-results-list {
+		.make-this-store {
+			width: 100%;
+		}
+		li {
+			&:first-child {
+				border: none;
+			}
+		}
+	}
+}
+.preferred-store-container {
+	h2,h3 {
+		@include font-size(16px);
+		font-weight: $bold;
+	}
+	p {
+		@include font-size(14px);
+		@include rem-size(line-height, 16px);
+	}
+	.preferred-store-address {
+		.button {
+			width: 100%;
+		}
+	}
+	.find-more-stores {
+		.field-error-text {
+			display: inline-block;
+			width: 100%;
+		}
+		input {
+			float: left;
+		}
+		.zipcode {
+			width: 70%;
+		}
+		input[type=submit] {
+			width: 28%;
+			position: absolute;
+			top: 25px;
+			right: 0px;
+		}
+	}
+}
+
+/* wishlist section
+	======================================================*/
+.wish-list {
+	.order-item-section {
+		width: 33.333%;
+		float: left;
+	}
+	.wish-list-actions {
+		a {
+			font-weight: $bold;
+			text-transform: uppercase;	
+		}
+	}
+}
+.wish-list-content {
+	h2 {
+		@include font-size(16px);
+		font-weight: $bold;
+	}
+	p {
+		@include font-size(14px);
+	}
+	.wishlist-update {
+		.field-error-text {
+			display: inline-block;
+			width: 100%;
+		}
+		input {
+			float: left;
+		}
+		.zipCode {
+			width: 70%;
+		}
+		.updateZipCodeBtn {
+			position: absolute;
+			top: 25px;
+			right: 0px;
+			width: 28%;
+		}
+	}
+	.order-item {
+		border-top: 1px solid $almost-black;
+    	@include rem-size(padding, 10px 0px);
+    	&:last-child {
+    		border-bottom: 1px solid $almost-black;
+    	}
+		.item-action-links {
+			a {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+}
+/*
+.wishlist-item-share-modal {
+	ul {
+		list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+    	li {
+    		border-bottom: 1px solid #CCC;
+    		list-style-type: none;
+    		@include rem-size(margin, 10px 0px);
+    		@include rem-size(padding-bottom, 5px);
+    		a {
+    			@include rem-size(line-height, 35px);
+    			vertical-align: top;
+    			.icon {
+    				float: right;
+    			}
+    		}
+    	}
+	}
+}	*/
+
+
+/* save cover section
+	======================================================*/
+.save-cover {
+	.cover-item {
+		width: 100%;
+		border-top: 1px $light-gray solid;
+    	@include rem-size(margin-top, 20px);
+    	@include rem-size(padding-top, 15px);
+    	display: flex;
+    	&:last-child {
+    		border-bottom: 1px $light-gray solid;
+    		@include rem-size(padding-bottom, 15px);
+    	}
+    	.item-image {
+    		width: 30%;
+    		text-align: center;
+    	}
+    	.item-details {
+    		width: 60%;
+    	}
+	}
+}
+
+/* Order History section
+	======================================================*/
+.order-history {
+	.order-history-container {
+		.highlight {
+			font-weight: $bold;
+		}
+		.order-messages,
+		.order-history-details {
+			@include font-size(14px);
+		}
+		.order-history-headers {
+			h2 {
+				@include font-size(20px);
+    			font-weight: $bold;
+    			@include rem-size(margin, 0px);
+			}
+		}
+		.order-history-details {
+			.order-item {
+				@include rem-size(padding, 10px);
+				border-top: 1px solid $light-gray;
+
+				.generic-status {
+					@include rem-size(margin-bottom, 10px);
+				}
+
+				.item-action-links {
+					@include rem-size(padding, 10px 0px);
+					.view-order-details {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* Order Details section
+	======================================================*/
+.order-details {
+	h1 {
+		@include font-size(24px);
+		font-weight: $bold;
+	}
+	.order-details-content {
+        span,
+        .price {
+			@include font-size(14px);
+		}
+		p {
+			@include font-size(14px);
+	    	@include rem-size(line-height, 24px);
+	    	@include rem-size(margin, 0px);
+		}
+		.highlight {
+			font-weight: $bold;
+		}
+		.order-items-header,
+		.shipping-header,
+        .special-delivery-header,
+        .billing-header,
+		.payment-header {
+			@include rem-size(padding, 10px 0px);
+			font-weight: $bold;
+			text-transform: uppercase;
+		}
+		.payment-to-info-block {
+			p {
+				@include rem-size(margin-right, 20px);
+				display: inline-block;
+			}
+		}
+		.order-info {
+			.order-items-header {
+				border-bottom: 1px solid $light-gray;
+			}
+		}
+		.order-history-items {
+			.item-image {
+				width: 30%;
+			}
+			.item-details {
+				width: 70%;
+			}
+			.order-item {
+                border-bottom: 1px solid $light-gray;
+                @include rem-size(padding-bottom, 10px);
+			}
+		}
+		.back-to-history {
+			@include rem-size(margin-top, 16px);
+			@include font-size(14px);
+			.icon {
+				@include font-size(12px);
+			}
+		}
+	}
+}
+	
+.social-share {
+	@include rem-size(margin, 20px);
+	.button {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.shareby {
+	@include rem-size(margin, 20px);
+
+}
+
+	

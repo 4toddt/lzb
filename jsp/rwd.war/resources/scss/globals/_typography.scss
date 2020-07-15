@@ -1,0 +1,103 @@
+// Globals folder is reserved for things like mixin declarations, functions & variables.
+// Please do NOT use this folder for declaring Sass code that actually outputs CSS.
+
+// Typography definitions
+/* Webfont: OpenSans-Regular */
+@font-face {
+	font-family: 'OpenSans';
+	src:	url('../fonts/open-sans/OpenSans-Regular.eot');
+	src:	url('../fonts/open-sans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/open-sans/OpenSans-Regular.woff') format('woff'),
+	url('../fonts/open-sans/OpenSans-Regular.ttf') format('truetype'),
+	url('../fonts/open-sans/OpenSans-Regular.svg#OpenSansRegular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* Webfont: OpenSans-Italic */
+@font-face {
+	font-family: 'OpenSans';
+	src:	url('../fonts/open-sans/OpenSans-Italic.eot');
+	src:	url('../fonts/open-sans/OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/open-sans/OpenSans-Italic.woff') format('woff'),
+	url('../fonts/open-sans/OpenSans-Italic.ttf') format('truetype'),
+	url('../fonts/open-sans/OpenSans-Italic.svg#OpenSansRegular') format('svg');
+	font-weight: 400;
+	font-style: italic;
+}
+
+/* Webfont: OpenSans-Light */
+@font-face {
+	font-family: 'OpenSans';
+	src:	url('../fonts/open-sans/OpenSans-Light.eot');
+	src:	url('../fonts/open-sans/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/open-sans/OpenSans-Light.woff') format('woff'),
+	url('../fonts/open-sans/OpenSans-Light.ttf') format('truetype'),
+	url('../fonts/open-sans/OpenSans-Light.svg#OpenSansRegular') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+/* Webfont: OpenSans-LightItalic */
+@font-face {
+	font-family: 'OpenSans';
+	src:	url('../fonts/open-sans/OpenSans-LightItalic.eot');
+	src:	url('../fonts/open-sans/OpenSans-LightItalic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/open-sans/OpenSans-LightItalic.woff') format('woff'),
+	url('../fonts/open-sans/OpenSans-LightItalic.ttf') format('truetype'),
+	url('../fonts/open-sans/OpenSans-LightItalic.svg#OpenSansRegular') format('svg');
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* Webfont: OpenSans-Semibold */
+@font-face {
+	font-family: 'OpenSans';
+	src:	url('../fonts/open-sans/OpenSans-Semibold.eot');
+	src:	url('../fonts/open-sans/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/open-sans/OpenSans-Semibold.woff') format('woff'),
+	url('../fonts/open-sans/OpenSans-Semibold.ttf') format('truetype'),
+	url('../fonts/open-sans/OpenSans-Semibold.svg#OpenSansRegular') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+
+/* Webfont: OpenSans-Bold */
+@font-face {
+	font-family: 'OpenSans';
+	src:	url('../fonts/open-sans/OpenSans-Bold.eot');
+	src:	url('../fonts/open-sans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/open-sans/OpenSans-Bold.woff') format('woff'),
+	url('../fonts/open-sans/OpenSans-Bold.ttf') format('truetype'),
+	url('../fonts/open-sans/OpenSans-Bold.svg#OpenSansRegular') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+// Font weights //
+$light: 100;
+$medium-light: 300;
+$regular: 400;
+$bold: 600;
+$heavy-bold: 700;
+
+// Base font defintions //
+$base-font-family: 'OpenSans', helvetica, sans-serif;
+$form-font-family: 'OpenSans', helvetica, sans-serif;
+$price-font-family: montserrat, sans-serif;
+$base-font-weight: $regular;
+
+// The default font-size is set to 100% of the browser style sheet (usually 16px)
+// for compatibility with browser-based text zoom or user-set defaults.
+
+// Since the typical default browser font-size is 16px, that makes the calculation for grid size.
+// If you want your base font-size to be different and not have it affect the grid breakpoints,
+// set $rem-base to $base-font-size and make sure $base-font-size is a px value.
+$base-font-size: 100% !default;
+
+// $base-line-height is 24px while $base-font-size is 16px
+$base-line-height: 150% !default;
+
+// Headings //
+$heading-font-weight: $regular;
+$heading-font-family: $base-font-family;

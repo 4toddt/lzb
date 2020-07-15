@@ -1,0 +1,10 @@
+<dsp:page>
+	<div class="wish-list-empty">
+		<div class="wish-list-empty-message">
+			<p>
+				<fmt:message key="account.wishlist.noWishlistItemsMsg" />
+			</p>
+			<a href="/mobile" class="button primary"><fmt:message key="account.wishlist.continueShoppingLbl" /></a>
+		</div>
+	</div>
+</dsp:page>

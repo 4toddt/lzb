@@ -1,0 +1,16 @@
+<div class="mini-cart-expanded">
+	<div class="mini-cart-item-count"><span class="count-number">##</span> items in your cart.</div>
+	<div class="mini-cart-item-list">
+		<c:forEach begin="0" end="2" varStatus="loop">
+			<%@ include file="/documentation/fragments/miniOrderItem.jspf" %>
+		</c:forEach>
+	</div>
+	<%-- end mini cart item list--%>
+
+	<div class="mini-cart-footer">
+		<div class="mini-cart-adspace">
+			<img src="http://placehold.it/140x150">
+		</div>
+		<%@ include file="/documentation/fragments/miniCartTotals.jspf" %>
+	</div>
+</div>

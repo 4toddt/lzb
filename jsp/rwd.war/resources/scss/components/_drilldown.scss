@@ -1,0 +1,225 @@
+/* only use styles in here that you want to apply to all drilldowns on the site. Otherwise contextually style
+(ex: .parentClass .drilldown-menu) or add addtional classes to the drilldown element. */
+
+.drilldown-menu {
+    display: block;
+    overflow: hidden;
+    opacity: 1;
+    z-index: 999;
+    position: relative;
+}
+
+// Menu treatment
+.drilldown-list {
+    // position: relative;
+    padding: 0;
+    margin: 0;
+
+    a:not(.button) {
+        color: $link-color;
+        display: block;
+        @include rem-size(padding, 20px 15px);
+        border-bottom: 1px solid $base-gray;
+        text-decoration: none;
+    }
+    li {
+        list-style-type: none;
+        color: $base-black;
+
+        &.back a {
+    	    background-color: $light-gray;
+            font-weight: $bold;
+            border: none;
+            .icon-arrow-left {
+                display: inline;
+            }
+        }
+
+        &.active > .submenu {
+            right: 0;
+        }
+    }
+    // Sub Menu animation
+    .submenu {
+        padding: 0;
+        background-color: $base-white;
+        height: auto;
+        position: absolute;
+        right: -100%;
+        top: 0;
+        transition: all 0s ease 0s; /* DMI-2076: Remove Menu Animations (original setting: 0.5s, 0s) */
+        width: 100%;
+        z-index: 999;
+
+        .link-group {
+            @include rem-size(margin-bottom, 20px);
+            h4 {
+                @include font-size(14px);
+                @include rem-size(margin, 15px 15px 0px);
+            }
+            .link-group-list {
+                @include rem-size(margin, 8px 15px);
+                &.link-group-nh {
+                    li {
+                        border: none;
+                        a {
+                            color: $brand-blue;
+                        }
+                    }
+                }
+            }
+            .nav-content-list {
+                padding: 0;
+                margin-top: 0;
+                a {
+                    @include rem-size(padding, 15px 0px 8px);
+                }
+            }
+        }
+        .bottomPromo {
+            .image-link {
+                padding: 0;
+                width: 100%;
+                text-align: center;
+                border: none;
+                img {
+                    @include rem-size(height, 300px);
+                    @include rem-size(width, 270px);
+                }
+            }
+        }
+    }
+}
+
+// for off canvas override styling
+.drilldown-list.off-canvas-list {
+    li {
+        &.back a {
+    		color: $base-black;
+            font-weight: $bold;
+    		@include font-size(14px);
+    		@include rem-size(line-height, 22px);
+    		@include rem-size(padding, 0px 10px 10px);
+
+            .icon-arrow-left {
+                color: $link-color;
+                @include rem-size(padding-right, 5px);
+            }
+        }
+        &.has-submenu {
+            ul.secondary-submenu {
+                visibility: hidden;
+            }
+            &.active {
+                ul.secondary-submenu {
+                    visibility: visible;
+                }
+            }
+        }
+        &:not(.has-submenu){
+            &.mega-variant-sale {
+                font-weight: $bold;
+                text-transform: uppercase;
+                span.icon {
+                	display: none;
+            	}
+            }
+        }
+    }
+}
+
+.mobile-secondary-nav {
+    .drilldown-list.off-canvas-list {
+        li {
+            &.back a {
+                @include rem-size(padding, 10px);
+            }
+        }
+    }
+}
+
+/* Mobile Top Nav
+   ========================================================= */
+.drilldown-menu.mobile-top-nav {
+    .nav-content-list {
+        @include rem-size(padding, 0px 15px);
+
+        h3 {
+            @include font-size(14px);
+            @include rem-size(line-height, 18px);
+            @include rem-size(padding, 10px 0px);
+            border-bottom: 1px solid $light-gray;
+            margin: 0;
+        }
+        a {
+            border: none;
+            @include rem-size(padding, 15px 0px);
+
+        }
+        p {
+            margin: 0;
+            color: $medium-gray;
+            @include font-size(12px);
+    		@include rem-size(line-height, 14px);
+        }
+        .view-all {
+            @include rem-size(margin-top, 10px);
+        }
+        .features {
+            ul li {
+                @include rem-size(margin, 10px 0px);
+            }
+            a {
+                @include rem-size(padding, 14px 0px 8px 0px);
+            }
+
+        }
+        .shop-by {
+            @include rem-size(margin-top, 25px);
+
+            ul {
+                @include rem-size(margin, 8px 0px);
+            }
+            a {
+                @include rem-size(padding, 12px 0px);
+            }
+        }
+        .nav-content-slot {
+            a {
+                @include rem-size(padding, 0px 0px 15px 0px);
+            }
+        }
+    }
+}
+/* Mobile Utility Nav
+   ========================================================= */
+.drilldown-menu.mobile-utility-nav {
+    .off-canvas-list {
+        li:first-of-type {
+            border-top: none;
+            margin-top: 0;
+        }
+    }
+    .mobile-my-account-link {
+        @include rem-size(margin-top, 10px);
+    }
+    .utility-link {
+        color: $medium-gray;
+        font-weight: $regular;
+        border: none;
+        @include font-size(12px);
+        @include rem-size(line-height, 14px);
+        @include rem-size(padding, 10px 15px);
+
+        .icon-globe {
+            position: relative;
+            color: $medium-gray;
+            @include rem-size(top, 2px);
+            @include font-size(14px);
+            @include rem-size(padding-right, 5px);
+        }
+        .icon-arrow-right {
+            color: $link-color;
+        }
+    }
+}

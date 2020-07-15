@@ -1,0 +1,759 @@
+/* Static Pages
+========================================================= */
+.static-content {
+	.section-row {
+		@include rem-size(padding-top, 0px);
+	}
+	h1{
+		@include font-size(20px);
+	}
+	p {
+		@include font-size(14px);
+	}
+}
+
+/* Store Pages
+========================================================= */
+.store-locator {
+	.section-title {
+		h1 {
+			text-transform: capitalize;
+			@include font-size(24px);
+    		font-weight: $bold;
+		}
+	}
+	h2 {
+		@include font-size(18px);
+		font-weight: $bold;
+	}
+	p {
+		@include font-size(14px);
+		@include rem-size(line-height, 16px);
+	}
+	input {
+   		height: 45px;
+		@include rem-size(border-radius, 4px);
+		border: 1px solid $light-gray;
+    }
+}
+.store-locator-left {
+	@include grid-column(12);
+	.store-pref-address {
+		width: 100%;
+		@include rem-size(padding, 16px);
+		background: $almost-white;
+		h2 {
+			@include rem-size(margin, 0px 0px 10px 0px);
+		}
+		.actions {
+			display: inline-block;
+			width: 100%;
+			.button {
+				width: 48%;
+				float: left;
+			}
+			.get-direct {
+				@include rem-size(margin-left, 10px);
+			}
+			.make-appt {
+				width: 100%;
+				@include rem-size(margin-top, 10px);
+				@include rem-size(margin-left, 0px);
+			}
+		}
+	}
+	.store-locator-form {
+		.field-error-text {
+			display: inline-block;
+			width: 100%;
+		}
+		input {
+			float: left;
+			width: 70%;
+		}
+		.button {
+			width: 28%;
+    		position: absolute;
+    		top: 85px;
+    		right: 0px;
+		}
+	}
+}
+.store-pref-address,
+.store-location-results {
+	.actions {
+		display: inline-block;
+		width: 100%;
+		.button {
+			width: 48%;
+			float: left;
+		}
+		.get-direct {
+			@include rem-size(margin-left, 10px);
+		}
+		.make-appt {
+			width: 100%;
+			@include rem-size(margin-top, 10px);
+			@include rem-size(margin-left, 0px);
+		}
+		.large {
+			width: 100%;
+		}
+	}
+}
+.store-location-results {
+	h3 {
+		@include font-size(16px);
+   		color: $brand-blue-secondary;
+	}
+	ul {
+		@include grid-row();
+		@include unlist();
+		li {
+			border-top: 1px solid $light-gray;
+		}
+	}
+	.make-this-store {
+		@include rem-size(margin, 10px 0px);
+	}
+}
+
+.your-store {
+	@include font-size(12px);
+	@include rem-size(padding, 10px 30px);
+    background-color: $medium-blue;
+    color: $base-white;
+    position: relative;
+    clear: both;
+    .your-store-link,
+    .more {
+    	color: $base-white;
+    }
+    .address {
+    	@include rem-size(margin, 10px 50px 20px);
+    	@include rem-size(line-height, 24px);
+    	.title {
+    		@include font-size(16px);
+    		font-weight: $bold;
+    	}
+    	.icon {
+    		@include font-size(40px);
+    		position: absolute;
+    	}
+    	.icon-locator {
+    		left: 35px;
+    		top: 25px;
+    	}
+    	.icon-arrow-right {
+    		right: 30px;
+    		top: 30%;
+    	}
+    }
+    .more {
+    	@include rem-size(margin-bottom, 10px);
+    	border-bottom: 1px solid $base-white;
+    	display: block;
+    	position: relative;
+    	text-align: center;
+    	span {
+    		background-color: $medium-blue;
+    		display: inline-block;
+    		position: relative;
+    		@include rem-size(padding, 2px 10px);
+    		bottom: -0.75rem;
+    	}
+    }
+    .btn-tel {
+    	border: 2px solid $base-white;
+    }
+    .btn-tel,
+    .get-direct {
+    	@include rem-size(line-height, 16px);
+    	width: 48%;
+    }
+}
+
+/* contactus Page
+========================================================= */
+.contact-tabs {
+	@include font-size(14px);
+	@include block-grid(
+		$per-row: 1,
+		$spacing: 0px,
+		$base-style: true
+	);
+	li {
+		width: 100%;
+		@include rem-size(padding, 16px 0px);
+	    border-top: 1px solid $dark-gray;
+	    display: inline-block;
+	    position: relative;
+	}
+	span {
+		display: block;
+		@include rem-size(line-height, 16px);
+	}
+	span.icon-arrow-right {
+		position: absolute;
+	    right: 0;
+	    top: 35%;
+	}
+}
+
+/* Catalog Request Page
+========================================================= */
+.catalog-request-content {
+	@include rem-size(padding, 15px 0px 0px);
+	
+	.alert-box {
+		margin-top: 0;
+	}
+	
+	.head-copy {
+		background-color: $sky-blue;
+		text-align: center;
+		color: $base-white;
+		width: 80%;
+		margin: auto;
+		@include rem-size(padding, 10px 20px 70px);
+		@include rem-size(margin-bottom, -80px);
+		@include rem-size(margin-top, 8px);
+		
+		h1 {
+			border-bottom: 10px solid;
+			border-image-slice: 33.33333%;
+			border-image-repeat: repeat;
+			border-image-source: url('https://content.la-z-boy.com/Images/npc/dotted-border-white.svg');
+			@include font-size(25px);
+			font-family: Archer A, Archer B, Archer, 'Lato', serif;
+			font-weight: $bold;
+			@include rem-size(padding-bottom, 5px);
+			margin-bottom: 0;
+		}
+		p {
+			@include font-size(15px);
+			@include rem-size(line-height, 22px);
+			font-family: 'Lato', serif;
+			@include rem-size(margin-top, 12px);
+		}
+	}
+	.catalog-option-container {
+		background-color: $gray-background;
+		overflow: hidden;
+		@include rem-size(margin, 25px -15px 20px);
+		@include rem-size(padding, 20px 15px 12px);
+		color: $almost-black;
+		
+		.catalog-image {
+			margin: 0 auto;
+			width: 35%;
+			clear: both;
+			
+			p {
+				text-align: center;
+				@include rem-size(margin-top, 5px);
+				margin-bottom: 0;
+				@include font-size(13px);
+			}
+		}
+		.catalog-option-content {
+			width: 100%;
+			margin: 0 auto;
+			@include font-size(18px);
+			font-family: 'Lato', serif;
+			text-align: center;
+			float: left;
+			@include rem-size(margin-bottom, 10px);
+		}
+		.catalog-options {
+			@include rem-size(margin-top, 18px);
+			@include rem-size(padding-top, 12px);
+			@include rem-size(padding-left, 2px);
+			border-top: 10px solid;
+			border-image-slice: 33.33333%;
+			border-image-repeat: repeat;
+			border-image-source: url('https://content.la-z-boy.com/Images/npc/border.svg');
+			text-align: left;
+			
+			.custom-radio {
+				@include rem-size(padding-bottom, 10px);
+				@include rem-size(padding-left, 5px);
+			}
+			
+			label {
+				@include font-size(16px);
+			}
+		}
+	}
+	.instructions {
+		color: $almost-black;
+		@include font-size(15px);
+		@include rem-size(line-height, 18px);
+		
+		.required-label {
+			color: $medium-blue;
+		}
+	}
+	#catalogRequestForm {
+		@include rem-size(margin-top, 35px);
+		font-family: 'Lato', serif;
+		color: $almost-black;
+		
+		.move-label~ label {
+			color: $almost-black;
+		}
+		
+		.required-label {
+			color: $brand-blue;
+		}
+		.field-group {
+			@include rem-size(margin-bottom, 25px);
+			
+			&:first-of-type {
+				@include rem-size(margin-top, 20px);
+			}
+		}
+		.field {
+			width: 100%;
+			padding: 0;
+			
+			@include media(medium-up) {
+				width: 50%;
+				@include rem-size(padding, 0px 8px);
+				margin-bottom: 0;
+			}
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				@include rem-size(margin-top, 25px);
+				
+				@include media(medium-up) {
+					margin-top: 0;
+					padding-right: 0;
+				}
+			}
+		}
+		input[type="text"], input[type="password"], input[type="email"], input[type="tel"], textarea {
+			color: $almost-black;
+		}
+		p {
+			@include rem-size(margin-bottom, 5px);
+		}
+		select {
+			color: $almost-black;
+		}
+		.custom-checkbox {
+			@include rem-size(margin-top, 30px);
+			
+			input[type="checkbox"] {
+				width: 14px;
+				height: 14px;
+				margin-left: 0;
+			}
+			
+			label {
+				@include rem-size(margin-left, 30px);	
+				color: $almost-black;
+				
+				&:before {
+					@include font-size(18px);
+					@include rem-size(margin-left, 5px);
+					@include rem-size(margin-top, 5px);		
+				}
+			}
+		}
+		.custom-radio {
+			@include rem-size(padding-bottom, 5px);		
+			
+			label {
+				color: $almost-black;
+			}
+		}
+		.submit-btn {
+			margin-left: 0;
+			@include font-size(22px);
+			font-weight: $bold;
+			font-family: 'Lato', serif;
+			width: 100%;
+		}
+		.radio-group {
+			margin-bottom: 0;
+			@include rem-size(margin-top, 20px);
+			
+			&:focus {
+				outline: none;
+				@include box-shadow(0px, 0px, 4px, $primary-color);
+			}
+			
+			&.error {
+				color: #666666;
+				border: solid 2px $alert-color;
+			
+				&:focus {
+					@include box-shadow(0px, 0px, 4px, $alert-color);
+					border-color: darken($alert-color, 10);
+				}
+			}
+			
+			label {
+				@include font-size(16px);
+			}
+		}
+	}
+}
+
+/* New Contact Us Page
+========================================================= */
+.contact-us-content {
+	@include rem-size(padding, 0px 5px);
+	
+	.floating-label-form {
+		@include media(medium-up) {
+			float: left;
+			width: 70%;
+			padding-right: 5%;
+		}
+	}
+	.more-info-container {
+		@include media(medium-up) {
+			float: left;
+			width: 30%;
+			@include rem-size(padding-left, 20px);
+			border-left: 1px solid $light-gray;
+		}
+	}
+	.details-text, .thank-you-text, .more-info-text {
+		@include font-size(14px);
+		@include rem-size(line-height, 24px);
+		color: $medium-gray;
+		text-align: center;
+			
+		@include media(medium-up) {
+			text-align: left;
+		}
+	}
+	.thank-you-text, .more-info-text {
+		color: $almost-black;
+	}
+	.thank-you-text {
+		border-top: 1px solid $light-gray;
+		@include rem-size(padding-top, 5px);
+		@include rem-size(margin, 0px 5px);
+		
+		@include media(medium-up) {
+			text-align: center;
+		}
+	}
+	.more-info-text {
+		@include rem-size(margin, 48px 10px 17px);
+		
+		@include media(medium-up) {
+			@include rem-size(margin-top, 14px);
+			margin-left: 0;
+		}
+	}
+	.live-help-container {
+		text-align: center;
+		
+		@include media(medium-up) {
+			text-align: left;
+		}
+		
+		h2 {
+			@include font-size(22px);
+			@include rem-size(margin, 30px 0px 20px);
+			font-weight: $light;
+		}
+		h3 {
+			@include font-size(15px);
+			font-weight: $bold;
+			@include rem-size(margin, 10px 0px);
+		}
+		.phone-number-text {
+			@include rem-size(margin, 0px 5px);
+			border-bottom: 1px dashed $light-gray;
+			@include rem-size(padding-bottom, 10px);
+		}
+		.dsr-link {
+			h3 {
+				color: $base-font-color;
+				
+				&:after {
+					font-family: 'lzb-icons';
+        			content: "\e907";
+					display: inline-block;
+					@include rem-size(padding-left, 6px);
+        			@include font-size(10px);
+        			text-decoration: none;
+				}
+			}
+		}
+	}
+	#contactusForm {
+		.required-label {
+			color: $brand-blue;
+		}
+		.field {
+			width: 100%;
+			padding: 0;
+			
+			@include media(medium-up) {
+				width: 50%;
+				margin-bottom: 0;
+			}
+			&:first-child {
+				@include media(medium-up) {
+					@include rem-size(padding-right, 16px);
+				}
+			}
+			&:last-child {
+				@include rem-size(margin-top, 12px);
+				
+				@include media(medium-up) {
+					margin-top: 0;
+				}
+			}
+		}
+		.comments-textarea {
+			margin-bottom: 0;
+		}
+		.comments-box {
+			height: 100px;
+		}
+		.characterLimitWarning {
+			margin-top: 0;
+			color: $medium-gray;
+			@include font-size(11px);
+		}
+		.captcha-container {
+			@include rem-size(margin-bottom, 10px);	
+			p {
+				@include rem-size(margin-top, 5px);	
+				@include rem-size(margin-bottom, 5px);	
+				@include font-size(16px);
+				color: $medium-gray;
+			}
+		}
+		.custom-select {
+			&.disabled {
+				opacity: 0.4;
+			}
+		}
+		.custom-checkbox {
+			input[type="checkbox"] {
+				width: 14px;
+				height: 14px;
+				margin-left: 0;
+			}
+			
+			label {
+				@include rem-size(margin-left, 30px);	
+				
+				&:before {
+					@include font-size(18px);
+					@include rem-size(margin-left, 5px);
+					@include rem-size(margin-top, 5px);		
+				}
+			}
+		}
+		.submit-btn {
+			width: 100%;
+			@include rem-size(margin, 20px 0px);	
+			
+			@include media(medium-up) {
+				float: left;
+				width: 50%;
+			}
+		}
+		.form-reset {
+			width: 100%;
+			text-align: center;
+			display: block;
+			
+			@include media(medium-up) {
+				float: left;
+				width: 50%;
+				@include rem-size(margin, 20px 0px);
+				@include rem-size(line-height, 27px);
+				@include rem-size(padding, 8px 0px);
+			}
+		}
+	}
+} 
+
+/* Data Subject Rights Request Page
+========================================================= */
+.dsr-content {
+	@include rem-size(padding, 0px 5px);
+	
+	.floating-label-form {
+		@include media(medium-up) {
+			float: left;
+			width: 70%;
+			padding-right: 5%;
+		}
+	}
+	.details-text, .thank-you-text {
+		@include font-size(14px);
+		@include rem-size(line-height, 24px);
+		color: $medium-gray;
+	}
+	.thank-you-text {
+		color: $almost-black;
+		border-top: 1px solid $light-gray;
+		@include rem-size(padding-top, 5px);
+		@include rem-size(margin, 0px 5px);
+	}
+	#dsrForm {
+		font-family: 'Lato','Open Sans',sans-serif;
+		
+		.required-label {
+			color: $brand-blue;
+		}
+		p {
+			@include font-size(15px);
+			color: $light-black;
+		}
+		h2 {
+			color: $light-black;
+		}
+		h3 {
+			margin-bottom: 0;
+			
+			+ p {
+				margin-top: 0;
+			}
+		}
+		.text {
+			position: relative;
+			
+			textarea {
+				height: 100px;
+			}
+		}
+		.field {
+			width: 100%;
+			padding: 0;
+			
+			@include media(medium-up) {
+				width: 50%;
+				margin-bottom: 0;
+			}
+			&:first-child {
+				@include media(medium-up) {
+					@include rem-size(padding-right, 16px);
+				}
+			}
+			&:last-child {
+				@include rem-size(margin-top, 12px);
+				
+				@include media(medium-up) {
+					margin-top: 0;
+				}
+			}
+		}
+		.field-group {
+			&.last-row {
+				@include rem-size(margin-bottom, 20px);
+			}
+		}
+		.custom-radio {
+			@include rem-size(padding-bottom, 5px);
+			
+			label {
+				cursor: pointer;
+				@include font-size(15px);
+				font-weight: $medium-light;
+				color: $almost-black;
+			}
+		}
+		.type-of-request {
+			&:focus {
+				outline: none;
+			}
+		}
+		.type-of-data {
+			.custom-checkbox {
+				@include rem-size(padding-bottom, 10px);
+				
+				label {
+					color: $almost-black;
+					@include font-size(15px);
+				}
+			}
+		}
+		.additional-data {
+			@include rem-size(margin-bottom, 15px);
+		}
+		.add-more-row {
+			@include rem-size(margin-top, -10px);
+			@include rem-size(margin-bottom, 20px);
+			@include font-size(14px);
+		}
+		.add-icon {
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			@include rem-size(margin-right, 5px);
+			text-align: center;
+			@include font-size(18px);
+			@include rem-size(line-height, 14px);
+			@include rem-size(border-radius, 3px);
+			color: $base-white;
+			background-color: $medium-blue;
+		}
+		.captcha-container {
+			@include rem-size(margin-bottom, 10px);
+		}
+		.legal-consent {
+			@include rem-size(margin-bottom, 20px);
+			
+			label {
+				color: $light-black;
+				@include font-size(15px);
+			}
+		}
+		.characterLimitWarning {
+			@include font-size(13px);
+			margin-top: 0;
+		}
+		.submit-btn {
+			width: 100%;
+			@include font-size(20px);
+		}
+	}
+}	
+
+/* Cust support page
+========================================================= */
+.static-content {
+	h2 {
+		@include font-size(18px);
+		@include rem-size(line-height, 24px);
+	}
+	h3 {
+		@include font-size(16px);
+		@include rem-size(line-height, 24px);
+		font-weight: $bold;
+	}
+}
+body.mobile-site {
+	section.cust-support {
+    	iframe {
+			height: 500px;
+    	}
+	}
+	.page-redirect-modal {
+		@include rem-size(padding, 0px 10px);
+		.orange-button {
+			@include rem-size(padding, 5px);
+			@include rem-size(margin-right, 10px);
+		}
+	}
+}
+.icon-close {
+	#pageRedirectModal & {
+		@include font-size(12px);
+	}
+}

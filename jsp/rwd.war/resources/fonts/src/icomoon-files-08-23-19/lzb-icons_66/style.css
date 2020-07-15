@@ -1,0 +1,60 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-lzb-logo-tagline {
+  width: 3.849609375em;
+}
+
+.icon-lzb-logo {
+  width: 6.5458984375em;
+}
+
+.icon-youtube-play-square {
+  width: 0.875em;
+}
+
+.icon-email-square {
+  width: 0.875em;
+}
+
+.icon-houzz-square {
+  width: 0.875em;
+}
+
+.icon-instagram-square {
+  width: 0.875em;
+}
+
+.icon-facebook-square {
+  width: 0.857421875em;
+}
+
+.icon-youtube-square {
+  width: 0.857421875em;
+}
+
+.icon-google-plus-square {
+  width: 0.857421875em;
+}
+
+.icon-pinterest-square {
+  width: 0.857421875em;
+}
+
+.icon-twitter-square {
+  width: 0.857421875em;
+}

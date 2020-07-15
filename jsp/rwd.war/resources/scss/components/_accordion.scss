@@ -1,0 +1,176 @@
+/* only use styles in here that you want to apply to all accordions on the site. Otherwise contextually style
+(ex: .parentClass .accordion-title) or add addtional classes to the accordion element. */
+
+/* wrapper class
+.accordion {} */
+.accordion-title {
+	cursor: pointer;
+	@include font-size(16px);
+
+	.icon {
+	    float: right;
+	    line-height: inherit;
+	    color: $link-color;
+	    @include font-size(18px);
+	}
+	.accordion-title-link:before {
+		color: $primary-color;
+		text-decoration: underline;
+		content: "Show items";
+		float: right;
+		margin-right: 15px;
+		&:hover {
+			color: $light-gray;
+		}
+	}
+	&.active {
+		.accordion-title-link:before {
+			color: $primary-color;
+			text-decoration: underline;
+			content: "Hide items";
+			&:hover {
+				color: $light-gray;
+			}
+		}
+	}
+}
+.accordion-body {
+	display: none;
+}
+
+/* Product Detail Page Product Configuration Accordion
+   ========================================================= */
+$product-config-border-color: $light-gray;
+
+.product {
+	.product-configuration {
+		.accordion-title {
+			@include clearfix();
+			position: relative;
+			border: 1px solid $product-config-border-color;
+
+			.selected-swatch {
+				@include rem-size(width, 50px);
+				@include rem-size(margin, 18px);
+				float: $default-float;
+
+				+ .selected-details {
+					width: calc(100% - 144px); /* subtraction equals combined width of .selected-swatch and .icon elements */
+					margin-left: 0;
+				}
+			}
+			.selected-details {
+				float: $default-float;
+				color: $almost-black;
+				width: calc(100% - 75px); /* subtraction equals combined width of .selected-swatch and .icon elements */
+				@include rem-size(margin, 18px 0px 18px 18px);
+
+				.top {
+					@include border(bottom, 1px, solid, $product-config-border-color);
+
+					h4 {
+						margin: 0;
+						font-weight: $heavy-bold;
+						@include rem-size(padding-bottom, 11px);
+						@include font-size(14px);
+						@include rem-size(line-height, 14px);
+					}
+				}
+				.bottom {
+					text-transform: capitalize;
+					@include font-size(14px);
+					@include rem-size(line-height, 18px);
+					@include rem-size(padding-top, 10px);
+					@include clearfix();
+
+					.selected-summary {
+						float: $default-float;
+						text-overflow: ellipsis;
+  						overflow: hidden;
+  						white-space: nowrap;
+						width: 85%;
+						@include rem-size(padding-right, 10px);
+
+						span:not(.cover-type) {
+							display: block;
+							text-overflow: ellipsis;
+	  						overflow: hidden;
+	  						white-space: nowrap;
+						}
+					}
+					.selected-options-total {
+						color: $medium-gray;
+						text-align: right;
+						float: $opposite-direction;
+						width: 15%;
+					}
+					&.no-price {
+						.selected-summary {
+							width: 100% !important;
+						}
+						.selected-options-total {
+							width: 0% !important;
+							display: none;
+						}
+					}
+				}
+			}
+			.icon {
+				@include font-size(18px);
+				@include rem-size(right, 18px);
+				position: absolute;
+				top: 50%;
+    			transform: translateY(-50%);
+			}
+			.stock-message {
+				background-color: $brand-gray90;
+				@include rem-size(margin, 20px 0px 20px 20px);
+				@include rem-size(padding, 10px);
+				text-align: center;
+				clear: both;
+				width: calc(100% - 75px);
+			  
+				.stock-indicator {
+					display: inline-block;
+					border: 1px solid transparent;
+					@include rem-size(width, 10px);
+					@include rem-size(height, 10px);
+					@include rem-size(margin-right, 10px);
+					border-radius: 50%;
+					vertical-align: middle;
+				  }
+
+				.stock-indicator.in-stock {
+					background-color: $brand-green;
+				}
+
+				.stock-indicator.out-of-stock {
+					background-color: $brand-red;
+				}
+
+				.stock-message-text {
+					text-align: left;
+					display: inline-block;
+					width: calc(100% - 30px);
+					vertical-align: top;
+					@include font-size(12px);
+				}
+			
+			}
+
+		}
+		& #cover-selection-title {
+			.bottom {
+				.selected-summary {
+					width: 72%;
+				}
+				.selected-options-total {
+					width: 28%;
+				}
+			}
+		}
+		.accordion-body {
+			border: 1px solid $product-config-border-color;
+		}
+	}
+}

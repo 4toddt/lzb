@@ -1,0 +1,44 @@
+/* Global Price Treatment Styles
+========================================================= */
+.price {
+	.side-by-side {
+		@include grid-column(6);
+	}
+}
+
+/* price treatments */
+.strike-price {
+	//sometimes extended to other pricing styles
+	text-decoration: line-through;
+}
+.regular-price {
+	color: $almost-black;
+}
+.compare-price {
+	color: $deep-gray;
+}
+.original-price {
+	@extend .strike-price;
+	color: $medium-gray;
+}
+.sale-price {
+	color: $almost-black;
+}
+.savings {
+	color: $sale-color;
+}
+
+/* price label treatments */
+.regular-label,
+.original-label,
+.sale-label {
+	color: $medium-gray;
+}
+
+/* Checkout Price Treatment Styles Overrides
+========================================================= */
+.checkout {
+	.sale-price, .regular-price {
+		color: $deep-gray;
+	}
+}

@@ -1,0 +1,372 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+// Cartridge definitions
+
+/* Cartridge: MainContentHeroMobile
+   Description: Main Image Hero appearing at top of category browse page.
+========================================================= */
+.main-hero-banner {
+	text-align: center;
+
+	.main-hero-banner-image {
+		@include rem-size(margin-bottom, 20px);
+
+		a {
+			display: block;
+		}
+	}
+	.main-hero-banner-text {
+		@include rem-size(margin, 20px 0px);
+		@include rem-size(padding, 0px $outside-padding);
+
+		h1 {
+			display: inline-block;
+			color: $almost-black;
+			margin: 0;
+			@include font-size(28px);
+			@include rem-size(line-height, 40px);
+			@include border(bottom, 2px, solid, $almost-black);
+			@include rem-size(padding, 0px 40px 10px 40px);
+		}
+		p {
+			display: block;
+			color: $almost-black;
+			@include font-size(16px);
+			@include rem-size(line-height, 22px);
+			@include rem-size(margin, 16px 0px);
+		}
+	}
+}
+
+/* Cartridge: ResultsList-InlinePromo
+   Description: One or Two column promo tile appearing in the ResultsList cartridge product grid.
+========================================================= */
+.cdp-promo {
+	border: 1px solid $light-gray;
+	text-align: center;
+	width: 232px;
+  	display: block;
+	margin: 0 auto;
+	@include rem-size(margin-bottom, 12px);
+
+	a {
+		display: block;
+		position: relative;
+		z-index: 1;
+	}
+	.content {
+		@include rem-size(padding, 15px 20px 20px 20px);
+
+		h3 {
+			@include font-size(22px);
+			@include rem-size(line-height, 26px);
+			margin: 0;
+			font-weight: $medium-light;
+			letter-spacing: .3px;
+			color: $base-black;
+			@include border(bottom, 2px, solid, $light-gray);
+			@include rem-size(margin-bottom, 15px);
+		}
+		p {
+			@include font-size(14px);
+			@include rem-size(line-height, 22px);
+			color: $almost-black;
+			margin-bottom: 0;
+		}
+	}
+}
+/* One Slot Grid Promo */
+.cdp-promo-sm {
+	.content  {
+		h3 {
+			@include rem-size(padding-bottom, 15px);
+		}
+	}
+}
+/* Two Slot Grid Promo */
+.cdp-promo-lg {
+	@include media(medium-up) {
+		width: 482px;
+		height: 380px;
+	}
+	.visual-link {
+		@include media(medium-up) {
+			float: left;
+			width: 230px;
+			height: 378px;
+		}
+	}
+	.video-link {
+		@include media(medium-up) {
+			float: left;
+			width: 48%;
+			max-height: 405px;
+		}
+		.icon {
+			position: absolute;
+			top: calc(50% - 35px);
+			left: calc(50% - 35px);
+			@include font-size(70px);
+
+			@include media(medium-up) {
+				top: calc(50% - 45px);
+				left: calc(50% - 45px);
+				font-size: 90px;
+			}
+
+			&:before {
+				color: $base-white;
+				opacity: .9;
+		  	}
+		}
+	}
+	.content  {
+		@include media(medium-up) {
+			position: relative;
+			float: right;
+			width: 248px;
+			height: 378px;
+			padding: 50px 25px;
+		}
+		img {
+			display: inline-block;
+			margin: 0 auto;
+
+			@include media(medium-up) {
+				margin: 0 auto 40px;
+			}
+		}
+		h3 {
+			padding: 15px 0;
+
+			@include media(medium-up) {
+				padding: 40px 0 15px 0;
+			}
+		}
+	}
+}
+
+/* Cartridge: RichTextMain
+   Description: Used for SEO Content at the bottom of a page.
+========================================================= */
+.seo-content {
+	@include rem-size(margin, 20px 0px);
+	@include rem-size(padding, 0px $outside-padding);
+	@include border(top, 1px, solid, $light-gray);
+	@include font-size(12px);
+}
+
+/* Cartridge: SearchAdjustments
+   Description: Search Adjustments used on Search Results Page.
+========================================================= */
+.search-adjustments {
+	@include rem-size(padding, 0px $outside-padding);
+}
+
+/* home page
+========================================================= */
+.home {
+	figure {
+		@include rem-size(margin, 5px 0px);
+	}
+	.hero-slider {
+		@include rem-size(margin-bottom, 0px);
+	}
+}
+ul.categories {
+	@include block-grid(
+		$per-row: 2,
+		$spacing: 10px,
+		$base-style: true
+	);
+	@include media(medium-up) {
+		@include block-grid(
+			$per-row: 3,
+			$spacing: 20px,
+			$base-style: true
+		);
+	}
+	li {
+		@include rem-size(padding, 3px 5px);
+	}
+}
+.categories {
+	.secondary-promo {
+		@include rem-size(padding, 5px 0px);
+	}
+}
+
+/* Cartridge: ProductDetail-Why-LaZB
+   Description: Why LZB Content Section used on Product Details Page.
+========================================================= */
+.why-lzb {
+	.why-lzb-tiles {
+		@include clearfix();
+
+		@include media(medium-up) {
+			float: $default-float;
+			width: 60%;
+		}
+		ul {
+			@include unlist();
+
+			li {
+				@include clearfix();
+				@include rem-size(margin-bottom, 15px);
+
+				@include media(medium-up) {
+					@include grid-column(4);
+					margin-bottom: 0;
+				}
+			}
+		}
+		.tile-image {
+			float: $default-float;
+			width: 30%;
+			@include rem-size(padding-right, 15px);
+
+			@include media(medium-up) {
+				float: none;
+				width: auto;
+				padding-right: 0;
+			}
+		}
+		.tile-content {
+			float: $default-float;
+			width: 70%;
+
+			@include media(medium-up) {
+				float: none;
+				width: auto;
+				@include rem-size(margin-top, 15px);
+			}
+			h4 {
+				color: $almost-black;
+				font-weight: $bold;
+				@include font-size(14px);
+				@include rem-size(line-height, 18px);
+				@include rem-size(margin, 0px 0px 10px 0px);
+			}
+			p {
+				margin: 0;
+				color: $medium-gray;
+				@include font-size(14px);
+				@include rem-size(line-height, 16px);
+			}
+		}
+	}
+	.media-content {
+		@include rem-size(margin, 10px 0px);
+
+		@include media(medium-up) {
+			margin: 0;
+			width: 40%;
+			float: $opposite-direction;
+			@include rem-size(padding-left, 20px);
+		}
+		&.video-link {
+			a {
+				position: relative;
+			}
+			.icon {
+				display: none; /* NOTE: hiding the icon becuase the current image contains an embeded icon for video playback */
+				position: absolute;
+				top: calc(50% - 35px);
+				left: calc(50% - 35px);
+				font-size: 70px;
+
+				@include media(medium-up) {
+					top: calc(50% - 45px);
+					left: calc(50% - 45px);
+					font-size: 90px;
+				}
+				&:before {
+					color: $base-white;
+					opacity: .9;
+				}
+			}
+		}
+	}
+	.copy {
+		@include rem-size(padding-top, 20px);
+
+		@include media(medium-up) {
+			clear: left;
+			width: 60%;
+			@include rem-size(padding-top, 40px);
+		}
+		h3 {
+			color: $base-black;
+			font-weight: $bold;
+			@include font-size(18px);
+			@include rem-size(line-height, 22px);
+			@include rem-size(margin, 0px 0px 10px 0px);
+		}
+		p {
+			margin: 0;
+			color: $deep-gray;
+			@include font-size(14px);
+			@include rem-size(line-height, 18px);
+		}
+	}
+}
+
+/* Cartridge: ImageWithTextLinkGroup
+   Description: Image with text link group. (ex. category shopping links appearing on the no search results browse page)
+========================================================= */
+.image-with-text-link-group {
+	@include rem-size(margin, 20px 0px);
+	@include rem-size(padding, 0px $outside-padding);
+
+	h2 {
+		text-align: center;
+		display: block;
+		color: $almost-black;
+		@include rem-size(margin, 0px 0px 30px 0px);
+		@include font-size(28px);
+		@include rem-size(line-height, 40px);
+		@include border(bottom, 2px, solid, $almost-black);
+		@include rem-size(padding, 0px 40px 10px 40px);
+	}
+	ul {
+		@include block-grid(
+		$per-row: 2,
+		$spacing: 20px,
+		$base-style: true
+		);
+		@include media(medium-up) {
+			@include block-grid(
+			$per-row: 4,
+			$spacing: 20px,
+			$base-style: false
+			);
+		}
+		@include media(large-up) {
+			@include block-grid(
+			$per-row: 6,
+			$spacing: 15px,
+			$base-style: false
+			);
+		}
+	}
+}
+
+/* Cartridge: ImageWithTextLink
+   Description: Image with text link (ex. category shopping links appearing on the no search results browse page)
+========================================================= */
+.image-with-text-link {
+	text-align: center;
+
+	a {
+		display: block;
+	}
+	.content-image {
+		display: block;
+		@include font-size(12px); /* for img alt text */
+	}
+	.content-title {
+		@include rem-size(padding, 10px 0px);
+		@include font-size(16px);
+	}
+}

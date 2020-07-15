@@ -1,0 +1,40 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+// Dropdown box definitions
+.dropdown {
+	position: relative;
+	display:inline-block;
+}
+.dropdown-toggle {
+	z-index:101;
+	& .active {
+		border-color: #ccc;
+		background-color: $base-white;
+	}
+}
+.dropdown-menu {
+	display:none;
+	position: absolute;
+	z-index:100;
+	background-color: $base-white;
+	border:solid 1px $border-color;
+}
+.menu-list {
+	list-style: none;
+	margin:0;
+	padding:0;
+	> li > a {
+		clear: both;
+		color: #333;
+		display: block;
+		padding: 3px 20px;
+		white-space: nowrap;
+		&:hover, &:active {
+			background-color: #f5f5f5;
+			text-decoration: none;
+		}
+	}
+}
+
+

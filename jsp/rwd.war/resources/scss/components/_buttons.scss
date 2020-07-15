@@ -1,0 +1,85 @@
+// Use the components directory to constuct the meat of your CSS.
+// Categorize your styles here based on element in the file name.
+
+// Button definitions
+
+@mixin button() {
+	display: inline-block;
+	/*outline: none; commenting this out to allow default focus outline to show for ADA compliance. */
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid transparent;
+	@include font-size(14px);
+	@include rem-size(line-height, 27px);
+	@include rounded(4px);
+	margin-bottom: 0;
+	@include rem-size(padding, 8px 24px);
+	vertical-align: middle;
+	white-space: nowrap;
+	position: relative;
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+
+}
+
+
+/*  Default primary and secondary button styles
+------------------------------------------------------------------- */
+
+.button {
+	@include button();
+
+	&.primary {
+		background: $btn-primary;
+		color: $base-white !important;
+		&:hover, &:focus {
+			background: darken($btn-primary, 10);
+		}
+	}
+
+	&.secondary {
+		background: $btn-secondary;
+		color: $btn-primary !important;
+		border: 2px solid $btn-primary;
+		@include rem-size(padding-top, 7px);
+		@include rem-size(padding-bottom, 7px);
+		&:hover, &:focus {
+			background: $btn-primary;
+			color: $base-white !important;
+		}
+	}
+
+	&.tertiary {
+		background: $btn-tertiary;
+		color: $base-black !important;
+		&:hover, &:focus {
+			background: lighten($btn-tertiary, 20);
+		}
+	}
+
+
+	&.disabled{
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		cursor: not-allowed;
+		@include opacity(0.65);
+		pointer-events: none;
+	}
+
+	&.small {
+		@include font-size(13px);
+		@include rem-size(line-height, 13px);
+		padding: $field-vertical-padding 14px;
+	}
+
+	&.medium {
+		@include font-size(14px);
+		@include rem-size(line-height, 18px);
+		padding: $field-vertical-padding 32px;
+	}
+
+}

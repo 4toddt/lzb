@@ -1,0 +1,18 @@
+.back-to-top {
+	display: none;
+	position: fixed;
+	@include rem-size(right, 10px);
+	@include rem-size(bottom, 10px);
+	z-index: 99;
+	@include rem-size(height, 64px);
+	@include rem-size(width, 64px);
+	@include rem-size(padding, 4px);
+	border-radius: 50%;
+	background: $base-gray;
+	@include opacity(0.7);
+	@include font-size(16px);
+	filter: alpha(opacity=70);
+	color: $base-white;
+	text-align: center;
+	cursor: pointer;
+}

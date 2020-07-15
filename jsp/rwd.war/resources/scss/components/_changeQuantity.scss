@@ -1,0 +1,39 @@
+.changeQuantity {
+	@include clearfix;
+
+	.quantity-group {
+		float:left;
+		border: 2px solid $border-color;
+		@include rounded;
+		@include no-select;
+	}
+
+	.plus-icon, .minus-icon {
+		@include font-size(20px);
+		background: lighten($base-black, 80);
+		cursor: pointer;
+		float:left;
+		padding: 5px 10px;
+		@include rem-size(line-height, 24px);
+	}
+	.plus-icon {
+		border-left: 1px solid lighten($base-black, 40);
+	}
+	.minus-icon {
+		border-right: 1px solid lighten($base-black, 40);
+	}
+	.current-quantity {
+		float:left;
+	}
+	.counter {
+		border: none;
+		@include rem-size(width, 56px);
+		@include rem-size(height, 34px);
+		text-align: center;
+	}
+	.inactive {
+		opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+	}
+}
