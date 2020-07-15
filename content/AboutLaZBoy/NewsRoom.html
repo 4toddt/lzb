@@ -1,1579 +1,240 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        var navigation = {
-            "Commitment": {
-                "Our Commitment": "/content/AboutLaZBoy/corporate-commitment",
-                "News Room": "/content/AboutLaZBoy/NewsRoom",
-                "Our Brands": "/content/AboutLaZBoy/OurBrands",
-                "Supplier Requirements": "/content/AboutLaZBoy/supplier-requirements"
-            },
-            "Financial": {
-                "Financial Responsibility": "/content/AboutLaZBoy/financial-responsibility",
-                //"Investor Relations": "/content/AboutLaZBoy/InvestorRelations"
-                "Investor Relations": "https://lazboy.gcs-web.com/"
-            },
-            "Environmental": {
-                "Sustainability at a Glance": "/content/AboutLaZBoy/sustainability-at-a-glance",
-                "SASB Standards": "/content/AboutLaZBoy/sasb-standards",
-                "Environment": "/content/AboutLaZBoy/sustainability",
-                "Carbon & Climate": "/content/AboutLaZBoy/carbon-and-climate",
-                "Natural Resources": "/content/AboutLaZBoy/natural-resources",
-                "Waste & Toxicity": "/content/AboutLaZBoy/waste-and-toxicity"
-            },
-            "People": {
-                "Our Employees": "/content/AboutLaZBoy/investing-in-employees",
-                "Leadership": "/content/AboutLaZBoy/leadership",
-                "Corporate Giving": "/content/AboutLaZBoy/corporate-giving",
-                "Made In America": "/content/AboutLaZBoy/made-in-america",
-                "Careers": "/content/AboutLaZBoy/Careers"
-            }
-        }
-
-        var pagePath = window.location.pathname.match(/(.*\/mobile)?(.*)/)[2];
-
-        // Return HTML for navJSON
-        function buildNavigation(navJSON) {
-            var menu = document.createElement('ul');
-            for (navName in navJSON) {
-                var navLink = navJSON[navName];
-                if (typeof(navLink) === "string") {
-                    if (navLink === pagePath) {
-                        menu.innerHTML += '<li><a class="current-page">' + navName + '</a></li>';
-                    } else {
-                        menu.innerHTML += '<li><a href="' + navLink + '">' + navName + '</a></li>';
-                    }
-                } else if (typeof(navLink) === "object") {
-                    var hasCurrentpage = false;
-                    for (i in navLink) {
-                        hasCurrentpage = (hasCurrentpage || (navLink[i] === pagePath))
-                    }
-                    if (hasCurrentpage) {
-                        menu.innerHTML += '<li class="parent show-submenu"><a class="current-page">' + navName + '</a>' + buildNavigation(navLink) + '</li>';
-                    } else {
-                        menu.innerHTML += '<li class="parent"><a>' + navName + '</a>' + buildNavigation(navLink) + '</li>';
-                    }
-                }
-            }
-            var temp = document.createElement('div');
-            temp.appendChild(menu);
-            return temp.innerHTML;
-        }
-
-        function hasClass(ele, cls) {
-            if (!!(ele && cls)) {
-                var classArr = ele.className.trim().split(/ +/);
-                return (classArr.indexOf(cls) > -1);
-            } else {
-                return null;
-            }
-        }
-
-        function addClass(ele, cls) {
-            if (ele && cls) {
-                var classArr = ele.className.trim().split(/ +/);
-                if (classArr.indexOf(cls) == -1) {
-                    classArr.push(cls);
-                    ele.className = classArr.join(' ').trim();
-                }
-            }
-        }
-
-        function removeClass(ele, cls) {
-            if (ele && cls) {
-                var classArr = ele.className.trim().split(/ +/);
-                var index = classArr.indexOf(cls);
-                if (index > -1) {
-                    classArr.splice(index, 1);
-                    ele.className = classArr.join(' ').trim();
-                }
-            }
-        }
-
-        function removeClassAll(nodeList, cls) {
-            if (nodeList && cls) {
-                for (i = 0; i < nodeList.length; i++) {
-                    removeClass(nodeList[i], cls);
-                }
-            }
-        }
-
-        function toggleClass(ele, cls) {
-            if (hasClass(ele, cls)) {
-                removeClass(ele, cls);
-            } else {
-                addClass(ele, cls);
-            }
-        }
-
-        function stopPropagation(evt) {
-            if (typeof evt.stopPropagation == "function") {
-                evt.stopPropagation();
-            } else {
-                evt.cancelBubble = true;
-            }
-        }
-
-        function myEventListener(el, eventName, handler) {
-            if (el.addEventListener) {
-                el.addEventListener(eventName, handler);
-            } else {
-                el.attachEvent('on' + eventName, function() {
-                    handler.call(el);
-                });
-            }
-        }
-
-        //Function to remove the modal.
-        function removeModal() {
-            document.body.removeChild(document.getElementById('npc-modal'));
-        }
-
-        // Function to play a video in a modal. Test video is 'P1li3aQv3eQ'.
-        function videoModal(srcID) {
-            var div = document.createElement('div');
-            div.innerHTML =
-                '<section id="npc-modal" class="video" onclick="removeModal();"><div id="npc-modal-container">\
-        <div id="npc-modal-content">\
-            <iframe src="https://www.youtube.com/embed/' + srcID + '?rel=0&amp;amp;ecver=2&amp;amp;enablejsapi=1&amp;amp;showinfo=0&amp;amp;autoplay=1" frameborder="0" allowfullscreen></iframe>\
-        </div>\
-        <img id="npc-modal-close" src="https://www.la-z-boy.com/Images/npc/modal-close.svg">\
-    </section>';
-            var modal = div.firstChild;
-
-            document.body.insertBefore(modal, document.body.firstChild);
-
-            return false;
-        }
-
-        // Create array of query string values
-        var params = [],
-            hash;
-        var q = document.URL.split('?')[1];
-        if (q != undefined) {
-            q = q.split('&');
-            for (var i = 0; i < q.length; i++) {
-                hash = q[i].split('=');
-                params.push(hash[1]);
-                params[hash[0]] = hash[1];
-            }
-        }
-
-
-        // Writes navigation HTML to page, adds classes and event listeners.
-        function insertNavHere() {
-            document.write(buildNavigation(navigation));
-
-            var topNav = document.getElementById('topnav');
-            var parentLIs = topNav.querySelectorAll('li.parent');
-            var parentLinks = topNav.querySelectorAll('li.parent>a');
-
-            for (i = 0; i < parentLinks.length; i++) {
-                parentLinks[i].addEventListener('click', function() {
-                    var evt = evt || window.event; // For IE
-                    stopPropagation(evt);
-                    if (hasClass(this.parentNode, 'show-submenu')) {
-                        removeClass(this.parentNode, 'show-submenu');
-                    } else {
-                        removeClassAll(parentLIs, 'show-submenu');
-                        addClass(this.parentNode, 'show-submenu');
-                    }
-                    // menu.style.maxHeight = menu.scrollHeight;
-                });
-            }
-            //open external links in new tab
-            for (var links = document.links, i = 0, a; a = links[i]; i++) {
-                if (a.host !== location.host) {
-                    a.target = '_blank';
-                }
-            }
-        }
-
-        function runAfterDOM() {
-            // Look for .hamburger
-            var topNav = document.getElementById('topnav');
-            var hamburger = topNav.querySelector('.hamburger');
-            var menu = topNav.querySelector('ul');
-            // On click
-            hamburger.addEventListener("mousedown", function() {
-                // Toggle class "show-menu"
-                var evt = evt || window.event; // For IE
-                evt.preventDefault ? evt.preventDefault() : (evt.returnValue = false);
-                if (hasClass(topNav, 'show-menu')) {
-                    removeClass(topNav, 'show-menu');
-                } else {
-                    addClass(topNav, 'show-menu');
-                }
-            });
-
-            // Play the video in the query string
-            if (params['video'] != null) {
-                videoModal(params['video']);
-            }
-
-            // Add click and keyboard events to videoModal elements
-            var videoLinks = document.querySelectorAll('[videoModal]');
-            for (i = 0; i < videoLinks.length; i++) {
-                (function() {
-                    var currentVideoLink = videoLinks[i];
-                    var srcID = currentVideoLink.getAttribute('videoModal');
-
-                    currentVideoLink.setAttribute("tabIndex", "0");
-
-                    myEventListener(currentVideoLink, "click", function() {
-                        videoModal(srcID);
-                    })
-
-                    myEventListener(currentVideoLink, 'keypress', function(event) {
-                        var code = event.charCode || event.keyCode;
-                        if ((code === 32) || (code === 13)) {
-                            videoModal(srcID);
-                        }
-                    });
-                })();
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab');
-        @font-face {
-            font-family: 'icomoon';
-            src: url('/css/fonts/icomoon.eot?intxku');
-            src: url('/css/fonts/icomoon.eot?intxku#iefix') format('embedded-opentype'), url('/css/fonts/icomoon.ttf?intxku') format('truetype'), url('/css/fonts/icomoon.woff?intxku') format('woff'), url('/css/fonts/icomoon.svg?intxku#icomoon') format('svg');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        [class^="icon-"],
-        [class*=" icon-"],
-        .arrow-right:after,
-        .download::after,
-        #topnav li.parent>a:after {
-            font-family: 'icomoon' !important;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        .icon-phone:before {
-            content: "\e942";
-        }
-        
-        .icon-envelop:before {
-            content: "\e945";
-        }
-        
-        .arrow-right:after {
-            content: "\00a0\e904";
-            font-size: 0.7em;
-        }
-        
-        .download::after {
-            content: "\00a0\e960";
-        }
-        
-        .registered:after {
-            content: "\00ae";
-            font-size: .6em;
-            vertical-align: super;
-            line-height: 0;
-        }
-        
-        .arrow-right,
-        .download {
-            display: inline-block;
-        }
-        /* resets */
-        
-        html {
-            box-sizing: border-box;
-        }
-        
-        *,
-        *:before,
-        *:after {
-            box-sizing: inherit;
-        }
-        /* defaults and utility */
-        
-        body {
-            margin: 0;
-            font-family: 'Lato', sans-serif;
-            color: #494949;
-            font-size: 20px;
-        }
-        
-        img {
-            display: block;
-            width: 100%;
-        }
-        
-        .page-width {
-            max-width: 1020px;
-            padding-left: 20px;
-            padding-right: 20px;
-            margin: 0 auto;
-        }
-        
-        @media only screen and (max-width: 599.9px) {
-            .tablet-desktop {
-                display: none !important;
-            }
-        }
-        
-        @media only screen and (min-width: 600px) {
-            .mobile {
-                display: none !important;
-            }
-        }
-        /* background colors */
-        
-        .gray {
-            background-color: #f5f5f5;
-        }
-        
-        .blue {
-            background-color: #0070AF;
-            color: white;
-        }
-        /* topnav */
-        
-        #topnav {
-            font-size: 18px;
-            line-height: 1;
-            height: 110px;
-            position: relative;
-        }
-        
-        #topnav .logo {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 271px;
-            max-width: 70%;
-        }
-        
-        #topnav .logo img {
-            max-width: 100%;
-            border: none;
-        }
-        
-        #topnav .hamburger {
-            padding: 15px 15px;
-            display: inline-block;
-            cursor: pointer;
-            transition-property: opacity, filter;
-            transition-duration: 0.15s;
-            transition-timing-function: linear;
-            font: inherit;
-            color: inherit;
-            text-transform: none;
-            background-color: transparent;
-            border: 0;
-            margin: 0;
-            overflow: visible;
-            position: absolute;
-            right: 0;
-            top: 28px;
-        }
-        
-        #topnav .hamburger-box {
-            width: 30px;
-            height: 24px;
-            display: inline-block;
-            position: relative;
-        }
-        
-        #topnav .hamburger-inner,
-        #topnav .hamburger-inner::before,
-        #topnav .hamburger-inner::after {
-            width: 30px;
-            height: 3px;
-            background-color: #494949;
-            border-radius: 3px;
-            position: absolute;
-            transition-property: all;
-            transition-duration: .2s;
-            transition-timing-function: ease-out;
-        }
-        
-        #topnav .hamburger-inner {
-            display: block;
-            top: 50%;
-            margin-top: -2px;
-            background-color: transparent;
-            background-image: linear-gradient(to right, #494949, #494949);
-            background-position: bottom center;
-            background-repeat: no-repeat;
-            background-size: 100% 3px;
-        }
-        
-        #topnav .hamburger:hover .hamburger-inner::before,
-        #topnav .hamburger:hover .hamburger-inner::after {
-            background-color: #0070AF;
-        }
-        
-        #topnav .hamburger:hover .hamburger-inner {
-            background-image: linear-gradient(to right, #0070AF, #0070AF);
-        }
-        
-        #topnav .hamburger-inner::before,
-        #topnav .hamburger-inner::after {
-            content: "";
-            display: block;
-        }
-        
-        #topnav .hamburger-inner::before {
-            top: -9px;
-        }
-        
-        #topnav .hamburger-inner::after {
-            bottom: -9px;
-        }
-        
-        #topnav.show-menu .hamburger-inner {
-            background-size: 0 3px;
-        }
-        
-        #topnav.show-menu .hamburger-inner::before {
-            top: 0;
-            transform: rotate(45deg);
-        }
-        
-        #topnav.show-menu .hamburger-inner::after {
-            bottom: 0;
-            transform: rotate(-45deg);
-        }
-        
-        #topnav ul {
-            padding: 0;
-            z-index: 1;
-        }
-        
-        #topnav>ul {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 110px 0 0;
-            width: 60%;
-            min-width: 250px;
-            max-width: 400px;
-            background-color: #f5f5f5;
-            text-align: right;
-            padding: 0;
-        }
-        
-        #topnav>ul:before {
-            content: "Sustainability";
-            font-size: 1.4em;
-            display: block;
-            max-height: 0;
-            padding: 0 2.2em;
-            color: transparent;
-            transition-property: max-height, padding, color;
-            transition-duration: .2s;
-            transition-timing-function: ease-out;
-        }
-        
-        #topnav.show-menu>ul:before {
-            padding: .6em 2.2em .6em 0;
-            max-height: 54px;
-            color: #494949;
-        }
-        
-        #topnav li {
-            list-style-type: none;
-            border-top-style: dashed;
-            border-width: 0;
-            border-color: gray;
-            padding-right: 3em;
-            transition: border-width .2s ease-out;
-        }
-        
-        #topnav li.parent {
-            padding-right: 1.8em;
-            cursor: pointer;
-        }
-        
-        #topnav.show-menu li {
-            border-width: 1px;
-        }
-        
-        #topnav li a {
-            text-decoration: none;
-            color: #494949;
-            white-space: nowrap;
-            display: block;
-            position: relative;
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition-property: max-height, padding;
-            transition-duration: .2s;
-            transition-timing-function: ease-out;
-        }
-        
-        #topnav li a:hover,
-        #topnav li.show-submenu>a {
-            color: #0070AF;
-        }
-        
-        #topnav li a.current-page {
-            font-weight: bold;
-        }
-        
-        #topnav.show-menu li a {
-            max-height: 3em;
-            padding: 1em 0;
-        }
-        
-        #topnav li li {
-            border-top-style: none;
-            padding-right: 0;
-        }
-        
-        #topnav li li a {
-            font-size: .9em;
-        }
-        
-        #topnav li li a.current-page {
-            cursor: default;
-        }
-        
-        #topnav.show-menu li li a {
-            padding: 0;
-            max-height: 0;
-        }
-        
-        #topnav.show-menu li.show-submenu li a {
-            padding-bottom: 1em;
-            max-height: 2em;
-        }
-        
-        #topnav li.parent>a:after {
-            content: "\00a0\e907";
-            font-size: 0.8em;
-            transition: transform .2s ease-out;
-            display: inline-block;
-        }
-        
-        #topnav li.parent.show-submenu>a:after {
-            transform: scaleY(-1);
-        }
-        
-        .hero-background {
-            padding-top: 70px;
-            padding-bottom: 40%;
-            margin-bottom: -40%;
-        }
-        
-        #hero {
-            position: relative;
-        }
-        /* font defaults */
-        
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Roboto Slab', serif;
-            color: #0070af;
-            font-weight: normal;
-            line-height: 1.2;
-        }
-        
+<style>
+    .icon-phone,
+    .icon-envelop {
+        font-size: .8em;
+        margin-right: 0.5em;
+    }
+    
+    @media only screen and (min-width: 600px) {
         #hero h1 {
-            font-size: 2em;
-            margin: .5em 0 0;
-            color: #494949;
-            text-align: center;
-        }
-        
-        h2 {
-            font-size: 1.6em;
-            margin: 70px 0 0;
-        }
-        
-        h3 {
-            font-size: 1.2em;
-            margin: 50px 0 0;
-        }
-        
-        h4 {
-            font-size: 1em;
-            margin: 30px 0 0;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0070AF;
-        }
-        
-        a:hover {
-            color: #005485;
-        }
-        
-        .button>a {
-            border: solid 2px #0070af;
-            padding: .6em .8em;
-            color: #0070af;
-            margin: 30px 0 0;
-            white-space: nowrap;
-            background-color: #fff;
-            transition: all .1s ease-out;
-        }
-        
-        .button>a:hover {
-            border-color: #005485;
-            color: #005485;
-            background-color: #f5f5f5;
-        }
-        
-        .blue.button>a {
-            color: white;
-            border-color: white;
-            background-color: #0070AF;
-        }
-        
-        .blue.button>a:hover {
-            background-color: #005485;
-        }
-        
-        .gray.button>a {
-            background-color: #f5f5f5;
-        }
-        
-        .gray.button>a:hover {
-            background-color: #ebebeb;
-        }
-        
-        .blue h3 {
-            color: white;
-        }
-        
-        p {
-            margin: 0;
-        }
-        /* grid */
-        
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .block {
-            max-width: 100%;
-        }
-        
-        .gutter-30 {
-            margin: 0 -15px;
-            flex-grow: 1;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .gutter-30>.block {
-            margin: 30px 15px 0;
-        }
-        
-        .reverse {
-            display: flex;
-            flex-wrap: wrap-reverse !important;
-        }
-        
-        .reverse>:first-child {
-            order: 1;
-        }
-        
-        .reverse>:last-child {
-            order: -1;
-        }
-        /* indented section */
-        
-        .indent>p {
-            margin: 2.5em 0 0;
-        }
-        
-        .indent>p+p,
-        .indent>h2+p,
-        .indent>h3+p {
-            margin-top: 1.5em;
-        }
-        
-        .indent>h4+p {
-            margin-top: .5em;
-        }
-        
-        .element-icon~p {
-            margin-top: .5em;
-        }
-        
-        .indent>ul>li,
-        .indent>ol>li {
-            margin-top: .5em;
-        }
-        
-        .indent .grid {
-            margin: 0 auto;
-        }
-        
-        .indent .button>a {
-            font-size: 1.2em;
-        }
-        /* blue-gray row and blue-gray-checker */
-        
-        .blue-gray-row {
-            background: linear-gradient(to right, #0070AF 50%, #f5f5f5 50%);
-        }
-        
-        .blue-gray-row>.grid,
-        .blue-gray-checker {
-            max-width: 1040px;
-            margin: 50px auto 0;
-        }
-        
-        .blue-gray-checker {
-            max-width: 980px;
-            justify-content: center;
-        }
-        
-        .blue-gray-checker+.blue-gray-checker {
-            margin-top: 30px;
-        }
-        
-        .blue-gray-row>.grid>.block,
-        .blue-gray-checker>.block {
-            flex: 1 0 375px;
-            padding: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            align-content: center;
-        }
-        
-        .blue-gray-checker>.block {
-            flex: 0 1 490px;
-            /* force IE to respect box-sizing*/
-            max-width: 490px;
-        }
-        
-        .blue-gray-row>.grid>.block>*,
-        .blue-gray-checker>.block>* {
-            /* keep small elements from wrapping */
-            min-width: 100%;
-        }
-        
-        .blue-gray-row>.grid>:first-child,
-        .blue-gray-checker>:first-child {
-            background-color: #0070AF;
-            font-size: 1.3em;
-        }
-        
-        .blue-gray-row>.grid>:first-child>*,
-        .blue-gray-checker>:first-child>* {
-            color: white;
-        }
-        
-        .blue-gray-row>.grid>:first-child>p,
-        .blue-gray-checker>:first-child>p {
-            margin-top: .5em;
-        }
-        
-        .blue-gray-row>.grid>.block>:first-child,
-        .blue-gray-checker>.block>:first-child {
-            margin-top: 0;
-        }
-        
-        .blue-gray-row>.grid>:last-child,
-        .blue-gray-checker>:last-child {
-            background-color: #f5f5f5;
-        }
-        
-        .blue-gray-checker>:last-child:not(.image-copy) {
-            padding: 0;
-        }
-        
-        .blue-gray-row>.grid>.block>ul,
-        .blue-gray-checker>.block>ul {
-            color: #0070af;
-            font-size: 1.2em;
-            padding-left: 1em;
-            margin: 0;
-        }
-        
-        .blue-gray-row>.grid>.block>ul>li+li,
-        .blue-gray-checker>.block>ul>li+li {
-            margin-top: .5em;
-        }
-        
-        .blue-gray-checker .button>a {
-            font-size: .9em;
-        }
-        /* image-copy blocks */
-        
-        .image-copy {
-            flex: 1 0 250px;
-            font-size: .8em;
-        }
-        
-        .image-copy h3 {
-            color: #0070af;
-            margin: 0;
-        }
-        
-        .image-copy p {
-            margin-top: .5em;
-        }
-        
-        .image-copy img+p {
-            margin-top: 1em;
-        }
-        /* image-copy block rows */
-        
-        .image-copy .row {
-            display: flex;
-            align-items: center;
-            margin: 0 -1.25em;
-            /* width: auto; */
-        }
-        
-        .image-copy .row+.row {
-            margin-top: 1.5em;
-        }
-        
-        .image-copy .image {
-            width: 150px;
-        }
-        
-        .image-copy .copy {
-            width: 310px;
-            width: calc(100% - 150px);
-            margin-left: .5em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        /* table defaults */
-        
-        table {
-            border-collapse: collapse;
-            font-size: inherit;
-            margin: 0 -10px;
-            width: 100%;
-            width: calc(100% + 20px);
-        }
-        
-        th {
-            padding: 0 10px 20px;
-            border-bottom: 1px solid #b7b7b7;
-            text-align: left;
-            color: #494949;
-            min-height: 100px;
-            vertical-align: bottom;
-        }
-        
-        td {
-            padding: 20px 10px 0;
-            color: #494949;
-        }
-        
-        tr>:nth-child(even) {
-            text-align: right;
-        }
-        /* icon in left margin */
-        
-        .element-icon {
-            position: relative;
-        }
-        
-        .element-icon img {
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            left: -70px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: none;
-        }
-        
-        .margin-icon h3 {
-            margin: 0;
-        }
-        
-        .margin-icon {
-            margin-top: 50px;
-        }
-        
-        table,
-        .scale-with-table {
-            font-size: .8em;
-        }
-        
-        h3+.margin-icon {
-            margin-top: 30px;
-        }
-        /* gray bar */
-        
-        .gray-bar {
-            background-color: #f5f5f5;
-            margin-top: 30px;
-            padding: 1px 0 50px;
-        }
-        
-        .gray-bar>:first-child {
-            margin-top: 0;
-        }
-        /* Icon Columns */
-        
-        .icon-columns {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -10px 30px;
-            width: 100%;
-            width: calc(100% + 20px);
-        }
-        
-        .icon-columns .column {
-            flex: 1 200px;
-            max-width: 220px;
-            margin: 30px auto 0;
-            padding: 0 10px;
-            text-align: center;
-        }
-        
-        .icon-columns .column img {
-            width: 50px;
-            margin: 0 auto;
-        }
-        
-        .icon-columns .column h4 {
-            color: #494949;
-            margin-top: .5em;
-        }
-        /* map */
-        
-        .map {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-        
-        .map .text-box {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 auto;
-            align-content: flex-start;
-            font-size: 0.9em;
-        }
-        
-        .map .text-group {
-            margin: 0 1em;
-        }
-        
-        .map h3 {
-            font-size: 1em;
-            font-family: lato;
-            font-weight: bold;
-            margin-top: 1em;
-        }
-        
-        .map p {
-            white-space: nowrap;
-        }
-        
-        .map .star::before {
-            width: 1.2em;
-            height: 1em;
-            content: "";
-            display: inline-block;
-            background-image: url('https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/star.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            position: relative;
-            top: .1em;
-        }
-        /* Image-copy slide row */
-        
-        .image-copy-slide-row {
-            margin-top: 50px;
-            background-color: #f5f5f5;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .image-copy-slide-row .image {
-            flex: 3 0 300px;
-            max-width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .image-copy-slide-row .image::after {
-            content: "";
-            display: block;
-            padding-bottom: 61.8%;
-        }
-        
-        .image-copy-slide-row .copy {
-            flex: 1 0 310px;
-            max-width: 100%;
-            padding: 30px;
-            font-size: .9em;
-        }
-        
-        .image-copy-slide-row h2 {
-            margin: 0;
-        }
-        
-        .image-copy-slide-row h2+p {
-            margin-top: 1em;
-        }
-        /* three-column row */
-        
-        .three-col-row {
-            margin: 20px -15px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .three-col-row .block {
-            margin: 30px 15px 0;
-            flex: 1 0 300px;
-            max-width: 310px;
-        }
-        /* modal */
-        
-        [videoModal] {
-            cursor: pointer;
-        }
-        
-        #npc-modal {
-            position: fixed;
-            z-index: 1000000;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        
-        #npc-modal-container {
-            background-color: #fefefe;
-            padding: 5px;
-            border: 1px solid #888;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        
-        .video #npc-modal-container {
-            width: 75%;
-            max-width: 1050px;
-        }
-        
-        #npc-image {
-            width: 100%;
-            display: block;
-        }
-        
-        .video #npc-modal-content {
-            position: relative;
-            height: 0;
-            padding-bottom: 56.25%;
-        }
-        
-        #npc-modal-content iframe {
-            min-height: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        
-        #npc-modal-close {
-            position: absolute;
-            right: -7px;
-            top: -7px;
-            width: 22px;
-            z-index: 10;
-            cursor: pointer;
-        }
-        
-        #npc-modal-close:hover,
-        #npc-modal-close:focus {
-            text-decoration: none;
-            cursor: pointer;
-        }
-        /* article posts */
-        
-        .post {
-            flex: 0 0 305px;
-            background-color: white;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.2s ease-out;
-            font-size: .8em;
-            max-height: 400px;
-            overflow: hidden;
-            position: relative;
-            padding-bottom: 20px;
-            border: 1px solid #e6e6e6;
-        }
-        
-        .post.contacts {
-            background-color: #f5f5f5;
-            max-height: none;
-        }
-        
-        .post:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
-        
-        .post .read-more {
-            color: #0070af;
-            font-weight: bold;
-            text-align: right;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 45px 20px 15px;
-            line-height: 20px;
-            background-image: linear-gradient(transparent, white 45px);
-            cursor: pointer;
-        }
-        
-        .post header {
-            background-color: #0070af;
-            color: white;
-            font-weight: bold;
-            padding: 10px;
-        }
-        
-        .post.contacts header {
-            background-color: #575757;
-        }
-        
-        .post h1 {
-            font-size: 1.2em;
-            margin: 1em 20px 0;
-            color: #0070af;
-        }
-        
-        .post p {
-            margin: .25em 20px 0;
-        }
-        
-        .post p.date {
-            font-size: 13px;
-            font-weight: bold;
-            margin: 0.8em 20px;
-        }
-        /* footer */
-        
-        .footer {
-            height: 100px;
-            text-align: center;
-            margin-top: 70px;
-            padding-top: 38px;
-        }
-        
-        @media only screen and (min-width: 400px) {
-            .image-copy .row {
-                margin: 0;
-            }
-            .margin-icon {
-                padding-left: 90px;
-                position: relative;
-            }
-            .margin-icon.border {
-                padding: 40px 25px 40px 90px;
-            }
-            .element-icon img {
-                display: block;
-            }
-            .border {
-                border: 1px solid #b7b7b7;
-            }
-            .border+.border {
-                border-top: none;
-                margin-top: 0;
-            }
-        }
-        
-        @media only screen and (min-width: 600px) {
-            .hero-background {
-                padding-top: 70px;
-                padding-bottom: 28%;
-                margin-bottom: -28%;
-            }
-            #hero {
-                overflow: hidden;
-            }
-            #hero h1 {
-                position: absolute;
-                top: 5%;
-                left: 5%;
-                margin: 0;
-                text-align: left;
-            }
-            h2 {
-                font-size: 2em;
-            }
-            h3 {
-                font-size: 1.4em;
-            }
-            .indent>p,
-            .indent>ul,
-            .indent>ol,
-            .indent>h4,
-            .indent>.button {
-                margin-left: 90px;
-            }
-            .indent .grid {
-                margin: 0 90px
-            }
-            .blue-gray-row>.grid>:first-child,
-            .blue-gray-checker>:first-child {
-                font-size: 1.4em;
-            }
-            .grid .image-copy h3 {
-                font-size: 1.1em;
-            }
-            .margin-icon.border {
-                padding-right: 90px;
-            }
-            table,
-            .scale-with-table {
-                font-size: .9em;
-            }
-        }
-        
-        @media only screen and (min-width: 900px) {
-            #hero h1 {
-                font-size: 2.8em;
-            }
-            h2 {
-                font-size: 2.4em;
-            }
-            h3 {
-                font-size: 1.6em;
-            }
-            h4 {
-                font-size: 1.2em;
-            }
-            .blue-gray-row>.grid>:first-child,
-            .blue-gray-checker>:first-child {
-                font-size: 1.5em;
-            }
-            .grid .image-copy h3 {
-                font-size: 1.2em;
-            }
-            table,
-            .scale-with-table {
-                font-size: 1em;
-            }
-            .map {
-                flex-wrap: nowrap;
-            }
-            .map .image {
-                width: 70%;
-            }
-            .map .text-box {
-                width: 30%;
-                padding-left: 1em;
-            }
-        }
-        
-        @media only screen and (min-width: 980px) {
-            .blue-gray-checker+.blue-gray-checker {
-                margin-top: 0;
-            }
-        }
-        
-        @media only screen and (min-width: 1000px) {
-            .hero-background {
-                padding-top: 70px;
-                padding-bottom: 280px;
-                margin-bottom: -280px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <style>
-        .icon-phone,
-        .icon-envelop {
-            font-size: .8em;
-            margin-right: 0.5em;
-        }
-        
-        @media only screen and (min-width: 600px) {
-            #hero h1 {
-                text-shadow: 0 0 .5em white;
-            }
-        }
-    </style>
-    <div class="gray">
-        <div class="page-width">
-            <nav id="topnav">
-                <div class="logo">
-                    <a href="https://www.la-z-boy.com">
-                        <img src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/logo.png" alt="">
-                    </a>
-                </div>
-                <button class="hamburger" type="button">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                <script>
-                    insertNavHere();
-                </script>
-            </nav>
-        </div>
+            text-shadow: 0 0 .5em white;
+        }
+    }
+</style>
+<div class="blue hero-background"></div>
+<div class="page-width">
+    <div id="hero">
+        <picture>
+            <source srcset="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/NewsRoom/mobile/hero.jpg" media="(max-width: 599.9px)" />
+            <img srcset="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/NewsRoom/desktop/hero.jpg 2x, https://content.la-z-boy.com/Images/npc/AboutLaZBoy/NewsRoom/desktop/hero@1x.jpg 1x" src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/NewsRoom/desktop/hero@1x.jpg"
+                alt="" />
+        </picture>
+        <h1>News Room</h1>
     </div>
-    <div class="blue hero-background"></div>
-    <div class="page-width">
-        <div id="hero">
-            <img class="mobile" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/NewsRoom/mobile/hero.jpg" alt="">
-            <img class="tablet-desktop" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/NewsRoom/desktop/hero.jpg" alt="">
-            <h1>News Room</h1>
-        </div>
-        <div class="indent">
-            <h2>The latest headlines from <span style="white-space: nowrap;">La-Z-Boy</span></h2>
-            <p>From new store openings to our work in the community, get the scoop on what&rsquo;s happening throughout the <span style="white-space: nowrap;">La-Z-Boy</span> organization.</p>
-        </div>
-        <div class="grid">
-            <div class="gutter-30">
-                <aside class="contacts post block">
-                    <header>Contacts</header>
-                    <h1>Investor relations or corporate information</h1>
-                    <p>Kathy Liebmann, Director of Investor Relations and Corporate Communications</p>
-                    <p><a href="mailto:Kathy.Liebmann@la-z-boy.com" target="_top"><span
+    <div class="indent">
+        <h2>The latest headlines from <span style="white-space: nowrap;">La-Z-Boy</span></h2>
+        <p>From new store openings to our work in the community, get the scoop on what&rsquo;s happening throughout the <span style="white-space: nowrap;">La-Z-Boy</span> organization.</p>
+    </div>
+    <div class="grid">
+        <div class="gutter-30">
+            <aside class="contacts post block">
+                <header>Contacts</header>
+                <h1>Investor relations or corporate information</h1>
+                <p>Kathy Liebmann, Director of Investor Relations and Corporate Communications</p>
+                <p><a href="mailto:Kathy.Liebmann@la-z-boy.com" target="_top"><span
                                     class="icon-envelop"></span>Kathy.Liebmann@la-z-boy.com</a></p>
-                    <p><a href="tel:734-241-2438"><span class="icon-phone"></span>734-241-2438</a></p>
-                    <h1>Product and general media inquiries</h1>
-                    <p>Elizabeth Mitolo, Hunter PR for <span style="white-space: nowrap">La-Z-Boy, Inc.</span></p>
-                    <p><a href="mailto:emitolo@hunterpr.com" target="_top"><span
+                <p><a href="tel:734-241-2438"><span class="icon-phone"></span>734-241-2438</a></p>
+                <h1>Product and general media inquiries</h1>
+                <p>Elizabeth Mitolo, Hunter PR for <span style="white-space: nowrap">La-Z-Boy, Inc.</span></p>
+                <p><a href="mailto:emitolo@hunterpr.com" target="_top"><span
                                     class="icon-envelop"></span>emitolo@hunterpr.com</a></p>
-                    <p><a href="tel:212-679-6600"><span class="icon-phone"></span>212-679-6600</a></p>
-                </aside>
-                <article class="post block">
-                    <h1><span style="white-space: nowrap;">La-Z-Boy</span> CEO Kurt Darrow to be inducted into the American Home Furnishings Hall of Fame</h1>
-                    <p class="date">June 22, 2018</p>
-                    <p>The American Home Furnishings Hall of Fame Foundation announced yesterday, Kurt L. Darrow, Chairman, President and CEO of <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated, will be one of four furniture industry executives
-                        inducted into the American Home Furnishings Hall of Fame on October 14, 2018, during the High Point Market. Darrow has spent close to four decades with <span style="white-space: nowrap;">La-Z-Boy</span>, leading the company as
-                        the visionary architect behind multiple transformations and positioning the brand as a marketplace leader.</p>
-                    <a href="https://www.la-z-boy.com/News/2018-07-16.html" class="read-more" target="_blank">+ Read
+                <p><a href="tel:212-679-6600"><span class="icon-phone"></span>212-679-6600</a></p>
+            </aside>
+            <article class="post block">
+                <h1><span style="white-space: nowrap;">La-Z-Boy</span> CEO Kurt Darrow to be inducted into the American Home Furnishings Hall of Fame</h1>
+                <p class="date">June 22, 2018</p>
+                <p>The American Home Furnishings Hall of Fame Foundation announced yesterday, Kurt L. Darrow, Chairman, President and CEO of <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated, will be one of four furniture industry executives
+                    inducted into the American Home Furnishings Hall of Fame on October 14, 2018, during the High Point Market. Darrow has spent close to four decades with <span style="white-space: nowrap;">La-Z-Boy</span>, leading the company as the
+                    visionary architect behind multiple transformations and positioning the brand as a marketplace leader.</p>
+                <a href="https://www.la-z-boy.com/News/2018-07-16.html" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1><span style="white-space: nowrap;">La-Z-Boy</span> opens its 350th retail location</h1>
-                    <p class="date">November 28, 2017</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span> today announced the milestone opening of its 350<span class="super">th</span> retail location, a <span style="white-space: nowrap;">La-Z-Boy</span> Home Furnishings &amp; D&eacute;cor
-                        in Rockford, Illinois. The store occupies over 13,000 square feet and boasts a remarkable selection of great looking furniture for the entire home.</p>
-                    <p>The Rockford store is representative of the company&rsquo;s award-winning design concept. These locations have the highest average volume per store of the company&rsquo;s existing formats. <span style="white-space: nowrap;">La-Z-Boy</span>                        began opening its award-winning design concept stores in 2011.</p>
-                    <a href="https://www.la-z-boy.com/News/2017-11-28.html" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1><span style="white-space: nowrap;">La-Z-Boy</span> opens its 350th retail location</h1>
+                <p class="date">November 28, 2017</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span> today announced the milestone opening of its 350<span class="super">th</span> retail location, a <span style="white-space: nowrap;">La-Z-Boy</span> Home Furnishings &amp; D&eacute;cor
+                    in Rockford, Illinois. The store occupies over 13,000 square feet and boasts a remarkable selection of great looking furniture for the entire home.</p>
+                <p>The Rockford store is representative of the company&rsquo;s award-winning design concept. These locations have the highest average volume per store of the company&rsquo;s existing formats. <span style="white-space: nowrap;">La-Z-Boy</span>                    began opening its award-winning design concept stores in 2011.</p>
+                <a href="https://www.la-z-boy.com/News/2017-11-28.html" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>Revolutionary new duo by <span style="white-space: nowrap;">La-Z-Boy</span> Furniture bridges style and comfort</h1>
-                    <p class="date">April 21, 2017</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span> announced today the release of Duo, a revolutionary new product line that features the sophisticated look of stationary furniture with the unexpected power to recline at the push of
-                        a button.</p>
-                    <p>&ldquo;When developing Duo, our goal was to bring the great look of a stationary sofa together with the comfort of a motion piece,&rdquo; said Gregg Schweir, vice president of research and development for <span style="white-space: nowrap;">La-Z-Boy</span>.
-                        &ldquo;Today, most reclining furniture has a distinct look, and we rose above that stereotype by creating a beautiful reclining sofa that was not limited by styling options.&rdquo;
-                    </p>
-                    <a href="https://www.la-z-boy.com/News/2017-04-21.html" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>Revolutionary new duo by <span style="white-space: nowrap;">La-Z-Boy</span> Furniture bridges style and comfort</h1>
+                <p class="date">April 21, 2017</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span> announced today the release of Duo, a revolutionary new product line that features the sophisticated look of stationary furniture with the unexpected power to recline at the push of a
+                    button.
+                </p>
+                <p>&ldquo;When developing Duo, our goal was to bring the great look of a stationary sofa together with the comfort of a motion piece,&rdquo; said Gregg Schweir, vice president of research and development for <span style="white-space: nowrap;">La-Z-Boy</span>.
+                    &ldquo;Today, most reclining furniture has a distinct look, and we rose above that stereotype by creating a beautiful reclining sofa that was not limited by styling options.&rdquo;
+                </p>
+                <a href="https://www.la-z-boy.com/News/2017-04-21.html" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1><span style="white-space: nowrap;">La-Z-Boy</span> celebrates 90 years of American made comfort
-                    </h1>
-                    <p class="date">March 24, 2017</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span> is celebrating its milestone 90th anniversary today with more than 6,300 employees nationwide, spanning its corporate headquarters in Michigan, five U.S. manufacturing plants, six
-                        U.S. distribution centers, and 142 corporate-owned <span style="white-space: nowrap;">La-Z-Boy</span> Furniture <span class="registered">Galleries</span> stores (an additional 204 store locations are dealer owned).
-                    </p>
-                    <p>Ninety years ago, cousins Edward M. Knabusch and Edwin J. Shoemaker built a game-changing piece of furniture in Monroe, Mich., with the goal of providing lasting comfort. Their hard work evolved into a true American success story and
-                        a brand that has become a household name.</p>
-                    <a href="https://www.la-z-boy.com/News/2017-03-24.html" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1><span style="white-space: nowrap;">La-Z-Boy</span> celebrates 90 years of American made comfort
+                </h1>
+                <p class="date">March 24, 2017</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span> is celebrating its milestone 90th anniversary today with more than 6,300 employees nationwide, spanning its corporate headquarters in Michigan, five U.S. manufacturing plants, six U.S.
+                    distribution centers, and 142 corporate-owned <span style="white-space: nowrap;">La-Z-Boy</span> Furniture <span class="registered">Galleries</span> stores (an additional 204 store locations are dealer owned).
+                </p>
+                <p>Ninety years ago, cousins Edward M. Knabusch and Edwin J. Shoemaker built a game-changing piece of furniture in Monroe, Mich., with the goal of providing lasting comfort. Their hard work evolved into a true American success story and a
+                    brand that has become a household name.</p>
+                <a href="https://www.la-z-boy.com/News/2017-03-24.html" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1><span style="white-space: nowrap;">La-Z-Boy</span> announces new iClean&trade; stain-repelling fabric</h1>
-                    <p class="date">August 23, 2016</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span> is excited to introduce iClean&trade;, its new and innovative stain-repelling fabric. iClean&trade; is a high-performance fabric that incorporates safe, sophisticated chemistry to
-                        protect and surround each fiber, repelling spills before they turn into stains. Everyday spills are now protected with iClean&trade;, including coffee, wine, salsa, dirt, chocolate and more.</p>
-                    <p>So how does it work? iClean&trade; fabrics are completely immersed in a stain resistant solution assuring every single fiber has been treated. This process leaves a concentrated barrier of protection while still keeping the touch soft
-                        and luxurious.</p>
-                    <a href="https://www.la-z-boy.com/News/2016-08-23.html" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1><span style="white-space: nowrap;">La-Z-Boy</span> announces new iClean&trade; stain-repelling fabric</h1>
+                <p class="date">August 23, 2016</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span> is excited to introduce iClean&trade;, its new and innovative stain-repelling fabric. iClean&trade; is a high-performance fabric that incorporates safe, sophisticated chemistry to protect
+                    and surround each fiber, repelling spills before they turn into stains. Everyday spills are now protected with iClean&trade;, including coffee, wine, salsa, dirt, chocolate and more.</p>
+                <p>So how does it work? iClean&trade; fabrics are completely immersed in a stain resistant solution assuring every single fiber has been treated. This process leaves a concentrated barrier of protection while still keeping the touch soft
+                    and luxurious.</p>
+                <a href="https://www.la-z-boy.com/News/2016-08-23.html" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1><span style="white-space: nowrap;">La-Z-Boy</span> opens 100th new design concept store</h1>
-                    <p class="date">September 8, 2016</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span> today announced the milestone opening of its 100th new concept store in Prescott Valley, Arizona. These locations have the highest average volume per store of the company&rsquo;s existing
-                        formats, generating approximately $4.2 million per year. <span style="white-space: nowrap;">La-Z-Boy</span> began opening its award-winning design concept stores in 2011.</p>
-                    <p>&ldquo;When you introduce somebody to your product you want them to get excited, but also feel like they understand your brand,&rdquo; said Mark Bacon, President, <span style="white-space: nowrap;">La-Z-Boy</span> Branded Business.
-                        &ldquo;Our new concept stores allow us to do that, keeping customers engaged in the store longer and helping improve sales.&rdquo;</p>
-                    <a href="https://www.la-z-boy.com/News/2016-09-08.html" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1><span style="white-space: nowrap;">La-Z-Boy</span> opens 100th new design concept store</h1>
+                <p class="date">September 8, 2016</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span> today announced the milestone opening of its 100th new concept store in Prescott Valley, Arizona. These locations have the highest average volume per store of the company&rsquo;s existing
+                    formats, generating approximately $4.2 million per year. <span style="white-space: nowrap;">La-Z-Boy</span> began opening its award-winning design concept stores in 2011.</p>
+                <p>&ldquo;When you introduce somebody to your product you want them to get excited, but also feel like they understand your brand,&rdquo; said Mark Bacon, President, <span style="white-space: nowrap;">La-Z-Boy</span> Branded Business. &ldquo;Our
+                    new concept stores allow us to do that, keeping customers engaged in the store longer and helping improve sales.&rdquo;</p>
+                <a href="https://www.la-z-boy.com/News/2016-09-08.html" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy introduces rechargeable batteries for power recliners</h1>
-                    <p class="date">April 14, 2016</p>
-                    <p>People who want the luxury of a power recliner but don&rsquo;t like the look of the power cord, or have challenges placing furniture near a power outlet, now have a solution. <span style="white-space: nowrap;">La-Z-Boy</span> is pleased
-                        to unveil its newest technological advancement, a rechargeable lithium-ion battery pack. This new innovation, which is being introduced at the High Point Furniture Market, has the ability to power your recliner for approximately
-                        one week before needing to be recharged. It provides a wireless power option that allows for carefree operation and the flexibility to place power reclining furniture anywhere in a room, without the need to be plugged into a wall
-                        outlet.
-                    </p>
-                    <p>&ldquo;La-Z-Boy continues to lead the way in innovation, exploring ways to further enhance our products so consumers can Live Life Comfortably,&rdquo; said Paula Hoyas, Vice President Merchandising for <span style="white-space: nowrap;">La-Z-Boy</span>.
-                        &ldquo;We know our customers love the power options we offer, and now, they can have them free from the constraints of the ‘corded&rsquo; power supply.&rdquo;</p>
-                    <a href="https://www.la-z-boy.com/News/490.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy introduces rechargeable batteries for power recliners</h1>
+                <p class="date">April 14, 2016</p>
+                <p>People who want the luxury of a power recliner but don&rsquo;t like the look of the power cord, or have challenges placing furniture near a power outlet, now have a solution. <span style="white-space: nowrap;">La-Z-Boy</span> is pleased
+                    to unveil its newest technological advancement, a rechargeable lithium-ion battery pack. This new innovation, which is being introduced at the High Point Furniture Market, has the ability to power your recliner for approximately one
+                    week before needing to be recharged. It provides a wireless power option that allows for carefree operation and the flexibility to place power reclining furniture anywhere in a room, without the need to be plugged into a wall outlet.
+                </p>
+                <p>&ldquo;La-Z-Boy continues to lead the way in innovation, exploring ways to further enhance our products so consumers can Live Life Comfortably,&rdquo; said Paula Hoyas, Vice President Merchandising for <span style="white-space: nowrap;">La-Z-Boy</span>.
+                    &ldquo;We know our customers love the power options we offer, and now, they can have them free from the constraints of the ‘corded&rsquo; power supply.&rdquo;</p>
+                <a href="https://www.la-z-boy.com/News/490.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy manufacturing facility breaks furniture industry safety record</h1>
-                    <p class="date">April 12, 2016</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span>, a leader in the residential furniture industry, announced today that its Dayton, Tenn. manufacturing facility has broken the American Home Furnishings Alliance (AHFA) safety record
-                        after working over 6.8 million production hours without experiencing an Occupational Safety and Health Administration (OSHA) recordable lost-time case. This is a new record for <span style="white-space: nowrap;">La-Z-Boy</span>,
-                        who also set the previous record with over 6.4 million hours in 2004.</p>
-                    <a href="https://www.la-z-boy.com/News/492.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy manufacturing facility breaks furniture industry safety record</h1>
+                <p class="date">April 12, 2016</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span>, a leader in the residential furniture industry, announced today that its Dayton, Tenn. manufacturing facility has broken the American Home Furnishings Alliance (AHFA) safety record after
+                    working over 6.8 million production hours without experiencing an Occupational Safety and Health Administration (OSHA) recordable lost-time case. This is a new record for <span style="white-space: nowrap;">La-Z-Boy</span>, who also
+                    set the previous record with over 6.4 million hours in 2004.</p>
+                <a href="https://www.la-z-boy.com/News/492.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>Top <span style="white-space: nowrap;">La-Z-Boy</span> Account Executives inducted into company's summit club</h1>
-                    <p class="date">February 3, 2016</p>
-                    <p>La-Z-Boy, one of the nation&rsquo;s leading manufacturers of upholstered furniture, inducted members into the company&rsquo;s Summit Club, an honor for its top Account Executives. The inductees accepted awards during a ceremony held
-                        at the International Home Furnishings Market in High Point, North Carolina.</p>
-                    <p>The 2015 Patrick H. Norton Award for Sales Excellence, a prestigious honor named after Norton, former chairman of the board, to recognize achievement, was presented to Christy Means, an Account Executive in Missouri and Arkansas. Means
-                        has been with
-                        <span style="white-space: nowrap;">La-Z-Boy</span> since 2005 and is also a third-time Summit Club honoree.</p>
-                    <a href="https://www.la-z-boy.com/News/486.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>Top <span style="white-space: nowrap;">La-Z-Boy</span> Account Executives inducted into company's summit club</h1>
+                <p class="date">February 3, 2016</p>
+                <p>La-Z-Boy, one of the nation&rsquo;s leading manufacturers of upholstered furniture, inducted members into the company&rsquo;s Summit Club, an honor for its top Account Executives. The inductees accepted awards during a ceremony held at
+                    the International Home Furnishings Market in High Point, North Carolina.</p>
+                <p>The 2015 Patrick H. Norton Award for Sales Excellence, a prestigious honor named after Norton, former chairman of the board, to recognize achievement, was presented to Christy Means, an Account Executive in Missouri and Arkansas. Means
+                    has been with
+                    <span style="white-space: nowrap;">La-Z-Boy</span> since 2005 and is also a third-time Summit Club honoree.</p>
+                <a href="https://www.la-z-boy.com/News/486.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy World Headquarters awarded <span class="registered">LEED</span> Silver Certification by U.S. Green Building Council
-                    </h1>
-                    <p class="date">September 17, 2015</p>
-                    <p>La-Z-Boy is pleased to announce today that it has been awarded <span class="registered">LEED</span> Silver Certification for its new World Headquarters. The LEED rating system, developed by the U.S. Green Building Council (USGBC),
-                        is the foremost program for buildings, homes and communities that are designed, constructed, maintained and operated for improved environmental and human health performance.</p>
-                    <p>The 200,000-square-foot World Headquarters was completed in March 2015 in partnership with design/build contractor Rudolph/Libbe Inc. of the Rudolph Libbe Group. The building &ndash; which was built to the latest energy-efficient standards
-                        &ndash; features a three-story, glassed-in lobby with an oak savannah view and natural lighting. The building occupies about 40 acres of a total 120; the remaining 80 acres, which include an endangered oak savanna ecosystem, have
-                        been left untouched as a nature preserve.</p>
-                    <a href="https://www.la-z-boy.com/News/484.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy World Headquarters awarded <span class="registered">LEED</span> Silver Certification by U.S. Green Building Council
+                </h1>
+                <p class="date">September 17, 2015</p>
+                <p>La-Z-Boy is pleased to announce today that it has been awarded <span class="registered">LEED</span> Silver Certification for its new World Headquarters. The LEED rating system, developed by the U.S. Green Building Council (USGBC), is the
+                    foremost program for buildings, homes and communities that are designed, constructed, maintained and operated for improved environmental and human health performance.</p>
+                <p>The 200,000-square-foot World Headquarters was completed in March 2015 in partnership with design/build contractor Rudolph/Libbe Inc. of the Rudolph Libbe Group. The building &ndash; which was built to the latest energy-efficient standards
+                    &ndash; features a three-story, glassed-in lobby with an oak savannah view and natural lighting. The building occupies about 40 acres of a total 120; the remaining 80 acres, which include an endangered oak savanna ecosystem, have been
+                    left untouched as a nature preserve.</p>
+                <a href="https://www.la-z-boy.com/News/484.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy helps moms #TakeComfort through special day of community, sharing and back-to-school surprises</h1>
-                    <p class="date">September 8, 2015</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span> is celebrating mothers across the U.S. and Canada today by recognizing the ups &ndash; and downs &ndash; that go along with getting their children back-to-school. By creating a community
-                        of parents who can share their stories of the chaos, they can #TakeComfort in knowing they are not alone. Many moms spend countless hours getting ready for the big day, from purchasing school supplies to new clothes, and yet despite
-                        all their efforts and meticulous preparation, the inevitable happens and the day doesn&rsquo;t go according to plan. Someone sleeps past the alarm, orange juice spills on that new shirt …it&rsquo;s a total #MomFail.</p>
-                    <p>The bright side of any #MomFail is the enduring sense of camaraderie among parents &ndash; and every mom who has been there, done that. Not to mention all of the funny stories that get shared with friends and family, and passed down
-                        through the ages.</p>
-                    <a href="https://www.la-z-boy.com/News/483.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy helps moms #TakeComfort through special day of community, sharing and back-to-school surprises</h1>
+                <p class="date">September 8, 2015</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span> is celebrating mothers across the U.S. and Canada today by recognizing the ups &ndash; and downs &ndash; that go along with getting their children back-to-school. By creating a community
+                    of parents who can share their stories of the chaos, they can #TakeComfort in knowing they are not alone. Many moms spend countless hours getting ready for the big day, from purchasing school supplies to new clothes, and yet despite
+                    all their efforts and meticulous preparation, the inevitable happens and the day doesn&rsquo;t go according to plan. Someone sleeps past the alarm, orange juice spills on that new shirt …it&rsquo;s a total #MomFail.</p>
+                <p>The bright side of any #MomFail is the enduring sense of camaraderie among parents &ndash; and every mom who has been there, done that. Not to mention all of the funny stories that get shared with friends and family, and passed down through
+                    the ages.</p>
+                <a href="https://www.la-z-boy.com/News/483.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy unveils new world headquarters</h1>
-                    <p class="date">June 5, 2015</p>
-                    <p>In a move that demonstrates the next step in the brand's evolution, <span style="white-space: nowrap;">La-Z-Boy</span> recently opened its fresh, new-from-the-ground-up World Headquarters in Monroe, Mich. with a breathtaking design
-                        that captures the iconic brands sleek new style.</p>
-                    <p>The 200,000-square-foot, three-story facility features an open floor plan and flexible workspace, designed to help foster greater collaboration, innovation and creativity. Throughout the headquarters, a large variety of working and
-                        gathering spaces are available to employees to provide maximum flexibility for every working situation from treadmill desks to rooftop patios.</p>
-                    <a href="https://www.la-z-boy.com/News/482.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy unveils new world headquarters</h1>
+                <p class="date">June 5, 2015</p>
+                <p>In a move that demonstrates the next step in the brand's evolution, <span style="white-space: nowrap;">La-Z-Boy</span> recently opened its fresh, new-from-the-ground-up World Headquarters in Monroe, Mich. with a breathtaking design that
+                    captures the iconic brands sleek new style.</p>
+                <p>The 200,000-square-foot, three-story facility features an open floor plan and flexible workspace, designed to help foster greater collaboration, innovation and creativity. Throughout the headquarters, a large variety of working and gathering
+                    spaces are available to employees to provide maximum flexibility for every working situation from treadmill desks to rooftop patios.</p>
+                <a href="https://www.la-z-boy.com/News/482.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy store opens in Timonium</h1>
-                    <p class="date">May 24, 2014</p>
-                    <p>Local furniture shoppers will be surprised to see what <span style="white-space: nowrap;">La-Z-Boy</span> has in store for Timonium residents.&nbsp; The iconic furniture company is holding a grand opening celebration of its award-winning
-                        new store design, featuring a shopping experience as comfortable as its famous furniture. The new store &ndash; located in Timonium which occupies over 15,000-square-feet&ndash; boasts a remarkable selection of great looking furniture
-                        for the entire home, all presented in inspiring room displays organized by lifestyle. The store represents a new design format for <span style="white-space: nowrap;">La-Z-Boy</span>, and truly embodies the &ldquo;<em>Live
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy store opens in Timonium</h1>
+                <p class="date">May 24, 2014</p>
+                <p>Local furniture shoppers will be surprised to see what <span style="white-space: nowrap;">La-Z-Boy</span> has in store for Timonium residents.&nbsp; The iconic furniture company is holding a grand opening celebration of its award-winning
+                    new store design, featuring a shopping experience as comfortable as its famous furniture. The new store &ndash; located in Timonium which occupies over 15,000-square-feet&ndash; boasts a remarkable selection of great looking furniture
+                    for the entire home, all presented in inspiring room displays organized by lifestyle. The store represents a new design format for <span style="white-space: nowrap;">La-Z-Boy</span>, and truly embodies the &ldquo;<em>Live
                                 life comfortably</em> SM&rdquo; tagline.</p>
-                    <a href="https://www.la-z-boy.com/News/471.htm" class="read-more" target="_blank">+ Read
+                <a href="https://www.la-z-boy.com/News/471.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy store reopens in Rockville</h1>
-                    <p class="date">May 24, 2014</p>
-                    <p>Local furniture shoppers will be surprised to see what <span style="white-space: nowrap;">La-Z-Boy</span> has in store for Rockville residents.&nbsp; The iconic furniture company will hold a grand opening of its award-winning new store
-                        design, featuring a shopping experience as comfortable as its famous furniture. The newly remodeled store &ndash; located in Rockville which occupies just over 17,000-square-feet&ndash; boasts a remarkable selection of great looking
-                        furniture for the entire home, all presented in inspiring room displays organized by lifestyle. The store represents a new design format for <span style="white-space: nowrap;">La-Z-Boy</span>, and truly embodies the &ldquo;<em>Live life comfortably</em>                        SM&rdquo; tagline.</p>
-                    <a href="https://www.la-z-boy.com/News/469.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy store reopens in Rockville</h1>
+                <p class="date">May 24, 2014</p>
+                <p>Local furniture shoppers will be surprised to see what <span style="white-space: nowrap;">La-Z-Boy</span> has in store for Rockville residents.&nbsp; The iconic furniture company will hold a grand opening of its award-winning new store
+                    design, featuring a shopping experience as comfortable as its famous furniture. The newly remodeled store &ndash; located in Rockville which occupies just over 17,000-square-feet&ndash; boasts a remarkable selection of great looking
+                    furniture for the entire home, all presented in inspiring room displays organized by lifestyle. The store represents a new design format for <span style="white-space: nowrap;">La-Z-Boy</span>, and truly embodies the &ldquo;<em>Live life comfortably</em>                    SM&rdquo; tagline.</p>
+                <a href="https://www.la-z-boy.com/News/469.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy store opens in Edina</h1>
-                    <p class="date">November 22, 2014</p>
-                    <p>Local furniture shoppers will be surprised to see what <span style="white-space: nowrap;">La-Z-Boy</span> has in store for Edina residents. The iconic furniture company will celebrate the grand opening of its award-winning new store
-                        design on December 6th. The new store &ndash; located at 7595 South France Avenue &ndash; occupies over 17,000-square-feet and boasts a remarkable selection of great looking furniture for the entire home, all presented in inspiring
-                        room displays organized by lifestyle. The store represents a new design format for <span style="white-space: nowrap;">La-Z-Boy</span>, and truly embodies the &ldquo;
-                        <em>Live life comfortably</em> SM&rdquo; tagline.</p>
-                    <a href="https://www.la-z-boy.com/News/472.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy store opens in Edina</h1>
+                <p class="date">November 22, 2014</p>
+                <p>Local furniture shoppers will be surprised to see what <span style="white-space: nowrap;">La-Z-Boy</span> has in store for Edina residents. The iconic furniture company will celebrate the grand opening of its award-winning new store design
+                    on December 6th. The new store &ndash; located at 7595 South France Avenue &ndash; occupies over 17,000-square-feet and boasts a remarkable selection of great looking furniture for the entire home, all presented in inspiring room displays
+                    organized by lifestyle. The store represents a new design format for <span style="white-space: nowrap;">La-Z-Boy</span>, and truly embodies the &ldquo;
+                    <em>Live life comfortably</em> SM&rdquo; tagline.</p>
+                <a href="https://www.la-z-boy.com/News/472.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy Furniture Galleries sales associates and in-home designers recognized for achievements
-                    </h1>
-                    <p class="date">April 25, 2014</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span> recently announced the recipients of its Pinnacle Awards during a ceremony at the April Market in High Point, N.C. The award recognizes the top-selling sales associates and highest-achieving
-                        in-home designers in the <span style="white-space: nowrap;">La-Z-Boy</span> Furniture Galleries network. &ldquo;Our Pinnacle Awards truly acknowledge our associates&rsquo; commitment to helping bring our brand to life in the area
-                        of consumer experience,&rdquo; said Mark Bacon, President of <span style="white-space: nowrap;">La-Z-Boy</span> Branded Business.</p>
-                    <a href="https://www.la-z-boy.com/News/459.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy Furniture Galleries sales associates and in-home designers recognized for achievements
+                </h1>
+                <p class="date">April 25, 2014</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span> recently announced the recipients of its Pinnacle Awards during a ceremony at the April Market in High Point, N.C. The award recognizes the top-selling sales associates and highest-achieving
+                    in-home designers in the <span style="white-space: nowrap;">La-Z-Boy</span> Furniture Galleries network. &ldquo;Our Pinnacle Awards truly acknowledge our associates&rsquo; commitment to helping bring our brand to life in the area of
+                    consumer experience,&rdquo; said Mark Bacon, President of <span style="white-space: nowrap;">La-Z-Boy</span> Branded Business.</p>
+                <a href="https://www.la-z-boy.com/News/459.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy Furniture Galleries stores recognized during High Point Furniture Market for achievements
-                    </h1>
-                    <p class="date">April 25, 2014</p>
-                    <p><span style="white-space: nowrap;">La-Z-Boy</span> recognized the owners and operators of its top performing <span style="white-space: nowrap;">La-Z-Boy</span> Furniture Galleries locations at an awards ceremony held during the recent
-                        High Point Furniture Market. </p>
-                    <p>&ldquo;<span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s position as the most recognized home furnishings brand is solidified by the dedication and hard-work of our stores,&rdquo; said Mark Bacon, president of <span style="white-space: nowrap;">La-Z-Boy</span>                        Branded Business.&nbsp; &ldquo;Once a year at this special ceremony we reflect on the stores&rsquo; great accomplishments and applaud them for their commitment to our brand.&rdquo; </p>
-                    <a href="https://www.la-z-boy.com/News/464.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy Furniture Galleries stores recognized during High Point Furniture Market for achievements
+                </h1>
+                <p class="date">April 25, 2014</p>
+                <p><span style="white-space: nowrap;">La-Z-Boy</span> recognized the owners and operators of its top performing <span style="white-space: nowrap;">La-Z-Boy</span> Furniture Galleries locations at an awards ceremony held during the recent
+                    High Point Furniture Market. </p>
+                <p>&ldquo;<span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s position as the most recognized home furnishings brand is solidified by the dedication and hard-work of our stores,&rdquo; said Mark Bacon, president of <span style="white-space: nowrap;">La-Z-Boy</span>                    Branded Business.&nbsp; &ldquo;Once a year at this special ceremony we reflect on the stores&rsquo; great accomplishments and applaud them for their commitment to our brand.&rdquo; </p>
+                <a href="https://www.la-z-boy.com/News/464.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy infuses enhancements &amp; more power into its reclining collection</h1>
-                    <p class="date">April 23, 2014</p>
-                    <p>At High Point Market 2014, <span style="white-space: nowrap;">La-Z-Boy</span> will unveil a technological advancement enhancing the recline position in wall proximity products while offering the option to upgrade to power recline for
-                        ultimate comfort. The redesigned <span class="registered">Reclina-Way</span> mechanism features extended travel, increased legrest elevation, improved stability with quieter operation and more. The improvements land La-ZBoy with
-                        a fully-loaded reclining product line, all available with power.</p>
-                    <a href="https://www.la-z-boy.com/News/475.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy infuses enhancements &amp; more power into its reclining collection</h1>
+                <p class="date">April 23, 2014</p>
+                <p>At High Point Market 2014, <span style="white-space: nowrap;">La-Z-Boy</span> will unveil a technological advancement enhancing the recline position in wall proximity products while offering the option to upgrade to power recline for ultimate
+                    comfort. The redesigned <span class="registered">Reclina-Way</span> mechanism features extended travel, increased legrest elevation, improved stability with quieter operation and more. The improvements land La-ZBoy with a fully-loaded
+                    reclining product line, all available with power.</p>
+                <a href="https://www.la-z-boy.com/News/475.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-                <article class="post block">
-                    <h1>La-Z-Boy expands on style, comfort with new additions to its most-popular collections</h1>
-                    <p class="date">September 17, 2014</p>
-                    <p>With the introduction of the Urban Attitudes collection at High Point Market last October,
-                        <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s commitment to sophisticated, modern offerings has never been more apparent.
-                        <span style="white-space: nowrap;">La-Z-Boy</span> is building on its momentum with the addition of 10 new products across its line, including its Urban Attitudes and Designer&rsquo;s Choice collections, all while staying true
-                        to its history as a company rooted in comfort and quality for more than 85 years.</p>
-                    <a href="https://www.la-z-boy.com/News/473.htm" class="read-more" target="_blank">+ Read
+            </article>
+            <article class="post block">
+                <h1>La-Z-Boy expands on style, comfort with new additions to its most-popular collections</h1>
+                <p class="date">September 17, 2014</p>
+                <p>With the introduction of the Urban Attitudes collection at High Point Market last October,
+                    <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s commitment to sophisticated, modern offerings has never been more apparent.
+                    <span style="white-space: nowrap;">La-Z-Boy</span> is building on its momentum with the addition of 10 new products across its line, including its Urban Attitudes and Designer&rsquo;s Choice collections, all while staying true to its
+                    history as a company rooted in comfort and quality for more than 85 years.</p>
+                <a href="https://www.la-z-boy.com/News/473.htm" class="read-more" target="_blank">+ Read
                             more</a>
-                </article>
-            </div>
+            </article>
         </div>
     </div>
-    <div class="gray footer">
-        <p>&copy;
-            <script>
-                document.write(new Date().getFullYear())
-            </script> <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated</p>
-    </div>
-    <script>
-        runAfterDOM();
-    </script>
-</body>
+</div>

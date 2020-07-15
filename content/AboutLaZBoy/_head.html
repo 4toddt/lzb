@@ -431,6 +431,10 @@
         p {
             margin: 0;
         }
+        
+        p.fine-print {
+            font-size: .75em;
+        }
         /* grid */
         
         .grid {
@@ -764,7 +768,7 @@
             height: 1em;
             content: "";
             display: inline-block;
-            background-image: url('https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/star.png');
+            background-image: url('https://content.la-z-boy.com/Images/npc/AboutLaZBoy/star.svg');
             background-repeat: no-repeat;
             background-size: contain;
             position: relative;
@@ -981,6 +985,9 @@
                 border-top: none;
                 margin-top: 0;
             }
+            .border+p.fine-print {
+                margin-top: 1em;
+            }
         }
         
         @media only screen and (min-width: 600px) {
@@ -1081,4 +1088,10 @@
             }
         }
     </style>
+    <script>
+        console.log("end of styles");
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM Loaded');
+        });
+    </script>
 </head>

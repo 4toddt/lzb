@@ -1,1712 +1,385 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        var navigation = {
-            "Commitment": {
-                "Our Commitment": "/content/AboutLaZBoy/corporate-commitment",
-                "News Room": "/content/AboutLaZBoy/NewsRoom",
-                "Our Brands": "/content/AboutLaZBoy/OurBrands",
-                "Supplier Requirements": "/content/AboutLaZBoy/supplier-requirements"
-            },
-            "Financial": {
-                "Financial Responsibility": "/content/AboutLaZBoy/financial-responsibility",
-                //"Investor Relations": "/content/AboutLaZBoy/InvestorRelations"
-                "Investor Relations": "https://lazboy.gcs-web.com/"
-            },
-            "Environmental": {
-                "Sustainability at a Glance": "/content/AboutLaZBoy/sustainability-at-a-glance",
-                "SASB Standards": "/content/AboutLaZBoy/sasb-standards",
-                "Environment": "/content/AboutLaZBoy/sustainability",
-                "Carbon & Climate": "/content/AboutLaZBoy/carbon-and-climate",
-                "Natural Resources": "/content/AboutLaZBoy/natural-resources",
-                "Waste & Toxicity": "/content/AboutLaZBoy/waste-and-toxicity"
-            },
-            "People": {
-                "Our Employees": "/content/AboutLaZBoy/investing-in-employees",
-                "Leadership": "/content/AboutLaZBoy/leadership",
-                "Corporate Giving": "/content/AboutLaZBoy/corporate-giving",
-                "Made In America": "/content/AboutLaZBoy/made-in-america",
-                "Careers": "/content/AboutLaZBoy/Careers"
-            }
-        }
-
-        var pagePath = window.location.pathname.match(/(.*\/mobile)?(.*)/)[2];
-
-        // Return HTML for navJSON
-        function buildNavigation(navJSON) {
-            var menu = document.createElement('ul');
-            for (navName in navJSON) {
-                var navLink = navJSON[navName];
-                if (typeof(navLink) === "string") {
-                    if (navLink === pagePath) {
-                        menu.innerHTML += '<li><a class="current-page">' + navName + '</a></li>';
-                    } else {
-                        menu.innerHTML += '<li><a href="' + navLink + '">' + navName + '</a></li>';
-                    }
-                } else if (typeof(navLink) === "object") {
-                    var hasCurrentpage = false;
-                    for (i in navLink) {
-                        hasCurrentpage = (hasCurrentpage || (navLink[i] === pagePath))
-                    }
-                    if (hasCurrentpage) {
-                        menu.innerHTML += '<li class="parent show-submenu"><a class="current-page">' + navName + '</a>' + buildNavigation(navLink) + '</li>';
-                    } else {
-                        menu.innerHTML += '<li class="parent"><a>' + navName + '</a>' + buildNavigation(navLink) + '</li>';
-                    }
-                }
-            }
-            var temp = document.createElement('div');
-            temp.appendChild(menu);
-            return temp.innerHTML;
-        }
-
-        function hasClass(ele, cls) {
-            if (!!(ele && cls)) {
-                var classArr = ele.className.trim().split(/ +/);
-                return (classArr.indexOf(cls) > -1);
-            } else {
-                return null;
-            }
-        }
-
-        function addClass(ele, cls) {
-            if (ele && cls) {
-                var classArr = ele.className.trim().split(/ +/);
-                if (classArr.indexOf(cls) == -1) {
-                    classArr.push(cls);
-                    ele.className = classArr.join(' ').trim();
-                }
-            }
-        }
-
-        function removeClass(ele, cls) {
-            if (ele && cls) {
-                var classArr = ele.className.trim().split(/ +/);
-                var index = classArr.indexOf(cls);
-                if (index > -1) {
-                    classArr.splice(index, 1);
-                    ele.className = classArr.join(' ').trim();
-                }
-            }
-        }
-
-        function removeClassAll(nodeList, cls) {
-            if (nodeList && cls) {
-                for (i = 0; i < nodeList.length; i++) {
-                    removeClass(nodeList[i], cls);
-                }
-            }
-        }
-
-        function toggleClass(ele, cls) {
-            if (hasClass(ele, cls)) {
-                removeClass(ele, cls);
-            } else {
-                addClass(ele, cls);
-            }
-        }
-
-        function stopPropagation(evt) {
-            if (typeof evt.stopPropagation == "function") {
-                evt.stopPropagation();
-            } else {
-                evt.cancelBubble = true;
-            }
-        }
-
-        function myEventListener(el, eventName, handler) {
-            if (el.addEventListener) {
-                el.addEventListener(eventName, handler);
-            } else {
-                el.attachEvent('on' + eventName, function() {
-                    handler.call(el);
-                });
-            }
-        }
-
-        //Function to remove the modal.
-        function removeModal() {
-            document.body.removeChild(document.getElementById('npc-modal'));
-        }
-
-        // Function to play a video in a modal. Test video is 'P1li3aQv3eQ'.
-        function videoModal(srcID) {
-            var div = document.createElement('div');
-            div.innerHTML =
-                '<section id="npc-modal" class="video" onclick="removeModal();"><div id="npc-modal-container">\
-      <div id="npc-modal-content">\
-          <iframe src="https://www.youtube.com/embed/' + srcID + '?rel=0&amp;amp;ecver=2&amp;amp;enablejsapi=1&amp;amp;showinfo=0&amp;amp;autoplay=1" frameborder="0" allowfullscreen></iframe>\
-      </div>\
-      <img id="npc-modal-close" src="https://www.la-z-boy.com/Images/npc/modal-close.svg">\
-  </section>';
-            var modal = div.firstChild;
-
-            document.body.insertBefore(modal, document.body.firstChild);
-
-            return false;
-        }
-
-
-        // Writes navigation HTML to page, adds classes and event listeners.
-        function insertNavHere() {
-            document.write(buildNavigation(navigation));
-
-            var topNav = document.getElementById('topnav');
-            var parentLIs = topNav.querySelectorAll('li.parent');
-            var parentLinks = topNav.querySelectorAll('li.parent>a');
-
-            for (i = 0; i < parentLinks.length; i++) {
-                parentLinks[i].addEventListener('click', function() {
-                    var evt = evt || window.event; // For IE
-                    stopPropagation(evt);
-                    if (hasClass(this.parentNode, 'show-submenu')) {
-                        removeClass(this.parentNode, 'show-submenu');
-                    } else {
-                        removeClassAll(parentLIs, 'show-submenu');
-                        addClass(this.parentNode, 'show-submenu');
-                    }
-                    // menu.style.maxHeight = menu.scrollHeight;
-                });
-            }
-            //open external links in new tab
-            for (var links = document.links, i = 0, a; a = links[i]; i++) {
-                if (a.host !== location.host) {
-                    a.target = '_blank';
-                }
-            }
-        }
-
-        function runAfterDOM() {
-            // Look for .hamburger
-            var topNav = document.getElementById('topnav');
-            var hamburger = topNav.querySelector('.hamburger');
-            var menu = topNav.querySelector('ul');
-            // On click
-            hamburger.addEventListener("mousedown", function() {
-                // Toggle class "show-menu"
-                var evt = evt || window.event; // For IE
-                evt.preventDefault ? evt.preventDefault() : (evt.returnValue = false);
-                if (hasClass(topNav, 'show-menu')) {
-                    removeClass(topNav, 'show-menu');
-                } else {
-                    addClass(topNav, 'show-menu');
-                }
-            });
-
-            // Play the video in the query string
-            if (params['video'] != null) {
-                videoModal(params['video']);
-            }
-
-            // Add click and keyboard events to videoModal elements
-            var videoLinks = document.querySelectorAll('[videoModal]');
-            for (i = 0; i < videoLinks.length; i++) {
-                (function() {
-                    var currentVideoLink = videoLinks[i];
-                    var srcID = currentVideoLink.getAttribute('videoModal');
-
-                    currentVideoLink.setAttribute("tabIndex", "0");
-
-                    myEventListener(currentVideoLink, "click", function() {
-                        videoModal(srcID);
-                    })
-
-                    myEventListener(currentVideoLink, 'keypress', function(event) {
-                        var code = event.charCode || event.keyCode;
-                        if ((code === 32) || (code === 13)) {
-                            videoModal(srcID);
-                        }
-                    });
-                })();
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab');
-        @font-face {
-            font-family: 'icomoon';
-            src: url('/css/fonts/icomoon.eot?intxku');
-            src: url('/css/fonts/icomoon.eot?intxku#iefix') format('embedded-opentype'), url('/css/fonts/icomoon.ttf?intxku') format('truetype'), url('/css/fonts/icomoon.woff?intxku') format('woff'), url('/css/fonts/icomoon.svg?intxku#icomoon') format('svg');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        [class^="icon-"],
-        [class*=" icon-"],
-        .arrow-right:after,
-        .download::after,
-        #topnav li.parent>a:after {
-            font-family: 'icomoon' !important;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        .icon-phone:before {
-            content: "\e942";
-        }
-        
-        .icon-envelop:before {
-            content: "\e945";
-        }
-        
-        .arrow-right:after {
-            content: "\00a0\e904";
-            font-size: 0.7em;
-        }
-        
-        .download::after {
-            content: "\00a0\e960";
-        }
-        
-        .registered:after {
-            content: "\00ae";
-            font-size: .6em;
-            vertical-align: super;
-            line-height: 0;
-        }
-        
-        .arrow-right,
-        .download {
-            display: inline-block;
-        }
-        /* resets */
-        
-        html {
-            box-sizing: border-box;
-        }
-        
-        *,
-        *:before,
-        *:after {
-            box-sizing: inherit;
-        }
-        /* defaults and utility */
-        
-        body {
-            margin: 0;
-            font-family: 'Lato', sans-serif;
-            color: #494949;
-            font-size: 20px;
-        }
-        
-        img {
-            display: block;
-            width: 100%;
-        }
-        
-        .page-width {
-            max-width: 1020px;
-            padding-left: 20px;
-            padding-right: 20px;
-            margin: 0 auto;
-        }
-        
-        @media only screen and (max-width: 599.9px) {
-            .tablet-desktop {
-                display: none !important;
-            }
-        }
-        
-        @media only screen and (min-width: 600px) {
-            .mobile {
-                display: none !important;
-            }
-        }
-        /* background colors */
-        
-        .gray {
-            background-color: #f5f5f5;
-        }
-        
-        .blue {
-            background-color: #0070AF;
-            color: white;
-        }
-        /* topnav */
-        
-        #topnav {
-            font-size: 18px;
-            line-height: 1;
-            height: 110px;
-            position: relative;
-        }
-        
-        #topnav .logo {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 271px;
-            max-width: 70%;
-        }
-        
-        #topnav .logo img {
-            max-width: 100%;
-            border: none;
-        }
-        
-        #topnav .hamburger {
-            padding: 15px 15px;
-            display: inline-block;
-            cursor: pointer;
-            transition-property: opacity, filter;
-            transition-duration: 0.15s;
-            transition-timing-function: linear;
-            font: inherit;
-            color: inherit;
-            text-transform: none;
-            background-color: transparent;
-            border: 0;
-            margin: 0;
-            overflow: visible;
-            position: absolute;
-            right: 0;
-            top: 28px;
-        }
-        
-        #topnav .hamburger-box {
-            width: 30px;
-            height: 24px;
-            display: inline-block;
-            position: relative;
-        }
-        
-        #topnav .hamburger-inner,
-        #topnav .hamburger-inner::before,
-        #topnav .hamburger-inner::after {
-            width: 30px;
-            height: 3px;
-            background-color: #494949;
-            border-radius: 3px;
-            position: absolute;
-            transition-property: all;
-            transition-duration: .2s;
-            transition-timing-function: ease-out;
-        }
-        
-        #topnav .hamburger-inner {
-            display: block;
-            top: 50%;
-            margin-top: -2px;
-            background-color: transparent;
-            background-image: linear-gradient(to right, #494949, #494949);
-            background-position: bottom center;
-            background-repeat: no-repeat;
-            background-size: 100% 3px;
-        }
-        
-        #topnav .hamburger:hover .hamburger-inner::before,
-        #topnav .hamburger:hover .hamburger-inner::after {
-            background-color: #0070AF;
-        }
-        
-        #topnav .hamburger:hover .hamburger-inner {
-            background-image: linear-gradient(to right, #0070AF, #0070AF);
-        }
-        
-        #topnav .hamburger-inner::before,
-        #topnav .hamburger-inner::after {
-            content: "";
-            display: block;
-        }
-        
-        #topnav .hamburger-inner::before {
-            top: -9px;
-        }
-        
-        #topnav .hamburger-inner::after {
-            bottom: -9px;
-        }
-        
-        #topnav.show-menu .hamburger-inner {
-            background-size: 0 3px;
-        }
-        
-        #topnav.show-menu .hamburger-inner::before {
-            top: 0;
-            transform: rotate(45deg);
-        }
-        
-        #topnav.show-menu .hamburger-inner::after {
-            bottom: 0;
-            transform: rotate(-45deg);
-        }
-        
-        #topnav ul {
-            padding: 0;
-            z-index: 1;
-        }
-        
-        #topnav>ul {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 110px 0 0;
-            width: 60%;
-            min-width: 250px;
-            max-width: 400px;
-            background-color: #f5f5f5;
-            text-align: right;
-            padding: 0;
-        }
-        
-        #topnav>ul:before {
-            content: "Sustainability";
-            font-size: 1.4em;
-            display: block;
-            max-height: 0;
-            padding: 0 2.2em;
-            color: transparent;
-            transition-property: max-height, padding, color;
-            transition-duration: .2s;
-            transition-timing-function: ease-out;
-        }
-        
-        #topnav.show-menu>ul:before {
-            padding: .6em 2.2em .6em 0;
-            max-height: 54px;
-            color: #494949;
-        }
-        
-        #topnav li {
-            list-style-type: none;
-            border-top-style: dashed;
-            border-width: 0;
-            border-color: gray;
-            padding-right: 3em;
-            transition: border-width .2s ease-out;
-        }
-        
-        #topnav li.parent {
-            padding-right: 1.8em;
-            cursor: pointer;
-        }
-        
-        #topnav.show-menu li {
-            border-width: 1px;
-        }
-        
-        #topnav li a {
-            text-decoration: none;
-            color: #494949;
-            white-space: nowrap;
-            display: block;
-            position: relative;
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition-property: max-height, padding;
-            transition-duration: .2s;
-            transition-timing-function: ease-out;
-        }
-        
-        #topnav li a:hover,
-        #topnav li.show-submenu>a {
-            color: #0070AF;
-        }
-        
-        #topnav li a.current-page {
-            font-weight: bold;
-        }
-        
-        #topnav.show-menu li a {
-            max-height: 3em;
-            padding: 1em 0;
-        }
-        
-        #topnav li li {
-            border-top-style: none;
-            padding-right: 0;
-        }
-        
-        #topnav li li a {
-            font-size: .9em;
-        }
-        
-        #topnav li li a.current-page {
-            cursor: default;
-        }
-        
-        #topnav.show-menu li li a {
-            padding: 0;
-            max-height: 0;
-        }
-        
-        #topnav.show-menu li.show-submenu li a {
-            padding-bottom: 1em;
-            max-height: 2em;
-        }
-        
-        #topnav li.parent>a:after {
-            content: "\00a0\e907";
-            font-size: 0.8em;
-            transition: transform .2s ease-out;
-            display: inline-block;
-        }
-        
-        #topnav li.parent.show-submenu>a:after {
-            transform: scaleY(-1);
-        }
-        
-        .hero-background {
-            padding-top: 70px;
-            padding-bottom: 40%;
-            margin-bottom: -40%;
-        }
-        
-        #hero {
-            position: relative;
-        }
-        /* font defaults */
-        
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Roboto Slab', serif;
-            color: #0070af;
-            font-weight: normal;
-            line-height: 1.2;
-        }
-        
+<style>
+    @media only screen and (min-width: 600px) {
         #hero h1 {
-            font-size: 2em;
-            margin: .5em 0 0;
-            color: #494949;
-            text-align: center;
-        }
-        
-        h2 {
-            font-size: 1.6em;
-            margin: 70px 0 0;
-        }
-        
-        h3 {
-            font-size: 1.2em;
-            margin: 50px 0 0;
-        }
-        
-        h4 {
-            font-size: 1em;
-            margin: 30px 0 0;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0070AF;
-        }
-        
-        a:hover {
-            color: #005485;
-        }
-        
-        .button>a {
-            border: solid 2px #0070af;
-            padding: .6em .8em;
-            color: #0070af;
-            margin: 30px 0 0;
-            white-space: nowrap;
-            background-color: #fff;
-            transition: all .1s ease-out;
-        }
-        
-        .button>a:hover {
-            border-color: #005485;
-            color: #005485;
-            background-color: #f5f5f5;
-        }
-        
-        .blue.button>a {
-            color: white;
-            border-color: white;
-            background-color: #0070AF;
-        }
-        
-        .blue.button>a:hover {
-            background-color: #005485;
-        }
-        
-        .gray.button>a {
-            background-color: #f5f5f5;
-        }
-        
-        .gray.button>a:hover {
-            background-color: #ebebeb;
-        }
-        
-        .blue h3 {
-            color: white;
-        }
-        
-        p {
-            margin: 0;
-        }
-        /* grid */
-        
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .block {
-            max-width: 100%;
-        }
-        
-        .gutter-30 {
-            margin: 0 -15px;
-            flex-grow: 1;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .gutter-30>.block {
-            margin: 30px 15px 0;
-        }
-        
-        .reverse {
-            display: flex;
-            flex-wrap: wrap-reverse !important;
-        }
-        
-        .reverse>:first-child {
-            order: 1;
-        }
-        
-        .reverse>:last-child {
-            order: -1;
-        }
-        /* indented section */
-        
-        .indent>p {
-            margin: 2.5em 0 0;
-        }
-        
-        .indent>p+p,
-        .indent>h2+p,
-        .indent>h3+p {
-            margin-top: 1.5em;
-        }
-        
-        .indent>h4+p {
-            margin-top: .5em;
-        }
-        
-        .element-icon~p {
-            margin-top: .5em;
-        }
-        
-        .indent>ul>li,
-        .indent>ol>li {
-            margin-top: .5em;
-        }
-        
-        .indent .grid {
-            margin: 0 auto;
-        }
-        
-        .indent .button>a {
-            font-size: 1.2em;
-        }
-        /* blue-gray row and blue-gray-checker */
-        
-        .blue-gray-row {
-            background: linear-gradient(to right, #0070AF 50%, #f5f5f5 50%);
-        }
-        
-        .blue-gray-row>.grid,
-        .blue-gray-checker {
-            max-width: 1040px;
-            margin: 50px auto 0;
-        }
-        
-        .blue-gray-checker {
-            max-width: 980px;
-            justify-content: center;
-        }
-        
-        .blue-gray-checker+.blue-gray-checker {
-            margin-top: 30px;
-        }
-        
-        .blue-gray-row>.grid>.block,
-        .blue-gray-checker>.block {
-            flex: 1 0 375px;
-            padding: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            align-content: center;
-        }
-        
-        .blue-gray-checker>.block {
-            flex: 0 1 490px;
-            /* force IE to respect box-sizing*/
-            max-width: 490px;
-        }
-        
-        .blue-gray-row>.grid>.block>*,
-        .blue-gray-checker>.block>* {
-            /* keep small elements from wrapping */
-            min-width: 100%;
-        }
-        
-        .blue-gray-row>.grid>:first-child,
-        .blue-gray-checker>:first-child {
-            background-color: #0070AF;
-            font-size: 1.3em;
-        }
-        
-        .blue-gray-row>.grid>:first-child>*,
-        .blue-gray-checker>:first-child>* {
-            color: white;
-        }
-        
-        .blue-gray-row>.grid>:first-child>p,
-        .blue-gray-checker>:first-child>p {
-            margin-top: .5em;
-        }
-        
-        .blue-gray-row>.grid>.block>:first-child,
-        .blue-gray-checker>.block>:first-child {
-            margin-top: 0;
-        }
-        
-        .blue-gray-row>.grid>:last-child,
-        .blue-gray-checker>:last-child {
-            background-color: #f5f5f5;
-        }
-        
-        .blue-gray-checker>:last-child:not(.image-copy) {
-            padding: 0;
-        }
-        
-        .blue-gray-row>.grid>.block>ul,
-        .blue-gray-checker>.block>ul {
-            color: #0070af;
-            font-size: 1.2em;
-            padding-left: 1em;
-            margin: 0;
-        }
-        
-        .blue-gray-row>.grid>.block>ul>li+li,
-        .blue-gray-checker>.block>ul>li+li {
-            margin-top: .5em;
-        }
-        
-        .blue-gray-checker .button>a {
-            font-size: .9em;
-        }
-        /* image-copy blocks */
-        
-        .image-copy {
-            flex: 1 0 250px;
-            font-size: .8em;
-        }
-        
-        .image-copy h3 {
-            color: #0070af;
-            margin: 0;
-        }
-        
-        .image-copy p {
-            margin-top: .5em;
-        }
-        
-        .image-copy img+p {
-            margin-top: 1em;
-        }
-        /* image-copy block rows */
-        
-        .image-copy .row {
-            display: flex;
-            align-items: center;
-            margin: 0 -1.25em;
-            /* width: auto; */
-        }
-        
-        .image-copy .row+.row {
-            margin-top: 1.5em;
-        }
-        
-        .image-copy .image {
-            width: 150px;
-        }
-        
-        .image-copy .copy {
-            width: 310px;
-            width: calc(100% - 150px);
-            margin-left: .5em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        /* table defaults */
-        
-        table {
-            border-collapse: collapse;
-            font-size: inherit;
-            margin: 0 -10px;
-            width: 100%;
-            width: calc(100% + 20px);
-        }
-        
-        th {
-            padding: 0 10px 20px;
-            border-bottom: 1px solid #b7b7b7;
-            text-align: left;
-            color: #494949;
-            min-height: 100px;
-            vertical-align: bottom;
-        }
-        
-        td {
-            padding: 20px 10px 0;
-            color: #494949;
-        }
-        
-        tr>:nth-child(even) {
-            text-align: right;
-        }
-        /* icon in left margin */
-        
-        .element-icon {
-            position: relative;
-        }
-        
-        .element-icon img {
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            left: -70px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: none;
-        }
-        
-        .margin-icon h3 {
-            margin: 0;
-        }
-        
-        .margin-icon {
-            margin-top: 50px;
-        }
-        
-        table,
-        .scale-with-table {
-            font-size: .8em;
-        }
-        
-        h3+.margin-icon {
-            margin-top: 30px;
-        }
-        /* gray bar */
-        
-        .gray-bar {
-            background-color: #f5f5f5;
-            margin-top: 30px;
-            padding: 1px 0 50px;
-        }
-        
-        .gray-bar>:first-child {
-            margin-top: 0;
-        }
-        /* Icon Columns */
-        
-        .icon-columns {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -10px 30px;
-            width: 100%;
-            width: calc(100% + 20px);
-        }
-        
-        .icon-columns .column {
-            flex: 1 200px;
-            max-width: 220px;
-            margin: 30px auto 0;
-            padding: 0 10px;
-            text-align: center;
-        }
-        
-        .icon-columns .column img {
-            width: 50px;
-            margin: 0 auto;
-        }
-        
-        .icon-columns .column h4 {
-            color: #494949;
-            margin-top: .5em;
-        }
-        /* map */
-        
-        .map {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-        
-        .map .text-box {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 auto;
-            align-content: flex-start;
-            font-size: 0.9em;
-        }
-        
-        .map .text-group {
-            margin: 0 1em;
-        }
-        
-        .map h3 {
-            font-size: 1em;
-            font-family: lato;
-            font-weight: bold;
-            margin-top: 1em;
-        }
-        
-        .map p {
-            white-space: nowrap;
-        }
-        
-        .map .star::before {
-            width: 1.2em;
-            height: 1em;
-            content: "";
-            display: inline-block;
-            background-image: url('https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/star.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            position: relative;
-            top: .1em;
-        }
-        /* Image-copy slide row */
-        
-        .image-copy-slide-row {
-            margin-top: 50px;
-            background-color: #f5f5f5;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        
-        .image-copy-slide-row .image {
-            flex: 3 0 300px;
-            max-width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        .image-copy-slide-row .image::after {
-            content: "";
-            display: block;
-            padding-bottom: 61.8%;
-        }
-        
-        .image-copy-slide-row .copy {
-            flex: 1 0 310px;
-            max-width: 100%;
-            padding: 30px;
-            font-size: .9em;
-        }
-        
-        .image-copy-slide-row h2 {
-            margin: 0;
-        }
-        
-        .image-copy-slide-row h2+p {
-            margin-top: 1em;
-        }
-        /* three-column row */
-        
-        .three-col-row {
-            margin: 20px -15px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .three-col-row .block {
-            margin: 30px 15px 0;
-            flex: 1 0 300px;
-            max-width: 310px;
-        }
-        /* modal */
-        
-        [videoModal] {
-            cursor: pointer;
-        }
-        
-        #npc-modal {
-            position: fixed;
-            z-index: 1000000;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        
-        #npc-modal-container {
-            background-color: #fefefe;
-            padding: 5px;
-            border: 1px solid #888;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        
-        .video #npc-modal-container {
-            width: 75%;
-            max-width: 1050px;
-        }
-        
-        #npc-image {
-            width: 100%;
-            display: block;
-        }
-        
-        .video #npc-modal-content {
-            position: relative;
-            height: 0;
-            padding-bottom: 56.25%;
-        }
-        
-        #npc-modal-content iframe {
-            min-height: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        
-        #npc-modal-close {
-            position: absolute;
-            right: -7px;
-            top: -7px;
-            width: 22px;
-            z-index: 10;
-            cursor: pointer;
-        }
-        
-        #npc-modal-close:hover,
-        #npc-modal-close:focus {
-            text-decoration: none;
-            cursor: pointer;
-        }
-        /* article posts */
-        
-        .post {
-            flex: 0 0 305px;
-            background-color: white;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.2s ease-out;
-            font-size: .8em;
-            max-height: 400px;
-            overflow: hidden;
-            position: relative;
-            padding-bottom: 20px;
-            border: 1px solid #e6e6e6;
-        }
-        
-        .post.contacts {
-            background-color: #f5f5f5;
-            max-height: none;
-        }
-        
-        .post:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
-        
-        .post .read-more {
-            color: #0070af;
-            font-weight: bold;
-            text-align: right;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 45px 20px 15px;
-            line-height: 20px;
-            background-image: linear-gradient(transparent, white 45px);
-            cursor: pointer;
-        }
-        
-        .post header {
-            background-color: #0070af;
-            color: white;
-            font-weight: bold;
-            padding: 10px;
-        }
-        
-        .post.contacts header {
-            background-color: #575757;
-        }
-        
-        .post h1 {
-            font-size: 1.2em;
-            margin: 1em 20px 0;
-            color: #0070af;
-        }
-        
-        .post p {
-            margin: .25em 20px 0;
-        }
-        
-        .post p.date {
-            font-size: 13px;
-            font-weight: bold;
-            margin: 0.8em 20px;
-        }
-        /* footer */
-        
-        .footer {
-            height: 100px;
-            text-align: center;
-            margin-top: 70px;
-            padding-top: 38px;
-        }
-        
-        @media only screen and (min-width: 400px) {
-            .image-copy .row {
-                margin: 0;
-            }
-            .margin-icon {
-                padding-left: 90px;
-                position: relative;
-            }
-            .margin-icon.border {
-                padding: 40px 25px 40px 90px;
-            }
-            .element-icon img {
-                display: block;
-            }
-            .border {
-                border: 1px solid #b7b7b7;
-            }
-            .border+.border {
-                border-top: none;
-                margin-top: 0;
-            }
-        }
-        
-        @media only screen and (min-width: 600px) {
-            .hero-background {
-                padding-top: 70px;
-                padding-bottom: 28%;
-                margin-bottom: -28%;
-            }
-            #hero {
-                overflow: hidden;
-            }
-            #hero h1 {
-                position: absolute;
-                top: 5%;
-                left: 5%;
-                margin: 0;
-                text-align: left;
-            }
-            h2 {
-                font-size: 2em;
-            }
-            h3 {
-                font-size: 1.4em;
-            }
-            .indent>p,
-            .indent>ul,
-            .indent>ol,
-            .indent>h4,
-            .indent>.button {
-                margin-left: 90px;
-            }
-            .indent .grid {
-                margin: 0 90px
-            }
-            .blue-gray-row>.grid>:first-child,
-            .blue-gray-checker>:first-child {
-                font-size: 1.4em;
-            }
-            .grid .image-copy h3 {
-                font-size: 1.1em;
-            }
-            .margin-icon.border {
-                padding-right: 90px;
-            }
-            table,
-            .scale-with-table {
-                font-size: .9em;
-            }
-        }
-        
-        @media only screen and (min-width: 900px) {
-            #hero h1 {
-                font-size: 2.8em;
-            }
-            h2 {
-                font-size: 2.4em;
-            }
-            h3 {
-                font-size: 1.6em;
-            }
-            h4 {
-                font-size: 1.2em;
-            }
-            .blue-gray-row>.grid>:first-child,
-            .blue-gray-checker>:first-child {
-                font-size: 1.5em;
-            }
-            .grid .image-copy h3 {
-                font-size: 1.2em;
-            }
-            table,
-            .scale-with-table {
-                font-size: 1em;
-            }
-            .map {
-                flex-wrap: nowrap;
-            }
-            .map .image {
-                width: 70%;
-            }
-            .map .text-box {
-                width: 30%;
-                padding-left: 1em;
-            }
-        }
-        
-        @media only screen and (min-width: 980px) {
-            .blue-gray-checker+.blue-gray-checker {
-                margin-top: 0;
-            }
-        }
-        
-        @media only screen and (min-width: 1000px) {
-            .hero-background {
-                padding-top: 70px;
-                padding-bottom: 280px;
-                margin-bottom: -280px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <style>
-        @media only screen and (min-width: 600px) {
-            #hero h1 {
-                text-shadow: 0 0 1em white;
-            }
-        }
-    </style>
-    <div class="gray">
-        <div class="page-width">
-            <nav id="topnav">
-                <div class="logo">
-                    <a href="https://www.la-z-boy.com">
-                        <img src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/logo.png" alt="" />
-                    </a>
-                </div>
-                <button class="hamburger" type="button">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-          </button>
-                <script>
-                    insertNavHere();
-                </script>
-            </nav>
-        </div>
+            text-shadow: 0 0 1em white;
+        }
+    }
+</style>
+<div class="blue hero-background"></div>
+<div class="page-width">
+    <div id="hero">
+        <picture>
+            <source srcset="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/mobile/hero.jpg" media="(max-width: 599.9px)" />
+            <img srcset="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/desktop/hero.jpg 2x, https://content.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/desktop/hero@1x.jpg 1x" src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/desktop/hero@1x.jpg"
+                alt="" />
+        </picture>
+        <h1> Supplier<br class="tablet-desktop" /> Requirements </h1>
     </div>
-    <div class="blue hero-background"></div>
-    <div class="page-width">
-        <div id="hero">
-            <img class="mobile" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/mobile/hero.jpg" alt="" />
-            <img class="tablet-desktop" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/desktop/hero.jpg" alt="" />
-            <h1> Supplier<br class="tablet-desktop" /> Requirements </h1>
-        </div>
-        <div class="indent">
-            <h2 id="intro">Introduction</h2>
-            <p>
-                <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s success depends on providing the highest value to our customers through competitive price, zero-defect quality, and world-class service. A close, collaborative relationship with
-                our suppliers is essential to delivering maximum value to our customers. This manual has been developed to define <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s expectations to create a strong, competitive, value-added supply
-                chain. </p>
-            <p>This Supplier Requirements Manual defines the minimum practices that must be effectively implemented at your facility and applies to all suppliers of parts, material, packaging, machinery, tooling, or services, to any <span style="white-space: nowrap;">La-Z-Boy</span>                Manufacturing Plant or Distribution Center. </p>
-        </div>
-    </div>
-    <div class="gray-bar">
-        <div class="page-width indent">
-            <h3> For details on a specific requirement, please select a link below. </h3>
-            <ul>
-                <li><a class="arrow-right" href="#compliance">Compliance</a></li>
-                <li>
-                    <a class="arrow-right" href="#values"><span style="white-space: nowrap;">La-Z-Boy</span> vision & values</a>
-                </li>
-                <li>
-                    <a class="arrow-right" href="#conduct">Code of business conduct & product stewardship</a>
-                </li>
-                <li><a class="arrow-right" href="#delivery">Delivery</a></li>
-                <li>
-                    <a class="arrow-right" href="#trade">Special trade programs</a>
-                </li>
-                <li>
-                    <a class="arrow-right" href="#quality">Quality system requirements</a>
-                </li>
-                <li>
-                    <a class="arrow-right" href="#approval">Supplier selection and approval</a>
-                </li>
-                <li><a class="arrow-right" href="#set-up">Supplier set-up</a></li>
-                <li>
-                    <a class="arrow-right" href="#purchase-orders">Purchase orders</a>
-                </li>
-                <li>
-                    <a class="arrow-right" href="#scorecard">Supplier scorecard</a>
-                </li>
-                <li><a class="arrow-right" href="#awards">Supplier awards</a></li>
-                <li>
-                    <a class="arrow-right" href="#covers"><span style="white-space: nowrap;">La-Z-Boy</span> branded business cover requirements</a>
-                </li>
-                <li>
-                    <a class="arrow-right" href="#casegoods"><span style="white-space: nowrap;">La-Z-Boy</span> Casegoods specific requirements</a>
-                </li>
-                <li>
-                    <a target="_blank" class="download" href="https://www.la-z-boy.com/productassets/pdf/LZBSocial%20Compliance1June%202017.pdf"><span style="white-space: nowrap;">La-Z-Boy</span> social compliance supplier manual</a>
-                </li>
-                <li>
-                    <a target="_blank" class="download" href="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/Supplier%20Code%20of%20Conduct.pdf">Supplier code of conduct</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="page-width indent">
-        <h2 id="compliance">Compliance</h2>
-        <p>It is the policy of <span style="white-space: nowrap;">La-Z-Boy</span> Inc. to operate in full compliance with all applicable laws, regulations, Federal Safety Standards, and industry adopted voluntary standards of the countries in which it conducts
-            business. <span style="white-space: nowrap;">La-Z-Boy</span> also requires that its vendors to operate in full compliance with all applicable laws and regulations of their country and local governments and the United States. For detailed labor
-            and safety compliance requirements please refer to <span style="white-space: nowrap;">La-Z-Boy&rsquo;s</span>
-            <em> Supplier Social Compliance Manual (01SCPOL0135-420) </em>. A copy of this policy may be obtained from a Purchasing representative. </p>
+    <div class="indent">
+        <h2 id="intro">Introduction</h2>
         <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated reserves the right to monitor suppliers through both announced and unannounced site visits, and audits by third parties and <span style="white-space: nowrap;">La-Z-Boy</span>            personnel. It is our expectation that all suppliers perform the necessary self-audits to ensure they are in compliance with the policies detailed in this manual. We seek relationships with suppliers that are committed to manufacturing products
-            under fair and safe working conditions and sound environmental practices. If we determine that a supplier does not comply with this policy, we will work with the supplier to develop and implement an appropriate corrective action plan or may,
-            depending on the circumstances, end our relationship with the supplier. </p>
-        <h2 id="values">
-            <span style="white-space: nowrap;">La-Z-Boy</span> vision & values </h2>
-        <p>
-            <img src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/lzbvisionandvalues.jpg" />
+            <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s success depends on providing the highest value to our customers through competitive price, zero-defect quality, and world-class service. A close, collaborative relationship with our
+            suppliers is essential to delivering maximum value to our customers. This manual has been developed to define <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s expectations to create a strong, competitive, value-added supply chain.
         </p>
-        <h2 id="conduct">Code of business conduct & product stewardship</h2>
-        <p>As a requirement for doing business with <span style="white-space: nowrap;">La-Z-Boy</span>, Inc. and/or its subsidiaries, Suppliers are required to conduct business in compliance with the Code of Conduct detailed in Policy 01SCPOL0001-415 (Supplier
-            Code of Conduct). A copy of this policy may be obtained from a Purchasing representative. To confirm compliance, Suppliers are required to sign the Supplier Code of Conduct on annual basis and may be audited by <span style="white-space: nowrap;">La-Z-Boy</span>            or a 3rd Party auditor at any time. </p>
-        <h3>Product stewardship</h3>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated (LZB) expects that products supplied to <span style="white-space: nowrap;">LA-Z-BOY</span> INC. AND/OR ITS SUBSIDIARIES will meet all applicable legal requirements during manufacture,
-            distribution and sale. Supplier products must also meet additional LZB requirements that go beyond compliance in order to reduce the environmental impact of LZB products. </p>
-        <p>The Supplier is responsible for contacting their suppliers to ensure accurate and complete information is provided to LZB. Documentation and/or test data, including documentation and data from the Supplier&rsquo;s supply chain, must be kept on
-            file and made available upon request by LZB. </p>
-        <p>The Supplier is obligated to communicate in writing to LZB any changes, discontinuance, recalls, or non-conformance that could impact the safety, health or environmental performance of a LZB product. </p>
-        <p>If potential safety, health, environmental or regulatory issues are discovered by LZB or LZB&rsquo;s customers, which are determined to be the Supplier&rsquo;s responsibility, the Supplier will be notified. The Supplier must address the concern
-            in writing within 10 business days to all such notifications. For Contract Manufacturers, this includes taking immediate steps to address the issue for any work-in-process. </p>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s detailed Supplier Product Stewardship Requirements are found in Procedure 01SCPOL0002-415 Product Stewardship Requirements and may be obtained from a <span style="white-space: nowrap;">La-Z-Boy</span>            purchasing representative. </p>
-        <h2 id="delivery">Delivery</h2>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> requires 100% on-time delivery performance from all its suppliers and sub-contractors. It is the responsibility of the supplier to notify the affected <span style="white-space: nowrap;">La-Z-Boy</span>            facility of all possible delivery delays. </p>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> requires notification of the shipment of suspect material. Suppliers are to notify the Supplier Quality or Materials Management organization at the receiving <span style="white-space: nowrap;">La-Z-Boy</span>            facility of any shipments of suspect material. </p>
-        <p>Except where otherwise stated in the Purchase Agreement, inbound product shipments to <span style="white-space: nowrap;">La-Z-Boy</span> Branded Business locations shall comply with the requirements laid out in the <span style="white-space: nowrap;">La-Z-Boy</span>            Branded Routing Guide, which is available on request. </p>
-        <p>For shipments to England and Casegoods business units, contact the purchasing department for specific requirements. </p>
-        <p>The appropriate <span style="white-space: nowrap;">La-Z-Boy</span> personnel must authorize all proposed shipping deviations and/or changes. Where extra charges or costs are incurred that exceed the norm (e.g. existing cartage contracts) the supplier
-            shall track and keep good records of such “premium freight” costs. </p>
-        <h2 id="trade">Special trade programs</h2>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated qualifies their product under various Free Trade Programs. As a supplier doing business with <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated, suppliers are required
-            to provide <span style="white-space: nowrap;">La-Z-Boy</span>, on an annual basis, with a valid Certificate of Origin for the trade programs that are currently supported using <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s designated
-            Solicitation Website. </p>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> has specific Labeling and ASN requirements which can be obtained from your purchasing contact. </p>
-        <h2 id="quality">Quality system requirements</h2>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> suppliers must operate within a comprehensive Quality Management System which ensures effective 100% on-time delivery of defect-free product. The Quality Management System must be documented
-            and as a minimum address: </p>
+        <p>This Supplier Requirements Manual defines the minimum practices that must be effectively implemented at your facility and applies to all suppliers of parts, material, packaging, machinery, tooling, or services, to any <span style="white-space: nowrap;">La-Z-Boy</span>            Manufacturing Plant or Distribution Center. </p>
+    </div>
+</div>
+<div class="gray-bar">
+    <div class="page-width indent">
+        <h3> For details on a specific requirement, please select a link below. </h3>
         <ul>
-            <li>Product and Process Planning</li>
-            <li>Change Control</li>
-            <li>Corrective and Preventive Action</li>
-            <li>Training</li>
-            <li>Control of Quality Documents</li>
-            <li>Process Control</li>
-            <li>Internal Audit</li>
-            <li>Control of Purchased Product</li>
-            <li>Continuous Improvement</li>
-        </ul>
-        <p>While suppliers are not specifically required to achieve certification to ISO9001:2008, operating within the guidelines of this or similar standards is recommended as a means to meet the Quality System expectations. </p>
-        <h3>Zero defects</h3>
-        <p>Suppliers shall accept Zero-Defects as the Quality Target and continually pursue action plans to reduce internal and external defect PPM to achieve that target. </p>
-        <p>Suppliers are fully responsible for the quality of their products, and for assuring their products and/or materials function properly as part of a system or assembly. Any product not meeting specification may, at <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s
-            discretion be returned to the Supplier. All costs associated with the non-conforming product will be borne by the supplier. </p>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> shall conduct random audits of purchased product. Product may be tested by <span style="white-space: nowrap;">La-Z-Boy</span> laboratories or by an accredited third party laboratory. In the
-            event that the audited product is found to be out of compliance with specifications, the cost of the testing shall be borne by the supplier. </p>
-        <h3>Corrective action</h3>
-        <p>When nonconforming material is received by a <span style="white-space: nowrap;">La-Z-Boy</span> location, the location Quality Department shall identify and quarantine all suspect material. The supplier is required to implement containment by
-            quarantining defective material and identifying a clean point for subsequent shipments. The supplier is also required to implement corrective actions to eliminate the root cause of the defect and prevent recurrence. </p>
-        <p>Suppliers shall be responsible for costs associated with non-conforming material shipped to <span style="white-space: nowrap;">La-Z-Boy</span>, Inc. facilities. </p>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> Residential locations will issue a Supplier Corrective Action Request (SCAR) as detailed in <em> the Incoming Quality Defect Procedure 01QSP0038-445D </em> which is available from a Purchasing
-            representative. <span style="white-space: nowrap;">La-Z-Boy</span> Residential Suppliers are required to implement containment and corrective action as detailed in the <em>Procedure 01SCP0004-415 (Supplier Corrective Action Request Procedure)</em>,
-            also available from a Purchasing representative. </p>
-        <h3>Continuous improvement</h3>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> operates in an environment focused on continuous improvement through the application of Lean Manufacturing principles to improve quality, reduce cost and ensure on-time delivery. Suppliers
-            are expected to have active continuous improvement programs to ensure continued competitiveness. </p>
-        <h3>New product & process planning</h3>
-        <p>
-            <span style="white-space: nowrap;">La-Z-Boy</span> Suppliers shall have effective processes to manage the launch of new products. As a minimum these processes shall address: </p>
-        <ul>
-            <li>Process & Material Capability to meet <span style="white-space: nowrap;">La-Z-Boy</span> Design requirements (e.g. Capability Studies) </li>
-            <li>Long-term Process Control (e.g. Statistical Methods and Control Plans) </li>
-            <li>Risk Identification and Mitigation (e.g. Process Failure Mode and Effects Analysis, Error Proofing) </li>
-            <li>Inspection and Gage Control</li>
-            <li>Effective training of manufacturing personnel</li>
-            <li>For suppliers who provide cut and sewn sets, manufacturing personnel must be trained by <span style="white-space: nowrap;">La-Z-Boy</span> trainers and meet <span style="white-space: nowrap;">La-Z-Boy</span> qualification requirements.
+            <li><a class="arrow-right" href="#compliance">Compliance</a></li>
+            <li>
+                <a class="arrow-right" href="#values"><span style="white-space: nowrap;">La-Z-Boy</span> vision & values</a>
+            </li>
+            <li>
+                <a class="arrow-right" href="#conduct">Code of business conduct & product stewardship</a>
+            </li>
+            <li><a class="arrow-right" href="#delivery">Delivery</a></li>
+            <li>
+                <a class="arrow-right" href="#trade">Special trade programs</a>
+            </li>
+            <li>
+                <a class="arrow-right" href="#quality">Quality system requirements</a>
+            </li>
+            <li>
+                <a class="arrow-right" href="#approval">Supplier selection and approval</a>
+            </li>
+            <li><a class="arrow-right" href="#set-up">Supplier set-up</a></li>
+            <li>
+                <a class="arrow-right" href="#purchase-orders">Purchase orders</a>
+            </li>
+            <li>
+                <a class="arrow-right" href="#scorecard">Supplier scorecard</a>
+            </li>
+            <li><a class="arrow-right" href="#awards">Supplier awards</a></li>
+            <li>
+                <a class="arrow-right" href="#covers"><span style="white-space: nowrap;">La-Z-Boy</span> branded business cover requirements</a>
+            </li>
+            <li>
+                <a class="arrow-right" href="#casegoods"><span style="white-space: nowrap;">La-Z-Boy</span> Casegoods specific requirements</a>
+            </li>
+            <li>
+                <a target="_blank" class="download" href="https://www.la-z-boy.com/productassets/pdf/LZBSocial%20Compliance1June%202017.pdf"><span style="white-space: nowrap;">La-Z-Boy</span> social compliance supplier manual</a>
+            </li>
+            <li>
+                <a target="_blank" class="download" href="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/Supplier%20Code%20of%20Conduct.pdf">Supplier code of conduct</a>
             </li>
         </ul>
-        <h4>Production part approval process (PPAP)</h4>
-        <p>The purpose of the Production Part Approval Process is to provide evidence that all engineering design specifications and requirements are understood and that the manufacturing process consistently produces product meeting these requirements when
-            run by production personnel on production equipment and tooling at full production rates. </p>
-        <p>Approval of new parts or parts from new suppliers will follow <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s Production Part Approval Process. Specific requirements may vary by part, commodity and business unit, but approval generally
-            requires completion of: </p>
-        <ul>
-            <li>Process Flow Diagrams</li>
-            <li>Process Failure Mode and Effects</li>
-            <li>Control Plans</li>
-            <li>Product/Process Capability for all special characteristics</li>
-            <li>Full part dimensional layout for each tooling cavity or each tool </li>
-            <li>Material performance test results (where appropriate)</li>
-            <li>Appearance Approval Report (where appropriate)</li>
-            <li>Bulk Material Checklist (where appropriate)</li>
-            <li>Measurement Systems Analysis</li>
-            <li>Part Submission Warrant</li>
-        </ul>
-        <h3>Product/process changes</h3>
-        <p>Suppliers, sub-suppliers and sub-contractors shall make no changes to a product (e.g. material, component, subassembly, etc.) or the process used to produce a product without written approval by <span style="white-space: nowrap;">La-Z-Boy</span>.
-            This includes changes to sub-suppliers or Process Control Plans. </p>
-        <p>The Supplier shall contact LZB for product approval with respect to any design and/or process changes as follows: </p>
-        <ul>
-            <li>Use of other construction or material than was used in the previously-approved part or product. </li>
-            <li>Production from new or modified tools, dies, molds, patterns, etc. This includes additional or replacement tooling. </li>
-            <li>Production following refurbishment or rearrangement of existing tooling or equipment. </li>
-            <li>Production from tooling or equipment transferred to a different plant location or from an additional plant location. </li>
-            <li>Change of subcontractor for parts, non-equivalent materials or services that affect customer fit, form, function, durability, or performance requirements. </li>
-            <li>Product produced after the tooling has been inactive for volume production for twelve months or more. </li>
-            <li>Product or process changes related to components of the production product manufactured internally or manufactured by subcontractors that impact fit, form, function, performance, and/or durability of the salable product. </li>
-            <li>Change in test/inspection method. For a change in test method, the Supplier should have evidence that the new method provides results equivalent to the old method. </li>
-        </ul>
-        <p>Unless otherwise specified in writing by your LZB purchasing contact, any changes shall be requested and approved following the <em><span style="white-space: nowrap;">La-Z-Boy</span> Supplier Change Request Process (01SCP0008-415)</em>, using
-            the <em>Supplier Change Request Form (01SCF0011-415)</em>. Both policies are available from a Purchasing representative.</p>
-        <p>Changes to product or process may require re-submission of appropriate product approval samples and documentation (PPAP). </p>
-        <h3>Product Changes, Discontinuance, Recalls or Non-Conformance (for Casegoods and Finished Goods Suppliers)</h3>
-        <p>The Supplier is obligated to communicate in writing to LZB any changes, discontinuance, recalls, or non-conformance that could impact the safety, health or environmental performance of a LZB product.</p>
-        <p>If the Goods are the subject of a Recall, whether initiated by Supplier, Buyer or a government entity (including the issuance of safety notices), Supplier shall be responsible for all matters and costs associated with the Recall, including but
-            not limited to:</p>
-        <ul>
-            <li>Consumer notification and contact.</li>
-            <li>All expenses and losses incurred by Buyer in connection with such Recall (and where applicable, any products with which the Recalled Goods has been packaged, consolidated or commingled), including but not limited to refunds to customers, lost
-                profits, transportation costs and all other costs associated therewith.</li>
-            <li>Initial contact and reporting of the Recall to any government agency having jurisdiction over the affected Goods.</li>
-            <li>If a government agency initiates any inquiry or investigation relating to the Goods or similar goods manufactured or supplied by Supplier, Supplier shall notify Buyer immediately thereof and take reasonable steps to resolve the matter without
-                exposing Buyer to any liability or risk.</li>
-        </ul>
-        <p>If potential safety, health, environmental or regulatory issues are discovered by LZB or LZB&rsquo;s customers, which are determined to be the Supplier&rsquo;s responsibility, the Supplier will be notified. The Supplier must address the concern
-            in writing within 10 business days to all such notifications. For Contract Manufacturers, this includes taking immediate steps to address the issue for any work-in-process.</p>
-        <p>Upon request, Suppliers must provide documentation and/or test data to LZB in order to verify additional requirements that will be identified in the Product Stewardship Purchasing Requirements Documents or other similar documents. This includes,
-            but is not limited to:</p>
-        <ul>
-            <li>Special applications (such as children&rsquo;s products)</li>
-            <li>Material composition or marking</li>
-            <li>Regional product labeling</li>
-        </ul>
-        <h2 id="approval">Supplier selection and approval</h2>
-        <p>In order to promote strong, mutually beneficial relationships with suppliers, all new suppliers must first participate in an approval process to help determine if the supplier has the technical, manufacturing, and leadership culture to sustain
-            a long-term relationship with <span style="white-space: nowrap;">La-Z-Boy</span>. </p>
-        <p>Prior to being selected to provide product to <span style="white-space: nowrap;">La-Z-Boy</span>, all suppliers must be approved. The Supplier Approval Process requires: </p>
+    </div>
+</div>
+<div class="page-width indent">
+    <h2 id="compliance">Compliance</h2>
+    <p>It is the policy of <span style="white-space: nowrap;">La-Z-Boy</span> Inc. to operate in full compliance with all applicable laws, regulations, Federal Safety Standards, and industry adopted voluntary standards of the countries in which it conducts
+        business. <span style="white-space: nowrap;">La-Z-Boy</span> also requires that its vendors to operate in full compliance with all applicable laws and regulations of their country and local governments and the United States. For detailed labor
+        and safety compliance requirements please refer to <span style="white-space: nowrap;">La-Z-Boy&rsquo;s</span>
+        <em> Supplier Social Compliance Manual (01SCPOL0135-420) </em>. A copy of this policy may be obtained from a Purchasing representative. </p>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated reserves the right to monitor suppliers through both announced and unannounced site visits, and audits by third parties and <span style="white-space: nowrap;">La-Z-Boy</span> personnel.
+        It is our expectation that all suppliers perform the necessary self-audits to ensure they are in compliance with the policies detailed in this manual. We seek relationships with suppliers that are committed to manufacturing products under fair
+        and safe working conditions and sound environmental practices. If we determine that a supplier does not comply with this policy, we will work with the supplier to develop and implement an appropriate corrective action plan or may, depending on
+        the circumstances, end our relationship with the supplier. </p>
+    <h2 id="values">
+        <span style="white-space: nowrap;">La-Z-Boy</span> vision & values </h2>
+    <p>
+        <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/supplier-requirements/lzbvisionandvalues.jpg" />
+    </p>
+    <h2 id="conduct">Code of business conduct & product stewardship</h2>
+    <p>As a requirement for doing business with <span style="white-space: nowrap;">La-Z-Boy</span>, Inc. and/or its subsidiaries, Suppliers are required to conduct business in compliance with the Code of Conduct detailed in Policy 01SCPOL0001-415 (Supplier
+        Code of Conduct). A copy of this policy may be obtained from a Purchasing representative. To confirm compliance, Suppliers are required to sign the Supplier Code of Conduct on annual basis and may be audited by <span style="white-space: nowrap;">La-Z-Boy</span>        or a 3rd Party auditor at any time. </p>
+    <h3>Product stewardship</h3>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated (LZB) expects that products supplied to <span style="white-space: nowrap;">LA-Z-BOY</span> INC. AND/OR ITS SUBSIDIARIES will meet all applicable legal requirements during manufacture,
+        distribution and sale. Supplier products must also meet additional LZB requirements that go beyond compliance in order to reduce the environmental impact of LZB products. </p>
+    <p>The Supplier is responsible for contacting their suppliers to ensure accurate and complete information is provided to LZB. Documentation and/or test data, including documentation and data from the Supplier&rsquo;s supply chain, must be kept on file
+        and made available upon request by LZB. </p>
+    <p>The Supplier is obligated to communicate in writing to LZB any changes, discontinuance, recalls, or non-conformance that could impact the safety, health or environmental performance of a LZB product. </p>
+    <p>If potential safety, health, environmental or regulatory issues are discovered by LZB or LZB&rsquo;s customers, which are determined to be the Supplier&rsquo;s responsibility, the Supplier will be notified. The Supplier must address the concern in
+        writing within 10 business days to all such notifications. For Contract Manufacturers, this includes taking immediate steps to address the issue for any work-in-process. </p>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s detailed Supplier Product Stewardship Requirements are found in Procedure 01SCPOL0002-415 Product Stewardship Requirements and may be obtained from a <span style="white-space: nowrap;">La-Z-Boy</span>        purchasing representative. </p>
+    <h2 id="delivery">Delivery</h2>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> requires 100% on-time delivery performance from all its suppliers and sub-contractors. It is the responsibility of the supplier to notify the affected <span style="white-space: nowrap;">La-Z-Boy</span>        facility of all possible delivery delays. </p>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> requires notification of the shipment of suspect material. Suppliers are to notify the Supplier Quality or Materials Management organization at the receiving <span style="white-space: nowrap;">La-Z-Boy</span>        facility of any shipments of suspect material. </p>
+    <p>Except where otherwise stated in the Purchase Agreement, inbound product shipments to <span style="white-space: nowrap;">La-Z-Boy</span> Branded Business locations shall comply with the requirements laid out in the <span style="white-space: nowrap;">La-Z-Boy</span>        Branded Routing Guide, which is available on request. </p>
+    <p>For shipments to England and Casegoods business units, contact the purchasing department for specific requirements. </p>
+    <p>The appropriate <span style="white-space: nowrap;">La-Z-Boy</span> personnel must authorize all proposed shipping deviations and/or changes. Where extra charges or costs are incurred that exceed the norm (e.g. existing cartage contracts) the supplier
+        shall track and keep good records of such “premium freight” costs. </p>
+    <h2 id="trade">Special trade programs</h2>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated qualifies their product under various Free Trade Programs. As a supplier doing business with <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated, suppliers are required
+        to provide <span style="white-space: nowrap;">La-Z-Boy</span>, on an annual basis, with a valid Certificate of Origin for the trade programs that are currently supported using <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s designated
+        Solicitation Website. </p>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> has specific Labeling and ASN requirements which can be obtained from your purchasing contact. </p>
+    <h2 id="quality">Quality system requirements</h2>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> suppliers must operate within a comprehensive Quality Management System which ensures effective 100% on-time delivery of defect-free product. The Quality Management System must be documented and
+        as a minimum address: </p>
+    <ul>
+        <li>Product and Process Planning</li>
+        <li>Change Control</li>
+        <li>Corrective and Preventive Action</li>
+        <li>Training</li>
+        <li>Control of Quality Documents</li>
+        <li>Process Control</li>
+        <li>Internal Audit</li>
+        <li>Control of Purchased Product</li>
+        <li>Continuous Improvement</li>
+    </ul>
+    <p>While suppliers are not specifically required to achieve certification to ISO9001:2008, operating within the guidelines of this or similar standards is recommended as a means to meet the Quality System expectations. </p>
+    <h3>Zero defects</h3>
+    <p>Suppliers shall accept Zero-Defects as the Quality Target and continually pursue action plans to reduce internal and external defect PPM to achieve that target. </p>
+    <p>Suppliers are fully responsible for the quality of their products, and for assuring their products and/or materials function properly as part of a system or assembly. Any product not meeting specification may, at <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s
+        discretion be returned to the Supplier. All costs associated with the non-conforming product will be borne by the supplier. </p>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> shall conduct random audits of purchased product. Product may be tested by <span style="white-space: nowrap;">La-Z-Boy</span> laboratories or by an accredited third party laboratory. In the event
+        that the audited product is found to be out of compliance with specifications, the cost of the testing shall be borne by the supplier. </p>
+    <h3>Corrective action</h3>
+    <p>When nonconforming material is received by a <span style="white-space: nowrap;">La-Z-Boy</span> location, the location Quality Department shall identify and quarantine all suspect material. The supplier is required to implement containment by quarantining
+        defective material and identifying a clean point for subsequent shipments. The supplier is also required to implement corrective actions to eliminate the root cause of the defect and prevent recurrence. </p>
+    <p>Suppliers shall be responsible for costs associated with non-conforming material shipped to <span style="white-space: nowrap;">La-Z-Boy</span>, Inc. facilities. </p>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> Residential locations will issue a Supplier Corrective Action Request (SCAR) as detailed in <em> the Incoming Quality Defect Procedure 01QSP0038-445D </em> which is available from a Purchasing
+        representative. <span style="white-space: nowrap;">La-Z-Boy</span> Residential Suppliers are required to implement containment and corrective action as detailed in the <em>Procedure 01SCP0004-415 (Supplier Corrective Action Request Procedure)</em>,
+        also available from a Purchasing representative. </p>
+    <h3>Continuous improvement</h3>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> operates in an environment focused on continuous improvement through the application of Lean Manufacturing principles to improve quality, reduce cost and ensure on-time delivery. Suppliers are
+        expected to have active continuous improvement programs to ensure continued competitiveness. </p>
+    <h3>New product & process planning</h3>
+    <p>
+        <span style="white-space: nowrap;">La-Z-Boy</span> Suppliers shall have effective processes to manage the launch of new products. As a minimum these processes shall address: </p>
+    <ul>
+        <li>Process & Material Capability to meet <span style="white-space: nowrap;">La-Z-Boy</span> Design requirements (e.g. Capability Studies) </li>
+        <li>Long-term Process Control (e.g. Statistical Methods and Control Plans) </li>
+        <li>Risk Identification and Mitigation (e.g. Process Failure Mode and Effects Analysis, Error Proofing) </li>
+        <li>Inspection and Gage Control</li>
+        <li>Effective training of manufacturing personnel</li>
+        <li>For suppliers who provide cut and sewn sets, manufacturing personnel must be trained by <span style="white-space: nowrap;">La-Z-Boy</span> trainers and meet <span style="white-space: nowrap;">La-Z-Boy</span> qualification requirements.
+        </li>
+    </ul>
+    <h4>Production part approval process (PPAP)</h4>
+    <p>The purpose of the Production Part Approval Process is to provide evidence that all engineering design specifications and requirements are understood and that the manufacturing process consistently produces product meeting these requirements when
+        run by production personnel on production equipment and tooling at full production rates. </p>
+    <p>Approval of new parts or parts from new suppliers will follow <span style="white-space: nowrap;">La-Z-Boy</span>&rsquo;s Production Part Approval Process. Specific requirements may vary by part, commodity and business unit, but approval generally
+        requires completion of: </p>
+    <ul>
+        <li>Process Flow Diagrams</li>
+        <li>Process Failure Mode and Effects</li>
+        <li>Control Plans</li>
+        <li>Product/Process Capability for all special characteristics</li>
+        <li>Full part dimensional layout for each tooling cavity or each tool </li>
+        <li>Material performance test results (where appropriate)</li>
+        <li>Appearance Approval Report (where appropriate)</li>
+        <li>Bulk Material Checklist (where appropriate)</li>
+        <li>Measurement Systems Analysis</li>
+        <li>Part Submission Warrant</li>
+    </ul>
+    <h3>Product/process changes</h3>
+    <p>Suppliers, sub-suppliers and sub-contractors shall make no changes to a product (e.g. material, component, subassembly, etc.) or the process used to produce a product without written approval by <span style="white-space: nowrap;">La-Z-Boy</span>.
+        This includes changes to sub-suppliers or Process Control Plans. </p>
+    <p>The Supplier shall contact LZB for product approval with respect to any design and/or process changes as follows: </p>
+    <ul>
+        <li>Use of other construction or material than was used in the previously-approved part or product. </li>
+        <li>Production from new or modified tools, dies, molds, patterns, etc. This includes additional or replacement tooling. </li>
+        <li>Production following refurbishment or rearrangement of existing tooling or equipment. </li>
+        <li>Production from tooling or equipment transferred to a different plant location or from an additional plant location. </li>
+        <li>Change of subcontractor for parts, non-equivalent materials or services that affect customer fit, form, function, durability, or performance requirements. </li>
+        <li>Product produced after the tooling has been inactive for volume production for twelve months or more. </li>
+        <li>Product or process changes related to components of the production product manufactured internally or manufactured by subcontractors that impact fit, form, function, performance, and/or durability of the salable product. </li>
+        <li>Change in test/inspection method. For a change in test method, the Supplier should have evidence that the new method provides results equivalent to the old method. </li>
+    </ul>
+    <p>Unless otherwise specified in writing by your LZB purchasing contact, any changes shall be requested and approved following the <em><span style="white-space: nowrap;">La-Z-Boy</span> Supplier Change Request Process (01SCP0008-415)</em>, using the
+        <em>Supplier Change Request Form (01SCF0011-415)</em>. Both policies are available from a Purchasing representative.</p>
+    <p>Changes to product or process may require re-submission of appropriate product approval samples and documentation (PPAP). </p>
+    <h3>Product Changes, Discontinuance, Recalls or Non-Conformance (for Casegoods and Finished Goods Suppliers)</h3>
+    <p>The Supplier is obligated to communicate in writing to LZB any changes, discontinuance, recalls, or non-conformance that could impact the safety, health or environmental performance of a LZB product.</p>
+    <p>If the Goods are the subject of a Recall, whether initiated by Supplier, Buyer or a government entity (including the issuance of safety notices), Supplier shall be responsible for all matters and costs associated with the Recall, including but not
+        limited to:</p>
+    <ul>
+        <li>Consumer notification and contact.</li>
+        <li>All expenses and losses incurred by Buyer in connection with such Recall (and where applicable, any products with which the Recalled Goods has been packaged, consolidated or commingled), including but not limited to refunds to customers, lost
+            profits, transportation costs and all other costs associated therewith.</li>
+        <li>Initial contact and reporting of the Recall to any government agency having jurisdiction over the affected Goods.</li>
+        <li>If a government agency initiates any inquiry or investigation relating to the Goods or similar goods manufactured or supplied by Supplier, Supplier shall notify Buyer immediately thereof and take reasonable steps to resolve the matter without
+            exposing Buyer to any liability or risk.</li>
+    </ul>
+    <p>If potential safety, health, environmental or regulatory issues are discovered by LZB or LZB&rsquo;s customers, which are determined to be the Supplier&rsquo;s responsibility, the Supplier will be notified. The Supplier must address the concern in
+        writing within 10 business days to all such notifications. For Contract Manufacturers, this includes taking immediate steps to address the issue for any work-in-process.</p>
+    <p>Upon request, Suppliers must provide documentation and/or test data to LZB in order to verify additional requirements that will be identified in the Product Stewardship Purchasing Requirements Documents or other similar documents. This includes, but
+        is not limited to:</p>
+    <ul>
+        <li>Special applications (such as children&rsquo;s products)</li>
+        <li>Material composition or marking</li>
+        <li>Regional product labeling</li>
+    </ul>
+    <h2 id="approval">Supplier selection and approval</h2>
+    <p>In order to promote strong, mutually beneficial relationships with suppliers, all new suppliers must first participate in an approval process to help determine if the supplier has the technical, manufacturing, and leadership culture to sustain a long-term
+        relationship with <span style="white-space: nowrap;">La-Z-Boy</span>. </p>
+    <p>Prior to being selected to provide product to <span style="white-space: nowrap;">La-Z-Boy</span>, all suppliers must be approved. The Supplier Approval Process requires: </p>
+    <ol>
+        <li>A Non-Disclosure Agreement is signed.</li>
+        <li>Supplier submits Self-Assessment Questionnaire and Contact List (Forms available on request). </li>
+        <li>Onsite assessment performed by <span style="white-space: nowrap;">La-Z-Boy</span> representative from Supplier Development Team. This assessment focuses on 4 key areas: </li>
         <ol>
-            <li>A Non-Disclosure Agreement is signed.</li>
-            <li>Supplier submits Self-Assessment Questionnaire and Contact List (Forms available on request). </li>
-            <li>Onsite assessment performed by <span style="white-space: nowrap;">La-Z-Boy</span> representative from Supplier Development Team. This assessment focuses on 4 key areas: </li>
-            <ol>
-                <li>Quality</li>
-                <li>Leadership</li>
-                <li>Safety and Environmental</li>
-                <li>Lean Methods / Continuous Improvement Culture</li>
-            </ol>
-            <li>Supplier completes the product stewardship Compliance Profile in the Supplier Portal and provides all required information.</li>
-            <li>Supplier completes Social Compliance Self-Assessment in the Supplier Portal.</li>
-            <li>Where appropriate (as determined by the Social Compliance Manager) a Social Compliance onsite audit is completed.</li>
-            <li>Following a successful onsite assessment the supplier is presented for approval to the <span style="white-space: nowrap;">La-Z-Boy</span> Procurement Council. </li>
-        </ol>
-        <p>Receiving approval allows the <span style="white-space: nowrap;">La-Z-Boy</span> purchasing organizations to source from the supplier if other factors (price, delivery, quality etc.) meet expectations. </p>
-        <h2 id="set-up">Supplier set-up</h2>
-        <p>In order to be set up for transactions in the <span style="white-space: nowrap;">La-Z-Boy</span> system the following information and capabilities may be required: </p>
-        <ul>
-            <li>Electronic Data Interchange (EDI)</li>
-            <li>ACH payment transactions</li>
-            <li>ERS (Electronic Remittance Settlement)</li>
-            <li>Advance Shipping Notice (ASN) Capability</li>
-            <li>Customs Compliance Documentation</li>
-        </ul>
-        <h2 id="purchase-orders">Purchase orders</h2>
-        <p>A Purchase Order must be in place prior to shipment of any production material or parts. Contact your purchasing contact for a copy of the standard Purchase Order Terms and Conditions. </p>
-        <h2 id="scorecard">Supplier scorecard</h2>
-        <p>To help drive continuous improvement, and to provide information to support the sourcing process, core suppliers are provided a Supplier Scorecard on a quarterly basis. The scorecard is used as part of the sourcing decision process as well as
-            the primary datum for awarding Supplier Excellence Awards at the end of each fiscal year. </p>
-        <p>Suppliers are scored in five (5) categories:</p>
-        <ul>
             <li>Quality</li>
-            <li>Cost</li>
-            <li>Delivery & Labelling</li>
-            <li>Customer Service</li>
-            <li>Innovation</li>
-        </ul>
-        <h2 id="awards">Supplier awards</h2>
-        <p>Supplier Awards will be presented annually to recognize and award members of the Supply Chain for achievement in Quality, Cost, Delivery, Customer Service, and Innovation. The Suppliers will be recognized during the Annual Supplier Summit.
-        </p>
-        <h2 id="covers"><span style="white-space: nowrap;">La-Z-Boy</span> branded business cover requirements </h2>
-        <h3>Introduction</h3>
-        <p><span style="white-space: nowrap;">La-Z-Boy&rsquo;s </span>cover requirements are some of the most stringent in the industry to ensure our customers will receive their product in a timely fashion and get years of trouble free comfort from it.
-            The requirements in this manual have been developed through years of experience and collaboration with our supplier partners.</p>
-        <p>This manual outlines the various practices and documents that must be referenced for a successful partnership with La-Z-Boy. The referenced documents can be obtained from a Purchasing representative.</p>
-        <h3>Performance and Product Compliance Requirements for Fabrics, Leather, Cut and Sew Kits, and Outsourced Upholstered Goods</h3>
-        <p>The <span style="white-space: nowrap;">La-Z-Boy</span> performance requirements for cover are based on either industry published methods or unique <span style="white-space: nowrap;">La-Z-Boy</span> developed test methods. <span style="white-space: nowrap;">La-Z-Boy</span>            also ensures that our products meet the regulatory requirements for flammability, heavy metal content, phthalate content, formaldehyde, and flame retardants. The test methods and required values are outlined in the following documents:</p>
-        <ul>
-            <li><em>CPD-1: Requirements for Roll Goods</em></li>
-            <li><em>CPD-2: Requirements for Outsourced Cut and Sew Kits</em></li>
-            <li><em>CPD-3: Requirements for Leather Hides</em></li>
-            <li><em>CPD-4: Requirements for Outsourced Upholstered Goods</em></li>
-        </ul>
-        <h3>Quality Requirements</h3>
-        <p>The highest quality product needs to be supplied to <span style="white-space: nowrap;">La-Z-Boy</span> to ensure efficient manufacturing and satisfied customers of the finished product. <span style="white-space: nowrap;">La-Z-Boy</span> reserves
-            the right to perform AQL audits on any cover or cut and sew kits sourced at the supplier&rsquo;s location. The AQL procedures are outlined in the following documents:</p>
-        <ul>
-            <li><em>CPD-5: AQL Procedure for Roll Goods</em></li>
-            <li><em>CPD-6: AQL Procedure for Cut and Sew Kits</em></li>
-            <li><em>CPD-7: AQL Procedure for Leather Hides</em></li>
-            <li><em>CPD-8: AQL Procedure for Outsourced Upholstered Goods</em></li>
-        </ul>
-        <p>Color consistency is very important as well to allow the mixing of different production lots, color consistency in service, and color consistency in product showrooms or the customer&rsquo;s home. Suppliers will be provided approved color standards
-            for all products that are sourced. The procedures for color approval and color standards are outlined in the following documents:</p>
-        <ul>
-            <li><em>CPD-23: Color Standards</em></li>
-            <li><em>CPD-48: Color Approval Policy</em></li>
-        </ul>
-        <h3>EDI Requirements</h3>
-        <p><span style="white-space: nowrap;">La-Z-Boy</span> suppliers should have EDI capability to receive PO&rsquo;s and send ASN&rsquo;s (Advanced Shipping Notices) to La-Z-Boy. The specifications and technical information for performing EDI transactions
-            with <span style="white-space: nowrap;">La-Z-Boy</span> can be found in:</p>
-        <ul>
-            <li><em>CPD-68: EDI Information</em></li>
-        </ul>
-        <h3>Delivery</h3>
-        <p>On time delivery is important to <span style="white-space: nowrap;">La-Z-Boy</span> to ensure we can provide our customers with a high level of service. It is the supplier&rsquo;s responsibility to maintain accurate data in their work in progress
-            (WIP) report and to notify <span style="white-space: nowrap;">La-Z-Boy</span> of a possible delivery delay. Extra shipping charges may be necessary to expedite late shipments to maintain <span style="white-space: nowrap;">La-Z-Boy&rsquo;s </span>level
-            of service to our customers. The procedure for late shipments and air shipments are outlined in the following documents:</p>
-        <ul>
-            <li><em>CPD-51: Late Shipment Policy</em></li>
-            <li><em>CPD-71: Air Shipment Process</em></li>
-        </ul>
-        <p>Labeling requirements for rolls, hides, and cut and sew kits are outlined in the following documents:</p>
-        <ul>
-            <li><em>CPD-24: Roll Label Guidelines</em></li>
-            <li><em>CPD-34: Leather Hide and Hide Carton Label Guidelines</em></li>
-            <li><em>CPD-39: Outsource Cut and Sew Carton Label Guidelines</em></li>
-            <li><em>CPD-40: Outsource Cut and Sew Kit Label Guidelines</em></li>
-        </ul>
-        <h3>Product Changes</h3>
-        <p>Changes to product sent to <span style="white-space: nowrap;">La-Z-Boy</span> are sometimes necessary to ensure high quality product, replace discontinued components, or to change manufacturing locations. Any change that may impact the performance
-            or appearance of must be communicated to <span style="white-space: nowrap;">La-Z-Boy</span> in writing. If changes go into effect without <span style="white-space: nowrap;">La-Z-Boy&rsquo;s </span>prior knowledge and approval, the supplier
-            is responsible for all costs incurred to approve the change and replace any unapproved product. The procedure for product change is outlined in the following document:</p>
-        <ul>
-            <li><em>CPD-25: Change of Product Procedure</em></li>
-        </ul>
-        <h3>Corrective Actions and Clean Points</h3>
-        <p>Quality issues can arise on occasion that require deeper problem solving to correct. The issues require 8D corrective actions to be filled out and performed by the supplier to ensure the issue is properly analyzed and effective corrective actions
-            are taken to prevent reoccurrence. <span style="white-space: nowrap;">La-Z-Boy</span> will notify the supplier when an issue requires an 8D corrective action to be filled out. The procedure for corrective actions is outlined in the following
-            document:
-        </p>
-        <ul>
-            <li><em>CPD-31: Procedure for Filling Out and Following Up on 8D Corrective Actions</em></li>
-        </ul>
-        <p>After a quality issue is corrected sometimes the clean point needs to be identified so personnel in <span style="white-space: nowrap;">La-Z-Boy</span> plants don&rsquo;t need to inspect the product. <span style="white-space: nowrap;">La-Z-Boy</span>            will notify the supplier when a clean point label is necessary. The clean point procedure is outlined in the following document:</p>
-        <ul>
-            <li><em>CPD-17: Quality Clean Point Policy</em></li>
-        </ul>
-        <h3>New Market Selections</h3>
-        <p><span style="white-space: nowrap;">La-Z-Boy</span> attends the High Point, North Carolina Furniture Market twice a year (April and October) to showcase new cover, new furniture styles, and the latest innovations. New Market covers are selected
-            after supplier&rsquo;s showcase their new developments to <span style="white-space: nowrap;">La-Z-Boy</span> at their Monroe, Michigan headquarters.</p>
-        <p>After the new Market covers are selected, the supplier&rsquo;s must adhere the requirements of testing for Market, shipping schedule for swatching and Market unit yardage, and the necessary sampling yardage requirements. The Market requirements
-            for testing, initial yardage, and a general timeline are outlined in the following documents:</p>
-        <ul>
-            <li><em>CPD-45: Initial and Swatch Yardage Requirements for Market</em></li>
-            <li><em>CPD-46: Quality and Testing Requirements for Market</em></li>
-            <li><em>CPD-47: General Market Milestones</em></li>
-        </ul>
-        <h3>Supplier Scorecard</h3>
-        <p>To provide feedback to our suppliers and grade their performance, each quarter our suppliers are sent a scorecard. Suppliers are scored in four areas: quality, delivery, customer service, and innovation. Scorecards are used in the sourcing process
-            for new Market covers, outsource cut and sew kits, and also for awarding higher performing suppliers for their performance. The different areas and scoring criteria is detailed in the following document:</p>
-        <ul>
-            <li><em>CPD-52: Supplier Scorecard Policy</em></li>
-        </ul>
-        <h3>Warranty</h3>
-        <p><span style="white-space: nowrap;">La-Z-Boy</span> provides our customers a one year warranty on cover from the date the furniture is delivered into the customer&rsquo;s home. If the cover does not perform in a satisfactory manner to our customer
-            and the reason for failure is found to be a cover manufacturing defect, the cover supplier will be responsible for the costs associated with the failure. These costs include parts, labor, freight, and possibly replacement of the furniture.
-            Monthly reports are provided to the supplier and following document details the procedure:</p>
-        <ul>
-            <li><em>CPD-42: Monthly Warranty Chargeback Procedure</em></li>
-        </ul>
-        <p>For leather hides a quarterly reduction of 0.5% is taken to cover warranty costs. Details of this are provided in:</p>
-        <ul>
-            <li><em>CPD-43: Warranty Chargeback for Leather Hide Suppliers</em></li>
-        </ul>
-        <p>For outsourced upholstered goods, the warranty terms will be defined in the contract and the process is detailed in:</p>
-        <ul>
-            <li><em>CPD-66: Warranty Chargeback for Outsourced Upholstered Goods</em></li>
-        </ul>
-        <h3>Return of Product and Quality Chargebacks</h3>
-        <p>If any product that is shipped to <span style="white-space: nowrap;">La-Z-Boy</span> is found to deficient in quality, it may be returned to the supplier (at the supplier&rsquo;s cost), reworked (at the supplier&rsquo;s cost), the defect may be
-            cut around and the supplier will be debited for the unused material, or the material is donated for training purposes. More details on this process can be found in:</p>
-        <ul>
-            <li><em>CPD-67: Return Policy for Quality Issues</em></li>
-        </ul>
-        <p><span style="white-space: nowrap;">La-Z-Boy&rsquo;s </span>cut and sew facility in Mexico performs AQL audits on incoming material and from those inspections and daily production a flaw report is generated. The flaw report represents material
-            or defects that are unusable in manufacturing and the supplier is responsible for the cost. More details of this procedure can be found in:</p>
-        <ul>
-            <li><em>CPD-13: Supplier Chargeback Policy for CSC</em></li>
-        </ul>
-        <h2 id="casegoods"><span style="white-space: nowrap;">La-Z-Boy</span> Casegoods specific requirements </h2>
-        <p><span style="white-space: nowrap;">La-Z-Boy</span> Casegoods Division requires all suppliers to sign a Vendor Requirement Agreement that includes requirements specific to <span style="white-space: nowrap;">La-Z-Boy</span> Casegoods. For Casegoods
-            suppliers, contact your Casegoods purchasing contact for a copy of this agreement.</p>
-        <p>All finished goods purchased by <span style="white-space: nowrap;">La-Z-Boy</span> Inc. must meet all relevant product safety requirements as listed but not limited to those below and those detailed in the <em>Product Stewardship Requirements (01SCPOL0002-415)</em>            which can be obtained from a Purchasing representative.</p>
-        <ul>
-            <li>ASTM 3096-14 Standard Performance Specifications for Tipover Restraint(s) used with Clothing Storage Units</li>
-            <li>Product Packaging: All items supplied must be packaged in a manner to meet or exceed the National Motor Freight Traffic Association (NMFTA) Rule 181 as needed.</li>
-            <li>Mold: All products must be properly manufactured, treated, packaged and stored to prevent the growth of mold on the product and packaging.</li>
-            <li>Tempered Glass: Tempered glass is required in table tops less than 6mm thick and glass doors not enclosed by a frame.</li>
-            <li>ASTM F2813-12 Standard Specifications for Glass Used as Horizontal Surface in Desks and Tables</li>
-            <li>ASTM F2598-09 Standard Consumer Safety Specifications for Clothing Storage Chests (Drop Lid)</li>
-        </ul>
-    </div>
-    <div class="gray footer">
-        <p>&copy;
-            <script>
-                document.write(new Date().getFullYear());
-            </script>
-            <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated </p>
-    </div>
-    <script>
-        runAfterDOM();
-    </script>
-</body>
+            <li>Leadership</li>
+            <li>Safety and Environmental</li>
+            <li>Lean Methods / Continuous Improvement Culture</li>
+        </ol>
+        <li>Supplier completes the product stewardship Compliance Profile in the Supplier Portal and provides all required information.</li>
+        <li>Supplier completes Social Compliance Self-Assessment in the Supplier Portal.</li>
+        <li>Where appropriate (as determined by the Social Compliance Manager) a Social Compliance onsite audit is completed.</li>
+        <li>Following a successful onsite assessment the supplier is presented for approval to the <span style="white-space: nowrap;">La-Z-Boy</span> Procurement Council. </li>
+    </ol>
+    <p>Receiving approval allows the <span style="white-space: nowrap;">La-Z-Boy</span> purchasing organizations to source from the supplier if other factors (price, delivery, quality etc.) meet expectations. </p>
+    <h2 id="set-up">Supplier set-up</h2>
+    <p>In order to be set up for transactions in the <span style="white-space: nowrap;">La-Z-Boy</span> system the following information and capabilities may be required: </p>
+    <ul>
+        <li>Electronic Data Interchange (EDI)</li>
+        <li>ACH payment transactions</li>
+        <li>ERS (Electronic Remittance Settlement)</li>
+        <li>Advance Shipping Notice (ASN) Capability</li>
+        <li>Customs Compliance Documentation</li>
+    </ul>
+    <h2 id="purchase-orders">Purchase orders</h2>
+    <p>A Purchase Order must be in place prior to shipment of any production material or parts. Contact your purchasing contact for a copy of the standard Purchase Order Terms and Conditions. </p>
+    <h2 id="scorecard">Supplier scorecard</h2>
+    <p>To help drive continuous improvement, and to provide information to support the sourcing process, core suppliers are provided a Supplier Scorecard on a quarterly basis. The scorecard is used as part of the sourcing decision process as well as the
+        primary datum for awarding Supplier Excellence Awards at the end of each fiscal year. </p>
+    <p>Suppliers are scored in five (5) categories:</p>
+    <ul>
+        <li>Quality</li>
+        <li>Cost</li>
+        <li>Delivery & Labelling</li>
+        <li>Customer Service</li>
+        <li>Innovation</li>
+    </ul>
+    <h2 id="awards">Supplier awards</h2>
+    <p>Supplier Awards will be presented annually to recognize and award members of the Supply Chain for achievement in Quality, Cost, Delivery, Customer Service, and Innovation. The Suppliers will be recognized during the Annual Supplier Summit.
+    </p>
+    <h2 id="covers"><span style="white-space: nowrap;">La-Z-Boy</span> branded business cover requirements </h2>
+    <h3>Introduction</h3>
+    <p><span style="white-space: nowrap;">La-Z-Boy&rsquo;s </span>cover requirements are some of the most stringent in the industry to ensure our customers will receive their product in a timely fashion and get years of trouble free comfort from it. The
+        requirements in this manual have been developed through years of experience and collaboration with our supplier partners.</p>
+    <p>This manual outlines the various practices and documents that must be referenced for a successful partnership with La-Z-Boy. The referenced documents can be obtained from a Purchasing representative.</p>
+    <h3>Performance and Product Compliance Requirements for Fabrics, Leather, Cut and Sew Kits, and Outsourced Upholstered Goods</h3>
+    <p>The <span style="white-space: nowrap;">La-Z-Boy</span> performance requirements for cover are based on either industry published methods or unique <span style="white-space: nowrap;">La-Z-Boy</span> developed test methods. <span style="white-space: nowrap;">La-Z-Boy</span>        also ensures that our products meet the regulatory requirements for flammability, heavy metal content, phthalate content, formaldehyde, and flame retardants. The test methods and required values are outlined in the following documents:</p>
+    <ul>
+        <li><em>CPD-1: Requirements for Roll Goods</em></li>
+        <li><em>CPD-2: Requirements for Outsourced Cut and Sew Kits</em></li>
+        <li><em>CPD-3: Requirements for Leather Hides</em></li>
+        <li><em>CPD-4: Requirements for Outsourced Upholstered Goods</em></li>
+    </ul>
+    <h3>Quality Requirements</h3>
+    <p>The highest quality product needs to be supplied to <span style="white-space: nowrap;">La-Z-Boy</span> to ensure efficient manufacturing and satisfied customers of the finished product. <span style="white-space: nowrap;">La-Z-Boy</span> reserves the
+        right to perform AQL audits on any cover or cut and sew kits sourced at the supplier&rsquo;s location. The AQL procedures are outlined in the following documents:</p>
+    <ul>
+        <li><em>CPD-5: AQL Procedure for Roll Goods</em></li>
+        <li><em>CPD-6: AQL Procedure for Cut and Sew Kits</em></li>
+        <li><em>CPD-7: AQL Procedure for Leather Hides</em></li>
+        <li><em>CPD-8: AQL Procedure for Outsourced Upholstered Goods</em></li>
+    </ul>
+    <p>Color consistency is very important as well to allow the mixing of different production lots, color consistency in service, and color consistency in product showrooms or the customer&rsquo;s home. Suppliers will be provided approved color standards
+        for all products that are sourced. The procedures for color approval and color standards are outlined in the following documents:</p>
+    <ul>
+        <li><em>CPD-23: Color Standards</em></li>
+        <li><em>CPD-48: Color Approval Policy</em></li>
+    </ul>
+    <h3>EDI Requirements</h3>
+    <p><span style="white-space: nowrap;">La-Z-Boy</span> suppliers should have EDI capability to receive PO&rsquo;s and send ASN&rsquo;s (Advanced Shipping Notices) to La-Z-Boy. The specifications and technical information for performing EDI transactions
+        with <span style="white-space: nowrap;">La-Z-Boy</span> can be found in:</p>
+    <ul>
+        <li><em>CPD-68: EDI Information</em></li>
+    </ul>
+    <h3>Delivery</h3>
+    <p>On time delivery is important to <span style="white-space: nowrap;">La-Z-Boy</span> to ensure we can provide our customers with a high level of service. It is the supplier&rsquo;s responsibility to maintain accurate data in their work in progress
+        (WIP) report and to notify <span style="white-space: nowrap;">La-Z-Boy</span> of a possible delivery delay. Extra shipping charges may be necessary to expedite late shipments to maintain <span style="white-space: nowrap;">La-Z-Boy&rsquo;s </span>level
+        of service to our customers. The procedure for late shipments and air shipments are outlined in the following documents:</p>
+    <ul>
+        <li><em>CPD-51: Late Shipment Policy</em></li>
+        <li><em>CPD-71: Air Shipment Process</em></li>
+    </ul>
+    <p>Labeling requirements for rolls, hides, and cut and sew kits are outlined in the following documents:</p>
+    <ul>
+        <li><em>CPD-24: Roll Label Guidelines</em></li>
+        <li><em>CPD-34: Leather Hide and Hide Carton Label Guidelines</em></li>
+        <li><em>CPD-39: Outsource Cut and Sew Carton Label Guidelines</em></li>
+        <li><em>CPD-40: Outsource Cut and Sew Kit Label Guidelines</em></li>
+    </ul>
+    <h3>Product Changes</h3>
+    <p>Changes to product sent to <span style="white-space: nowrap;">La-Z-Boy</span> are sometimes necessary to ensure high quality product, replace discontinued components, or to change manufacturing locations. Any change that may impact the performance
+        or appearance of must be communicated to <span style="white-space: nowrap;">La-Z-Boy</span> in writing. If changes go into effect without <span style="white-space: nowrap;">La-Z-Boy&rsquo;s </span>prior knowledge and approval, the supplier is
+        responsible for all costs incurred to approve the change and replace any unapproved product. The procedure for product change is outlined in the following document:</p>
+    <ul>
+        <li><em>CPD-25: Change of Product Procedure</em></li>
+    </ul>
+    <h3>Corrective Actions and Clean Points</h3>
+    <p>Quality issues can arise on occasion that require deeper problem solving to correct. The issues require 8D corrective actions to be filled out and performed by the supplier to ensure the issue is properly analyzed and effective corrective actions
+        are taken to prevent reoccurrence. <span style="white-space: nowrap;">La-Z-Boy</span> will notify the supplier when an issue requires an 8D corrective action to be filled out. The procedure for corrective actions is outlined in the following document:
+    </p>
+    <ul>
+        <li><em>CPD-31: Procedure for Filling Out and Following Up on 8D Corrective Actions</em></li>
+    </ul>
+    <p>After a quality issue is corrected sometimes the clean point needs to be identified so personnel in <span style="white-space: nowrap;">La-Z-Boy</span> plants don&rsquo;t need to inspect the product. <span style="white-space: nowrap;">La-Z-Boy</span>        will notify the supplier when a clean point label is necessary. The clean point procedure is outlined in the following document:</p>
+    <ul>
+        <li><em>CPD-17: Quality Clean Point Policy</em></li>
+    </ul>
+    <h3>New Market Selections</h3>
+    <p><span style="white-space: nowrap;">La-Z-Boy</span> attends the High Point, North Carolina Furniture Market twice a year (April and October) to showcase new cover, new furniture styles, and the latest innovations. New Market covers are selected after
+        supplier&rsquo;s showcase their new developments to <span style="white-space: nowrap;">La-Z-Boy</span> at their Monroe, Michigan headquarters.</p>
+    <p>After the new Market covers are selected, the supplier&rsquo;s must adhere the requirements of testing for Market, shipping schedule for swatching and Market unit yardage, and the necessary sampling yardage requirements. The Market requirements for
+        testing, initial yardage, and a general timeline are outlined in the following documents:</p>
+    <ul>
+        <li><em>CPD-45: Initial and Swatch Yardage Requirements for Market</em></li>
+        <li><em>CPD-46: Quality and Testing Requirements for Market</em></li>
+        <li><em>CPD-47: General Market Milestones</em></li>
+    </ul>
+    <h3>Supplier Scorecard</h3>
+    <p>To provide feedback to our suppliers and grade their performance, each quarter our suppliers are sent a scorecard. Suppliers are scored in four areas: quality, delivery, customer service, and innovation. Scorecards are used in the sourcing process
+        for new Market covers, outsource cut and sew kits, and also for awarding higher performing suppliers for their performance. The different areas and scoring criteria is detailed in the following document:</p>
+    <ul>
+        <li><em>CPD-52: Supplier Scorecard Policy</em></li>
+    </ul>
+    <h3>Warranty</h3>
+    <p><span style="white-space: nowrap;">La-Z-Boy</span> provides our customers a one year warranty on cover from the date the furniture is delivered into the customer&rsquo;s home. If the cover does not perform in a satisfactory manner to our customer
+        and the reason for failure is found to be a cover manufacturing defect, the cover supplier will be responsible for the costs associated with the failure. These costs include parts, labor, freight, and possibly replacement of the furniture. Monthly
+        reports are provided to the supplier and following document details the procedure:</p>
+    <ul>
+        <li><em>CPD-42: Monthly Warranty Chargeback Procedure</em></li>
+    </ul>
+    <p>For leather hides a quarterly reduction of 0.5% is taken to cover warranty costs. Details of this are provided in:</p>
+    <ul>
+        <li><em>CPD-43: Warranty Chargeback for Leather Hide Suppliers</em></li>
+    </ul>
+    <p>For outsourced upholstered goods, the warranty terms will be defined in the contract and the process is detailed in:</p>
+    <ul>
+        <li><em>CPD-66: Warranty Chargeback for Outsourced Upholstered Goods</em></li>
+    </ul>
+    <h3>Return of Product and Quality Chargebacks</h3>
+    <p>If any product that is shipped to <span style="white-space: nowrap;">La-Z-Boy</span> is found to deficient in quality, it may be returned to the supplier (at the supplier&rsquo;s cost), reworked (at the supplier&rsquo;s cost), the defect may be cut
+        around and the supplier will be debited for the unused material, or the material is donated for training purposes. More details on this process can be found in:</p>
+    <ul>
+        <li><em>CPD-67: Return Policy for Quality Issues</em></li>
+    </ul>
+    <p><span style="white-space: nowrap;">La-Z-Boy&rsquo;s </span>cut and sew facility in Mexico performs AQL audits on incoming material and from those inspections and daily production a flaw report is generated. The flaw report represents material or defects
+        that are unusable in manufacturing and the supplier is responsible for the cost. More details of this procedure can be found in:</p>
+    <ul>
+        <li><em>CPD-13: Supplier Chargeback Policy for CSC</em></li>
+    </ul>
+    <h2 id="casegoods"><span style="white-space: nowrap;">La-Z-Boy</span> Casegoods specific requirements </h2>
+    <p><span style="white-space: nowrap;">La-Z-Boy</span> Casegoods Division requires all suppliers to sign a Vendor Requirement Agreement that includes requirements specific to <span style="white-space: nowrap;">La-Z-Boy</span> Casegoods. For Casegoods
+        suppliers, contact your Casegoods purchasing contact for a copy of this agreement.</p>
+    <p>All finished goods purchased by <span style="white-space: nowrap;">La-Z-Boy</span> Inc. must meet all relevant product safety requirements as listed but not limited to those below and those detailed in the <em>Product Stewardship Requirements (01SCPOL0002-415)</em>        which can be obtained from a Purchasing representative.</p>
+    <ul>
+        <li>ASTM 3096-14 Standard Performance Specifications for Tipover Restraint(s) used with Clothing Storage Units</li>
+        <li>Product Packaging: All items supplied must be packaged in a manner to meet or exceed the National Motor Freight Traffic Association (NMFTA) Rule 181 as needed.</li>
+        <li>Mold: All products must be properly manufactured, treated, packaged and stored to prevent the growth of mold on the product and packaging.</li>
+        <li>Tempered Glass: Tempered glass is required in table tops less than 6mm thick and glass doors not enclosed by a frame.</li>
+        <li>ASTM F2813-12 Standard Specifications for Glass Used as Horizontal Surface in Desks and Tables</li>
+        <li>ASTM F2598-09 Standard Consumer Safety Specifications for Clothing Storage Chests (Drop Lid)</li>
+    </ul>
+</div>

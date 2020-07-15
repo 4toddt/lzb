@@ -25,7 +25,7 @@
                 <div id="npc-modal-content">\
                     <iframe src="https://www.youtube.com/embed/' + srcID + '?rel=0&amp;amp;ecver=2&amp;amp;enablejsapi=1&amp;amp;showinfo=0&amp;amp;autoplay=1" frameborder="0" allowfullscreen></iframe>\
                 </div>\
-                <img id="npc-modal-close" src="https://www.la-z-boy.com/Images/npc/modal-close.svg">\
+                <img id="npc-modal-close" src="https://content.la-z-boy.com/Images/npc/modal-close.svg">\
             </section>';
             var modal = div.firstChild;
 
@@ -85,12 +85,19 @@
                     });
                 })();
             }
+            document.write('<scr' + 'ipt src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" onload="console.log(\'jquery loaded\')"></sc' + 'ript>');
+            console.log("load adobe now");
+            var adobeDtmScript;
+            if (window.location.href.indexOf("/mobile") > -1) {
+                adobeDtmScript = 'https://assets.adobedtm.com/6b36885b5db2b3919b18a4f4e0755d75dfb17462/satelliteLib-a3d073c33e92a68450d758df76297a21043690b4.js';
+            } else {
+                adobeDtmScript = 'https://assets.adobedtm.com/6b36885b5db2b3919b18a4f4e0755d75dfb17462/satelliteLib-f7833623ccd47bf00c5eb512aa554cfa8eb75ab1.js';
+            }
+            document.write('<scr' + 'ipt type="text/javascript" src="' + adobeDtmScript + '" onload="console.log(\'adobe loaded\')"></sc' + 'ript>');
         })();
-
-        window.onload = function() {
-            var adobeDtmScript = document.createElement("SCRIPT");
-            adobeDtmScript.src = 'https://assets.adobedtm.com/6b36885b5db2b3919b18a4f4e0755d75dfb17462/satelliteLib-f7833623ccd47bf00c5eb512aa554cfa8eb75ab1.js';
-            document.body.appendChild(adobeDtmScript);
-        };
+    </script>
+    <script>
+        console.log("page bottom");
+        _satellite.pageBottom();
     </script>
 </body>

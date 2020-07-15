@@ -155,8 +155,11 @@
 <div class="blue hero-background"></div>
 <div class="page-width">
     <div id="hero">
-        <img class="mobile" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/mobile/hero.jpg" alt="">
-        <img class="tablet-desktop" src="https://www.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/desktop/hero.jpg" alt="">
+        <picture>
+            <source srcset="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/mobile/hero.jpg" media="(max-width: 599.9px)" />
+            <img srcset="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/desktop/hero.jpg 2x, https://content.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/desktop/hero@1x.jpg 1x" src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/corporate-giving/desktop/hero@1x.jpg"
+                alt="" />
+        </picture>
         <h1>Online request&nbsp;form</h1>
     </div>
     <form id="lzb-form" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSesQkFzCDxlA-iSI3pgq_mMV819NRhSraq2HQjYzj9cyh7cYA/formResponse" target="hidden_iframe" onsubmit="givingFormSubmitted=true;">

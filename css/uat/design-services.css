@@ -80,7 +80,7 @@
         width: 100%;
         max-width: 1000px;
         padding: 0 10px;
-        margin: 0 auto;
+        margin: 40px auto 0;
     }
     
     #npc-content section.full-width {
@@ -183,25 +183,29 @@
     /******* Design Services Defaults ******/
     /***************************************/
     
-    #ds-nav {
+    #npc-content #ds-nav {
         font-size: .8em;
         background-color: #FBFBFB;
     }
     
-    #ds-nav a {
+    #npc-content #ds-nav a {
+        font-size: 1em;
         line-height: 40px;
+        font-weight: normal;
+        text-decoration: none;
         display: block;
         padding: 0 15px;
         border-top: 1px solid #cbcbcb;
+        margin: 0;
     }
     
-    #ds-nav a.active {
+    #npc-content #ds-nav a.active {
         background-color: #595451;
         color: white;
         border: none;
     }
     
-    #ds-nav a.active~a {
+    #npc-content #ds-nav a.active~a {
         border: none;
         border-bottom: 1px solid #cbcbcb;
     }
@@ -227,12 +231,33 @@
         display: block;
         width: 1.4em;
         border-bottom: 3px solid #4A4A4A;
-        margin-top: .25em;
+        margin-top: .3em;
+    }
+    
+    #npc-content h3 {
+        font-size: 1em;
+        margin-top: 1em;
+        line-height: 1.2;
     }
     
     #npc-content p {
         font-size: .8em;
         line-height: 1.75;
+        margin-top: .75em;
+    }
+    
+    #npc-content a {
+        font-size: .8em;
+        font-weight: 600;
+        line-height: 1.75;
+        margin-top: .75em;
+        display: block;
+        text-decoration: underline;
+    }
+    
+    #npc-content .image+p,
+    #npc-content p+.image {
+        margin-top: 1.25em;
     }
     
     #npc-content .background-image {
@@ -240,65 +265,140 @@
         background-position: center;
     }
     
-    section#hero {
+    #npc-content section#hero {
         margin-top: 15px;
+    }
+    
+    #npc-content .gutter-20-30 {
+        margin: 0 -10px;
+    }
+    
+    #npc-content .gutter-20-30>div {
+        padding: 0 10px;
+    }
+    
+    #npc-content .two-col {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: -20px;
+    }
+    
+    #npc-content .two-col>div {
+        margin-top: 20px;
+    }
+    
+    #npc-content .design-request {
+        color: white;
+        background-color: #807069;
+        display: block;
+        width: 400px;
+        max-width: 100%;
+        line-height: 55px;
+        text-align: center;
+        margin: 30px auto 0;
+        font-size: 1em;
+        text-decoration: none;
+        border-radius: 2px;
+    }
+    
+    #npc-content .gray-white {
+        background-color: #f4f5f6;
+    }
+    
+    #npc-content .gray-white>section {
+        background-color: white;
+    }
+    
+    #npc-content .designer {
+        text-align: center;
+    }
+    
+    #npc-content .designer p {
+        margin-top: 0;
     }
     
     @media only screen and (min-width: 500px) {
         #npc-content h1 {
             font-size: 1.8em;
         }
+        #npc-content .two-col {
+            flex-wrap: nowrap;
+            margin-top: 0;
+        }
+        #npc-content .two-col>div {
+            flex: 0 0 50%;
+            margin-top: 0;
+        }
     }
     
     @media only screen and (min-width: 700px) {
-        #ds-nav {
+        #npc-content #ds-nav {
             display: flex;
             background-color: #595451;
         }
-        #ds-nav>div {
+        #npc-content #ds-nav>div {
             width: 100%;
-            max-width: 1010px;
+            max-width: 1000px;
+            padding: 0 10px;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-between;
             margin: 0 auto;
         }
-        #ds-nav a {
+        #npc-content #ds-nav a,
+        #npc-content #ds-nav a.active~a {
             line-height: 60px;
             color: white;
-        }
-        #ds-nav a.active {
             position: relative;
+            border-bottom: none;
         }
-        #ds-nav a.active:after {
+        #npc-content #ds-nav a:after {
             content: "";
             display: block;
             position: absolute;
             background-color: white;
-            height: 7px;
+            height: 0;
             width: 100%;
             bottom: 0;
             left: 0;
+            transition: height .2s;
         }
-        #ds-nav#ds-nav a {
+        #npc-content #ds-nav a.active:after,
+        #npc-content #ds-nav a:hover:after {
+            height: 7px;
+        }
+        #npc-content #ds-nav a {
             border: none;
         }
         #npc-content h1 {
             border-bottom: 1px solid #DBDAD9;
             padding-bottom: .1em;
         }
-        #npc-content .two-col {
-            display: flex;
+        #npc-content h2 {
+            font-size: 1.8em;
         }
-        #npc-content .two-col>div {
-            width: 50%;
+        #npc-content .gutter-20-30 {
+            margin: 0 -15px;
+        }
+        #npc-content .gutter-20-30>div {
+            padding: 0 15px;
+        }
+        #npc-content .design-request {
+            font-size: 1.1em;
         }
     }
     
     @media only screen and (min-width: 850px) {
-        #ds-nav {
+        #npc-content section {
+            margin-top: 60px;
+        }
+        #npc-content #ds-nav {
             font-size: 1em;
         }
         #npc-content h1 {
             font-size: 2.4em;
+        }
+        #npc-content section#hero {
+            margin-top: 35px;
         }
     }
