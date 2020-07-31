@@ -1,0 +1,180 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- begin NPC content -->
+    <!-- Design Services TT -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services/">Design Services</a></li>
+            <li><a href="/content/design-services/meet-our-designers">Meet Our Designers</a></li>
+            <li>Danielle</li>
+        </ul>
+    </nav>
+
+    <!-- navigation -->
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+            </div>
+        </nav>
+
+        <h1>Meet our designers</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/headshot.jpg" alt="Danielle"></div>
+                        <h2>Danielle</h2>
+                        <p>La-Z-Boy Designer</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/hero.jpg');"></div>
+            </div>
+        </section>
+        <div class="light-gray">
+            <section id="about-designer">
+                <h2>About designer</h2>
+                <div>
+                    <div class="bio">
+                        <p class="heading">Pittsburgh, PA</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div class="favorites">
+                        <p class="heading">Favorite Design styles:</p>
+                        <p>TBD</p>
+                        <p class="divider">TBD</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="rooms">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room01.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room02.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room03.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room04.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room05.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room06.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room07.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room08.jpg')">
+                    <div></div>
+                </div>
+            </div>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <section id="qa">
+            <div class="two-col gutter-20-30">
+                <div>
+                    <h2>Q &amp; A</h2>
+                    <p>Get to know our experts</p>
+                    <p class="heading">What tips do you have for clients looking for design services?</p>
+                    <p>Come into the store armed with as much information as possible! Bring floor and wall colors, dimensions and lots of pictures. The more information that you have to share, the easier it is to guide you in the right direction. Plus,
+                        be open to stepping outside of your comfort zone! You don’t have to get too wild but if you’re already making changes, push yourself just a bit. You’ll probably end up loving it!</p>
+                </div>
+                <div>
+                    <p class="heading">What is your favorite part of designing a client’s home?</p>
+                    <p>My favorite part is seeing my client’s vision come to life. I could design their room in an infinite number of ways, but only one will be perfect for them. To help determine their style, I use a combination of the frames and fabrics
+                        that they select as well as what I see in their home. There is a common thread that weaves its way through every single item they gravitate toward. It’s my job to pick up on the commonalities.</p>
+                    <p class="heading">What is your favorite way to spend your Saturday?</p>
+                    <p>I try to spend as much time with my family as possible during my days off and am usually testing out some new recipe for us to try. I also have an obsession with real-life crime shows, so you’re likely to find them on my television
+                        when I find a free moment!</p>
+                </div>
+            </div>
+        </section>
+        <div id="testimonials" class="med-gray">
+            <section>
+                <div>
+                    <div class="title">
+                        <h2>Customer<br>Testimonial</h2>
+                    </div>
+                    <div class="carousel">
+                        <div data-flickity='{
+                            "freeScrollFriction": 0.1,
+                            "pageDots": false,
+                            "prevNextButtons": true,
+                            "cellAlign": "left",
+                            "contain": true,
+                            "adaptiveHeight": true,
+                            "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                            }'>
+                            <div class="testimonial">
+                                <h3>A House Becomes a Home</h3>
+                                <p>Danielle is a pleasure to work with, and she spent as much time as necessary so we are happy with our design from the furniture to the décor pieces. Danielle was spot on when it came to selecting our decorating style and
+                                    also helped to nudge us out of our comfort zone. She knows current trends and how to coordinate them in our home to create a timeless style. What a difference those ideas made in our home! It is easy to see Danielle
+                                    truly loves design, and she made our house feel like home.</p>
+                            </div>
+                            <div class="testimonial">
+                                <h3>A Wonderful Eye</h3>
+                                <p>Danielle’s exceptional service is beyond compare! I worked with Danielle on several projects in my home. In one project we took a dull, boring family room and turned it into a complete work of art! She has a wonderful eye
+                                    for design and was able to take my ideas and transform them into a beautiful reality! I have recommended Danielle and La‑Z‑Boy to friends who were just as pleased as myself. Thank you for providing such a great interior
+                                    design program and thank you for Danielle!</p>
+                            </div>
+                            <div class="testimonial">
+                                <h3>Ready for the Next Makeover!</h3>
+                                <p>Danielle is amazing and I am very pleased with our purchases and her service. She put a room together just for us! Her talent is outstanding! She listened to our likes and dislikes and really knew what we wanted, even when
+                                    we didn’t! Thank you again, and I’m looking forward to our next makeover!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+
+    <!-- end NPC content -->
+</body>

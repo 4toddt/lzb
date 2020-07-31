@@ -1,0 +1,162 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- begin NPC content -->
+    <!-- Design Services TT -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services/">Design Services</a></li>
+            <li><a href="/content/design-services/meet-our-designers">Meet Our Designers</a></li>
+            <li>Jill</li>
+        </ul>
+    </nav>
+
+    <!-- navigation -->
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+            </div>
+        </nav>
+
+        <h1>Meet our designers</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/headshot.jpg" alt="Jill"></div>
+                        <h2>Jill</h2>
+                        <p>La-Z-Boy Designer</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/hero.jpg');"></div>
+            </div>
+        </section>
+        <div class="light-gray">
+            <section id="about-designer">
+                <h2>About designer</h2>
+                <div>
+                    <div class="bio">
+                        <p class="heading">Scottsdale, AZ</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div class="favorites">
+                        <p class="heading">Favorite Design styles:</p>
+                        <p>TBD</p>
+                        <p class="divider">TBD</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="rooms">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room01.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room02.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room03.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room04.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room05.jpg')">
+                    <div></div>
+                </div>
+            </div>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <section id="qa">
+            <div class="two-col gutter-20-30">
+                <div>
+                    <h2>Q &amp; A</h2>
+                    <p>Get to know our experts</p>
+                    <p class="heading">How do you determine the right style for your customers?</p>
+                    <p>I ask lots of questions and listen to the answers. I’ve been told many times that I am a mind reader. But honestly, I really listen to my clients. From time to time I will have a client find pictures of rooms or items they love from
+                        the Internet. This is very helpful for the client and the designer.</p>
+                </div>
+                <div>
+                    <p class="heading">Where do find your inspiration?</p>
+                    <p>My personal style is what I call “organic contemporary.” I am inspired by nature — the desert, the forest, the ocean — and also by interesting architecture and fashion.</p>
+                    <p class="heading">What aspect of your job brings you the greatest joy?</p>
+                    <p>Helping people to improve their living spaces is very satisfying. We spend half our lives at home, so that space needs to be a retreat from the busy world. I absolutely love the look on the clients’ faces when they see their finished
+                        room and they love it.</p>
+                </div>
+            </div>
+        </section>
+        <div id="testimonials" class="med-gray">
+            <section>
+                <div>
+                    <div class="title">
+                        <h2>Customer<br>Testimonial</h2>
+                    </div>
+                    <div class="carousel">
+                        <div data-flickity='{
+                            "freeScrollFriction": 0.1,
+                            "pageDots": false,
+                            "prevNextButtons": true,
+                            "cellAlign": "left",
+                            "contain": true,
+                            "adaptiveHeight": true,
+                            "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                            }'>
+                            <div class="testimonial">
+                                <h3>A Home Run</h3>
+                                <p>We can’t thank Jill enough for the tremendous job she and her team did... We wanted beach style in both furniture and colors [and] Jill absolutely hit a home run. She captured the exact feeling we wanted.</p>
+                            </div>
+                            <div class="testimonial">
+                                <h3>A Home with Character</h3>
+                                <p>We are absolutely thrilled with the end result of our room! Jill completely understood and met our goals for the interior of our home. She honestly exceeded all of our expectations. She was able to recommend things we never
+                                    would have thought of, but still fit the character of our home. The end result is a beautiful, functional home that makes the view even more stunning. We didn’t think that was possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+
+    <!-- end NPC content -->
+</body>

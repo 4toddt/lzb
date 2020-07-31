@@ -1,770 +1,462 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
 
-<!-- Design Services TT -->
-<script>
-    dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
-    if (dmiStickyNav != null) {
-        // remove all classes but primary-nav to disable sticky nav
-        dmiStickyNav.className = "primary-nav";
-    }
-</script>
-<link rel="stylesheet" href="https://use.typekit.net/goe4ivi.css">
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-<style>
-    body {
-        margin: 0;
-    }
-    
-    .site-wrapper,
-    .section-row {
-        max-width: none;
-    }
-    
-    .breadcrumbs {
-        margin: 0.625rem auto;
-        max-width: 62.5rem;
-    }
-    
-    main#site-wrapper>.section-title {
-        display: none;
-    }
-    
-    .section-row>.section-content {
-        padding: 0;
-    }
-    
-    section.cust-support .right {
-        float: none !important;
-    }
-    
-    section.cust-support [class*="column"]+[class*="column"]:last-child {
-        float: none;
-    }
-    
-    section.cust-support>h1,
-    section.cust-support>hr {
-        display: none;
-    }
-    
-    .cust-support iframe {
-        min-height: 0;
-    }
-    
-    .two-column-first [role="region"] {
-        width: 100%;
-        margin-left: 0;
-    }
-    
-    main {
-        padding: 0;
-        width: 100%;
-        margin: 0;
-    }
-    
-    .bcc-fbt section {
-        display: block;
-    }
-    
-    .bcc-fbt p {
-        font-size: inherit;
-        line-height: inherit;
-    }
-    
-    .bcc-fbt {
-        font-family: 'lato', sans-serif;
-        line-height: 1.2;
-    }
-    
-    .bcc-fbt * {
-        box-sizing: border-box;
-    }
-    
-    .bcc-fbt img {
-        width: 100%;
-        display: block;
-    }
-    
-    .bcc-fbt a {
-        text-decoration: none;
-        color: inherit;
-        font-size: inherit;
-        line-height: inherit;
-    }
-    
-    .bcc-fbt .group:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    
-    .arrow-right {
-        /* place <span class="arrow-right"></span> around last word to keep arrow with word */
-        display: inline-block;
-    }
-    
-    .arrow-right:after {
-        /* draws arrow */
-        content: "";
-        display: inline-block;
-        position: relative;
-        top: -.1em;
-        left: .25em;
-        height: 0;
-        width: 0.3em;
-        border-top: .25em solid transparent;
-        border-bottom: .25em solid transparent;
-        border-left: .35em solid;
-    }
-    
-    .bcc-fbt .container {
-        max-width: 980px;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        padding: 2em 0;
-        font-size: 16px;
-    }
-    
-    @media only screen and (min-width: 544px) {
-        .bcc-fbt .container {
-            font-size: 20px;
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- begin NPC content -->
+    <!-- Design Services TT -->
+
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
         }
-    }
-    
-    @media only screen and (min-width: 992px) {
-        .bcc-fbt .container {
-            font-size: 23.5px;
+    </script>
+
+    <style>
+        #hero .two-col>.background-image {
+            flex: 0 1 655px;
+            background-image: url(https://www.la-z-boy.com/Images/design-services/hero.png);
+            padding-bottom: 83%;
         }
-    }
-    
-    .bcc-fbt .desktop,
-    .bcc-fbt .landscape-phone-show {
-        display: none;
-    }
-    
-    @media only screen and (min-width: 544px) {
-        .bcc-fbt .landscape-phone-show {
-            display: block;
+        
+        #hero .two-col>.story {
+            flex: 1 0 325px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            align-content: flex-end;
+            margin-left: -7.5px;
+            margin-right: -7.5px;
         }
-        .bcc-fbt .landscape-phone-hide {
-            display: none;
+        
+        #hero .two-col>.story>* {
+            padding: 0 7.5px;
         }
-    }
-    
-    @media only screen and (min-width: 768px) {
-        .bcc-fbt .desktop,
-        .bcc-fbt .landscape-phone-hide {
-            display: block;
+        
+        #hero .two-col>.story .image {
+            width: 165px;
+            position: relative;
         }
-        .bcc-fbt .mobile,
-        .bcc-fbt .landscape-phone-show {
-            display: none;
+        
+        #play-button {
+            position: absolute;
+            cursor: pointer;
+            width: 30%;
+            top: 35%;
+            left: 35%;
         }
-    }
-    
-    .bcc-fbt header {
-        width: auto;
-    }
-    
-    .bcc-fbt header .container {
-        padding: 0;
-    }
-    
-    .bcc-fbt header img {
-        margin-top: 5px;
-    }
-    
-    @media only screen and (min-width: 768px) {
-        .bcc-fbt header img {
-            margin: 35px 0 2em;
+        
+        #hero .two-col>.story h2 {
+            flex: 1 0 150px;
         }
-    }
-    
-    .bcc-fbt header .text-box {
-        position: absolute;
-        top: 25%;
-        left: 52.2%;
-        width: 17em;
-        height: 14em;
-        transform: translate(-50%, -50%);
-        color: #373838;
-        font-size: 10.72px;
-        font-size: 3.35vw;
-    }
-    
-    .bcc-fbt header h1 {
-        font-family: "house-script", sans-serif;
-        font-size: 2.9em;
-        line-height: 1;
-        font-weight: normal;
-        margin: 0;
-    }
-    
-    .bcc-fbt header strong {
-        text-transform: uppercase;
-    }
-    
-    .bcc-fbt header p {
-        margin: 0.6em 0;
-    }
-    
-    .bcc-fbt header .lzb-button {
-        display: inline-block;
-        padding: 0.5em 0.55em;
-        line-height: 1.5em;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-color: #6a6a6a;
-        border-style: solid;
-        border-width: 1px;
-        margin: 0.3em 0;
-    }
-    
-    .bcc-fbt .boxes {
-        background-color: #f1edea;
-        position: relative;
-    }
-    
-    .bcc-fbt .boxes .container {
-        width: 100%;
-        max-width: 336px;
-    }
-    
-    .bcc-fbt .boxes .container-inner {
-        padding: 0 10px;
-    }
-    
-    .bcc-fbt .boxes .box-outer {
-        width: 100%;
-        padding-bottom: 5.063291%;
-        float: left;
-    }
-    
-    .bcc-fbt .boxes .one-col-bottom {
-        padding: 0;
-    }
-    
-    @media only screen and (min-width: 544px) {
-        .bcc-fbt .boxes .container {
-            max-width: 668px;
+        
+        #hero .two-col>.story p {
+            width: 100%;
         }
-        .bcc-fbt .boxes .box-outer {
-            width: 48.8%;
-            padding-bottom: 2.4%;
+        
+        #featured-designers .two-col {
+            align-items: flex-end;
         }
-        .bcc-fbt .boxes .two-col-left {
-            margin-right: 2.4%;
+        
+        #featured-designers .copy p {
+            font-size: .9em;
         }
-        .bcc-fbt .boxes .two-col-bottom {
-            padding-bottom: 0;
+        
+        #featured-designers [data-flickity] {
+            flex: 1 0 100%;
+            overflow: hidden;
         }
-    }
-    
-    @media only screen and (min-width: 768px) {
-        .bcc-fbt .boxes .container {
-            max-width: 1000px;
+        
+        #npc-content .designer {
+            text-align: center;
+            width: 215px;
+            margin-right: 20px;
         }
-        .bcc-fbt .boxes .box-outer {
-            width: 32.2%;
-            padding-bottom: 1.7%;
-            margin-right: 0;
-        }
-        .bcc-fbt .boxes .three-col-left {
-            margin-right: 1.7%;
-        }
-        .bcc-fbt .boxes .three-col-bottom {
-            padding-bottom: 0;
-        }
-    }
-    
-    .bcc-fbt .boxes .box-inner {
-        padding-bottom: 100%;
-        height: 0;
-        background-color: #aeccc8;
-        position: relative;
-    }
-    
-    .bcc-fbt .boxes .text-box {
-        font-size: 23.5px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 9.5em;
-        transform: translate(-50%, -50%);
-        color: white;
-        text-align: center;
-    }
-    
-    .bcc-fbt .boxes h2 {
-        font-size: 1em;
-        margin: 0;
-    }
-    
-    .bcc-fbt .boxes p {
-        margin: 0;
-        font-weight: 300;
-    }
-    
-    .bcc-fbt .expect {
-        background-color: #afcdc8;
-    }
-    
-    .bcc-fbt .expect .container {
-        width: 100%;
-        max-width: 20.4em;
-        padding-bottom: 0;
-    }
-    
-    .bcc-fbt .expect h1 {
-        font-size: 2.04em;
-        color: #373838;
-        font-weight: normal;
-        text-align: center;
-        margin: 0 0 1em;
-        line-height: .8;
-    }
-    
-    .bcc-fbt .expect h1 {
-        font-size: 2.04em;
-    }
-    
-    .bcc-fbt .expect .container-inner {
-        margin: -2em -1em;
-    }
-    
-    .bcc-fbt .expect .box-outer {
-        position: relative;
-        margin: 0 0 2em;
-        float: left;
-        width: 100%
-    }
-    
-    @media only screen and (min-width: 768px) {
-        .bcc-fbt .expect .box-outer:nth-child(even) {
-            clear: left;
-        }
-    }
-    
-    .bcc-fbt .expect img {
-        position: absolute;
-        width: 5.7em;
-        margin: 0;
-        left: .1em;
-    }
-    
-    .bcc-fbt .expect h2 {
-        text-transform: uppercase;
-        font-size: 1.2em;
-        margin: 0;
-        text-align: center;
-    }
-    
-    .bcc-fbt .expect p {
-        margin: 0 1em;
-        position: relative;
-        color: #4A4A4A;
-        line-height: 1.4;
-    }
-    
-    .bcc-fbt .designers .container {
-        width: 100%;
-        padding-bottom: 0;
-    }
-    
-    .bcc-fbt .designers h1 {
-        font-size: 2.5em;
-        font-size: 2.04em;
-        color: #373838;
-        font-weight: normal;
-        text-align: center;
-        margin: 0 0 .5em;
-    }
-    
-    .bcc-fbt .designers h1::first-line {
-        line-height: .8;
-    }
-    
-    .bcc-fbt .designers .video {
-        position: relative;
-        height: 0;
-        padding-bottom: 56.25%;
-    }
-    
-    .bcc-fbt .designers iframe {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-    }
-    
-    .bcc-fbt .designers p {
-        margin-bottom: 1.8em;
-        padding: 0 10px;
-    }
-    
-    @media only screen and (min-width: 1000px) {
-        .bcc-fbt .designers p {
-            padding: 0;
-        }
-    }
-    /* body:not(.mobile-site) .bcc-fbt .designers p {
-        padding: 0;
-    } */
-    
-    .bcc-fbt .designers .lzb-button a {
-        background-color: #aeccc8;
-        color: white;
-        padding: .82em .94em;
-        text-transform: uppercase;
-        font-size: 17px;
-        display: block;
-    }
-    
-    .bcc-fbt .designers .lzb-button a:hover {
-        font-weight: bold;
-    }
-    
-    @media only screen and (min-width: 768px) {
-        .bcc-fbt .designers .lzb-button {
+        
+        #before-after h2 {
             text-align: center;
         }
-        .bcc-fbt .designers .lzb-button a {
-            font-size: 14.4px;
-            font-size: 1.88vw;
-            padding: .82em 0.7em;
-            display: inline-block;
+        
+        #before-after h2::after {
+            content: none;
         }
-    }
-    
-    @media only screen and (min-width: 1000px) {
-        .bcc-fbt .designers .lzb-button a {
-            font-size: 18.8px;
+        /* ---- page dots ---- */
+        
+        #before-after [data-flickity] {
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
         }
-    }
-    
-    @media only screen and (min-width: 544px) {
-        .bcc-fbt header .text-box {
-            font-size: 18.22px;
-            font-size: 3.35vw;
+        
+        #before-after .ba-slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
         }
-    }
-    
-    @media only screen and (min-width: 768px) {
-        .bcc-fbt header .text-box {
-            top: 26%;
-            left: 54%;
-            font-size: 18.2px;
-            font-size: 2.37vw;
+        
+        #before-after .ba-slider img {
+            width: 100%;
+            display: block;
+            max-width: none
         }
-        .bcc-fbt .boxes .lzb-triangle-down {
+        
+        #before-after .ba-slider .resize {
             position: absolute;
-            left: 85%;
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-top: 25px solid white;
-        }
-        .bcc-fbt .boxes .lzb-triangle-up {
-            position: absolute;
-            left: 15%;
-            bottom: 0;
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 25px solid #afcdc8;
-        }
-        .bcc-fbt .designers .lzb-triangle-down {
-            position: absolute;
-            left: 85%;
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-top: 25px solid #afcdc8;
-        }
-        .bcc-fbt .expect .container {
-            max-width: 980px;
-        }
-        .bcc-fbt .expect .box-outer {
+            top: 0;
+            left: 0;
+            height: 100%;
             width: 50%;
+            overflow: hidden
         }
-    }
-    
-    @media only screen and (min-width: 992px) {
-        .bcc-fbt header .text-box {
-            font-size: 23.5px;
+        
+        #before-after .ba-slider .handle {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            margin-left: -2px;
+            background: rgba(156, 147, 143, .5);
+            cursor: ew-resize;
+            transition: opacity .2s ease-out;
         }
-    }
-    /* #houzz-award img {
-        position: absolute;
-        width: 85px;
-        height: 85px;
-        margin: 0;
-        bottom: 0;
-        right: 0;
-    }
-    
-    #houzz-award p {
-        position: absolute;
-        bottom: 0;
-        right: 85px;
-        font-size: 16px;
-        padding: .5em;
-        margin: 0;
-        background-color: rgba(255, 255, 255, 0.6);
-        text-align: right;
-        max-width: 19.5em;
-    } 
-    
-    body header.mobile {
-        position: relative;
-    }
-    
-    @media only screen and (max-width:567px) {
-        body #houzz-award {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+        
+        #before-after .ba-slider .handle:after {
+            position: absolute;
+            top: 50%;
+            width: 44px;
+            height: 44px;
+            margin: -22px 0 0 -20px;
+            content: "\25C0\0020\0020\25B6";
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            line-height: 44px;
+            background: rgba(156, 147, 143, .5);
+            border-radius: 50%;
+            transition: opacity .2s ease-out;
+            font-family: 'LZB Icons';
         }
-        body #houzz-award img {
-            position: static;
-            width: 23.4375%;
-            padding-bottom: 23.4375%;
+        
+        #before-after .ba-slider .handle.draggable:after {
+            opacity: 0;
+        }
+        
+        section#faqs {
+            max-width: none;
+            padding: 0;
+        }
+        
+        #faqs label {
+            display: block;
+            margin: 0 auto -1px;
+            width: 300px;
+            text-align: center;
+            font-family: 'Playfair Display', playfair-display, serif;
+            font-size: 1.2em;
+            line-height: 60px;
+            border: 1px solid #cbcbcb;
+            border-bottom: none;
+            border-radius: 2px 2px 0 0;
+        }
+        
+        #faqs :checked+label {
+            position: relative;
+        }
+        
+        #faqs label::after {
+            font-family: 'LZB Icons';
+            content: "\20\e907";
+            font-size: .75em;
+        }
+        
+        #faqs :checked+label:after {
+            content: "\20\e908";
+        }
+        
+        #faqs .copy {
             height: 0;
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-image: url('https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg');
+            border-top: 1px solid #cbcbcb;
         }
-        body #houzz-award p {
-            position: static;
-            font-size: 18px;
-            padding: 0 10px 0 0;
+        
+        #faqs :checked~.copy {
+            height: auto;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #cbcbcb;
         }
-    } */
-    /*****************************************************/
-    /***************** Video Modal ***********************/
-    /*****************************************************/
-    
-    section.cust-support [videomodal] {
-        /* if there is an onclick attribute, the curser will be a pointer */
-        cursor: pointer;
-    }
-    
-    #npc-modal {
-        position: fixed;
-        z-index: 1000000;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-    
-    #npc-modal-container {
-        background-color: #fefefe;
-        padding: 5px;
-        border: 1px solid #888;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-    
-    .video #npc-modal-container {
-        width: 75%;
-        max-width: 1050px;
-    }
-    
-    #npc-image {
-        width: 100%;
-        display: block;
-    }
-    
-    .video #npc-modal-content {
-        position: relative;
-        height: 0;
-        padding-bottom: 56.25%;
-    }
-    
-    #npc-modal-content iframe {
-        min-height: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-    
-    #npc-modal-close {
-        position: absolute;
-        right: -7px;
-        top: -7px;
-        width: 22px;
-        z-index: 10;
-        cursor: pointer;
-    }
-    
-    #npc-modal-close:hover,
-    #npc-modal-close:focus {
-        text-decoration: none;
-        cursor: pointer;
-    }
-</style>
+        
+        #faqs .three-col {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1040px;
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+        
+        #faqs .three-col>div {
+            margin-top: 30px;
+            flex: 1 0 340px;
+            padding: 0 20px 0 60px;
+        }
+        
+        #faqs p.q {
+            font-weight: 600;
+            position: relative;
+            line-height: 1.25;
+        }
+        
+        #faqs p.q:before {
+            content: "Q.";
+            position: absolute;
+            left: -40px;
+            font-size: 1.6em;
+            font-family: 'Playfair Display', playfair-display, serif;
+            color: #807069;
+            font-weight: normal;
+            line-height: .8;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero .two-col>.background-image {
+                padding-bottom: 400px;
+            }
+            #hero .two-col>.story {
+                height: auto;
+                padding-left: 25px;
+                align-content: center;
+                justify-content: left;
+                margin: 0;
+                max-width: 50%;
+            }
+            #hero .two-col>.story>* {
+                padding: 0;
+            }
+            #hero .two-col>.story h2 {
+                flex: 1 0 100%;
+            }
+            #hero .two-col>.story .image {
+                order: 2;
+                margin-top: 20px;
+            }
+            /* section#featured-designers {
+                margin-top: 60px;
+            } */
+            #featured-designers .two-col>div {
+                flex-basis: 240px;
+            }
+            #featured-designers .copy p {
+                line-height: 2.2;
+                margin-top: 1.5em;
+            }
+            #featured-designers .copy a {
+                margin-top: 2.5em;
+            }
+            #featured-designers .two-col>div[data-flickity] {
+                flex-grow: 1;
+            }
+        }
+        
+        @media only screen and (min-width: 700px) {
+            #hero .two-col>.background-image {
+                padding-bottom: 550px;
+            }
+            #hero .two-col>.story .image {
+                width: 250px;
+            }
+            section#featured-designers {
+                max-width: 1040px;
+                padding: 0 35px;
+            }
+            #featured-designers .two-col>div {
+                flex-basis: 260px;
+            }
+            #featured-designers [data-flickity] {
+                margin-left: 0;
+                margin-right: -20px;
+            }
+            #npc-content .designer {
+                margin-right: 35px;
+            }
+            #before-after [data-flickity] {
+                margin-top: 25px;
+            }
+        }
+    </style>
 
-<link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/ds-sticky-nav.css">
-
-<div class="bcc-fbt">
-    <nav class="ds-topnav">
-        <div class="lzb-container">
-            <a class="current-page" href="/content/design-services">Design&nbsp;services</a>
-            <a href="/content/design-services/meet-our-designers">Meet&nbsp;our&nbsp;designers</a>
-            <a href="/content/design-services/design-stories">Design&nbsp;stories</a>
-            <a class="lzb-button design-consultation dsr-redirect" href="javascript:void(0);">Book&nbsp;my free&nbsp;design
-                <span class="arrow-right">consultation</span>
-            </a>
-        </div>
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Design Services</li>
+        </ul>
     </nav>
-    <header class="mobile">
-        <div class="container">
-            <img src="https://content.la-z-boy.com/Images/npc/design-services/mobile/pano_v3.jpg" alt="Free Design Services">
-            <div class="text-box">
-                <h1>The Design Studio</h1>
-                <p>Get the room of your dreams with
-                    <strong>free</strong> Design Services.</p>
-                <p>From small style updates to complete transformations, our expert designers will guide you through every step.
-                </p>
-                <a class="lzb-button arrow-right design-consultation dsr-redirect" href="javascript:void(0);">Book my
-                    <strong>free</strong> design consultation</a>
+
+    <!-- navigation -->
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a class="active">Design Services</a>
+                <a href="/content/design-services/meet-our-designers">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
             </div>
-        </div>
-        <!-- <span id="houzz-award">
-            <p>Thank you Houzz community for choosing us as one of the best in the&nbsp;industry!</p>
-            <img src="https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg" alt="Best of houzz 2018 - Design Award">
-        </span> -->
-    </header>
-    <header class="desktop">
-        <div class="container">
-            <img src="https://content.la-z-boy.com/Images/npc/design-services/desktop/pano_v3.jpg" alt="Free Design Services">
-            <div class="text-box">
-                <h1>The Design Studio</h1>
-                <p>Get the room of your dreams with
-                    <strong>free</strong> Design Services.</p>
-                <p>From small style updates to complete transformations, our expert designers will guide you through every step.
-                </p>
-                <a class="lzb-button arrow-right design-consultation dsr-redirect" href="javascript:void(0);">Book my
-                    <strong>free</strong> design consultation</a>
+        </nav>
+
+        <h1>Free design services</h1>
+        <section id="hero">
+            <div class="two-col">
+                <div class="background-image"></div>
+                <div class="story">
+                    <div class="image">
+                        <img src="https://www.la-z-boy.com/Images/design-services/cathy.png" alt="Cathy">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <mask id="test01">                                
+                                <polygon points="0,0 100,0 100,100 0,100" fill="white"/>
+                                <polygon points="35,24 80,50 35,76" fill="black"/>
+                            </mask>
+                            <circle cx="50" cy="50" r="50" fill="green" mask="url(#test01)" />
+                        </svg> -->
+                        <svg viewBox="0 0 100 100" id="play-button" data-video-modal="mErj05nn28Y" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <defs>
+                                <mask id="hole">
+                                    <polygon points="0,0 100,0 100,100 0,100" fill="white"/>
+                                    <polygon points="35,24 80,50 35,76" fill="black"/>
+                                </mask>
+                            </defs>
+                            <circle r="50" cy="50" cx="50" fill="white" fill-opacity=".6" mask="url(#hole)" style="outline: transparent solid 2px;"></circle>
+                        </svg>
+                    </div>
+                    <h2>Create A&nbsp;space you&rsquo;ll love</h2>
+                    <p>La-Z-Boy offers Free Design Services to help you create the room of your&nbsp;dreams.</p>
+                </div>
             </div>
-            <!-- <span id="houzz-award">
-                <p>Thank you Houzz community for choosing
-                    <br>us as one of the best in the&nbsp;industry!</p>
-                <img src="https://content.la-z-boy.com/Images/npc/design-services/HouzzLogo_v2.jpg" alt="Best of houzz 2018 - Design Award">
-            </span> -->
-        </div>
-    </header>
-    <section class="boxes">
-        <div class="lzb-triangle-down"></div>
-        <div class="container">
-            <div class="container-inner group">
-                <div class="box-outer two-col-left three-col-left">
-                    <div class="box-inner">
-                        <div class="text-box">
-                            <h2>Design services</h2>
-                            <p>for any, or every stage of your project.</p>
+        </section>
+        <section id="get">
+            <div class="two-col gutter-20-30">
+                <div>
+                    <h2>What<br>you&rsquo;ll get</h2>
+                    <p>Whether you&rsquo;re transforming a single room or an entire home, you&rsquo;ll start with a free consultation with a <span class="no-wrap">La-Z-Boy</span> Certified Design Expert in your home or at your local store.</p>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/get01.png" alt=""></div>
+                </div>
+                <div>
+                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/get02.png" alt=""></div>
+                    <p>Your Certified Design Expert will listen to your needs, and work side-by-side with you to create a custom plan based on your schedule, lifestyle and budget.</p>
+                    <p>Soon, you&rsquo;ll see your project take shape, from swatches and wood samples to computer-rendered 3-D graphics. Your <span class="no-wrap">La-Z-Boy</span> designer will handle every detail, right through to your very own reveal day.</p>
+                </div>
+            </div>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <div class="med-gray">
+            <section id="featured-designers" class="white">
+                <div class="two-col gutter-20-30">
+                    <div class="copy">
+                        <h2>Featured Designers</h2>
+                        <p>La-Z-Boy designers provide expert guidance to help bring your vision to life. Read&nbsp;their stories, and see how the&rsquo;re transforming houses into homes.</p>
+                        <a href="/content/design-services/meet-our-designers">View all Designers</a>
+                    </div>
+                    <div data-flickity='{
+                        "freeScrollFriction": 0.1,
+                        "pageDots": false,
+                        "prevNextButtons": false,
+                        "cellAlign": "left",
+                        "contain": true
+                        }'>
+                        <div class="designer">
+                            <img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/erica/headshot.png" alt="">
+                            <h3>Erica</h3>
+                            <p>Sterling Heights, MI</p>
+                            <a href="/content/design-services/erica">Meet Designer</a>
+                        </div>
+                        <div class="designer">
+                            <img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/headshot.png" alt="">
+                            <h3>Jonathan</h3>
+                            <p>Pittsburgh, PA</p>
+                            <a href="/content/design-services/amanda">Meet Designer</a>
+                        </div>
+                        <div class="designer">
+                            <img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica/headshot.png" alt="">
+                            <h3>Jessica</h3>
+                            <p>South Bend, IN</p>
+                            <a href="/content/design-services/jessica_s">Meet Designer</a>
                         </div>
                     </div>
                 </div>
-                <div class="box-outer three-col-left">
-                    <div class="box-inner">
-                        <img src="https://content.la-z-boy.com/Images/npc/design-services/block-2.jpg" alt="Design services">
-                    </div>
-                </div>
-                <div class="box-outer landscape-phone-hide">
-                    <div class="box-inner">
-                        <div class="text-box">
-                            <h2>Personalized services</h2>
-                            <p>tailored to your life, style, and budget.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-outer two-col-left three-col-left three-col-bottom">
-                    <div class="box-inner">
-                        <img src="https://content.la-z-boy.com/Images/npc/design-services/block-4.jpg" alt="Personalized
-                services">
-                    </div>
-                </div>
-                <div class="box-outer landscape-phone-show">
-                    <div class="box-inner">
-                        <div class="text-box">
-                            <h2>Personalized services</h2>
-                            <p>tailored to your life, style, and budget.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-outer two-col-left three-col-left two-col-bottom three-col-bottom">
-                    <div class="box-inner">
-                        <div class="text-box">
-                            <h2>Professional designers</h2>
-                            <p>dedicated to bringing your unique vision to life.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-outer one-col-bottom two-col-bottom three-col-bottom">
-                    <div class="box-inner">
-                        <img src="https://content.la-z-boy.com/Images/npc/design-services/block-6.jpg" alt="Professional
-                designers">
-                    </div>
-                </div>
-            </div>
+            </section>
         </div>
-        <div class="lzb-triangle-up"></div>
-    </section>
-    <section class="expect">
-        <div class="container group">
-            <h1>What to expect</h1>
-            <div class="box-outer">
-                <img src="https://content.la-z-boy.com/Images/npc/design-services/1_left.png" alt="1">
-                <h2>Consultation</h2>
-                <p>Whether you want a complete room transformation or just need a little advice, our design experts can help. Work with a professional in store, or schedule a free consultation and we’ll come right to you.
-                </p>
-            </div>
-            <div class="box-outer">
-                <img src="https://content.la-z-boy.com/Images/npc/design-services/2_left.png" alt="2">
-                <h2>Collaboration</h2>
-                <p>No one knows what you love and how you live better than you. That’s why we listen. Your thoughts and feedback are the inspiration behind our design, down to the very last detail.</p>
-            </div>
-            <div class="box-outer">
-                <img src="https://content.la-z-boy.com/Images/npc/design-services/3_left.png" alt="3">
-                <h2>Presentation</h2>
-                <p>After collaborating with you on your project ideas and budget, you’ll receive a customized design plan so you can visualize your finished space. From colors to fabrics and more, see your design take shape.</p>
-            </div>
-            <div class="box-outer">
-                <img src="https://content.la-z-boy.com/Images/npc/design-services/4_left.png" alt="4">
-                <h2>Decoration</h2>
-                <p>Watch the room come together, or wait for the reveal! Your designer will handle every detail, from overseeing the white-glove delivery and placement of your furniture, to styling and accessorizing.</p>
-            </div>
-        </div>
-    </section>
-    <section class="designers">
-        <div class="lzb-triangle-down"></div>
-        <div class="container">
-            <h1>Hear from our designers</h1>
-            <div class="container-inner group">
-                <div videomodal="WpNXEeHautg">
-                    <img class="desktop" src="https://content.la-z-boy.com/Images/npc/design-services/desktop/video-1.jpg">
-                    <img class="mobile" src="https://content.la-z-boy.com/Images/npc/design-services/mobile/video-1.jpg">
+        <section id="before-after">
+            <h2>Before / after</h2>
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
+                <div class="ba-slider">
+                    <img src="https://dummyimage.com/1960x1000/0f0/aaa">
+                    <div class="resize">
+                        <img src="https://dummyimage.com/1960x1000/0ff/aaa">
+                    </div>
+                    <span class="handle"></span>
                 </div>
-                <p>Watch La-Z-Boy designer
-                    <strong>Vanessa</strong> describe how she collaborates to bring homes to life.</p>
-                <div videomodal="tDCo8vfKIRA">
-                    <img class="desktop" src="https://content.la-z-boy.com/Images/npc/design-services/desktop/video-2.jpg">
-                    <img class="mobile" src="https://content.la-z-boy.com/Images/npc/design-services/mobile/video-2.jpg">
+                <div class="ba-slider">
+                    <img src="https://dummyimage.com/1960x1000/f0f/aaa">
+                    <div class="resize">
+                        <img src="https://dummyimage.com/1960x1000/ff0/aaa">
+                    </div>
+                    <span class="handle"></span>
                 </div>
-                <p>Watch La-Z-Boy designer
-                    <strong>Nikole</strong> describe how she creates fresh ideas for your home.</p>
+                <div class="ba-slider">
+                    <img src="https://dummyimage.com/1960x1000/00f/aaa">
+                    <div class="resize">
+                        <img src="https://dummyimage.com/1960x1000/f00/aaa">
+                    </div>
+                    <span class="handle"></span>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
-<script src="https://www.la-z-boy.com/js/npc.js"></script>
+            <a href="" style="text-align: center; margin-top: 20px">View More Before &amp; After Stories</a>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <section id="faqs">
+            <input type="checkbox" id="toggle-faqs" style="display: none;">
+            <label for="toggle-faqs" class="med-gray">FAQs</label>
+            <div class="copy med-gray">
+                <div class="three-col">
+                    <div>
+                        <p class="q">Are these services really free?</p>
+                        <p class="a">Absolutely! The planning, presentation and coordinating services you would normally pay a professional interior designer to do are 100% free from <span class="no-wrap">La-Z-Boy</span>. You only pay for your <span class="no-wrap">La-Z-Boy</span>                            furniture and any delivery charges.</p>
+                    </div>
+                    <div>
+                        <p class="q">Will the designer listen to my ideas?</p>
+                        <p class="a">Certified Design Experts are trained to listen to your needs and aspirations right from the start. They work right alongside you, offering suggestions based on your budget and their extensive knowledge of <span class="no-wrap">La-Z-Boy</span>                            products. But, the customer always has final approval.</p>
+                    </div>
+                    <div>
+                        <p class="q">What if I want to keep some of my old furniture?</p>
+                        <p class="a">La-Z-Boy designers understand the importance of integrating your existing furniture, accessories and artwork into your new look. They are trained to offer designs that bring together old and new for results that showcase your individual
+                            taste and&nbsp;style.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- end NPC content -->
+</body>

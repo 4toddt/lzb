@@ -1,0 +1,164 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- begin NPC content -->
+    <!-- Design Services TT -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services/">Design Services</a></li>
+            <li><a href="/content/design-services/meet-our-designers">Meet Our Designers</a></li>
+            <li>Alexis</li>
+        </ul>
+    </nav>
+
+    <!-- navigation -->
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+            </div>
+        </nav>
+
+        <h1>Meet our designers</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/headshot.jpg" alt="Alexis"></div>
+                        <h2>Alexis</h2>
+                        <p>La-Z-Boy Designer</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/hero.jpg');"></div>
+            </div>
+        </section>
+        <div class="light-gray">
+            <section id="about-designer">
+                <h2>About designer</h2>
+                <div>
+                    <div class="bio">
+                        <p class="heading">Myrtle Beach, SC</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div class="favorites">
+                        <p class="heading">Favorite Design styles:</p>
+                        <p>TBD</p>
+                        <p class="divider">TBD</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="rooms">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room01.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room02.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room03.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room04.jpg')">
+                    <div></div>
+                </div>
+            </div>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <section id="qa">
+            <div class="two-col gutter-20-30">
+                <div>
+                    <h2>Q &amp; A</h2>
+                    <p>Get to know our experts</p>
+                    <p class="heading">How do you determine the right style for your clients?</p>
+                    <p>I first look at their home and the things they want me to work with. Asking them for pictures of things they love is also a great way to get inspiration. When buying furniture make sure you know the scale and size appropriate for your
+                        space. New pieces will not look good if they don’t fit the space!</p>
+                </div>
+                <div>
+                    <p class="heading">What intrigues you about interior design and where do you find inspiration?</p>
+                    <p>Every day is different! Every client, every space and every need is unique, so I cater my designs to the project at hand. I also love seeing how a space can be transformed with a new layout and color palette. For most projects, inspiration
+                        comes from something the client owns or asks me to work with. I’m also inspired by fashion, travel and fellow designers.</p>
+                    <p class="heading">What’s your ultimate bucket list trip?</p>
+                    <p>To be on a sailboat off the coast of Santorini, Greece while eating lots of bread, olives and cheese and drinking a crisp white wine.</p>
+                </div>
+            </div>
+        </section>
+        <div id="testimonials" class="med-gray">
+            <section>
+                <div>
+                    <div class="title">
+                        <h2>Customer<br>Testimonial</h2>
+                    </div>
+                    <div class="carousel">
+                        <div data-flickity='{
+                            "freeScrollFriction": 0.1,
+                            "pageDots": false,
+                            "prevNextButtons": true,
+                            "cellAlign": "left",
+                            "contain": true,
+                            "adaptiveHeight": true,
+                            "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                            }'>
+                            <div class="testimonial">
+                                <h3>A Rave Review</h3>
+                                <p>My wife absolutely loved what Alexis had picked out for us, and so we ordered the whole package. The furniture was delivered yesterday, earlier than we expected, and my wife absolutely LOVES it!</p>
+                            </div>
+                            <div class="testimonial">
+                                <h3>She Really Listens</h3>
+                                <p>Alexis is a great listener and made great suggestions. She did a good job and we appreciate her honesty. It was the best designer experience we have ever had. Anyone who is fortunate enough to have Alexis be their designer
+                                    will know what I mean!</p>
+                            </div>
+                            <div class="testimonial">
+                                <h3>An Enjoyable Experience</h3>
+                                <p>My new home has an open concept and I was unsure how to use the space. Alexis came to my house and then we met again at the store. She showed me a layout and it was 100% what I wanted. I was overwhelmed and afraid of making
+                                    the wrong choices since it is a major purchase. Alexis made the whole process e</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+
+    <!-- end NPC content -->
+</body>

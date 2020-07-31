@@ -1,404 +1,926 @@
-    /************* Import Fonts ************/
-    
-    @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400i&display=swap&text=A');
-    @import url("https://use.typekit.net/dro8vvu.css");
-    /***************************************/
-    /*********** Mobile Resets *************/
-    /***************************************/
-    
-    #site-wrapper {
-        max-width: none;
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400i&display=swap&text=A");
+@import url("https://use.typekit.net/dro8vvu.css");
+@import url("https://use.typekit.net/dro8vvu.css");
+@font-face {
+    font-family: 'LZB Icons';
+    src: url('/css/uat/fonts/lzb-icons.eot?jebkb3');
+    src: url('/css/uat/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/uat/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/uat/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/uat/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/************ resets ***********/
+
+#site-wrapper {
+    max-width: none;
+}
+
+#site-wrapper .section-title {
+    display: none;
+}
+
+#site-wrapper .section-row {
+    max-width: none;
+}
+
+#site-wrapper .section-content {
+    padding: 0;
+    float: none;
+}
+
+#site-wrapper .one-column-container,
+#site-wrapper .two-column-container {
+    max-width: none;
+    padding: 0;
+}
+
+.two-column-first [role="main"],
+.two-column-first [role="region"],
+main {
+    width: 100%;
+    margin: 0;
+}
+
+.two-column-first [role="region"]>h1 {
+    display: none;
+}
+
+#npc-content * {
+    font: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    float: none;
+    width: auto;
+    text-decoration: none;
+}
+
+
+/* breadcrumbs */
+
+#breadcrumbs {
+    margin: 0 auto 10px;
+    max-width: 980px;
+    font-size: 14px;
+    color: #868686;
+}
+
+body.mobile-site #breadcrumbs {
+    margin: 0.625rem auto;
+    padding: 0rem 0.625rem;
+    max-width: 62.5rem;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+#breadcrumbs ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 35px;
+}
+
+body.mobile-site #breadcrumbs ul {
+    line-height: 1.25rem;
+}
+
+#breadcrumbs li+li:before {
+    font-family: 'icomoon';
+    content: "\e904";
+    -webkit-font-smoothing: antialiased;
+    vertical-align: middle;
+    padding: 0 8px;
+    line-height: 0;
+}
+
+body.mobile-site #breadcrumbs li+li:before {
+    font-family: 'lzb-icons';
+    content: "\e907";
+    vertical-align: baseline;
+    font-size: 0.625rem;
+    padding: 0 0.375rem;
+}
+
+#breadcrumbs a {
+    color: inherit;
+    font-size: inherit;
+}
+
+body.mobile-site #breadcrumbs a {
+    color: #555;
+}
+
+
+/* defaults */
+
+#npc-content {
+    width: 100%;
+    font-family: 'lato', 'OpenSans', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    color: #333;
+    overflow: hidden;
+}
+
+.mobile-site #npc-content {
+    margin-bottom: 40px;
+}
+
+#npc-content section {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: 40px auto 0;
+}
+
+#npc-content section.full-width {
+    max-width: 980px;
+    padding: 0;
+}
+
+#npc-content strong {
+    font-weight: bold;
+}
+
+#npc-content img {
+    /* override browser default of inline-block to remove white space after images */
+    display: block;
+    width: 100%;
+    max-width: none;
+}
+
+#npc-content .image {
+    /* fix IE bug where images in flex containers don't keep their aspect ratio */
+    min-height: 1px;
+}
+
+
+/* design services nav menu */
+
+#npc-content #ds-nav {
+    font-size: .8em;
+    background-color: #FBFBFB;
+}
+
+#npc-content #ds-nav a {
+    font-size: 1em;
+    line-height: 40px;
+    font-weight: normal;
+    text-decoration: none;
+    display: block;
+    padding: 0 15px;
+    border-top: 1px solid #cbcbcb;
+    margin: 0;
+}
+
+#npc-content #ds-nav a.active {
+    background-color: #595451;
+    color: white;
+    border: none;
+}
+
+#npc-content #ds-nav a.active~a {
+    border: none;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+
+/********** Utility Classes ************/
+
+#npc-content .no-wrap {
+    white-space: nowrap;
+}
+
+
+/************* NPC Modal ***************/
+
+
+/* modal */
+
+[videoModal] {
+    cursor: pointer;
+}
+
+#npc-modal {
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#npc-modal-container {
+    background-color: #fefefe;
+    padding: 5px;
+    border: 1px solid #888;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.video #npc-modal-container {
+    width: 75%;
+    max-width: 1050px;
+}
+
+#npc-image {
+    width: 100%;
+    display: block;
+}
+
+.video #npc-modal-content {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+#npc-modal-content iframe {
+    min-height: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#npc-modal-close {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    width: 22px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#npc-modal-close:hover,
+#npc-modal-close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/***************************************/
+
+
+/******* Design Services Defaults ******/
+
+
+/***************************************/
+
+#npc-content h1 {
+    font-size: 1.3em;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: .75em;
+    line-height: 1.25;
+    border-bottom: 1px solid #DBDAD9;
+    padding-bottom: .1em;
+}
+
+#npc-content h2 {
+    font-family: 'Playfair Display', playfair-display, serif;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+#npc-content h2::after {
+    content: "";
+    display: block;
+    width: 1.5em;
+    border-bottom: 3px solid #4A4A4A;
+    margin-top: .25em;
+}
+
+#npc-content h3 {
+    font-size: 1em;
+    margin-top: 1em;
+    line-height: 1.2;
+}
+
+#npc-content p {
+    font-size: .8em;
+    line-height: 1.75;
+    margin-top: .75em;
+}
+
+#npc-content p.heading {
+    font-weight: 600;
+    margin-top: 1.5em;
+}
+
+#npc-content a {
+    font-size: .8em;
+    font-weight: 600;
+    line-height: 1.75;
+    margin-top: .75em;
+    display: block;
+    text-decoration: underline;
+}
+
+#npc-content .background-image {
+    background-size: cover;
+    background-position: center;
+}
+
+#npc-content section#hero {
+    margin-top: 15px;
+}
+
+#npc-content .gutter-20-30 {
+    margin: 0 -10px;
+}
+
+#npc-content .gutter-20-30>div {
+    padding: 0 10px;
+}
+
+#npc-content .two-col {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -20px;
+}
+
+#npc-content .two-col>div {
+    margin-top: 20px;
+}
+
+#npc-content .two-col .image+p,
+#npc-content .two-col p+.image {
+    margin-top: 1.25em;
+}
+
+#npc-content .design-request {
+    color: white;
+    background-color: #807069;
+    display: block;
+    width: 400px;
+    max-width: 100%;
+    line-height: 55px;
+    text-align: center;
+    margin: 30px auto 0;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+#npc-content .gray {
+    background-color: #f6f5f4;
+}
+
+#npc-content .med-gray {
+    background-color: #f9f8f7;
+}
+
+#npc-content .light-gray {
+    background-color: #fbfafa;
+}
+
+#npc-content .white {
+    background-color: white;
+}
+
+
+/*! Flickity v2.2.0 https://flickity.metafizzy.co */
+
+#npc-content .flickity-enabled {
+    position: relative;
+}
+
+#npc-content .flickity-enabled:focus {
+    outline: none;
+}
+
+#npc-content .flickity-viewport {
+    /* overflow: hidden; */
+    position: relative;
+    height: 100%;
+}
+
+#npc-content .flickity-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* draggable */
+
+#npc-content .flickity-enabled.is-draggable {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#npc-content .flickity-enabled.is-draggable .flickity-viewport {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+#npc-content .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+
+/* ---- page dots ---- */
+
+#npc-content .flickity-page-dots {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#npc-content .flickity-rtl .flickity-page-dots {
+    direction: rtl;
+}
+
+#npc-content .flickity-page-dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 8px;
+    border-radius: 50%;
+    opacity: 0.25;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+    margin: 0 6px;
+    background: #9C938F;
+}
+
+#npc-content .flickity-page-dots .dot.is-selected {
+    opacity: 1;
+}
+
+
+/* ---- flickity-button ---- */
+
+#npc-content .flickity-button {
+    position: absolute;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+#npc-content .flickity-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #19F;
+}
+
+#npc-content .flickity-button:active {
+    opacity: 0.6;
+}
+
+#npc-content .flickity-button:disabled {
+    opacity: 0.3;
+    cursor: auto;
+    /* prevent disabled button from capturing pointer up event. #716 */
+    pointer-events: none;
+}
+
+#npc-content .flickity-button-icon {
+    fill: currentColor;
+}
+
+
+/* ---- previous/next buttons ---- */
+
+#npc-content .flickity-prev-next-button {
+    /* top: 110px; */
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50%; */
+    /* vertically center */
+}
+
+
+/* right to left */
+
+#npc-content .flickity-rtl .flickity-prev-next-button.previous {
+    left: auto;
+    right: 10px;
+}
+
+#npc-content .flickity-rtl .flickity-prev-next-button.next {
+    right: auto;
+    left: 10px;
+}
+
+#npc-content .flickity-prev-next-button .flickity-button-icon {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 60%;
+    height: 60%;
+}
+
+
+/* ------------------- */
+
+#npc-content .designer {
+    text-align: center;
+}
+
+#npc-content .designer p {
+    margin-top: 0;
+}
+
+#npc-content section.module02 {
+    max-width: 980px;
+    padding: 0;
+}
+
+#npc-content .module02 .two-col {
+    align-items: stretch;
+}
+
+#npc-content .module02 .copy {
+    background: linear-gradient(to bottom, white 28%, #E4DFDC 28%);
+    padding: 0 25px 35px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#npc-content .module02 .copy>div {
+    background-color: white;
+    padding: 0 20px 20px;
+    width: 100%;
+}
+
+#npc-content .module02 h2,
+#npc-content .module02 p {
+    margin-top: .5em;
+}
+
+#npc-content .module02 .copy .image {
+    width: 210px;
+    margin: 0 auto;
+}
+
+#npc-content .module02 .profile {
+    text-align: center;
+}
+
+#npc-content .module02 .profile h2 {
+    font-family: playfair-display, serif;
+}
+
+#npc-content .module02 .profile h2::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#npc-content .module02 .background-image {
+    flex: 0 1 600px;
+    min-height: 350px;
+    margin-top: 0;
+}
+
+#npc-content .module02 .profile+.background-image {
+    display: none;
+}
+
+#npc-content .designer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -25px -10px 0;
+    text-align: center;
+    justify-content: center;
+}
+
+#npc-content .designer-grid>div {
+    flex: 0 0 50%;
+    padding: 0 10px;
+    margin-top: 25px;
+    min-width: 160px;
+    max-width: 235px;
+}
+
+#npc-content .designer-grid a,
+#npc-content .designer-grid p {
+    line-height: 1.5;
+    margin-top: 0;
+}
+
+#npc-content .designer-grid a {
+    margin-top: .5em;
+}
+
+section#about-designer {
+    padding: 30px 10px;
+}
+
+#about-designer>div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 -15px;
+}
+
+#about-designer>div>div {
+    padding: 0 15px;
+}
+
+#about-designer .bio {
+    flex: 0 1 550px;
+}
+
+#about-designer .favorites {
+    flex: 0 1 300px;
+}
+
+#about-designer p {
+    margin-top: 0;
+}
+
+#about-designer .favorites p+p+p {
+    border-top: 1px solid #ccc7c5;
+}
+
+#rooms .background-image {
+    width: 780px;
+    max-width: calc(100% - 40px);
+    min-height: 200px;
+    margin-right: 20px;
+}
+
+#rooms .background-image>div {
+    width: 100%;
+    padding-bottom: calc(100% * 420 / 780);
+}
+
+section#qa {
+    /* max-width: 900px; */
+    text-align: center;
+}
+
+#qa .two-col {
+    justify-content: space-around;
+}
+
+#qa .two-col>div {
+    max-width: 380px;
+}
+
+#npc-content #qa h2 {
+    font-size: 2.5em;
+}
+
+#npc-content #qa h2::after {
+    content: none;
+}
+
+#qa h2+p {
+    font-size: .9em;
+}
+
+#qa .heading {
+    font-size: .9em;
+}
+
+#qa p+.heading {
+    padding-top: 1.5em;
+    border-top: 1px solid #9C938F;
+}
+
+#testimonials section {
+    padding: 0 15px;
+}
+
+#testimonials h3 {
+    font-family: 'Playfair Display', playfair-display, serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+#testimonials section>div {
+    background-color: white;
+    padding: 0 1em;
+}
+
+#testimonials section>div>div {
+    margin-top: 20px;
+}
+
+#testimonials [data-flickity] {
+    padding-bottom: 50px;
+}
+
+#testimonials .flickity-viewport {
+    overflow: hidden;
+}
+
+#testimonials .testimonial {
+    width: 100%;
+}
+
+#testimonials .testimonial p::before {
+    content: "\201C";
+}
+
+#testimonials .testimonial p::after {
+    content: "\201D";
+}
+
+#npc-content .flickity-button-icon {
+    fill: #9C938F;
+}
+
+#testimonials .flickity-prev-next-button {
+    bottom: -10px;
+}
+
+#testimonials .flickity-prev-next-button.previous {
+    right: 53%;
+}
+
+#testimonials .flickity-prev-next-button.next {
+    left: 53%;
+}
+
+@media only screen and (min-width: 500px) {
+    #npc-content h1 {
+        font-size: 1.8em;
     }
-    
-    #site-wrapper .breadcrumbs {
-        max-width: 62.5rem;
-        margin: 0.625rem auto;
+    #npc-content .two-col {
+        flex-wrap: nowrap;
+        margin-top: 0;
     }
-    
-    #site-wrapper .section-title {
-        display: none;
+    #npc-content .two-col>div {
+        flex: 0 0 50%;
+        margin-top: 0;
     }
-    
-    #site-wrapper .section-row {
-        max-width: none;
+    #npc-content .designer-grid>div {
+        flex-basis: 33.333333%;
     }
-    
-    #site-wrapper .section-content {
-        padding: 0;
-        float: none;
+    #npc-content .module02 .profile+.background-image {
+        display: block;
     }
-    
-    #site-wrapper .one-column-container,
-    #site-wrapper .two-column-container {
-        max-width: none;
-        padding: 0;
+    #testimonials section {
+        padding: 0 50px;
     }
-    /************ desktop resets ***********/
-    
-    .two-column-first [role="main"],
-    .two-column-first [role="region"],
-    main {
-        width: 100%;
-        margin: 0;
+}
+
+@media only screen and (min-width: 700px) {
+    #npc-content #ds-nav {
+        display: flex;
+        background-color: #595451;
     }
-    
-    .two-column-first [role="region"]>h1 {
-        display: none;
-    }
-    /********* BCC content resets **********/
-    
-    #npc-content * {
-        font: inherit;
-        color: inherit;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        vertical-align: baseline;
-        float: none;
-        width: auto;
-        text-decoration: none;
-    }
-    /***************************************/
-    /************* NPC Defaults ************/
-    /***************************************/
-    
-    #npc-content {
-        width: 100%;
-        font-family: 'lato', 'OpenSans', sans-serif;
-        font-size: 20px;
-        line-height: 1;
-        color: #333;
-        overflow: hidden;
-    }
-    
-    body.mobile-site #npc-content {
-        margin-bottom: 40px;
-    }
-    
-    #npc-content section {
+    #npc-content #ds-nav>div {
         width: 100%;
         max-width: 1000px;
         padding: 0 10px;
-        margin: 40px auto 0;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
     }
-    
-    #npc-content section.full-width {
-        max-width: 980px;
-        padding: 0;
-    }
-    
-    #npc-content strong {
-        font-weight: bold;
-    }
-    
-    #npc-content img {
-        /* override browser default of inline-block to remove white space after images */
-        display: block;
-        width: 100%;
-        max-width: none;
-    }
-    
-    #npc-content .image {
-        /* fix IE bug where images in flex containers don't keep their aspect ratio */
-        min-height: 1px;
-    }
-    /********** Utility Classes ************/
-    
-    #npc-content .no-wrap {
-        white-space: nowrap;
-    }
-    /****** Responsive Hidden Elements *****/
-    
-    body:not(.mobile-site) .hidden-desktop {
-        display: none !important;
-    }
-    
-    body.mobile-site .hidden-mobile {
-        display: none !important;
-    }
-    /************* NPC Modal ***************/
-    
-    #npc-modal {
-        position: fixed;
-        z-index: 1000000;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-    
-    #npc-modal-container {
-        background-color: #fefefe;
-        padding: 5px;
-        border: 1px solid #888;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-    
-    #npc-modal.video #npc-modal-container {
-        width: 75%;
-        max-width: 1050px;
-    }
-    
-    #npc-image {
-        width: 100%;
-        display: block;
-    }
-    
-    #npc-modal.video #npc-modal-content {
-        position: relative;
-        height: 0;
-        padding-bottom: 56.25%;
-    }
-    
-    #npc-modal-content iframe {
-        min-height: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-    
-    #npc-modal-close {
-        position: absolute;
-        right: -7px;
-        top: -7px;
-        width: 22px;
-        z-index: 10;
-        cursor: pointer;
-    }
-    
-    #npc-modal-close:hover,
-    #npc-modal-close:focus {
-        text-decoration: none;
-        cursor: pointer;
-    }
-    /***************************************/
-    /******* Design Services Defaults ******/
-    /***************************************/
-    
-    #npc-content #ds-nav {
-        font-size: .8em;
-        background-color: #FBFBFB;
-    }
-    
-    #npc-content #ds-nav a {
-        font-size: 1em;
-        line-height: 40px;
-        font-weight: normal;
-        text-decoration: none;
-        display: block;
-        padding: 0 15px;
-        border-top: 1px solid #cbcbcb;
-        margin: 0;
-    }
-    
-    #npc-content #ds-nav a.active {
-        background-color: #595451;
-        color: white;
-        border: none;
-    }
-    
+    #npc-content #ds-nav a,
     #npc-content #ds-nav a.active~a {
-        border: none;
-        border-bottom: 1px solid #cbcbcb;
+        line-height: 60px;
+        color: white;
+        position: relative;
+        border-bottom: none;
     }
-    
-    #npc-content h1 {
-        font-size: 1.3em;
-        font-weight: 300;
-        text-transform: uppercase;
-        text-align: center;
-        margin-top: .75em;
-        line-height: 1.25;
-    }
-    
-    #npc-content h2 {
-        font-family: 'Playfair Display', playfair-display, serif;
-        font-size: 1.3em;
-        text-transform: uppercase;
-        line-height: 1.2;
-    }
-    
-    #npc-content h2::after {
+    #npc-content #ds-nav a:after {
         content: "";
         display: block;
-        width: 1.4em;
-        border-bottom: 3px solid #4A4A4A;
-        margin-top: .3em;
+        position: absolute;
+        background-color: white;
+        height: 0;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transition: height .2s;
     }
-    
-    #npc-content h3 {
-        font-size: 1em;
-        margin-top: 1em;
-        line-height: 1.2;
+    #npc-content #ds-nav a.active:after,
+    #npc-content #ds-nav a:hover:after {
+        height: 7px;
     }
-    
-    #npc-content p {
-        font-size: .8em;
-        line-height: 1.75;
-        margin-top: .75em;
+    #npc-content #ds-nav a {
+        border: none;
     }
-    
-    #npc-content a {
-        font-size: .8em;
-        font-weight: 600;
-        line-height: 1.75;
-        margin-top: .75em;
-        display: block;
-        text-decoration: underline;
+    #npc-content h2 {
+        font-size: 1.7em;
     }
-    
-    #npc-content .image+p,
-    #npc-content p+.image {
-        margin-top: 1.25em;
+    #hero p {
+        font-size: .9em;
     }
-    
-    #npc-content .background-image {
-        background-size: cover;
-        background-position: center;
-    }
-    
-    #npc-content section#hero {
-        margin-top: 15px;
-    }
-    
     #npc-content .gutter-20-30 {
-        margin: 0 -10px;
+        margin: 0 -15px;
     }
-    
     #npc-content .gutter-20-30>div {
+        padding: 0 15px;
+    }
+    #npc-content .design-request {
+        font-size: 1.1em;
+    }
+    #npc-content .module02 .copy {
+        flex: 0 0 380px;
+        padding: 0 30px 35px;
+    }
+    #npc-content .module02 .copy>div {
+        padding: 0 25px 25px;
+    }
+    #npc-content .module02 p {
+        line-height: 2;
+    }
+    #npc-content .module02 .background-image {
+        min-height: 385px;
+    }
+    #npc-content .designer-grid>div {
+        flex-basis: 25%;
+    }
+    #qa h2+p {
+        font-size: 1.2em;
+    }
+    #testimonials section {
         padding: 0 10px;
     }
-    
-    #npc-content .two-col {
+    #testimonials section>div {
+        background-color: transparent;
         display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: -20px;
+        align-items: stretch;
+        /* margin-right: -50px; */
+        padding: 0;
     }
-    
-    #npc-content .two-col>div {
-        margin-top: 20px;
+    #testimonials section>div>div {
+        margin-top: 0;
+        padding: 50px
     }
-    
-    #npc-content .design-request {
-        color: white;
-        background-color: #807069;
-        display: block;
-        width: 400px;
-        max-width: 100%;
-        line-height: 55px;
-        text-align: center;
-        margin: 30px auto 0;
-        font-size: 1em;
-        text-decoration: none;
-        border-radius: 2px;
-    }
-    
-    #npc-content .gray-white {
-        background-color: #f4f5f6;
-    }
-    
-    #npc-content .gray-white>section {
+    #testimonials .title {
+        flex: 0 1 310px;
         background-color: white;
     }
-    
-    #npc-content .designer {
-        text-align: center;
+    #testimonials .carousel {
+        flex: 0 1 670px;
     }
-    
-    #npc-content .designer p {
-        margin-top: 0;
+    #testimonials [data-flickity] {
+        padding: 0;
     }
-    
-    @media only screen and (min-width: 500px) {
-        #npc-content h1 {
-            font-size: 1.8em;
-        }
-        #npc-content .two-col {
-            flex-wrap: nowrap;
-            margin-top: 0;
-        }
-        #npc-content .two-col>div {
-            flex: 0 0 50%;
-            margin-top: 0;
-        }
+    #testimonials .flickity-prev-next-button {
+        bottom: 50%;
+        bottom: calc(50% - 25px);
     }
-    
-    @media only screen and (min-width: 700px) {
-        #npc-content #ds-nav {
-            display: flex;
-            background-color: #595451;
-        }
-        #npc-content #ds-nav>div {
-            width: 100%;
-            max-width: 1000px;
-            padding: 0 10px;
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-        }
-        #npc-content #ds-nav a,
-        #npc-content #ds-nav a.active~a {
-            line-height: 60px;
-            color: white;
-            position: relative;
-            border-bottom: none;
-        }
-        #npc-content #ds-nav a:after {
-            content: "";
-            display: block;
-            position: absolute;
-            background-color: white;
-            height: 0;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            transition: height .2s;
-        }
-        #npc-content #ds-nav a.active:after,
-        #npc-content #ds-nav a:hover:after {
-            height: 7px;
-        }
-        #npc-content #ds-nav a {
-            border: none;
-        }
-        #npc-content h1 {
-            border-bottom: 1px solid #DBDAD9;
-            padding-bottom: .1em;
-        }
-        #npc-content h2 {
-            font-size: 1.8em;
-        }
-        #npc-content .gutter-20-30 {
-            margin: 0 -15px;
-        }
-        #npc-content .gutter-20-30>div {
-            padding: 0 15px;
-        }
-        #npc-content .design-request {
-            font-size: 1.1em;
-        }
+    #testimonials .flickity-prev-next-button.previous {
+        right: auto;
+        left: -50px;
     }
-    
-    @media only screen and (min-width: 850px) {
-        #npc-content section {
-            margin-top: 60px;
-        }
-        #npc-content #ds-nav {
-            font-size: 1em;
-        }
-        #npc-content h1 {
-            font-size: 2.4em;
-        }
-        #npc-content section#hero {
-            margin-top: 35px;
-        }
+    #testimonials .flickity-prev-next-button.next {
+        left: auto;
+        right: -50px;
     }
+}
+
+@media only screen and (min-width: 850px) {
+    #npc-content section {
+        margin-top: 60px;
+    }
+    #npc-content #ds-nav {
+        font-size: 1em;
+    }
+    #npc-content h1 {
+        font-size: 2.4em;
+    }
+    #npc-content section#hero {
+        margin-top: 35px;
+    }
+    #npc-content .designer-grid {
+        margin: -50px -20px 0;
+    }
+    #npc-content .designer-grid>div {
+        padding: 0 20px;
+        margin-top: 50px;
+        min-width: 180px;
+        max-width: 255px;
+    }
+    #npc-content .designer-grid a,
+    #npc-content .designer-grid p {
+        line-height: 1.75;
+    }
+    #rooms [data-flickity] {
+        overflow: hidden;
+    }
+    #testimonials .carousel {
+        padding-left: 80px;
+    }
+}

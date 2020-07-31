@@ -1,0 +1,169 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- begin NPC content -->
+    <!-- Design Services TT -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services/">Design Services</a></li>
+            <li><a href="/content/design-services/meet-our-designers">Meet Our Designers</a></li>
+            <li>Tessa</li>
+        </ul>
+    </nav>
+
+    <!-- navigation -->
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+            </div>
+        </nav>
+
+        <h1>Meet our designers</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/headshot.jpg" alt="Tessa"></div>
+                        <h2>Tessa</h2>
+                        <p>La-Z-Boy Designer</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/hero.jpg');"></div>
+            </div>
+        </section>
+        <div class="light-gray">
+            <section id="about-designer">
+                <h2>About designer</h2>
+                <div>
+                    <div class="bio">
+                        <p class="heading">Nashville, TN</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                    <div class="favorites">
+                        <p class="heading">Favorite Design styles:</p>
+                        <p>TBD</p>
+                        <p class="divider">TBD</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="rooms">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room01.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room02.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room03.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room04.jpg')">
+                    <div></div>
+                </div>
+            </div>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <section id="qa">
+            <div class="two-col gutter-20-30">
+                <div>
+                    <h2>Q &amp; A</h2>
+                    <p>Get to know our experts</p>
+                    <p class="heading">What tips do you have for clients looking for a new furniture piece?</p>
+                    <p>I tell almost every client to find what’s comfortable first and then we can work on making it look good. It’s easy to get too focused on the aesthetic and ignore how a piece actually feels. Most of my clients start out hesitant, I
+                        remind them to have FUN and follow their gut! Don’t get too hung up on a certain style, I help them notice what they’re naturally drawn to, and go from there. Not every leg style needs to match. Not every arm needs to be rolled.
+                        Aim for curated…not matching.</p>
+                </div>
+                <div>
+                    <p class="heading">What are your favorite La-Z-Boy fabrics right now? Do you have any “go-to” La-Z-Boy styles?</p>
+                    <p>Merit fabric, I’m looking at you! I absolutely love it, and I know I’m not alone. It’s soft yet has textural and color variation; that combo is always a win! I’m also a big fan of the Flicker fabric. A small scale pattern like that
+                        is indispensable. As far as a go-to style, can you really go wrong with a Collins sectional? My clients go nuts over it.</p>
+                    <p class="heading">Do you have a favorite design story?</p>
+                    <p>The La-Z-Boy corporate office contacted me and told me about a family who spent a lot of time at the Ronald McDonald House here in Nashville. They were the sweetest, most genuine people. They had never had new furniture in this room—mostly
+                        second-hand and antique pieces. The best part—and why this is my favorite design—is that La‑Z‑Boy gifted them the entire room which would have been about $20k. The pride I felt in representing that kind of generosity was priceless—as
+                        was their reaction to their new room.</p>
+                </div>
+            </div>
+        </section>
+        <div id="testimonials" class="med-gray">
+            <section>
+                <div>
+                    <div class="title">
+                        <h2>Customer<br>Testimonial</h2>
+                    </div>
+                    <div class="carousel">
+                        <div data-flickity='{
+                            "freeScrollFriction": 0.1,
+                            "pageDots": false,
+                            "prevNextButtons": true,
+                            "cellAlign": "left",
+                            "contain": true,
+                            "adaptiveHeight": true,
+                            "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                            }'>
+                            <div class="testimonial">
+                                <h3>It’s the Little Things</h3>
+                                <p>From our first meeting with Tessa, she could see our stress. When she said "Come on guys relax, I got you covered!" we were able to loosen up. She asked us a lot of questions about our lifestyle and style. When Tessa revealed
+                                    the final design, she explained to us why she placed the furniture in certain places for us and our daughter who is in a wheelchair. We loved everything in her presentation! She even took into consideration the sofa’s
+                                    placement and style so I could see the TV while cooking!</p>
+                            </div>
+                            <div class="testimonial">
+                                <h3>A Magazine-Worthy Home</h3>
+                                <p>Tessa is professional in every way! She came into our home and really listened to what we wanted and created beautiful, innovative furniture plans for us. She incorporated our ideas, budget and found rugs, fabrics and pieces
+                                    that enhance our style. We couldn't be happier! Tessa made our home look like a magazine cover, yet it is functional and comfortable. We love it!</p>
+                            </div>
+                            <div class="testimonial">
+                                <h3>No More Anxiety!</h3>
+                                <p>This was our first time getting a room of new furniture. Tessa helped us overcome our anxiety and worked with us at our pace. She introduced us to prints and patterns that we would not have chosen on our own, and now they
+                                    are our favorite! She was extremely patient. Thanks to Tessa we have our perfect room for our family!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+
+    <!-- end NPC content -->
+</body>
