@@ -1,0 +1,128 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Shared code -->
+
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <!-- Main Content -->
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services">Design Services</a></li>
+            <li><a href="/content/design-services/design-stories">Design Stories</a></li>
+            <li>Nicole’s Story</li>
+        </ul>
+    </nav>
+
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories" class="active">Design Stories</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
+            </div>
+        </nav>
+
+        <h1>Design Story</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/headshot.jpg" alt="Nicole"></div>
+                        <h2>Nicole’s Story</h2>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/design-stories/nicole/hero.jpg');"></div>
+            </div>
+        </section>
+        <section id="oer">
+            <div class="two-col gutter-20-30 module01">
+                <div>
+                    <h2>The opportunity</h2>
+                    <p>The client was having difficulty finding the right pieces. They preferred more traditional looks, but had a new modern home. Those styles don’t always mesh well. They needed help finding items that would complement their home, but
+                        still be comfortable for their style.</p>
+                    <div class="image"><img src="/Images/design-services/design-stories/nicole/room01.jpg" alt=""></div>
+                    <h2>The experience</h2>
+                    <p>Up to this point the client had been buying and returning items, so having a professional to help make decisions was key. They also appreciated that we were able to work with their existing pieces.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/design-services/design-stories/nicole/room02.jpg" alt=""></div>
+                    <h2>The result</h2>
+                    <p>We had the client leave while we set up, so they could experience the big reveal! They were so happy with the way it all came together and appreciated the thought we put into selecting each piece. It was the perfect blend of comfort
+                        and style for their home and life.</p>
+                </div>
+            </div>
+        </section>
+        <section id="products">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": false,
+                "prevNextButtons": false,
+                "cellAlign": "center",
+                "contain": true
+                }'>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/nicole/silo01.jpg" alt="Avenue Chair"></div>
+                    <a href="/p/chairs/avenue-chair/_/R-235487">Avenue Chair</a>
+                </div>
+                <div class="product bigger">
+                    <div class="image"><img src="/Images/design-services/design-stories/nicole/silo02.jpg" alt="Aria Ottoman"></div>
+                    <a>Aria Ottoman</a>
+                </div>
+                <div class="product smaller">
+                    <div class="image"><img src="/Images/design-services/design-stories/nicole/silo03.jpg" alt="Aria Chair"></div>
+                    <a>Aria Chair</a>
+                </div>
+            </div>
+            <p class="fine-print">*Products and covers shown above may no longer be available.</p>
+        </section>
+        <div class="light-gray">
+            <section id="final-thoughts">
+                <div class="two-col gutter-20-30">
+                    <div>
+                        <h2>Final thoughts</h2>
+                    </div>
+                    <div>
+                        <p>We had the client leave while we set up, so they could experience the big reveal! They were so happy with the way it all came together and appreciated the thought we put into selecting each piece. It was the perfect blend of comfort
+                            and style for their home and life.</p>
+                        <a href="/content/design-services/meet-our-designers/nicole">See Nicole’s Portfolio</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+
+
+    <!-- end NPC content -->
+</body>

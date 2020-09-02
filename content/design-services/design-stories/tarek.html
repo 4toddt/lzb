@@ -1,0 +1,140 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Shared code -->
+
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <!-- Main Content -->
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services">Design Services</a></li>
+            <li><a href="/content/design-services/design-stories">Design Stories</a></li>
+            <li>Tarek’s Story</li>
+        </ul>
+    </nav>
+
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories" class="active">Design Stories</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
+            </div>
+        </nav>
+
+        <h1>Design Story</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="/Images/design-services/design-stories/tarek/headshot.jpg" alt="Tarek"></div>
+                        <h2>Tarek’s Story</h2>
+                        <p><span class="no-wrap">La-Z-Boy</span> Client</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('/Images/design-services/design-stories/tarek/hero.jpg');"></div>
+            </div>
+        </section>
+        <section id="oer">
+            <div class="two-col gutter-20-30 module01">
+                <div>
+                    <h2>The opportunity</h2>
+                    <p>I’ve always wanted to have a personal designer but knew it could be costly. That’s when I discovered La-Z-Boy offers Free Design Services. I visited my local store and was shocked to find that they are truly a one-stop shop!</p>
+                    <div class="image"><img src="/Images/design-services/design-stories/tarek/room01.jpg" alt=""></div>
+                    <h2>The experience</h2>
+                    <p>I was so impressed with the level of customer service and design expertise Erica provided. I gave her my color scheme with my budget and right away she had a vision. She also came to my home to ensure everything would fit and offered
+                        advice on accessories.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/design-services/design-stories/tarek/room02.jpg" alt=""></div>
+                    <h2>The result</h2>
+                    <p>It’s so beautiful, I never want to leave home! I love to entertain and get so many compliments. People cannot believe this is all from La-Z-Boy! I’ve already recommended Erica and La-Z-Boy to others and want to work with them on other
+                        rooms in my home.</p>
+                </div>
+            </div>
+        </section>
+        <section id="products">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": false,
+                "prevNextButtons": false,
+                "cellAlign": "center",
+                "contain": true
+                }'>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/tarek/silo01.jpg" alt='Weatherford Heather 56" Console'></div>
+                    <a href="/p/home-accents/weatherford-heather-56-console/_/R-76-035">Weatherford Heather Console</a>
+                </div>
+                <div class="product bigger">
+                    <div class="image"><img src="/Images/design-services/design-stories/tarek/silo02.jpg" alt="Talbot Sofa"></div>
+                    <a href="/p/sofas/talbot-sofa/_/R-610451">Talbot Sofa</a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/tarek/silo03.jpg" alt="Foundry Rectangular Cocktail Table"></div>
+                    <a href="/p/home-accents/foundry-rectangular-cocktail-table/_/R-59-023">Foundry Cocktail Table</a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/tarek/silo04.jpg" alt=''></div>
+                    <a href=""></a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/tarek/silo05.jpg" alt=''></div>
+                    <a href=""></a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/tarek/silo06.jpg" alt=''></div>
+                    <a href=""></a>
+                </div>
+            </div>
+            <p class="fine-print">*Products and covers shown above may no longer be available.</p>
+        </section>
+        <div class="light-gray">
+            <section id="final-thoughts">
+                <div class="two-col gutter-20-30">
+                    <div>
+                        <h2>Final thoughts</h2>
+                    </div>
+                    <div>
+                        <p>They couldn’t believe it was the same room! It looked just like they envisioned and they couldn’t believe that all the beautiful pieces were theirs to keep! The family couldn’t wait to show off their new room. They also recommended
+                            our service to neighbors and family.</p>
+                        <a href="/content/design-services/meet-our-designers/everton">See more designs by Everton</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+
+
+    <!-- end NPC content -->
+</body>

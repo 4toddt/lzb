@@ -32,10 +32,6 @@
     padding: 0;
     float: none;
 }
-#site-wrapper .field-group {
-    max-width: none;
-    margin-bottom: 0;
-}
 
 
 /****** desktop resets ******/
@@ -206,7 +202,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 -15px;
 }
 
 @media all and (-ms-high-contrast: none),
@@ -219,16 +214,12 @@
 
 #freeSwatchesContainer form>div {
     margin-top: 10px;
-    padding: 0 15px;
 }
 
 #freeSwatchesContainer .group-swatches,
-#freeSwatchesContainer .mobile-swatches {
-    display: none;
-}
-
-#freeSwatchesContainer .single-swatches {
-    width: 100%;
+#freeSwatchesContainer .group-swatches .swatch-heading {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #999;
 }
 
 #freeSwatchesContainer .swatches-list {
@@ -288,17 +279,19 @@
     font-size: .9em;
 }
 
-#freeSwatchesContainer .client-data>* {
-    width: 50%;
-    min-width: 260px;
-    flex-grow: 1;
-    margin-top: 20px;
-    padding: 0 15px;
-    position: relative;
-}
-
 #freeSwatchesContainer .client-data .swatch-heading {
     width: 100%;
+}
+
+#freeSwatchesContainer .single-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+#freeSwatchesContainer .single-swatches>* {
+    flex: 1 0 100%;
 }
 
 #freeSwatchesContainer .swatch-item h3 {
@@ -309,6 +302,14 @@
 
 #freeSwatchesContainer .single-swatches .swatch-item h3 {
     font-size: .8em;
+}
+
+#freeSwatchesContainer .field-group {
+    width: calc(50% - 30px);
+    min-width: 230px;
+    flex-grow: 1;
+    margin: 20px 15px 0;
+    position: relative;
 }
 
 
@@ -391,7 +392,7 @@
     font-size: 1em;
     position: absolute;
     top: 1em;
-    left: 1.75em;
+    left: .75em;
     transition: all .2s ease-out;
     user-select: none;
     pointer-events: none;
@@ -401,7 +402,7 @@
 #freeSwatchesContainer .move-label.filled~label {
     font-size: .8em;
     top: .5em;
-    left: 1.6em;
+    left: .5em;
 }
 
 
@@ -411,7 +412,7 @@
     position: absolute;
     font-family: 'LZB icons';
     content: '\e907';
-    right: 1.75em;
+    right: .75em;
     top: 1.1em;
     pointer-events: none;
 }
@@ -487,7 +488,7 @@
 #swatch-search input {
     font-size: inherit;
     width: 100%;
-    height: 3em;
+    height: auto;
     line-height: 3em;
     padding: 0 3em 0 .75em;
     border: 1px solid #b7b7b7;
@@ -499,7 +500,21 @@
 
 #swatch-search button {
     display: none;
+    /* opacity: 0;
+    font-size: inherit;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 3em;
+    width: 3em;
+    background-color: white;
+    border: none; */
 }
+
+
+/* #swatch-search button:hover {
+    cursor: pointer;
+} */
 
 #swatch-search .swatch-search-no-results {
     font-size: .9em;
@@ -515,9 +530,9 @@
 
 #freeSwatchesContainer .field-group+label.error {
     /* desktop errors */
+    margin-left: 15px;
     font-size: 15px;
     margin-top: 5px;
-    width: 100%;
 }
 
 #freeSwatchesContainer #swatchLimitMessage {
@@ -573,29 +588,53 @@
         text-align: left;
         font-size: .9em;
     }
-    #freeSwatchesContainer form {
-        flex-wrap: nowrap;
-    }
     #freeSwatchesContainer form>div {
         margin-top: 20px;
     }
+    #freeSwatchesContainer .group-swatches {
+        order: 1;
+        flex: 300 0 1px;
+        max-width: 550px;
+    }
+    #freeSwatchesContainer .group-swatches .swatch-heading {
+        padding-bottom: .2em;
+    }
+    /* #freeSwatchesContainer .single-swatches, */
+    #freeSwatchesContainer .group-swatches {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
     #freeSwatchesContainer .client-data {
-        flex: 0 1 380px;
+        order: 2;
+        padding-left: 30px;
+        flex: 150 0 1px;
         max-width: 380px;
     }
     #freeSwatchesContainer .client-data .swatch-heading {
         display: none;
     }
     #freeSwatchesContainer .single-swatches {
-        flex: 0 1 640px;
-        max-width: 640px;
+        order: 3;
+        margin-top: 40px;
+        padding-top: 10px;
+        border-top: 1px solid #999;
+        justify-content: space-between;
     }
     #freeSwatchesContainer .single-swatches .swatch-heading {
-        padding-bottom: .2em;
-        border-bottom: 1px solid #999;
+        max-width: calc(100% - 320px);
     }
     #swatch-search {
         max-width: 300px;
+    }
+    #freeSwatchesContainer .group-swatches .swatches-list {
+        justify-content: space-between;
+    }
+    #freeSwatchesContainer .group-swatches .swatch-item:last-child:nth-child(3n+2) {
+        margin-left: auto;
+        margin-right: auto
+    }
+    #freeSwatchesContainer .group-swatches .swatch-item:nth-last-child(2):nth-child(3n+1) {
+        margin-left: auto
     }
 }
 

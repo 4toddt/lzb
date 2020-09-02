@@ -15,8 +15,7 @@
 </head>
 
 <body>
-    <!-- begin NPC content -->
-    <!-- Design Services TT -->
+    <!-- Shared code -->
 
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
@@ -29,6 +28,8 @@
         }
     </script>
 
+    <!-- Main Content -->
+
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,14 +39,14 @@
         </ul>
     </nav>
 
-    <!-- navigation -->
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
                 <a href="/content/design-services">Design Services</a>
                 <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
                 <a href="/content/design-services/design-stories">Design Stories</a>
-                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
 
@@ -56,7 +57,7 @@
                     <div>
                         <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/erica/headshot.jpg" alt="Erica"></div>
                         <h2>Erica</h2>
-                        <p>La-Z-Boy Designer</p>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
                 <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/erica/hero.jpg');"></div>
@@ -68,13 +69,63 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Sterling Heights, MI</p>
-                        <p>Based in the suburbs of Detroit, Erica has been transforming <span class="no-wrap">La-Z-Boy</span> customer homes for more than five years. &ldquo;My absolute favorite part of working with my design clients is that &lsquo;a-ha
-                            moment,&rsquo;&rdquo; she explains, &ldquo;when we zero in on what they will love — whether it&rsquo;s the perfect layout or a color combination.&rdquo;</p>
+                        <p>Erica knows that great designers have to be great listeners who can also “read between the lines” if need be, to create the perfect room. “My absolute favorite part of working with my design clients is that a-ha moment, when we
+                            zero in on what they will love.”</p>
                     </div>
                     <div class="favorites">
-                        <p class="heading">Favorite Design styles:</p>
-                        <p>Classics Revisited</p>
-                        <p class="divider">Comfortably Casual</p>
+                        <p class="heading">Design badges:</p>
+                        <div id="badges">
+                            <div>
+                                <input type="radio" id="badge01-rb" name="badge" checked>
+                                <label class="image" for="badge01-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                </label>
+                                <p>
+                                    <strong>Palette Pro</strong>
+                                    <br>Clever color combos to create the perfect mood.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge02-rb" name="badge">
+                                <label class="image" for="badge02-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                </label>
+                                <p>
+                                    <strong>Couples Collaborator</strong>
+                                    <br>Blending styles for a look you&rsquo;ll both love.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge03-rb" name="badge">
+                                <label class="image" for="badge03-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/SpaceMaximizer.png" alt="Space Maximizer badge">
+                                </label>
+                                <p>
+                                    <strong>Space Maximizer</strong>
+                                    <br>Creative space planning and room flow.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge04-rb" name="badge">
+                                <label class="image" for="badge04-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MixMaster.png" alt="Mix Master badge">
+                                </label>
+                                <p>
+                                    <strong>Mix Master</strong>
+                                    <br>Mixing and matching patterns in unique ways.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge05-rb" name="badge">
+                                <label class="image" for="badge05-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/AccessoryAce.png" alt="Accessory Ace badge">
+                                </label>
+                                <p>
+                                    <strong>Accessory Ace</strong>
+                                    <br>Adding the perfect finishing touches.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -163,6 +214,7 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
+
 
     <!-- end NPC content -->
 </body>

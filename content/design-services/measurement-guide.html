@@ -66,6 +66,61 @@
             width: auto;
             text-decoration: none;
         }
+        /* breadcrumbs */
+        
+        #breadcrumbs {
+            margin: 0 auto 10px;
+            max-width: 980px;
+            font-size: 14px;
+            color: #868686;
+        }
+        
+        body.mobile-site #breadcrumbs {
+            margin: 0.625rem auto;
+            padding: 0rem 0.625rem;
+            max-width: 62.5rem;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        #breadcrumbs ul {
+            padding-left: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 35px;
+        }
+        
+        body.mobile-site #breadcrumbs ul {
+            line-height: 1.25rem;
+        }
+        
+        #breadcrumbs li+li:before {
+            font-family: 'icomoon';
+            content: "\e904";
+            -webkit-font-smoothing: antialiased;
+            vertical-align: middle;
+            padding: 0 8px;
+            line-height: 0;
+        }
+        
+        body.mobile-site #breadcrumbs li+li:before {
+            font-family: 'lzb-icons';
+            content: "\e907";
+            vertical-align: baseline;
+            font-size: 0.625rem;
+            padding: 0 0.375rem;
+        }
+        
+        #breadcrumbs a {
+            color: inherit;
+            font-size: inherit;
+        }
+        
+        body.mobile-site #breadcrumbs a {
+            color: #555;
+        }
         /************* NPC Defaults ************/
         
         #npc-content {
@@ -85,7 +140,7 @@
             width: 100%;
             max-width: 1030px;
             padding: 0 25px;
-            margin: 0 auto;
+            margin: 40px auto 0;
         }
         
         #npc-content section.full-width {
@@ -108,6 +163,34 @@
         #npc-content .no-wrap {
             white-space: nowrap;
         }
+        /* design services nav menu */
+        
+        #npc-content #ds-nav {
+            font-size: .8em;
+            background-color: #FBFBFB;
+        }
+        
+        #npc-content #ds-nav a {
+            font-size: 1em;
+            line-height: 40px;
+            font-weight: normal;
+            text-decoration: none;
+            display: block;
+            padding: 0 15px;
+            border-top: 1px solid #cbcbcb;
+            margin: 0;
+        }
+        
+        #npc-content #ds-nav a.active {
+            background-color: #595451;
+            color: white;
+            border: none;
+        }
+        
+        #npc-content #ds-nav a.active~a {
+            border: none;
+            border-bottom: 1px solid #cbcbcb;
+        }
         /*********** Utility Classes ************/
         
         #npc-content .arrow-right:after {
@@ -126,9 +209,13 @@
         }
         /***************** Custom CSS ******************/
         
+        section#hero {
+            margin-top: 20px;
+        }
+        
         #hero {
             position: relative;
-            background-image: url(https://embed.widencdn.net/img/lazboy/qsyoxewgmd/500px@2x/hero-sm.jpg?q=50);
+            background-image: url('https://embed.widencdn.net/img/lazboy/qsyoxewgmd/500px@2x/hero-sm.jpg?q=50');
             background-size: cover;
             height: 440px;
             background-position: center;
@@ -143,10 +230,6 @@
             font-weight: bold;
             color: white;
             max-width: 75%;
-        }
-        
-        section#steps {
-            margin-top: 40px;
         }
         
         #steps h1 {
@@ -178,7 +261,7 @@
             line-height: 1.2;
             text-transform: uppercase;
             font-weight: 900;
-            color: #AECDC8;
+            color: #807069;
             text-align: center;
             max-width: 860px;
             margin: 0 auto;
@@ -226,7 +309,7 @@
         }
         
         .green-background {
-            background-color: #AECDC8;
+            background-color: #807069;
         }
         
         section#download-button {
@@ -251,16 +334,13 @@
                 display: none;
             }
             #hero {
-                background-image: url(https://embed.widencdn.net/img/lazboy/debcggyiyl/980px@2x/hero.jpg?q=50);
+                background-image: url('https://embed.widencdn.net/img/lazboy/debcggyiyl/980px@2x/hero.jpg?q=50');
                 height: 545px;
                 background-position: left;
             }
             #hero h1 {
                 font-size: 2.2em;
                 max-width: none;
-            }
-            section#steps {
-                margin-top: 40px;
             }
             #steps h1 {
                 font-size: 1.8em;
@@ -292,6 +372,46 @@
             }
         }
         
+        @media only screen and (min-width: 700px) {
+            #npc-content #ds-nav {
+                display: flex;
+                background-color: #595451;
+            }
+            #npc-content #ds-nav>div {
+                width: 100%;
+                max-width: 1000px;
+                padding: 0 10px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+            }
+            #npc-content #ds-nav a,
+            #npc-content #ds-nav a.active~a {
+                line-height: 60px;
+                color: white;
+                position: relative;
+                border-bottom: none;
+            }
+            #npc-content #ds-nav a:after {
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: white;
+                height: 0;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                transition: height .2s;
+            }
+            #npc-content #ds-nav a.active:after,
+            #npc-content #ds-nav a:hover:after {
+                height: 7px;
+            }
+            #npc-content #ds-nav a {
+                border: none;
+            }
+        }
+        
         @media only screen and (min-width: 750px) {
             #hero h1 {
                 font-size: 2.3em;
@@ -312,22 +432,31 @@
                 font-size: 1.05em;
             }
         }
+        
+        @media only screen and (min-width: 850px) {
+            #npc-content #ds-nav {
+                font-size: 1em;
+            }
+        }
     </style>
-    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
-        <ul class="breadcrumb">
-            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
-            <li><a href="/mobile/design-services" class="crumb" itemprop="url">Design Services</a></li>
-            <li><span class="crumb active">Measurement Guide</span></li>
-        </ul>
-    </section>
-    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+    <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/design-services">Design Services</a></li>
+            <li><a href="/content/design-services">Design Services</a></li>
             <li>Measurement Guide</li>
         </ul>
     </nav>
+    <!-- navigation -->
     <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services" class="active">Design Services</a>
+                <a href="/content/design-services/meet-our-designers">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
+            </div>
+        </nav>
         <section id="hero" class="full-width">
             <h1>Measurement Guide</h1>
         </section>

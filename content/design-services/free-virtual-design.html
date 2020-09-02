@@ -80,6 +80,61 @@
         #npc-content .left {
             float: none !important;
         }
+        /* breadcrumbs */
+        
+        #breadcrumbs {
+            margin: 0 auto 10px;
+            max-width: 980px;
+            font-size: 14px;
+            color: #868686;
+        }
+        
+        body.mobile-site #breadcrumbs {
+            margin: 0.625rem auto;
+            padding: 0rem 0.625rem;
+            max-width: 62.5rem;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        #breadcrumbs ul {
+            padding-left: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 35px;
+        }
+        
+        body.mobile-site #breadcrumbs ul {
+            line-height: 1.25rem;
+        }
+        
+        #breadcrumbs li+li:before {
+            font-family: 'icomoon';
+            content: "\e904";
+            -webkit-font-smoothing: antialiased;
+            vertical-align: middle;
+            padding: 0 8px;
+            line-height: 0;
+        }
+        
+        body.mobile-site #breadcrumbs li+li:before {
+            font-family: 'lzb-icons';
+            content: "\e907";
+            vertical-align: baseline;
+            font-size: 0.625rem;
+            padding: 0 0.375rem;
+        }
+        
+        #breadcrumbs a {
+            color: inherit;
+            font-size: inherit;
+        }
+        
+        body.mobile-site #breadcrumbs a {
+            color: #555;
+        }
         /************* NPC Defaults ************/
         
         #npc-content {
@@ -125,6 +180,34 @@
         
         #npc-content .no-wrap {
             white-space: nowrap;
+        }
+        /* design services nav menu */
+        
+        #npc-content #ds-nav {
+            font-size: .8em;
+            background-color: #FBFBFB;
+        }
+        
+        #npc-content #ds-nav a {
+            font-size: 1em;
+            line-height: 40px;
+            font-weight: normal;
+            text-decoration: none;
+            display: block;
+            padding: 0 15px;
+            border-top: 1px solid #cbcbcb;
+            margin: 0;
+        }
+        
+        #npc-content #ds-nav a.active {
+            background-color: #595451;
+            color: white;
+            border: none;
+        }
+        
+        #npc-content #ds-nav a.active~a {
+            border: none;
+            border-bottom: 1px solid #cbcbcb;
         }
         /*********** Utility Classes ************/
         
@@ -299,13 +382,14 @@
         }
         /***************** Custom CSS ******************/
         
-        #hero {
+        section#hero {
             position: relative;
+            margin-top: 20px;
         }
         
         #hero-image {
             height: 610px;
-            background-image: url(https://embed.widencdn.net/img/lazboy/aufxzjfdjl/500px@2x/hero.jpeg?q=50);
+            background-image: url('https://embed.widencdn.net/img/lazboy/aufxzjfdjl/500px@2x/hero.jpeg?q=50');
             background-size: cover;
             background-position: left;
             position: relative;
@@ -413,7 +497,7 @@
             padding-left: 1.3em;
             margin-left: 0.3em;
             line-height: .7;
-            background-image: url(https://www.la-z-boy.com/Images/npc/error.svg);
+            background-image: url('https://www.la-z-boy.com/Images/npc/error.svg');
             background-size: contain;
             background-size: 1em;
             background-position: left;
@@ -425,9 +509,8 @@
             font-size: 1.1em;
             font-weight: bold;
             width: 100%;
-            background-color: #AFCDC8;
-            border-color: #AFCDC8;
-            /* color: white; */
+            background-color: #807069;
+            color: white;
             padding: 0;
             font-family: inherit;
             cursor: pointer;
@@ -435,7 +518,7 @@
         }
         
         .green-background {
-            background-color: #AFCDC8;
+            background-color: #E4DFDC;
         }
         
         section#program {
@@ -451,7 +534,7 @@
             top: -40px;
             left: calc(50% - 37px);
             border-width: 0 37px 40px;
-            border-color: white white #AFCDC8;
+            border-color: white white #E4DFDC;
             border-style: solid;
         }
         
@@ -461,7 +544,7 @@
             bottom: -40px;
             right: calc(50% - 37px);
             border-width: 40px 37px 0;
-            border-color: #AFCDC8 white white;
+            border-color: #E4DFDC white white;
             border-style: solid;
         }
         
@@ -489,19 +572,19 @@
         }
         
         #program .number.one {
-            background-image: url(https://embed.widencdn.net/img/lazboy/0oelkupkdw/exact/1.png);
+            background-image: url('/Images/design-services/free-virtual-design/1.png');
         }
         
         #program .number.two {
-            background-image: url(https://embed.widencdn.net/img/lazboy/fwhgh1v5fa/exact/2.png);
+            background-image: url('/Images/design-services/free-virtual-design/2.png');
         }
         
         #program .number.three {
-            background-image: url(https://embed.widencdn.net/img/lazboy/jf36rjr134/exact/3.png);
+            background-image: url('/Images/design-services/free-virtual-design/3.png');
         }
         
         #program .number.four {
-            background-image: url(https://embed.widencdn.net/img/lazboy/morfnakfpn/exact/4.png);
+            background-image: url('/Images/design-services/free-virtual-design/4.png');
         }
         
         #program .number p {
@@ -533,7 +616,7 @@
         }
         
         #ar-link {
-            background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), rgba(51, 51, 51, 0.8)), url(https://embed.widencdn.net/img/lazboy/7shrowqn46/425px@2x/augmented-reality.jpeg?q=50);
+            background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), rgba(51, 51, 51, 0.8)), url('https://embed.widencdn.net/img/lazboy/7shrowqn46/425px@2x/augmented-reality.jpeg?q=50');
             background-position: top right;
         }
         
@@ -572,7 +655,7 @@
         }
         
         a#inspiration-link {
-            background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), rgba(51, 51, 51, 0.8)), url(https://embed.widencdn.net/img/lazboy/j3nnihwmo8/425px@2x/augmented-reality.jpeg?q=50);
+            background-image: linear-gradient(to bottom, rgba(238, 238, 238, 0), rgba(51, 51, 51, 0.8)), url('https://embed.widencdn.net/img/lazboy/j3nnihwmo8/425px@2x/augmented-reality.jpeg?q=50');
             background-position: bottom left;
             flex-direction: column;
             text-align: center;
@@ -768,6 +851,47 @@
             }
         }
         
+        @media only screen and (min-width: 850px) {
+            #npc-content #ds-nav {
+                display: flex;
+                background-color: #595451;
+                font-size: .9em;
+            }
+            #npc-content #ds-nav>div {
+                width: 100%;
+                max-width: 1000px;
+                padding: 0 10px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+            }
+            #npc-content #ds-nav a,
+            #npc-content #ds-nav a.active~a {
+                line-height: 60px;
+                color: white;
+                position: relative;
+                border-bottom: none;
+            }
+            #npc-content #ds-nav a:after {
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: white;
+                height: 0;
+                width: 100%;
+                bottom: 0;
+                left: 0;
+                transition: height .2s;
+            }
+            #npc-content #ds-nav a.active:after,
+            #npc-content #ds-nav a:hover:after {
+                height: 7px;
+            }
+            #npc-content #ds-nav a {
+                border: none;
+            }
+        }
+        
         @media only screen and (min-width: 950px) {
             #location .copy form {
                 display: flex;
@@ -779,22 +903,30 @@
                 display: none;
             }
         }
+        
+        @media only screen and (min-width: 980px) {
+            #npc-content #ds-nav {
+                font-size: 1em;
+            }
+        }
     </style>
-    <section class="breadcrumbs hidden-desktop" aria-label="breadcrumb" role="navigation">
-        <ul class="breadcrumb">
-            <li><a href="/mobile" class="crumb" itemprop="url">Home</a></li>
-            <li><a href="/mobile/content/design-services" class="crumb" itemprop="url">Design Services</a></li>
-            <li><span class="crumb active">Free Virtual Design</span></li>
-        </ul>
-    </section>
-    <nav aria-label="breadcrumb" role="navigation" class="breadcrumb-wrapper hidden-mobile">
+    <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/content/design-services">Design Services</a></li>
-            <li>Free Virtual Design</li>
+            <li>Virtual Design</li>
         </ul>
     </nav>
     <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a class="active">Virtual Design</a>
+            </div>
+        </nav>
         <section id="hero" class="full-width">
             <div id="hero-image" class="image" role="img" aria-label="Living room with La-Z-Boy furniture and accessories"></div>
             <h1>Free VIRTUAL <span class="no-wrap">Design Services</span></h1>

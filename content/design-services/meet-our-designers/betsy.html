@@ -15,9 +15,8 @@
 </head>
 
 <body>
-    <!-- begin NPC content -->
-    <!-- Design Services TT -->
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Shared code -->
+
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
         if (typeof define == 'function' && define.amd) {
@@ -29,6 +28,8 @@
         }
     </script>
 
+    <!-- Main Content -->
+
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,14 +39,14 @@
         </ul>
     </nav>
 
-    <!-- navigation -->
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
                 <a href="/content/design-services">Design Services</a>
                 <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
                 <a href="/content/design-services/design-stories">Design Stories</a>
-                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
 
@@ -56,7 +57,7 @@
                     <div>
                         <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/betsy/headshot.jpg" alt="Betsy"></div>
                         <h2>Betsy</h2>
-                        <p>La-Z-Boy Designer</p>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
                 <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/betsy/hero.jpg');"></div>
@@ -68,13 +69,62 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Chandler, AZ</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>If Betsy could describe her style it would be classy and comfortable. She loves collaborating and creating unique and balanced rooms. “A balanced space creates beauty, harmony and an invitation to be in that space.”</p>
                     </div>
                     <div class="favorites">
-                        <p class="heading">Favorite Design styles:</p>
-                        <p>TBD</p>
-                        <p class="divider">TBD</p>
+                        <p class="heading">Design badges:</p>
+                        <div id="badges">
+                            <div>
+                                <input type="radio" id="badge01-rb" name="badge" checked>
+                                <label class="image" for="badge01-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                </label>
+                                <p>
+                                    <strong>Palette Pro</strong>
+                                    <br>Clever color combos to create the perfect mood.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge02-rb" name="badge">
+                                <label class="image" for="badge02-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/SpaceMaximizer.png" alt="Space Maximizer badge">
+                                </label>
+                                <p>
+                                    <strong>Space Maximizer</strong>
+                                    <br>Creative space planning and room flow.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge03-rb" name="badge">
+                                <label class="image" for="badge03-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/AccessoryAce.png" alt="Accessory Ace badge">
+                                </label>
+                                <p>
+                                    <strong>Accessory Ace</strong>
+                                    <br>Adding the perfect finishing touches.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge04-rb" name="badge">
+                                <label class="image" for="badge04-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/UrbanLiving.png" alt="Urban Living badge">
+                                </label>
+                                <p>
+                                    <strong>Urban Living</strong>
+                                    <br>Creating big city looks, even in smaller spaces.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge05-rb" name="badge">
+                                <label class="image" for="badge05-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/TraditionalTake.png" alt="Traditional Take badge">
+                                </label>
+                                <p>
+                                    <strong>Traditional Take</strong>
+                                    <br>Sophisticated looks that are classic and warm.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -156,6 +206,7 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
+
 
     <!-- end NPC content -->
 </body>

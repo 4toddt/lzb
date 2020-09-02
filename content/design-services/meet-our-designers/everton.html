@@ -15,9 +15,8 @@
 </head>
 
 <body>
-    <!-- begin NPC content -->
-    <!-- Design Services TT -->
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Shared code -->
+
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
         if (typeof define == 'function' && define.amd) {
@@ -29,6 +28,8 @@
         }
     </script>
 
+    <!-- Main Content -->
+
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,14 +39,14 @@
         </ul>
     </nav>
 
-    <!-- navigation -->
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
                 <a href="/content/design-services">Design Services</a>
                 <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
                 <a href="/content/design-services/design-stories">Design Stories</a>
-                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
 
@@ -56,7 +57,7 @@
                     <div>
                         <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/everton/headshot.jpg" alt="Everton"></div>
                         <h2>Everton</h2>
-                        <p>La-Z-Boy Designer</p>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
                 <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/everton/hero.jpg');"></div>
@@ -68,13 +69,62 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Manchester, CT</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Everton loves adding comfort and style to client’s homes. He seeks to “find inspiration and beauty in everyday life,” and believes that what gives you joy should be made visible in your home.</p>
                     </div>
                     <div class="favorites">
-                        <p class="heading">Favorite Design styles:</p>
-                        <p>TBD</p>
-                        <p class="divider">TBD</p>
+                        <p class="heading">Design badges:</p>
+                        <div id="badges">
+                            <div>
+                                <input type="radio" id="badge01-rb" name="badge" checked>
+                                <label class="image" for="badge01-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                </label>
+                                <p>
+                                    <strong>Palette Pro</strong>
+                                    <br>Clever color combos to create the perfect mood.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge02-rb" name="badge">
+                                <label class="image" for="badge02-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                </label>
+                                <p>
+                                    <strong>Couples Collaborator</strong>
+                                    <br>Blending styles for a look you&rsquo;ll both love.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge03-rb" name="badge">
+                                <label class="image" for="badge03-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Farmhouse.png" alt="Modern Farmhouse badge">
+                                </label>
+                                <p>
+                                    <strong>Modern Farmhouse</strong>
+                                    <br>Creating cozy, warm spaces with rustic charm.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge04-rb" name="badge">
+                                <label class="image" for="badge04-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/TransitionalStylist.png" alt="Transitional Stylist badge">
+                                </label>
+                                <p>
+                                    <strong>Transitional Stylist</strong>
+                                    <br>Balancing traditional and contemporary styles.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge05-rb" name="badge">
+                                <label class="image" for="badge05-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/ManSpaces.png" alt="Man Spaces badge">
+                                </label>
+                                <p>
+                                    <strong>Man Spaces</strong>
+                                    <br>Designing a space for him that you&rsquo;ll love, too.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -135,7 +185,8 @@
                             }'>
                             <div class="testimonial">
                                 <h3>A Remarkable Job</h3>
-                                <p>Everton’s vision, talent and care are remarkable! He helped us design both our office and family room and they’re our favorite rooms in our home. Our friends and family love them too! I highly recommend Everton and La-Z-Boy!</p>
+                                <p>Everton’s vision, talent and care are remarkable! He helped us design both our office and family room and they’re our favorite rooms in our home. Our friends and family love them too! I highly recommend Everton and
+                                    <span class="no-wrap">La-Z-Boy</span>!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>A Job Well Done!</h3>
@@ -150,6 +201,7 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
+
 
     <!-- end NPC content -->
 </body>

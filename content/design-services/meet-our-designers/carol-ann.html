@@ -15,9 +15,8 @@
 </head>
 
 <body>
-    <!-- begin NPC content -->
-    <!-- Design Services TT -->
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Shared code -->
+
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
         if (typeof define == 'function' && define.amd) {
@@ -29,6 +28,8 @@
         }
     </script>
 
+    <!-- Main Content -->
+
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,14 +39,14 @@
         </ul>
     </nav>
 
-    <!-- navigation -->
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
                 <a href="/content/design-services">Design Services</a>
                 <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
                 <a href="/content/design-services/design-stories">Design Stories</a>
-                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
 
@@ -56,7 +57,7 @@
                     <div>
                         <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/carol-ann/headshot.jpg" alt="Carol-Ann"></div>
                         <h2>Carol-Ann</h2>
-                        <p>La-Z-Boy Designer</p>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
                 <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/carol-ann/hero.jpg');"></div>
@@ -68,13 +69,64 @@
                 <div>
                     <div class="bio">
                         <p class="heading">San Marcos, CA</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Creating a home is something close to Carol-Ann’s heart, and she understands the importance not just of designing a room to suit your lifestyle, but keeping pieces you have and like. “We need a space of our own where we feel we
+                            belong.”
+                        </p>
                     </div>
                     <div class="favorites">
-                        <p class="heading">Favorite Design styles:</p>
-                        <p>TBD</p>
-                        <p class="divider">TBD</p>
+                        <p class="heading">Design badges:</p>
+                        <div id="badges">
+                            <div>
+                                <input type="radio" id="badge01-rb" name="badge" checked>
+                                <label class="image" for="badge01-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                </label>
+                                <p>
+                                    <strong>Couples Collaborator</strong>
+                                    <br>Blending styles for a look you&rsquo;ll both love.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge02-rb" name="badge">
+                                <label class="image" for="badge02-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PetPro.png" alt="Pet Pro badge">
+                                </label>
+                                <p>
+                                    <strong>Pet Pro</strong>
+                                    <br>Styles and décor that stand up to pets.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge03-rb" name="badge">
+                                <label class="image" for="badge03-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/AccessoryAce.png" alt="Accessory Ace badge">
+                                </label>
+                                <p>
+                                    <strong>Accessory Ace</strong>
+                                    <br>Adding the perfect finishing touches.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge04-rb" name="badge">
+                                <label class="image" for="badge04-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Coastal.png" alt="Coastal Chic badge">
+                                </label>
+                                <p>
+                                    <strong>Coastal Chic</strong>
+                                    <br>Creating light and bright, beach-inspired looks.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge05-rb" name="badge">
+                                <label class="image" for="badge05-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/KidFriendly.png" alt="Kid Friendly badge">
+                                </label>
+                                <p>
+                                    <strong>Kid Friendly</strong>
+                                    <br>Designing spaces with safety and spills in mind.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -109,7 +161,7 @@
                     <p>Get to know our experts</p>
                     <p class="heading">What common questions do you get from your clients – regarding the design process?</p>
                     <p>My clients typically ask about space planning and how to blend styles. Two of the most common questions are, “What about the pieces I want to keep?” and “What if I don’t like it?” Both of which I love to answer. Of course we will work
-                        with your favorite pieces or even work around the pieces you want to replace later. We can coordinate with anything, whether it is a temporary piece or a family treasure. A lot of clients ask ”!hat if I don’t like it?”. I explain
+                        with your favorite pieces or even work around the pieces you want to replace later. We can coordinate with anything, whether it is a temporary piece or a family treasure. A lot of clients ask “What if I don’t like it?”. I explain
                         to them that we have all the tools to show you just how your new room is going to look and I have the ability and education to express to you why each piece, frame, pattern, and accessory were chosen. I am confident you will love
                         the room we worked together to design because I listened to you and chose each piece with your family in mind. I know you will love it!</p>
                 </div>
@@ -140,15 +192,15 @@
                             }'>
                             <div class="testimonial">
                                 <h3>Loving the Results</h3>
-                                <p>We wanted to redecorate our living room and get it right on the first try! Carol-Ann was knowledgeable and fun to work with. She even came to the house after delivery to ensure everything was up to the La-Z-Boy standards.
-                                    We now have a stunning and functional guest-ready living room. We are thrilled with the results! I can’t stop looking at our new living room!
+                                <p>We wanted to redecorate our living room and get it right on the first try! Carol-Ann was knowledgeable and fun to work with. She even came to the house after delivery to ensure everything was up to the <span class="no-wrap">La-Z-Boy</span>                                    standards. We now have a stunning and functional guest-ready living room. We are thrilled with the results! I can’t stop looking at our new living room!
 
                                 </p>
                             </div>
                             <div class="testimonial">
                                 <h3>Finding the Right Style</h3>
                                 <p>I was initially unsure about the design services. After speaking with Carol-Ann, I realized how much I needed it! She quickly figured out what I liked and pulled together a beautiful, cohesive selection of furniture and
-                                    decor that perfectly suited me. Carol-Ann exceeded my expectations throughout the process from taking measurements to overseeing the delivery. She has a strong design aesthetic yet her true talent is understand</p>
+                                    decor that perfectly suited me. Carol-Ann exceeded my expectations throughout the process from taking measurements to overseeing the delivery. She has a strong design aesthetic yet her true talent is understanding her
+                                    client’s style - even when they don’t know what it is!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>Functional and Beautiful</h3>
@@ -165,6 +217,7 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
+
 
     <!-- end NPC content -->
 </body>

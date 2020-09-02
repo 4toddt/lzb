@@ -1,0 +1,126 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Shared code -->
+
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <!-- Main Content -->
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services">Design Services</a></li>
+            <li><a href="/content/design-services/design-stories">Design Stories</a></li>
+            <li>Jonathan’s Story</li>
+        </ul>
+    </nav>
+
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories" class="active">Design Stories</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
+            </div>
+        </nav>
+
+        <h1>Design Story</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/headshot.jpg" alt="Jonathan"></div>
+                        <h2>Jonathan</h2>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/design-stories/jonathan/hero.jpg');"></div>
+            </div>
+        </section>
+        <section id="oer">
+            <div class="two-col gutter-20-30 module01">
+                <div>
+                    <h2>The opportunity</h2>
+                    <p>This couple has a large dog, so it was important to discuss fabric durability and space planning along with the design. Being open to the kitchen and dining room made this a great space for entertaining, and since they love red wine,
+                        iClean fabrics were a perfect touch.</p>
+                    <div class="image"><img src="/Images/design-services/design-stories/jonathan/room01.jpg" alt=""></div>
+                    <h2>The experience</h2>
+                    <p>The couple had a vision but weren’t sure how to accomplish it. They loved that the 3D renderings showed the space to scale so they didn’t have to worry about how pieces fit or how colors would look.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/design-services/design-stories/jonathan/room02.jpg" alt=""></div>
+                    <h2>The result</h2>
+                    <p>The couple wanted this space to be casual but with more of a regal punch, so they were thrilled to say the least! They were very excited to show off the new room to their friends and family. They were also shocked that <span class="no-wrap">La-Z-Boy</span>                        offers this complimentary service.</p>
+                </div>
+            </div>
+        </section>
+        <section id="products">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": false,
+                "prevNextButtons": false,
+                "cellAlign": "center",
+                "contain": true
+                }'>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/jonathan/silo01.jpg" alt="Cosmopolitan Reclining Chair"></div>
+                    <a href="/p/recliners/cosmopolitan-reclining-chair/_/R-265419">Cosmopolitan Chair</a>
+                </div>
+                <div class="product bigger">
+                    <div class="image"><img src="/Images/design-services/design-stories/jonathan/silo02.jpg" alt="Phoebe Sofa"></div>
+                    <a>Phoebe Sofa</a>
+                </div>
+                <div class="product smaller">
+                    <div class="image"><img src="/Images/design-services/design-stories/jonathan/silo03.jpg" alt="Coronet Storage Ottoman"></div>
+                    <a href="/p/home-accents/coronet-storage-ottoman/_/R-245394">Coronet Storage Ottoman</a>
+                </div>
+            </div>
+            <p class="fine-print">*Products and covers shown above may no longer be available.</p>
+        </section>
+        <div class="light-gray">
+            <section id="final-thoughts">
+                <div class="two-col gutter-20-30">
+                    <div>
+                        <h2>Final thoughts</h2>
+                    </div>
+                    <div>
+                        <p>The couple wanted this space to be casual but with more of a regal punch, so they were thrilled to say the least! They were very excited to show off the new room to their friends and family. They were also shocked that <span class="no-wrap">La-Z-Boy</span>                            offers this complimentary service.</p>
+                        <a href="/content/design-services/meet-our-designers/jonathan">See Jonathan’s Portfolio</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+
+
+    <!-- end NPC content -->
+</body>

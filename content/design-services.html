@@ -1,26 +1,23 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-    <!-- begin NPC content -->
-    <!-- Design Services TT -->
+    <!-- Shared code -->
 
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
+        if (typeof define == "function" && define.amd) {
             require(["/js/uat/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
@@ -29,10 +26,19 @@
         }
     </script>
 
+    <!-- Main Content -->
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Design Services</li>
+        </ul>
+    </nav>
+
     <style>
         #hero .two-col>.background-image {
             flex: 0 1 655px;
-            background-image: url(https://www.la-z-boy.com/Images/design-services/hero.png);
+            background-image: url(/Images/design-services/hero.png);
             padding-bottom: 83%;
         }
         
@@ -55,7 +61,7 @@
             position: relative;
         }
         
-        #play-button {
+        img#play-button {
             position: absolute;
             cursor: pointer;
             width: 30%;
@@ -76,18 +82,36 @@
         }
         
         #featured-designers .copy p {
-            font-size: .9em;
+            font-size: 0.9em;
         }
         
         #featured-designers [data-flickity] {
             flex: 1 0 100%;
-            overflow: hidden;
         }
         
         #npc-content .designer {
             text-align: center;
             width: 215px;
             margin-right: 20px;
+        }
+        
+        #method .modules {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: -40px -20px 0;
+        }
+        
+        #method .modules>div {
+            flex: 0 1 340px;
+            margin-top: 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        #method .image {
+            width: 85px;
+            margin: 0 auto 40px;
         }
         
         #before-after h2 {
@@ -102,19 +126,17 @@
         #before-after [data-flickity] {
             margin-top: 15px;
             position: relative;
-            overflow: hidden;
         }
         
         #before-after .ba-slider {
             position: relative;
-            overflow: hidden;
             width: 100%;
         }
         
         #before-after .ba-slider img {
             width: 100%;
             display: block;
-            max-width: none
+            max-width: none;
         }
         
         #before-after .ba-slider .resize {
@@ -122,37 +144,38 @@
             top: 0;
             left: 0;
             height: 100%;
-            width: 50%;
-            overflow: hidden
+            width: 70%;
+            overflow: hidden;
         }
         
         #before-after .ba-slider .handle {
             position: absolute;
-            left: 50%;
+            left: 70%;
             top: 0;
             bottom: 0;
             width: 4px;
             margin-left: -2px;
-            background: rgba(156, 147, 143, .5);
+            background: white;
             cursor: ew-resize;
-            transition: opacity .2s ease-out;
+            transition: opacity 0.2s ease-out;
         }
         
         #before-after .ba-slider .handle:after {
             position: absolute;
             top: 50%;
-            width: 44px;
-            height: 44px;
-            margin: -22px 0 0 -20px;
+            width: 48px;
+            height: 48px;
+            margin: -22px 0 0 -22px;
             content: "\25C0\0020\0020\25B6";
             color: white;
             font-size: 14px;
             text-align: center;
             line-height: 44px;
-            background: rgba(156, 147, 143, .5);
+            background: #807069;
             border-radius: 50%;
-            transition: opacity .2s ease-out;
-            font-family: 'LZB Icons';
+            transition: opacity 0.2s ease-out;
+            font-family: "LZB Icons";
+            border: 2px solid white;
         }
         
         #before-after .ba-slider .handle.draggable:after {
@@ -169,7 +192,7 @@
             margin: 0 auto -1px;
             width: 300px;
             text-align: center;
-            font-family: 'Playfair Display', playfair-display, serif;
+            font-family: "Playfair Display", playfair-display, serif;
             font-size: 1.2em;
             line-height: 60px;
             border: 1px solid #cbcbcb;
@@ -182,9 +205,9 @@
         }
         
         #faqs label::after {
-            font-family: 'LZB Icons';
+            font-family: "LZB Icons";
             content: "\20\e907";
-            font-size: .75em;
+            font-size: 0.75em;
         }
         
         #faqs :checked+label:after {
@@ -228,10 +251,10 @@
             position: absolute;
             left: -40px;
             font-size: 1.6em;
-            font-family: 'Playfair Display', playfair-display, serif;
+            font-family: "Playfair Display", playfair-display, serif;
             color: #807069;
             font-weight: normal;
-            line-height: .8;
+            line-height: 0.8;
         }
         
         @media only screen and (min-width: 500px) {
@@ -301,21 +324,14 @@
         }
     </style>
 
-    <nav id="breadcrumbs">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li>Design Services</li>
-        </ul>
-    </nav>
-
-    <!-- navigation -->
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
                 <a class="active">Design Services</a>
                 <a href="/content/design-services/meet-our-designers">Meet Our Designers</a>
                 <a href="/content/design-services/design-stories">Design Stories</a>
-                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
 
@@ -325,50 +341,58 @@
                 <div class="background-image"></div>
                 <div class="story">
                     <div class="image">
-                        <img src="https://www.la-z-boy.com/Images/design-services/cathy.png" alt="Cathy">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                            <mask id="test01">                                
-                                <polygon points="0,0 100,0 100,100 0,100" fill="white"/>
-                                <polygon points="35,24 80,50 35,76" fill="black"/>
-                            </mask>
-                            <circle cx="50" cy="50" r="50" fill="green" mask="url(#test01)" />
-                        </svg> -->
-                        <svg viewBox="0 0 100 100" id="play-button" data-video-modal="mErj05nn28Y" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                            <defs>
-                                <mask id="hole">
-                                    <polygon points="0,0 100,0 100,100 0,100" fill="white"/>
-                                    <polygon points="35,24 80,50 35,76" fill="black"/>
-                                </mask>
-                            </defs>
-                            <circle r="50" cy="50" cx="50" fill="white" fill-opacity=".6" mask="url(#hole)" style="outline: transparent solid 2px;"></circle>
-                        </svg>
+                        <img src="/Images/design-services/design-stories/cathy/headshot.jpg" alt="Cathy">
+                        <img src="/Images/design-services/play.svg" alt="play" id="play-button" data-video-modal="mErj05nn28Y">
                     </div>
                     <h2>Create A&nbsp;space you&rsquo;ll love</h2>
-                    <p>La-Z-Boy offers Free Design Services to help you create the room of your&nbsp;dreams.</p>
+                    <p>You can get the room of your dreams, and have fun doing it. See Cathy’s design story.</p>
                 </div>
             </div>
         </section>
         <section id="get">
-            <div class="two-col gutter-20-30">
+            <div class="two-col gutter-20-30 module01">
                 <div>
-                    <h2>What<br>you&rsquo;ll get</h2>
-                    <p>Whether you&rsquo;re transforming a single room or an entire home, you&rsquo;ll start with a free consultation with a <span class="no-wrap">La-Z-Boy</span> Certified Design Expert in your home or at your local store.</p>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/get01.png" alt=""></div>
+                    <h2>The process</h2>
+                    <p>Start with a free consultation with a <span class="no-wrap">La-Z-Boy</span> Interior Designer at home, in-store or virtually. You and your designer will come up with a custom room plan that reflects your personal style, wants and budget.
+                    </p>
+                    <div class="image"><img src="/Images/design-services/get01.png" alt=""></div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/get02.png" alt=""></div>
-                    <p>Your Certified Design Expert will listen to your needs, and work side-by-side with you to create a custom plan based on your schedule, lifestyle and budget.</p>
-                    <p>Soon, you&rsquo;ll see your project take shape, from swatches and wood samples to computer-rendered 3-D graphics. Your <span class="no-wrap">La-Z-Boy</span> designer will handle every detail, right through to your very own reveal day.</p>
+                    <div class="image"><img src="/Images/design-services/get02.png" alt=""></div>
+                    <p>Then you’ll get to go over swatches, wood finishes and 3D renderings of your new room so that you can better visualize your space. Once you decide on the final touches, your designer will handle ordering, setup and reveal!</p>
                 </div>
             </div>
-            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <section id="method">
+            <div class="modules">
+                <div>
+                    <div class="image"><img src="/Images/design-services/method01.png" alt="icon of store"></div>
+                    <h3>Local store</h3>
+                    <p>Visit your local <span class="no-wrap">La-Z-Boy</span> to work with one of our Interior Designers.</p>
+                    <a href="/storeLocator/storeLocator.jsp">Find a Store Near You</a>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/design-services/method02.png" alt="icon of paper and pencil"></div>
+                    <h3>Consultation</h3>
+                    <p>Discuss your design preferences and your project with your Interior Designer.</p>
+                    <a href="/content/design-services/design-request-form">Book Your Consultation</a>
+                </div>
+                <div>
+                    <div class="image">
+                        <img src="/Images/design-services/method03.png" alt="icon of video call on mobile device">
+                    </div>
+                    <h3>Appointment</h3>
+                    <p>Work virtually with an Interior Designer from the comfort of your home.</p>
+                    <a href="/content/design-services/free-virtual-design">Set Your Appointment</a>
+                </div>
+            </div>
         </section>
         <div class="med-gray">
             <section id="featured-designers" class="white">
                 <div class="two-col gutter-20-30">
                     <div class="copy">
                         <h2>Featured Designers</h2>
-                        <p>La-Z-Boy designers provide expert guidance to help bring your vision to life. Read&nbsp;their stories, and see how the&rsquo;re transforming houses into homes.</p>
+                        <p>La-Z-Boy designers provide expert guidance to help bring your vision to life. See their individual room transformations, design stories and favorite tips.</p>
                         <a href="/content/design-services/meet-our-designers">View all Designers</a>
                     </div>
                     <div data-flickity='{
@@ -379,22 +403,22 @@
                         "contain": true
                         }'>
                         <div class="designer">
-                            <img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/erica/headshot.png" alt="">
-                            <h3>Erica</h3>
+                            <img src="/Images/design-services/meet-our-designers/erica/headshot.png" alt="">
+                            <h4>Erica</h4>
                             <p>Sterling Heights, MI</p>
-                            <a href="/content/design-services/erica">Meet Designer</a>
+                            <a href="/content/design-services/meet-our-designers/erica">Meet Designer</a>
                         </div>
                         <div class="designer">
-                            <img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/headshot.png" alt="">
-                            <h3>Jonathan</h3>
+                            <img src="/Images/design-services/meet-our-designers/jonathan/headshot.png" alt="">
+                            <h4>Jonathan</h4>
                             <p>Pittsburgh, PA</p>
-                            <a href="/content/design-services/amanda">Meet Designer</a>
+                            <a href="/content/design-services/meet-our-designers/jonathan">Meet Designer</a>
                         </div>
                         <div class="designer">
-                            <img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica/headshot.png" alt="">
-                            <h3>Jessica</h3>
+                            <img src="/Images/design-services/meet-our-designers/jessica/headshot.png" alt="">
+                            <h4>Jessica</h4>
                             <p>South Bend, IN</p>
-                            <a href="/content/design-services/jessica_s">Meet Designer</a>
+                            <a href="/content/design-services/meet-our-designers/jessica_s">Meet Designer</a>
                         </div>
                     </div>
                 </div>
@@ -410,29 +434,51 @@
                 "contain": true
                 }'>
                 <div class="ba-slider">
-                    <img src="https://dummyimage.com/1960x1000/0f0/aaa">
+                    <img src="/Images/design-services/after02.jpg">
                     <div class="resize">
-                        <img src="https://dummyimage.com/1960x1000/0ff/aaa">
+                        <img src="/Images/design-services/before02.jpg">
                     </div>
                     <span class="handle"></span>
                 </div>
                 <div class="ba-slider">
-                    <img src="https://dummyimage.com/1960x1000/f0f/aaa">
+                    <img src="/Images/design-services/after05.jpg">
                     <div class="resize">
-                        <img src="https://dummyimage.com/1960x1000/ff0/aaa">
+                        <img src="/Images/design-services/before05.jpg">
                     </div>
                     <span class="handle"></span>
                 </div>
                 <div class="ba-slider">
-                    <img src="https://dummyimage.com/1960x1000/00f/aaa">
+                    <img src="/Images/design-services/after04.jpg">
                     <div class="resize">
-                        <img src="https://dummyimage.com/1960x1000/f00/aaa">
+                        <img src="/Images/design-services/before04.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+                <div class="ba-slider">
+                    <img src="/Images/design-services/after03.jpg">
+                    <div class="resize">
+                        <img src="/Images/design-services/before03.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+                <div class="ba-slider">
+                    <img src="/Images/design-services/after01.jpg">
+                    <div class="resize">
+                        <img src="/Images/design-services/before01.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+                <div class="ba-slider">
+                    <img src="/Images/design-services/after06.jpg">
+                    <div class="resize">
+                        <img src="/Images/design-services/before06.jpg">
                     </div>
                     <span class="handle"></span>
                 </div>
             </div>
-            <a href="" style="text-align: center; margin-top: 20px">View More Before &amp; After Stories</a>
-            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+            <a href="/content/design-services/design-stories" style="text-align: center; margin-top: 20px;">View More Before &amp; After Stories</a
+      >
+      <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
         <section id="faqs">
             <input type="checkbox" id="toggle-faqs" style="display: none;">
@@ -441,22 +487,29 @@
                 <div class="three-col">
                     <div>
                         <p class="q">Are these services really free?</p>
-                        <p class="a">Absolutely! The planning, presentation and coordinating services you would normally pay a professional interior designer to do are 100% free from <span class="no-wrap">La-Z-Boy</span>. You only pay for your <span class="no-wrap">La-Z-Boy</span>                            furniture and any delivery charges.</p>
+                        <p class="a">
+                            Absolutely! The planning, presentation and coordinating services you would normally pay a professional interior designer to do are 100% free from <span class="no-wrap">La-Z-Boy</span>. You only pay for your
+                            <span class="no-wrap">La-Z-Boy</span> furniture and any delivery charges.
+                        </p>
                     </div>
                     <div>
                         <p class="q">Will the designer listen to my ideas?</p>
-                        <p class="a">Certified Design Experts are trained to listen to your needs and aspirations right from the start. They work right alongside you, offering suggestions based on your budget and their extensive knowledge of <span class="no-wrap">La-Z-Boy</span>                            products. But, the customer always has final approval.</p>
+                        <p class="a">
+                            Certified Design Experts are trained to listen to your needs and aspirations right from the start. They work right alongside you, offering suggestions based on your budget and their extensive knowledge of
+                            <span class="no-wrap">La-Z-Boy</span> products. But, the customer always has final approval.
+                        </p>
                     </div>
                     <div>
                         <p class="q">What if I want to keep some of my old furniture?</p>
-                        <p class="a">La-Z-Boy designers understand the importance of integrating your existing furniture, accessories and artwork into your new look. They are trained to offer designs that bring together old and new for results that showcase your individual
-                            taste and&nbsp;style.</p>
+                        <p class="a">
+                            <span class="no-wrap">La-Z-Boy</span> designers understand the importance of integrating your existing furniture, accessories and artwork into your new look. They are trained to offer designs that bring together old and new
+                            for results that showcase your individual taste and&nbsp;style.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-
 
     <!-- end NPC content -->
 </body>

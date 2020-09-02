@@ -1,0 +1,140 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr('href', $(this).attr('href') + ".html");
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Shared code -->
+
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/uat/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+
+    <!-- Main Content -->
+
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services">Design Services</a></li>
+            <li><a href="/content/design-services/design-stories">Design Stories</a></li>
+            <li>Susie & Greg's Story</li>
+        </ul>
+    </nav>
+
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories" class="active">Design Stories</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
+            </div>
+        </nav>
+
+        <h1>Design Story</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/design-stories/susie-greg/headshot.jpg" alt="Susie and Greg"></div>
+                        <h2>Susie & Greg</h2>
+                        <p><span class="no-wrap">La-Z-Boy</span> Clients</p>
+                    </div>
+                </div>
+                <div class="background-image play-vid" style="background-image: url('https://www.la-z-boy.com/Images/design-services/design-stories/susie-greg/hero.jpg');">
+                    <div data-video-modal="jg6J3jBN3yM"></div>
+                </div>
+            </div>
+        </section>
+        <section id="oer">
+            <div class="two-col gutter-20-30 module01">
+                <div>
+                    <h2>The opportunity</h2>
+                    <p>We moved into our home about two months ago. The thought of buying a house full of furniture is daunting. We had planned to hire a designer, since we knew we couldn’t do it all on our own. We went to <span class="no-wrap">La-Z-Boy</span>                        for a couple of chairs and discovered their free design services.</p>
+                    <div class="image"><img src="/Images/design-services/design-stories/susie-greg/room01.jpg" alt=""></div>
+                    <h2>The experience</h2>
+                    <p>Our designer was wonderful! She was able to give us the look we wanted, but couldn’t quite get on our own. We were also happy to see <span class="no-wrap">La-Z-Boy</span> had office and bedroom furniture! They helped us achieve our
+                        vision of a beautiful home!</p>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/design-services/design-stories/susie-greg/room02.jpg" alt=""></div>
+                    <h2>The result</h2>
+                    <p>Easily the most popular reaction we get is that our house should be in a magazine! Not only does it look nice, but it’s actually comfortable! I don’t think we could be happier with how it actually turned out.</p>
+                </div>
+            </div>
+        </section>
+        <section id="products">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": false,
+                "prevNextButtons": false,
+                "cellAlign": "center",
+                "contain": true
+                }'>
+                <div class="product bigger">
+                    <div class="image"><img src="/Images/design-services/design-stories/susie-greg/silo01.jpg" alt="Kennedy Sofa"></div>
+                    <a href="/p/sofas/kennedy-sofa/_/R-610593">Kennedy Sofa</a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/susie-greg/silo02.jpg" alt="Foundry Rectangular Cocktail Table"></div>
+                    <a href="/p/home-accents/foundry-rectangular-cocktail-table/_/R-59-023">Foundry Cocktail Table</a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/susie-greg/silo03.jpg" alt="Kennedy Chair"></div>
+                    <a href="/p/chairs/kennedy-chair/_/R-230593">Kennedy Chair</a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/susie-greg/silo04.jpg" alt="Foundry Entertainment Console"></div>
+                    <a href="/p/home-accents/foundry-entertainment-console/_/R-59-035">Foundry Entertainment Console</a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/susie-greg/silo05.jpg" alt="Cabot Low Leg Reclining Chair"></div>
+                    <a href="/p/recliners/cabot-low-leg-reclining-chair/_/R-255439">Cabot Reclining Chair</a>
+                </div>
+                <div class="product">
+                    <div class="image"><img src="/Images/design-services/design-stories/susie-greg/silo06.jpg" alt="Foundry Etagere"></div>
+                    <a href="/p/home-accents/foundry-etagere/_/R-59-030">Foundry Etagere</a>
+                </div>
+            </div>
+            <p class="fine-print">*Products and covers shown above may no longer be available.</p>
+        </section>
+        <div class="light-gray">
+            <section id="final-thoughts">
+                <div class="two-col gutter-20-30">
+                    <div>
+                        <h2>Final thoughts</h2>
+                    </div>
+                    <div>
+                        <p>Easily the most popular reaction we get is that our house should be in a magazine! Not only does it look nice, but it’s actually comfortable! I don’t think we could be happier with how it actually turned out.</p>
+                        <a href="/content/design-services/meet-our-designers/shannon">See more designs by Shannon</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+
+
+    <!-- end NPC content -->
+</body>

@@ -15,9 +15,8 @@
 </head>
 
 <body>
-    <!-- begin NPC content -->
-    <!-- Design Services TT -->
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Shared code -->
+
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
         if (typeof define == 'function' && define.amd) {
@@ -29,6 +28,8 @@
         }
     </script>
 
+    <!-- Main Content -->
+
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,14 +39,14 @@
         </ul>
     </nav>
 
-    <!-- navigation -->
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
                 <a href="/content/design-services">Design Services</a>
                 <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
                 <a href="/content/design-services/design-stories">Design Stories</a>
-                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
 
@@ -56,7 +57,7 @@
                     <div>
                         <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica/headshot.jpg" alt="Jessica"></div>
                         <h2>Jessica</h2>
-                        <p>La-Z-Boy Designer</p>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
                 <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica/hero.jpg');"></div>
@@ -68,13 +69,63 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Chandler, AZ</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>“Picking a piece of furniture is like trying on shoes; it has to fit just right.” Jessica has a degree in Interior Design, and you can tell by the incredible rooms she has put together. She designs your space to be functional,
+                            and have a great color palette and energy.</p>
                     </div>
                     <div class="favorites">
-                        <p class="heading">Favorite Design styles:</p>
-                        <p>TBD</p>
-                        <p class="divider">TBD</p>
+                        <p class="heading">Design badges:</p>
+                        <div id="badges">
+                            <div>
+                                <input type="radio" id="badge01-rb" name="badge" checked>
+                                <label class="image" for="badge01-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MixMaster.png" alt="Mix Master badge">
+                                </label>
+                                <p>
+                                    <strong>Mix Master</strong>
+                                    <br>Mixing and matching patterns in unique ways.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge02-rb" name="badge">
+                                <label class="image" for="badge02-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/ContemporaryCool.png" alt="Contemporary Cool badge">
+                                </label>
+                                <p>
+                                    <strong>Contemporary Cool</strong>
+                                    <br>Clean lines and neutral palettes with pops of color.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge03-rb" name="badge">
+                                <label class="image" for="badge03-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                </label>
+                                <p>
+                                    <strong>Couples Collaborator</strong>
+                                    <br>Blending styles for a look you&rsquo;ll both love.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge04-rb" name="badge">
+                                <label class="image" for="badge04-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                </label>
+                                <p>
+                                    <strong>Palette Pro</strong>
+                                    <br>Clever color combos to create the perfect mood.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge05-rb" name="badge">
+                                <label class="image" for="badge05-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/KidFriendly.png" alt="Kid Friendly badge">
+                                </label>
+                                <p>
+                                    <strong>Kid Friendly</strong>
+                                    <br>Designing spaces with safety and spills in mind.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -116,8 +167,8 @@
                 </div>
                 <div>
                     <p class="heading">What is the design tip you just can't stress enough?</p>
-                    <p>Don’t be afraid of pattern mixing! Everything doesn’t have to match and mixing things up can really set your design apart. La-Z-Boy has so many different patterns and colors that can be mixed together to create a really nice, unique
-                        palette.
+                    <p>Don’t be afraid of pattern mixing! Everything doesn’t have to match and mixing things up can really set your design apart. <span class="no-wrap">La-Z-Boy</span> has so many different patterns and colors that can be mixed together to
+                        create a really nice, unique palette.
                     </p>
                     <p class="heading">Name one thing on your bucket list, and why.</p>
                     <p>To visit New York City. Food and shopping are my two favorite things, and I just don’t think I could find a place better than New York City to do those things.</p>
@@ -142,13 +193,13 @@
                             }'>
                             <div class="testimonial">
                                 <h3>Big Projects Made Easy</h3>
-                                <p>I can't express how thrilled my husband and I are with the room designed by Jessica. We have shopped at La-Z-Boy for years and when we were finally ready to redo an entire space we knew just where to go. We gave her full
-                                    control and she didn't disappoint... the moment we saw her ideas come to life we instantly fell in love. This became possible only through Jessica's extraordinary vision and design talent.</p>
+                                <p>I can't express how thrilled my husband and I are with the room designed by Jessica. We have shopped at <span class="no-wrap">La-Z-Boy</span> for years and when we were finally ready to redo an entire space we knew just
+                                    where to go. We gave her full control and she didn't disappoint... the moment we saw her ideas come to life we instantly fell in love. This became possible only through Jessica's extraordinary vision and design talent.</p>
                             </div>
                             <div class="testimonial">
                                 <h3>Design Perfection</h3>
-                                <p>It was a great help to us being new to the area to have Jessica and Monique at La-Z-Boy put everything together for our new home in Arizona. Not only did our designer help fill the different angles and walls of our room,
-                                    but made sure to complement each piece of furniture. In the end, we did not just purchase furniture…we invested in a foundation for our family and friends, in our rooms designed by Jessica.</p>
+                                <p>It was a great help to us being new to the area to have Jessica and Monique at <span class="no-wrap">La-Z-Boy</span> put everything together for our new home in Arizona. Not only did our designer help fill the different
+                                    angles and walls of our room, but made sure to complement each piece of furniture. In the end, we did not just purchase furniture…we invested in a foundation for our family and friends, in our rooms designed by Jessica.</p>
                             </div>
                         </div>
                     </div>
@@ -159,6 +210,7 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
+
 
     <!-- end NPC content -->
 </body>

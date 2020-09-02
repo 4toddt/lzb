@@ -15,9 +15,8 @@
 </head>
 
 <body>
-    <!-- begin NPC content -->
-    <!-- Design Services TT -->
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Shared code -->
+
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
         if (typeof define == 'function' && define.amd) {
@@ -29,6 +28,8 @@
         }
     </script>
 
+    <!-- Main Content -->
+
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,14 +39,14 @@
         </ul>
     </nav>
 
-    <!-- navigation -->
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
                 <a href="/content/design-services">Design Services</a>
                 <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
                 <a href="/content/design-services/design-stories">Design Stories</a>
-                <a href="/content/design-services/design-request-form">Book My FREE Consultation</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
 
@@ -56,7 +57,7 @@
                     <div>
                         <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/headshot.jpg" alt="Sonja"></div>
                         <h2>Sonja</h2>
-                        <p>La-Z-Boy Designer</p>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
                 <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/hero.jpg');"></div>
@@ -68,13 +69,63 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Mesa, AZ</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Her first major step in designing a space is talking and really getting to know the client. Sonya realizes how variable style really is, and wants to tap into just what her client wants. “Style is so personal and individual and
+                            specific. It goes beyond what something simply looks like.”</p>
                     </div>
                     <div class="favorites">
-                        <p class="heading">Favorite Design styles:</p>
-                        <p>TBD</p>
-                        <p class="divider">TBD</p>
+                        <p class="heading">Design badges:</p>
+                        <div id="badges">
+                            <div>
+                                <input type="radio" id="badge01-rb" name="badge" checked>
+                                <label class="image" for="badge01-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/UrbanLiving.png" alt="Urban Living badge">
+                                </label>
+                                <p>
+                                    <strong>Urban Living</strong>
+                                    <br>Creating big city looks, even in smaller spaces.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge02-rb" name="badge">
+                                <label class="image" for="badge02-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Coastal.png" alt="Coastal Chic badge">
+                                </label>
+                                <p>
+                                    <strong>Coastal Chic</strong>
+                                    <br>Creating light and bright, beach-inspired looks.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge03-rb" name="badge">
+                                <label class="image" for="badge03-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MidCentury.png" alt="Mid-Century Modern badge">
+                                </label>
+                                <p>
+                                    <strong>Mid-Century Modern</strong>
+                                    <br>Blending retro with right now for timeless looks.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge04-rb" name="badge">
+                                <label class="image" for="badge04-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/TransitionalStylist.png" alt="Transitional Stylist badge">
+                                </label>
+                                <p>
+                                    <strong>Transitional Stylist</strong>
+                                    <br>Balancing traditional and contemporary styles.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge05-rb" name="badge">
+                                <label class="image" for="badge05-rb">
+                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/ManSpaces.png" alt="Man Spaces badge">
+                                </label>
+                                <p>
+                                    <strong>Man Spaces</strong>
+                                    <br>Designing a space for him that you&rsquo;ll love, too.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -147,7 +198,7 @@
                                 <h3>The Home She Wanted</h3>
                                 <p>Kelly and Sonja did an amazing job helping me bring my vision to life! They keyed in on my style and very quickly, showed me great pieces that I might not have considered, and helped bring depth to the design. They even
                                     took into account the adjoining rooms so everything works well together. I especially appreciated being able to see what the room will look like from each entry point and that they are able to incorporate some of my
-                                    favorite existing pieces. it’s going to look fantastic and leave no doubt that it’s MY home.</p>
+                                    favorite existing pieces. It’s going to look fantastic and leave no doubt that it’s MY home.</p>
                             </div>
                         </div>
                     </div>
@@ -158,6 +209,7 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
+
 
     <!-- end NPC content -->
 </body>
