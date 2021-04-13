@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Shannon</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/shannon/headshot.jpg" alt="Shannon"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/shannon/headshot.jpg" alt="Shannon"></div>
                         <h2>Shannon</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/shannon/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/shannon/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,7 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Dublin, OH</p>
-                        <p>Art, nature, fashion, Shannon can find inspiration “from all over”. She also likes being able to help combine colors and patterns to create a seamlessly stylish look.</p>
+                        <p>Art, nature, fashion, Shannon can find inspiration “from all over”. She also likes being able to help combine colors and patterns to create a seamlessly stylish&nbsp;look.</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -77,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PalettePro.png" alt="Palette Pro badge">
                                 </label>
                                 <p>
                                     <strong>Palette Pro</strong>
-                                    <br>Clever color combos to create the perfect mood.
-                                </p>
+                                    <br>Clever color combos to create the perfect mood. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/SpaceMaximizer.png" alt="Space Maximizer badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/SpaceMaximizer.png" alt="Space Maximizer badge">
                                 </label>
                                 <p>
                                     <strong>Space Maximizer</strong>
-                                    <br>Creative space planning and room flow.
-                                </p>
+                                    <br>Creative space planning and room flow. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/TransitionalStylist.png" alt="Transitional Stylist badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/TransitionalStylist.png" alt="Transitional Stylist badge">
                                 </label>
                                 <p>
                                     <strong>Transitional Stylist</strong>
-                                    <br>Balancing traditional and contemporary styles.
-                                </p>
+                                    <br>Balancing traditional and contemporary styles. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/CouplesCollaborator.png" alt="Couples Collaborator badge">
                                 </label>
                                 <p>
                                     <strong>Couples Collaborator</strong>
-                                    <br>Blending styles for a look you&rsquo;ll both love.
-                                </p>
+                                    <br>Blending styles for a look you’ll both love. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/KidFriendly.png" alt="Kid-Friendly badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/KidFriendly.png" alt="Kid-Friendly badge">
                                 </label>
                                 <p>
                                     <strong>Kid-Friendly</strong>
-                                    <br>Designing spaces with safety and spills in mind.
-                                </p>
+                                    <br>Designing spaces with safety and spills in mind. </p>
                             </div>
                         </div>
                     </div>
@@ -137,19 +125,19 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room03.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room03.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room04.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room04.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room05.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/shannon/room05.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -160,16 +148,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">What’s your #1 design tip?</p>
-                    <p>The design tip I cannot stress enough is that when combining patterns to make sure that you keep in mind to have different scales of fabrics. I have a lot of clients that like all different kinds of patterns but want to make sure they
-                        can combine them. I tell them they can as long as they vary in scale. You can have a large pattern on a chair but then a smaller pattern on a rug and vice-versa; as long as you don’t have multiple patterns that hold the same weight
-                        in scale.</p>
+                    <p class="heading">What’s your #1 design&nbsp;tip?</p>
+                    <p>The design tip I cannot stress enough is that when combining patterns to make sure that you keep in mind to have different scales of fabrics. I have a lot of clients that like all different kinds of patterns but want to make sure they can combine them. I tell them they can as long as they vary in scale. You can have a large pattern on a chair but then a smaller pattern on a rug and vice-versa; as long as you don’t have multiple patterns that hold the same weight in&nbsp;scale.</p>
                 </div>
                 <div>
-                    <p class="heading">What is your favorite part of designing a client’s home?</p>
-                    <p>My favorite part is making their house into a home. I love helping them bring their wants and needs to life. I also love seeing their reactions when I can make their dreams come true.</p>
-                    <p class="heading">Where do you find your inspiration?</p>
-                    <p>I find my inspiration from what is around me. I can find it from a piece of art or nature and even fashion. I find inspiration from all over. The world is all color and design so it is really easy to find my inspiration anywhere.</p>
+                    <p class="heading">What is your favorite part of designing a client’s&nbsp;home?</p>
+                    <p>My favorite part is making their house into a home. I love helping them bring their wants and needs to life. I also love seeing their reactions when I can make their dreams come&nbsp;true.</p>
+                    <p class="heading">Where do you find your&nbsp;inspiration?</p>
+                    <p>I find my inspiration from what is around me. I can find it from a piece of art or nature and even fashion. I find inspiration from all over. The world is all color and design so it is really easy to find my inspiration&nbsp;anywhere.</p>
                 </div>
             </div>
         </section>
@@ -191,18 +177,15 @@
                             }'>
                             <div class="testimonial">
                                 <h3>Very Knowledgeable and Patient</h3>
-                                <p>Shannon was extremely knowledgeable on everything from the options that were available on each item to where it was on the sales floor. She was informative, yet not pushy. She was very patient with us as we decided on the
-                                    styles, fabrics, and colors. She is even going to meet the delivery truck to help us when the furniture arrives. What a stellar example of customer service! We are very impressed.</p>
+                                <p>Shannon was extremely knowledgeable on everything from the options that were available on each item to where it was on the sales floor. She was informative, yet not pushy. She was very patient with us as we decided on the styles, fabrics, and colors. She is even going to meet the delivery truck to help us when the furniture arrives. What a stellar example of customer service! We are very&nbsp;impressed.</p>
                             </div>
                             <div class="testimonial">
                                 <h3>Very Welcoming</h3>
-                                <p>I had an amazing home design consultation with Shannon. I choose several fabrics in the store but once she presented them in my home, they just were not the right color or fabric. I made another consult appointment in the
-                                    store. I always felt very welcome when I re-visited the store. The visual presentation also gave me a much needed perspective on my purchasing decision.</p>
+                                <p>I had an amazing home design consultation with Shannon. I choose several fabrics in the store but once she presented them in my home, they just were not the right color or fabric. I made another consult appointment in the store. I always felt very welcome when I re-visited the store. The visual presentation also gave me a much needed perspective on my purchasing&nbsp;decision.</p>
                             </div>
                             <div class="testimonial">
                                 <h3>An All-Around Great Job</h3>
-                                <p>The designer, Shannon, did an excellent job of listening to our tastes and suggesting appropriate fabrics for the furniture pieces we selected for our family room. She also did a nice job of selecting furniture pieces and
-                                    a layout for our living room! Thanks Shannon!</p>
+                                <p>The designer, Shannon, did an excellent job of listening to our tastes and suggesting appropriate fabrics for the furniture pieces we selected for our family room. She also did a nice job of selecting furniture pieces and a layout for our living room! Thanks&nbsp;Shannon!</p>
                             </div>
                         </div>
                     </div>
@@ -213,7 +196,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

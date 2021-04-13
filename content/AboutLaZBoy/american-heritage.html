@@ -1,0 +1,1374 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab');
+        @font-face {
+            font-family: 'icomoon';
+            src: url('/css/fonts/icomoon.eot?intxku');
+            src: url('/css/fonts/icomoon.eot?intxku#iefix') format('embedded-opentype'), url('/css/fonts/icomoon.ttf?intxku') format('truetype'), url('/css/fonts/icomoon.woff?intxku') format('woff'), url('/css/fonts/icomoon.svg?intxku#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        [class^="icon-"],
+        [class*=" icon-"],
+        .arrow-right:after,
+        .download::after,
+        #topnav li.parent>a:after,
+        #topnav li.parent>label:after {
+            font-family: 'icomoon' !important;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .icon-phone:before {
+            content: "\e942";
+        }
+        
+        .icon-envelop:before {
+            content: "\e945";
+        }
+        
+        .arrow-right:after {
+            content: "\00a0\e904";
+            font-size: 0.7em;
+        }
+        
+        .download::after {
+            content: "\00a0\e960";
+        }
+        
+        .registered:after {
+            content: "\00ae";
+            font-size: .6em;
+            vertical-align: super;
+            line-height: 0;
+        }
+        
+        .arrow-right,
+        .download {
+            display: inline-block;
+        }
+        /* resets */
+        
+        html {
+            box-sizing: border-box;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        /* defaults and utility */
+        
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            color: #494949;
+            font-size: 20px;
+        }
+        
+        img {
+            display: block;
+            width: 100%;
+        }
+        
+        .page-width {
+            max-width: 1020px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 0 auto;
+        }
+        
+        @media only screen and (max-width: 599.9px) {
+            .tablet-desktop {
+                display: none !important;
+            }
+        }
+        
+        @media only screen and (min-width: 600px) {
+            .mobile {
+                display: none !important;
+            }
+        }
+        /* background colors */
+        
+        .gray {
+            background-color: #f5f5f5;
+        }
+        
+        .blue {
+            background-color: #0070AF;
+            color: white;
+        }
+        /* topnav */
+        
+        #topnav {
+            font-size: 18px;
+            line-height: 1;
+            height: 110px;
+            position: relative;
+        }
+        
+        #topnav .logo {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 271px;
+            max-width: 70%;
+        }
+        
+        #topnav .logo img {
+            max-width: 100%;
+            border: none;
+        }
+        
+        #topnav .hamburger {
+            padding: 15px 15px;
+            display: inline-block;
+            cursor: pointer;
+            transition-property: opacity, filter;
+            transition-duration: 0.15s;
+            transition-timing-function: linear;
+            font: inherit;
+            color: inherit;
+            text-transform: none;
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            overflow: visible;
+            position: absolute;
+            right: 0;
+            top: 28px;
+        }
+        
+        #topnav .hamburger-box {
+            width: 30px;
+            height: 24px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        #topnav .hamburger-inner,
+        #topnav .hamburger-inner::before,
+        #topnav .hamburger-inner::after {
+            width: 30px;
+            height: 3px;
+            background-color: #494949;
+            border-radius: 3px;
+            position: absolute;
+            transition-property: all;
+            transition-duration: .2s;
+            transition-timing-function: ease-out;
+        }
+        
+        #topnav .hamburger-inner {
+            display: block;
+            top: 50%;
+            margin-top: -2px;
+            background-color: transparent;
+            background-image: linear-gradient(to right, #494949, #494949);
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: 100% 3px;
+        }
+        
+        #topnav .hamburger:hover .hamburger-inner::before,
+        #topnav .hamburger:hover .hamburger-inner::after {
+            background-color: #0070AF;
+        }
+        
+        #topnav .hamburger:hover .hamburger-inner {
+            background-image: linear-gradient(to right, #0070AF, #0070AF);
+        }
+        
+        #topnav .hamburger-inner::before,
+        #topnav .hamburger-inner::after {
+            content: "";
+            display: block;
+        }
+        
+        #topnav .hamburger-inner::before {
+            top: -9px;
+        }
+        
+        #topnav .hamburger-inner::after {
+            bottom: -9px;
+        }
+        
+        #hamburger-toggle:checked~.hamburger .hamburger-inner {
+            background-size: 0 3px;
+        }
+        
+        #hamburger-toggle:checked~.hamburger .hamburger-inner::before {
+            top: 0;
+            transform: rotate(45deg);
+        }
+        
+        #hamburger-toggle:checked~.hamburger .hamburger-inner::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+        }
+        
+        #topnav ul {
+            padding: 0;
+            z-index: 1;
+        }
+        
+        #topnav>ul {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 110px 0 0;
+            width: 60%;
+            min-width: 250px;
+            max-width: 400px;
+            background-color: #f5f5f5;
+            text-align: right;
+            padding: 0;
+        }
+        
+        #topnav>ul:before {
+            content: "Sustainability";
+            font-size: 1.4em;
+            display: block;
+            max-height: 0;
+            padding: 0 2.2em;
+            color: transparent;
+            transition-property: max-height, padding, color;
+            transition-duration: .2s;
+            transition-timing-function: ease-out;
+        }
+        
+        #hamburger-toggle:checked~ul:before {
+            padding: .6em 2.2em .6em 0;
+            max-height: 54px;
+            color: #494949;
+        }
+        
+        #topnav li {
+            list-style-type: none;
+            border-top-style: dashed;
+            border-width: 0;
+            border-color: gray;
+            padding-right: 3em;
+            transition: border-width .2s ease-out;
+        }
+        
+        #topnav li.parent {
+            padding-right: 1.8em;
+            cursor: pointer;
+        }
+        
+        #hamburger-toggle:checked~ul li {
+            border-width: 1px;
+        }
+        
+        #topnav li a,
+        #topnav li label {
+            color: #494949;
+            display: block;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition-property: max-height, padding;
+            transition-duration: .2s;
+            transition-timing-function: ease-out;
+            cursor: pointer;
+        }
+        
+        #topnav li a:hover,
+        #topnav label:hover,
+        #topnav [name="show-submenu"]:checked+label {
+            color: #0070AF;
+        }
+        
+        #topnav li .current-page {
+            font-weight: bold;
+        }
+        
+        #hamburger-toggle:checked~ul li a,
+        #hamburger-toggle:checked~ul li label {
+            max-height: 3em;
+            padding: 1em 0;
+        }
+        
+        #topnav li li {
+            border-top-style: none;
+            padding-right: 0;
+        }
+        
+        #topnav li li a {
+            font-size: .9em;
+        }
+        
+        #topnav li li a.current-page {
+            cursor: default;
+        }
+        
+        #hamburger-toggle:checked~ul li li a {
+            padding: 0;
+            max-height: 0;
+        }
+        
+        #hamburger-toggle:checked~ul [name="show-submenu"]:checked~ul a {
+            padding-bottom: 1em;
+            max-height: 2em;
+        }
+        
+        #topnav li label:after {
+            content: "\00a0\e907";
+            font-size: 0.8em;
+            transition: transform .2s ease-out;
+            display: inline-block;
+        }
+        
+        #topnav [name="show-submenu"]:checked+label:after {
+            transform: scaleY(-1);
+        }
+        
+        .hero-background {
+            padding-top: 70px;
+            padding-bottom: 40%;
+            margin-bottom: -40%;
+        }
+        
+        #hero {
+            position: relative;
+        }
+        /* font defaults */
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Roboto Slab', serif;
+            color: #0070af;
+            font-weight: normal;
+            line-height: 1.2;
+        }
+        
+        #hero h1 {
+            font-size: 2em;
+            margin: .5em 0 0;
+            color: #494949;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 1.6em;
+            margin: 70px 0 0;
+        }
+        
+        h3 {
+            font-size: 1.2em;
+            margin: 50px 0 0;
+        }
+        
+        h4 {
+            font-size: 1em;
+            margin: 30px 0 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0070AF;
+        }
+        
+        a:hover {
+            color: #005485;
+        }
+        
+        .button>a {
+            border: solid 2px #0070af;
+            padding: .6em .8em;
+            color: #0070af;
+            margin: 30px 0 0;
+            white-space: nowrap;
+            background-color: #fff;
+            transition: all .1s ease-out;
+        }
+        
+        .button>a:hover {
+            border-color: #005485;
+            color: #005485;
+            background-color: #f5f5f5;
+        }
+        
+        .blue.button>a {
+            color: white;
+            border-color: white;
+            background-color: #0070AF;
+        }
+        
+        .blue.button>a:hover {
+            background-color: #005485;
+        }
+        
+        .gray.button>a {
+            background-color: #f5f5f5;
+        }
+        
+        .gray.button>a:hover {
+            background-color: #ebebeb;
+        }
+        
+        .blue h3 {
+            color: white;
+        }
+        
+        p {
+            margin: 0;
+        }
+        
+        p.fine-print {
+            font-size: .75em;
+        }
+        /* grid */
+        
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .block {
+            max-width: 100%;
+        }
+        
+        .gutter-30 {
+            margin: 0 -15px;
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .gutter-30>.block {
+            margin: 30px 15px 0;
+        }
+        
+        .reverse {
+            display: flex;
+            flex-wrap: wrap-reverse !important;
+        }
+        
+        .reverse>:first-child {
+            order: 1;
+        }
+        
+        .reverse>:last-child {
+            order: -1;
+        }
+        /* indented section */
+        
+        .indent>p {
+            margin: 2.5em 0 0;
+        }
+        
+        .indent>p+p,
+        .indent>h2+p,
+        .indent>h3+p {
+            margin-top: 1.5em;
+        }
+        
+        .indent>h4+p {
+            margin-top: .5em;
+        }
+        
+        .element-icon~p {
+            margin-top: .5em;
+        }
+        
+        .indent>ul>li,
+        .indent>ol>li {
+            margin-top: .5em;
+        }
+        
+        .indent .grid {
+            margin: 0 auto;
+        }
+        
+        .indent .button>a {
+            font-size: 1.2em;
+        }
+        /* blue-gray row and blue-gray-checker */
+        
+        .blue-gray-row {
+            background: linear-gradient(to right, #0070AF 50%, #f5f5f5 50%);
+        }
+        
+        .blue-gray-row>.grid,
+        .blue-gray-checker {
+            max-width: 1040px;
+            margin: 50px auto 0;
+        }
+        
+        .blue-gray-checker {
+            max-width: 980px;
+            justify-content: center;
+        }
+        
+        .blue-gray-checker+.blue-gray-checker {
+            margin-top: 30px;
+        }
+        
+        .blue-gray-row>.grid>.block,
+        .blue-gray-checker>.block {
+            flex: 1 0 375px;
+            padding: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+        }
+        
+        .blue-gray-checker>.block {
+            flex: 0 1 490px;
+            /* force IE to respect box-sizing*/
+            max-width: 490px;
+        }
+        
+        .blue-gray-row>.grid>.block>*,
+        .blue-gray-checker>.block>* {
+            /* keep small elements from wrapping */
+            min-width: 100%;
+        }
+        
+        .blue-gray-row>.grid>:first-child,
+        .blue-gray-checker>:first-child {
+            background-color: #0070AF;
+            font-size: 1.3em;
+        }
+        
+        .blue-gray-row>.grid>:first-child>*,
+        .blue-gray-checker>:first-child>* {
+            color: white;
+        }
+        
+        .blue-gray-row>.grid>:first-child>p,
+        .blue-gray-checker>:first-child>p {
+            margin-top: .5em;
+        }
+        
+        .blue-gray-row>.grid>.block>:first-child,
+        .blue-gray-checker>.block>:first-child {
+            margin-top: 0;
+        }
+        
+        .blue-gray-row>.grid>:last-child,
+        .blue-gray-checker>:last-child {
+            background-color: #f5f5f5;
+        }
+        
+        .blue-gray-checker>:last-child:not(.image-copy) {
+            padding: 0;
+        }
+        
+        .blue-gray-row>.grid>.block>ul,
+        .blue-gray-checker>.block>ul {
+            color: #0070af;
+            font-size: 1.2em;
+            padding-left: 1em;
+            margin: 0;
+        }
+        
+        .blue-gray-row>.grid>.block>ul>li+li,
+        .blue-gray-checker>.block>ul>li+li {
+            margin-top: .5em;
+        }
+        
+        .blue-gray-checker .button>a {
+            font-size: .9em;
+        }
+        /* image-copy blocks */
+        
+        .image-copy {
+            flex: 1 0 250px;
+            font-size: .8em;
+        }
+        
+        .image-copy h3 {
+            color: #0070af;
+            margin: 0;
+        }
+        
+        .image-copy p {
+            margin-top: .5em;
+        }
+        
+        .image-copy img+p {
+            margin-top: 1em;
+        }
+        /* image-copy block rows */
+        
+        .image-copy .row {
+            display: flex;
+            align-items: center;
+            margin: 0 -1.25em;
+            /* width: auto; */
+        }
+        
+        .image-copy .row+.row {
+            margin-top: 1.5em;
+        }
+        
+        .image-copy .image {
+            width: 150px;
+        }
+        
+        .image-copy .copy {
+            width: 310px;
+            width: calc(100% - 150px);
+            margin-left: .5em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        /* table defaults */
+        
+        table {
+            border-collapse: collapse;
+            font-size: inherit;
+            margin: 0 -10px;
+            width: 100%;
+            width: calc(100% + 20px);
+        }
+        
+        th {
+            padding: 0 10px 20px;
+            border-bottom: 1px solid #b7b7b7;
+            text-align: left;
+            color: #494949;
+            min-height: 100px;
+            vertical-align: bottom;
+        }
+        
+        td {
+            padding: 20px 10px 0;
+            color: #494949;
+        }
+        
+        tr>:nth-child(even) {
+            text-align: right;
+        }
+        /* icon in left margin */
+        
+        .element-icon {
+            position: relative;
+        }
+        
+        .element-icon img {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: -70px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+        }
+        
+        .margin-icon h3 {
+            margin: 0;
+        }
+        
+        .margin-icon {
+            margin-top: 50px;
+        }
+        
+        table,
+        .scale-with-table {
+            font-size: .8em;
+        }
+        
+        h3+.margin-icon {
+            margin-top: 30px;
+        }
+        /* gray bar */
+        
+        .gray-bar {
+            background-color: #f5f5f5;
+            margin-top: 30px;
+            padding: 1px 0 50px;
+        }
+        
+        .gray-bar>:first-child {
+            margin-top: 0;
+        }
+        /* Icon Columns */
+        
+        .icon-columns {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px 30px;
+            width: 100%;
+            width: calc(100% + 20px);
+        }
+        
+        .icon-columns .column {
+            flex: 1 200px;
+            max-width: 220px;
+            margin: 30px auto 0;
+            padding: 0 10px;
+            text-align: center;
+        }
+        
+        .icon-columns .column img {
+            width: 50px;
+            margin: 0 auto;
+        }
+        
+        .icon-columns .column h4 {
+            color: #494949;
+            margin-top: .5em;
+        }
+        /* map */
+        
+        .map {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .map .text-box {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            align-content: flex-start;
+            font-size: 0.9em;
+        }
+        
+        .map .text-group {
+            margin: 0 1em;
+        }
+        
+        .map h3 {
+            font-size: 1em;
+            font-family: lato;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        
+        .map p {
+            white-space: nowrap;
+        }
+        
+        .map .star::before {
+            width: 1.2em;
+            height: 1em;
+            content: "";
+            display: inline-block;
+            background-image: url('https://content.la-z-boy.com/Images/npc/AboutLaZBoy/star.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: relative;
+            top: .1em;
+        }
+        /* Image-copy slide row */
+        
+        .image-copy-slide-row {
+            margin-top: 50px;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .image-copy-slide-row .image {
+            flex: 3 0 300px;
+            max-width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .image-copy-slide-row .image::after {
+            content: "";
+            display: block;
+            padding-bottom: 61.8%;
+        }
+        
+        .image-copy-slide-row .copy {
+            flex: 1 0 310px;
+            max-width: 100%;
+            padding: 30px;
+            font-size: .9em;
+        }
+        
+        .image-copy-slide-row h2 {
+            margin: 0;
+        }
+        
+        .image-copy-slide-row h2+p {
+            margin-top: 1em;
+        }
+        /* three-column row */
+        
+        .three-col-row {
+            margin: 20px -15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .three-col-row .block {
+            margin: 30px 15px 0;
+            flex: 1 0 300px;
+            max-width: 310px;
+        }
+        /* modal */
+        
+        [videoModal] {
+            cursor: pointer;
+        }
+        
+        #npc-modal {
+            position: fixed;
+            z-index: 1000000;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        #npc-modal-container {
+            background-color: #fefefe;
+            padding: 5px;
+            border: 1px solid #888;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        .video #npc-modal-container {
+            width: 75%;
+            max-width: 1050px;
+        }
+        
+        #npc-image {
+            width: 100%;
+            display: block;
+        }
+        
+        .video #npc-modal-content {
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        
+        #npc-modal-content iframe {
+            min-height: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #npc-modal-close {
+            position: absolute;
+            right: -7px;
+            top: -7px;
+            width: 22px;
+            z-index: 10;
+            cursor: pointer;
+        }
+        
+        #npc-modal-close:hover,
+        #npc-modal-close:focus {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* article posts */
+        
+        .post {
+            flex: 0 0 305px;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.2s ease-out;
+            font-size: .8em;
+            max-height: 400px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 20px;
+            border: 1px solid #e6e6e6;
+        }
+        
+        .post.contacts {
+            background-color: #f5f5f5;
+            max-height: none;
+        }
+        
+        .post:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .post .read-more {
+            color: #0070af;
+            font-weight: bold;
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 45px 20px 15px;
+            line-height: 20px;
+            background-image: linear-gradient(transparent, white 45px);
+            cursor: pointer;
+        }
+        
+        .post header {
+            background-color: #0070af;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+        }
+        
+        .post.contacts header {
+            background-color: #575757;
+        }
+        
+        .post h1 {
+            font-size: 1.2em;
+            margin: 1em 20px 0;
+            color: #0070af;
+        }
+        
+        .post p {
+            margin: .25em 20px 0;
+        }
+        
+        .post p.date {
+            font-size: 13px;
+            font-weight: bold;
+            margin: 0.8em 20px;
+        }
+        /* footer */
+        
+        .footer {
+            height: 100px;
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 38px;
+        }
+        
+        @media only screen and (min-width: 400px) {
+            .image-copy .row {
+                margin: 0;
+            }
+            .margin-icon {
+                padding-left: 90px;
+                position: relative;
+            }
+            .margin-icon.border {
+                padding: 40px 25px 40px 90px;
+            }
+            .element-icon img {
+                display: block;
+            }
+            .border {
+                border: 1px solid #b7b7b7;
+            }
+            .border+.border {
+                border-top: none;
+                margin-top: 0;
+            }
+            .border+p.fine-print {
+                margin-top: 1em;
+            }
+        }
+        
+        @media only screen and (min-width: 600px) {
+            .hero-background {
+                padding-top: 70px;
+                padding-bottom: 28%;
+                margin-bottom: -28%;
+            }
+            #hero {
+                overflow: hidden;
+            }
+            #hero h1 {
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                margin: 0;
+                text-align: left;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .indent>p,
+            .indent>ul,
+            .indent>ol,
+            .indent>h4,
+            .indent>.button {
+                margin-left: 90px;
+            }
+            .indent .grid {
+                margin: 0 90px
+            }
+            .blue-gray-row>.grid>:first-child,
+            .blue-gray-checker>:first-child {
+                font-size: 1.4em;
+            }
+            .grid .image-copy h3 {
+                font-size: 1.1em;
+            }
+            .margin-icon.border {
+                padding-right: 90px;
+            }
+            table,
+            .scale-with-table {
+                font-size: .9em;
+            }
+        }
+        
+        @media only screen and (min-width: 900px) {
+            #hero h1 {
+                font-size: 2.8em;
+            }
+            h2 {
+                font-size: 2.4em;
+            }
+            h3 {
+                font-size: 1.6em;
+            }
+            h4 {
+                font-size: 1.2em;
+            }
+            .blue-gray-row>.grid>:first-child,
+            .blue-gray-checker>:first-child {
+                font-size: 1.5em;
+            }
+            .grid .image-copy h3 {
+                font-size: 1.2em;
+            }
+            table,
+            .scale-with-table {
+                font-size: 1em;
+            }
+            .map {
+                flex-wrap: nowrap;
+            }
+            .map .image {
+                width: 70%;
+            }
+            .map .text-box {
+                width: 30%;
+                padding-left: 1em;
+            }
+        }
+        
+        @media only screen and (min-width: 980px) {
+            .blue-gray-checker+.blue-gray-checker {
+                margin-top: 0;
+            }
+        }
+        
+        @media only screen and (min-width: 1000px) {
+            .hero-background {
+                padding-top: 70px;
+                padding-bottom: 280px;
+                margin-bottom: -280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gray">
+        <div class="page-width">
+            <nav id="topnav">
+                <div class="logo">
+                    <a href="https://www.la-z-boy.com" target="_blank">
+                        <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/logo.png" alt="La-Z-Boy logo">
+                    </a>
+                </div>
+                <input type="checkbox" id="hamburger-toggle" style="display: none;">
+                <label for="hamburger-toggle" class="hamburger" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </label>
+                <ul>
+                    <li class="parent">
+                        <input type="radio" id="commitment-radio" name="show-submenu" style="display: none;">
+                        <label for="commitment-radio">Commitment</label>
+                        <ul>
+                            <li><a href="/content/AboutLaZBoy/corporate-commitment">Our Commitment</a></li>
+                            <li><a href="/content/AboutLaZBoy/NewsRoom">News Room</a></li>
+                            <li><a href="/content/AboutLaZBoy/OurBrands">Our Brands</a></li>
+                            <li><a href="/content/AboutLaZBoy/supplier-requirements">Supplier Requirements</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <input type="radio" id="financial-radio" name="show-submenu" style="display: none;">
+                        <label for="financial-radio">Financial</label>
+                        <ul>
+                            <li><a href="/content/AboutLaZBoy/financial-responsibility">Financial Responsibility</a></li>
+                            <li><a href="https://lazboy.gcs-web.com/" target="_blank">Investor Relations</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <input type="radio" id="environmental-radio" name="show-submenu" style="display: none;">
+                        <label for="environmental-radio">Environmental</label>
+                        <ul>
+                            <li><a href="/content/AboutLaZBoy/sustainability-at-a-glance">Sustainability at a Glance</a></li>
+                            <li><a href="/content/AboutLaZBoy/sasb-standards">SASB Standards</a></li>
+                            <li><a href="/content/AboutLaZBoy/sustainability">Environment</a></li>
+                            <li><a href="/content/AboutLaZBoy/carbon-and-climate">Carbon &amp; Climate</a></li>
+                            <li><a href="/content/AboutLaZBoy/natural-resources">Natural Resources</a></li>
+                            <li><a href="/content/AboutLaZBoy/waste-and-toxicity">Waste &amp; Toxicity</a></li>
+                        </ul>
+                    </li>
+                    <li class="parent">
+                        <input type="radio" id="people-radio" name="show-submenu" style="display: none;">
+                        <label for="people-radio">People</label>
+                        <ul>
+                            <li><a href="/content/AboutLaZBoy/investing-in-employees">Our Employees</a></li>
+                            <li><a href="/content/AboutLaZBoy/leadership">Leadership</a></li>
+                            <li><a href="/content/AboutLaZBoy/corporate-giving">Corporate Giving</a></li>
+                            <li><a href="/content/AboutLaZBoy/american-heritage">American Heritage</a></li>
+                            <li><a href="/content/AboutLaZBoy/Careers">Careers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- body content -->
+    <style>
+        .image-copy-slide-row {
+            margin-top: 70px;
+        }
+        
+        @media only screen and (min-width: 600px) {
+            #hero h1 {
+                width: 9em;
+                color: white;
+            }
+        }
+        
+        @media only screen and (min-width: 700px) {
+            #hero h1 {
+                width: 10em;
+            }
+        }
+    </style>
+    <div class="blue hero-background"></div>
+    <div class="page-width">
+        <div id="hero">
+            <picture>
+                <source srcset="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/mobile/hero.jpg" media="(max-width: 599.9px)" />
+                <img srcset="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/desktop/hero.jpg 2x, https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/desktop/hero@1x.jpg 1x" src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/desktop/hero@1x.jpg"
+                    alt="" />
+            </picture>
+            <h1>American Heritage</h1>
+        </div>
+        <div class="indent">
+            <h2>Comfort made with American&nbsp;pride</h2>
+            <p>Our legacy of American ingenuity, drive and pride continues thanks to the thousands of skilled men and women who artfully cut, sew and assemble each and every piece of furniture. Together, we’re developing the latest innovations in comfort
+                and convenience, while raising the bar for style and design. It’s what we do, and why you should look for the one and only, the original <span style="white-space: nowrap;">La-Z-Boy</span>.</p>
+        </div>
+    </div>
+    <div class="page-width map">
+        <div class="image">
+            <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/map.jpg" alt="Map of states with La-Z-Boy headquarters, manufacturing and distribution centers"></div>
+        <div class="text-box">
+            <div class="text-group">
+                <h3>World Headquarters</h3>
+                <p class="star">Monroe, MI</p>
+            </div>
+            <div class="text-group">
+                <h3>Manufacturing Plant</h3>
+                <p>Neosho, MO</p>
+                <p>Siloam Springs, AR</p>
+                <p>Dayton, TN</p>
+                <p>San Luis Rio Colorado, MX-SON</p>
+                <p>Ramos Arizpe, MX-COA</p>
+            </div>
+            <div class="text-group">
+                <h3>Distribution Centers</h3>
+                <p>Bolingbrook, IL</p>
+                <p>Robbinsville, NJ</p>
+                <p>Odenton, MD</p>
+                <p>Sunrise, FL</p>
+                <p>Columbus, OH</p>
+                <p>Seattle, WA</p>
+                <p>Phoenix, AZ</p>
+            </div>
+        </div>
+    </div>
+    <div class="page-width indent">
+        <p>We’re dedicated to reducing and managing our environmental footprint by integrating sound and sustainable practices into everything we do, we’re committed to helping protect our environment.</p>
+        <p><a class="arrow-right" href="/content/AboutLaZBoy/sustainability">Learn more about our sustainable practices</a></p>
+    </div>
+    <div class="page-width">
+        <div class="image-copy-slide-row">
+            <div class="image" style="background-image: url('https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image01.jpg');" role="img" aria-label="Maker working in La-Z-Boy manufacturing plant"></div>
+            <div class="copy">
+                <h2>Real People. Real&nbsp;Americans.</h2>
+                <p>For over 90 years, <span style="white-space: nowrap;">La-Z-Boy</span> has built the highest-quality furniture. We employ thousands of men and women across North America who cut, sew, handcraft and assemble millions of pieces of furniture
+                    each year. Because where and how your furniture is made&nbsp;matters.</p>
+                <div class="gray button">
+                    <a target="_blank" href="/content/NowFeaturing/TheMakers" class="arrow-right">Meet the makers</a>
+                </div>
+            </div>
+        </div>
+        <div class="three-col-row">
+            <div class="image-copy block">
+                <img videomodal="cWlDSCD05GY" src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image02.jpg" alt="">
+                <p>Watch <strong>Chris</strong>, La-Z-Boy Testing Lab Manager, describe his personal connection to La-Z-Boy products, past, present, and&nbsp;future.</p>
+            </div>
+            <div class="image-copy block">
+                <img videomodal="E_QY92nWul8" src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image03.jpg" alt="">
+                <p>See <strong>Larry</strong>, <span style="white-space: nowrap;">La-Z-Boy</span> Advanced Research Engineer, discuss how we stay innovative and develop industry-leading products.</p>
+            </div>
+            <div class="image-copy block">
+                <img videomodal="voMW0Eh9qx0" src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image04.jpg" alt="">
+                <p>Hear <strong>Roy</strong>, <span style="white-space: nowrap;">La-Z-Boy</span> New Product Line Coordinator, explain how he strives to instill passion in his team through mentorship.</p>
+            </div>
+        </div>
+        <div class="image-copy-slide-row reverse">
+            <div class="image" style="background-image: url('https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image05.jpg');" role="img" aria-label="Maker working in La-Z-Boy manufacturing plant"></div>
+            <div class="copy">
+                <h2>Handcrafted &amp; custom made</h2>
+                <p>By handcrafting our furniture across our locations, we’re able to deliver custom pieces in a few short weeks. Create a look all your own with a range of fabrics and leather options. Choose from multiple wood finish options and designer
+                    details like nail head trim and contrasting welt. Custom has never been&nbsp;easier.</p>
+                <div class="gray button">
+                    <a target="_blank" href="/content/design-services/customizations" class="arrow-right">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="three-col-row">
+            <div class="block">
+                <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image06.jpg" alt="">
+            </div>
+            <div class="block">
+                <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image07.jpg" alt="">
+            </div>
+            <div class="block">
+                <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image08.jpg" alt="">
+            </div>
+        </div>
+        <div class="image-copy-slide-row">
+            <div class="image" style="background-image: url('https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image09.jpg');" role="img" aria-label="Maker working in La-Z-Boy manufacturing plant"></div>
+            <div class="copy">
+                <h2>A spirit of American innovation</h2>
+                <p>The very first <span style="white-space: nowrap;">La-Z-Boy</span> was designed in a garage and crafted out of orange crates. Now, almost one hundred years later, we have changed the way America looks at comfort. Designed and engineered
+                    in America, the spirit of innovation remains at the heart of everything we do, from the latest comfort solutions and power options, to advances in fabrics and cushioning. <span style="white-space: nowrap;">La-Z-Boy</span> is committed
+                    to creating what’s&nbsp;next.</p>
+            </div>
+        </div>
+        <div class="three-col-row">
+            <div class="image-copy block">
+                <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image10.jpg" alt="">
+                <p>Awarded for both design and innovation, <strong class="registered">duo</strong> is the only one in its class to offer reclining comfort and unexpected style.</p>
+                <p><a class="arrow-right" href="/content/duo">Learn more about <span class="registered">duo</span></a></p>
+            </div>
+            <div class="image-copy block">
+                <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image11.jpg" alt="">
+                <p>Our industry-leading <strong>iClean&trade;</strong> performance fabrics, designed right here at home, repel spills before they turn into stains.</p>
+                <p><a class="arrow-right" href="/content/CustomizeIt/iClean">Learn more about iClean&trade;</a></p>
+            </div>
+            <div class="image-copy block">
+                <img src="https://content.la-z-boy.com/Images/npc/AboutLaZBoy/american-heritage/image12.jpg" alt="">
+                <p>Comfort has never been more connected, convenient or world-class, thanks to our innovative <strong>power</strong> options.</p>
+                <p><a class="arrow-right" href="/content/CustomizeIt/power-options">Learn more about power</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- /body content -->
+    <div class="gray footer">
+        <p>&copy;
+            <script>
+                document.write(new Date().getFullYear())
+            </script> <span style="white-space: nowrap;">La-Z-Boy</span> Incorporated</p>
+    </div>
+    <script>
+        //Function to remove the modal.
+        function removeModal() {
+            document.body.removeChild(document.getElementById('npc-modal'));
+        }
+
+        // Function to play a video in a modal. Test video is 'P1li3aQv3eQ'.
+        function videoModal(srcID) {
+            var div = document.createElement('div');
+            div.innerHTML =
+                '<section id="npc-modal" class="video" onclick="removeModal();"><div id="npc-modal-container">\
+            <div id="npc-modal-content">\
+                <iframe src="https://www.youtube.com/embed/' + srcID + '?rel=0&amp;amp;ecver=2&amp;amp;enablejsapi=1&amp;amp;showinfo=0&amp;amp;autoplay=1" frameborder="0" allowfullscreen></iframe>\
+            </div>\
+            <img id="npc-modal-close" src="https://content.la-z-boy.com/Images/npc/modal-close.svg">\
+        </section>';
+            var modal = div.firstChild;
+
+            document.body.insertBefore(modal, document.body.firstChild);
+
+            return false;
+        }
+
+        (function() {
+
+            function myEventListener(el, eventName, handler) {
+                if (el.addEventListener) {
+                    el.addEventListener(eventName, handler);
+                } else {
+                    el.attachEvent('on' + eventName, function() {
+                        handler.call(el);
+                    });
+                }
+            }
+
+            // Create array of query string values
+            var params = [],
+                hash;
+            var q = document.URL.split('?')[1];
+            if (q != undefined) {
+                q = q.split('&');
+                for (var i = 0; i < q.length; i++) {
+                    hash = q[i].split('=');
+                    params.push(hash[1]);
+                    params[hash[0]] = hash[1];
+                }
+            }
+
+            // Play the video in the query string
+            if (params['video'] != null) {
+                videoModal(params['video']);
+            }
+
+            // Add click and keyboard events to videoModal elements
+            var videoLinks = document.querySelectorAll('[videoModal]');
+            for (i = 0; i < videoLinks.length; i++) {
+                (function() {
+                    var currentVideoLink = videoLinks[i];
+                    var srcID = currentVideoLink.getAttribute('videoModal');
+
+                    currentVideoLink.setAttribute("tabIndex", "0");
+
+                    myEventListener(currentVideoLink, "click", function() {
+                        videoModal(srcID);
+                    })
+
+                    myEventListener(currentVideoLink, 'keypress', function(event) {
+                        var code = event.charCode || event.keyCode;
+                        if ((code === 32) || (code === 13)) {
+                            videoModal(srcID);
+                        }
+                    });
+                })();
+            }
+        })();
+    </script>
+</body>

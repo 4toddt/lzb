@@ -292,10 +292,11 @@ body.mobile-site #breadcrumbs a {
     }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 850px) {
     #npc-content #ds-nav {
         display: flex;
         background-color: #595451;
+        font-size: .9em;
     }
     #npc-content #ds-nav>div {
         width: 100%;
@@ -321,7 +322,7 @@ body.mobile-site #breadcrumbs a {
         width: 100%;
         bottom: 0;
         left: 0;
-        transition: height .2s;
+        transition: height 0.2s;
     }
     #npc-content #ds-nav a.active:after,
     #npc-content #ds-nav a:hover:after {
@@ -332,15 +333,9 @@ body.mobile-site #breadcrumbs a {
     }
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 980px) {
     #npc-content #ds-nav {
         font-size: 1em;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    #bcc-content .hero p {
-        display: block;
     }
 }
 

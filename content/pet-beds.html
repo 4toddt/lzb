@@ -5,13 +5,14 @@
 </head>
 
 <body class="mobile-site">
+    <!-- launch updates with PLP -->
     <!-- begin NPC content -->
     <!-- Pet Beds TT -->
     <style>
         @import "/css/fonts/flickity.css";
         /*********** Import Fonts **********/
-        
         @import url("https://use.typekit.net/pou1zjg.css");
+
         @font-face {
             font-family: 'LZB Icons';
             src: url('/css/fonts/lzb-icons.eot?jebkb3');
@@ -19,51 +20,51 @@
             font-weight: normal;
             font-style: normal;
         }
+
         /***************************************/
         /*********** Mobile Resets *************/
         /***************************************/
-        
         #site-wrapper {
             max-width: none;
         }
-        
+
         #site-wrapper .breadcrumbs {
             max-width: 62.5rem;
             margin: 0.625rem auto;
         }
-        
+
         #site-wrapper .section-title {
             display: none;
         }
-        
+
         #site-wrapper .section-row {
             max-width: none;
         }
-        
+
         #site-wrapper .section-content {
             padding: 0;
             float: none;
         }
-        
+
         #site-wrapper .one-column-container,
         #site-wrapper .two-column-container {
             max-width: none;
             padding: 0;
         }
+
         /****** desktop resets ******/
-        
         .two-column-first [role="main"],
         .two-column-first [role="region"],
         main {
             width: 100%;
             margin: 0;
         }
-        
+
         .two-column-first [role="region"]>h1 {
             display: none;
         }
+
         /****** BCC content resets ******/
-        
         #npc-content * {
             font: inherit;
             color: inherit;
@@ -76,10 +77,10 @@
             width: auto;
             text-decoration: none;
         }
+
         /***************************************/
         /************* NPC Defaults ************/
         /***************************************/
-        
         #npc-content {
             width: 100%;
             font-family: 'lato', 'OpenSans', sans-serif;
@@ -88,52 +89,52 @@
             color: #333;
             overflow: hidden;
         }
-        
+
         body.mobile-site #npc-content {
             margin-bottom: 40px;
         }
-        
+
         #npc-content section {
             width: 100%;
             max-width: 980px;
             margin: 0 auto;
         }
-        
+
         #npc-content img {
             /* override browser default of inline-block to remove white space after images */
             display: block;
             width: 100%;
             max-width: none;
         }
-        
+
         #npc-content .image {
             /* fix IE bug where images in flex containers don't keep their aspect ratio */
             min-height: 1px;
         }
+
         /*********** Utility Classes ************/
-        
         #npc-content .no-wrap {
             white-space: nowrap;
         }
-        
+
         #npc-content .arrow-right:after {
             font-family: 'LZB Icons';
             content: "\e90e";
             line-height: 0;
         }
+
         /********** Responsive Hidden Elements *********/
-        
         body:not(.mobile-site) .hidden-desktop {
             display: none !important;
         }
-        
+
         body.mobile-site .hidden-mobile {
             display: none !important;
         }
+
         /**************************************/
         /*********** Custom Styles ************/
         /**************************************/
-        
         #hero [role="img"] {
             background-image: url(https://embed.widencdn.net/img/lazboy/2ejyjtqrff/600px@2x/hero.jpeg?q=50);
             padding-bottom: 70%;
@@ -142,7 +143,7 @@
             background-size: cover;
             background-position: center top;
         }
-        
+
         #hero .copy {
             padding: 20px 20px 40px;
             background-color: #66C9CF;
@@ -154,26 +155,26 @@
             align-items: center;
             min-width: 280px;
         }
-        
+
         #hero h1 {
             font-size: 2.5em;
             font-weight: 800;
             text-transform: uppercase;
             text-align: center;
         }
-        
+
         #hero h1 .pre {
             font-size: 0.4em;
             font-weight: 400;
         }
-        
+
         #hero p {
             font-size: .9em;
             text-align: center;
             line-height: 1.75;
             margin-top: .5em;
         }
-        
+
         #hero .border {
             position: absolute;
             left: 10px;
@@ -183,40 +184,40 @@
             border: 1px solid white;
             pointer-events: none
         }
-        
+
         section#pet-sleep {
             padding: 0 20px;
         }
-        
+
         #pet-sleep input {
             display: none;
         }
-        
+
         #npc-content h2 {
             font-size: 1.5em;
             text-align: center;
             line-height: 1.2;
             margin-top: 1em;
         }
-        
+
         #npc-content h2+.subtitle {
             text-align: center;
             margin-top: .5em;
             font-size: .8em;
             line-height: 1.5;
         }
-        
+
         #styles-wrapper {
             margin: 0 -20px;
         }
-        
+
         #styles {
             display: flex;
             flex-wrap: wrap;
             padding: 0;
             justify-content: center;
         }
-        
+
         #styles>div {
             flex: 1 0 160px;
             height: 160px;
@@ -224,11 +225,11 @@
             position: relative;
             margin-top: 40px;
         }
-        
+
         #styles input {
             display: none;
         }
-        
+
         #styles .details {
             position: absolute;
             top: 0;
@@ -238,7 +239,7 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         #styles :checked+.details {
             top: -20px;
             left: -20px;
@@ -248,17 +249,17 @@
             z-index: 1;
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
         }
-        
+
         #styles .image {
             width: 160px;
             margin: 0 auto;
             opacity: .7;
         }
-        
+
         #styles :checked+.details .image {
             opacity: .8;
         }
-        
+
         #styles h3 {
             text-align: center;
             user-select: none;
@@ -267,21 +268,21 @@
             font-weight: 600;
             padding: .5em .5em 0;
         }
-        
+
         #styles h3:after {
             font-family: 'LZB Icons';
             content: "\20\e907";
             font-size: .75em;
         }
-        
+
         #styles :checked+.details h3:after {
             content: "\20\e908";
         }
-        
+
         #styles :not(:checked)+.details label~* {
             display: none;
         }
-        
+
         #styles p {
             font-size: .7em;
             margin-top: 1em;
@@ -290,12 +291,12 @@
             padding: 0 5px;
             max-width: 100%;
         }
-        
+
         #styles .recommended {
             display: block;
             font-weight: bold;
         }
-        
+
         #styles a {
             color: white;
             font-size: .8em;
@@ -309,41 +310,41 @@
             width: 200px;
             max-width: 90%;
         }
-        
+
         @media (hover) {
             #styles a:hover {
                 background-color: #005e94;
             }
         }
+
         /*! Flickity v2.2.0
 https://flickity.metafizzy.co
 ---------------------------------------------- */
-        
         #npc-content [data-flickity] {
             outline: none !important;
         }
-        
+
         #npc-content .flickity-enabled {
             position: relative;
         }
-        
+
         #npc-content .flickity-enabled:focus {
             outline: none;
         }
-        
+
         #npc-content .flickity-viewport {
             overflow: hidden;
             position: relative;
             height: 100%;
         }
-        
+
         #npc-content .flickity-slider {
             position: absolute;
             width: 100%;
             height: 100%;
         }
+
         /* draggable */
-        
         #npc-content .flickity-enabled.is-draggable {
             -webkit-tap-highlight-color: transparent;
             tap-highlight-color: transparent;
@@ -352,19 +353,19 @@ https://flickity.metafizzy.co
             -ms-user-select: none;
             user-select: none;
         }
-        
+
         #npc-content .flickity-enabled.is-draggable .flickity-viewport {
             cursor: move;
             cursor: -webkit-grab;
             cursor: grab;
         }
-        
+
         #npc-content .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
             cursor: -webkit-grabbing;
             cursor: grabbing;
         }
+
         /* ---- flickity-button ---- */
-        
         #npc-content .flickity-button {
             position: absolute;
             background: hsla(0, 0%, 100%, 0.75);
@@ -372,54 +373,54 @@ https://flickity.metafizzy.co
             color: #333;
             cursor: pointer;
         }
-        
+
         #npc-content .flickity-button:focus {
             outline: none;
             box-shadow: 0 0 0 2px #19F;
         }
-        
+
         #npc-content .flickity-button:active {
             opacity: 0.6;
         }
-        
+
         #npc-content .flickity-button:disabled {
             opacity: 0.3;
             cursor: auto;
             /* prevent disabled button from capturing pointer up event. #716 */
             pointer-events: none;
         }
-        
+
         #npc-content .flickity-button-icon {
             fill: currentColor;
         }
+
         /* ---- previous/next buttons ---- */
-        
         #npc-content .flickity-prev-next-button {
             top: 0;
             width: 40px;
             height: 165px;
             background-color: transparent;
         }
-        
+
         #npc-content .flickity-prev-next-button.previous {
             left: -40px;
         }
-        
+
         #npc-content .flickity-prev-next-button.next {
             right: -40px;
         }
+
         /* right to left */
-        
         #npc-content .flickity-rtl .flickity-prev-next-button.previous {
             left: auto;
             right: 10px;
         }
-        
+
         #npc-content .flickity-rtl .flickity-prev-next-button.next {
             right: auto;
             left: 10px;
         }
-        
+
         #npc-content .flickity-prev-next-button .flickity-button-icon {
             position: absolute;
             left: 20%;
@@ -427,8 +428,8 @@ https://flickity.metafizzy.co
             width: 60%;
             height: 60%;
         }
+
         /* ---- page dots ---- */
-        
         #npc-content .flickity-page-dots {
             position: absolute;
             width: 100%;
@@ -439,11 +440,11 @@ https://flickity.metafizzy.co
             text-align: center;
             line-height: 1;
         }
-        
+
         #npc-content .flickity-rtl .flickity-page-dots {
             direction: rtl;
         }
-        
+
         #npc-content .flickity-page-dots .dot {
             display: inline-block;
             width: 10px;
@@ -454,27 +455,27 @@ https://flickity.metafizzy.co
             opacity: 0.25;
             cursor: pointer;
         }
-        
+
         #npc-content .flickity-page-dots .dot.is-selected {
             opacity: 1;
         }
-        
+
         #bed-types {
             max-width: 750px;
             margin: 0 auto;
         }
-        
+
         #bed-types [data-flickity] {
             padding-bottom: 25px;
         }
-        
+
         #bed-types .bed-type {
             display: flex;
             flex-wrap: wrap;
             width: 100%;
             align-items: center;
         }
-        
+
         #bed-types .bed-type>div {
             flex: 1 0 50%;
             min-width: 220px;
@@ -482,41 +483,41 @@ https://flickity.metafizzy.co
             padding: 0 20px;
             margin-top: 30px;
         }
-        
+
         #bed-types h3 {
             font-size: 1.4em;
         }
-        
+
         #bed-types p {
             font-size: .8em;
             margin-top: .5em;
             line-height: 1.5;
         }
-        
+
         #npc-content .gray-background {
             background-color: #f9f9f9;
             margin-top: 40px;
             padding-bottom: 40px;
             overflow: hidden;
         }
-        
+
         #npc-content #featured-beds {
             padding: 0 40px;
         }
-        
+
         #featured-beds h2 {
             margin: 1em -40px 0;
         }
-        
+
         #featured-beds [data-flickity] {
             margin-top: 25px;
         }
-        
+
         #featured-beds .featured-bed {
             width: 165px;
             margin-right: 18.75px;
         }
-        
+
         #featured-beds .featured-bed a {
             display: block;
             text-align: center;
@@ -524,7 +525,7 @@ https://flickity.metafizzy.co
             font-size: .8em;
             margin-top: .5em;
         }
-        
+
         #featured-beds>a {
             display: block;
             text-align: center;
@@ -534,7 +535,7 @@ https://flickity.metafizzy.co
             margin-top: 2em;
             font-weight: 600;
         }
-        
+
         #remember p {
             font-size: .8em;
             line-height: 1.5;
@@ -542,41 +543,41 @@ https://flickity.metafizzy.co
             max-width: 55em;
             margin: 0 auto;
         }
-        
+
         section#lzb-advantage {
             margin-top: 40px;
             text-align: center;
             padding: 0 10px;
             max-width: 1020px;
         }
-        
+
         #lzb-advantage .column>div {
             margin-top: 10px;
         }
-        
+
         #lzb-advantage h2 {
             font-size: 1.4em;
         }
-        
+
         #lzb-advantage p {
             font-size: .75em;
             line-height: 1.8;
             margin-top: .5em;
         }
-        
+
         #extra-image {
             display: none;
         }
-        
+
         section#pet-reviews {
             padding: 0 40px;
         }
-        
+
         #pet-reviews .review {
             width: 100%;
             text-align: center;
         }
-        
+
         #pet-reviews .review::before {
             font-family: 'LZB Icons';
             content: "\e90b\e90b\e90b\e90b\e90b";
@@ -586,42 +587,42 @@ https://flickity.metafizzy.co
             color: #0074C8;
             font-size: 1.3em;
         }
-        
+
         #pet-reviews h3 {
             font-size: 1.4em;
             font-weight: 600;
             margin-top: 1em;
         }
-        
+
         #pet-reviews h3::after {
             content: "*";
             color: #0074C8;
         }
-        
+
         #pet-reviews .translation {
             margin-top: .75em;
             line-height: 1.8;
             font-size: .8em;
         }
-        
+
         #pet-reviews .translation::before {
             content: "*";
             color: #0074C8;
         }
-        
+
         #pet-reviews strong {
             font-weight: bold;
         }
-        
+
         #pet-reviews .signed {
             margin-top: 1.5em;
             font-size: .8em;
         }
-        
+
         #pet-reviews .signed::before {
             content: "\2014\00A0"
         }
-        
+
         #pet-reviews .flickity-prev-next-button {
             top: 0;
             bottom: -40px;
@@ -629,12 +630,13 @@ https://flickity.metafizzy.co
             width: 40px;
             background-color: transparent;
         }
-        
+
         @media only screen and (min-width: 500px) {
             section#lzb-advantage {
                 display: flex;
                 align-items: stretch;
             }
+
             #lzb-advantage .column {
                 padding: 0 10px;
                 display: flex;
@@ -642,101 +644,126 @@ https://flickity.metafizzy.co
                 justify-content: space-evenly;
                 flex: 0 0 50%;
             }
+
             #lzb-advantage .column.flip {
                 flex-direction: column-reverse;
             }
+
             #lzb-advantage .column>div {
                 margin-top: 20px;
             }
+
             #lzb-advantage h2 {
                 margin-top: 0;
             }
+
             #pet-reviews .translation {
                 margin-top: .75em;
                 line-height: 1.8;
                 font-size: 1em;
             }
         }
-        
+
         @media only screen and (min-width: 600px) {
             #hero {
                 display: flex;
             }
+
             #hero [role="img"] {
                 flex: 0 1 600px;
             }
+
             #hero .copy {
                 flex: 0 1 400px;
                 padding: 20px 30px 20px 20px;
             }
+
             #hero p {
                 max-width: 15em;
             }
+
             #hero .border {
                 left: -10px;
                 top: 10px;
             }
+
             #styles label {
                 font-size: 1em;
             }
+
             #bed-types .bed-type>div {
                 text-align: left;
                 margin-top: 40px;
             }
         }
-        
+
         @media only screen and (min-width: 850px) {
             #hero .copy {
                 padding: 45px 45px 45px 20px;
             }
+
             #hero h1 {
                 font-size: 3em;
             }
+
             #hero p {
                 font-size: 1em;
             }
+
             #hero .border {
                 left: -25px;
                 right: 25px;
                 top: 25px;
                 bottom: 25px;
             }
+
             #npc-content h2 {
                 font-size: 1.7em;
             }
+
             #npc-content h2+.subtitle {
                 font-size: 1em;
             }
+
             section#pet-sleep {
                 margin-top: 50px;
             }
+
             #styles h3 {
                 font-size: 1em;
             }
+
             #bed-types .bed-type>div {
                 margin-top: 60px;
             }
+
             #bed-types p {
                 font-size: .9em;
             }
+
             #npc-content .gray-background {
                 margin-top: 60px;
             }
+
             section#lzb-advantage {
                 align-items: stretch;
             }
+
             #lzb-advantage .row {
                 flex-grow: 1;
                 display: flex;
                 align-items: center;
                 text-align: left;
             }
+
             #lzb-advantage h2 {
                 font-size: 1.4em;
             }
+
             #lzb-advantage .row h2 {
                 text-align: left;
             }
+
             #extra-image {
                 display: block;
                 flex: 0 0 165px;
@@ -744,7 +771,7 @@ https://flickity.metafizzy.co
                 align-self: flex-start;
             }
         }
-        
+
         @media only screen and (min-width: 950px) {
             #styles :checked+.details {
                 left: -60px;
@@ -825,8 +852,7 @@ https://flickity.metafizzy.co
                                 <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/nhcj1235qr/160px/sleep-flying.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/nhcj1235qr/160px@2x/sleep-flying.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/nhcj1235qr/160px/sleep-flying.jpeg?q=85" alt="Dog sleeping on its belly"></div>
                                 <h3>The Flying Dog</h3>
                             </label>
-                            <p>This playful pet sleeps stretched out like a superhero, and is ready to go after waking up!
-                            </p>
+                            <p>This playful pet sleeps stretched out like a superhero, and is ready to go after waking up! </p>
                             <p><span class="recommended">Recommended bed:</span> Lounger, Chaise Lounger</p>
                             <a href="/b/_/N-1ognvy6">Shop Flying Dog</a>
                         </div>
@@ -841,40 +867,35 @@ https://flickity.metafizzy.co
                     "prevNextButtons": false
                     }'>
                     <div class="bed-type">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/qj935whtxf/400px/style-cuddler.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/qj935whtxf/400px@2x/style-cuddler.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/qj935whtxf/400px/style-cuddler.jpeg?q=85"
-                                alt="Cuddler pet bed"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/qj935whtxf/400px/style-cuddler.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/qj935whtxf/400px@2x/style-cuddler.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/qj935whtxf/400px/style-cuddler.jpeg?q=85" alt="Cuddler pet bed"></div>
                         <div class="copy">
                             <h3>Cuddler</h3>
                             <p>Ideal for cats and small-to-medium sized dogs that curl up when they sleep, cuddlers have a soft bolster &ldquo;wall&rdquo; that makes pets feel safe and secure as <span class="no-wrap">they sleep.</span></p>
                         </div>
                     </div>
                     <div class="bed-type">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/ucsye0kyyv/400px/style-fold-out.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/ucsye0kyyv/400px@2x/style-fold-out.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/ucsye0kyyv/400px/style-fold-out.jpeg?q=85"
-                                alt="Fold-out sofa pet bed"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/ucsye0kyyv/400px/style-fold-out.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/ucsye0kyyv/400px@2x/style-fold-out.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/ucsye0kyyv/400px/style-fold-out.jpeg?q=85" alt="Fold-out sofa pet bed"></div>
                         <div class="copy">
                             <h3>Fold-Out <span class="no-wrap">Sofa Bed</span></h3>
                             <p>Just like our versatile sleepers, fold-out sofa beds are ideal for sitting and napping by day, and expand for sleeping <span class="no-wrap">at night.</span></p>
                         </div>
                     </div>
                     <div class="bed-type">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/johf0c3xfs/400px/style-lounger.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/johf0c3xfs/400px@2x/style-lounger.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/johf0c3xfs/400px/style-lounger.jpeg?q=85"
-                                alt="Lounger pet bed"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/johf0c3xfs/400px/style-lounger.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/johf0c3xfs/400px@2x/style-lounger.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/johf0c3xfs/400px/style-lounger.jpeg?q=85" alt="Lounger pet bed"></div>
                         <div class="copy">
                             <h3>Lounger</h3>
                             <p>Loungers provide the comfort and support of a mattress, with a super soft bolster for optional head and <span class="no-wrap">neck support.</span></p>
                         </div>
                     </div>
                     <div class="bed-type">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/863id1rckx/400px/style-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/863id1rckx/400px@2x/style-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/863id1rckx/400px/style-sofa.jpeg?q=85"
-                                alt="Sofa pet bed"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/863id1rckx/400px/style-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/863id1rckx/400px@2x/style-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/863id1rckx/400px/style-sofa.jpeg?q=85" alt="Sofa pet bed"></div>
                         <div class="copy">
                             <h3>Sofa</h3>
                             <p>Our premium pet sofas are smart and sophisticated, with solid wood frames and feet, and covered with durable furniture-grade upholstery. Sitting a few inches off the ground, they're easy for pets to hop on <span class="no-wrap">and off.</span></p>
                         </div>
                     </div>
                     <div class="bed-type">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/zoaukbxyql/400px/style-orthopedic-sofa-bed.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/zoaukbxyql/400px@2x/style-orthopedic-sofa-bed.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/zoaukbxyql/400px/style-orthopedic-sofa-bed.jpeg?q=85"
-                                alt="Sofa bed pet bed"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/zoaukbxyql/400px/style-orthopedic-sofa-bed.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/zoaukbxyql/400px@2x/style-orthopedic-sofa-bed.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/zoaukbxyql/400px/style-orthopedic-sofa-bed.jpeg?q=85" alt="Sofa bed pet bed"></div>
                         <div class="copy">
                             <h3>Chaise</h3>
                             <p>Provide some human-grade luxury for your furry friend! Chaise will add a touch of class to your home while providing comfort for your pet to <span class="no-wrap">easily enjoy.</span></p>
@@ -894,55 +915,44 @@ https://flickity.metafizzy.co
                     "cellAlign": "left",
                     "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
                     }'>
-
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/ibc2fm2vwx/165px/featured-buddy-lounger.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/ibc2fm2vwx/165px@2x/featured-buddy-lounger.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/ibc2fm2vwx/165px/featured-buddy-lounger.jpeg?q=85"
-                                alt="Buddy Cuddler, Pumice"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/ibc2fm2vwx/165px/featured-buddy-lounger.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/ibc2fm2vwx/165px@2x/featured-buddy-lounger.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/ibc2fm2vwx/165px/featured-buddy-lounger.jpeg?q=85" alt="Buddy Cuddler, Pumice"></div>
                         <a class="arrow-right" href="/p/home-accents/buddy-lounger-pumice/_/R-80957">Buddy Cuddler</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/kafgqvgup8/165px/featured-duchess-fold-out.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/kafgqvgup8/165px@2x/featured-duchess-fold-out.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/kafgqvgup8/165px/featured-duchess-fold-out.jpeg?q=85"
-                                alt="Duchess Fold Out Sleeper Sofa w/iClean, Gray"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/kafgqvgup8/165px/featured-duchess-fold-out.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/kafgqvgup8/165px@2x/featured-duchess-fold-out.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/kafgqvgup8/165px/featured-duchess-fold-out.jpeg?q=85" alt="Duchess Fold Out Sleeper Sofa w/iClean, Gray"></div>
                         <a class="arrow-right" href="/p/home-accents/duchess-fold-out-sleeper-sofa-wiclean-gray/_/R-85546">Duchess Fold Out</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/syknb5kst1/165px/featured-ginger-cuddler.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/syknb5kst1/165px@2x/featured-ginger-cuddler.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/syknb5kst1/165px/featured-ginger-cuddler.jpeg?q=85"
-                                alt="Ginger Cuddler, Paprika"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/syknb5kst1/165px/featured-ginger-cuddler.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/syknb5kst1/165px@2x/featured-ginger-cuddler.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/syknb5kst1/165px/featured-ginger-cuddler.jpeg?q=85" alt="Ginger Cuddler, Paprika"></div>
                         <a class="arrow-right" href="/p/home-accents/ginger-cuddler-paprika/_/R-80951">Ginger Cuddler</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/bs75spcmkw/165px/harper-sofa-bed-twill-smoke.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/bs75spcmkw/165px@2x/harper-sofa-bed-twill-smoke.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/bs75spcmkw/165px/harper-sofa-bed-twill-smoke.jpeg?q=85"
-                                alt="Harper Sofa Bed, Twill Smoke"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/bs75spcmkw/165px/harper-sofa-bed-twill-smoke.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/bs75spcmkw/165px@2x/harper-sofa-bed-twill-smoke.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/bs75spcmkw/165px/harper-sofa-bed-twill-smoke.jpeg?q=85" alt="Harper Sofa Bed, Twill Smoke"></div>
                         <a class="arrow-right" href="/p/home-accents/harper-sofa-bed-twill-smoke/_/R-85542">Harper Sofa Bed</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/ymhmsgspdz/165px/featured-newton-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/ymhmsgspdz/165px@2x/featured-newton-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/ymhmsgspdz/165px/featured-newton-sofa.jpeg?q=85"
-                                alt="Newton Sofa, Granite"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/ymhmsgspdz/165px/featured-newton-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/ymhmsgspdz/165px@2x/featured-newton-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/ymhmsgspdz/165px/featured-newton-sofa.jpeg?q=85" alt="Newton Sofa, Granite"></div>
                         <a class="arrow-right" href="/p/home-accents/newton-sofa-granite/_/R-85397">Newton Sofa</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/wyadjl0bc2/165px/featured-rosie-lounger.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/wyadjl0bc2/165px@2x/featured-rosie-lounger.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/wyadjl0bc2/165px/featured-rosie-lounger.jpeg?q=85"
-                                alt="Rosie Lounger, Greystone Taupe"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/wyadjl0bc2/165px/featured-rosie-lounger.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/wyadjl0bc2/165px@2x/featured-rosie-lounger.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/wyadjl0bc2/165px/featured-rosie-lounger.jpeg?q=85" alt="Rosie Lounger, Greystone Taupe"></div>
                         <a class="arrow-right" href="/p/home-accents/rosie-lounger-greystone-taupe/_/R-85537">Rosie Lounger</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/2nzmruaira/165px/featured-sadie-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/2nzmruaira/165px@2x/featured-sadie-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/2nzmruaira/165px/featured-sadie-sofa.jpeg?q=85"
-                                alt="Sadie Sofa Bed, Spencer Plaid"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/2nzmruaira/165px/featured-sadie-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/2nzmruaira/165px@2x/featured-sadie-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/2nzmruaira/165px/featured-sadie-sofa.jpeg?q=85" alt="Sadie Sofa Bed, Spencer Plaid"></div>
                         <a class="arrow-right" href="/p/home-accents/sadie-sofa-bed-spencer-plaid/_/R-85544">Sadie Sofa Bed</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/d84q2c0jcd/165px/featured-solana-chaise-lounger.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/d84q2c0jcd/165px@2x/featured-solana-chaise-lounger.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/d84q2c0jcd/165px/featured-solana-chaise-lounger.jpeg?q=85"
-                                alt="Solana Chaise Lounger, Blue"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/d84q2c0jcd/165px/featured-solana-chaise-lounger.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/d84q2c0jcd/165px@2x/featured-solana-chaise-lounger.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/d84q2c0jcd/165px/featured-solana-chaise-lounger.jpeg?q=85" alt="Solana Chaise Lounger, Blue"></div>
                         <a class="arrow-right" href="/p/home-accents/solana-chaise-lounger-blue/_/R-85396">Solana Chaise</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/voahywi6rz/165px/featured-tucker-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/voahywi6rz/165px@2x/featured-tucker-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/voahywi6rz/165px/featured-tucker-sofa.jpeg?q=85"
-                                alt="Tucker Sofa Bed, Spencer Plaid"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/voahywi6rz/165px/featured-tucker-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/voahywi6rz/165px@2x/featured-tucker-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/voahywi6rz/165px/featured-tucker-sofa.jpeg?q=85" alt="Tucker Sofa Bed, Spencer Plaid"></div>
                         <a class="arrow-right" href="/p/home-accents/tucker-sofa-bed-spencer-plaid/_/R-85540">Tucker Sofa Bed</a>
                     </div>
                     <div class="featured-bed">
-                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/yegib34qib/165px/featured-tuscon-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/yegib34qib/165px@2x/featured-tuscon-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/yegib34qib/165px/featured-tuscon-sofa.jpeg?q=85"
-                                alt="Tuscon Sofa, Blue"></div>
+                        <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/yegib34qib/165px/featured-tuscon-sofa.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/yegib34qib/165px@2x/featured-tuscon-sofa.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/yegib34qib/165px/featured-tuscon-sofa.jpeg?q=85" alt="Tuscon Sofa, Blue"></div>
                         <a class="arrow-right" href="/p/home-accents/tuscon-sofa-blue/_/R-85398">Tuscon Sofa</a>
                     </div>
                 </div>
@@ -959,16 +969,14 @@ https://flickity.metafizzy.co
                     </div>
                     <div id="extra-image"><img src="https://embed.widencdn.net/img/lazboy/nwkf3sahjl/exact/tag.png" alt="La-Z-Boy tag"></div>
                 </div>
-                <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/vnaxpriwdy/480px/advantage01.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/vnaxpriwdy/480px@2x/advantage01.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/vnaxpriwdy/480px/advantage01.jpeg?q=85"
-                        alt="Dog on Solana Chaise Lounger"></div>
+                <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/vnaxpriwdy/480px/advantage01.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/vnaxpriwdy/480px@2x/advantage01.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/vnaxpriwdy/480px/advantage01.jpeg?q=85" alt="Dog on Solana Chaise Lounger"></div>
             </div>
             <div class="column">
                 <div class="copy">
                     <h2>American Heritage</h2>
                     <p>La-Z-Boy Pet Beds are filled and shipped from Arlington, Texas. Because we believe it&rsquo;s important to know where pet products <span class="no-wrap">are made.</span></p>
                 </div>
-                <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/2s7u9bvpt7/480px/advantage02.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/2s7u9bvpt7/480px@2x/advantage02.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/2s7u9bvpt7/480px/advantage02.jpeg?q=85"
-                        alt="Dog on Rosie Lounger"></div>
+                <div class="image"><img srcset="https://embed.widencdn.net/img/lazboy/2s7u9bvpt7/480px/advantage02.jpeg?q=85 1x, https://embed.widencdn.net/img/lazboy/2s7u9bvpt7/480px@2x/advantage02.jpeg?q=50 2x" src="https://embed.widencdn.net/img/lazboy/2s7u9bvpt7/480px/advantage02.jpeg?q=85" alt="Dog on Rosie Lounger"></div>
             </div>
         </section>
         <div class="gray-background">
@@ -1002,7 +1010,6 @@ https://flickity.metafizzy.co
             </section>
         </div>
     </div>
-
     <script>
         //function to check if jQuery is ready
         function jqIsReady() {
@@ -1018,12 +1025,12 @@ https://flickity.metafizzy.co
                 return;
             } else {
                 // open-close sleep styles
-                $("#styles>div").click(function(event) {
+                $("#styles>div").click(function (event) {
                     event.stopPropagation();
                     var thisCheckbox = $(this).find('input');
                     $("#styles input").not(thisCheckbox).prop("checked", false);
                 });
-                $("body").click(function(e) {
+                $("body").click(function (e) {
                     $("#styles :checked").prop("checked", false);
                 });
             }

@@ -5,6 +5,7 @@
 </head>
 
 <body class="mobile-site">
+    <!-- launch updates with PLP -->
     <!-- begin NPC content -->
     <!-- COVID-19 FAQs TT -->
     <link rel="stylesheet" href="https://use.typekit.net/lop7gci.css">
@@ -127,6 +128,88 @@
         
         body.mobile-site .hidden-mobile {
             display: none !important;
+        }
+        /************* NPC Modal ***************/
+        
+        #npc-content [data-video-modal] {
+            cursor: pointer;
+        }
+        
+        #npc-content [data-video-modal].play-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            height: 225px;
+            max-width: 400px;
+        }
+        
+        #npc-content [data-video-modal].play-button::after {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 120px;
+            background-image: url(/Images/design-services/play.svg);
+            background-size: cover;
+        }
+        
+        #npc-modal {
+            position: fixed;
+            z-index: 1000000;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        #npc-modal-container {
+            background-color: #fefefe;
+            padding: 5px;
+            border: 1px solid #888;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 75%;
+            max-width: 1050px;
+        }
+        
+        #npc-image {
+            width: 100%;
+            display: block;
+        }
+        
+        #npc-modal-content {
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        
+        #npc-modal-content iframe {
+            min-height: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #npc-modal-close {
+            position: absolute;
+            right: -7px;
+            top: -7px;
+            width: 22px;
+            z-index: 10;
+            cursor: pointer;
+        }
+        
+        #npc-modal-close:hover,
+        #npc-modal-close:focus {
+            text-decoration: none;
+            cursor: pointer;
         }
         /***************** Custom CSS ******************/
         
@@ -265,8 +348,7 @@
             <p>The cleanliness of our retail stores is something we&rsquo;ve always taken pride in. To ensure the health and safety of our customers and employees, we are addressing the challenges posed by <span class="no-wrap">COVID-19</span> by following
                 the guidance of local governments, the Centers for Disease Control and the World Health Organization. This includes additional procedures to clean and disinfect surfaces within our stores and wearing protective face-masks. We are also
                 limiting the amount of people admitted into the store at one time to create a safe shopping distance. Our warehouse and delivery services are also up and running, while observing enhanced health protocols to help keep you and our team
-                members&nbsp;safe.
-            </p>
+                members&nbsp;safe. </p>
             <p>We encourage you to visit our <a href="/storeLocator/storeLocator.jsp">Store Locator</a> to check hours of nearby locations and view special services that we are making&nbsp;available.</p>
             <p>If you feel uncomfortable visiting a retail location, our online store at <a href="/">www.la-z-boy.com</a> is still open and accepting new orders. Many of our interior designers are also available for virtual&nbsp;consultations.</p>
             <p>We look forward to bringing you all the style, value and comfort that you expect from <span class="no-wrap">at La-Z-Boy</span>. If you need to reach us for any reason, our Comfort Care team is available and are here to help via email or&nbsp;phone.</p>
@@ -274,9 +356,7 @@
         </section>
         <section id="family" class="full-width">
             <div class="copy">
-                <h3>Your
-                    <span class="no-wrap">La-Z-Boy</span> Family
-                </h3>
+                <h3>Your <span class="no-wrap">La-Z-Boy</span> Family </h3>
             </div>
             <div class="image">
                 <img srcset="https://embed.widencdn.net/img/lazboy/mr4wjxs1kc/750px/lzb-family.jpg?q=85 750w, https://embed.widencdn.net/img/lazboy/mr4wjxs1kc/1315px/lzb-family.jpg?q=85 1315w" src="https://embed.widencdn.net/img/lazboy/mr4wjxs1kc/980px/lzb-family.jpg?q=85"
@@ -301,7 +381,7 @@
             <h2>Are you still delivering&nbsp;orders?</h2>
             <p>Our warehouse and delivery services are up and running, while observing enhanced health protocols to help keep you and our team members&nbsp;safe.</p>
             <h2>Should I expect a delay in my&nbsp;order?</h2>
-            <p>Many of our products can be ready for you to enjoy in a matter of days. In other cases we will custom build your new product and have it to your home in as little as <span class="no-wrap">10-12 weeks.</span></p>
+            <p>Many of our products can be ready for you to enjoy in a matter of days. In other cases we will custom build your new product and have it to your home in approximately <span class="no-wrap">4-6 months.</span></p>
             <h2>What precautions are you taking when providing <span class="no-wrap">in-home delivery?</span></h2>
             <p>Our delivery drivers are taking additional measures to keep everyone safe. We are following guidelines provided by the Centers for Disease Control including cleaning and disinfecting surfaces you may come into contact with during the delivery
                 process. We may also keep our distance while in your home and wear protective masks. We encourage you to do the&nbsp;same.</p>
@@ -317,7 +397,87 @@
             <p>We have created a number of tools and services that make it easy to transform your home, while at home. <a href="/content/free-swatches">Click Here</a> to request free swatches samples delivered directly to your door. To customize furniture
                 and see what it will look like in your own home, download our <a href="/content/augmented-reality">Augmented Reality App</a> for iOS. To transform your entire room, or your entire house, we recommend our <a href="/content/Room-Planner-3D/"
                     class="no-wrap">3D Room Planner.</a></p>
+            <h2>Please watch the following video for more information on what’s happening at <span class="no-wrap">La-Z-Boy</span> as we safely work hard to make each order with quality and care.</h2>
+            <p data-video-modal="ODEchIOnUwo" class="play-button" style="background-image: url('/Images/covid-19-faq/video.jpg');">
+            </p>
         </section>
     </div>
+    <script>
+        //Function to remove the modal.
+        function removeModal() {
+            document.body.removeChild(document.getElementById('npc-modal'));
+        }
+
+        // Function to play a video in a modal. Test video is 'P1li3aQv3eQ'.
+        function videoModal(srcID) {
+            var div = document.createElement('div');
+            div.innerHTML =
+                '<section id="npc-modal" class="video" onclick="removeModal();"><div id="npc-modal-container">\
+                    <div id="npc-modal-content">\
+                        <iframe src="https://www.youtube.com/embed/' + srcID + '?rel=0&amp;amp;ecver=2&amp;amp;enablejsapi=1&amp;amp;showinfo=0&amp;amp;autoplay=1" frameborder="0" allowfullscreen></iframe>\
+                    </div>\
+                    <img id="npc-modal-close" src="https://content.la-z-boy.com/Images/npc/modal-close.svg">\
+                </section>';
+            var modal = div.firstChild;
+
+            document.body.insertBefore(modal, document.body.firstChild);
+
+            return false;
+        }
+
+        (function() {
+
+            function myEventListener(el, eventName, handler) {
+                if (el.addEventListener) {
+                    el.addEventListener(eventName, handler);
+                } else {
+                    el.attachEvent('on' + eventName, function() {
+                        handler.call(el);
+                    });
+                }
+            }
+
+            // Create array of query string values
+            var params = [],
+                hash;
+            var q = document.URL.split('?')[1];
+            if (q != undefined) {
+                q = q.split('&');
+                for (var i = 0; i < q.length; i++) {
+                    hash = q[i].split('=');
+                    params.push(hash[1]);
+                    params[hash[0]] = hash[1];
+                }
+            }
+
+            // Play the video in the query string
+            if (params['v'] != null) {
+                videoModal(params['v']);
+            }
+
+            // Add click and keyboard events to videoModal elements
+            var videoLinks = document.querySelectorAll('[data-video-modal]');
+            for (i = 0; i < videoLinks.length; i++) {
+                (function() {
+                    var currentVideoLink = videoLinks[i];
+                    var srcID = currentVideoLink.dataset.videoModal;
+
+                    currentVideoLink.setAttribute("tabindex", "0");
+
+                    myEventListener(currentVideoLink, "click", function() {
+                        videoModal(srcID);
+                    });
+
+                    myEventListener(currentVideoLink, 'keydown', function(event) {
+                        var code = event.charCode || event.keyCode;
+                        if ((code === 32) || (code === 13)) {
+                            videoModal(srcID);
+                            event.preventDefault();
+                        }
+                    });
+                })();
+            }
+        })();
+    </script>
     <!-- end NPC content -->
 </body>

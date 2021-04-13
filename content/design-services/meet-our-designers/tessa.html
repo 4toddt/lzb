@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Tessa</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/headshot.jpg" alt="Tessa"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/tessa/headshot.jpg" alt="Tessa"></div>
                         <h2>Tessa</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/tessa/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,7 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Nashville, TN</p>
-                        <p>You want a room that you’re drawn to, and that’s where Tessa comes in. “Most of my clients start out hesitant, I remind them to have FUN and follow their gut!” She loves creating comfortable spaces with pieces that flow well together.</p>
+                        <p>You want a room that you’re drawn to, and that’s where Tessa comes in. “Most of my clients start out hesitant, I remind them to have FUN and follow their gut!” She loves creating comfortable spaces with pieces that flow well&nbsp;together.</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -77,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/CouplesCollaborator.png" alt="Couples Collaborator badge">
                                 </label>
                                 <p>
                                     <strong>Couples Collaborator</strong>
-                                    <br>Blending styles for a look you&rsquo;ll both love.
-                                </p>
+                                    <br>Blending styles for a look you’ll both love. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/SpaceMaximizer.png" alt="Space Maximizer badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/SpaceMaximizer.png" alt="Space Maximizer badge">
                                 </label>
                                 <p>
                                     <strong>Space Maximizer</strong>
-                                    <br>Creative space planning and room flow.
-                                </p>
+                                    <br>Creative space planning and room flow. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MixMaster.png" alt="Mix Master badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/MixMaster.png" alt="Mix Master badge">
                                 </label>
                                 <p>
                                     <strong>Mix Master</strong>
-                                    <br>Mixing and matching patterns in unique ways.
-                                </p>
+                                    <br>Mixing and matching patterns in unique ways. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Farmhouse.png" alt="Modern Farmhouse badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Farmhouse.png" alt="Modern Farmhouse badge">
                                 </label>
                                 <p>
                                     <strong>Modern Farmhouse</strong>
-                                    <br>Creating cozy, warm spaces with rustic charm.
-                                </p>
+                                    <br>Creating cozy, warm spaces with rustic charm. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PetPro.png" alt="Pet Pro badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PetPro.png" alt="Pet Pro badge">
                                 </label>
                                 <p>
                                     <strong>Pet Pro</strong>
-                                    <br>Styles and décor that stand up to pets.
-                                </p>
+                                    <br>Styles and décor that stand up to pets. </p>
                             </div>
                         </div>
                     </div>
@@ -137,16 +125,19 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room03.jpg')">
+                <div class="background-image half" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room03a.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room04.jpg')">
+                <div class="background-image half" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room03b.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/tessa/room04.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -157,19 +148,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">What tips do you have for clients looking for a new furniture piece?</p>
-                    <p>I tell almost every client to find what’s comfortable first and then we can work on making it look good. It’s easy to get too focused on the aesthetic and ignore how a piece actually feels. Most of my clients start out hesitant, I
-                        remind them to have FUN and follow their gut! Don’t get too hung up on a certain style, I help them notice what they’re naturally drawn to, and go from there. Not every leg style needs to match. Not every arm needs to be rolled.
-                        Aim for curated…not matching.</p>
+                    <p class="heading">What tips do you have for clients looking for a new furniture&nbsp;piece?</p>
+                    <p>I tell almost every client to find what’s comfortable first and then we can work on making it look good. It’s easy to get too focused on the aesthetic and ignore how a piece actually feels. Most of my clients start out hesitant, I remind them to have FUN and follow their gut! Don’t get too hung up on a certain style, I help them notice what they’re naturally drawn to, and go from there. Not every leg style needs to match. Not every arm needs to be rolled. Aim for curated…not&nbsp;matching.</p>
                 </div>
                 <div>
-                    <p class="heading">What are your favorite <span class="no-wrap">La-Z-Boy</span> fabrics right now? Do you have any “go-to” <span class="no-wrap">La-Z-Boy</span> styles?</p>
-                    <p>Merit fabric, I’m looking at you! I absolutely love it, and I know I’m not alone. It’s soft yet has textural and color variation; that combo is always a win! I’m also a big fan of the Flicker fabric. A small scale pattern like that
-                        is indispensable. As far as a go-to style, can you really go wrong with a Collins sectional? My clients go nuts over it.</p>
-                    <p class="heading">Do you have a favorite design story?</p>
-                    <p>The <span class="no-wrap">La-Z-Boy</span> corporate office contacted me and told me about a family who spent a lot of time at the Ronald McDonald House here in Nashville. They were the sweetest, most genuine people. They had never
-                        had new furniture in this room—mostly second-hand and antique pieces. The best part—and why this is my favorite design—is that La‑Z‑Boy gifted them the entire room which would have been about $20k. The pride I felt in representing
-                        that kind of generosity was priceless—as was their reaction to their new room.</p>
+                    <p class="heading">What are your favorite <span class="no-wrap">La-Z-Boy</span> fabrics right now? Do you have any “go-to” <span class="no-wrap">La-Z-Boy</span>&nbsp;styles?</p>
+                    <p>Merit fabric, I’m looking at you! I absolutely love it, and I know I’m not alone. It’s soft yet has textural and color variation; that combo is always a win! I’m also a big fan of the Flicker fabric. A small scale pattern like that is indispensable. As far as a go-to style, can you really go wrong with a Collins sectional? My clients go nuts over&nbsp;it.</p>
+                    <p class="heading">Do you have a favorite design&nbsp;story?</p>
+                    <p>The <span class="no-wrap">La-Z-Boy</span> corporate office contacted me and told me about a family who spent a lot of time at the Ronald McDonald House here in Nashville. They were the sweetest, most genuine people. They had never had new furniture in this room—mostly second-hand and antique pieces. The best part—and why this is my favorite design—is that La‑Z‑Boy gifted them the entire room which would have been about $20k. The pride I felt in representing that kind of generosity was priceless—as was their reaction to their new&nbsp;room.</p>
                 </div>
             </div>
         </section>
@@ -191,19 +177,15 @@
                             }'>
                             <div class="testimonial">
                                 <h3>It’s the Little Things</h3>
-                                <p>From our first meeting with Tessa, she could see our stress. When she said "Come on guys relax, I got you covered!" we were able to loosen up. She asked us a lot of questions about our lifestyle and style. When Tessa revealed
-                                    the final design, she explained to us why she placed the furniture in certain places for us and our daughter who is in a wheelchair. We loved everything in her presentation! She even took into consideration the sofa’s
-                                    placement and style so I could see the TV while cooking!</p>
+                                <p>From our first meeting with Tessa, she could see our stress. When she said "Come on guys relax, I got you covered!" we were able to loosen up. She asked us a lot of questions about our lifestyle and style. When Tessa revealed the final design, she explained to us why she placed the furniture in certain places for us and our daughter who is in a wheelchair. We loved everything in her presentation! She even took into consideration the sofa’s placement and style so I could see the TV while&nbsp;cooking!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>A Magazine-Worthy Home</h3>
-                                <p>Tessa is professional in every way! She came into our home and really listened to what we wanted and created beautiful, innovative furniture plans for us. She incorporated our ideas, budget and found rugs, fabrics and pieces
-                                    that enhance our style. We couldn't be happier! Tessa made our home look like a magazine cover, yet it is functional and comfortable. We love it!</p>
+                                <p>Tessa is professional in every way! She came into our home and really listened to what we wanted and created beautiful, innovative furniture plans for us. She incorporated our ideas, budget and found rugs, fabrics and pieces that enhance our style. We couldn't be happier! Tessa made our home look like a magazine cover, yet it is functional and comfortable. We love&nbsp;it!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>No More Anxiety!</h3>
-                                <p>This was our first time getting a room of new furniture. Tessa helped us overcome our anxiety and worked with us at our pace. She introduced us to prints and patterns that we would not have chosen on our own, and now they
-                                    are our favorite! She was extremely patient. Thanks to Tessa we have our perfect room for our family!</p>
+                                <p>This was our first time getting a room of new furniture. Tessa helped us overcome our anxiety and worked with us at our pace. She introduced us to prints and patterns that we would not have chosen on our own, and now they are our favorite! She was extremely patient. Thanks to Tessa we have our perfect room for our&nbsp;family!</p>
                             </div>
                         </div>
                     </div>
@@ -214,7 +196,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

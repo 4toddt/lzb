@@ -1,16 +1,15 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <base href="O:\">
-    <link href="/css/_local.css" rel="stylesheet" type="text/css">
-    <style>
-        #page1,
-        #page2,
-        #last-page,
-        #confirmation-page {
-            display: inline-block !important;
-        }
-    </style>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr("href", $(this).attr("href") + ".html");
+            });
+        });
+    </script>
+    <style></style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -22,7 +21,7 @@
             dmiStickyNav.className = "primary-nav";
         }
     </script>
-    <link href="/css/uat/ds-forms.css" rel="stylesheet" type="text/css">
+    <link href="/css/ds-forms.css" rel="stylesheet" type="text/css">
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -87,25 +86,23 @@
                         </div>
                         <div class="default-text">
                             <input id="dsr-field5" name="zipPostal" type="text" required pattern="(^\d{5}$|^[A-Za-z0-9]{3} [A-Za-z0-9]{3}$)">
-                            <label for="dsr-field5" validation-text="required">Zip/Postal
-                                Code</label>
+                            <label for="dsr-field5" validation-text="like 55555 or A1A 1A1">Zip/Postal Code</label>
                         </div>
                         <div class="default-text">
                             <input id="dsr-field6" name="dob" type="date" pattern="^\d{1,2}\/\d{1,2}\/\d{4}$">
-                            <label for="dsr-field6" validation-text="like &ldquo;9/14/1776&rdquo;">Date of Birth</label>
+                            <label for="dsr-field6" validation-text="like “9/14/1776”">Date of Birth</label>
                         </div>
                         <div class="default-text">
                             <input id="dsr-field7" name="emailAddress" type="email" required pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$">
-                            <label for="dsr-field7" validation-text="like &ldquo;someone@example.com&rdquo;">Email</label>
+                            <label for="dsr-field7" validation-text="like “someone@example.com”">Email</label>
                         </div>
                     </div>
                     <div class="default-checkbox">
                         <input class="make-required" id="dsr-field8" name="contactByPhone" type="checkbox" toggle-inputs>
-                        <label for="dsr-field8">I&rsquo;d prefer to be contacted by phone, not&nbsp;email.</label>
+                        <label for="dsr-field8">I’d prefer to be contacted by phone, not&nbsp;email.</label>
                         <div class="default-text check-to-show">
                             <input id="dsr-field9" name="homePhone" type="tel" pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$" disabled>
-                            <label for="dsr-field9" validation-text="like &ldquo;555-555-5555&rdquo;">Phone
-                                Number</label>
+                            <label for="dsr-field9" validation-text="like “555-555-5555”">Phone Number</label>
                         </div>
                     </div>
                     <p class="form-title">Which room(s) in your home are you looking to&nbsp;complete?</p>
@@ -144,8 +141,7 @@
                     </div>
                     <h2>What style(s) appeal to you&nbsp;most?</h2>
                     <h3><span class="bolder">Step 2: </span>Click to select all that&nbsp;apply.</h3>
-                    <p class="form-subtitle">Don&rsquo;t see anything you like? That&rsquo;s ok, skip ahead to the next step.
-                    </p>
+                    <p class="form-subtitle">Don’t see anything you like? That’s ok, skip ahead to the next step. </p>
                     <div class="square-checkbox aggregate-checkboxes">
                         <input id="dsr-field14" type="checkbox" value="Comfortably Casual: Meyer">
                         <label for="dsr-field14" style="background-image: url('https://content.la-z-boy.com/Images/npc/design-services/design-request-form/grid01.jpg')" role="img" aria-label="Comfortably Casual room style with Meyer Sectional">
@@ -198,8 +194,7 @@
                         <div class="nav-circle current"></div>
                     </div>
                     <h2>What type of furniture can we help you&nbsp;find?</h2>
-                    <h3><span class="bolder">Step 3: </span>Click to select all that apply, then provide additional details.
-                    </h3>
+                    <h3><span class="bolder">Step 3: </span>Click to select all that apply, then provide additional details. </h3>
                     <div class="circle-checkbox aggregate-checkboxes">
                         <input id="dsr-field23" type="checkbox" value="Recliner">
                         <label for="dsr-field23">Recliner</label>
@@ -218,13 +213,11 @@
                         <input class="aggregate" name="furniture" type="hidden">
                     </div>
                     <div class="default-textarea">
-                        <label for="dsr-field30" class="form-title">What colors would you like your new furniture to
-                            match or&nbsp;complement?</label>
+                        <label for="dsr-field30" class="form-title">What colors would you like your new furniture to match or&nbsp;complement?</label>
                         <textarea id="dsr-field30" name="colors"></textarea>
                     </div>
                     <div class="default-textarea">
-                        <label for="dsr-field31" class="form-title">How would you describe the style you&rsquo;re
-                            looking&nbsp;for?</label>
+                        <label for="dsr-field31" class="form-title">How would you describe the style you’re looking&nbsp;for?</label>
                         <textarea id="dsr-field31" name="style"></textarea>
                     </div>
                     <div class="default-radio">
@@ -279,11 +272,9 @@
                     <img class="hidden-md-xl" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/mobile/thank-you.jpg" alt="">
                     <img class="hidden-xs-sm" src="https://content.la-z-boy.com/Images/npc/design-services/design-request-form/desktop/thank-you.jpg" alt="">
                     <div class="text-box">
-                        <h1>Thank you
-                            <span>for submitting your&nbsp;design&nbsp;preferences.</span>
+                        <h1>Thank you <span>for submitting your&nbsp;design&nbsp;preferences.</span>
                         </h1>
-                        <p>One of our designer professionals will contact you within 48 hours to help you create something&nbsp;special!
-                        </p>
+                        <p>One of our designer professionals will contact you within 48 hours to help you create something&nbsp;special! </p>
                     </div>
                 </div>
             </div>
@@ -291,7 +282,6 @@
             <input type="hidden" name="elqSiteID" value="20103530">
         </form>
     </div>
-
-    <script src="/js/uat/ds-forms.js"></script>
+    <script src="/js/ds-forms.js"></script>
     <!-- end BCC content -->
 </body>

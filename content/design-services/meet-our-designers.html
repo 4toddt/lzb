@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -37,7 +32,6 @@
             <li>Meet Our Designers</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -48,7 +42,6 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
@@ -58,93 +51,103 @@
                         <p>Every <span class="no-wrap">La-Z-Boy</span> designer is unique, but they have one thing in common: they love helping customers create beautiful and functional rooms.</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/hero.jpg');"></div>
             </div>
         </section>
         <section id="designers">
             <div class="designer-grid">
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/everton/headshot.png" alt="Everton"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/everton/headshot.png" alt="Everton"></div>
                     <a href="/content/design-services/meet-our-designers/everton">Everton</a>
                     <p>Manchester, CT</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/headshot.png" alt="Alexis"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/alexis/headshot.png" alt="Alexis"></div>
                     <a href="/content/design-services/meet-our-designers/alexis">Alexis</a>
                     <p>Myrtle Beach, SC</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/headshot.png" alt="Jonathan"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/headshot.png" alt="Jonathan"></div>
                     <a href="/content/design-services/meet-our-designers/jonathan">Jonathan</a>
                     <p>Pittsburgh, PA</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/headshot.png" alt="Danielle"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/headshot.png" alt="Danielle"></div>
                     <a href="/content/design-services/meet-our-designers/danielle">Danielle</a>
                     <p>Pittsburgh, PA</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/erica/headshot.png" alt="Erica"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/erica/headshot.png" alt="Erica"></div>
                     <a href="/content/design-services/meet-our-designers/erica">Erica</a>
                     <p>Sterling Heights, MI</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/shannon/headshot.png" alt="Shannon"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/shannon/headshot.png" alt="Shannon"></div>
                     <a href="/content/design-services/meet-our-designers/shannon">Shannon</a>
                     <p>Dublin, OH</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jen/headshot.png" alt="Jen"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/jen/headshot.png" alt="Jen"></div>
                     <a href="/content/design-services/meet-our-designers/jen">Jen</a>
                     <p>Indianapolis, IN</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/headshot.png" alt="Jessica"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/headshot.png" alt="Jessica"></div>
                     <a href="/content/design-services/meet-our-designers/jessica_s">Jessica</a>
                     <p>South Bend, IN</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/tessa/headshot.png" alt="Tessa"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/megan/headshot.png" alt="Megan"></div>
+                    <a href="/content/design-services/meet-our-designers/megan">Megan</a>
+                    <p>Hendersonville, TN</p>
+                </div>
+                <!-- <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/tessa/headshot.png" alt="Tessa"></div>
                     <a href="/content/design-services/meet-our-designers/tessa">Tessa</a>
+                    <p>Nashville, TN</p>
+                </div> -->
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/sam/headshot.png" alt="Sam"></div>
+                    <a href="/content/design-services/meet-our-designers/sam">Sam</a>
                     <p>Nashville, TN</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica/headshot.png" alt="Jessica"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica/headshot.png" alt="Jessica"></div>
                     <a href="/content/design-services/meet-our-designers/jessica">Jessica</a>
                     <p>Chandler, AZ</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/betsy/headshot.png" alt="Betsy"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/betsy/headshot.png" alt="Betsy"></div>
                     <a href="/content/design-services/meet-our-designers/betsy">Betsy</a>
                     <p>Chandler, AZ</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/headshot.png" alt="Sonja"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/sonja/headshot.png" alt="Sonja"></div>
                     <a href="/content/design-services/meet-our-designers/sonja">Sonja</a>
                     <p>Mesa, AZ</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/headshot.png" alt="Jill"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/jill/headshot.png" alt="Jill"></div>
                     <a href="/content/design-services/meet-our-designers/jill">Jill</a>
                     <p>Scottsdale, AZ</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/erin/headshot.png" alt="Erin"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/erin/headshot.png" alt="Erin"></div>
                     <a href="/content/design-services/meet-our-designers/erin">Erin</a>
                     <p>Scottsdale, AZ</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/carol-ann/headshot.png" alt="Carol-Ann"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/carol-ann/headshot.png" alt="Carol-Ann"></div>
                     <a href="/content/design-services/meet-our-designers/carol-ann">Carol-Ann</a>
                     <p>San Marcos, CA</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/headshot.png" alt="Nicole"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/nicole/headshot.png" alt="Nicole"></div>
                     <a href="/content/design-services/meet-our-designers/nicole">Nicole</a>
                     <p>Roseville, CA</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/marilou/headshot.png" alt="Marilou"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/marilou/headshot.png" alt="Marilou"></div>
                     <a href="/content/design-services/meet-our-designers/marilou">Marilou</a>
                     <p>Tualatin, OR</p>
                 </div>
@@ -152,7 +155,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

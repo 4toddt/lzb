@@ -1,0 +1,867 @@
+<style>
+    .primary-nav {
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1499;
+    }
+    
+    .primary-nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    #mega-nav {
+        display: flex;
+        position: relative;
+        margin: 0 -10px;
+    }
+    
+    #mega-nav a {
+        font-size: 15px;
+        outline: none !important;
+    }
+    
+    #mega-nav sup {
+        line-height: 0;
+        color: inherit;
+        margin: 0;
+    }
+    
+    #mega-nav img {
+        display: block;
+        width: 100%;
+    }
+    
+    #mega-nav>li {
+        flex: 2 0 auto;
+    }
+    
+    #mega-nav>li:first-child,
+    #mega-nav>li:last-child {
+        flex-grow: 1;
+    }
+    
+    #mega-nav>li>a {
+        display: block;
+        padding: 14px 10px;
+        margin-bottom: 4px;
+        color: #666;
+        letter-spacing: 1px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    
+    #mega-nav>li:hover>a {
+        padding-bottom: 28px;
+        margin-bottom: -10px;
+        transition-property: padding-bottom, margin-bottom;
+        transition-delay: .1s;
+    }
+    
+    #mega-nav>li:first-child>a {
+        text-align: left;
+    }
+    
+    #mega-nav>li:last-child>a {
+        text-align: right;
+    }
+    
+    #mega-nav>li:hover>a {
+        color: black;
+        font-weight: 600;
+        letter-spacing: .75px;
+        text-decoration: none;
+    }
+    
+    #mega-nav>li>a:before,
+    #mega-nav>li>a:after {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        left: calc(50% - 25px);
+        bottom: 0;
+        border-width: 0 25px 25px 25px;
+        border-color: transparent transparent #ccc transparent;
+        opacity: 0;
+    }
+    
+    #mega-nav>li>a:after {
+        border-bottom-color: white;
+        bottom: -1.5px;
+    }
+    
+    #mega-nav>li:hover>a:before,
+    #mega-nav>li:hover>a:after {
+        opacity: 1;
+        transition: opacity .3s ease-in .1s;
+    }
+    
+    #mega-nav>li.no-dropdown>a {
+        color: #006fb1;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+    
+    #mega-nav>li.no-dropdown:hover>a {
+        color: black;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+    
+    #mega-nav>li.no-dropdown:hover>a:before,
+    #mega-nav>li.no-dropdown:hover>a:after {
+        content: none;
+    }
+    
+    #mega-nav>li>div {
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 6px 10px rgb(0 0 0 / 20%);
+        padding: 35px 29px;
+        top: -1000px;
+        left: 10px;
+        right: 10px;
+        display: flex;
+        opacity: 0;
+    }
+    
+    #mega-nav>li:hover>div {
+        opacity: 1;
+        top: 60px;
+        transition: opacity .3s ease-in .1s, top 0s .1s;
+    }
+    
+    #mega-nav .subcategories {
+        flex: 0 0 540px;
+        height: 290px;
+        position: relative;
+    }
+    
+    #mega-nav .subcategories p {
+        font-size: 15px;
+        margin: 1em 0 0;
+    }
+    
+    #mega-nav .subcategories li {
+        display: block;
+        line-height: 1;
+        padding: 5px 0;
+    }
+    
+    #mega-nav .subcategories>li:hover>a #mega-nav a:hover {
+        color: #636262;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    
+    #mega-nav .subcategories>li>div {
+        position: absolute;
+        width: 400px;
+        height: 314px;
+        background-color: white;
+        right: 0;
+        top: 0;
+        border-left: 1px solid #ccc;
+        padding-left: 24px;
+    }
+    
+    #mega-nav .subcategories>li:first-child>div {
+        z-index: 1;
+    }
+    
+    #mega-nav .subcategories>li:hover>div {
+        z-index: 2;
+    }
+    
+    #mega-nav .subcategories img {
+        width: 375px;
+        height: 240px;
+        background-color: #ccc;
+    }
+    
+    #mega-nav .promos {
+        flex: 0 0 380px;
+        max-width: 380px;
+        padding-left: 24px;
+        text-align: center;
+    }
+    
+    #mega-nav .promos>div {
+        display: flex;
+        border: 1px solid #ccc;
+    }
+    
+    #mega-nav .promos>div+div {
+        margin-top: 10px;
+    }
+    
+    #mega-nav .promos .copy {
+        padding: 10px;
+        flex: 0 0 204px;
+        max-width: 204px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #mega-nav .promos h2 {
+        font-size: 18px;
+        font-weight: 300;
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+        line-height: 1.3;
+        padding-bottom: 5px;
+        color: black;
+    }
+    
+    #mega-nav .promos p {
+        font-size: 14px;
+        margin: .75em 0 0;
+        line-height: 1.25;
+    }
+    
+    #mega-nav .promos a {
+        display: block;
+        margin-top: .5em;
+    }
+    
+    #mega-nav .promos .image {
+        flex: 0 0 150px;
+    }
+    
+    body.hide-ca .hide-ca {
+        display: none !important;
+    }
+</style>
+<ul id="mega-nav">
+    <li>
+        <a href="/b/recliners/_/N-musa9i">Recliners</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/recliners/_/N-musa9i">View All</a>
+                    <div>
+                        <img src="https://content.la-z-boy.com/Images/home/mobile/cdp/recliners-1.jpg" alt="Recliners">
+                        <p>Our superior recliner chairs come in various styles to complement any room.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/recliners-high-leg/_/N-c0lpap">High Leg</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/recliners-highleg.jpg" alt="High Leg Recliners">
+                        <p>Style and comfort with a modern high leg recliner.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/recliners-duo/_/N-1ggg80r">duo<sup>®</sup></a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/recliners-duo.jpg" alt="duo® Recliners">
+                        <p>Rest, relax, and repeat in style with our duo<sup>®</sup> recliners.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/recliners-rocking/_/N-1e7xutk">Rocking</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/recliners-rocking.jpg" alt="Rocking Recliners">
+                        <p>Upgrade your downtime with a stylish rocking recliner.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/recliners-wall-recliners/_/N-bdgz6x">Wall Recliners</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/recliners-wall.jpg" alt="Wall Recliner">
+                        <p>Reclining comfort meets space saving convenience.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/recliners-swivel/_/N-1p87sqp">Swivel</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/recliners-swivel.jpg" alt="Swivel Recliner">
+                        <p>A spin on comfort with our 360º swivel chairs.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/recliners-lift-chairs/_/N-7g6b8o">Lift Chairs</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/recliners-lift.jpg" alt="Lift Recliners">
+                        <p>Sit, stand or fully recline at the touch of a button.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>Are You Sitting Down?</h2>
+                        <p>La-Z-Boy has reclining<br>and stationary styles too.<br>(This one’s taken.)</p>
+                        <a href="/content/chairs-with-kristen">See the Styles</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/nav-chairs.jpg" alt="Shop recliners with Kristen Bell"></div>
+                </div>
+                <div>
+                    <div class="copy">
+                        <h2>Lift Recliners</h2>
+                        <p>The power to sit, stand<br>or fully recline at the<br>touch of a button.</p>
+                        <a href="/b/recliners-lift-chairs/_/N-7g6b8o">Shop Lift Recliners</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/lift-recliners.jpg" alt="Shop lift recliners"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a href="/b/chairs/_/N-otsk94">Chairs</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/chairs/_/N-otsk94">View All</a>
+                    <div>
+                        <img src="https://content.la-z-boy.com/Images/home/mobile/cdp/chairs-1.jpg" alt="Chairs">
+                        <p>Take a seat and instantly relax in one of our comfortable upholstered living room chairs.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/chairs-chair--a-half/_/N-9m68g">Chair &amp; A Half</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/chairs-chair-and-a-half.jpg" alt="Chair & A Half">
+                        <p>A chair with room for two. Style with space to spare.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/chairs-stationary/_/N-1olicge">Stationary</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/chairs-designers-choice.jpg" alt="Designer’s Choice">
+                        <p>Designer-inspired accent chairs that make a statement.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/chairs-sleeper/_/N-n7grum">Sleepers</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/chairs-sleepers.jpg" alt="Sleeper Chairs">
+                        <p>Rest easy with chic chairs that double as twin sleepers.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/chairs-duo/_/N-15dmz4z">duo<sup>®</sup></a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/chairs-duo.jpg" alt="duo® Chairs">
+                        <p>It’s a chair. It’s a recliner. It’s both! Make duo<sup>®</sup>? yours today.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/chairs-swivel/_/N-33ua67">Swivel</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/chairs-swivel.jpg" alt="Swivel Chairs">
+                        <p>Take style for a spin with our standard 360º swivel chairs.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>Are You Sitting Down?</h2>
+                        <p>La-Z-Boy has reclining<br>and stationary styles too.<br>(This one’s taken.)</p>
+                        <a href="/content/chairs-with-kristen">See the Styles</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/nav-chairs.jpg" alt="Shop recliners with Kristen Bell"></div>
+                </div>
+                <div>
+                    <div class="copy">
+                        <h2>Urban Attitudes</h2>
+                        <p>Create a one-of-a-kind room with our Urban Attitudes collection.</p>
+                        <a href="/content/urban-attitudes">Shop Urban Attitudes</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/urban-attitudes.jpg" alt="Shop Urban Attitudes"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a href="/b/sofas/_/N-103rjdd">Sofas</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/sofas/_/N-103rjdd">View All</a>
+                    <div>
+                        <img src="https://content.la-z-boy.com/Images/home/mobile/cdp/sofas.jpg" alt="Sofas">
+                        <p>Sofa sets are the center of your living room.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/sofas-reclining/_/N-ls4bd3">Reclining</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/sofas-reclining.jpg" alt="Reclining Sofas">
+                        <p>Love to lounge? Our reclining sofas offer next-level comfort.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/sofas-stationary/_/N-1ywqhzj">Stationary</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/sofas-stationary.jpg" alt="Stationary Sofas">
+                        <p>From casual to contemporary, comfort never looked so good.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/sofas-sleeper/_/N-1e7eawn">Sleepers</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/sofas-sleepers.jpg" alt="Sleeper Sofas">
+                        <p>Our sleeper sofas are perfect for overnight guests.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/sofas-duo/_/N-103hro5">duo<sup>®</sup></a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/sofas-duo.jpg" alt="duo® Sofas">
+                        <p>With duo<sup>®</sup> you’ll never have to sacrifice style for comfort.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>We Saved You a Seat</h2>
+                        <p>No matter what your<br>style or budget, La-Z-Boy<br>has a sofa for you.</p>
+                        <a href="/content/sofas-with-kristen">Explore with Kristen</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/nav-sofas.jpg" alt="Shop sofas with Kristen Bell"></div>
+                </div>
+                <div>
+                    <div class="copy">
+                        <h2>Urban Attitudes</h2>
+                        <p>Create a one-of-a-kind room with our Urban Attitudes collection.</p>
+                        <a href="/content/urban-attitudes">Shop Urban Attitudes</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/urban-attitudes.jpg" alt="Shop Urban Attitudes"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a href="/b/loveseats/_/N-10t9x4i">Loveseats</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/loveseats/_/N-10t9x4i">View All</a>
+                    <div>
+                        <img src="https://content.la-z-boy.com/Images/home/mobile/cdp/loveseats-1.jpg" alt="Loveseats">
+                        <p>With so many styles, leather and fabrics, you’ll find the perfect loveseat sofa to take home.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/loveseats-reclining/_/N-r9scrx">Reclining</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/loveseats-reclining.jpg" alt="Reclining Loveseats">
+                        <p>Enjoy double the comfort with our dual reclining loveseats.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/loveseats-stationary/_/N-wj9iog">Stationary</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/loveseats-stationary.jpg" alt="Stationary Loveseats">
+                        <p>With styles for every taste, our loveseats are a perfect fit.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/loveseats-duo/_/N-17bwcy9">duo<sup>®</sup></a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/loveseats-duo.jpg" alt="duo® Loveseats">
+                        <p>Style. Comfort. Power. duo<sup>®</sup> has a lot to love.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>Design Services</h2>
+                        <p>Our FREE Design Services help you get the look of your dreams.</p>
+                        <a href="/content/design-services">Design Services</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/design-services.jpg" alt="Design Services"></div>
+                </div>
+                <div>
+                    <div class="copy">
+                        <h2>Urban Attitudes</h2>
+                        <p>Create a one-of-a-kind room with our Urban Attitudes collection.</p>
+                        <a href="/content/urban-attitudes">Shop Urban Attitudes</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/urban-attitudes.jpg" alt="Shop Urban Attitudes"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a href="/b/sectionals/_/N-kc1h3z">Sectionals</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/sectionals/_/N-kc1h3z">View All</a>
+                    <div>
+                        <img src="https://content.la-z-boy.com/Images/home/mobile/cdp/sectionals-1.jpg" alt="Sectionals">
+                        <p>Our sectional sofas and couches add space to your home.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/sectionals-reclining/_/N-if5565">Reclining</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/sectionals-reclining.jpg" alt="Reclining Sectionals">
+                        <p>Stretch out and lean back, these sectionals also recline.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/sectionals-stationary/_/N-1ofraco">Stationary</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/sectionals-stationary.jpg" alt="Stationary Sectionals">
+                        <p>Style that takes comfort and seating to the max.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/sectionals-sleepers/_/N-1rakznr">Sleepers</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/sectionals-sleepers.jpg" alt="Sleeper Sectionals">
+                        <p>Dream bigger. These spacious sectionals double as sleepers.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/sectionals-duo/_/N-1w0tsss">duo<sup>®</sup></a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/sectionals-duo.jpg" alt="duo® Sectionals">
+                        <p>Meet duo<sup>®</sup>?. High-end style and unexpected reclining power.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>Create a Sectional</h2>
+                        <p>Sectionals are like building blocks for adults. Only much more comfortable.</p>
+                        <a href="/content/sectionals-with-kristen">See the Styles</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/nav-sectionals.jpg" alt="Sectionals with Kristen"></div>
+                </div>
+                <div>
+                    <div class="copy">
+                        <h2>Urban Attitudes</h2>
+                        <p>Create a one-of-a-kind room with our Urban Attitudes collection.</p>
+                        <a href="/content/urban-attitudes">Shop Urban Attitudes</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/urban-attitudes.jpg" alt="Shop Urban Attitudes"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a href="/b/home-accents/_/N-5v9b1d">Home Accents</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/home-accents/_/N-5v9b1d">View All</a>
+                    <div>
+                        <img src="https://content.la-z-boy.com/Images/home/mobile/cdp/home-accents-1.jpg" alt="Home Accents">
+                        <p>Find the perfect finishing touch. Our home accessories add fun and function to any room.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/home-accents-ottomans/_/N-bg03w0">Ottomans</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/home-accents-ottomans.jpg" alt="Ottomans">
+                        <p>As stylish as they are versatile, our ottomans can do it all.</p>
+                    </div>
+                </li>
+                <li class="hide-ca">
+                    <a href="/b/home-accents-office-chairs/_/N-1pv98xs">Office Chairs</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/home-accents-office-chairs.jpg" alt="Office Chairs">
+                        <p>Designed to work overtime, these styles mean business.</p>
+                    </div>
+                </li>
+                <li class="hide-ca">
+                    <a href="/b/home-accents-pet-beds/_/N-1aameo9">Pet Beds</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/pet-beds.jpg" alt="Pet Beds">
+                        <p>With luxurious sleep surfaces and sturdy support, our pet beds fit every pet sleep style.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/home-accents-benches/_/N-1f33tjb">Benches</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/home-accents-benches.jpg" alt="Benches">
+                        <p>Define an entryway or accent any room with a stylish bench.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/home-accents-entertainment/_/N-vxkw7t">Entertainment</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/home-accents-entertainment.jpg" alt="Entertainment">
+                        <p>In tune with today’s style our media consoles make a room.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/home-accents-lamps/_/N-1kb59jd">Lamps</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/home-accents-lamps.jpg" alt="Lamps">
+                        <p>Complete your look with our eclectic line of lamps.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/home-accents-tables/_/N-153v17z">Tables</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/home-accents-tables.jpg" alt="Tables">
+                        <p>Place a glass or serve up style with decorative accent tables.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>Design Services</h2>
+                        <p>Our FREE Design Services help you get the look of your dreams.</p>
+                        <a href="/content/design-services">Design Services</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/design-services.jpg" alt="Design Services"></div>
+                </div>
+                <div class="hide-ca">
+                    <div class="copy">
+                        <h2>Mattresses</h2>
+                        <p>Enjoy a 100-night sleep trial and 10-year warranty. Oh, it also ships free to your door!</p>
+                        <a href="/content/mattresses">Shop Mattresses Now</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/mattresses-nav.jpg" alt="Shop Mattresses Now"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a href="/b/bedroom/_/N-bl4nh2">Bedroom</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/bedroom/_/N-bl4nh2">View All</a>
+                    <div>
+                        <img src="https://content.la-z-boy.com/Images/home/mobile/cdp/bedroom-all.jpg" alt="Bedroom">
+                        <p>With comfort and style our quality bedroom furniture is a dream come true.</p>
+                    </div>
+                </li>
+                <li class="hide-ca">
+                    <a href="/b/bedroom-mattresses/_/N-1mfp5ro">Mattresses</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/mattresses.jpg" alt="Mattresses">
+                        <p>A complete, restful night’s sleep for side sleepers and back sleepers alike.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/bedroom-beds/_/N-196jepb">Beds</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/bedroom-beds.jpg" alt="Beds">
+                        <p>Create a restful retreat with a bed designed for comfort.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/bedroom-chests/_/N-pwibgd">Chests</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/bedroom-chests.jpg" alt="Chests">
+                        <p>Every well-dressed bedroom needs vertical storage.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/bedroom-dressers/_/N-xrcvkm">Dressers</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/bedroom-dressers.jpg" alt="Dressers">
+                        <p>Show off your style inside and out with these dressers.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/bedroom-mirrors/_/N-1gqc5co">Mirrors</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/bedroom-mirrors.jpg" alt="Mirrors">
+                        <p>Reflect your personality with striking accent mirrors.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/bedroom-nightstands/_/N-ry1v29">Nightstands</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/bedroom-nightstands.jpg" alt="Nightstands">
+                        <p>Add practical style to your bedside with a nightstand.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>Design Services</h2>
+                        <p>Our FREE Design Services help you get the look of your dreams.</p>
+                        <a href="/content/design-services">Design Services</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/design-services.jpg" alt="Design Services"></div>
+                </div>
+                <div class="hide-ca">
+                    <div class="copy">
+                        <h2>Mattresses</h2>
+                        <p>Enjoy a 100-night sleep trial and 10-year warranty. Oh, it also ships free to your door!</p>
+                        <a href="/content/mattresses">Shop Mattresses Now</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/mattresses-nav.jpg" alt="Shop Mattresses Now"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <a href="/b/kitchen--dining/_/N-7nfl6e">Kitchen &amp; Dining</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/kitchen--dining/_/N-7nfl6e">View All</a>
+                    <div>
+                        <img src="https://content.la-z-boy.com/Images/home/mobile/cdp/dining-all.jpg" alt="View All">
+                        <p>Set the table in style with quality dining furniture perfect for every space.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/kitchen--dining-dining-tables/_/N-r4ic1s">Dining Tables</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/kitchen-dining-tables.jpg" alt="Dining Tables">
+                        <p>Add flavor with tables in every shape and size.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/kitchen--dining-dining-chairs/_/N-1bweudw">Dining Chairs</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/kitchen-dining-chairs.jpg" alt="Dining Chairs">
+                        <p>Spice up your dining table with chairs in every style.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/kitchen--dining-dining-storage/_/N-b6lco7">Dining Storage</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/kitchen-dining-dining-storage.jpg" alt="Dining Storage">
+                        <p>Entertain with cabinets perfect for serving and storing.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/kitchen--dining-barstools/_/N-133gpz6">Barstools</a>
+                    <div>
+                        <img data-lazy-src="https://content.la-z-boy.com/Images/home/mobile/cdp/kitchen-dining-barstools.jpg" alt="Barstools">
+                        <p>Raise the bar on seating with versatile barstools.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>Design Services</h2>
+                        <p>Our FREE Design Services help you get the look of your dreams.</p>
+                        <a href="/content/design-services">Design Services</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/design-services.jpg" alt="Design Services"></div>
+                </div>
+                <div>
+                    <div class="copy">
+                        <h2>Urban Attitudes</h2>
+                        <p>Create a one-of-a-kind room with our Urban Attitudes collection.</p>
+                        <a href="/content/urban-attitudes">Shop Urban Attitudes</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/urban-attitudes.jpg" alt="Shop Urban Attitudes"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="hide-ca">
+        <a href="/b/outdoor/_/N-gjla8t">Outdoor</a>
+        <div>
+            <ul class="subcategories">
+                <li>
+                    <a href="/b/outdoor/_/N-gjla8t">View All</a>
+                    <div>
+                        <img src="https://www.la-z-boy.com/Images/home/mobile/cdp/outdoor-all.jpg" alt="View All">
+                        <p>Customize your patio space with stylish seating sets and individual pieces.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/outdoor-seating-sets/_/N-11lj8lm">Seating Sets</a>
+                    <div>
+                        <img data-lazy-src="https://www.la-z-boy.com/Images/home/mobile/cdp/outdoor-seating-sets.jpg" alt="Outdoor Seating Sets" alt="Seating Sets">
+                        <p>The perfect place for guests to relax and enjoy the outdoors.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/outdoor/outdoor-dining-sets/_/N-akffw5">Dining Sets</a>
+                    <div>
+                        <img data-lazy-src="https://www.la-z-boy.com/Images/home/mobile/cdp/outdoor-dining-sets.jpg" alt="Dining Sets">
+                        <p>Relax on your back patio as you dine and entertain guests.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/outdoor/outdoor-bistro--small-space-sets/_/N-1jjb0rt">Bistro Sets</a>
+                    <div>
+                        <img data-lazy-src="https://www.la-z-boy.com/Images/home/mobile/cdp/outdoor-bistro-small-spaces.jpg" alt="Bistro & Small Spaces">
+                        <p>Small patio space? No problem! These sets fit neatly in your outdoor area.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/outdoor-chairs--ottomans/_/N-pzdf9b">Chairs &amp; Ottomans</a>
+                    <div>
+                        <img data-lazy-src="https://www.la-z-boy.com/Images/home/mobile/cdp/outdoor-lounge-chairs-ottomans.jpg" alt="Chairs & Ottomans">
+                        <p>Enjoy comfort and style in the privacy of your own backyard.</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="/b/outdoor-tables/_/N-1x2l28r">Tables</a>
+                    <div>
+                        <img data-lazy-src="https://www.la-z-boy.com/Images/home/mobile/cdp/outdoor-tables.jpg" alt="Outdoor Tables">
+                        <p>Perfectly paired tables for new or existing patio furniture.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="promos">
+                <div>
+                    <div class="copy">
+                        <h2>Design Services</h2>
+                        <p>Our FREE Design Services help you get the look of your dreams.</p>
+                        <a href="/content/design-services">Design Services</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/design-services.jpg" alt="Design Services"></div>
+                </div>
+                <div>
+                    <div class="copy">
+                        <h2>Urban Attitudes</h2>
+                        <p>Create a one-of-a-kind room with our Urban Attitudes collection.</p>
+                        <a href="/content/urban-attitudes">Shop Urban Attitudes</a>
+                    </div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/MegaNav/urban-attitudes.jpg" alt="Shop Urban Attitudes"></div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li class="no-dropdown">
+        <a href="/b/_/N-1obe4n">SALE</a>
+    </li>
+</ul>
+<script>
+    document.getElementsByClassName('primary-nav')[0].classList.remove('sticky');
+    (function() {
+        function loadSubcatImages() {
+            var images = this.parentNode.querySelectorAll('[data-lazy-src]');
+            for (var i = 0; i < images.length; i++) {
+                var image = images[i];
+                image.src = image.getAttribute('data-lazy-src');
+            }
+            this.removeEventListener('mouseover', loadSubcatImages);
+        }
+        var menuLinks = document.querySelectorAll('#mega-nav>li:not(.no-dropdown)>a');
+        for (var i = 0; i < menuLinks.length; i++) {
+            var menuLink = menuLinks[i];
+            menuLink.addEventListener('mouseover', loadSubcatImages);
+            menuLink.addEventListener('touchstart', function() {
+                menuLink.setAttribute('data-touched', '');
+                console.log('data-touched added');
+            });
+            menuLink.addEventListener('click', function(event) {
+                if (menuLink.hasAttribute('data-touched')) {
+                    menuLink.removeAttribute('data-touched');
+                    console.log('data-touched removed');
+                    event.preventDefault();
+                }
+            });
+        }
+    }());
+</script>

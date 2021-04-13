@@ -1,0 +1,405 @@
+@import url("https://use.typekit.net/oxd7mfn.css");
+@font-face {
+    font-family: "LZB Icons";
+    src: url("/css/uat/fonts/lzb-icons.eot?jebkb3");
+    src: url("/css/uat/fonts/lzb-icons.eot?jebkb3#iefix") format("embedded-opentype"), url("/css/uat/fonts/lzb-icons.ttf?jebkb3") format("truetype"), url("/css/uat/fonts/lzb-icons.woff?jebkb3") format("woff"), url("/css/uat/fonts/lzb-icons.svg?jebkb3#lzb-icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/************ resets ***********/
+
+#site-wrapper {
+    max-width: none;
+}
+
+#site-wrapper .section-title {
+    display: none;
+}
+
+#site-wrapper .section-row {
+    max-width: none;
+}
+
+#site-wrapper .section-content {
+    padding: 0;
+    float: none;
+}
+
+#site-wrapper .one-column-container,
+#site-wrapper .two-column-container {
+    max-width: none;
+    padding: 0;
+}
+
+.two-column-first [role="main"],
+.two-column-first [role="region"],
+main {
+    width: 100%;
+    margin: 0;
+}
+
+.two-column-first [role="region"]>h1 {
+    display: none;
+}
+
+#npc-content * {
+    font: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    float: none;
+    width: auto;
+    text-decoration: none;
+}
+
+
+/* breadcrumbs */
+
+#breadcrumbs {
+    margin: 0 auto 10px;
+    max-width: 980px;
+    font-size: 14px;
+    color: #868686;
+}
+
+body.mobile-site #breadcrumbs {
+    margin: 0.625rem auto;
+    padding: 0rem 0.625rem;
+    max-width: 62.5rem;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+#breadcrumbs ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 35px;
+}
+
+body.mobile-site #breadcrumbs ul {
+    line-height: 1.25rem;
+}
+
+#breadcrumbs li+li:before {
+    font-family: "icomoon";
+    content: "\e904";
+    -webkit-font-smoothing: antialiased;
+    vertical-align: middle;
+    padding: 0 8px;
+    line-height: 0;
+}
+
+body.mobile-site #breadcrumbs li+li:before {
+    font-family: "lzb-icons";
+    content: "\e907";
+    vertical-align: baseline;
+    font-size: 0.625rem;
+    padding: 0 0.375rem;
+}
+
+#breadcrumbs a {
+    color: inherit;
+    font-size: inherit;
+}
+
+body.mobile-site #breadcrumbs a {
+    color: #555;
+}
+
+
+/* defaults */
+
+#npc-content {
+    width: 100%;
+    font-family: "lato", "OpenSans", sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    color: #333;
+    overflow: hidden;
+}
+
+.mobile-site #npc-content {
+    margin-bottom: 40px;
+}
+
+#npc-content section {
+    width: 100%;
+    max-width: 1020px;
+    padding: 0 20px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+#npc-content section.full-width {
+    max-width: 980px;
+    padding: 0;
+}
+
+#npc-content strong {
+    font-weight: bold;
+}
+
+#npc-content img {
+    /* override browser default of inline-block to remove white space after images */
+    display: block;
+    width: 100%;
+    max-width: none;
+}
+
+#npc-content .image {
+    /* fix IE bug where images in flex containers don't keep their aspect ratio */
+    min-height: 1px;
+}
+
+
+/********** Utility Classes ************/
+
+#npc-content .no-wrap {
+    white-space: nowrap;
+}
+
+#npc-content .background-image {
+    background-size: cover;
+    background-position: center;
+}
+
+
+/********** VIP Defaults ***************/
+
+#npc-content h1 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#npc-content h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#npc-content h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#npc-content p {
+    font-size: .8em;
+    margin-top: .5em;
+}
+
+#npc-content .faux-button {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: .9em;
+    line-height: 40px;
+    padding: 0 20px;
+    min-width: 150px;
+    margin-top: 20px;
+    color: white;
+    background-color: #006FB1;
+    text-align: center;
+    cursor: pointer;
+}
+
+#npc-content input[type="text"] {
+    border: 1px solid #979797;
+    height: 40px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+#npc-content label {
+    display: block;
+    text-align: left;
+    font-size: .7em;
+    font-weight: bold;
+    line-height: 2;
+    width: 100%;
+}
+
+#npc-content #hero {
+    background-image: url(/Images/vip/hero.jpg);
+    height: 285px;
+    margin-top: 0;
+    position: relative;
+}
+
+#hero img {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 180px;
+}
+
+#hero .copy {
+    position: absolute;
+    top: 73%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+#npc-content .icon>img {
+    height: 50px;
+    width: auto;
+    margin: 0 auto;
+}
+
+#npc-content .icon+h2,
+#npc-content .icon+h3 {
+    margin-top: .5em;
+}
+
+#appointment .two-col>div,
+#promos .two-col>div,
+#location .two-col {
+    margin-top: 30px;
+}
+
+#npc-content hr {
+    margin-top: 30px;
+    border-top: 1px solid #979797;
+}
+
+#financing {
+    margin-top: 30px;
+    background-color: #303030;
+    color: white;
+    padding: 25px 15px;
+}
+
+#financing .promo {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    margin: 0;
+}
+
+#financing .terms {
+    line-height: 1.2;
+    font-size: .6em;
+}
+
+#location .background-image {
+    background-image: url(/Images/vip/store.jpg);
+    height: 200px;
+}
+
+#location .copy {
+    padding: 25px 5px;
+    border: 2px solid #979797;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#location p {
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 500;
+}
+
+#store-name {
+    font-weight: bold;
+    font-size: 1.125em;
+}
+
+#legal p {
+    font-size: .6em;
+    line-height: 1.2;
+    text-align: left;
+}
+
+[role="contentinfo"] {
+    margin-top: 100px;
+}
+
+@media only screen and (min-width: 350px) {
+    #financing .promo {
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    #npc-content section {
+        margin-top: 55px;
+    }
+    #npc-content h1 {
+        font-size: 2.5em;
+    }
+    #npc-content h1+p {
+        font-size: 1.3em;
+    }
+    #npc-content h2 {
+        font-size: 1.5em;
+    }
+    #npc-content h3 {
+        font-size: 1.3em;
+    }
+    #npc-content #hero {
+        height: 500px;
+    }
+    #hero img {
+        top: 9%;
+        max-width: 300px;
+    }
+    #hero .copy {
+        top: 72%;
+    }
+    #npc-content .icon>img {
+        height: 70px;
+    }
+    #npc-content p {
+        font-size: .9em;
+    }
+    #npc-content .faux-button {
+        margin-top: 30px;
+    }
+    #npc-content .two-col {
+        display: flex;
+    }
+    #npc-content .two-col>div {
+        flex: 1 1 50%;
+    }
+    #npc-content .gutter-20 {
+        margin: 0 -10px;
+    }
+    #npc-content .gutter-20>div {
+        padding: 0 10px;
+    }
+    #npc-content .gutter-30 {
+        margin: 0 -15px;
+    }
+    #npc-content .gutter-30>div {
+        padding: 0 15px;
+    }
+    #appointment .two-col>div,
+    #promos .two-col>div {
+        margin-top: 40px;
+    }
+    #npc-content hr {
+        margin-top: 50px;
+    }
+    #financing .promo {
+        font-size: 2.3em;
+    }
+    #location p {
+        font-size: 1.2em;
+        text-align: left;
+    }
+    #legal p {
+        font-size: .6em;
+    }
+    [role="contentinfo"] {
+        margin-top: 150px;
+    }
+}

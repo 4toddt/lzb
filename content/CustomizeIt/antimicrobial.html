@@ -1,0 +1,615 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Code for XM -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        @import url("https://use.typekit.net/oxd7mfn.css");
+        @font-face {
+            font-family: "LZB Icons";
+            src: url("/css/uat/fonts/lzb-icons.eot?jebkb3");
+            src: url("/css/uat/fonts/lzb-icons.eot?jebkb3#iefix") format("embedded-opentype"), url("/css/uat/fonts/lzb-icons.ttf?jebkb3") format("truetype"), url("/css/uat/fonts/lzb-icons.woff?jebkb3") format("woff"), url("/css/uat/fonts/lzb-icons.svg?jebkb3#lzb-icons") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+        /************ resets ***********/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /* breadcrumbs */
+        
+        #breadcrumbs {
+            margin: 0 auto 10px;
+            max-width: 980px;
+            font-size: 14px;
+            color: #868686;
+        }
+        
+        body.mobile-site #breadcrumbs {
+            margin: 0.625rem auto;
+            padding: 0rem 0.625rem;
+            max-width: 62.5rem;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        #breadcrumbs ul {
+            padding-left: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 35px;
+        }
+        
+        body.mobile-site #breadcrumbs ul {
+            line-height: 1.25rem;
+        }
+        
+        #breadcrumbs li+li:before {
+            font-family: "icomoon";
+            content: "\e904";
+            -webkit-font-smoothing: antialiased;
+            vertical-align: middle;
+            padding: 0 8px;
+            line-height: 0;
+        }
+        
+        body.mobile-site #breadcrumbs li+li:before {
+            font-family: "lzb-icons";
+            content: "\e907";
+            vertical-align: baseline;
+            font-size: 0.625rem;
+            padding: 0 0.375rem;
+        }
+        
+        #breadcrumbs a {
+            color: inherit;
+            font-size: inherit;
+        }
+        
+        body.mobile-site #breadcrumbs a {
+            color: #555;
+        }
+        /* defaults */
+        
+        #npc-content {
+            width: 100%;
+            font-family: "lato", "OpenSans", sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        .mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1020px;
+            padding: 0 20px;
+            margin: 25px auto 0;
+            text-align: center;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content strong {
+            font-weight: bold;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        /********** Antimicrobial Styles ************/
+        
+        #npc-content section+section+section::before {
+            content: "";
+            display: block;
+            width: 100%;
+            border-top: 1px solid #979797;
+            padding-top: 25px;
+        }
+        
+        section#hero {
+            max-width: 980px;
+            padding: 0;
+            height: 61.224490vw;
+            min-height: 320px;
+            max-height: 600px;
+            background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/hero.jpg);
+            background-size: cover;
+            background-position: center 26%;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+        }
+        
+        #hero img {
+            position: absolute;
+            height: 15.3%;
+            width: auto;
+            margin-top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        @media only screen and (min-width: 520px) {
+            #hero img {
+                margin-top: 4.7%;
+            }
+        }
+        
+        #npc-content h2 {
+            font-size: 1.2em;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+        
+        #npc-content h3 {
+            font-size: .9em;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+        
+        #npc-content .image+h3 {
+            margin-top: .5em;
+        }
+        
+        #npc-content p {
+            font-size: .8em;
+            line-height: 1.4;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #npc-content h2+p {
+            margin-top: .5em;
+        }
+        
+        #npc-content h3+p {
+            margin-top: .2em;
+        }
+        
+        #npc-content a {
+            font-size: .8em;
+            font-weight: bold;
+        }
+        
+        #npc-content p+a {
+            margin-top: .5em;
+            display: block;
+            color: #006FB1;
+        }
+        
+        #npc-content a:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        #npc-content .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        
+        #npc-content .grid>div {
+            margin-top: 20px;
+            padding: 0 10px;
+            width: 100%;
+            max-width: 490px;
+        }
+        
+        #npc-content .grid>div.full-width {
+            max-width: none;
+        }
+        
+        #npc-content .grid .gray-box,
+        #npc-content .grid.gray-boxes>div>div {
+            background-color: #F3F3F3;
+            padding: 20px;
+        }
+        
+        #swatches .flickity-wrapper {
+            margin: 0 -20px;
+        }
+        
+        #swatches [data-flickity] {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            margin-top: 20px;
+            padding: 0 45px;
+            outline: none !important;
+        }
+        
+        #swatches .flickity-viewport {
+            overflow: hidden;
+        }
+        
+        #swatches .flickity-slider>div {
+            width: 166px;
+            margin-right: 20px;
+        }
+        
+        #swatches .flickity-button {
+            position: absolute;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        #swatches .flickity-button:disabled {
+            opacity: 0.3;
+            cursor: auto;
+            pointer-events: none;
+        }
+        
+        #swatches .flickity-prev-next-button {
+            top: 60px;
+            width: 45px;
+            height: 45px;
+        }
+        
+        #swatches .flickity-prev-next-button.next {
+            right: 0;
+        }
+        
+        #swatches .flickity-prev-next-button.previous {
+            left: 0;
+        }
+        
+        #swatches .flickity-prev-next-button .flickity-button-icon {
+            position: absolute;
+            left: 20%;
+            top: 20%;
+            width: 60%;
+            height: 60%;
+            fill: #979797;
+        }
+        
+        #specialty-fabrics .grid>div {
+            display: flex;
+        }
+        
+        #specialty-fabrics img {
+            height: 50px;
+        }
+        
+        #specialty-fabrics .copy {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        #specialty-fabrics p+a {
+            padding-top: .5em;
+            margin-top: auto;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #npc-content .grid>div {
+                max-width: 50%;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            #npc-content section {
+                margin-top: 60px;
+            }
+            #npc-content section+section+section::before {
+                padding-top: 60px;
+            }
+            section#hero {
+                margin-top: 0;
+            }
+            #npc-content h2 {
+                font-size: 1.8em;
+            }
+            #npc-content h3 {
+                font-size: 1.2em;
+            }
+            #npc-content h2+p {
+                font-size: .9em;
+            }
+            #npc-content .grid {
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            #npc-content .grid>div {
+                margin-top: 40px;
+                padding: 0 20px;
+            }
+            #swatches [data-flickity] {
+                margin-top: 25px;
+            }
+            #npc-content .grid.gray-boxes>div>div {
+                padding: 25px 30px 30px;
+            }
+            #specialty-fabrics .grid>div>div {
+                display: flex;
+            }
+            #specialty-fabrics .icon {
+                flex: 0 0 110px;
+            }
+            #specialty-fabrics img {
+                height: 80px;
+                width: auto;
+                margin-top: 10px;
+            }
+            #specialty-fabrics .copy {
+                text-align: left;
+                margin-top: 0;
+            }
+        }
+    </style>
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/CustomizeIt">Customize It!</a></li>
+            <li>Antimicrobial</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero">
+            <img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/logo.png" alt="">
+        </section>
+        <section id="fresher">
+            <h2>Keeping Your Fabric Fresher</h2>
+            <p>Antimicrobial properties surround each fiber to protect against mold, mildew and <span class="no-wrap">odor-causing bacteria.</span></p>
+            <div class="grid">
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/fresher01.jpg" alt="Coffee and biscuit on sofa"></div>
+                    <h3>Protect</h3>
+                    <p>Prevents the growth of mold, mildew and odor-causing bacteria on the surface of the&nbsp;fabric.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/fresher02.jpg" alt="Boy jumping on sofa"></div>
+                    <h3>Durability</h3>
+                    <p>Won’t wash away during standard cleaning and will help your fabric last longer and stay&nbsp;fresher.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/fresher03.jpg" alt="four sofas in a row"></div>
+                    <h3>Variety</h3>
+                    <p>Offered in a beautiful array of soft textures and stylish&nbsp;colors.</p>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/fresher04.jpg" alt="Closeup of tufted sofa back"></div>
+                    <h3>Our Promise</h3>
+                    <p>Antimicrobial Fabrics are covered by our Limited&nbsp;Warranty.</p>
+                </div>
+                <div class="full-width">
+                    <div class="gray-box">
+                        <p>Antimicrobial properties inhibit the growth of mold, mildew and odor-causing bacteria but do not protect against viruses and other&nbsp;germs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="swatches">
+            <h2>A Perfect Fit for Every&nbsp;Style</h2>
+            <p>Customize the fabric on your favorites by choosing your cover on the product&nbsp;page.</p>
+            <div class="flickity-wrapper">
+                <div data-flickity='{
+                    "freeScrollFriction": 0.1,
+                    "pageDots": false,
+                    "cellAlign": "left",
+                    "contain": true,
+                    "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                    }'>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E178335.jpg" alt="i-Marlon - Linen">
+                        <p>i-Marlon - Linen</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E178353.jpg" alt="i-Marlon - Stone">
+                        <p>i-Marlon - Stone</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E178358.jpg" alt="i-Marlon - Fog">
+                        <p>i-Marlon - Fog</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E178374.jpg" alt="i-Marlon - Driftwood">
+                        <p>i-Marlon - Driftwood</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E178386.jpg" alt="i-Marlon - Slate">
+                        <p>i-Marlon - Slate</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E178452.jpg" alt="i-Rayne - Dove">
+                        <p>i-Rayne - Dove</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E178454.jpg" alt="i-Rayne - Ash">
+                        <p>i-Rayne - Ash</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E178485.jpg" alt="i-Rayne - Rain">
+                        <p>i-Rayne - Rain</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E179036.jpg" alt="i-Oshae - Granite">
+                        <p>i-Oshae - Granite</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E179085.jpg" alt="i-Oshae - Serenity">
+                        <p>i-Oshae - Serenity</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E179432.jpg" alt="i-Portwood - Wheat">
+                        <p>i-Portwood - Wheat</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E179438.jpg" alt="i-Portwood - Elk">
+                        <p>i-Portwood - Elk</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E179452.jpg" alt="i-Portwood - Ash">
+                        <p>i-Portwood - Ash</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E179454.jpg" alt="i-Portwood - Slate">
+                        <p>i-Portwood - Slate</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/E179478.jpg" alt="i-Portwood - Niagara">
+                        <p>i-Portwood - Niagara</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/F179316.jpg" alt="i-Portia - Marmalade">
+                        <p>i-Portia - Marmalade</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/F179336.jpg" alt="i-Portia - Granite">
+                        <p>i-Portia - Granite</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/F179396.jpg" alt="i-Portia - Tropic">
+                        <p>i-Portia - Tropic</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/G178818.jpg" alt="i-Kaia - Marmalade">
+                        <p>i-Kaia - Marmalade</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/G178833.jpg" alt="i-Kaia - Porcelain">
+                        <p>i-Kaia - Porcelain</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/G178853.jpg" alt="i-Kaia - Thunder">
+                        <p>i-Kaia - Thunder</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/G178893.jpg" alt="i-Kaia - Thistle">
+                        <p>i-Kaia - Thistle</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/H178916.jpg" alt="i-Jean - Marmalade">
+                        <p>i-Jean - Marmalade</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/H178936.jpg" alt="i-Jean - Sand">
+                        <p>i-Jean - Sand</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/H178956.jpg" alt="i-Jean - Haze">
+                        <p>i-Jean - Haze</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/L179256.jpg" alt="i-Obstacle - Slate">
+                        <p>i-Obstacle - Slate</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/N179158.jpg" alt="i-Pipers Brook - Charcoal">
+                        <p>i-Pipers Brook - Charcoal</p>
+                    </div>
+                    <div><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/N179184.jpg" alt="i-Pipers Brook - Breeze">
+                        <p>i-Pipers Brook - Breeze</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="specialty-fabrics">
+            <h2>Specialty Fabrics</h2>
+            <p>Unique Fabrics made for your everyday&nbsp;needs.</p>
+            <div class="grid gray-boxes">
+                <div>
+                    <div>
+                        <div class="icon"><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/stain-resistant.svg" alt="droplet icon"></div>
+                        <div class="copy">
+                            <h3>Stain Resistant</h3>
+                            <p>Innovative iClean™ technology surrounds each fabric fiber, creating a barrier that repels spills before they turn into&nbsp;stains.</p>
+                            <a href="/content/CustomizeIt/iclean">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="icon"><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/pet-friendly.svg" alt="pets icon"></div>
+                        <div class="copy">
+                            <h3>Pet Friendly</h3>
+                            <p>Tested to simulate the scratches and wear pets can cause, to ensure a durable and easily washable&nbsp;fabric.</p>
+                            <a href="/content/CustomizeIt/pet-friendly-fabrics">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="icon"><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/performance.svg" alt="P icon"></div>
+                        <div class="copy">
+                            <h3>Performance</h3>
+                            <p>Superior stain and fade resistance properties make these fabrics easy to clean and incredibly&nbsp;durable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="icon"><img src="https://content.la-z-boy.com/Images/CustomizeIt/antimicrobial/eco-friendly.svg" alt="recycle icon"></div>
+                        <div class="copy">
+                            <h3>Eco Friendly</h3>
+                            <p>conserve™ Sustainable Fabrics are soft, durable and made from recycled water&nbsp;bottles.</p>
+                            <a href="/content/CustomizeIt/conserve">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/flickity.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/flickity.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+    <!-- /Code for XM -->
+</body>

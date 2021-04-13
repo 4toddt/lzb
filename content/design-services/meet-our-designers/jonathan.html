@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Jonathan</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/headshot.jpg" alt="Jonathan"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/headshot.jpg" alt="Jonathan"></div>
                         <h2>Jonathan</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,7 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Pittsburgh, PA</p>
-                        <p>What is the best part of designing for Jonathan? Creating a room that combines the style his clients have always wanted with the comfort they deserve. “I love the reaction of the client when they are just in awe of their new room.”</p>
+                        <p>What is the best part of designing for Jonathan? Creating a room that combines the style his clients have always wanted with the comfort they deserve. “I love the reaction of the client when they are just in awe of their new&nbsp;room.”</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -77,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PalettePro.png" alt="Palette Pro badge">
                                 </label>
                                 <p>
                                     <strong>Palette Pro</strong>
-                                    <br>Clever color combos to create the perfect mood.
-                                </p>
+                                    <br>Clever color combos to create the perfect mood. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/CouplesCollaborator.png" alt="Couples Collaborator badge">
                                 </label>
                                 <p>
                                     <strong>Couples Collaborator</strong>
-                                    <br>Blending styles for a look you&rsquo;ll both love.
-                                </p>
+                                    <br>Blending styles for a look you’ll both love. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PetPro.png" alt="Pet Pro badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PetPro.png" alt="Pet Pro badge">
                                 </label>
                                 <p>
                                     <strong>Pet Pro</strong>
-                                    <br>Styles and décor that stand up to pets.
-                                </p>
+                                    <br>Styles and décor that stand up to pets. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/EcoConscious.png" alt="Eco-Conscious badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/EcoConscious.png" alt="Eco-Conscious badge">
                                 </label>
                                 <p>
                                     <strong>Eco-Conscious</strong>
-                                    <br>Using sustainable and eco-friendly materials.
-                                </p>
+                                    <br>Using sustainable and eco-friendly materials. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/ContemporaryCool.png" alt="Contemporary Cool badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/ContemporaryCool.png" alt="Contemporary Cool badge">
                                 </label>
                                 <p>
                                     <strong>Contemporary Cool</strong>
-                                    <br>Clean lines and neutral palettes with pops of color.
-                                </p>
+                                    <br>Clean lines and neutral palettes with pops of color. </p>
                             </div>
                         </div>
                     </div>
@@ -137,19 +125,22 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room03.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room03.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room04.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room04.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room05.jpg')">
+                <div class="background-image half" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room05a.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image half" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jonathan/room05b.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -160,16 +151,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">What tips do you have for clients who want to re-design their space?</p>
-                    <p>Comfort is first! The best way to determine a unique style is to first find what fits with the most comfort. Once we find a comfortable style we can move toward style options and everything will fall into place. Designing the room
-                        of their dreams is why I do what I do! I love the reaction of the client when they are just in awe of their new room.</p>
+                    <p class="heading">What tips do you have for clients who want to re-design their&nbsp;space?</p>
+                    <p>Comfort is first! The best way to determine a unique style is to first find what fits with the most comfort. Once we find a comfortable style we can move toward style options and everything will fall into place. Designing the room of their dreams is why I do what I do! I love the reaction of the client when they are just in awe of their new&nbsp;room.</p>
                 </div>
                 <div>
-                    <p class="heading">Why interior design?</p>
-                    <p>When I was young I was always interested in helping my mom change her living room around or helping her make any remodeling decisions. Being a creative person I have been fascinated with anything in the design world. To design an amazing
-                        space with lots of textures and is visually appealing is what I strive for.</p>
-                    <p class="heading">What is your favorite way to spend your Saturday?</p>
-                    <p>Typically I am playing some type of intramural sport in our local sports league or enjoying brunch with friends.</p>
+                    <p class="heading">Why interior&nbsp;design?</p>
+                    <p>When I was young I was always interested in helping my mom change her living room around or helping her make any remodeling decisions. Being a creative person I have been fascinated with anything in the design world. To design an amazing space with lots of textures and is visually appealing is what I strive&nbsp;for.</p>
+                    <p class="heading">What is your favorite way to spend your&nbsp;Saturday?</p>
+                    <p>Typically I am playing some type of intramural sport in our local sports league or enjoying brunch with&nbsp;friends.</p>
                 </div>
             </div>
         </section>
@@ -191,12 +180,11 @@
                             }'>
                             <div class="testimonial">
                                 <h3>Lots of Compliments</h3>
-                                <p>It was such a pleasure to work with you Jonathan! I sit in amazement at my living room because it is now so colorful and inviting. Several guests have said it is beautiful. Thanks again!</p>
+                                <p>It was such a pleasure to work with you Jonathan! I sit in amazement at my living room because it is now so colorful and inviting. Several guests have said it is beautiful. Thanks&nbsp;again!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>He Did the Impossible</h3>
-                                <p>This was a room that I simply could not figure out how to make comfortable, attractive, and functional. It is a long room with off-center focal points, a fireplace and two entry ways. But now with the angled love-seat and
-                                    the area rug I get an absolutely beautiful space! Thank you Jonathan!</p>
+                                <p>This was a room that I simply could not figure out how to make comfortable, attractive, and functional. It is a long room with off-center focal points, a fireplace and two entry ways. But now with the angled love-seat and the area rug I get an absolutely beautiful space! Thank you&nbsp;Jonathan!</p>
                             </div>
                         </div>
                     </div>
@@ -207,7 +195,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

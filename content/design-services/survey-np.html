@@ -1,29 +1,27 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <base href="O:">
-    <link href="/css/_local.css" rel="stylesheet" type="text/css">
-    <style>
-        #page1,
-        #page2,
-        #last-page,
-        #confirmation-page {
-            display: inline-block !important;
-        }
-    </style>
+    <script>
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
+            });
+        });
+    </script>
+    <style></style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Design Services Survey Non-Purchase -->
-    <!-- begin BCC content -->
+    <!-- begin XM content -->
     <script>
         dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
         if (dmiStickyNav != null) {
             dmiStickyNav.className = "primary-nav";
         }
     </script>
-
-    <link href="/css/uat/ds-forms.css" rel="stylesheet" type="text/css">
+    <link href="/css/ds-forms.css" rel="stylesheet" type="text/css">
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -47,36 +45,36 @@
         #bcc-content .hero .text-box {
             top: 16%;
         }
-        
+
         #bcc-content h2 {
             font-size: 1.4em;
         }
-        
+
         #bcc-content .form-subheading {
             font-size: .9em;
         }
-        
+
         @media only screen and (min-width: 600.1px) {
             #bcc-content h2 {
                 font-size: 1.6em;
             }
+
             #bcc-content .form-subheading {
                 font-size: 1em;
             }
         }
-        
+
         #bcc-content .default-radio,
         #bcc-content .number-line .labels {
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         #bcc-content .default-radio>label {
             margin-right: 2em;
         }
     </style>
-
     <div id="bcc-content">
         <form action="">
             <input value="FDS_Survey_NoPurchase" type="hidden" name="elqFormName" />
@@ -95,8 +93,7 @@
                 </div>
                 <div class="container-980">
                     <h2>Thank you for inquiring about <span class="no-wrap">La-Z-Boy</span> Free&nbsp;Design&nbsp;Services.</h2>
-                    <p class="form-subheading">Please take a moment to tell us what you think of our program. Answer the questions below to be automatically entered in a sweepstake for a chance to win a <span class="no-wrap">La-Z-Boy</span> chair in your choice of fabric. <a target="_blank"
-                            href="http://info.la-z-boy.com/2019DesignServicesExperienceSweepsRules">See&nbsp;official&nbsp;rules.</a></p>
+                    <p class="form-subheading">Please take a moment to tell us what you think of our program. Answer the questions below to be automatically entered in a sweepstake for a chance to win a <span class="no-wrap">La-Z-Boy</span> chair in your choice of fabric. <a target="_blank" href="http://info.la-z-boy.com/2019DesignServicesExperienceSweepsRules">See&nbsp;official&nbsp;rules.</a></p>
                 </div>
                 <div class="container-840">
                     <h3><span class="bolder">Question 1: </span>Contact information</h3>
@@ -111,7 +108,7 @@
                         </div>
                         <div class="default-text">
                             <input id="spp-field3" name="emailAddress" type="email" required pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$">
-                            <label for="spp-field3" validation-text="required &ldquo;someone@example.com&rdquo;">Email</label>
+                            <label for="spp-field3" validation-text="required “someone@example.com”">Email</label>
                         </div>
                     </div>
                     <h3><span class="bolder">Question 2: </span>Overall, how likely are you to recommend <span class="no-wrap">La-Z-Boy</span> Design&nbsp;Services</h3>
@@ -184,14 +181,12 @@
                     <label id="dsr-submit" class="form-button" for="">Submit</label>
                 </div>
             </div>
-
             <div class="page confirmation-page">
                 <div class="thank-you">
                     <img class="hidden-md-xl" src="https://content.la-z-boy.com/Images/npc/design-services/survey/mobile/thank-you.jpg" alt="">
                     <img class="hidden-xs-sm" src="https://content.la-z-boy.com/Images/npc/design-services/survey/desktop/thank-you.jpg" alt="">
                     <div class="text-box">
-                        <h1>Thank you!
-                            <span>Your response has been submitted and you have been entered into our sweepstakes.</span>
+                        <h1>Thank you! <span>Your response has been submitted and you have been entered into our sweepstakes.</span>
                         </h1>
                         <a href="/">Back to homepage</a>
                     </div>
@@ -199,6 +194,6 @@
             </div>
         </form>
     </div>
-    <script src="/js/uat/ds-forms.js"></script>
-    <!-- end BCC content -->
+    <script src="/js/ds-forms.js"></script>
+    <!-- end XM content -->
 </body>

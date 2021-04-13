@@ -1,0 +1,172 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <style>
+        .off-canvas-wrap {
+            padding-bottom: 60px;
+        }
+        
+        .off-canvas-wrap .back-to-top {
+            bottom: 70px;
+        }
+        
+        #banners {
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color: #d0d0d0;
+            color: #333333;
+            outline: 0 !important;
+            text-align: center;
+            font-size: 16px;
+            font-family: Lato, sans-serif;
+        }
+        
+        .off-canvas-wrap #banners {
+            font-size: 12px;
+            position: fixed;
+            bottom: 0;
+            z-index: 1;
+            height: 60px;
+        }
+        
+        #banners .banner {
+            animation: bannerOne 12s ease-out infinite;
+            height: 100px;
+            position: absolute;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .off-canvas-wrap #banners .banner {
+            height: 60px;
+        }
+        
+        #banners .banner.two {
+            animation-name: bannerTwo;
+        }
+        
+        #banners .banner.two h1 {
+            text-align: center;
+        }
+        
+        #banners .banner.three {
+            animation-name: bannerThree;
+        }
+        
+        #banners p {
+            font-size: inherit;
+            margin: 0;
+            padding: 0 10px;
+            width: 100%;
+            line-height: 1.4;
+        }
+        
+        #banners a {
+            font-size: inherit;
+            text-decoration: underline;
+            color: #333;
+        }
+        
+        #banners a:hover {
+            text-decoration: none;
+        }
+        
+        @keyframes bannerTwo {
+            0% {
+                bottom: 100%;
+            }
+            5% {
+                bottom: 0;
+            }
+            50% {
+                bottom: 0;
+            }
+            55% {
+                bottom: -100%;
+                animation-timing-function: step-start;
+            }
+            100% {
+                bottom: 100%;
+                animation-timing-function: ease-out;
+            }
+        }
+        
+        @keyframes bannerThree {
+            0% {
+                bottom: 0;
+            }
+            5% {
+                bottom: -100%;
+                animation-timing-function: step-start;
+            }
+            50% {
+                bottom: 100%;
+                animation-timing-function: ease-out;
+            }
+            55% {
+                bottom: 0;
+            }
+            100% {
+                bottom: 0;
+            }
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #banners {
+                height: 70px;
+            }
+            #banners .banner {
+                height: 70px;
+            }
+            .off-canvas-wrap {
+                padding-bottom: 50px;
+            }
+            .off-canvas-wrap .back-to-top {
+                bottom: 60px;
+            }
+            .off-canvas-wrap #banners,
+            .off-canvas-wrap #banners .banner {
+                height: 50px;
+            }
+        }
+        
+        @media only screen and (min-width: 980px) {
+            #banners {
+                height: 40px;
+            }
+            #banners .banner {
+                height: 40px;
+            }
+            .off-canvas-wrap {
+                padding-bottom: 30px;
+            }
+            .off-canvas-wrap .back-to-top {
+                bottom: 40px;
+            }
+            .off-canvas-wrap #banners,
+            .off-canvas-wrap #banners .banner {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="banners">
+        <div class="banner two">
+            <p><a class="drawer-button" href="/content/covid-19-faqs">Learn about</a> our nationwide effort to keep our local communities healthy and safe.</p>
+        </div>
+        <div class="banner three">
+            <p><a class="drawer-button" href="https://www.youtube.com/watch?v=ODEchIOnUwo" target="_blank">Watch the video</a> for more information on what’s happening at <span style="white-space: nowrap;">La-Z-Boy</span> as we safely work hard to make each
+                order with quality and&nbsp;care.</p>
+        </div>
+    </section>
+</body>

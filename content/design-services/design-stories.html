@@ -1,36 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $('a[href^="/content"]').each(function() {
-                var path = $(this).attr('href').split(/(?=\?)/);
-                $(this).attr('href', path[0] + ".html" + (path[1] || ""));
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,30 +32,21 @@
             <li>Design Stories</li>
         </ul>
     </nav>
-
     <style>
         section#stories {
             margin-top: 0;
             text-align: center;
         }
         
-        #stories .story-grid>div {
-            margin-top: 30px;
-        }
-        
-        #stories .background-image {
-            height: 260px;
-        }
-        
-        #stories h2 {
+        #stories h3 {
             margin-top: .75em;
         }
         
-        #stories h2::after {
+        #stories h3::after {
             content: none;
         }
         
-        #stories h2+.subtitle {
+        #stories h3+.subtitle {
             font-style: italic;
             margin-top: 0;
             font-size: .9em;
@@ -79,20 +64,20 @@
             align-items: center;
         }
         
-        #stories .design-tip h2,
-        #stories .trend h2 {
+        #stories .design-tip h3,
+        #stories .trend h3 {
             line-height: 1.75;
             margin-top: 0;
         }
         
-        #stories .design-tip h2+p {
+        #stories .design-tip h3+p {
             font-size: 1em;
             line-height: 2;
             max-width: 19em;
         }
         
-        #stories .design-tip h2+p::after,
-        #stories .trend h2::after {
+        #stories .design-tip h3+p::after,
+        #stories .trend h3::after {
             content: "";
             display: block;
             width: 60px;
@@ -100,7 +85,7 @@
             margin: 0 auto;
         }
         
-        #stories .design-tip h2+p::after {
+        #stories .design-tip h3+p::after {
             content: "";
             display: block;
             width: 60px;
@@ -108,7 +93,7 @@
             margin: 1em auto;
         }
         
-        #stories .design-tip h3 {
+        #stories .signature {
             font-family: 'Playfair Display', playfair-display, serif;
             text-transform: uppercase;
             font-size: .9em;
@@ -116,11 +101,11 @@
             line-height: 1.7;
         }
         
-        #stories .design-tip h3::before {
+        #stories .signature::before {
             content: "- ";
         }
         
-        #stories .design-tip h3+p {
+        #stories .signature+p {
             margin: 0;
         }
         
@@ -135,35 +120,13 @@
         }
         
         @media only screen and (min-width: 500px) {
-            #stories .story-grid {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin: 0 -10px;
-            }
-            #stories .story-grid>div {
-                padding: 0 10px;
-                flex: 0 0 50%;
-            }
             #stories .trend .background-image {
                 margin-bottom: 30px;
             }
         }
         
-        @media only screen and (min-width: 700px) {
-            #stories .story-grid {
-                margin: 0 -20px;
-            }
-            #stories .story-grid>div {
-                padding: 0 20px;
-                margin-top: 50px;
-            }
-            #stories .background-image {
-                height: 385px;
-            }
-        }
+        @media only screen and (min-width: 700px) {}
     </style>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -174,115 +137,114 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Design Stories</h1>
         <section id="hero" style="text-align: center; max-width: 800px;">
-            <p>Every room has a tale to tell. Explore real room updates with <span class="no-wrap">La-Z-Boy</span> Certified Design Experts and their clients, as they turn houses into homes.</p>
+            <p>Every room has a tale to tell. Explore real room updates with <span class="no-wrap">La-Z-Boy</span> Certified Design Experts and their clients, as they turn houses into&nbsp;homes.</p>
         </section>
         <section id="stories">
             <div class="story-grid">
                 <div>
-                    <div class="background-image play-vid" style="background-image: url('/Images/design-services/design-stories/cathy/hero.jpg');">
+                    <div class="background-image play-vid" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/cathy/hero.jpg');">
                         <a href="/content/design-services/design-stories/cathy?video=mErj05nn28Y"></a>
                     </div>
-                    <h2>Contemporary Condo</h2>
+                    <h3>Contemporary Condo</h3>
                     <p class="subtitle">Free Design Services Client</p>
-                    <p>Starting over, Cathy was open to bright colors and bold patterns when it came to furnishing her new home.</p>
+                    <p>Starting over, Cathy was open to bright colors and bold patterns when it came to furnishing her new&nbsp;home.</p>
                     <a href="/content/design-services/design-stories/cathy">Read her story</a>
                 </div>
                 <div>
-                    <div class="background-image play-vid" style="background-image: url('/Images/design-services/design-stories/susie-greg/hero.jpg');">
+                    <div class="background-image play-vid" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/susie-greg/hero.jpg');">
                         <a href="/content/design-services/design-stories/susie-greg?video=jg6J3jBN3yM"></a>
                     </div>
-                    <h2>Magazine-Worthy Style</h2>
+                    <h3>Magazine-Worthy Style</h3>
                     <p class="subtitle">Free Design Services Client</p>
-                    <p>New homeowners Susie and Greg challenged designer Shannon to help them furnish an entire house.</p>
+                    <p>New homeowners Susie and Greg challenged designer Shannon to help them furnish an entire&nbsp;house.</p>
                     <a href="/content/design-services/design-stories/susie-greg">Read their story</a>
                 </div>
                 <div class="design-tip">
-                    <h2>“A fresh start”</h2>
+                    <h3>“A fresh start”</h3>
                     <p>“I didn’t really have a vision, but when I walked into the <span class="no-wrap">La-Z-Boy</span> store, there was all kinds of possibilities.”</p>
-                    <h3>Cathy</h3>
+                    <p class="signature">Cathy</p>
                     <p><span class="no-wrap">La-Z-Boy</span> Free Design Services Client<br>Grand Blanc, MI</p>
                     <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
                 </div>
-                <div>
-                    <div class="background-image play-vid" style="background-image: url('/Images/design-services/design-stories/tarek/hero.jpg');">
+                <!-- <div>
+                    <div class="background-image play-vid" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/tarek/hero.jpg');">
                         <a href="/content/design-services/design-stories/tarek?video=fkpagKD6bw0"></a>
                     </div>
-                    <h2>Modern Yet Eclectic</h2>
+                    <h3>Modern Yet Eclectic</h3>
                     <p class="subtitle">Free Design Services Client</p>
-                    <p><span class="no-wrap">La-Z-Boy</span> customer Tarek worked with Michigan-based designer Erica to create a look that reflects his lifestyle.</p>
+                    <p><span class="no-wrap">La-Z-Boy</span> customer Tarek worked with Michigan-based designer Erica to create a look that reflects his&nbsp;lifestyle.</p>
                     <a href="/content/design-services/design-stories/tarek">Read his story</a>
-                </div>
+                </div> -->
                 <div>
-                    <div class="background-image" style="background-image: url('/Images/design-services/design-stories/danielle/hero.jpg');"></div>
-                    <h2>Open Invitation</h2>
+                    <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/danielle/hero.jpg');"></div>
+                    <h3>Open Invitation</h3>
                     <p class="subtitle">Certified Design Expert</p>
-                    <p><span class="no-wrap">La-Z-Boy</span> designer Danielle turned a crowded family room into a stunning open concept with even more seating than before.</p>
+                    <p><span class="no-wrap">La-Z-Boy</span> designer Danielle turned a crowded family room into a stunning open concept with even more seating than&nbsp;before.</p>
                     <a href="/content/design-services/design-stories/danielle">Read her story</a>
                 </div>
                 <div>
-                    <div class="background-image" style="background-image: url('/Images/design-services/design-stories/carol-ann/hero.jpg');"></div>
-                    <h2>California Dreaming</h2>
+                    <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/carol-ann/hero.jpg');"></div>
+                    <h3>California Dreaming</h3>
                     <p class="subtitle">Certified Design Expert</p>
-                    <p><span class="no-wrap">La-Z-Boy</span> designer Carol-Ann incorporated an existing display case into her cozy design for West Coast clients.</p>
+                    <p><span class="no-wrap">La-Z-Boy</span> designer Carol-Ann incorporated an existing display case into her cozy design for West Coast&nbsp;clients.</p>
                     <a href="/content/design-services/design-stories/carol-ann">Read her story</a>
                 </div>
                 <div>
-                    <div class="background-image play-vid" style="background-image: url('/Images/design-services/design-stories/erica/hero.jpg');">
+                    <div class="background-image play-vid" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/erica/hero.jpg');">
                         <a href="/content/design-services/design-stories/erica?video=5ZIPiPz06Vw"></a>
                     </div>
-                    <h2>Family Style Fun</h2>
+                    <h3>Family Style Fun</h3>
                     <p class="subtitle">Free Design Services Client</p>
-                    <p>Overwhelmed by the selection at her <span class="no-wrap">La-Z-Boy</span> store, Erica sought free expert help for her new family room.</p>
+                    <p>Overwhelmed by the selection at her <span class="no-wrap">La-Z-Boy</span> store, Erica sought free expert help for her new family&nbsp;room.</p>
                     <a href="/content/design-services/design-stories/erica">Read her story</a>
                 </div>
                 <div class="trend">
                     <p>Explore our latest trend</p>
-                    <h2>Eco Chic</h2>
-                    <div class="background-image" style="background-image: url('/Images/design-services/design-stories/eco-chic.jpg');"></div>
+                    <h3>Eco Chic</h3>
+                    <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/eco-chic.jpg');"></div>
                     <a href="/content/DesignInspirations">View All Trends</a>
                 </div>
                 <div>
-                    <div class="background-image" style="background-image: url('/Images/design-services/design-stories/everton/hero.jpg');"></div>
-                    <h2>Bliss Functional Family</h2>
+                    <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/everton/hero.jpg');"></div>
+                    <h3>Bliss Functional Family</h3>
                     <p class="subtitle">Certified Design Expert</p>
-                    <p>When a Connecticut family needed an updated living room that was also kid friendly, designer Everton blended function with style.</p>
+                    <p>When a Connecticut family needed an updated living room that was also kid friendly, designer Everton blended function with&nbsp;style.</p>
                     <a href="/content/design-services/design-stories/everton">Read his story</a>
                 </div>
                 <div>
-                    <div class="background-image" style="background-image: url('/Images/design-services/design-stories/erin/hero.jpg');"></div>
-                    <h2>Love at First Sight</h2>
+                    <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/erin/hero.jpg');"></div>
+                    <h3>Love at First Sight</h3>
                     <p class="subtitle">Certified Design Expert</p>
                     <p>Our designer Erin helped a busy lawyer and newly-single mom to furnish a three-bedroom home… leaving the client speechless!</p>
                     <a href="/content/design-services/design-stories/erin">Read her story</a>
                 </div>
                 <div>
-                    <div class="background-image" style="background-image: url('/Images/design-services/design-stories/jonathan/hero.jpg');"></div>
-                    <h2>Pet Friendly Paradise</h2>
+                    <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/jonathan/hero.jpg');"></div>
+                    <h3>Pet Friendly Paradise</h3>
                     <p class="subtitle">Certified Design Expert</p>
-                    <p>A young couple in Pittsburgh tasked Jonathan with creating a room with style for their guests and their Great Dane.</p>
+                    <p>A young couple in Pittsburgh tasked Jonathan with creating a room with style for their guests and their Great&nbsp;Dane.</p>
                     <a href="/content/design-services/design-stories/jonathan">Read his story</a>
                 </div>
                 <div>
-                    <div class="background-image" style="background-image: url('/Images/design-services/design-stories/nicole/hero.jpg');"></div>
-                    <h2>Rural Retreat</h2>
+                    <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/nicole/hero.jpg');"></div>
+                    <h3>Rural Retreat</h3>
                     <p class="subtitle">Certified Design Expert</p>
-                    <p><span class="no-wrap">La-Z-Boy</span> designer Nicole helped a couple with traditional tastes design their modern home in the California mountains.</p>
+                    <p><span class="no-wrap">La-Z-Boy</span> designer Nicole helped a couple with traditional tastes design their modern home in the California&nbsp;mountains.</p>
                     <a href="/content/design-services/design-stories/nicole">Read her story</a>
                 </div>
                 <div>
-                    <div class="background-image" style="background-image: url('/Images/design-services/design-stories/danielle_2/hero.jpg');"></div>
-                    <h2>Classic Meets Contemporary</h2>
+                    <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/design-stories/danielle_2/hero.jpg');"></div>
+                    <h3>Classic Meets Contemporary</h3>
                     <p class="subtitle">Certified Design Expert</p>
-                    <p><span class="no-wrap">La-Z-Boy</span> designer Danielle helped transform a rarely used great room, to make it more functional for the entire family.</p>
+                    <p><span class="no-wrap">La-Z-Boy</span> designer Danielle helped transform a rarely used great room, to make it more functional for the entire&nbsp;family.</p>
                     <a href="/content/design-services/design-stories/danielle_2">Read her story</a>
                 </div>
                 <div class="design-tip">
-                    <h2>“Cozy and Personal”</h2>
+                    <h3>“Cozy and Personal”</h3>
                     <p>“The goal was to give the space a new look while maintaining the home’s rustic vibe.”</p>
-                    <h3>Danielle</h3>
+                    <p class="signature">Danielle</p>
                     <p><span class="no-wrap">La-Z-Boy</span> Certified Design Expert<br>Pittsburgh, PA</p>
                 </div>
             </div>
@@ -291,7 +253,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

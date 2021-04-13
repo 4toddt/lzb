@@ -8,7 +8,6 @@
         <!-- Only publish code to BCC from after this -->
         <!-- Only publish code to BCC from after this -->
         <!-- Only publish code to BCC from after this -->
-
         <!-- Power Options TT -->
         <script>
             dmiStickyNav = document.getElementsByClassName("primary-nav")[0];
@@ -38,6 +37,16 @@
                     top: 12%;
                     left: 4%;
                 }
+                section.cust-support .infographic .copy {
+                    font-size: 1em;
+                }
+                section.cust-support .infographic .copy:before {
+                    content: none;
+                }
+                #power-series {
+                    padding: 0 10px;
+                    max-width: 400px;
+                }
             }
             
             @media only screen and (max-width: 375px) {
@@ -53,7 +62,12 @@
             }
             
             section.cust-support .infographic img {
-                padding: 8% 2% 0 30%;
+                padding: 0 2% 0 30%;
+            }
+            
+            section.cust-support .infographic ul {
+                margin: .5em 0;
+                padding-left: 20px;
             }
             
             section.cust-support .infographic #callout01 {
@@ -61,26 +75,31 @@
             }
             
             section.cust-support .infographic #callout02 {
-                top: 12%;
+                top: 0;
             }
             
             section.cust-support .infographic #callout03 {
-                top: 24%;
+                top: 1%;
             }
             
             section.cust-support .infographic #callout04 {
-                top: 36%;
+                top: 35%;
             }
             
             section.cust-support .infographic #callout05 {
-                top: 60%;
+                top: 66%;
+            }
+            
+            #power-series {
+                display: block;
+                margin: 5.1% auto 0;
+                margin-top: calc(3.03% + 20.3px);
             }
             
             section.cust-support p.bullets {
                 margin-top: .5em;
             }
         </style>
-
         <section class="hero">
             <img class="visible-lg visible-md" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/desktop/hero.jpg" alt="Living room scene with Jay Power Reclining Loveseat w/ Console and Jay Power Reclining Sofa">
             <img class="visible-sm" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/mobile/hero_v2.jpg" alt="Living room scene with Jay Power Reclining Loveseat w/ Console and Jay Power Reclining Sofa">
@@ -88,146 +107,90 @@
             <h1>Relax and recharge</h1>
             <p>What could be easier than putting your feet up? How about doing it at the touch of a&nbsp;button.</p>
         </section>
-
         <section class="title-row">
-            <h2>Innovation at work</h2>
-            <p>With style you&rsquo;d never expect and features you can&rsquo;t live without,
-                <span class="registered-trademark no-wrap">La-Z-Boy</span> recliners are more than just a place to put up your feet. From what&rsquo;s now to what&rsquo;s next, we&rsquo;re changing the way you look at reclining&nbsp;furniture.</p>
-            <section class="grid three-column allow-wide-col">
-                <div class="block">
-                    <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/innovation01.jpg" alt="Closeup of premium wood components">
-                    <h3>Quality Crafted</h3>
-                    <p>Engineered for lasting durability from only premium materials.</p>
-                </div>
-                <div class="block">
-                    <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/innovation02.jpg" alt="Closeup of relining mechanism">
-                    <h3>Patented Design</h3>
-                    <p>Only
-                        <span class="registered-trademark no-wrap">La-Z-Boy</span> recliners feature our patented reclining mechanism.</p>
-                </div>
-                <div class="block">
-                    <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/innovation03.jpg" alt="Closeup of control buttons and USB charger">
-                    <h3>Customized Comfort</h3>
-                    <p>Designed to provide natural movement and the most reclining positions.</p>
-                </div>
-            </section>
-        </section>
-
-        <section class="title-row">
-            <h2>The one and only</h2>
-            <p class="subtitle">When it comes to comfort,
-                <span class="registered-trademark no-wrap">La-Z-Boy</span> is second to none. Our power recliners are covered by a 3-Year Electronics Warranty and every frame, spring and reclining mechanism is backed by our Limited Lifetime Warranty,
-                one of the best in the&nbsp;industry.</p>
+            <h2>Power design</h2>
+            <p class="subtitle">Explore <span class="no-wrap">La-Z-Boy’s</span> one-of-a-kind quality and comfort in a multitude of styles.</p>
             <section class="infographic">
-                <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/one-and-only.jpg" alt="Baylor Power Wall Recliner">
-                <div class="copy right" id="callout01">
-                    <h3>Patented
-                        <span class="registered-trademark no-wrap">La-Z-Boy</span>&nbsp;mechanism</h3>
+                <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/one-and-only.jpg" alt="Rori Power Rocking Recliner">
+                <!-- <div class="copy right" id="callout01">
+                    <h3>Patented <span class="registered-trademark no-wrap">La-Z-Boy</span>&nbsp;mechanism</h3>
                     <p>Allows the seat and back to move together for natural reclining movement.</p>
                     <hr>
-                </div>
+                </div> -->
                 <div class="copy" id="callout02">
-                    <h3>Strongest frame&nbsp;construction</h3>
-                    <p>State-of-the-art frame design quality engineered for lasting durability.</p>
+                    <h3>Hand-crafted</h3>
+                    <ul>
+                        <li>Superior frame design with metal supports for added strength</li>
+                        <li>All fabrics and leathers are tested to resist wear and fading</li>
+                    </ul>
                     <hr>
                 </div>
                 <div class="copy right" id="callout03">
-                    <h3>Total body &amp;&nbsp;lumbar&nbsp;support</h3>
-                    <p>Personalizes the effort needed to ease into a reclining position based on body&nbsp;type.</p>
+                    <h3>Unparalleled comfort</h3>
+                    <ul>
+                        <li>Seat and back cushions fully support the natural curvature of your body</li>
+                        <li>Back and legrest adjust independently to suit your reclining preference</li>
+                    </ul>
                     <hr>
                 </div>
                 <div class="copy" id="callout04">
-                    <h3>Adjustable back &amp;&nbsp;legrest&nbsp;tension</h3>
-                    <p>Personalizes reclining position based on body&nbsp;type.</p>
+                    <h3>Peace of mind</h3>
+                    <ul>
+                        <li>Spring return legrest prevents closing when something gets in the way for added safety</li>
+                    </ul>
                     <hr>
                 </div>
                 <div class="copy" id="callout05">
-                    <h3>The most reclining&nbsp;positions</h3>
-                    <p>Back and legrest work together or&nbsp;independently.</p>
+                    <h3>Our promise</h3>
+                    <ul>
+                        <li>3-Year Electronics Warranty</li>
+                        <li>Limited Lifetime Warranty on Mechanism and Frame</li>
+                    </ul>
                     <hr>
                 </div>
             </section>
         </section>
-
         <section class="title-row">
             <h2>PowerRecline</h2>
-            <p>Recline in seconds with a powered back and legrest for the ultimate in comfort.
-                <br class="visible-lg visible-md">Choose the power features that are right for you, then upgrade to&nbsp;PLUS.</p>
-            <p>Relaxing has never been easier with these&nbsp;benefits:</p>
-            <p class="bullets">
-                <span>Battery backup</span>
-                <span>Legrest safety position</span>
-                <br>
-                <span>Legrest extended position</span>
-                <span>Full recline position</span>
-            </p>
+            <p style="max-width: none;">With so many options to choose from, you can customize your powered recliner to suite your&nbsp;needs</p>
+            <picture id="power-series">
+                <source media="(max-width: 500px)" srcset="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/chart-mobile.png">
+                <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/chart.png" alt="Chart comparing Power Series Features & Upgrades">
+            </picture>
             <section class="two-column grid no-transform">
                 <div class="block">
-                    <a href="/b/_/N-5i1av3">
-                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/desktop/power-series01.jpg" alt="Living room with Trouper Power Reclining Sofa">
+                    <a href="/b/_/N-57ezrf">
+                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/power-series01.jpg" alt="Living room with Trouper Power Reclining Sofa">
                     </a>
-                    <h3>PowerRecline</h3>
-                    <p>Enjoy effortless relaxation with our PowerRecline sofas, loveseats, sectionals and chairs. With reclining power, plus standard built-in USB ports, comfort and convenience are always at your&nbsp;fingertips.</p>
-                    <a href="/b/_/N-5i1av3">Shop
-                        <span class="arrow-right">now</span>
-                    </a>
-                </div>
-                <div class="block">
-                    <a href="/b/_/N-oak9ta">
-                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/desktop/power-series02.jpg" alt="Living room with Forum Power Wall Recliner">
-                    </a>
-                    <h3 class="registered-trademark">PowerReclineXR</h3>
-                    <p>Space-saving design lets you fully recline inches from a wall.</p>
-                    <p class="bullets">
-                        <strong>Enjoy all the benefits of PowerRecline and:</strong>
-                        <br>
-                        <span>Independent Back and Legrest Positions</span>
-                    </p>
-                    <a href="/b/_/N-oak9ta">Shop
-                        <span class="arrow-right">now</span>
+                    <h3>Power sofas, sectionals & chairs</h3>
+                    <p>With reclining power and standard built-in USB ports, comfort and convenience are always at your fingertips.</p>
+                    <a href="/b/_/N-57ezrf">Shop <span class="arrow-right">Now</span>
                     </a>
                 </div>
                 <div class="block">
-                    <a href="/b/_/N-ne2neb">
-                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/desktop/power-series03.jpg" alt="Living room with Levi Power Wall Reclining Sofa w/ Headrest and Lumbar">
+                    <a href="/b/recliners-rocking/_/N-1e7xutkZ57ezrfZ1ugmsny">
+                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/power-series02.jpg" alt="Living room with Forum Power Wall Recliner">
                     </a>
-                    <h3>PowerReclineXRw&trade;</h3>
-                    <p>Rock your way into relaxation, or recline at the touch of a&nbsp;button.</p>
-                    <p class="bullets">
-                        <strong>Enjoy all the benefits of PowerRecline and:</strong>
-                        <br>
-                        <span>Rocking Motion</span>
-                    </p>
-                    <a href="/b/_/N-ne2neb">Shop
-                        <span class="arrow-right">now</span>
+                    <h3 class="registered-trademark">PowerPlus Rocking Recliners</h3>
+                    <p>Recline and raise your feet independently for a wide range of relaxing positions.</p>
+                    <a href="/b/recliners-rocking/_/N-1e7xutkZ57ezrfZ1ugmsny">Shop <span class="arrow-right">Now</span>
                     </a>
                 </div>
                 <div class="block">
-                    <a href="/b/_/N-na8qe4">
-                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/desktop/power-series04.jpg" alt="Room scene with Casey Power Wall Recliner w/ Headrest and Lumbar">
+                    <a href="/b/recliners-wall-recliners/_/N-bdgz6xZ57ezrfZ1ugmsny">
+                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/power-options/power-series03.jpg" alt="Living room with Levi Power Wall Reclining Sofa w/ Headrest and Lumbar">
                     </a>
-                    <h3>Upgrade to PLUS</h3>
-                    <p>PLUS-Up your reclining experience with these added&nbsp;benefits:</p>
-                    <p class="bullets">
-                        <span>Power-Tilt Headrest</span>
-                        <span>Power Lumbar Hand-Held Remote.</span>
-                    </p>
-                    <a href="/b/_/N-na8qe4">Shop
-                        <span class="arrow-right">now</span>
+                    <h3>PowerPlus Wall Recliners&trade;</h3>
+                    <p>Space-saving design fully reclines inches from the wall with a variety of sizes and styles to find your perfect fit.</p>
+                    <a href="/b/recliners-wall-recliners/_/N-bdgz6xZ57ezrfZ1ugmsny">Shop <span class="arrow-right">Now</span>
                     </a>
                 </div>
             </section>
         </section>
-
         <section id="dsr-button">
-            <a href="/content/design-services/design-request-form">Designing an entire room? Book&nbsp;your FREE
-                <span class="arrow-right">design consultation!</span>
+            <a href="/content/design-services/design-request-form">Designing an entire room? Book&nbsp;your FREE <span class="arrow-right">design consultation!</span>
             </a>
         </section>
-
-        <script src="/js/npc.js"></script>
-
-
         <!-- Only publish code to BCC from before this -->
         <!-- Only publish code to BCC from before this -->
         <!-- Only publish code to BCC from before this -->

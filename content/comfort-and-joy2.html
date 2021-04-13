@@ -1,0 +1,1149 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr("href", $(this).attr("href") + ".html");
+            });
+        });
+    </script>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- NPC content -->
+    <style>
+        @import url("https://use.typekit.net/pou1zjg.css");
+        @font-face {
+            font-family: 'LZB Icons';
+            src: url('/css/fonts/lzb-icons.eot?jebkb3');
+            src: url('/css/fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('/css/fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('/css/fonts/lzb-icons.woff?jebkb3') format('woff'), url('/css/fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        /************ resets ***********/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /* breadcrumbs */
+        
+        #breadcrumbs {
+            margin: 0 auto 10px;
+            max-width: 980px;
+            font-size: 14px;
+            color: #868686;
+        }
+        
+        body.mobile-site #breadcrumbs {
+            margin: 0.625rem auto;
+            padding: 0rem 0.625rem;
+            max-width: 62.5rem;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        #breadcrumbs ul {
+            padding-left: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 35px;
+        }
+        
+        body.mobile-site #breadcrumbs ul {
+            line-height: 1.25rem;
+        }
+        
+        #breadcrumbs li+li:before {
+            font-family: "icomoon";
+            content: "\e904";
+            -webkit-font-smoothing: antialiased;
+            vertical-align: middle;
+            padding: 0 8px;
+            line-height: 0;
+        }
+        
+        body.mobile-site #breadcrumbs li+li:before {
+            font-family: "lzb-icons";
+            content: "\e907";
+            vertical-align: baseline;
+            font-size: 0.625rem;
+            padding: 0 0.375rem;
+        }
+        
+        #breadcrumbs a {
+            color: inherit;
+            font-size: inherit;
+        }
+        
+        body.mobile-site #breadcrumbs a {
+            color: #555;
+        }
+        /* defaults */
+        
+        #npc-content {
+            width: 100%;
+            font-family: "lato", "OpenSans", sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        .mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1020px;
+            padding: 0 20px;
+            margin: 40px auto 0;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content section.full-width>.copy {
+            padding: 0 20px;
+        }
+        
+        #npc-content section.border-top:before {
+            content: "";
+            display: block;
+            border-top: 1px solid #979797;
+            padding-bottom: 40px;
+        }
+        
+        #npc-content section#hero {
+            margin-top: 0;
+        }
+        
+        #npc-content strong {
+            font-weight: bold;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /********** Utility Classes ************/
+        
+        #npc-content .arrow-right:after {
+            font-family: 'LZB Icons';
+            content: "\e90e";
+            line-height: 0;
+        }
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        /* modals */
+        
+        #npc-content .my-modal {
+            display: none;
+            position: fixed;
+            z-index: 1500000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 30px 10px;
+            overflow: auto;
+            background-color: rgba(255, 255, 255, 0.75);
+            text-align: left;
+        }
+        
+        #npc-content .my-modal .close {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            line-height: 20px;
+            font-size: 37px;
+            cursor: pointer;
+        }
+        
+        #npc-content .my-modal-content {
+            background-color: #fefefe;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+            position: relative;
+            border-radius: 17px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .18);
+        }
+        
+        #npc-content .my-modal .two-col>div {
+            margin-top: 30px;
+        }
+        
+        #npc-content .my-modal .background-image {
+            height: 268px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #npc-content .my-modal p {
+            font-size: .8em;
+        }
+        
+        #npc-content .my-modal a {
+            background-color: #9C2829;
+            color: white;
+            border-radius: 4px;
+            padding: .75em 1.5em;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: .8em;
+        }
+        
+        #npc-content .my-modal h2 {
+            text-align: left;
+            margin-top: 0;
+        }
+        
+        #npc-content .my-modal ul+h2,
+        #npc-content .my-modal ol+h2 {
+            margin-top: .5em;
+        }
+        
+        #npc-content .my-modal h3 {
+            font-size: .9em;
+            margin-top: 1em;
+        }
+        
+        #npc-content .my-modal ol {
+            padding-inline-start: 30px;
+        }
+        
+        #npc-content .my-modal ul {
+            padding-inline-start: 30px;
+        }
+        
+        #npc-content .my-modal li {
+            font-size: .8em;
+            line-height: 1.25;
+            margin-top: .5em;
+        }
+        
+        #npc-content .my-modal .youtube {
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        
+        #npc-content .my-modal .youtube iframe {
+            min-height: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        /*! Flickity v2.2.0 https://flickity.metafizzy.co */
+        
+        #npc-content [data-flickity] {
+            outline: none !important;
+            margin-top: 20px;
+            padding-bottom: 30px;
+        }
+        
+        #npc-content .flickity-enabled {
+            position: relative;
+        }
+        
+        #npc-content .flickity-enabled:focus {
+            outline: none;
+        }
+        
+        #npc-content .flickity-viewport {
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+        }
+        
+        #npc-content .flickity-slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #npc-content .flickity-slider>div {
+            width: 100%;
+            margin-left: 20px;
+        }
+        /* draggable */
+        
+        #npc-content .flickity-enabled.is-draggable {
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        #npc-content .flickity-enabled.is-draggable .flickity-viewport {
+            cursor: move;
+            cursor: -webkit-grab;
+            cursor: grab;
+        }
+        
+        #npc-content .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+            cursor: -webkit-grabbing;
+            cursor: grabbing;
+        }
+        /* ---- flickity-button ---- */
+        
+        #npc-content .flickity-button {
+            position: absolute;
+            background: hsla(0, 0%, 100%, 0.75);
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        #npc-content .flickity-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #19F;
+        }
+        
+        #npc-content .flickity-button:active {
+            opacity: 0.6;
+        }
+        
+        #npc-content .flickity-button:disabled {
+            opacity: 0.3;
+            cursor: auto;
+            /* prevent disabled button from capturing pointer up event. #716 */
+            pointer-events: none;
+        }
+        
+        #npc-content .flickity-button-icon {
+            fill: currentColor;
+        }
+        /* ---- previous/next buttons ---- */
+        
+        #npc-content .flickity-prev-next-button {
+            top: calc(28.163265vw - 25px);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        @media only screen and (min-width: 980px) {
+            #npc-content .flickity-prev-next-button {
+                top: 251px;
+            }
+        }
+        
+        #npc-content .flickity-prev-next-button.previous {
+            left: 10px;
+            left: 3%
+        }
+        
+        #npc-content .flickity-prev-next-button.next {
+            right: 10px;
+            right: 3%;
+        }
+        /* right to left */
+        
+        #npc-content .flickity-rtl .flickity-prev-next-button.previous {
+            left: auto;
+            right: 10px;
+        }
+        
+        #npc-content .flickity-rtl .flickity-prev-next-button.next {
+            right: auto;
+            left: 10px;
+        }
+        
+        #npc-content .flickity-prev-next-button .flickity-button-icon {
+            position: absolute;
+            left: 20%;
+            top: 20%;
+            width: 60%;
+            height: 60%;
+        }
+        /* ---- page dots ---- */
+        
+        #npc-content .flickity-page-dots {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+            line-height: 1;
+        }
+        
+        #npc-content .flickity-rtl .flickity-page-dots {
+            direction: rtl;
+        }
+        
+        #npc-content .flickity-page-dots .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 8px;
+            background: #9C2B2A;
+            border-radius: 50%;
+            opacity: 0.25;
+            cursor: pointer;
+        }
+        
+        #npc-content .flickity-page-dots .dot.is-selected {
+            opacity: 1;
+        }
+        /* comfort and joy styles */
+        
+        #npc-content {
+            text-align: center;
+        }
+        
+        #npc-content .background-image {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        #npc-content h2 {
+            font-size: 1.2em;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        
+        #npc-content h3 {
+            color: #9C2829;
+            font-weight: 800;
+            font-size: 1.1em;
+            line-height: 1.2;
+        }
+        
+        #npc-content p {
+            font-size: .8em;
+            line-height: 1.375;
+            max-width: 850px;
+            margin: .5em auto 0;
+        }
+        
+        #hero p.big {
+            font-size: 1em;
+            line-height: 1.2;
+            color: #9C2829;
+            font-weight: 800;
+            max-width: 20em;
+        }
+        
+        #npc-content a {
+            display: inline-block;
+            font-size: .8em;
+            line-height: 1.375;
+            font-weight: bold;
+            margin-top: .5em;
+            color: #197D36;
+        }
+        
+        #hero .background-image {
+            background-image: url(https://content.la-z-boy.com/Images/comfort-and-joy/hero-980.gif);
+            padding-bottom: 70.510204%;
+        }
+        
+        #npc-content h4 {
+            color: #9C2829;
+            font-weight: 800;
+            font-size: 1em;
+            line-height: 1.2;
+            text-align: center;
+            max-width: 20em;
+            margin: .5em auto 0;
+        }
+        
+        #recipes .row {
+            margin-top: 20px;
+        }
+        
+        #recipes .background-image {
+            padding-bottom: 60%;
+        }
+        
+        #recipes .copy {
+            background-color: #A7D8DE;
+            padding: 25px 25px 100px;
+            text-align: left;
+            background-position: bottom right;
+            background-repeat: no-repeat;
+        }
+        
+        #downloads .flickity-slider>div,
+        #videos .flickity-slider>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #downloads .flickity-slider>div>a,
+        #videos .flickity-slider>div>a {
+            margin: 0;
+            position: absolute;
+            display: block;
+            width: 120px;
+        }
+        
+        #crafts .two-col {
+            margin: 0 -10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        #crafts .two-col>div {
+            margin-top: 20px;
+            padding: 0 10px;
+            flex: 0 0 100%;
+        }
+        
+        #LZBdesign .sc-102xyuw-0 {
+            display: none;
+        }
+        
+        #LZBdesign .fOeRet {
+            border: none;
+            background-color: #9C2B2A;
+            color: white;
+            font-size: 18px;
+            padding: .75em 1.5em;
+            width: auto;
+            border-radius: 2px;
+            font-family: "lato", "OpenSans", sans-serif;
+            font-weight: bold;
+        }
+        
+        #LZBdesign .fOeRet:hover {
+            border: none;
+            border-radius: 2px;
+            background-color: #892624;
+        }
+        
+        @media only screen and (min-width:500px) {
+            #npc-content p {
+                font-size: .9em;
+            }
+            #npc-content a {
+                font-size: .9em;
+            }
+            #npc-content h2 {
+                font-size: 1.5em;
+            }
+            #npc-content h3 {
+                font-size: 1.3em;
+            }
+            @media (-webkit-min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi) {
+                #hero .background-image {
+                    background-image: url(https://content.la-z-boy.com/Images/comfort-and-joy/hero-1960.gif);
+                }
+            }
+            #npc-content h4 {
+                font-size: 1.1em;
+            }
+            #hero p.big {
+                font-size: 1.2em;
+            }
+            #recipes .copy {
+                padding-bottom: 80px;
+            }
+            #npc-content .my-modal {
+                padding: 40px 20px;
+            }
+            #crafts .two-col>div {
+                flex-basis: 50%;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #npc-content [data-flickity] {
+                margin-top: 25px;
+            }
+            #npc-content section {
+                margin-top: 50px;
+            }
+            #npc-content section.border-top:before {
+                padding-bottom: 50px;
+            }
+            #npc-content h2 {
+                font-size: 1.8em;
+            }
+            #hero p.big {
+                font-size: 1.6em;
+            }
+            #npc-content h3 {
+                font-size: 1.4em;
+            }
+            #npc-content h4 {
+                font-size: 1.2em;
+            }
+            #recipes .row {
+                display: flex;
+            }
+            #recipes .row+.row {
+                margin-top: 50px;
+            }
+            #recipes .row:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            #recipes .background-image {
+                height: 355px;
+                padding-bottom: 0;
+                flex: 0 1 580px;
+            }
+            #recipes .copy {
+                flex: 0 1 400px;
+                padding: 40px 30px;
+            }
+            #npc-content .my-modal .two-col {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            #npc-content .my-modal .background-image {
+                height: 360px;
+                flex: 0 1 340px;
+            }
+            #npc-content .my-modal .copy {
+                padding-left: 20px;
+                flex: 0 1 500px;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            #npc-content .my-modal .close {
+                top: 20px;
+            }
+            #npc-content .my-modal-content {
+                padding: 50px 40px 80px;
+            }
+            #npc-content .my-modal .copy {
+                padding-left: 40px;
+            }
+            #npc-content .my-modal {
+                padding: 80px 20px;
+            }
+            #crafts .two-col {
+                margin: 0 -20px;
+            }
+            #crafts .two-col>div {
+                padding: 0 20px;
+            }
+        }
+    </style>
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Comfort & Joy</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <div class="background-image"></div>
+            <div class="copy">
+                <p class="big">The holidays might look different this year, but there’s still so much to&nbsp;celebrate.</p>
+                <p>Feel-good moments. Post worthy pictures. Movies and crafts and&nbsp;laughs.</p>
+            </div>
+        </section>
+        <section id="recipes" class="border-top">
+            <h2>Try Our Favorite Holiday&nbsp;Recipes</h2>
+            <p>After making these treats and checking them twice (or three times…or four), we’re sure the winners of our <span class="no-wrap">La-Z-Boy</span> Holiday Bake-Off will make your menu this&nbsp;year!</p>
+            <div class="row">
+                <div class="background-image" style="background-image:url(https://content.la-z-boy.com/Images/comfort-and-joy/recipe01.jpg)"></div>
+                <div class="copy" style="
+                background-image:url(https://content.la-z-boy.com/Images/comfort-and-joy/snow01.svg);
+                background-position: right bottom -21px;">
+                    <h3>Rocky Road Fudge&nbsp;Bars</h3>
+                    <p>All the chocolate-marshmallow-nutty goodness of the ice cream. Only better!</p>
+                    <a data-show-modal="rocky-road" class="arrow-right" href="">Get The Recipe</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="background-image" style="background-image:url(https://content.la-z-boy.com/Images/comfort-and-joy/recipe02.jpg)"></div>
+                <div class="copy" style="
+                background-image:url(https://content.la-z-boy.com/Images/comfort-and-joy/snow02.svg);
+                background-position: right bottom -29px;
+                background-size: 440px auto;">
+                    <h3>Pumpkin Spice&nbsp;Bars</h3>
+                    <p>Perfectly balanced between spicy and sweet. Could possibly become your new pumpkin fave!</p>
+                    <a data-show-modal="pumpkin-spice" class="arrow-right" href="">Get The Recipe</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="background-image" style="background-image:url(https://content.la-z-boy.com/Images/comfort-and-joy/recipe03.jpg)"></div>
+                <div class="copy" style="
+                background-image:url(https://content.la-z-boy.com/Images/comfort-and-joy/snow03b.svg);
+                background-position: right -6px bottom;
+                background-size: 390px auto;">
+                    <h3>Chocolate Chip&nbsp;Delights</h3>
+                    <p>Everything you love about a chocolate chip cookie layered with a whipped topping wonderland.</p>
+                    <a data-show-modal="chocolate-chip" class="arrow-right" href="">Get The Recipe</a>
+                </div>
+            </div>
+        </section>
+        <section id="downloads" class="full-width">
+            <div class="copy">
+                <h2>Download LOL-iday Backgrounds</h2>
+                <p>Celebrating via video rarely goes perfectly. But at least it’s a way to be together! Embrace the mishaps and keep things light with funny backgrounds you can download for&nbsp;free.</p>
+            </div>
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": true,
+                "cellAlign": "left",
+                "contain": true,
+                "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                }'>
+                <div>
+                    <img src="https://content.la-z-boy.com/Images/comfort-and-joy/background01.jpg" alt="Screenshots of video chat with LOL-day backgrounds">
+                </div>
+                <div>
+                    <img src="https://content.la-z-boy.com/Images/comfort-and-joy/background02.jpg" alt="Santa on LZB">
+                    <a href="/Images/comfort-and-joy/background02-lg.jpg" download="Santa on LZB" target="_blank"><img src="https://content.la-z-boy.com/Images/download.svg" alt="download"></a>
+                </div>
+                <div>
+                    <img src="https://content.la-z-boy.com/Images/comfort-and-joy/background03.jpg" alt="Burnt Turkey">
+                    <a href="/Images/comfort-and-joy/background03-lg.jpg" download="Burnt Turkey" target="_blank"><img src="https://content.la-z-boy.com/Images/download.svg" alt="download"></a>
+                </div>
+                <div>
+                    <img src="https://content.la-z-boy.com/Images/comfort-and-joy/background04.jpg" alt="Tilting Tree">
+                    <a href="/Images/comfort-and-joy/background04-lg.jpg" download="Tilting Tree" target="_blank"><img src="https://content.la-z-boy.com/Images/download.svg" alt="download"></a>
+                </div>
+                <div>
+                    <img src="https://content.la-z-boy.com/Images/comfort-and-joy/background05.jpg" alt="Tree on Santa">
+                    <a href="/Images/comfort-and-joy/background05-lg.jpg" download="Tree on Santa" target="_blank"><img src="https://content.la-z-boy.com/Images/download.svg" alt="download"></a>
+                </div>
+            </div>
+        </section>
+        <section id="crafts">
+            <h2>‘Tis the Season to be&nbsp;Crafty</h2>
+            <p>From whimsical Sock Snowmen to decorative Popsicle Stick Christmas Trees, holiday crafts can be fun for the whole family with supplies you may already have at&nbsp;home.</p>
+            <div class="two-col">
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/comfort-and-joy/craft01.jpg" alt="Stuffed Sock Snowman"></div>
+                    <h4>Stuffed Sock Snowman</h4>
+                    <p>We all have a collection of single socks that could be put to use for this adorable DIY gift or as a doorstop too!</p>
+                    <a data-show-modal="snowman" class="arrow-right" href="">Get Step-by-step Directions</a>
+                </div>
+                <div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/comfort-and-joy/craft02.jpg" alt="Popsicle Stick Christmas Crafts"></div>
+                    <h4>Popsicle Stick Christmas&nbsp;Crafts</h4>
+                    <p>Keep little hands busy with these easy-peasy crafts they can decorate themselves and then hang as ornaments!</p>
+                    <a data-show-modal="popsicle-sticks" class="arrow-right" href="">Get Step-by-step Directions</a>
+                </div>
+            </div>
+        </section>
+        <section id="videos" class="full-width">
+            <div class="copy">
+                <h2>Do What Yule Love</h2>
+                <p>Whether you’re snuggling up and settling in or finding ways to be together, sharing a season of comfort and joy is something to celebrate. Enjoy this Winter Scroll through some holiday sights and&nbsp;scenes.</p>
+            </div>
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": true,
+                "cellAlign": "left",
+                "contain": true,
+                "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                }'>
+                <div>
+                    <img src="https://content.la-z-boy.com/Images/comfort-and-joy/video01.jpg" alt="fireplace video">
+                    <a href="" data-show-modal="fireplace-video"><img src="https://content.la-z-boy.com/Images/play.svg" alt="download"></a>
+                </div>
+                <div>
+                    <img src="https://content.la-z-boy.com/Images/comfort-and-joy/video02.jpg" alt="menorah video">
+                    <a href="" data-show-modal="menorah-video"><img src="https://content.la-z-boy.com/Images/play.svg" alt="download"></a>
+                </div>
+                <div>
+                    <img src="https://content.la-z-boy.com/Images/comfort-and-joy/video03.jpg" alt="snow video">
+                    <a href="" data-show-modal="snow-video"><img src="https://content.la-z-boy.com/Images/play.svg" alt="download"></a>
+                </div>
+                <div>s <img src="https://content.la-z-boy.com/Images/comfort-and-joy/video04.jpg" alt="sleigh ride video">
+                    <a href="" data-show-modal="sleigh-ride-video"><img src="https://content.la-z-boy.com/Images/play.svg" alt="download"></a>
+                </div>
+            </div>
+        </section>
+        <section id="LZBdesign">
+            <h2>#LZBdesign</h2>
+            <div data-crl8-container-id="homepage"></div>
+        </section>
+        <div id="rocky-road" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
+                <div class="two-col">
+                    <div class="background-image" style="background-image: url(https://content.la-z-boy.com/Images/comfort-and-joy/recipe01.jpg);"></div>
+                    <div class="copy">
+                        <a href="/Images/comfort-and-joy/rocky-road.pdf" download="Rocky Road Fudge Bars" target="_blank">Download</a>
+                        <h2>Rocky Road Fudge Bars</h2>
+                        <h3> Ingredients</h3>
+                        <ul>
+                            <li>½ cup butter or margarine</li>
+                            <li>1 square or envelope (1 oz.) unsweetened chocolate</li>
+                            <li>1 cup sugar</li>
+                            <li>1 cup unsifted Pillsbury flour*</li>
+                            <li>½ cup chopped nuts</li>
+                            <li>1 teaspoon baking powder</li>
+                            <li>1 teaspoon vanilla</li>
+                            <li>2 eggs</li>
+                        </ul>
+                        <h3>Filling Ingredients</h3>
+                        <ul>
+                            <li>6 oz. cream cheese, softened</li>
+                            <li>½ cup sugar</li>
+                            <li>2 tablespoons flour</li>
+                            <li>¼ cup butter or margarine, softened</li>
+                            <li>1 egg</li>
+                            <li>½ teaspoon vanilla</li>
+                            <li>¼ cup chopped nuts</li>
+                        </ul>
+                        <h3>Frosting Ingredients</h3>
+                        <ul>
+                            <li>2 cups miniature marshmallows</li>
+                            <li>¼ cup butter or margarine</li>
+                            <li>1 square or envelope (1 oz.) unsweetened chocolate</li>
+                            <li>2 oz cream cheese</li>
+                            <li>¼ cup milk</li>
+                            <li>1 lb. (about 3 cups) powdered sugar</li>
+                            <li>1 teaspoon vanilla</li>
+                        </ul>
+                        <h3>Directions</h3>
+                        <ol>
+                            <li>Preheat oven to 350°.</li>
+                            <li>In large saucepan, melt butter and chocolate over low heat; remove from heat.</li>
+                            <li>Add sugar, flour, nuts, baking powder, vanilla and eggs; mix well.</li>
+                            <li>Spread in greased and floured 13x9-inch pan.</li>
+                            <li>In bowl, combine filling ingredients; spread over chocolate mixture in pan.</li>
+                            <li>Bake 25 to 35 minutes or until toothpick inserted in center comes out clean.</li>
+                            <li>Sprinkle with marshmallows and bake 2 minutes longer.</li>
+                            <li>Immediately prepare frosting by combining butter, chocolate, cream cheese, and milk in saucepan.</li>
+                            <li>Heat over low heat until chocolate melts.</li>
+                            <li>Stir in powdered sugar and vanilla until smooth.</li>
+                            <li>Pour over marshmallows and swirl together.</li>
+                            <li>Cool and cut into bars.</li>
+                        </ol>
+                        <p>Makes about 36 bars</p>
+                        <p>*With self-rising flour, omit baking powder.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pumpkin-spice" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
+                <div class="two-col">
+                    <div class="background-image" style="background-image: url(https://content.la-z-boy.com/Images/comfort-and-joy/recipe02.jpg);"></div>
+                    <div class="copy">
+                        <a href="/Images/comfort-and-joy/pumpkin-spice.pdf" download="Pumpkin Spice Bars" target="_blank">Download</a>
+                        <h2>Pumpkin Spice Bars</h2>
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>4 eggs</li>
+                            <li>2 c. sugar</li>
+                            <li>1 c. vegetable oil</li>
+                            <li>1 16-oz. can pumpkin</li>
+                            <li>2 c. flour</li>
+                            <li>3 tsp cinnamon</li>
+                            <li>1 ½ tsp baking soda</li>
+                            <li>¾ tsp salt</li>
+                            <li>¾ tsp ginger</li>
+                            <li>⅜ tsp cloves</li>
+                            <li>1 c. raisins</li>
+                        </ul>
+                        <h3>Directions</h3>
+                        <ol>
+                            <li>Heat oven to 350°.</li>
+                            <li>Grease jelly roll pan (15 ½ x 10 ½ x 1 inch).</li>
+                            <li>Beat eggs, sugar, oil and pumpkin.</li>
+                            <li>Stir in remaining ingredients.</li>
+                            <li>Pour into pan and bake until light brown (25-30 minutes).</li>
+                            <li>Cool.</li>
+                            <li>Frost with cream cheese frosting.</li>
+                        </ol>
+                        <h2>Cream Cheese Frosting</h2>
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>16 oz. cream cheese</li>
+                            <li>1 stick butter</li>
+                            <li>1 tsp vanilla</li>
+                            <li>3 c. (or more) powdered sugar</li>
+                        </ul>
+                        <h3>Directions</h3>
+                        <ol>
+                            <li>Cream together the cream cheese and butter.</li>
+                            <li>Add vanilla and beat.</li>
+                            <li>Gradually beat in powdered sugar and mix, adding more, if necessary, to reach the desired consistency.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="chocolate-chip" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
+                <div class="two-col">
+                    <div class="background-image" style="background-image: url(https://content.la-z-boy.com/Images/comfort-and-joy/recipe03.jpg);"></div>
+                    <div class="copy">
+                        <a href="/Images/comfort-and-joy/chocolate-chip.pdf" download="Chocolate Chip Delights" target="_blank">Download</a>
+                        <h2>Chocolate Chip Delight</h2>
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li>1 tube (16 ½ ounces) refrigerated chocolate chip cookie dough</li>
+                            <li>1 package (8 ounces) cream cheese, softened</li>
+                            <li>1 cup confectioners’ sugar</li>
+                            <li>1 carton (12 ounces) frozen whipped topping, thawed, divided</li>
+                            <li>3 cups cold 2% milk</li>
+                            <li>1 package (3.9 ounces) instant chocolate pudding mix</li>
+                            <li>1 package (3.4 ounces) instant vanilla pudding mix</li>
+                            <li>Optional: Chopped nuts, chocolate curls and miniature semisweet chocolate chips</li>
+                        </ul>
+                        <h3>Directions</h3>
+                        <ol>
+                            <li>Let cookie dough stand at room temperature for 5-10 minutes to soften. Press into an ungreased 13x9-in. baking pan. Bake at 350° until golden brown, 14-16 minutes. Cool on a wire rack.</li>
+                            <li>In a large bowl, beat cream cheese and confectioners’ sugar until smooth. Fold in 1 ¾ cups whipped topping. Spread over crust.</li>
+                            <li>In a large bowl, whisk milk and pudding mixes for 2 minutes. Spread over cream cheese layer. Top with remaining whipped topping. Sprinkle with nuts and chocolate curls if desired.</li>
+                            <li>Cover and refrigerate until firm, 8 hours or overnight.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="snowman" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
+                <div class="two-col">
+                    <div class="background-image" style="background-image: url(https://content.la-z-boy.com/Images/comfort-and-joy/craft01.jpg);"></div>
+                    <div class="copy">
+                        <a href="/Images/comfort-and-joy/stuffed-sock.pdf" download="Stuffed Sock Snowman" target="_blank">Download</a>
+                        <h2>Stuffed Sock Snowman</h2>
+                        <h3>What you’ll need</h3>
+                        <ul>
+                            <li>2 long white socks</li>
+                            <li>White string or yarn</li>
+                            <li>Hot glue gun and hot glue</li>
+                            <li>2 buttons</li>
+                            <li>Cotton stuffing or uncooked rice</li>
+                            <li>Red or green cloth</li>
+                            <li>1 orange and 1 black fine tipped permanent marker</li>
+                        </ul>
+                        <h3>Steps</h3>
+                        <ol>
+                            <li>Cut the top from one of the socks.</li>
+                            <li>Discard the top portion and turn the remaining bottom portion inside out.</li>
+                            <li>Fill the sock with cotton stuffing or uncooked rice.</li>
+                            <li>Use white string or yarn to tie off and close the open end of the sock.</li>
+                            <li>Tie a piece of white string or yarn around the middle of the filled sock to create the head and body of the snowman.</li>
+                            <li>Cut a 1 ½” wide piece of red or green fabric and tie it around the neck of the snowman to create a scarf.</li>
+                            <li>Cut the toe portion off of the second sock approximately halfway between the heal and the closed end of the sock.</li>
+                            <li>Fold up the cut end of the sock to create a hat for the snowman.</li>
+                            <li>Place the hat on the head of the snowman.</li>
+                            <li>Using black and orange fine tipped permanent markers, draw the eyes, nose, and mouth on the face of the snowman.</li>
+                            <li>Using hot glue, adhere two buttons to the body of the snowman.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popsicle-sticks" class="my-modal">
+            <div class="my-modal-content">
+                <span class="close">&times;</span>
+                <div class="two-col">
+                    <div class="background-image" style="background-image: url(https://content.la-z-boy.com/Images/comfort-and-joy/craft02.jpg);"></div>
+                    <div class="copy">
+                        <a href="/Images/comfort-and-joy/popsicle-stick.pdf" download="Popsicle Stick Crafts" target="_blank">Download</a>
+                        <h2>Popsicle Stick Christmas&nbsp;Crafts</h2>
+                        <h3>What you’ll need</h3>
+                        <ul>
+                            <li>Jumbo popsicle sticks</li>
+                            <li>Scissors</li>
+                            <li>Foam brushes</li>
+                            <li>Glue stick</li>
+                            <li>Yellow cardstock or craft paper</li>
+                            <li>Brown cardstock or craft paper</li>
+                            <li>Multicolored buttons</li>
+                            <li>Metal ornament hook</li>
+                            <li>Hot glue</li>
+                            <li>Green paint or green permanent marker</li>
+                        </ul>
+                        <h3>Steps</h3>
+                        <ol>
+                            <li>Paint 3 popsicle sticks with green paint or color them with a green permanent marker.</li>
+                            <li>Use hot glue to adhere the popsicle sticks in the shape of a triangle.</li>
+                            <li>Use scissors to cut out a yellow star from yellow card stock or craft paper, and hot glue it to one of the triangle corners to make the top of the tree.</li>
+                            <li>Use scissors to cut out a rectangle from brown card stock or craft paper, and hot glue it to the backside of the middle of the base of the triangle to make the tree trunk.</li>
+                            <li>Use hot glue to attach multiple colors of buttons across the front face of the tree to create the ornaments.</li>
+                            <li>Use hot glue to attach a hook to the backside top of the ornament.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fireplace-video" class="my-modal">
+            <div class="my-modal-content">
+                <div class="youtube">
+                    <iframe data-url="https://www.youtube.com/embed/1WNxJXk0SYo?autoplay=1&mute=1&loop=1&modestbranding=1&fs=1&playlist=1WNxJXk0SYo" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+        <div id="menorah-video" class="my-modal">
+            <div class="my-modal-content">
+                <div class="youtube">
+                    <iframe data-url="https://www.youtube.com/embed/IZUSKW6rq6A?autoplay=1&mute=1&loop=1&modestbranding=1&fs=1&playlist=IZUSKW6rq6A" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+        <div id="snow-video" class="my-modal">
+            <div class="my-modal-content">
+                <div class="youtube">
+                    <iframe data-url="https://www.youtube.com/embed/BGXidZmLevc?autoplay=1&mute=1&loop=1&modestbranding=1&fs=1&playlist=BGXidZmLevc" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+        <div id="sleigh-ride-video" class="my-modal">
+            <div class="my-modal-content">
+                <div class="youtube">
+                    <iframe data-url="https://www.youtube.com/embed/7yfimaLhVcQ?autoplay=1&mute=1&loop=1&modestbranding=1&fs=1&playlist=7yfimaLhVcQ" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (typeof define == 'function' && define.amd) {
+            require(["/js/flickity.js"]);
+        } else {
+            var script = document.createElement("script");
+            script.src = "/js/flickity.js";
+            document.head.appendChild(script);
+        }
+    </script>
+    <script>
+        (function() {
+            // Create array of query string values
+            var params = [],
+                hash;
+            var q = document.URL.split('?')[1];
+            if (q != undefined) {
+                q = q.split('&');
+                for (var i = 0; i < q.length; i++) {
+                    hash = q[i].split('=');
+                    params.push(hash[1]);
+                    params[hash[0]] = hash[1];
+                }
+            }
+            // Open the modal in the query string
+            if (modal = document.getElementById(params['modal'])) {
+                modal.style.display = "block";
+                if (player = modal.getElementsByTagName('IFRAME')[0]) {
+                    player.src = player.dataset.url;
+                }
+            }
+
+            // Open modals
+            function showModal(el) {
+                el.addEventListener('click', e => {
+                    e.preventDefault();
+                    var modal = document.getElementById(el.dataset.showModal);
+                    modal.style.display = "block";
+                    if (player = modal.getElementsByTagName('IFRAME')[0]) {
+                        player.src = player.dataset.url;
+                    }
+                });
+            }
+
+
+            var myModalLinks = document.querySelectorAll('[data-show-modal]');
+            for (var i = 0; i < myModalLinks.length; i++) {
+                showModal(myModalLinks[i]);
+            }
+
+            // Close modals
+            function addCloseOnClick(el) {
+                var player = el.getElementsByTagName('IFRAME')[0];
+                el.addEventListener('click', function() {
+                    el.style.display = "none";
+                    if (player) {
+                        player.src = '';
+                    }
+                });
+                el.querySelector('.my-modal-content').addEventListener('click', e => {
+                    e.stopPropagation();
+                });
+                el.querySelector('.close').addEventListener('click', function() {
+                    el.style.display = "none";
+                    if (player) {
+                        player.src = '';
+                    }
+                });
+            }
+            var myModals = document.querySelectorAll('.my-modal');
+            for (var i = 0; i < myModals.length; i++) {
+                addCloseOnClick(myModals[i]);
+            }
+        })();
+    </script>
+    <!-- end NPC content -->
+</body>

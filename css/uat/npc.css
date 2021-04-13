@@ -291,6 +291,7 @@ section.cust-support h2,
 section.cust-support h3,
 section.cust-support h4 {
     font-family: inherit;
+    color: inherit;
     font-weight: bold;
     margin: 0;
     line-height: 1;
@@ -436,6 +437,7 @@ section.cust-support #dsr-button a {
     color: white;
     display: inline-block;
     background-color: #aeccc8;
+    background-color: #807069;
     padding: .82em .94em;
 }
 
@@ -872,8 +874,10 @@ section.cust-support .two-column .block {
     flex-basis: 48%;
 }
 
+
+/* center a lone block on the last row */
+
 section.cust-support .two-column .block:nth-last-child(1):nth-of-type(odd) {
-    /* center a lone block on the last row */
     margin-left: auto;
     margin-right: auto;
 }
@@ -894,6 +898,12 @@ section.cust-support .two-column p+a {
     padding-top: .5em;
     text-transform: uppercase;
     margin-top: auto;
+}
+
+section.cust-support .two-column.no-transform p+a {
+    text-transform: none;
+    color: #0070af;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 500px) {

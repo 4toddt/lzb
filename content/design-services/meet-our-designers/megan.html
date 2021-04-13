@@ -1,0 +1,214 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr("href", $(this).attr("href") + ".html");
+            });
+        });
+    </script>
+    <style></style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Shared code -->
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+    <!-- Main Content -->
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services/">Design Services</a></li>
+            <li><a href="/content/design-services/meet-our-designers">Meet Our Designers</a></li>
+            <li>Megan</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
+            </div>
+        </nav>
+        <h1>Meet our designers</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/megan/headshot.jpg" alt="Megan"></div>
+                        <h2>Megan</h2>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/megan/hero.jpg');"></div>
+            </div>
+        </section>
+        <div class="light-gray">
+            <section id="about-designer">
+                <h2>About designer</h2>
+                <div>
+                    <div class="bio">
+                        <p class="heading">Hendersonville, TN</p>
+                        <p>Megan takes pride in problem-solving her clients’ spaces and listening to their needs and concerns. “The first thing I ever do is listen. Get to know a bit about them, their space, and their lifestyle. From there, I am able to
+                            recommend pieces that I think will suit them best…and then create something they will hopefully love for a long time after I&nbsp;leave!”</p>
+                    </div>
+                    <div class="favorites">
+                        <p class="heading">Design badges:</p>
+                        <div id="badges">
+                            <div>
+                                <input type="radio" id="badge01-rb" name="badge" checked>
+                                <label class="image" for="badge01-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                </label>
+                                <p>
+                                    <strong>Couples Collaborator</strong>
+                                    <br>Blending styles for a look you’ll both love.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge02-rb" name="badge">
+                                <label class="image" for="badge02-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/SpaceMaximizer.png" alt="Space Maximizer badge">
+                                </label>
+                                <p>
+                                    <strong>Space Maximizer</strong>
+                                    <br>Creative space planning and room flow.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge03-rb" name="badge">
+                                <label class="image" for="badge03-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/MixMaster.png" alt="Mix Master badge">
+                                </label>
+                                <p>
+                                    <strong>Mix Master</strong>
+                                    <br>Mixing and matching patterns in unique ways.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge04-rb" name="badge">
+                                <label class="image" for="badge04-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Storage.png" alt="Storage badge">
+                                </label>
+                                <p>
+                                    <strong>Storage Super Hero</strong>
+                                    <br>Organizing clutter with unique storage solutions.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge05-rb" name="badge">
+                                <label class="image" for="badge05-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Coastal.png" alt="Coastal badge">
+                                </label>
+                                <p>
+                                    <strong>Coastal Chic</strong>
+                                    <br>Creating light and bright, beach-inspired looks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="rooms">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/megan/room01.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/megan/room02.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/megan/room03.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/megan/room04.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/megan/room05.jpg')">
+                    <div></div>
+                </div>
+            </div>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <section id="qa">
+            <div class="two-col gutter-20-30">
+                <div>
+                    <h2>Q &amp; A</h2>
+                    <p>Get to know our experts</p>
+                    <p class="heading">What is a common concern you get from customers regarding the design&nbsp;process?</p>
+                    <p>One of the most common questions I get during the design process is about color and pattern matching. “Would you match these things?” A lot of people are afraid of color and pattern but those are the things that make a room spectacular!
+                        Even in a monochromatic space, patterns are the driving force. Sometimes, having colors and patterns that differ drastically are exactly what someone&nbsp;needs.</p>
+                </div>
+                <div>
+                    <p class="heading">What tips do you have for customers looking for new&nbsp;furniture?</p>
+                    <p>Do some research ahead of time. Find some inspiration pieces and start a Pinterest board! This will help you down the line because you will have a better idea of what you like and don’t&nbsp;like.</p>
+                    <p class="heading">What is your favorite way to spend a&nbsp;Saturday?</p>
+                    <p>I love thrift shopping. I’ve made it a game to try and visit every hole in the wall or flea market I can find locally…and even some in the surrounding&nbsp;states!</p>
+                </div>
+            </div>
+        </section>
+        <div id="testimonials" class="med-gray">
+            <section>
+                <div>
+                    <div class="title">
+                        <h2>Customer<br>Testimonial</h2>
+                    </div>
+                    <div class="testimonial">
+                        <h3>Helped With All the Choices</h3>
+                        <p>I chose <span class="no-wrap">La-Z-Boy</span> because of all the choices! I loved almost everything in the store but was confused about how to decorate my empty palette. Megan came to my home, measured, designed and then called
+                            me in to take a look on the computer. I loved it all. After delivery, she put together my new den and dining room. I couldn't have been happier with the whole&nbsp;process!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- <div id="testimonials" class="med-gray">
+            <section>
+                <div>
+                    <div class="title">
+                        <h2>Customer<br>Testimonial</h2>
+                    </div>
+                    <div class="carousel">
+                        <div data-flickity='{
+                            "freeScrollFriction": 0.1,
+                            "pageDots": false,
+                            "prevNextButtons": true,
+                            "cellAlign": "left",
+                            "contain": true,
+                            "adaptiveHeight": true,
+                            "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                            }'>
+                            <div class="testimonial">
+                                <h3>Helped With All the Choices</h3>
+                                <p>I chose <span class="no-wrap">La-Z-Boy</span> because of all the choices! I loved almost everything in the store but was confused about how to decorate my empty palette. Megan came to my home, measured, designed and then
+                                    called me in to take a look on the computer. I loved it all. After delivery, she put together my new den and dining room. I couldn't have been happier with the whole&nbsp;process!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> -->
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>

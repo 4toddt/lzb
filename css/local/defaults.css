@@ -106,6 +106,10 @@ a:hover {
     outline: 0 none
 }
 
+img {
+    width: 100%;
+}
+
 
 /* desktop breadcrumbs */
 

@@ -1,169 +1,591 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/min/desktop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="mobileSite">
-    <section class="cust-support">
-        <!-- Only publish code to BCC from after this -->
-        <!-- Only publish code to BCC from after this -->
-        <!-- Only publish code to BCC from after this -->
-
-        <!-- Leather TT -->
-        <link rel="stylesheet" type="text/css" href="https://www.la-z-boy.com/css/uat/npc.css">
-        <style>
-            section.cust-support .hero h1 {
-                bottom: 87%;
-                left: 14%;
+<body>
+    <!-- Code for XM -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        @import url("https://use.typekit.net/oxd7mfn.css");
+        /************ resets ***********/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /* breadcrumbs */
+        
+        #breadcrumbs {
+            margin: 0 auto 10px;
+            max-width: 980px;
+            font-size: 14px;
+            color: #868686;
+        }
+        
+        body.mobile-site #breadcrumbs {
+            margin: 0.625rem auto;
+            padding: 0rem 0.625rem;
+            max-width: 62.5rem;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        #breadcrumbs ul {
+            padding-left: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 35px;
+        }
+        
+        body.mobile-site #breadcrumbs ul {
+            line-height: 1.25rem;
+        }
+        
+        #breadcrumbs li+li:before {
+            font-family: "icomoon";
+            content: "\e904";
+            -webkit-font-smoothing: antialiased;
+            vertical-align: middle;
+            padding: 0 8px;
+            line-height: 0;
+        }
+        
+        body.mobile-site #breadcrumbs li+li:before {
+            font-family: "lzb-icons";
+            content: "\e907";
+            vertical-align: baseline;
+            font-size: 0.625rem;
+            padding: 0 0.375rem;
+        }
+        
+        #breadcrumbs a {
+            color: inherit;
+            font-size: inherit;
+        }
+        
+        body.mobile-site #breadcrumbs a {
+            color: #555;
+        }
+        /* defaults */
+        
+        #npc-content {
+            width: 100%;
+            font-family: "lato", "OpenSans", sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        .mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1020px;
+            padding: 0 20px;
+            margin: 25px auto 0;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content strong {
+            font-weight: bold;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        /********** Leather Classes ************/
+        
+        #npc-content h2 {
+            font-size: 1.2em;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+        
+        #npc-content h3 {
+            font-size: .9em;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+        
+        #npc-content p {
+            font-size: .8em;
+            line-height: 1.4;
+            margin-top: .2em;
+            max-width: 45em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        section#hero {
+            max-width: 980px;
+            margin-top: 0;
+            padding: 0;
+            position: relative;
+        }
+        
+        section#hero:before {
+            content: none;
+        }
+        
+        section#hero .image {
+            height: 61.224490vw;
+            min-height: 320px;
+            max-height: 600px;
+            background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/hero.jpg);
+            background-size: cover;
+            background-position: left 62%;
+        }
+        
+        #hero h1 {
+            position: absolute;
+            top: 40px;
+            left: 75px;
+            color: white;
+            text-align: left;
+            font-size: 1.5em;
+            font-weight: bold;
+            max-width: 50%;
+            line-height: 1.2;
+        }
+        
+        section#hero p {
+            font-size: .8em;
+            margin-top: 1.5em;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        #reasons {
+            text-align: center;
+        }
+        
+        #reasons:before {
+            content: "";
+            display: block;
+            border-top: 1px solid #979797;
+            padding-bottom: 25px;
+        }
+        
+        #reasons .grid {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+            justify-content: center;
+        }
+        
+        #reasons .grid>div {
+            margin-top: 25px;
+            padding: 0 10px;
+            width: 100%;
+            max-width: 350px;
+        }
+        
+        #reasons .icon img {
+            height: 50px;
+        }
+        
+        #reasons h3 {
+            margin-top: .8em;
+        }
+        
+        #reasons:after {
+            content: "";
+            display: block;
+            border-top: 1px solid #979797;
+            margin-top: 25px;
+        }
+        
+        section#types {
+            max-width: none;
+            padding: 0;
+        }
+        
+        #types>h2,
+        #types>p {
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        #types .image {
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #types .rows {
+            margin-top: 25px;
+        }
+        
+        #types .rows>div>div {
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #types .rows>div>.image {
+            padding-bottom: 220px;
+        }
+        
+        #types .rows>div>.copy>.copy {
+            padding: 25px 20px;
+        }
+        
+        #types .rows>div>.copy>.image {
+            display: none;
+        }
+        
+        section#feel-it {
+            margin-top: 5px;
+        }
+        
+        #feel-it>div {
+            border: 2px solid #979797;
+            text-align: center;
+        }
+        
+        #feel-it .image {
+            padding-bottom: 52.040816%;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #feel-it .copy {
+            padding: 15px 20px;
+        }
+        
+        #design-request {
+            text-align: center;
+        }
+        
+        #design-request>a {
+            color: white;
+            background-color: #807069;
+            display: inline-block;
+            line-height: 1.3;
+            text-align: center;
+            padding: 0.6em;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero .copy {
+                position: absolute;
+                color: white;
+                left: 15%;
+                top: 12%;
             }
-            
-            section.cust-support .hero p {
-                top: 13%;
-                left: 14%;
-                width: 22em;
-                max-width: 50%;
+            #hero h1 {
+                position: static;
+                font-size: 1.8em;
+                max-width: none;
             }
-            
-            @media only screen and (max-width: 500px) {
-                section.cust-support .hero h1 {
-                    bottom: 89%;
-                    left: 4%;
-                }
-                section.cust-support .hero p {
-                    top: 11%;
-                    left: 4%;
-                    max-width: 92%;
-                }
+            section#hero p {
+                margin-top: .2em;
+                padding: 0;
+                max-width: 21em;
+                text-align: left;
             }
-            
-            @media only screen and (max-width: 375px) {
-                section.cust-support .hero h1 {
-                    bottom: auto;
-                    top: 5%;
-                    left: 6%;
-                    max-width: 90%;
-                }
-                section.cust-support .hero p {
-                    max-width: none;
-                }
+            section#reasons:before {
+                content: none;
             }
-        </style>
-
-        <section class="hero">
-            <img class="visible-lg visible-md" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/hero-lg.jpg" alt="Living room with leather Meyer Sofa and Gypsy Ottoman">
-            <img class="visible-sm" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/hero-sm.jpg" alt="Living room with leather Meyer Sofa and Gypsy Ottoman">
-            <img class="visible-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/hero-xs.jpg" alt="Living room with leather Meyer Sofa and Gypsy Ottoman">
-            <h1>Limitless leather</h1>
-            <p>With so many looks, it&rsquo;s hard to top leather. From rich and refined to sleek and modern, our leather collection includes a variety of colors and finishes, each with a unique grain and&nbsp;texture.
-            </p>
+            #reasons .grid>div {
+                width: 50%;
+            }
+            #types .rows>div {
+                padding: 30px 0;
+            }
+            #types .rows>div:nth-child(odd) {
+                background-color: #F1F1F1;
+            }
+            #types .rows>div>.image {
+                padding-bottom: 400px;
+            }
+            #types .rows>div>.copy {
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+            }
+            #types .rows>div:nth-child(even)>.copy {
+                flex-direction: row-reverse;
+            }
+            #types .rows>div>.copy>div {
+                width: 50%;
+            }
+            #types .rows>div>.copy>.image {
+                display: block;
+                padding-bottom: 400px;
+            }
+            section#feel-it {
+                margin-top: 30px;
+            }
+            #feel-it>div {
+                display: flex;
+                align-items: center;
+                text-align: left;
+            }
+            #feel-it>div>div {
+                width: 50%;
+            }
+            #feel-it .image {
+                padding-bottom: 225px;
+            }
+        }
+        
+        @media only screen and (min-width: 700px) {
+            #hero h1 {
+                font-size: 2.1em;
+            }
+            section#hero p {
+                font-size: 1em;
+            }
+            #design-request>a {
+                font-size: 1.1em;
+                padding: 0.6em 2.5em;
+            }
+        }
+        
+        @media only screen and (min-width: 850px) {
+            #npc-content section {
+                margin-top: 60px;
+            }
+            #npc-content section:before {
+                padding-bottom: 60px;
+            }
+            #npc-content h2 {
+                font-size: 1.5em;
+            }
+            #npc-content p {
+                font-size: .9em;
+            }
+            section#hero {
+                margin-top: 0;
+            }
+            #hero h1 {
+                font-size: 2.4em;
+            }
+            #reasons .grid>div {
+                width: 33.333333%;
+                margin-top: 40px;
+            }
+            #reasons .icon img {
+                height: 60px;
+            }
+            #reasons:after {
+                margin-top: 60px;
+            }
+            #types .rows {
+                margin-top: 60px;
+            }
+            #types .rows>div {
+                padding: 60px 0;
+            }
+            #types .rows>div>.copy>.copy {
+                padding: 25px 55px;
+            }
+            #feel-it .copy {
+                padding: 25px 50px;
+            }
+        }
+    </style>
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/CustomizeIt">Customize It!</a></li>
+            <li>Leather</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero">
+            <div class="image"></div>
+            <div class="copy">
+                <h1>Limitless Leather</h1>
+                <p>It’s hard to top leather. From rich and refined to sleek and modern, our leather collection has a style and fit for&nbsp;everyone.</p>
+            </div>
         </section>
-
-        <section class="title-row">
+        <section id="reasons">
             <h2>Reasons to love leather</h2>
-            <div class="grid three-column allow-2-col">
-                <div class="block">
-                    <h3>Outlasts fabric
-                        <span class="no-wrap">4 to 1</span>
-                    </h3>
-                    <p>Leather is 50% stronger than other upholstery and has a life up to
-                        <span class="no-wrap">15-20</span> years.
-                    </p>
+            <div class="grid">
+                <div>
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/CustomizeIt/Leather/hour-glass.svg" alt="hour-glass icon">
+                    </div>
+                    <h3>Outlasts fabric <span class="no-wrap">4 to 1</span></h3>
+                    <p>Leather is 50% stronger than other upholstery and has a life up to <span class="no-wrap">15-20 years.</span></p>
                 </div>
-                <div class="block">
+                <div>
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/CustomizeIt/Leather/year-round.svg" alt="calendar icon">
+                    </div>
                     <h3>Year round comfort</h3>
-                    <p>Leather naturally breathes so it stays cool in the summer and warm in the winter.</p>
+                    <p>Leather naturally breathes so it stays cool in the summer and warm in the&nbsp;winter.</p>
                 </div>
-                <div class="block">
+                <div>
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/CustomizeIt/Leather/durable.svg" alt="armor icon">
+                    </div>
                     <h3>Extremely durable</h3>
-                    <p>Natural oils prevent cracking, flaking, peeling and tearing, even along seam lines.</p>
+                    <p>Natural oils prevent cracking, flaking, peeling and tearing, even along seam&nbsp;lines.</p>
                 </div>
-                <div class="block">
+                <div>
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/CustomizeIt/Leather/ages.svg" alt="skin-care icon">
+                    </div>
                     <h3>Ages beautifully</h3>
-                    <p>With age leather becomes softer while still retaining its shape and vibrance.</p>
+                    <p>With age leather becomes softer while still retaining its shape and&nbsp;vibrance.</p>
                 </div>
-                <div class="block">
+                <div>
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/CustomizeIt/Leather/vibrant.svg" alt="sunshine icon">
+                    </div>
                     <h3>Color stays vibrant</h3>
-                    <p>Finished with special dyes to create a deep, rich color throughout the life of the leather.</p>
+                    <p>Finished with special dyes to create a deep, rich color throughout the life of the&nbsp;leather.</p>
                 </div>
-                <div class="block">
+                <div>
+                    <div class="icon">
+                        <img src="https://content.la-z-boy.com/Images/CustomizeIt/Leather/easy.svg" alt="hands around heart icon">
+                    </div>
                     <h3>Easy to care for</h3>
-                    <p>Simply requires a mild dusting or wiping to keep it looking vibrant for years to come.</p>
+                    <p>Simply requires a mild dusting or wiping to keep it looking vibrant for years to&nbsp;come.</p>
                 </div>
             </div>
         </section>
-
-        <section>
-            <div class="visible-lg visible-md">
-                <div class="row no-margin">
-                    <div class="image">
-                        <img src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/desktop/room01.jpg" alt="Living room with leather Meyer Sofa">
+        <section id="types">
+            <h2>Leather Types</h2>
+            <p>With so many leather options, we want to help choose what’s right for you. Here’s a look at the basics to help you find your perfect&nbsp;type.</p>
+            <div class="rows">
+                <div>
+                    <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type01.jpg);" role="img" aria-label="Living room with leather Meyer Sofa"></div>
+                    <div class="copy">
+                        <div class="copy">
+                            <h2>Authentic leather</h2>
+                            <p>More than 10 different tanning processes result in this elegantly supple, but durable leather. Pure, transparent dyes bring out its unique characteristics and dramatic color. If you prefer classic styles or more contemporary
+                                designs, authentic leather only improves with&nbsp;age.</p>
+                        </div>
+                        <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type02.jpg);" role="img" aria-label="Living room with authentic leather Reegan High Leg Swivel Chair"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type03.jpg);" role="img" aria-label=""></div>
+                    <div class="copy">
+                        <div class="copy">
+                            <h2>Aniline Leather</h2>
+                            <p>Perfectly imperfect, this handcrafted, premium leather is treated with Aniline dye to preserve and enhance its natural, rustic beauty. Made in America, this high-quality leather has natural markings and variations in the grain,
+                                making each upholstered piece <span class="no-wrap">one-of-a-kind.</span></p>
+                        </div>
+                        <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type04.jpg);" role="img" aria-label=""></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type05.jpg);" role="img" aria-label=""></div>
+                    <div class="copy">
+                        <div class="copy">
+                            <h2>Select Leather</h2>
+                            <p>Chosen by hand for their texture and comfort, Select Leathers make everyone feel at home. This limited collection of genuine leather matched with vinyl urethane is both beautiful and budget&nbsp;friendly.</p>
+                        </div>
+                        <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type06.jpg);" role="img" aria-label=""></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type07.jpg);" role="img" aria-label=""></div>
+                    <div class="copy">
+                        <div class="copy">
+                            <h2>Custom Leather</h2>
+                            <p>Expertly suited to your needs and style, with genuine leather matched with leather-like vinyl urethane. Custom Leathers come in a wide variety of options and&nbsp;colors.</p>
+                        </div>
+                        <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type08.jpg);" role="img" aria-label=""></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type09.jpg);" role="img" aria-label=""></div>
+                    <div class="copy">
+                        <div class="copy">
+                            <h2>Custom Leather Plus</h2>
+                            <p>Elegant as well as comfortable, our genuine leather has an ageless quality and comes in a wide selection of rich colors and subtle&nbsp;textures.</p>
+                        </div>
+                        <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/type10.jpg);" role="img" aria-label=""></div>
                     </div>
                 </div>
             </div>
-            <div class="row no-margin image-copy reverse">
-                <div class="image">
-                    <img class="visible-lg visible-md" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/desktop/room02.jpg" alt="Living room with authentic leather Reegan High Leg Swivel Chair">
-                    <img class="visible-sm visible-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/mobile/room02.jpg" alt="Living room with authentic leather Reegan High Leg Swivel Chair">
-                </div>
+        </section>
+        <section id="feel-it">
+            <div>
+                <div class="image" style="background-image: url(https://content.la-z-boy.com/Images/CustomizeIt/Leather/feel-it.jpg);" role="img" aria-label=""></div>
                 <div class="copy">
-                    <h2>Authentic leather</span>
-                    </h2>
-                    <p>More than 10 different tanning processes result in this elegantly supple, but durable leather. Pure, transparent dyes bring out its unique characteristics and dramatic color. If you prefer classic styles or more contemporary designs,
-                        authentic leather only improves with&nbsp;age.</p>
+                    <h2>Get a Feel For It</h2>
+                    <p>Visit your local La-Z-Boy Furniture Galleries to see, feel, and learn more about leather first-hand with help from our knowledgeable team.</p>
                 </div>
             </div>
         </section>
-
-        <section>
-            <div class="row no-margin">
-                <div class="image">
-                    <img class="visible-lg visible-md" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/room03-lg.jpg" alt="Living room with analine leather Studio Sofa and Chair & A Half">
-                    <img class="visible-sm visible-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/room03-sm.jpg" alt="Living room with analine leather Studio Sofa and Chair & A Half">
-                </div>
-            </div>
-            <div class="row no-margin image-copy reverse">
-                <div class="image">
-                    <img class="visible-lg visible-md" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/desktop/room04.jpg" alt="Closeup of analine leather Makenna duo® Reclining Sofa">
-                </div>
-                <div class="copy">
-                    <h2>Aniline leather</h2>
-                    <p>Perfectly imperfect, this handcrafted, premium leather is treated with Aniline dye to preserve and enhance its natural, rustic beauty. This high quality leather has natural markings and variations in the grain, making each upholstered
-                        piece <span class="no-wrap">one-of-a-kind.</span>
-                    </p>
-                </div>
-            </div>
+        <section id="design-request">
+            <a href="/content/design-services/design-request-form">Designing an entire room? Book&nbsp;your&nbsp;FREE design&nbsp;consultation!</a>
         </section>
-
-        <section>
-            <div class="row no-margin">
-                <div class="image">
-                    <img class="visible-lg visible-md" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/desktop/room05.jpg" alt="Living room with Renew™ leather James Sectional">
-                    <img class="visible-sm visible-xs" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/mobile/room05.jpg" alt="Living room with Renew™ leather James Sectional">
-                </div>
-            </div>
-            <div class="row no-margin image-copy reverse">
-                <div class="image">
-                    <img class="visible-lg visible-md" src="https://content.la-z-boy.com/Images/npc/CustomizeIt/Leather/desktop/room06.jpg" alt="Midtown Swivel Chair in Renew™ leather">
-                </div>
-                <div class="copy">
-                    <h2>Renew&trade; leather</h2>
-                    <p>Made from recycled leather, Renew&trade; offers the look and feel of genuine leather while being eco-friendly. It&rsquo;s durable and designed to resist scratches and fading. Perfect for family homes, it&rsquo;s stain resistant, easy
-                        to clean and a beautiful alternative to traditional leather.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="dsr-button">
-            <a class="dsr-redirect" href="javascript:void(0)">Designing an entire room? Book&nbsp;your FREE
-                <span class="arrow-right">design consultation!</span>
-            </a>
-        </section>
-
-        <script src="https://www.la-z-boy.com/js/uat/npc.js"></script>
-
-
-        <!-- Only publish code to BCC from before this -->
-        <!-- Only publish code to BCC from before this -->
-        <!-- Only publish code to BCC from before this -->
-    </section>
+    </div>
+    <!-- /Code for XM -->
 </body>

@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Danielle</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/headshot.jpg" alt="Danielle"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/headshot.jpg" alt="Danielle"></div>
                         <h2>Danielle</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,8 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Pittsburgh, PA</p>
-                        <p>It all starts with finding the right style. Danielle relishes the fact that each client is unique because it gives her the chance to identify their particular style. “I could design their room in an infinite number of ways, but
-                            only one will be perfect for them.”</p>
+                        <p>It all starts with finding the right style. Danielle relishes the fact that each client is unique because it gives her the chance to identify their particular style. “I could design their room in an infinite number of ways, but only one will be perfect for&nbsp;them.”</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -78,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MixMaster.png" alt="Mix Master badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/MixMaster.png" alt="Mix Master badge">
                                 </label>
                                 <p>
                                     <strong>Mix Master</strong>
-                                    <br>Mixing and matching patterns in unique ways.
-                                </p>
+                                    <br>Mixing and matching patterns in unique ways. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/CouplesCollaborator.png" alt="Couples Collaborator badge">
                                 </label>
                                 <p>
                                     <strong>Couples Collaborator</strong>
-                                    <br>Blending styles for a look you&rsquo;ll both love.
-                                </p>
+                                    <br>Blending styles for a look you’ll both love. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MidCentury.png" alt="Mid-Century Modern badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/MidCentury.png" alt="Mid-Century Modern badge">
                                 </label>
                                 <p>
                                     <strong>Mid-Century Modern</strong>
-                                    <br>Blending retro with right now for timeless looks.
-                                </p>
+                                    <br>Blending retro with right now for timeless looks. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Farmhouse.png" alt="Modern Farmhouse badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Farmhouse.png" alt="Modern Farmhouse badge">
                                 </label>
                                 <p>
                                     <strong>Modern Farmhouse</strong>
-                                    <br>Creating cozy, warm spaces with rustic charm.
-                                </p>
+                                    <br>Creating cozy, warm spaces with rustic charm. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/TransitionalStylist.png" alt="Transitional Stylist badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/TransitionalStylist.png" alt="Transitional Stylist badge">
                                 </label>
                                 <p>
                                     <strong>Transitional Stylist</strong>
-                                    <br>Balancing traditional and contemporary styles.
-                                </p>
+                                    <br>Balancing traditional and contemporary styles. </p>
                             </div>
                         </div>
                     </div>
@@ -138,28 +125,28 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room03.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room03.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room04.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room04.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room05.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room05.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room06.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room06.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room07.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room07.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room08.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/danielle/room08.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -170,17 +157,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">What tips do you have for clients looking for design services?</p>
-                    <p>Come into the store armed with as much information as possible! Bring floor and wall colors, dimensions and lots of pictures. The more information that you have to share, the easier it is to guide you in the right direction. Plus,
-                        be open to stepping outside of your comfort zone! You don’t have to get too wild but if you’re already making changes, push yourself just a bit. You’ll probably end up loving it!</p>
+                    <p class="heading">What tips do you have for clients looking for design&nbsp;services?</p>
+                    <p>Come into the store armed with as much information as possible! Bring floor and wall colors, dimensions and lots of pictures. The more information that you have to share, the easier it is to guide you in the right direction. Plus, be open to stepping outside of your comfort zone! You don’t have to get too wild but if you’re already making changes, push yourself just a bit. You’ll probably end up loving&nbsp;it!</p>
                 </div>
                 <div>
-                    <p class="heading">What is your favorite part of designing a client’s home?</p>
-                    <p>My favorite part is seeing my client’s vision come to life. I could design their room in an infinite number of ways, but only one will be perfect for them. To help determine their style, I use a combination of the frames and fabrics
-                        that they select as well as what I see in their home. There is a common thread that weaves its way through every single item they gravitate toward. It’s my job to pick up on the commonalities.</p>
-                    <p class="heading">What is your favorite way to spend your Saturday?</p>
-                    <p>I try to spend as much time with my family as possible during my days off and am usually testing out some new recipe for us to try. I also have an obsession with real-life crime shows, so you’re likely to find them on my television
-                        when I find a free moment!</p>
+                    <p class="heading">What is your favorite part of designing a client’s&nbsp;home?</p>
+                    <p>My favorite part is seeing my client’s vision come to life. I could design their room in an infinite number of ways, but only one will be perfect for them. To help determine their style, I use a combination of the frames and fabrics that they select as well as what I see in their home. There is a common thread that weaves its way through every single item they gravitate toward. It’s my job to pick up on the&nbsp;commonalities.</p>
+                    <p class="heading">What is your favorite way to spend your&nbsp;Saturday?</p>
+                    <p>I try to spend as much time with my family as possible during my days off and am usually testing out some new recipe for us to try. I also have an obsession with real-life crime shows, so you’re likely to find them on my television when I find a free&nbsp;moment!</p>
                 </div>
             </div>
         </section>
@@ -202,20 +186,15 @@
                             }'>
                             <div class="testimonial">
                                 <h3>A House Becomes a Home</h3>
-                                <p>Danielle is a pleasure to work with, and she spent as much time as necessary so we are happy with our design from the furniture to the décor pieces. Danielle was spot on when it came to selecting our decorating style and
-                                    also helped to nudge us out of our comfort zone. She knows current trends and how to coordinate them in our home to create a timeless style. What a difference those ideas made in our home! It is easy to see Danielle
-                                    truly loves design, and she made our house feel like home.</p>
+                                <p>Danielle is a pleasure to work with, and she spent as much time as necessary so we are happy with our design from the furniture to the décor pieces. Danielle was spot on when it came to selecting our decorating style and also helped to nudge us out of our comfort zone. She knows current trends and how to coordinate them in our home to create a timeless style. What a difference those ideas made in our home! It is easy to see Danielle truly loves design, and she made our house feel like&nbsp;home.</p>
                             </div>
                             <div class="testimonial">
                                 <h3>A Wonderful Eye</h3>
-                                <p>Danielle’s exceptional service is beyond compare! I worked with Danielle on several projects in my home. In one project we took a dull, boring family room and turned it into a complete work of art! She has a wonderful eye
-                                    for design and was able to take my ideas and transform them into a beautiful reality! I have recommended Danielle and La‑Z‑Boy to friends who were just as pleased as myself. Thank you for providing such a great interior
-                                    design program and thank you for Danielle!</p>
+                                <p>Danielle’s exceptional service is beyond compare! I worked with Danielle on several projects in my home. In one project we took a dull, boring family room and turned it into a complete work of art! She has a wonderful eye for design and was able to take my ideas and transform them into a beautiful reality! I have recommended Danielle and La‑Z‑Boy to friends who were just as pleased as myself. Thank you for providing such a great interior design program and thank you for&nbsp;Danielle!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>Ready for the Next Makeover!</h3>
-                                <p>Danielle is amazing and I am very pleased with our purchases and her service. She put a room together just for us! Her talent is outstanding! She listened to our likes and dislikes and really knew what we wanted, even when
-                                    we didn’t! Thank you again, and I’m looking forward to our next makeover!</p>
+                                <p>Danielle is amazing and I am very pleased with our purchases and her service. She put a room together just for us! Her talent is outstanding! She listened to our likes and dislikes and really knew what we wanted, even when we didn’t! Thank you again, and I’m looking forward to our next&nbsp;makeover!</p>
                             </div>
                         </div>
                     </div>
@@ -226,7 +205,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

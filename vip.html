@@ -1,0 +1,150 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Code for XM -->
+    <link href="/css/vip.css" rel="stylesheet">
+    <script>
+        if (window.location.hash === '#no-event') {
+            document.body.classList.add('no-event');
+        }
+    </script>
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>VIP Event</li>
+        </ul>
+    </nav>
+    <style>
+        #npc-content p {
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+        
+        #hero img {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 320px;
+        }
+        
+        body.no-event #form,
+        body:not(.no-event) #sorry {
+            display: none;
+        }
+        
+        #form .fields>div {
+            margin-top: 10px;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero img {
+                top: 57%;
+                max-width: 740px;
+            }
+            #form .fields {
+                justify-content: center;
+            }
+            #form .fields>div {
+                max-width: 400px;
+                margin-top: 30px;
+            }
+        }
+    </style>
+    <div id="npc-content">
+        <section id="hero" class="full-width background-image">
+            <img src="https://content.la-z-boy.com/Images/vip/vip-offer.png" alt="VIP OFFER">
+        </section>
+        <section id="form">
+            <div class="icon"><img src="https://content.la-z-boy.com/Images/vip/calendar.svg" alt="Calendar icon"></div>
+            <h2>Unlock Exclusive Deals</h2>
+            <p style="max-width: 30em;">Enter your zip code and event code below to reveal your exclusive VIP discounts and book your appointment to save!</p>
+            <div class="fields two-col gutter-30">
+                <div>
+                    <label for="postal">Zip/Postal Code</label>
+                    <input type="text" id="postal" placeholder="55555">
+                </div>
+                <div style="display: none;">
+                    <label for="event">Event Code</label>
+                    <input type="text" id="event" placeholder="ABC123" value="FEB21">
+                </div>
+            </div>
+            <a id="submit" class="faux-button" tabindex="0">Submit</a>
+        </section>
+        <section id="sorry">
+            <div class="icon"><img src="https://content.la-z-boy.com/Images/vip/sorry.svg" alt="Sorry icon"></div>
+            <h2>Sorry!</h2>
+            <p style="max-width: 25em;">Unfortunately we do not have a VIP event in your area. However, we always have a great sale going on.</p>
+            <a href="/b/_/N-1obe4nZ1ooygz3" class="faux-button" tabindex="0">See More Savings</a>
+        </section>
+    </div>
+    <script>
+        function sorry() {
+            document.body.classList.add('no-event');
+            window.location.hash = 'no-event';
+        }
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+
+                $('#submit').click(function() {
+                    var postal = $('#postal').val();
+                    var promo = $('#event').val();
+                    if (postal && promo) {
+                        var vipAPI = 'https://gallerysiteapi.la-z-boy.com/api/VIP/Get?zipcode=' + postal + '&code=' + promo;
+
+                        $.getJSON(vipAPI, function() {
+                                console.log("success");
+                            })
+                            .done(function(json) {
+                                // console.log("second success (done)");
+                                // console.log(json);
+                                if (jQuery.isEmptyObject(json.Data)) {
+                                    sorry();
+                                } else {
+                                    window.location.href = json.Data.LandingPage + "?postal=" + postal + "&code=" + promo + "&store=" + json.Data.StoreName;
+                                }
+                            })
+                            .fail(function() {
+                                console.log("error (fail)");
+                            })
+                            .always(function() {
+                                console.log("complete (always)");
+                                $('#npc-content').show();
+                            });
+                    }
+                });
+            }
+        })();
+    </script>
+    <!-- /Code for XM -->
+</body>
+<!-- 060	Glen View	2830 Patriot Blvd.	Glen View	IL	60026	(847) 504-0134	Chicago	x	GO VIP_CHI
+175	Florence	7991 Mall RD	Florence	KY	41042	(859) 371-3800	Cincinnati	x	Sept VIP
+280	North Olmsted	24954 Brookpark Rd    	North Olmsted 	OH	44070	(440) 734-7632	Cleveland	x	Sept VIP
+178	Novi	27754  Novi Rd	Novi	MI	48377	(248) 449-1490	Detroit	x	Sept VIP
+203	Canton	42728 Ford Road	Canton	MI	48187	(734) 844-1565	Detroit	x	Sept VIP
+130	Agoura Hills	28207 Canwood St.	Agoura Hills	CA	91301	(818) 597-4670	Los Angeles	x	Sept VIP
+132	Yorba Linda	23029 Eastpark Drive	Yorba Linda	CA	92887	(714) 921-5144	Los Angeles	x	Sept VIP
+135	Duarte	968 Hamilton RD	Duarte	CA	91010	(626) 471-9999	Los Angeles	x	Sept VIP
+233	Edina	7595 France Ave South	Edina	MN	55435	(952) 835-1722	Minneapolis	x	Sept VIP
+084	Marlton	981 Route 73 South	Marlton	NJ	08053	(856) 817-1171	Philadelphia	x	Sept VIP
+164	Pittsburgh (Robinson)	100 Quinn Drive	Pittsburgh	PA	15275	(412) 788-5302	Pittsburgh	x	Sept VIP
+011	Manchester	14177 Manchester Road	Manchester	MO	63011	(636) 394-7447	St. Louis	x	GO VIP_STL
+063	O'Fallon	1690 Highway K	O'Fallon	MO	63366	(636) 379-3945	St. Louis	x	GO VIP_STL
+004	Fairfax	10900 Lee Highway	Fairfax	VA	22030	(703) 273-6133	Washington DC	x	Sept VIP -->

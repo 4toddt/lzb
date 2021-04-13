@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Sonja</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/headshot.jpg" alt="Sonja"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/sonja/headshot.jpg" alt="Sonja"></div>
                         <h2>Sonja</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sonja/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,8 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Mesa, AZ</p>
-                        <p>Her first major step in designing a space is talking and really getting to know the client. Sonya realizes how variable style really is, and wants to tap into just what her client wants. “Style is so personal and individual and
-                            specific. It goes beyond what something simply looks like.”</p>
+                        <p>Her first major step in designing a space is talking and really getting to know the client. Sonya realizes how variable style really is, and wants to tap into just what her client wants. “Style is so personal and individual and specific. It goes beyond what something simply looks&nbsp;like.”</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -78,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/UrbanLiving.png" alt="Urban Living badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/UrbanLiving.png" alt="Urban Living badge">
                                 </label>
                                 <p>
                                     <strong>Urban Living</strong>
-                                    <br>Creating big city looks, even in smaller spaces.
-                                </p>
+                                    <br>Creating big city looks, even in smaller spaces. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Coastal.png" alt="Coastal Chic badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Coastal.png" alt="Coastal Chic badge">
                                 </label>
                                 <p>
                                     <strong>Coastal Chic</strong>
-                                    <br>Creating light and bright, beach-inspired looks.
-                                </p>
+                                    <br>Creating light and bright, beach-inspired looks. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MidCentury.png" alt="Mid-Century Modern badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/MidCentury.png" alt="Mid-Century Modern badge">
                                 </label>
                                 <p>
                                     <strong>Mid-Century Modern</strong>
-                                    <br>Blending retro with right now for timeless looks.
-                                </p>
+                                    <br>Blending retro with right now for timeless looks. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/TransitionalStylist.png" alt="Transitional Stylist badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/TransitionalStylist.png" alt="Transitional Stylist badge">
                                 </label>
                                 <p>
                                     <strong>Transitional Stylist</strong>
-                                    <br>Balancing traditional and contemporary styles.
-                                </p>
+                                    <br>Balancing traditional and contemporary styles. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/ManSpaces.png" alt="Man Spaces badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/ManSpaces.png" alt="Man Spaces badge">
                                 </label>
                                 <p>
                                     <strong>Man Spaces</strong>
-                                    <br>Designing a space for him that you&rsquo;ll love, too.
-                                </p>
+                                    <br>Designing a space for him that you’ll love, too. </p>
                             </div>
                         </div>
                     </div>
@@ -138,19 +125,19 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room03.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room03.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room04.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room04.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room05.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sonja/room05.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -161,15 +148,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">How do you determine the right style for your customers?</p>
-                    <p>I spend a good amount of time with each client just chatting about what they are dreaming about for their home. Style is so personal and individual and specific to each client. It goes beyond what something simply looks like. It’s
-                        really a way you live, and what you want your home to reflect.</p>
+                    <p class="heading">How do you determine the right style for your&nbsp;customers?</p>
+                    <p>I spend a good amount of time with each client just chatting about what they are dreaming about for their home. Style is so personal and individual and specific to each client. It goes beyond what something simply looks like. It’s really a way you live, and what you want your home to&nbsp;reflect.</p>
                 </div>
                 <div>
-                    <p class="heading">Where do find your inspiration?</p>
-                    <p>My inspiration comes from the people that I work with. I am inspired by their goals and vision, and what they want their home to be. When I get stuck, I use sites like Houzz and Instagram to move me outside of my box.</p>
-                    <p class="heading">What aspect of your job brings you the greatest joy?</p>
-                    <p>I love being a part of improving the lives of the people I work with. Home is the place where memories are made, experiences are had and relationships are built. It is a privilege to be a part of that impact.</p>
+                    <p class="heading">Where do find your&nbsp;inspiration?</p>
+                    <p>My inspiration comes from the people that I work with. I am inspired by their goals and vision, and what they want their home to be. When I get stuck, I use sites like Houzz and Instagram to move me outside of my&nbsp;box.</p>
+                    <p class="heading">What aspect of your job brings you the greatest&nbsp;joy?</p>
+                    <p>I love being a part of improving the lives of the people I work with. Home is the place where memories are made, experiences are had and relationships are built. It is a privilege to be a part of that&nbsp;impact.</p>
                 </div>
             </div>
         </section>
@@ -191,14 +177,11 @@
                             }'>
                             <div class="testimonial">
                                 <h3>A Great Person and Designer</h3>
-                                <p>We had a wonderful experience with Bonnie, our Sales Consultant and Sonja, our Interior Designer. They were extremely pleasant, knowlegeable, patient and fun. It was so nice that we were able to see on the computer the
-                                    rooms as they would look with the items we were going to purchase. They spent so much time with us and made sure we were happy with the items we purchased. They were not only good at their jobs, they are great people.</p>
+                                <p>We had a wonderful experience with Bonnie, our Sales Consultant and Sonja, our Interior Designer. They were extremely pleasant, knowlegeable, patient and fun. It was so nice that we were able to see on the computer the rooms as they would look with the items we were going to purchase. They spent so much time with us and made sure we were happy with the items we purchased. They were not only good at their jobs, they are great&nbsp;people.</p>
                             </div>
                             <div class="testimonial">
                                 <h3>The Home She Wanted</h3>
-                                <p>Kelly and Sonja did an amazing job helping me bring my vision to life! They keyed in on my style and very quickly, showed me great pieces that I might not have considered, and helped bring depth to the design. They even
-                                    took into account the adjoining rooms so everything works well together. I especially appreciated being able to see what the room will look like from each entry point and that they are able to incorporate some of my
-                                    favorite existing pieces. It’s going to look fantastic and leave no doubt that it’s MY home.</p>
+                                <p>Kelly and Sonja did an amazing job helping me bring my vision to life! They keyed in on my style and very quickly, showed me great pieces that I might not have considered, and helped bring depth to the design. They even took into account the adjoining rooms so everything works well together. I especially appreciated being able to see what the room will look like from each entry point and that they are able to incorporate some of my favorite existing pieces. It’s going to look fantastic and leave no doubt that it’s MY&nbsp;home.</p>
                             </div>
                         </div>
                     </div>
@@ -209,7 +192,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

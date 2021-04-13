@@ -7,9 +7,9 @@
 <body class="mobile-site">
     <!-- begin NPC content -->
     <!-- Comfort Is Back TT -->
-    </script>
     <style>
         @import url("https://use.typekit.net/pou1zjg.css");
+
         @font-face {
             font-family: 'LZB Icons';
             src: url('/css/fonts/lzb-icons.eot?jebkb3');
@@ -17,51 +17,51 @@
             font-weight: normal;
             font-style: normal;
         }
+
         /***************************************/
         /*********** Mobile Resets *************/
         /***************************************/
-        
         #site-wrapper {
             max-width: none;
         }
-        
+
         #site-wrapper .breadcrumbs {
             max-width: 62.5rem;
             margin: 0.625rem auto;
         }
-        
+
         #site-wrapper .section-title {
             display: none;
         }
-        
+
         #site-wrapper .section-row {
             max-width: none;
         }
-        
+
         #site-wrapper .section-content {
             padding: 0;
             float: none;
         }
-        
+
         #site-wrapper .one-column-container,
         #site-wrapper .two-column-container {
             max-width: none;
             padding: 0;
         }
+
         /****** desktop resets ******/
-        
         .two-column-first [role="main"],
         .two-column-first [role="region"],
         main {
             width: 100%;
             margin: 0;
         }
-        
+
         .two-column-first [role="region"]>h1 {
             display: none;
         }
+
         /****** BCC content resets ******/
-        
         #npc-content * {
             font: inherit;
             color: inherit;
@@ -74,15 +74,15 @@
             width: auto;
             text-decoration: none;
         }
-        
+
         #npc-content .right,
         #npc-content .left {
             float: none !important;
         }
+
         /***************************************/
         /************* NPC Defaults ************/
         /***************************************/
-        
         #npc-content {
             width: 100%;
             font-family: 'lato', 'OpenSans', sans-serif;
@@ -91,53 +91,53 @@
             color: #333;
             overflow: hidden;
         }
-        
+
         body.mobile-site #npc-content {
             margin-bottom: 60px;
         }
-        
+
         .primary-nav.sticky-fixed {
             display: none;
         }
-        
+
         #npc-content section {
             width: 100%;
             max-width: 1010px;
             padding: 0 15px;
             margin: 0 auto;
         }
-        
+
         #npc-content section.full-width {
             max-width: 980px;
             padding: 0;
         }
-        
+
         #npc-content strong {
             font-weight: bold;
         }
-        
+
         #npc-content img {
             /* override browser default of inline-block to remove white space after images */
             display: block;
             width: 100%;
             max-width: none;
         }
-        
+
         #npc-content .image {
             /* fix IE bug where images in flex containers don't keep their aspect ratio */
             min-height: 1px;
         }
-        
+
         #npc-content .no-wrap {
             white-space: nowrap;
         }
-        
+
         #npc-content .arrow-right:after {
             font-family: 'LZB Icons';
             content: "\e90e";
             line-height: 0;
         }
-        
+
         #npc-content .anchor {
             /* use like <span class="anchor" id="whatever"></span> */
             position: relative;
@@ -146,30 +146,25 @@
             width: 0;
             top: -160px;
         }
-        
+
         body.mobile-site #npc-content .anchor {
             top: -60px;
         }
-        
-        body.retail .not-retail,
-        body:not(.retail) .retail-only {
-            display: none !important;
-        }
+
         /********** Responsive Hidden Elements *********/
-        
         body:not(.mobile-site) .hidden-desktop {
             display: none !important;
         }
-        
+
         body.mobile-site .hidden-mobile {
             display: none !important;
         }
+
         /***************** Custom CSS ******************/
-        
         #npc-content a {
             text-decoration: underline;
         }
-        
+
         #hero {
             background-image: url(https://embed.widencdn.net/img/lazboy/qvzooburk5/500px@2x/hero.jpg?q=50);
             height: 460px;
@@ -177,7 +172,7 @@
             background-position: center;
             position: relative;
         }
-        
+
         #hero h1 {
             font-size: 1.8em;
             line-height: 1.2;
@@ -190,7 +185,7 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
+
         section#extended-hours {
             background-color: #1372af;
             color: white;
@@ -199,31 +194,31 @@
             padding: 20px 20px 30px;
             max-width: 980px;
         }
-        
+
         #npc-content h2 {
             font-size: 1.6em;
             line-height: 1.2;
             text-align: center;
         }
-        
+
         #npc-content p {
             line-height: 1.3;
         }
-        
+
         #npc-content h2+p {
             margin-top: .25em;
             text-align: center;
         }
-        
+
         #announcement .two-col>div {
             margin-top: 35px;
         }
-        
+
         #announcement p+p,
         #announcement .image+p {
             margin-top: 1em;
         }
-        
+
         #announcement .my-callout {
             padding: 45px 15px;
             background-color: #f5f5f5;
@@ -232,12 +227,12 @@
             font-size: 1.15em;
             line-height: 1.2;
         }
-        
+
         #announcement .my-callout strong {
             color: #1372af;
             display: block;
         }
-        
+
         #announcement .link-modules {
             display: flex;
             flex-wrap: wrap;
@@ -245,19 +240,19 @@
             margin: 0 -7px;
             text-align: center;
         }
-        
+
         #announcement .link-modules>div {
             padding: 0 7px;
             flex: 0 1 330px;
             margin-top: 50px;
         }
-        
+
         #announcement .link-modules img {
             height: 75px;
             width: auto;
             margin: 0 auto;
         }
-        
+
         #announcement .link-modules a {
             display: block;
             margin-top: 1em;
@@ -267,20 +262,20 @@
             color: white;
             font-weight: bold;
         }
-        
+
         #npc-content [name="state"] {
             display: none;
         }
-        
+
         #open-stores {
             text-align: center;
         }
-        
+
         section#open-stores,
         section#virtual-design {
             margin-top: 50px;
         }
-        
+
         #open-stores hr {
             display: block;
             margin-top: 30px;
@@ -289,13 +284,13 @@
             border-style: inset;
             border-width: 1px;
         }
-        
+
         #open-stores table {
             margin: 30px auto 0;
             border-collapse: collapse;
             border-top: 1px solid #b7b7b7;
         }
-        
+
         #open-stores .select {
             position: relative;
             border: 1px solid #c3c2c2;
@@ -304,7 +299,7 @@
             margin: 1em auto 0;
             width: 316px;
         }
-        
+
         #open-stores .select:after {
             position: absolute;
             font-family: LZB icons;
@@ -313,7 +308,7 @@
             top: .85em;
             pointer-events: none;
         }
-        
+
         #open-stores select {
             width: 100%;
             height: auto;
@@ -323,7 +318,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
         }
-        
+
         #stores[data-contact="phone"] td:nth-child(4),
         #stores[data-contact="phone"] td:nth-child(5),
         #stores[data-contact="private"] td:nth-child(3),
@@ -360,13 +355,13 @@
         #stores[data-state="wisconsin"] tr:not([data-state="wisconsin"]) {
             display: none !important;
         }
-        
+
         #open-stores tr {
             padding: .5em 0;
             border-bottom: 1px solid #b7b7b7;
             display: block;
         }
-        
+
         #open-stores td {
             font-size: 0.9em;
             padding: .25em;
@@ -374,25 +369,25 @@
             display: block;
             text-align: center;
         }
-        
+
         #open-stores a.arrow-right {
             text-decoration: none;
             color: #1372af;
             font-weight: bold;
         }
-        
+
         body.calendly .multiple-stores {
             display: none;
         }
-        
+
         body:not(.calendly) .single-store {
             display: none;
         }
-        
+
         #virtual-design {
             text-align: center;
         }
-        
+
         #virtual-design a {
             display: inline-block;
             font-size: 1.15em;
@@ -403,23 +398,27 @@
             color: white;
             font-weight: 600;
         }
-        
+
         @media only screen and (min-width: 500px) {
             #hero {
                 background-image: url(https://embed.widencdn.net/img/lazboy/3cccecevvs/980px@2x/hero.jpg?q=50);
                 height: 700px;
             }
+
             #hero h1 {
                 font-size: 2.4em;
                 width: 9em;
                 margin-top: 30px;
             }
+
             section#extended-hours {
                 padding: 30px 30px 40px;
             }
+
             #npc-content h2 {
                 font-size: 2em;
             }
+
             /* #npc-content p {
         font-size: 1.15em;
     } */
@@ -428,16 +427,18 @@
                 font-size: 1.15em;
             }
         }
-        
+
         @media only screen and (min-width: 750px) {
             #hero h1 {
                 font-size: 3em;
                 margin-top: 20px;
             }
+
             #announcement .two-col {
                 display: flex;
                 margin: 0 -20px;
             }
+
             #announcement .two-col>div {
                 flex: 0 0 50%;
                 padding: 0 20px;
@@ -445,25 +446,31 @@
                 flex-direction: column;
                 justify-content: center;
             }
+
             #announcement .my-callout {
                 padding: 45px;
             }
+
             #announcement .my-callout p {
                 max-width: 15em;
                 margin-left: auto;
                 margin-right: auto;
             }
+
             #announcement .link-modules>div,
             section#open-stores,
             section#virtual-design {
                 margin-top: 70px;
             }
+
             #open-stores table {
                 margin-top: 50px;
             }
+
             #open-stores tr {
                 display: table-row;
             }
+
             #open-stores td {
                 display: table-cell;
                 padding: 1em;
@@ -494,14 +501,13 @@
         <section id="announcement">
             <div class="two-col gutter-30">
                 <div>
-                    <p>A local <span class="no-wrap">La-Z-Boy</span> store has reopened near you. Our top priority is to make your shopping experience safe, which is why we are performing regular cleanings, and limiting the number of people admitted into
-                        the store at a time. Some stores are open only for private shopping appointments.</p>
+                    <p>A local <span class="no-wrap">La-Z-Boy</span> store has reopened near you. Our top priority is to make your shopping experience safe, which is why we are performing regular cleanings, and limiting the number of people admitted into the store at a time. Some stores are open only for private shopping appointments.</p>
                     <p>In addition, all of our delivery teams and warehouse technicians are wearing masks to ensure safety, and we are able to make garage or porch drop-offs for added peace of&nbsp;mind.</p>
                     <p>When your order is ready, we will call to schedule a delivery time and discuss any delivery details for added safety and&nbsp;comfort.</p>
                 </div>
                 <div>
                     <div class="my-callout">
-                        <p class="not-retail"><strong>Private appointment:</strong>You&rsquo;ll have the store to yourself for a comfortable, hour-long shopping experience with our knowledgeable team.</p>
+                        <p><strong>Private appointment:</strong>You&rsquo;ll have the store to yourself for a comfortable, hour-long shopping experience with our knowledgeable team.</p>
                         <p><strong>Personal appointment:</strong>Shop during regular store hours, without having to wait in line, and while receiving special shopping assistance.</p>
                     </div>
                 </div>
@@ -513,7 +519,7 @@
                     <p>Shop in store at one of our local <span class="no-wrap">La-Z-Boy</span> stores.</p>
                     <a href="#store-links" class="arrow-right to-store-links" data-contact="phone">Find a Store Near You</a>
                 </div>
-                <div class="not-retail">
+                <div>
                     <div class="image"><img src="https://embed.widencdn.net/img/lazboy/ckhinfrsxc/exact/online.png" alt="Online badge"></div>
                     <p>Have the store to yourself during a private appointment.</p>
                     <a href="#store-links" class="arrow-right to-store-links" data-contact="private">Schedule Yours Today</a>
@@ -530,35 +536,35 @@
             <h2>Choose your&nbsp;location</h2>
             <div class="select">
                 <select id="states" class="no-state" onchange="document.getElementById('stores').setAttribute('data-state',this.value)">
-            <option value="no-state">Select your state</option>
-            <option value="california">California</option>
-            <option value="colorado">Colorado</option>
-            <option value="connecticut">Connecticut</option>
-            <option value="delaware">Delaware</option>
-            <option value="florida">Florida</option>
-            <option value="illinois">Illinois</option>
-            <option value="indiana">Indiana</option>
-            <option value="iowa">Iowa</option>
-            <option value="kansas">Kansas</option>
-            <option value="kentucky">Kentucky</option>
-            <option value="maryland">Maryland</option>
-            <option value="massachusetts">Massachusetts</option>
-            <option value="michigan">Michigan</option>
-            <option value="minnesota">Minnesota</option>
-            <option value="missouri">Missouri</option>
-            <option value="nevada">Nevada</option>
-            <option value="new-hampshire">New Hampshire</option>
-            <option value="new-jersey">New Jersey</option>
-            <option value="new-york">New York</option>
-            <option value="north-carolina">North Carolina</option>
-            <option value="ohio">Ohio</option>
-            <option value="pennsylvania">Pennsylvania</option>
-            <option value="rhode-island">Rhode Island</option>
-            <option value="south-carolina">South Carolina</option>
-            <option value="utah">Utah</option>
-            <option value="virginia">Virginia</option>
-            <option value="wisconsin">Wisconsin</option>
-        </select>
+                    <option value="no-state">Select your state</option>
+                    <option value="california">California</option>
+                    <option value="colorado">Colorado</option>
+                    <option value="connecticut">Connecticut</option>
+                    <option value="delaware">Delaware</option>
+                    <option value="florida">Florida</option>
+                    <option value="illinois">Illinois</option>
+                    <option value="indiana">Indiana</option>
+                    <option value="iowa">Iowa</option>
+                    <option value="kansas">Kansas</option>
+                    <option value="kentucky">Kentucky</option>
+                    <option value="maryland">Maryland</option>
+                    <option value="massachusetts">Massachusetts</option>
+                    <option value="michigan">Michigan</option>
+                    <option value="minnesota">Minnesota</option>
+                    <option value="missouri">Missouri</option>
+                    <option value="nevada">Nevada</option>
+                    <option value="new-hampshire">New Hampshire</option>
+                    <option value="new-jersey">New Jersey</option>
+                    <option value="new-york">New York</option>
+                    <option value="north-carolina">North Carolina</option>
+                    <option value="ohio">Ohio</option>
+                    <option value="pennsylvania">Pennsylvania</option>
+                    <option value="rhode-island">Rhode Island</option>
+                    <option value="south-carolina">South Carolina</option>
+                    <option value="utah">Utah</option>
+                    <option value="virginia">Virginia</option>
+                    <option value="wisconsin">Wisconsin</option>
+                </select>
             </div>
             <table id="stores" data-state="no-state">
                 <tr data-state="california">
@@ -825,7 +831,7 @@
                     <td>16011 S La Grange Rd</td>
                     <td>(708) 873-0066</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr042/60min">Set private appointment</a></td>
-                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr042/personal-shopping">Set personal appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr042/60min">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="illinois">
                     <td>Rockford</td>
@@ -1030,7 +1036,6 @@
                     <td>(734) 287-0705</td>
                     <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr297/personal-shopping">Set personal appointment</a></td>
                 </tr>
-
                 <tr data-state="michigan">
                     <td>Troy</td>
                     <td>1475 W Big Beaver Rd</td>
@@ -1407,7 +1412,7 @@
                     <td>2816 Macarthur Rd</td>
                     <td>(610) 437-4104</td>
                     <td>(610) 437-4104</td>
-                    <td><a href="tel:+16104374104">(610) 437-4104</a></td>
+                    <td><a class="arrow-right" href="https://calendly.com/lzb-storemgr309/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="pennsylvania">
                     <td>Wilkes Barre</td>
@@ -1490,8 +1495,8 @@
                     <td>Midlothian</td>
                     <td>12601 Stone Village Way</td>
                     <td>(804) 794-3683</td>
-                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-stormgr286/60min">Set private appointment</a></td>
-                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-stormgr286/personal-shopping">Set personal appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr286/60min">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr286/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="virginia">
                     <td>Newport News</td>
@@ -1518,8 +1523,8 @@
                     <td>Virginia Beach</td>
                     <td>5300 Virginia Beach Blvd</td>
                     <td>(757) 490-6057</td>
-                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore007/60min">Set private appointment</a></td>
-                    <td><a class="arrow-right" href="https://www.calendly.com/lazboystore007/personal-shopping">Set personal appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr007/60min-1">Set private appointment</a></td>
+                    <td><a class="arrow-right" href="https://www.calendly.com/lzb-storemgr007/personal-shopping">Set personal appointment</a></td>
                 </tr>
                 <tr data-state="wisconsin">
                     <td>Appleton</td>
@@ -1560,6 +1565,14 @@
     </div>
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script>
+        window.addEventListener(
+            'message',
+            function (e) {
+                if (e.data.event && e.data.event == 'calendly.event_scheduled') {
+                    _satellite.track('calendly_event_scheduled');
+                }
+            }
+        );
         //function to check if jQuery is ready
         function jqIsReady() {
             if (typeof $ === "undefined") {
@@ -1575,7 +1588,7 @@
             } else {
                 function loadCalendly(thisUrl) {
                     $.getScript('https://assets.calendly.com/assets/external/widget.js')
-                        .done(function() {
+                        .done(function () {
                             Calendly.initPopupWidget({
                                 url: thisUrl
                             });
@@ -1584,11 +1597,11 @@
                                 'send_to': 'DC-1461522/fy17l0/sched0+standard'
                             });
                         })
-                        .fail(function() {
+                        .fail(function () {
                             window.location.href = thisUrl;
                         });
                 }
-                $('.to-store-links').on("click touchstart", function(e) {
+                $('.to-store-links').on("click touchstart", function (e) {
                     e.preventDefault();
                     $('#stores').attr('data-contact', $(this).attr('data-contact'));
                     $('#open-stores').show();
@@ -1596,7 +1609,7 @@
                         scrollTop: $("#store-links").offset().top
                     }, 1000);
                 });
-                $('#open-stores a').click(function(e) {
+                $('#open-stores a').click(function (e) {
                     e.preventDefault();
                     var linkURL = $(this).attr('href');
                     if (linkURL.indexOf("calendly") > -1) {

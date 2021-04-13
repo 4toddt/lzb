@@ -1,0 +1,166 @@
+<style>
+    .timeframe {
+        display: flex;
+        /* align-items: center; */
+        text-align: left;
+        margin-top: 20px;
+    }
+    
+    .timeframe .image {
+        flex: 0 0 45px;
+    }
+    
+    .timeframe .copy {
+        padding-left: 10px;
+    }
+    
+    .timeframe h5 {
+        margin: 0;
+        font-size: 15px;
+    }
+    
+    .timeframe p {
+        margin-top: .5em;
+    }
+    /************* NPC Modal ***************/
+    
+    [data-video-modal] {
+        cursor: pointer;
+    }
+    
+    #npc-modal {
+        position: fixed;
+        z-index: 1000000;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    #npc-modal-container {
+        background-color: #fefefe;
+        padding: 5px;
+        border: 1px solid #888;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 75%;
+        max-width: 1050px;
+    }
+    
+    #npc-image {
+        width: 100%;
+        display: block;
+    }
+    
+    #npc-modal-content {
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    
+    #npc-modal-content iframe {
+        min-height: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #npc-modal-close {
+        position: absolute;
+        right: -7px;
+        top: -7px;
+        width: 22px;
+        z-index: 10;
+        cursor: pointer;
+    }
+    
+    #npc-modal-close:hover,
+    #npc-modal-close:focus {
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<script>
+    //Function to remove the modal.
+    function removeModal() {
+        document.body.removeChild(document.getElementById('npc-modal'));
+    }
+
+    // Function to play a video in a modal. Test video is 'P1li3aQv3eQ'.
+    function videoModal(srcID) {
+        var div = document.createElement('div');
+        div.innerHTML =
+            '<section id="npc-modal" class="video" onclick="removeModal();"><div id="npc-modal-container">\
+                <div id="npc-modal-content">\
+                    <iframe src="https://www.youtube.com/embed/' + srcID + '?rel=0&amp;amp;ecver=2&amp;amp;enablejsapi=1&amp;amp;showinfo=0&amp;amp;autoplay=1" frameborder="0" allowfullscreen></iframe>\
+                </div>\
+                <img id="npc-modal-close" src="https://content.la-z-boy.com/Images/npc/modal-close.svg">\
+            </section>';
+        var modal = div.firstChild;
+
+        document.body.insertBefore(modal, document.body.firstChild);
+
+        return false;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML =
+            '<div class="timeframe">\
+                <div class="image">\
+                    <img src="https://www.la-z-boy.com/Images/pdp_option_images/truck.png">\
+                </div>\
+                <div class="copy">\
+                    <h5>Important Delivery Details</h5>\
+                    <p>Your La-Z-Boy furniture will be made to order and delivered within <span id="timeframe-test">4-6 months</span>. We know that&rsquo;s longer than you may have hoped, so we also made a little something to tell you why. <a data-video-modal="ODEchIOnUwo">Take a look.</a></p>\
+                </div>\
+            </div>';
+        var newContent = tempDiv.firstChild;
+        var cartLinks = document.querySelector('.add-to-cart-links');
+        cartLinks.insertBefore(newContent, cartLinks.childNodes[0]);
+
+
+
+        (function() {
+
+            function myEventListener(el, eventName, handler) {
+                if (el.addEventListener) {
+                    el.addEventListener(eventName, handler);
+                } else {
+                    el.attachEvent('on' + eventName, function() {
+                        handler.call(el);
+                    });
+                }
+            }
+
+            // Add click and keyboard events to videoModal elements
+            var videoLinks = document.querySelectorAll('[data-video-modal]');
+            for (i = 0; i < videoLinks.length; i++) {
+                (function() {
+                    var currentVideoLink = videoLinks[i];
+                    var srcID = currentVideoLink.dataset.videoModal;
+
+                    currentVideoLink.setAttribute("tabindex", "0");
+
+                    myEventListener(currentVideoLink, "click", function() {
+                        videoModal(srcID);
+                    });
+
+                    myEventListener(currentVideoLink, 'keydown', function(event) {
+                        var code = event.charCode || event.keyCode;
+                        if ((code === 32) || (code === 13)) {
+                            videoModal(srcID);
+                            event.preventDefault();
+                        }
+                    });
+                })();
+            }
+        })();
+    }, false);
+</script>

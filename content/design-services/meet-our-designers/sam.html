@@ -1,0 +1,211 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('a[href^="/content"]').each(function() {
+                $(this).attr("href", $(this).attr("href") + ".html");
+            });
+        });
+    </script>
+    <style></style>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Shared code -->
+    <link href="/css/uat/design-services.css" rel="stylesheet">
+    <script>
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "/js/design-services.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+    <!-- Main Content -->
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/content/design-services/">Design Services</a></li>
+            <li><a href="/content/design-services/meet-our-designers">Meet Our Designers</a></li>
+            <li>Sam</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <nav id="ds-nav">
+            <div>
+                <a href="/content/design-services">Design Services</a>
+                <a href="/content/design-services/meet-our-designers" class="active">Meet Our Designers</a>
+                <a href="/content/design-services/design-stories">Design Stories</a>
+                <a href="/content/design-services/design-request-form">FREE Consultation</a>
+                <a href="/content/design-services/free-virtual-design">Virtual Design</a>
+            </div>
+        </nav>
+        <h1>Meet our designers</h1>
+        <section id="hero" class="module02">
+            <div class="two-col">
+                <div class="copy profile">
+                    <div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/sam/headshot.jpg" alt="Sam"></div>
+                        <h2>Sam</h2>
+                        <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
+                    </div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sam/hero.jpg');"></div>
+            </div>
+        </section>
+        <div class="light-gray">
+            <section id="about-designer">
+                <h2>About designer</h2>
+                <div>
+                    <div class="bio">
+                        <p class="heading">Nashville, TN</p>
+                        <p>Samantha has always wanted to have a positive effect on people’s lives. “What better way to do that than to create interior spaces that improve their overall lifestyle through their function, quality and style?” There is always
+                            a way to make a space harmonious in a personalized way that speaks to your&nbsp;needs.</p>
+                    </div>
+                    <div class="favorites">
+                        <p class="heading">Design badges:</p>
+                        <div id="badges">
+                            <div>
+                                <input type="radio" id="badge01-rb" name="badge" checked>
+                                <label class="image" for="badge01-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PalettePro.png" alt="Palette Pro badge">
+                                </label>
+                                <p>
+                                    <strong>Palette Pro</strong>
+                                    <br>Clever color combos to create the perfect mood.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge02-rb" name="badge">
+                                <label class="image" for="badge02-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                </label>
+                                <p>
+                                    <strong>Couples Collaborator</strong>
+                                    <br>Blending styles for a look you’ll both love.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge03-rb" name="badge">
+                                <label class="image" for="badge03-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/SpaceMaximizer.png" alt="Space Maximizer badge">
+                                </label>
+                                <p>
+                                    <strong>Space Maximizer</strong>
+                                    <br>Creative space planning and room flow.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge04-rb" name="badge">
+                                <label class="image" for="badge04-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/MixMaster.png" alt="Mix Master badge">
+                                </label>
+                                <p>
+                                    <strong>Mix Master</strong>
+                                    <br>Mixing and matching patterns in unique ways.
+                                </p>
+                            </div>
+                            <div>
+                                <input type="radio" id="badge05-rb" name="badge">
+                                <label class="image" for="badge05-rb">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PetPro.png" alt="Pet Pro badge">
+                                </label>
+                                <p>
+                                    <strong>Pet Pro</strong>
+                                    <br>Styles and décor that stand up to pets.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section id="rooms">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sam/room01.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sam/room02.jpg')">
+                    <div></div>
+                </div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/sam/room03.jpg')">
+                    <div></div>
+                </div>
+            </div>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+        <section id="qa">
+            <div class="two-col gutter-20-30">
+                <div>
+                    <h2>Q &amp; A</h2>
+                    <p>Get to know our experts</p>
+                    <p class="heading">What is a common concern you get from customers regarding the design&nbsp;process?</p>
+                    <p>Some clients fear their style will be compromised by the designer’s own personal taste. I let clients know that I am there to help bring their vision to life. Part of that process may include additional aspects the client may not have
+                        thought about, but these are only suggestions. Ultimately, it’s the client's choice what they want to&nbsp;incorporate.</p>
+                </div>
+                <div>
+                    <p class="heading">How do you determine the right style for your&nbsp;customers?</p>
+                    <p>I am always listening and observing. You can learn so much about an individual and their lifestyle just by taking a step back and engaging in open-ended questions. Paying attention to the subtle details, you can gain a lot more information
+                        than they may be able to&nbsp;articulate.</p>
+                    <p class="heading">Where do you go to find&nbsp;inspiration?</p>
+                    <p>Inspiration lies everywhere. Nature, art, human emotion; with a bit of imagination and an open mind, inspiration will come in many forms. Sometimes it can strike at two o’clock in the&nbsp;morning!</p>
+                </div>
+            </div>
+        </section>
+        <div id="testimonials" class="med-gray">
+            <section>
+                <div>
+                    <div class="title">
+                        <h2>Customer<br>Testimonial</h2>
+                    </div>
+                    <div class="testimonial">
+                        <h3>Combined Old and New</h3>
+                        <p>I recently purchased a new home and really did not know where to begin with furnishing and decorating it. Sam created a design plan which was exactly what I needed. She was professional and so helpful! She was able to use some
+                            of the pieces I already had and combine with new pieces to create several beautiful rooms. I followed all of her suggestions and am delighted with the results. I have received many compliments from friends and family. I’m very
+                            grateful for her wonderful&nbsp;help!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- <div id="testimonials" class="med-gray">
+            <section>
+                <div>
+                    <div class="title">
+                        <h2>Customer<br>Testimonial</h2>
+                    </div>
+                    <div class="carousel">
+                        <div data-flickity='{
+                            "freeScrollFriction": 0.1,
+                            "pageDots": false,
+                            "prevNextButtons": true,
+                            "cellAlign": "left",
+                            "contain": true,
+                            "adaptiveHeight": true,
+                            "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
+                            }'>
+                            <div class="testimonial">
+                                <h3>Combined Old and New</h3>
+                                <p>I recently purchased a new home and really did not know where to begin with furnishing and decorating it. Sam created a design plan which was exactly what I needed. She was professional and so helpful! She was able to use
+                                    some of the pieces I already had and combine with new pieces to create several beautiful rooms. I followed all of her suggestions and am delighted with the results. I have received many compliments from friends and
+                                    family. I’m very grateful for her wonderful&nbsp;help!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> -->
+        <section>
+            <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
+        </section>
+    </div>
+    <!-- end NPC content -->
+</body>

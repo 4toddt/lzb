@@ -290,9 +290,21 @@
         }
         /***************** Custom CSS ******************/
         
+        #npc-content h2 {
+            font-size: 1.2em;
+            line-height: 1.2;
+            margin-top: 1.25em;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        [data-show-modal] {
+            cursor: pointer;
+        }
+        
         #hero .image {
             height: 268px;
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/hero-sm.jpg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/hero-sm.jpg);
             background-size: cover;
             background-position: center;
         }
@@ -328,11 +340,35 @@
             font-weight: bold;
         }
         
+        section#meet-crystal {
+            max-width: 1020px;
+            padding: 0 20px;
+            margin-top: 45px;
+        }
+        
+        #meet-crystal .inner {
+            background-color: #94c7e5;
+        }
+        
+        #meet-crystal .copy {
+            padding: 25px 25px 55px;
+            color: white;
+        }
+        
+        #meet-crystal h2 {
+            text-align: left;
+            margin-top: 0;
+        }
+        
         #sky {
-            height: 150px;
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/how-to-join.png);
+            height: 120px;
+            background-image: url(https://content.la-z-boy.com/Images/one-million-thanks/how-to-join.jpg);
             background-size: cover;
             background-position: center;
+        }
+        
+        section#how-to-join {
+            margin-top: 45px;
         }
         
         #how-to-join .grid {
@@ -412,13 +448,13 @@
             background-size: cover;
         }
         
-        #thank-you-video .youtube {
+        #npc-content .youtube {
             position: relative;
             height: 0;
             padding-bottom: 56.25%;
         }
         
-        #thank-you-video .youtube iframe {
+        #npc-content .youtube iframe {
             min-height: 0;
             position: absolute;
             width: 100%;
@@ -428,14 +464,6 @@
         section#ideas {
             max-width: 1020px;
             padding: 0 20px;
-        }
-        
-        #npc-content h2 {
-            font-size: 1.2em;
-            line-height: 1.2;
-            margin-top: 1.25em;
-            font-weight: bold;
-            text-align: center;
         }
         
         #ideas .row,
@@ -452,33 +480,33 @@
         
         #ideas #ideas01,
         #npc-content #chalk .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas01.jpg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/ideas01.jpg);
         }
         
         #ideas #ideas02,
         #npc-content #coloring .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas02.jpg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/ideas02.jpg);
         }
         
         #ideas #ideas03,
         #npc-content #stencil .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas03.jpg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/ideas03.jpg);
         }
         
         #ideas #ideas04,
         #npc-content #haiku .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas04.jpg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/ideas04.jpg);
         }
         
         #ideas #ideas05,
         #npc-content #origami .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas05.jpg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/ideas05.jpg);
             background-position: right;
         }
         
         #ideas #ideas06,
         #npc-content #card .image {
-            background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/ideas06.jpg);
+            background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/ideas06.jpg);
         }
         
         #ideas .copy {
@@ -612,18 +640,27 @@
         }
         
         @media only screen and (min-width: 500px) {
+            #npc-content h2 {
+                font-size: 1.8em;
+            }
             #hero .image {
                 height: 403px;
-                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/hero-md.jpg);
+                background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/hero-md.jpg);
             }
             #hero h1 {
                 font-size: 1.8em;
             }
-            #sky {
-                height: 170px;
+            #meet-crystal .inner {
+                padding: 5%;
             }
-            #npc-content h2 {
-                font-size: 1.8em;
+            #meet-crystal .copy {
+                padding: 25px 0 0;
+            }
+            #meet-crystal h2 {
+                font-size: 1.5em;
+            }
+            #sky {
+                height: 140px;
             }
             #lzb-cares h2 {
                 font-size: 1.5em;
@@ -644,7 +681,7 @@
         @media only screen and (min-width: 750px) {
             #hero .image {
                 height: 526px;
-                background-image: url(https://www.la-z-boy.com/Images/npc/one-million-thanks/hero.jpg);
+                background-image: url(https://content.la-z-boy.com/Images/npc/one-million-thanks/hero.jpg);
             }
             #thank-you .copy {
                 flex-direction: row;
@@ -721,28 +758,36 @@
             <div class="image">
             </div>
             <div class="copy">
-                <h1>Join us in thanking healthcare workers</h1>
-                <p>La-Z-Boy is donating one million dollars in furniture to frontline nurses in order to give them the comfort they deserve. It&rsquo;s just one way of thanking healthcare workers for their heroics. Now, we&rsquo;re calling on you to send
-                    your own creative show of&nbsp;appreciation.</p>
-                <p>Make it, capture it and post it with <strong>#OneMillionThanks</strong>.</p>
-                <p>Let&rsquo;s thank healthcare workers a million times over, and show them how grateful we are for all that they&nbsp;do.</p>
+                <h1>Thank you for your support</h1>
+                <p>To show healthcare workers how much they are appreciated, La-Z-Boy called on you to help send #OneMillionThanks to these brave men and women. We can’t thank you enough for all the heartfelt messages of&nbsp;support. </p>
+                <p>Now, we are donating furniture to frontline nurses across the country so they can have the comfort they deserve. Watch the story of one of these amazing nurses who has experienced the pandemic&nbsp;firsthand.</p>
+            </div>
+        </section>
+        <section id="meet-crystal">
+            <div class="inner">
+                <div class="image"><img data-show-modal="crystal-video" src="https://content.la-z-boy.com/Images/one-million-thanks/crystal.jpg" alt=""></div>
+                <div class="copy">
+                    <h2>Meet Crystal. COVID-19 Cardiac Unit Healthcare Worker.</h2>
+                    <p>Hear the story of one hard-working nurse from Cedars-Sinai Medical Center in Los Angeles who lives her calling every day by helping others … and finds joy in their recovery, your appreciation, and some well-deserved comfort <span class="no-wrap">from La-Z-Boy.</span>
+                    </p>
+                </div>
             </div>
         </section>
         <section id="how-to-join">
             <div id="sky" class="image"></div>
             <div class="grid">
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join01.png" alt="Camera icon"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/join01.png" alt="Camera icon"></div>
                     <h3>Create</h3>
                     <p>Use your imagination to come up with a creative show of support. Take photos or capture the whole thing on video.</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join02.png" alt="Phone upload icon"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/join02.png" alt="Phone upload icon"></div>
                     <h3>Share</h3>
                     <p>Post your message on your social media channels with #OneMillionThanks.</p>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/join03.png" alt="Eye icon"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/join03.png" alt="Eye icon"></div>
                     <h3>Watch</h3>
                     <p>Check back often to see what others are sharing and to see if your message is included in our compilation video.</p>
                 </div>
@@ -816,7 +861,7 @@
         </section>
         <section id="lzb-cares" class="full-width">
             <h2>How we&rsquo;re helping</h2>
-            <div id="heart" class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/lzb-cares.png" alt="La-Z-Boy cares logo"></div>
+            <div id="heart" class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/lzb-cares.png" alt="La-Z-Boy cares logo"></div>
             <div data-flickity='{
                 "freeScrollFriction": 0.1,
                 "pageDots": false,
@@ -826,43 +871,43 @@
                 "arrowShape": "M32.66 50.02C53.57 70.51 66.64 83.33 71.86 88.45C74.53 91.07 74.55 95.36 71.91 98.01C70.95 98.96 72.87 97.05 71.91 98.01C69.27 100.65 64.99 100.67 62.32 98.05C52.54 88.44 27.69 64.04 17.82 54.36C15.39 51.97 15.39 48.06 17.82 45.67C27.69 35.99 52.57 11.56 62.36 1.94C65.01 -0.66 69.25 -0.65 71.89 1.97C72.85 2.92 70.94 1.02 71.89 1.97C74.54 4.6 74.53 8.89 71.87 11.51C66.64 16.64 53.57 29.48 32.66 50.02Z"
                 }'>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care01.jpg" alt="Pallets of food and workers providing meals"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/care01.jpg" alt="Pallets of food and workers providing meals"></div>
                     <div class="copy">
                         <p>The La-Z-Boy Foundation provided a grant to the Pandemic Response Program, providing meals for those in need and temporary housing for the&nbsp;homeless.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care02.jpg" alt="Kitchen staff packing suppers"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/care02.jpg" alt="Kitchen staff packing suppers"></div>
                     <div class="copy">
                         <p>The La-Z-Boy Foundation has provided a $50,000 grant to assist with free supper&nbsp;programs.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care03.jpg" alt="Police officer wearing face shield"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/care03.jpg" alt="Police officer wearing face shield"></div>
                     <div class="copy">
                         <p>The La-Z-Boy Foundation is keeping first responders safe by providing grants for face&nbsp;shields.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care04.jpg" alt="La-Z-Boy team delivering masks to hospital worker"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/care04.jpg" alt="La-Z-Boy team delivering masks to hospital worker"></div>
                     <div class="copy">
                         <p>Our facility in Saltillo, Mexico, has been producing masks for local&nbsp;hospitals.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care05.jpg" alt="La-Z-Boy employees providing protective gear to sherrif"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/care05.jpg" alt="La-Z-Boy employees providing protective gear to sherrif"></div>
                     <div class="copy">
                         <p>Our facility in Newton, Mississippi, has been producing protective gear to assist the local sheriff&rsquo;s&nbsp;department.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care06.jpg" alt="Worker with face mask carrying a box outside of Salvation Army"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/care06.jpg" alt="Worker with face mask carrying a box outside of Salvation Army"></div>
                     <div class="copy">
                         <p>The La-Z-Boy Foundation has provided grants to ensure local nonprofits can keep their staff safe while serving the&nbsp;community.</p>
                     </div>
                 </div>
                 <div>
-                    <div class="image"><img src="https://www.la-z-boy.com/Images/npc/one-million-thanks/care07.jpg" alt="Workers behind bags and boxes of personal protective equipment"></div>
+                    <div class="image"><img src="https://content.la-z-boy.com/Images/npc/one-million-thanks/care07.jpg" alt="Workers behind bags and boxes of personal protective equipment"></div>
                     <div class="copy">
                         <p>Our facility in Newton, Mississippi, has been providing Rush Medical Systems with masks to assist them with their vital&nbsp;work.</p>
                     </div>
@@ -881,7 +926,6 @@
             <h3>Do you have any recommendations on creative ways to show support for frontline nurses?</h3>
             <p>Yes! On this page, above, we have a couple of creative ways that you can show your support.</p>
         </section>
-
         <div id="chalk" class="my-modal">
             <div class="my-modal-content">
                 <span class="close">&times;</span>
@@ -914,7 +958,7 @@
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
-                        <a href="https://www.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanksStencil.pdf" target="_blank">Download</a>
+                        <a href="https://content.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanksStencil.pdf" target="_blank">Download</a>
                         <h2>Downloadable Stencils</h2>
                         <h3>What you&rsquo;ll need</h3>
                         <ol>
@@ -936,8 +980,7 @@
                             <li><strong>Paint your stencil</strong><br>Use a brush or sponge to dab paint into the fabric through the shapes you have cut out of your stencil. Don&rsquo;t worry about getting paint on the stencil paper. If you don&rsquo;t have
                                 a brush or sponge, you can use old rags to dab the paint on. Or if you prefer, you can use color markers. Be careful not to get paint under the stencil. Keep it only in the spaces that you have cut out.</li>
                             <li><strong>Finishing</strong><br>Be sure to wait until your paint is fully dry before removing the stencil, otherwise you might smudge the paint. To speed up the process you can use a hair dryer on a low setting. Once the paint
-                                is dry, peel off the stencil.
-                            </li>
+                                is dry, peel off the stencil. </li>
                             <li><strong>Show support</strong><br>Now you have a lasting way to show your support for healthcare workers. Be sure to share with #OneMillionThanks.</li>
                         </ol>
                     </div>
@@ -950,7 +993,7 @@
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
-                        <a href="https://www.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanksColoringPage.pdf" target="_blank">Download</a>
+                        <a href="https://content.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanksColoringPage.pdf" target="_blank">Download</a>
                         <h2>Downloadable Coloring Page</h2>
                         <h3>What you&rsquo;ll need</h3>
                         <ol>
@@ -987,7 +1030,7 @@
                 <div class="two-col">
                     <div class="image"></div>
                     <div class="copy">
-                        <a href="https://www.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanks_origami.pdf" target="_blank">Download</a>
+                        <a href="https://content.la-z-boy.com/Images/npc/one-million-thanks/OneMillionThanks_origami.pdf" target="_blank">Download</a>
                         <h2>Origami Hearts</h2>
                         <h3>What you&rsquo;ll need</h3>
                         <ol>
@@ -1025,7 +1068,7 @@
                 </div>
             </div>
         </div>
-        <div id="thank-you-video" class="my-modal my-video">
+        <div id="thank-you-video" class="my-modal">
             <div class="my-modal-content">
                 <div class="youtube">
                     <iframe data-url="https://www.youtube.com/embed/f8McQMgsLqc?rel=0&ecver=2&enablejsapi=1&showinfo=0&autoplay=1" src="" frameborder="0" allowfullscreen></iframe>
@@ -1033,7 +1076,14 @@
                 <span class="close">&times;</span>
             </div>
         </div>
-    </div>
+        <div id="crystal-video" class="my-modal">
+            <div class="my-modal-content">
+                <div class="youtube">
+                    <iframe data-url="https://www.youtube.com/embed/mnr0ckew9sU?rel=0&ecver=2&enablejsapi=1&showinfo=0&autoplay=1" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
     </div>
     <script>
         if (typeof define == 'function' && define.amd) {

@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Jessica</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/headshot.jpg" alt="Jessica"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/headshot.jpg" alt="Jessica"></div>
                         <h2>Jessica</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,8 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">South Bend, IN</p>
-                        <p>“Buy for you and don’t try to convince yourself to like something. No matter how attractive the design is, if you don’t love it or you can’t live in it day-to-day, then why do it?” When it comes to creating the room you’ve always
-                            wanted, Jessica knows just to do.</p>
+                        <p>“Buy for you and don’t try to convince yourself to like something. No matter how attractive the design is, if you don’t love it or you can’t live in it day-to-day, then why do it?” When it comes to creating the room you’ve always wanted, Jessica knows just to&nbsp;do.</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -78,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PalettePro.png" alt="Palette Pro badge">
                                 </label>
                                 <p>
                                     <strong>Palette Pro</strong>
-                                    <br>Clever color combos to create the perfect mood.
-                                </p>
+                                    <br>Clever color combos to create the perfect mood. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/CouplesCollaborator.png" alt="Couples Collaborator badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/CouplesCollaborator.png" alt="Couples Collaborator badge">
                                 </label>
                                 <p>
                                     <strong>Couples Collaborator</strong>
-                                    <br>Blending styles for a look you&rsquo;ll both love.
-                                </p>
+                                    <br>Blending styles for a look you’ll both love. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Storage.png" alt="Storage badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Storage.png" alt="Storage badge">
                                 </label>
                                 <p>
                                     <strong>Storage Super Hero</strong>
-                                    <br>Organizing clutter with unique storage solutions.
-                                </p>
+                                    <br>Organizing clutter with unique storage solutions. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/SpaceMaximizer.png" alt="Space Maximizer badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/SpaceMaximizer.png" alt="Space Maximizer badge">
                                 </label>
                                 <p>
                                     <strong>Space Maximizer</strong>
-                                    <br>Creative space planning and room flow.
-                                </p>
+                                    <br>Creative space planning and room flow. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/KidFriendly.png" alt="Kid Friendly badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/KidFriendly.png" alt="Kid Friendly badge">
                                 </label>
                                 <p>
                                     <strong>Kid Friendly</strong>
-                                    <br>Designing spaces with safety and spills in mind.
-                                </p>
+                                    <br>Designing spaces with safety and spills in mind. </p>
                             </div>
                         </div>
                     </div>
@@ -138,19 +125,19 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room03.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room03.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room04.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room04.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room05.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jessica_s/room05.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -161,16 +148,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">What tips do you have for clients who are looking to re-design their space?</p>
-                    <p>Go for comfort first! Once you find what’s comfortable for you, we have tons of flexibility to suit your style. We offer so many options - that’s the best part about <span class="no-wrap">La-Z-Boy</span>! Also buy for you and don’t
-                        try to convince yourself to like something. No matter how attractive the design is, if you don’t love it or you can’t live in it day-to-day, then why do it?</p>
+                    <p class="heading">What tips do you have for clients who are looking to re-design their&nbsp;space?</p>
+                    <p>Go for comfort first! Once you find what’s comfortable for you, we have tons of flexibility to suit your style. We offer so many options - that’s the best part about <span class="no-wrap">La-Z-Boy</span>! Also buy for you and don’t try to convince yourself to like something. No matter how attractive the design is, if you don’t love it or you can’t live in it day-to-day, then why do&nbsp;it?</p>
                 </div>
                 <div>
-                    <p class="heading">What is your favorite part of designing a client’s homes?</p>
-                    <p>Without a doubt, their reaction when they realize that everything we’ve been working on has captured exactly what they want. The reaction is a combination of awe, relief, and bliss. I love that moment and it’s the most rewarding feeling
-                        in the world knowing that I was the one they trusted to get them there.</p>
-                    <p class="heading">What is your favorite way to spend your Saturday?</p>
-                    <p>I’m a northern girl so I love doing anything outside- hiking, biking, kayaking, I’ll even take a walk around the river. Just getting away from everything to decompress works wonders!</p>
+                    <p class="heading">What is your favorite part of designing a client’s&nbsp;homes?</p>
+                    <p>Without a doubt, their reaction when they realize that everything we’ve been working on has captured exactly what they want. The reaction is a combination of awe, relief, and bliss. I love that moment and it’s the most rewarding feeling in the world knowing that I was the one they trusted to get them&nbsp;there.</p>
+                    <p class="heading">What is your favorite way to spend your&nbsp;Saturday?</p>
+                    <p>I’m a northern girl so I love doing anything outside- hiking, biking, kayaking, I’ll even take a walk around the river. Just getting away from everything to decompress works&nbsp;wonders!</p>
                 </div>
             </div>
         </section>
@@ -192,15 +177,11 @@
                             }'>
                             <div class="testimonial">
                                 <h3>Great Work for Father and Son</h3>
-                                <p>My wife and I are not visionaries so we need an experienced interior designer and typically purchase items at inflated prices at design studios. Our son furnished his home with Jessica’s expertise and he was thrilled with
-                                    her design and the selection of items at the store. After seeing our son’s experience, we decided to re-decorate our family room and it is beautiful! Thank you Jessica! We couldn't have done it without you! Keep up
-                                    the good work and know that I will spread the good word!</p>
+                                <p>My wife and I are not visionaries so we need an experienced interior designer and typically purchase items at inflated prices at design studios. Our son furnished his home with Jessica’s expertise and he was thrilled with her design and the selection of items at the store. After seeing our son’s experience, we decided to re-decorate our family room and it is beautiful! Thank you Jessica! We couldn't have done it without you! Keep up the good work and know that I will spread the good&nbsp;word!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>The Best Room in the House</h3>
-                                <p>Our experience was amazing! Jessica asked questions, listened to our needs, challenged me to consider possibilities outside of my traditional style. We were so pleased when everything arrived! Everything fit together beautifully
-                                    and Jessica deserves all the credit! She assisted during the entire process from purchase to delivery, and returned to hang new artwork! Our new family room is elegant yet practical, traditional with a modern twist.
-                                    It’s our favorite room in the house!</p>
+                                <p>Our experience was amazing! Jessica asked questions, listened to our needs, challenged me to consider possibilities outside of my traditional style. We were so pleased when everything arrived! Everything fit together beautifully and Jessica deserves all the credit! She assisted during the entire process from purchase to delivery, and returned to hang new artwork! Our new family room is elegant yet practical, traditional with a modern twist. It’s our favorite room in the&nbsp;house!</p>
                             </div>
                         </div>
                     </div>
@@ -211,7 +192,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

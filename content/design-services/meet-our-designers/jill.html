@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Jill</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/headshot.jpg" alt="Jill"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/jill/headshot.jpg" alt="Jill"></div>
                         <h2>Jill</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jill/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,8 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Scottsdale, AZ</p>
-                        <p>Jill has a truly great design sense, “I’ve been told many times that I am a mind reader.” For her the key is listening to her client’s wants, and even encouraging them to find room inspiration pictures that they love, so they can
-                            achieve perfect the style.</p>
+                        <p>Jill has a truly great design sense, “I’ve been told many times that I am a mind reader.” For her the key is listening to her client’s wants, and even encouraging them to find room inspiration pictures that they love, so they can achieve perfect the&nbsp;style.</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -78,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/KidFriendly.png" alt="Kid Friendly badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/KidFriendly.png" alt="Kid Friendly badge">
                                 </label>
                                 <p>
                                     <strong>Kid Friendly</strong>
-                                    <br>Designing spaces with safety and spills in mind.
-                                </p>
+                                    <br>Designing spaces with safety and spills in mind. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MidCentury.png" alt="Mid-Century Modern badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/MidCentury.png" alt="Mid-Century Modern badge">
                                 </label>
                                 <p>
                                     <strong>Mid-Century Modern</strong>
-                                    <br>Blending retro with right now for timeless looks.
-                                </p>
+                                    <br>Blending retro with right now for timeless looks. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Farmhouse.png" alt="Modern Farmhouse badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Farmhouse.png" alt="Modern Farmhouse badge">
                                 </label>
                                 <p>
                                     <strong>Modern Farmhouse</strong>
-                                    <br>Creating cozy, warm spaces with rustic charm.
-                                </p>
+                                    <br>Creating cozy, warm spaces with rustic charm. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/ContemporaryCool.png" alt="Contemporary Cool badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/ContemporaryCool.png" alt="Contemporary Cool badge">
                                 </label>
                                 <p>
                                     <strong>Contemporary Cool</strong>
-                                    <br>Clean lines and neutral palettes with pops of color.
-                                </p>
+                                    <br>Clean lines and neutral palettes with pops of color. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/TraditionalTake.png" alt="Traditional Take badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/TraditionalTake.png" alt="Traditional Take badge">
                                 </label>
                                 <p>
                                     <strong>Traditional Take</strong>
-                                    <br>Sophisticated looks that are classic and warm.
-                                </p>
+                                    <br>Sophisticated looks that are classic and warm. </p>
                             </div>
                         </div>
                     </div>
@@ -138,19 +125,19 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jill/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jill/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room03.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jill/room03.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room04.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jill/room04.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/jill/room05.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/jill/room05.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -161,16 +148,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">How do you determine the right style for your customers?</p>
-                    <p>I ask lots of questions and listen to the answers. I’ve been told many times that I am a mind reader. But honestly, I really listen to my clients. From time to time I will have a client find pictures of rooms or items they love from
-                        the Internet. This is very helpful for the client and the designer.</p>
+                    <p class="heading">How do you determine the right style for your&nbsp;customers?</p>
+                    <p>I ask lots of questions and listen to the answers. I’ve been told many times that I am a mind reader. But honestly, I really listen to my clients. From time to time I will have a client find pictures of rooms or items they love from the Internet. This is very helpful for the client and the&nbsp;designer.</p>
                 </div>
                 <div>
-                    <p class="heading">Where do find your inspiration?</p>
-                    <p>My personal style is what I call “organic contemporary.” I am inspired by nature — the desert, the forest, the ocean — and also by interesting architecture and fashion.</p>
-                    <p class="heading">What aspect of your job brings you the greatest joy?</p>
-                    <p>Helping people to improve their living spaces is very satisfying. We spend half our lives at home, so that space needs to be a retreat from the busy world. I absolutely love the look on the clients’ faces when they see their finished
-                        room and they love it.</p>
+                    <p class="heading">Where do find your&nbsp;inspiration?</p>
+                    <p>My personal style is what I call “organic contemporary.” I am inspired by nature — the desert, the forest, the ocean — and also by interesting architecture and&nbsp;fashion.</p>
+                    <p class="heading">What aspect of your job brings you the greatest&nbsp;joy?</p>
+                    <p>Helping people to improve their living spaces is very satisfying. We spend half our lives at home, so that space needs to be a retreat from the busy world. I absolutely love the look on the clients’ faces when they see their finished room and they love&nbsp;it.</p>
                 </div>
             </div>
         </section>
@@ -192,12 +177,11 @@
                             }'>
                             <div class="testimonial">
                                 <h3>A Home Run</h3>
-                                <p>We can’t thank Jill enough for the tremendous job she and her team did... We wanted beach style in both furniture and colors [and] Jill absolutely hit a home run. She captured the exact feeling we wanted.</p>
+                                <p>We can’t thank Jill enough for the tremendous job she and her team did... We wanted beach style in both furniture and colors [and] Jill absolutely hit a home run. She captured the exact feeling we&nbsp;wanted.</p>
                             </div>
                             <div class="testimonial">
                                 <h3>A Home with Character</h3>
-                                <p>We are absolutely thrilled with the end result of our room! Jill completely understood and met our goals for the interior of our home. She honestly exceeded all of our expectations. She was able to recommend things we never
-                                    would have thought of, but still fit the character of our home. The end result is a beautiful, functional home that makes the view even more stunning. We didn’t think that was possible.</p>
+                                <p>We are absolutely thrilled with the end result of our room! Jill completely understood and met our goals for the interior of our home. She honestly exceeded all of our expectations. She was able to recommend things we never would have thought of, but still fit the character of our home. The end result is a beautiful, functional home that makes the view even more stunning. We didn’t think that was&nbsp;possible.</p>
                             </div>
                         </div>
                     </div>
@@ -208,7 +192,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

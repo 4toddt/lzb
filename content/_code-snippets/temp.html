@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        [type="radio"] {
+            display: none;
+        }
+
+        .choose {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        label {
+            padding: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .container>div {
+            padding: 0 10px;
+            margin-top: 20px;
+            min-width: 200px;
+        }
+
+        #two-col:checked~.container>div {
+            width: 50%;
+        }
+
+        #three-col:checked~.container>div {
+            width: 33.3333%;
+        }
+
+        #four-col:checked~.container>div {
+            width: 25%;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="radio" name="cols" id="two-col">
+    <input type="radio" name="cols" id="three-col">
+    <input type="radio" name="cols" id="four-col" checked>
+    <div class="choose">
+        <label for="two-col">2 per row</label>
+        <label for="three-col">3 per row</label>
+        <label for="four-col">4 per row</label>
+    </div>
+    <div class="container">
+        <div class="block"><img src="https://via.placeholder.com/800/37e9ea"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/4ff372"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/bbb092"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/7d1146"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/888936"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/37e9ea"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/4ff372"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/bbb092"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/7d1146"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/888936"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/37e9ea"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/4ff372"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/bbb092"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/7d1146"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/888936"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/37e9ea"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/4ff372"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/bbb092"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/7d1146"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/888936"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/37e9ea"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/4ff372"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/bbb092"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/7d1146"></div>
+        <div class="block"><img src="https://via.placeholder.com/800/888936"></div>
+    </div>
+</body>
+
+</html>

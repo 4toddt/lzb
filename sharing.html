@@ -1,0 +1,441 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- Code for XM -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        @import url("https://use.typekit.net/ely4qpc.css");
+        /************ resets ***********/
+        
+        #site-wrapper {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-title {
+            display: none;
+        }
+        
+        #site-wrapper .section-row {
+            max-width: none;
+        }
+        
+        #site-wrapper .section-content {
+            padding: 0;
+            float: none;
+        }
+        
+        #site-wrapper .one-column-container,
+        #site-wrapper .two-column-container {
+            max-width: none;
+            padding: 0;
+        }
+        
+        .two-column-first [role="main"],
+        .two-column-first [role="region"],
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .two-column-first [role="region"]>h1 {
+            display: none;
+        }
+        
+        #npc-content * {
+            font: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            float: none;
+            width: auto;
+            text-decoration: none;
+        }
+        /* breadcrumbs */
+        
+        #breadcrumbs {
+            margin: 0 auto 10px;
+            max-width: 980px;
+            font-size: 14px;
+            color: #868686;
+        }
+        
+        body.mobile-site #breadcrumbs {
+            margin: 0.625rem auto;
+            padding: 0rem 0.625rem;
+            max-width: 62.5rem;
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        #breadcrumbs ul {
+            padding-left: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 35px;
+        }
+        
+        body.mobile-site #breadcrumbs ul {
+            line-height: 1.25rem;
+        }
+        
+        #breadcrumbs li+li:before {
+            font-family: "icomoon";
+            content: "\e904";
+            -webkit-font-smoothing: antialiased;
+            vertical-align: middle;
+            padding: 0 8px;
+            line-height: 0;
+        }
+        
+        body.mobile-site #breadcrumbs li+li:before {
+            font-family: "lzb-icons";
+            content: "\e907";
+            vertical-align: baseline;
+            font-size: 0.625rem;
+            padding: 0 0.375rem;
+        }
+        
+        #breadcrumbs a {
+            color: inherit;
+            font-size: inherit;
+        }
+        
+        body.mobile-site #breadcrumbs a {
+            color: #555;
+        }
+        /* defaults */
+        
+        #npc-content {
+            width: 100%;
+            font-family: "lato", "OpenSans", sans-serif;
+            font-size: 20px;
+            line-height: 1;
+            color: #333;
+            overflow: hidden;
+        }
+        
+        .mobile-site #npc-content {
+            margin-bottom: 40px;
+        }
+        
+        #npc-content section {
+            width: 100%;
+            max-width: 1020px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        
+        #npc-content section.full-width {
+            max-width: 980px;
+            padding: 0;
+        }
+        
+        #npc-content section+section {
+            margin-top: 40px;
+        }
+        
+        #npc-content strong {
+            font-weight: bold;
+        }
+        
+        #npc-content img {
+            /* override browser default of inline-block to remove white space after images */
+            display: block;
+            width: 100%;
+            max-width: none;
+        }
+        
+        #npc-content .image {
+            /* fix IE bug where images in flex containers don't keep their aspect ratio */
+            min-height: 1px;
+        }
+        /********** Utility Classes ************/
+        
+        #npc-content .no-wrap {
+            white-space: nowrap;
+        }
+        
+        #npc-content .background-image {
+            background-size: cover;
+            background-position: center;
+        }
+        /********* Surprise and Delight Classes *********/
+        
+        #hero .background-image {
+            background-image: url(/Images/surprise-and-delight/hero.jpg);
+            background-position: 24% 100%;
+            height: 250px;
+        }
+        
+        #hero .copy {
+            padding: 0 20px;
+        }
+        
+        #npc-content h1,
+        #npc-content h2 {
+            font-family: relation-one, sans-serif;
+            font-size: 55px;
+            color: #21536F;
+            margin-top: 0.6em;
+            text-align: center;
+        }
+        
+        #npc-content h2 {
+            font-size: 40px;
+        }
+        
+        #npc-content p {
+            font-size: .8em;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 1.85;
+            color: #21536F;
+        }
+        
+        #npc-content h1+p,
+        #npc-content h2+p {
+            margin-top: .5em;
+        }
+        
+        #npc-content p.disclaimer {
+            font-size: .6em;
+            line-height: 1.3;
+        }
+        
+        #npc-content p a {
+            color: #0070af;
+            text-decoration: underline;
+        }
+        
+        #npc-content .hr-top::before {
+            content: "";
+            display: block;
+            border-bottom: 1px solid #63ADC0;
+            max-width: 780px;
+            margin: 0 auto 40px;
+        }
+        
+        #npc-content form {
+            margin: 20px -15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        #npc-content .field {
+            flex: 0 0 100%;
+            max-width: 430px;
+            padding: 0 15px;
+            margin-top: 20px;
+        }
+        
+        #npc-content label {
+            font-size: .7em;
+            line-height: 1.85;
+            font-weight: bold;
+        }
+        
+        #npc-content [type="text"],
+        #npc-content [type="email"] {
+            font-size: .9em;
+            line-height: 2.2em;
+            padding-left: .5em;
+            border: 1px solid #979797;
+            border-radius: 2px;
+            width: 100%;
+        }
+        
+        #npc-content [type="submit"] {
+            font-size: .9em;
+            line-height: 2.2em;
+            font-weight: bold;
+            width: 150px;
+            display: block;
+            margin: 10px auto 0;
+            background-color: #0070af;
+            color: white;
+            border-radius: 2px;
+        }
+        
+        #npc-content [type="submit"].sent {
+            font-size: 1.95em;
+            line-height: 1;
+            font-weight: normal;
+            width: auto;
+            background-color: transparent;
+            font-family: relation-one, sans-serif;
+            color: #21536F;
+            padding: 0 .5em;
+        }
+        
+        #npc-content form .send,
+        #npc-content form .sending,
+        #npc-content form .sent {
+            display: none;
+        }
+        
+        #npc-content .send .send,
+        #npc-content .sending .sending,
+        #npc-content .sent .sent {
+            display: block;
+        }
+        
+        @media only screen and (min-width: 500px) {
+            #hero .background-image {
+                height: 0;
+                padding-bottom: 52.040816%
+            }
+            #npc-content .field {
+                flex: 0 0 50%;
+            }
+        }
+        
+        @media only screen and (min-width: 750px) {
+            #npc-content section+section {
+                margin-top: 55px;
+            }
+            #npc-content h1 {
+                font-size: 80px;
+            }
+            #npc-content h2 {
+                font-size: 55px;
+            }
+            #npc-content p {
+                font-size: .8em;
+            }
+            #npc-content .hr-top::before {
+                margin-bottom: 55px;
+            }
+        }
+    </style>
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Sharing</li>
+        </ul>
+    </nav>
+    <div id="npc-content">
+        <section id="hero" class="full-width">
+            <div class="background-image"></div>
+            <div class="copy">
+                <h1>Full&nbsp;Hearts. Fresh&nbsp;Starts.</h1>
+                <p>Thanks for being part of the <span class="no-wrap">La-Z-Boy family!</span><br>We hope our gift brightened your new year with a little extra&nbsp;happiness.</p>
+            </div>
+        </section>
+        <section id="discount" class="hr-top">
+            <h2>Family & Friends Discount</h2>
+            <p style="max-width: 40em">We’re excited to offer your friend or family member an EXTRA 5% off any future purchase.* Simply enter their information below and they will receive an email with their&nbsp;discount.</p>
+            <form class="send" action="https://s20103530.t.eloqua.com/e/f2">
+                <div class="field">
+                    <label for="customFirst">First Name</label>
+                    <input type="text" name="customFirst" id="customFirst" minlength="2" required>
+                </div>
+                <div class="field">
+                    <label for="customLast">Last Name</label>
+                    <input type="text" name="customLast" id="customLast" minlength="2" required>
+                </div>
+                <div class="field">
+                    <label for="customEmail">Email Address</label>
+                    <input type="email" name="customEmail" id="customEmail" required>
+                </div>
+                <div class="field">
+                    <label for="customZip">Zip Code</label>
+                    <input type="text" name="customZip" id="customZip" minlength="2" required>
+                </div>
+                <div class="field">
+                    <input class="send" type="submit" value="Submit">
+                    <input class="sending" type="submit" value="Sending..." disabled="disabled">
+                    <input class="sent" type="submit" value="Thank you!" disabled="disabled">
+                </div>
+                <input type="hidden" name="elqFormName" value="SurpriseDelight">
+                <input type="hidden" name="elqSiteID" value="20103530">
+            </form>
+            <p style="margin-top: 1em;">See a list of participating locations <a href="https://offers.la-z-boy.com/surprise-and-delight-participating-locations" target="_blank">here</a>.</p>
+        </section>
+        <section id="discount" class="hr-top">
+            <h2>Stay Connected</h2>
+            <p style="max-width: 43em">Don’t forget to stay up-to-date on all <span class="no-wrap">La-Z-Boy’s</span> sales and specials by subscribing to our email list! Enter your info below for all the latest <span class="no-wrap">from La-Z-Boy.</span></p>
+            <form class="send" action="https://s20103530.t.eloqua.com/e/f2">
+                <div class="field">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" minlength="2" required>
+                </div>
+                <div class="field">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" minlength="2" required>
+                </div>
+                <div class="field">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" name="emailAddress" id="emailAddress" required>
+                </div>
+                <div class="field">
+                    <label for="zipPostal">Zip Code</label>
+                    <input type="text" name="zipPostal" id="zipPostal" minlength="2" required>
+                </div>
+                <div class="field">
+                    <input class="send" type="submit" value="Submit">
+                    <input class="sending" type="submit" value="Sending..." disabled="disabled">
+                    <input class="sent" type="submit" value="Thank you!" disabled="disabled">
+                </div>
+                <input type="hidden" name="elqFormName" value="SDSignUp">
+                <input type="hidden" name="elqSiteID" value="20103530">
+            </form>
+        </section>
+        <section>
+            <p class="disclaimer">*Discount can be combined with other promotional offers. Minimum $1999 purchase required. Not valid on prior purchases. <span class="no-wrap">Offer expires April 24, 2021.</span></p>
+        </section>
+    </div>
+    <script>
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                //if (!JQREADY)
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                console.log('no jQuery yet');
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                console.log('we got jQuery');
+                $('#npc-content form').submit(function() {
+                    var form = $(this);
+                    form.removeClass('send');
+                    form.addClass('sending');
+                    $.post('https://s20103530.t.eloqua.com/e/f2', $(this).serialize())
+                        .done(function(result, status, xhr) {
+                            if (result.indexOf('DefaultFormSubmitConfirmation') >= 0) {
+                                form.removeClass('sending');
+                                form.addClass('sent');
+                            } else {
+                                form.removeClass('sending');
+                                form.addClass('send');
+                                var myRegexp = /error\.gif.*?> *(.*?) *<\/div>/;
+                                var match = myRegexp.exec(result);
+                                alert('Eloqua error: ' + match[1]);
+                            }
+                        })
+                        .fail(function(xhr, status, error) {
+                            form.removeClass('sending');
+                            form.addClass('send');
+                            alert('Your submission failed to send.');
+                        });
+                    return false;
+                });
+            }
+        })();
+    </script>
+    <!-- /Code for XM -->
+</body>

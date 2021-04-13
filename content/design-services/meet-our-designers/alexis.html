@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Alexis</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/headshot.jpg" alt="Alexis"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/alexis/headshot.jpg" alt="Alexis"></div>
                         <h2>Alexis</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/alexis/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,8 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Myrtle Beach, SC</p>
-                        <p>“Every day is different! Every client, every space and every need is unique, so I cater my designs to the project at hand.” Alexis has been passionate about designing spaces since she was a child, and finds new ideas everywhere,
-                            from fashion to travel and other designers.</p>
+                        <p>“Every day is different! Every client, every space and every need is unique, so I cater my designs to the project at hand.” Alexis has been passionate about designing spaces since she was a child, and finds new ideas everywhere, from fashion to travel and other&nbsp;designers.</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -78,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PalettePro.png" alt="Palette Pro badge">
                                 </label>
                                 <p>
                                     <strong>Palette Pro</strong>
-                                    <br>Clever color combos to create the perfect mood.
-                                </p>
+                                    <br>Clever color combos to create the perfect mood. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/MixMaster.png" alt="Mix Master badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/MixMaster.png" alt="Mix Master badge">
                                 </label>
                                 <p>
                                     <strong>Mix Master</strong>
-                                    <br>Mixing and matching patterns in unique ways.
-                                </p>
+                                    <br>Mixing and matching patterns in unique ways. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Storage.png" alt="Storage badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Storage.png" alt="Storage badge">
                                 </label>
                                 <p>
                                     <strong>Storage Super Hero</strong>
-                                    <br>Organizing clutter with unique storage solutions.
-                                </p>
+                                    <br>Organizing clutter with unique storage solutions. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Coastal.png" alt="Coastal badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Coastal.png" alt="Coastal badge">
                                 </label>
                                 <p>
                                     <strong>Coastal Chic</strong>
-                                    <br>Creating light and bright, beach-inspired looks.
-                                </p>
+                                    <br>Creating light and bright, beach-inspired looks. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/TraditionalTake.png" alt="Traditional Take badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/TraditionalTake.png" alt="Traditional Take badge">
                                 </label>
                                 <p>
                                     <strong>Traditional Take</strong>
-                                    <br>Sophisticated looks that are classic and warm.
-                                </p>
+                                    <br>Sophisticated looks that are classic and warm. </p>
                             </div>
                         </div>
                     </div>
@@ -138,16 +125,16 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room03.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room03.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room04.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/alexis/room04.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -158,16 +145,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">How do you determine the right style for your clients?</p>
-                    <p>I first look at their home and the things they want me to work with. Asking them for pictures of things they love is also a great way to get inspiration. When buying furniture make sure you know the scale and size appropriate for your
-                        space. New pieces will not look good if they don’t fit the space!</p>
+                    <p class="heading">How do you determine the right style for your&nbsp;clients?</p>
+                    <p>I first look at their home and the things they want me to work with. Asking them for pictures of things they love is also a great way to get inspiration. When buying furniture make sure you know the scale and size appropriate for your space. New pieces will not look good if they don’t fit the&nbsp;space!</p>
                 </div>
                 <div>
-                    <p class="heading">What intrigues you about interior design and where do you find inspiration?</p>
-                    <p>Every day is different! Every client, every space and every need is unique, so I cater my designs to the project at hand. I also love seeing how a space can be transformed with a new layout and color palette. For most projects, inspiration
-                        comes from something the client owns or asks me to work with. I’m also inspired by fashion, travel and fellow designers.</p>
-                    <p class="heading">What’s your ultimate bucket list trip?</p>
-                    <p>To be on a sailboat off the coast of Santorini, Greece while eating lots of bread, olives and cheese and drinking a crisp white wine.</p>
+                    <p class="heading">What intrigues you about interior design and where do you find&nbsp;inspiration?</p>
+                    <p>Every day is different! Every client, every space and every need is unique, so I cater my designs to the project at hand. I also love seeing how a space can be transformed with a new layout and color palette. For most projects, inspiration comes from something the client owns or asks me to work with. I’m also inspired by fashion, travel and fellow&nbsp;designers.</p>
+                    <p class="heading">What’s your ultimate bucket list&nbsp;trip?</p>
+                    <p>To be on a sailboat off the coast of Santorini, Greece while eating lots of bread, olives and cheese and drinking a crisp white&nbsp;wine.</p>
                 </div>
             </div>
         </section>
@@ -189,17 +174,15 @@
                             }'>
                             <div class="testimonial">
                                 <h3>A Rave Review</h3>
-                                <p>My wife absolutely loved what Alexis had picked out for us, and so we ordered the whole package. The furniture was delivered yesterday, earlier than we expected, and my wife absolutely LOVES it!</p>
+                                <p>My wife absolutely loved what Alexis had picked out for us, and so we ordered the whole package. The furniture was delivered yesterday, earlier than we expected, and my wife absolutely LOVES&nbsp;it!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>She Really Listens</h3>
-                                <p>Alexis is a great listener and made great suggestions. She did a good job and we appreciate her honesty. It was the best designer experience we have ever had. Anyone who is fortunate enough to have Alexis be their designer
-                                    will know what I mean!</p>
+                                <p>Alexis is a great listener and made great suggestions. She did a good job and we appreciate her honesty. It was the best designer experience we have ever had. Anyone who is fortunate enough to have Alexis be their designer will know what I&nbsp;mean!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>An Enjoyable Experience</h3>
-                                <p>My new home has an open concept and I was unsure how to use the space. Alexis came to my house and then we met again at the store. She showed me a layout and it was 100% what I wanted. I was overwhelmed and afraid of making
-                                    the wrong choices since it is a major purchase. Alexis made the whole process enjoyable and had great ideas. She is a true professional.</p>
+                                <p>My new home has an open concept and I was unsure how to use the space. Alexis came to my house and then we met again at the store. She showed me a layout and it was 100% what I wanted. I was overwhelmed and afraid of making the wrong choices since it is a major purchase. Alexis made the whole process enjoyable and had great ideas. She is a true&nbsp;professional.</p>
                             </div>
                         </div>
                     </div>
@@ -210,7 +193,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>

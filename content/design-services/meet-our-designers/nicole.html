@@ -1,35 +1,30 @@
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            $('a[href^="/content"]').each(function() {
-                $(this).attr('href', $(this).attr('href') + ".html");
+        $(document).ready(function () {
+            $('a[href^="/content"]').each(function () {
+                $(this).attr("href", $(this).attr("href") + ".html");
             });
         });
     </script>
-    <style>
-
-    </style>
+    <style></style>
     <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <!-- Shared code -->
-
     <link href="/css/uat/design-services.css" rel="stylesheet">
     <script>
-        if (typeof define == 'function' && define.amd) {
-            require(["/js/uat/design-services.js"]);
+        if (typeof define == "function" && define.amd) {
+            require(["/js/design-services.js"]);
         } else {
             var script = document.createElement("script"); // create a script DOM node
-            script.src = "/js/uat/design-services.js"; // set its src to the provided URL
+            script.src = "/js/design-services.js"; // set its src to the provided URL
             document.head.appendChild(script);
         }
     </script>
-
     <!-- Main Content -->
-
     <nav id="breadcrumbs">
         <ul>
             <li><a href="/">Home</a></li>
@@ -38,7 +33,6 @@
             <li>Nicole</li>
         </ul>
     </nav>
-
     <div id="npc-content">
         <nav id="ds-nav">
             <div>
@@ -49,18 +43,17 @@
                 <a href="/content/design-services/free-virtual-design">Virtual Design</a>
             </div>
         </nav>
-
         <h1>Meet our designers</h1>
         <section id="hero" class="module02">
             <div class="two-col">
                 <div class="copy profile">
                     <div>
-                        <div class="image"><img src="https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/headshot.jpg" alt="Nicole"></div>
+                        <div class="image"><img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/nicole/headshot.jpg" alt="Nicole"></div>
                         <h2>Nicole</h2>
                         <p><span class="no-wrap">La-Z-Boy</span> Designer</p>
                     </div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/hero.jpg');"></div>
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/nicole/hero.jpg');"></div>
             </div>
         </section>
         <div class="light-gray">
@@ -69,7 +62,7 @@
                 <div>
                     <div class="bio">
                         <p class="heading">Roseville, CA</p>
-                        <p>Nicole can transform a room into just what her client had envisioned, and that is something that makes them both happy. “My goal is to create their dream room, and our design process ensures that we meet their wants and needs.”</p>
+                        <p>Nicole can transform a room into just what her client had envisioned, and that is something that makes them both happy. “My goal is to create their dream room, and our design process ensures that we meet their wants and&nbsp;needs.”</p>
                     </div>
                     <div class="favorites">
                         <p class="heading">Design badges:</p>
@@ -77,52 +70,47 @@
                             <div>
                                 <input type="radio" id="badge01-rb" name="badge" checked>
                                 <label class="image" for="badge01-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/PalettePro.png" alt="Palette Pro badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/PalettePro.png" alt="Palette Pro badge">
                                 </label>
                                 <p>
                                     <strong>Palette Pro</strong>
-                                    <br>Clever color combos to create the perfect mood.
-                                </p>
+                                    <br>Clever color combos to create the perfect mood. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge02-rb" name="badge">
                                 <label class="image" for="badge02-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/SpaceMaximizer.png" alt="Space Maximizer badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/SpaceMaximizer.png" alt="Space Maximizer badge">
                                 </label>
                                 <p>
                                     <strong>Space Maximizer</strong>
-                                    <br>Creative space planning and room flow.
-                                </p>
+                                    <br>Creative space planning and room flow. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge03-rb" name="badge">
                                 <label class="image" for="badge03-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/AccessoryAce.png" alt="Accessory Ace badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/AccessoryAce.png" alt="Accessory Ace badge">
                                 </label>
                                 <p>
                                     <strong>Accessory Ace</strong>
-                                    <br>Adding the perfect finishing touches.
-                                </p>
+                                    <br>Adding the perfect finishing touches. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge04-rb" name="badge">
                                 <label class="image" for="badge04-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/Farmhouse.png" alt="Modern Farmhouse badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/Farmhouse.png" alt="Modern Farmhouse badge">
                                 </label>
                                 <p>
                                     <strong>Modern Farmhouse</strong>
-                                    <br>Creating cozy, warm spaces with rustic charm.
-                                </p>
+                                    <br>Creating cozy, warm spaces with rustic charm. </p>
                             </div>
                             <div>
                                 <input type="radio" id="badge05-rb" name="badge">
                                 <label class="image" for="badge05-rb">
-                                    <img src="https://content.la-z-boy.com/Images/npc/designer/badges/ContemporaryCool.png" alt="Contemporary Cool badge">
+                                    <img src="https://content.la-z-boy.com/Images/design-services/meet-our-designers/ContemporaryCool.png" alt="Contemporary Cool badge">
                                 </label>
                                 <p>
                                     <strong>Contemporary Cool</strong>
-                                    <br>Clean lines and neutral palettes with pops of color.
-                                </p>
+                                    <br>Clean lines and neutral palettes with pops of color. </p>
                             </div>
                         </div>
                     </div>
@@ -137,19 +125,19 @@
                 "cellAlign": "left",
                 "contain": true
                 }'>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room01.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room01.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room02.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room02.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room03.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room03.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room04.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room04.jpg')">
                     <div></div>
                 </div>
-                <div class="background-image" style="background-image: url('https://www.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room05.jpg')">
+                <div class="background-image" style="background-image: url('https://content.la-z-boy.com/Images/design-services/meet-our-designers/nicole/room05.jpg')">
                     <div></div>
                 </div>
             </div>
@@ -160,14 +148,14 @@
                 <div>
                     <h2>Q &amp; A</h2>
                     <p>Get to know our experts</p>
-                    <p class="heading">What intrigues you most about interior design?</p>
-                    <p>I have always been intrigued by the process of transforming a space from concept to completion. I love watching my designs come to life and the excitement from my clients when they see their finished new room.</p>
+                    <p class="heading">What intrigues you most about interior&nbsp;design?</p>
+                    <p>I have always been intrigued by the process of transforming a space from concept to completion. I love watching my designs come to life and the excitement from my clients when they see their finished new&nbsp;room.</p>
                 </div>
                 <div>
-                    <p class="heading">What common questions do you get from your clients regarding the design process?</p>
-                    <p>Clients often worry that if they use a designer they will get a room the designer wants. I reassure them that my goal is to create their dream room, and that our design process ensures we meet their wants and needs.</p>
-                    <p class="heading">Name one thing on your bucket list, and why.</p>
-                    <p>Traveling to Italy. I want to see the architecture and art I studied in school firsthand while experiencing the food, culture and landscape.</p>
+                    <p class="heading">What common questions do you get from your clients regarding the design&nbsp;process?</p>
+                    <p>Clients often worry that if they use a designer they will get a room the designer wants. I reassure them that my goal is to create their dream room, and that our design process ensures we meet their wants and&nbsp;needs.</p>
+                    <p class="heading">Name one thing on your bucket list, and&nbsp;why.</p>
+                    <p>Traveling to Italy. I want to see the architecture and art I studied in school firsthand while experiencing the food, culture and&nbsp;landscape.</p>
                 </div>
             </div>
         </section>
@@ -189,16 +177,15 @@
                             }'>
                             <div class="testimonial">
                                 <h3>The Wow Factor</h3>
-                                <p>Our furniture was delivered today. Nicole and her team arranged everything beautifully. The "reveal" was amazing. We couldn't be more pleased!</p>
+                                <p>Our furniture was delivered today. Nicole and her team arranged everything beautifully. The "reveal" was amazing. We couldn't be more&nbsp;pleased!</p>
                             </div>
                             <div class="testimonial">
                                 <h3>A Lovely Home</h3>
-                                <p>What a nicely decorated house we have now, thanks to you. We enjoy it so much! Thank you.</p>
+                                <p>What a nicely decorated house we have now, thanks to you. We enjoy it so much! Thank&nbsp;you.</p>
                             </div>
                             <div class="testimonial">
                                 <h3>An Excellent Listener</h3>
-                                <p>Nicole was the perfect designer for us. We found her to be experienced, professional, knowledgeable, and an excellent listener. She knows her product well and is adept at matching the right style to her client’s needs and
-                                    personal styles.</p>
+                                <p>Nicole was the perfect designer for us. We found her to be experienced, professional, knowledgeable, and an excellent listener. She knows her product well and is adept at matching the right style to her client’s needs and personal&nbsp;styles.</p>
                             </div>
                         </div>
                     </div>
@@ -209,7 +196,5 @@
             <a href="/content/design-services/design-request-form" class="design-request">Book your FREE consultation</a>
         </section>
     </div>
-
-
     <!-- end NPC content -->
 </body>
