@@ -1,0 +1,515 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/_local.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <style>
+        #bcc-content {
+            margin-bottom: 100px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sectionals with Kristen Bell -->
+    <!-- begin BCC content -->
+    <link href="/css/bell.css" rel="stylesheet" type="text/css">
+    <style>
+        #bcc-content .hero .image {
+            max-width: 750px;
+            margin: 30px auto 0;
+        }
+        
+        #how-it-works .two-col {
+            text-align: left;
+        }
+        
+        #how-it-works a {
+            margin-top: 1em;
+            font-family: 'Archer A', 'Archer B', serif;
+            font-weight: 700;
+        }
+        
+        #how-it-works a+a {
+            margin-top: .5em;
+        }
+        
+        #bcc-content .hacks .image {
+            background-image: url(/Images/npc/bell/design-services/hacks03.jpg);
+        }
+        
+        #bcc-content .hacks .copy {
+            background-color: #8ec3d6;
+            color: white;
+        }
+        
+        #links .two-col>div {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #links h3 {
+            font-size: 1.3em;
+            margin-top: 20px;
+            line-height: 1.4;
+        }
+        
+        #links p {
+            font-size: .9em;
+            margin: 0 0 .5em;
+        }
+        
+        #links a {
+            display: block;
+            margin-top: auto;
+            font-size: .9em;
+            font-family: 'Archer A', 'Archer B', serif;
+            font-weight: 700;
+        }
+        /*! Flickity v2.2.0 https://flickity.metafizzy.co */
+        
+        #bcc-content .flickity-enabled {
+            position: relative;
+            outline-color: transparent !important;
+        }
+        
+        #bcc-content .flickity-enabled:focus {
+            outline: none;
+        }
+        
+        #bcc-content .flickity-viewport {
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+        }
+        
+        #bcc-content .flickity-slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        /* draggable */
+        
+        #bcc-content .flickity-enabled.is-draggable {
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        #bcc-content .flickity-enabled.is-draggable .flickity-viewport {
+            cursor: move;
+            cursor: -webkit-grab;
+            cursor: grab;
+        }
+        
+        #bcc-content .flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
+            cursor: -webkit-grabbing;
+            cursor: grabbing;
+        }
+        /* ---- page dots ---- */
+        
+        #bcc-content .flickity-page-dots {
+            margin-top: 20px;
+            text-align: center;
+            line-height: 0;
+            /* line-height for bug on live site */
+        }
+        
+        #bcc-content .flickity-rtl .flickity-page-dots {
+            direction: rtl;
+        }
+        
+        #bcc-content .flickity-page-dots .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 8px;
+            border-radius: 50%;
+            opacity: 0.25;
+            cursor: pointer;
+            width: 13px;
+            height: 13px;
+            margin: 0 6px;
+            background: #96CCE6;
+        }
+        
+        #bcc-content .flickity-page-dots .dot.is-selected {
+            opacity: 1;
+        }
+        /* ---- flickity-button ---- */
+        
+        #bcc-content .flickity-button {
+            position: absolute;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+        
+        #bcc-content .flickity-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #19f;
+        }
+        
+        #bcc-content .flickity-button:active {
+            opacity: 0.6;
+        }
+        
+        #bcc-content .flickity-button:disabled {
+            opacity: 0.3;
+            cursor: auto;
+            /* prevent disabled button from capturing pointer up event. #716 */
+            pointer-events: none;
+        }
+        
+        #bcc-content .flickity-button-icon {
+            fill: currentColor;
+        }
+        /* ---- previous/next buttons ---- */
+        
+        #bcc-content .flickity-prev-next-button {
+            width: 50px;
+            height: 50px;
+        }
+        
+        #bcc-content .flickity-prev-next-button .flickity-button-icon {
+            position: absolute;
+            left: 20%;
+            top: 20%;
+            width: 60%;
+            height: 60%;
+        }
+        /* ------------------- */
+        
+        #before-after h2 {
+            text-align: center;
+        }
+        
+        #before-after h2::after {
+            content: none;
+        }
+        /* ---- page dots ---- */
+        
+        #before-after [data-flickity] {
+            margin-top: 15px;
+            position: relative;
+        }
+        
+        #before-after .ba-slider {
+            position: relative;
+            width: 100%;
+        }
+        
+        #before-after .ba-slider img {
+            width: 100%;
+            display: block;
+            max-width: none;
+        }
+        
+        #before-after .ba-slider .resize {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 70%;
+            overflow: hidden;
+        }
+        
+        #before-after .ba-slider .resize img {
+            height: 100%;
+            width: auto;
+        }
+        
+        #before-after .ba-slider .handle {
+            position: absolute;
+            left: 70%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            margin-left: -2px;
+            background: white;
+            cursor: ew-resize;
+            transition: opacity 0.2s ease-out;
+        }
+        
+        #before-after .ba-slider .handle:after {
+            position: absolute;
+            top: 50%;
+            width: 48px;
+            height: 48px;
+            margin: -22px 0 0 -22px;
+            content: "\25C0\0020\0020\25B6";
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            line-height: 44px;
+            background: #807069;
+            border-radius: 50%;
+            transition: opacity 0.2s ease-out;
+            font-family: "LZB Icons";
+            border: 2px solid white;
+        }
+        
+        #before-after .ba-slider .handle.draggable:after {
+            opacity: 0;
+        }
+    </style>
+    <div id="bcc-content">
+        <section class="hero">
+            <div class="copy">
+                <h1>Don’t know where to begin? We’ve all been&nbsp;there.</h1>
+                <p>Wish you had some kind of magic genie designer? You do! <span class="no-wrap">La-Z-Boy</span> has brilliant Interior Designers who will have your room looking its best in no time flat. And all design services are free. Virtual high&nbsp;five.</p>
+            </div>
+            <div class="image">
+                <img src="/Images/npc/bell/design-services/hero.jpg" alt="Kristen Bell on loveseat with lots of pillows">
+            </div>
+            <hr>
+        </section>
+        <section id="how-it-works">
+            <div class="two-col gutter-50">
+                <div class="image">
+                    <img src="/Images/npc/bell/design-services/how-it-works.jpg" alt="Work area with cover swatches, paint swatches, tape measure, la-z-boy.com on tablet, etc.">
+                </div>
+                <div class="copy">
+                    <h2>How It Works</h2>
+                    <ol>
+                        <li>Team up with an Interior Designer at home, in-store, or virtually (whatever is easiest)</li>
+                        <li>Talk about your personal style, inspirations and budget</li>
+                        <li>Go over your Interior Designer’s renderings of your new space</li>
+                        <li>Decide on the final layout, then let us bring it to life!</li>
+                    </ol>
+                    <p>Yep, it’s honestly that easy!</p>
+                    <a href="/content/design-services/free-virtual-design">Virtual Design Services</a>
+                    <a href="/content/design-services/design-request-form">Book Your Consultation</a>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section id="relax">
+            <div class="image">
+                <img src="/Images/npc/bell/design-services/pick-a-room.jpg" alt="Dining room scene with The Nook Heathered Oak Trestle Table and Upholstered Side Chairs">
+            </div>
+            <h2>Pick a Room, Any Room</h2>
+            <p class="subheading">Home office, dining room, bedroom, ballroom. Okay, maybe not that last one. But seriously! You can restyle any room in your home, or your whole home. No project is too big or too&nbsp;small.</p>
+        </section>
+        <section id="seat-smarts" class="smarts">
+            <div class="quote wrap">
+                <div class="image">
+                    <img src="https://content.la-z-boy.com/Images/npc/bell/smarts.png" alt="Kristen Bell">
+                </div>
+                <div class="copy">
+                    <h2>Seat Smarts with&nbsp;Kristen</h2>
+                    <p>Say it with me, style and function! You can get that gorgeous sofa and make it pet-friendly or <span class="no-wrap">stain-resistant too.</span></p>
+                    <a href="/b/sofas/_/N-103rjdd">Shop Sofas</a>
+                </div>
+            </div>
+        </section>
+        <section id="customize">
+            <h2>All About You</h2>
+            <p class="subheading">Want to customize texture, color and details like trim and finish options? More power to you! (See what I did there?) These are just some of the ways to tailor your space to suit&nbsp;you.</p>
+            <div class="four-col gutter-20 photo-blocks">
+                <div>
+                    <div class="image"><img src="/Images/npc/bell/design-services/customize01.jpg" alt="Child spilling chocolate syrup on sofa"></div>
+                    <h3>Oops-Friendly Fabrics</h3>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/npc/bell/design-services/customize02.jpg" alt="Custom pillows on sofa"></div>
+                    <h3>Colorful Couch Sidekicks</h3>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/npc/bell/design-services/customize03.jpg" alt="iPhone charging from sofa USB port"></div>
+                    <h3>Comfy Charging Stations</h3>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/npc/bell/design-services/customize04.jpg" alt="Nailhead trim on sofa arm"></div>
+                    <h3>Fun Details (Nailed&nbsp;it!)</h3>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section id="designer">
+            <div class="image">
+                <img src="/Images/npc/bell/design-services/got-your-back.jpg" alt="Kristen Bell comparing cover and paint swatches">
+            </div>
+            <h2>We’ve Got Your Back</h2>
+            <p class="subheading">Need a Little Advice? You’ve got that lightbulb idea, but then it starts flickering. Where should the chair go? How can you make the space functional? What color is best? The answer to all of the above? Ask an Interior&nbsp;Designer.</p>
+            <hr>
+        </section>
+        <section id="links">
+            <div class="two-col gutter-50">
+                <div>
+                    <div class="image"><img src="/Images/npc/bell/design-services/ar.jpg" alt="Augmented reality app adding chair to living room"></div>
+                    <h3>Welcome to the Future</h3>
+                    <p>Painting a mental picture isn’t your forte? No problem. That’s why the AR app is so great. You can see what your furniture will look like in your&nbsp;room.</p>
+                    <a href="/content/augmented-reality">Learn More</a>
+                </div>
+                <div>
+                    <div class="image"><img src="/Images/npc/bell/design-services/contact.jpg" alt="Beautifully-designed living room"></div>
+                    <h3>Talk to a Designer</h3>
+                    <p>You can email, or video chat or team up for an in-store brainstorm session. We don’t have ESP yet, but we’re working&nbsp;on&nbsp;it.</p>
+                    <a href="/content/design-services/design-request-form">This Way to Your Dream&nbsp;Room</a>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section id="before-after">
+            <div data-flickity='{
+                "freeScrollFriction": 0.1,
+                "pageDots": true,
+                "prevNextButtons": false,
+                "cellAlign": "left",
+                "contain": true
+                }'>
+                <div class="ba-slider">
+                    <img src="https://content.la-z-boy.com/Images/design-services/after02.jpg">
+                    <div class="resize">
+                        <img src="https://content.la-z-boy.com/Images/design-services/before02.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+                <div class="ba-slider">
+                    <img src="https://content.la-z-boy.com/Images/design-services/after05.jpg">
+                    <div class="resize">
+                        <img src="https://content.la-z-boy.com/Images/design-services/before05.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+                <div class="ba-slider">
+                    <img src="https://content.la-z-boy.com/Images/design-services/after04.jpg">
+                    <div class="resize">
+                        <img src="https://content.la-z-boy.com/Images/design-services/before04.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+                <div class="ba-slider">
+                    <img src="https://content.la-z-boy.com/Images/design-services/after03.jpg">
+                    <div class="resize">
+                        <img src="https://content.la-z-boy.com/Images/design-services/before03.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+                <div class="ba-slider">
+                    <img src="https://content.la-z-boy.com/Images/design-services/after01.jpg">
+                    <div class="resize">
+                        <img src="https://content.la-z-boy.com/Images/design-services/before01.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+                <div class="ba-slider">
+                    <img src="https://content.la-z-boy.com/Images/design-services/after06.jpg">
+                    <div class="resize">
+                        <img src="https://content.la-z-boy.com/Images/design-services/before06.jpg">
+                    </div>
+                    <span class="handle"></span>
+                </div>
+            </div>
+            <h2>Transformation Inspiration</h2>
+            <p class="subheading">I could scroll through before-and-after photos all day. To be honest, I get kind of excited about room transformations. These are some of my&nbsp;favorites.</p>
+        </section>
+        <section class="mom-hacks">
+            <div class="hacks wrap">
+                <div class="kristen"></div>
+                <div class="copy">
+                    <p>A large rug that touches all pieces of upholstery will help to make your room look even bigger. It can also be used to cover up that one chocolate ice cream stain that I definitely didn’t&nbsp;do.</p>
+                </div>
+                <div class="image">
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        if (typeof define == "function" && define.amd) {
+            require(["https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"]);
+        } else {
+            var script = document.createElement("script"); // create a script DOM node
+            script.src = "https://unpkg.com/flickity@2.2.2/dist/flickity.pkgd.min.js"; // set its src to the provided URL
+            document.head.appendChild(script);
+        }
+    </script>
+    <script>
+        (function readyCheck() {
+            if (typeof $ !== "function" || (document.readyState !== 'interactive' && document.readyState !== 'complete')) {
+                console.log('not ready yet');
+                setTimeout(readyCheck, 100);
+                return;
+            } else {
+                // Make images followed by links clickable
+                $('#bcc-content .image~a').siblings(".image").addClass('clickable').click(function() {
+                    $(this).siblings('a')[0].click();
+                });
+                ////////////// Before/After Slider //////////////
+                // Call & init
+                $('.ba-slider').each(function() {
+                    var cur = $(this);
+                    // Bind dragging events
+                    drags(cur.find('.handle'), cur.find('.resize'), cur);
+                });
+
+                function drags(dragElement, resizeElement, container) {
+                    // Prevent events bubbling to Flickity slider
+                    dragElement.on('click keydown mousedown pointerdown touchstart', function(e) {
+                        e.stopPropagation();
+                    });
+
+                    // Initialize the dragging event on mousedown.
+                    dragElement.on('mousedown touchstart', function(e) {
+
+                        dragElement.addClass('draggable');
+                        resizeElement.addClass('resizable');
+
+                        // Check if it's a mouse or touch event and pass along the correct value
+                        var startX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+
+                        // Get the initial position
+                        var dragWidth = dragElement.outerWidth(),
+                            posX = dragElement.offset().left + dragWidth - startX,
+                            containerOffset = container.offset().left,
+                            containerWidth = container.outerWidth();
+
+                        // Set limits
+                        minLeft = containerOffset + 10;
+                        maxLeft = containerOffset + containerWidth - dragWidth - 10;
+
+                        // Calculate the dragging distance on mousemove.
+                        dragElement.parents().on("mousemove touchmove", function(e) {
+
+                            // Check if it's a mouse or touch event and pass along the correct value
+                            var moveX = (e.pageX) ? e.pageX : e.originalEvent.touches[0].pageX;
+
+                            leftValue = moveX + posX - dragWidth;
+
+                            // Prevent going off limits
+                            if (leftValue < minLeft) {
+                                leftValue = minLeft;
+                            } else if (leftValue > maxLeft) {
+                                leftValue = maxLeft;
+                            }
+
+                            // Translate the handle's left value to masked divs width.
+                            widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + '%';
+
+                            // Set the new values for the slider and the handle. 
+                            // Bind mouseup events to stop dragging.
+                            $('.draggable').css('left', widthValue).on('mouseup touchend touchcancel', function() {
+                                $(this).removeClass('draggable');
+                                resizeElement.removeClass('resizable');
+                            });
+                            $('.resizable').css('width', widthValue);
+                        }).on('mouseup touchend touchcancel', function() {
+                            dragElement.removeClass('draggable');
+                            resizeElement.removeClass('resizable');
+                        });
+                        e.preventDefault();
+                    }).on('mouseup touchend touchcancel', function(e) {
+                        dragElement.removeClass('draggable');
+                        resizeElement.removeClass('resizable');
+                    });
+                }
+            }
+        })();
+    </script>
+    <!-- end BCC content -->
+</body>

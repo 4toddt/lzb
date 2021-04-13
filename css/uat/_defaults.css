@@ -264,6 +264,10 @@ body.mobile-site .hidden-mobile {
     flex-basis: calc(50% - 30px);
 }
 
+#bcc-content .two-col.gutter-40>* {
+    flex-basis: calc(50% - 40px);
+}
+
 #bcc-content .two-col.gutter-50>* {
     flex-basis: calc(50% - 50px);
 }

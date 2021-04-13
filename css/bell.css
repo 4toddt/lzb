@@ -1,1 +1,451 @@
-@import"https://fonts.googleapis.com/css?family=Lato:300,400,700";@import"https://cloud.typography.com/7057696/7391412/css/fonts.css";@import"_resets.css";@import"_defaults.css";@font-face{font-family:LZB Icons;src:url(fonts/lzb-icons.eot?jebkb3);src:url(fonts/lzb-icons.eot?jebkb3#iefix) format('embedded-opentype'),url(fonts/lzb-icons.ttf?jebkb3) format('truetype'),url(fonts/lzb-icons.woff?jebkb3) format('woff'),url(fonts/lzb-icons.svg?jebkb3#lzb-icons) format('svg')}#bcc-content{max-width:1010px;color:#444}#bcc-content section{margin-top:30px;padding:0 15px}#bcc-content h1{font-family:Archer A,Archer B,serif;font-weight:700;text-align:center;font-size:2em;padding:0 15px}#bcc-content h2{font-family:Archer A,Archer B,serif;font-weight:700;font-size:1.7em}#bcc-content>section>h2{text-align:center}#bcc-content h3{font-family:Archer A,Archer B,serif;font-weight:700;font-size:1.4em}#bcc-content h4{font-weight:400}#bcc-content p{line-height:1.4;margin-top:1em}#bcc-content p.subheading{line-height:1.5;max-width:865px;margin:.5em auto 0;text-align:center}#bcc-content hr{border-style:solid;border-width:0 0 13px;border-image-source:url(https://content.la-z-boy.com/Images/npc/bell/border.svg);border-image-slice:33.333333%;border-image-repeat:round;margin-top:30px}#bcc-content a{text-decoration:none}#bcc-content a:after{font-family:LZB Icons;content:"\e90e";line-height:0}#bcc-content .image{position:relative}#bcc-content .image a{font-family:Archer A,Archer B,serif;font-weight:700;position:absolute;bottom:20px;left:20px;color:white;text-align:left}#bcc-content .hero{max-width:980px;margin:30px auto 0;padding:0;position:relative}#bcc-content .hero .copy{text-align:center;margin:0 auto;z-index:1}#bcc-content .hero .copy p{padding:0 15px;line-height:1.6}#bcc-content .hero .image{margin-top:20px}#bcc-content [class*=-col],#bcc-content .wrap{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}#bcc-content .truth .image{-webkit-box-flex:10000;-ms-flex:10000 1 242px;flex:10000 1 242px;margin-top:20px;background-size:cover;background-position:right top}#bcc-content .truth .image:before{content:"";display:block;padding-bottom:82.758621%}#bcc-content .truth .copy{-webkit-box-flex:1;-ms-flex:1 1 360px;flex:1 1 360px;margin-top:20px;text-align:left}#bcc-content .truth .copy h3{line-height:.8;margin:30px 30px 0}#bcc-content .truth .copy p{margin:20px 30px 30px}#bcc-content .dot-border>div{border-style:solid;border-image-source:url(https://content.la-z-boy.com/Images/npc/bell/border.svg);border-image-slice:33.333333%;border-image-repeat:round}#bcc-content .smarts .quote{background-color:#dfe9eb;-webkit-box-align:center;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;padding:15px}#bcc-content .smarts .quote .image{-webkit-box-flex:0;-ms-flex:0 0 205px;flex:0 0 205px;margin:0 15px}#bcc-content .smarts .quote .copy{-webkit-box-flex:1;-ms-flex:1 1 400px;flex:1 1 400px;margin:20px;max-width:675px}#bcc-content .smarts .quote .copy a{font-weight:700;display:block;margin-top:.5em}#bcc-content .smarts h3{font-family:lato,OpenSans,sans-serif;font-size:1.2em;font-weight:400;margin-top:40px;text-align:center}#bcc-content .silos{-webkit-box-align:end;-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end;margin-left:auto;margin-right:auto}#bcc-content .silos>div{margin-top:40px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}#bcc-content .silos>div{min-width:170px}#bcc-content .silos h4{font-family:Archer A,Archer B,serif;font-weight:700;font-size:.9em}@media only screen and (min-width:700px){#bcc-content .smarts .quote,#bcc-content .silos{-ms-flex-wrap:nowrap;flex-wrap:nowrap}#bcc-content .silos>div{min-width:0}#bcc-content .smarts .quote .copy{text-align:left}}#bcc-content>section>.image{margin-top:20px}#bcc-content .link-box{margin-top:10px;background-color:#f9f9f9;padding:10px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-pack:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly}#bcc-content .link-box a{font-size:1.1em;padding:15px;text-align:center;font-family:Archer A,Archer B,serif;font-weight:700}#bcc-content .products>div{margin-top:30px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}#bcc-content .products h3{font-weight:400}#bcc-content .products .subtitle{font-size:.65em;margin-top:.1em}@media only screen and (min-width:500.1px){#bcc-content .link-box a{font-size:1.4em}}#bcc-content .two-col.gutter-50>div{min-width:290px;margin-top:30px}#bcc-content .three-col.products>div{min-width:300px}#bcc-content .four-col.products>div{min-width:200px}#bcc-content .products{text-align:center}#bcc-content .products .image{margin:auto 0}#bcc-content .products .image.ua:after{content:"";display:block;background-image:url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png);background-image:-webkit-image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_2x.png) 2x);background-image:-webkit-image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png) 2x);background-image:image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png) 2x);background-size:cover;height:20px;width:93px}#bcc-content .products .image.duo:after{content:"";display:block;background-image:url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png);background-image:-webkit-image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_2x.png) 2x);background-image:-webkit-image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png) 2x);background-image:image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png) 2x);background-size:cover;height:22.5px;width:32px}#bcc-content .products .image.kp:after{content:"";display:block;background-image:url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png);background-image:-webkit-image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_2x.png) 2x);background-image:-webkit-image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png) 2x);background-image:image-set(url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png) 2x);background-size:cover;height:25px;width:44.5px}#bcc-content .products h3{font-size:.9em;font-family:lato,OpenSans,sans-serif;display:block;margin-top:.5em;line-height:1.3}#bcc-content .products a{font-size:.9em;display:block;margin-top:.4em}#bcc-content .hacks .kristen{background-image:url(https://content.la-z-boy.com/Images/npc/bell/hacks01_1x.jpg);background-image:-webkit-image-set(url(https://content.la-z-boy.com/Images/npc/bell/hacks01_1x.jpg) 1x,url(https://content.la-z-boy.com/Images/npc/bell/hacks01_2x.jpg) 2x);background-image:image-set(url(https://content.la-z-boy.com/Images/npc/bell/hacks01_1x.jpg) 1x,url(https://content.la-z-boy.com/Images/npc/bell/hacks01_2x.jpg) 2x);background-size:cover;background-position-x:center;min-height:220px;-webkit-box-flex:1;-ms-flex:1 0 190px;flex:1 0 190px}#bcc-content .hacks .copy{-webkit-box-flex:2;-ms-flex:2 0 250px;flex:2 0 250px;text-align:center}#bcc-content .hacks .copy:before{content:"";display:block;background-image:url(https://content.la-z-boy.com/Images/npc/bell/hacks02_2x.png);background-image:-webkit-image-set(url(https://content.la-z-boy.com/Images/npc/bell/hacks02_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/hacks02_2x.png) 2x);background-image:image-set(url(https://content.la-z-boy.com/Images/npc/bell/hacks02_1x.png) 1x,url(https://content.la-z-boy.com/Images/npc/bell/hacks02_2x.png) 2x);background-size:cover;height:50px;width:225px;margin:20px 30px 0;margin:20px auto 0}@media only screen and (min-width:500.1px){#bcc-content .hacks .copy{text-align:left}#bcc-content .hacks .copy:before{margin:20px 30px 0}}#bcc-content .hacks .copy p{margin:5px 30px 0}#bcc-content .hacks .copy a{font-size:1.2em;display:block;margin:10px 30px 20px}#bcc-content .hacks .image{background-size:cover;background-position-x:left;-webkit-box-flex:1;-ms-flex:1 0 165px;flex:1 0 165px;max-width:290px;display:none}#bcc-content .hacks .image:before{padding-bottom:82.758621%}@media only screen and (min-width:550px){#bcc-content .hacks .kristen{-webkit-box-flex:0;-ms-flex-positive:0;flex-grow:0}}@media only screen and (min-width:850px){#bcc-content .hacks .image{display:block}}#bcc-content .photo-blocks>div{min-width:230px;margin-top:20px}#bcc-content .photo-blocks h3{font-size:.9em;margin-top:.5em}@media only screen and (min-width:700px){#bcc-content .photo-blocks>div{min-width:0}}#bcc-content .tennis-ball-copy h3{font-size:1.3em;margin-top:20px;line-height:1.4}#bcc-content .tennis-ball-copy p{font-size:.9em;margin:0 auto;max-width:380px}#bcc-content .tennis-ball-copy a{display:block;margin-top:.5em}
+@import "https://fonts.googleapis.com/css?family=Lato:300,400,700";
+@import "fonts/archer.css";
+@import "_resets.css";
+@import "_defaults.css";
+
+/* @import "_swatch-carousel.css"; */
+
+@font-face {
+    font-family: 'LZB Icons';
+    src: url('fonts/lzb-icons.eot?jebkb3');
+    src: url('fonts/lzb-icons.eot?jebkb3#iefix') format('embedded-opentype'), url('fonts/lzb-icons.ttf?jebkb3') format('truetype'), url('fonts/lzb-icons.woff?jebkb3') format('woff'), url('fonts/lzb-icons.svg?jebkb3#lzb-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#bcc-content {
+    max-width: 1010px;
+    color: #444;
+}
+
+#bcc-content section {
+    margin-top: 30px;
+    padding: 0 15px;
+}
+
+#bcc-content h1 {
+    font-family: 'Archer A', 'Archer B', serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2em;
+    padding: 0 15px;
+}
+
+#bcc-content h2 {
+    font-family: 'Archer A', 'Archer B', serif;
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+#bcc-content>section>h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#bcc-content h3 {
+    font-family: 'Archer A', 'Archer B', serif;
+    font-weight: 700;
+    font-size: 1.4em;
+}
+
+#bcc-content h4 {
+    font-weight: normal;
+}
+
+#bcc-content p {
+    line-height: 1.4;
+    margin-top: 1em;
+}
+
+#bcc-content p.subheading {
+    line-height: 1.5;
+    max-width: 865px;
+    margin: .5em auto 0;
+    text-align: center;
+}
+
+#bcc-content hr {
+    border-style: solid;
+    border-width: 0 0 13px 0;
+    border-image-source: url(https://content.la-z-boy.com/Images/npc/bell/border.svg);
+    border-image-slice: 33.333333%;
+    border-image-repeat: round;
+    margin-top: 30px;
+}
+
+#bcc-content a {
+    text-decoration: none;
+    display: block;
+}
+
+#bcc-content a:after {
+    font-family: 'LZB Icons';
+    content: "\e90e";
+    line-height: 0;
+}
+
+#bcc-content ol,
+#bcc-content ul {
+    margin-top: 1em;
+    padding-left: 1.5em;
+    text-align: left;
+    line-height: 1.4;
+}
+
+#bcc-content li+li {
+    margin-top: .5em;
+}
+
+#bcc-content .image {
+    position: relative;
+}
+
+#bcc-content .image a {
+    font-family: 'Archer A', 'Archer B', serif;
+    font-weight: 700;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-align: left;
+}
+
+#bcc-content .hero {
+    max-width: 980px;
+    margin: 30px auto 0;
+    padding: 0;
+    position: relative;
+}
+
+#bcc-content .hero .copy {
+    text-align: center;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+#bcc-content .hero .copy p {
+    padding: 0 15px;
+    line-height: 1.6;
+}
+
+#bcc-content .hero .image {
+    margin-top: 20px;
+}
+
+#bcc-content [class*="-col"],
+#bcc-content .wrap {
+    justify-content: center;
+    text-align: center;
+}
+
+#bcc-content .truth .image {
+    flex: 10000 1 242px;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: right top;
+}
+
+#bcc-content .truth .image::before {
+    content: "";
+    display: block;
+    padding-bottom: 82.758621%;
+}
+
+#bcc-content .truth .copy {
+    flex: 1 1 360px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#bcc-content .truth .copy h3 {
+    line-height: .8;
+    margin: 30px 30px 0 30px;
+}
+
+#bcc-content .truth .copy p {
+    margin: 20px 30px 30px;
+}
+
+#bcc-content .dot-border>div {
+    border-style: solid;
+    border-image-source: url(https://content.la-z-boy.com/Images/npc/bell/border.svg);
+    border-image-slice: 33.333333%;
+    border-image-repeat: round;
+}
+
+#bcc-content .smarts .quote {
+    background-color: #dfe9eb;
+    align-items: center;
+    padding: 15px;
+}
+
+#bcc-content .smarts .quote .image {
+    flex: 0 0 205px;
+    margin: 0 15px;
+}
+
+#bcc-content .smarts .quote .copy {
+    flex: 1 1 400px;
+    margin: 20px;
+    max-width: 675px;
+}
+
+#bcc-content .smarts .quote .copy a {
+    font-weight: bold;
+    margin-top: .5em;
+}
+
+#bcc-content .smarts h3 {
+    font-family: 'lato', 'OpenSans', sans-serif;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#bcc-content .silos {
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bcc-content .silos>div {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#bcc-content .silos>div {
+    min-width: 170px;
+}
+
+#bcc-content .silos h4 {
+    font-family: 'Archer A', 'Archer B', serif;
+    font-weight: 700;
+    font-size: .9em;
+}
+
+@media only screen and (min-width: 700px) {
+    #bcc-content .smarts .quote,
+    #bcc-content .silos {
+        flex-wrap: nowrap;
+    }
+    #bcc-content .silos>div {
+        min-width: 0;
+    }
+    #bcc-content .smarts .quote .copy {
+        text-align: left;
+    }
+}
+
+#bcc-content>section>.image {
+    margin-top: 20px;
+}
+
+#bcc-content .link-box {
+    margin-top: 10px;
+    background-color: #F9F9F9;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-content: space-evenly;
+}
+
+#bcc-content .link-box a {
+    font-size: 1.1em;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Archer A', 'Archer B', serif;
+    font-weight: 700;
+}
+
+#bcc-content .products>div {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#bcc-content .products h3 {
+    font-weight: 400;
+}
+
+#bcc-content .products .subtitle {
+    font-size: .65em;
+    margin-top: .1em;
+}
+
+@media only screen and (min-width: 500.1px) {
+    #bcc-content .link-box a {
+        font-size: 1.4em;
+    }
+}
+
+#bcc-content .two-col.gutter-50>div {
+    min-width: 290px;
+    margin-top: 30px;
+}
+
+#bcc-content .three-col.products>div {
+    min-width: 300px;
+}
+
+#bcc-content .four-col.products>div {
+    min-width: 200px;
+}
+
+#bcc-content .products {
+    text-align: center;
+}
+
+#bcc-content .products .image {
+    margin: auto 0;
+}
+
+#bcc-content .products .image.ua::after {
+    content: "";
+    display: block;
+    background-image: url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png);
+    background-image: -webkit-image-set( url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png) 1x, url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_2x.png) 2x);
+    background-image: image-set( url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png) 1x, url(https://content.la-z-boy.com/Images/npc/bell/badge-ua_1x.png) 2x);
+    background-size: cover;
+    height: 20px;
+    width: 93px;
+}
+
+#bcc-content .products .image.duo::after {
+    content: "";
+    display: block;
+    background-image: url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png);
+    background-image: -webkit-image-set( url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png) 1x, url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_2x.png) 2x);
+    background-image: image-set( url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png) 1x, url(https://content.la-z-boy.com/Images/npc/bell/badge-duo_1x.png) 2x);
+    background-size: cover;
+    height: 22.5px;
+    width: 32px;
+}
+
+#bcc-content .products .image.kp::after {
+    content: "";
+    display: block;
+    background-image: url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png);
+    background-image: -webkit-image-set( url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png) 1x, url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_2x.png) 2x);
+    background-image: image-set( url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png) 1x, url(https://content.la-z-boy.com/Images/npc/bell/badge-kp_1x.png) 2x);
+    background-size: cover;
+    height: 25px;
+    width: 44.5px;
+}
+
+#bcc-content .products h3 {
+    font-size: .9em;
+    font-family: 'lato', 'OpenSans', sans-serif;
+    display: block;
+    margin-top: .5em;
+    line-height: 1.3;
+}
+
+#bcc-content .products a {
+    font-size: .9em;
+    margin-top: .4em;
+}
+
+#bcc-content .hacks .kristen {
+    background-image: url(https://content.la-z-boy.com/Images/npc/bell/hacks01_1x.jpg);
+    background-image: -webkit-image-set( url(https://content.la-z-boy.com/Images/npc/bell/hacks01_1x.jpg) 1x, url(https://content.la-z-boy.com/Images/npc/bell/hacks01_2x.jpg) 2x);
+    background-image: image-set( url(https://content.la-z-boy.com/Images/npc/bell/hacks01_1x.jpg) 1x, url(https://content.la-z-boy.com/Images/npc/bell/hacks01_2x.jpg) 2x);
+    background-size: cover;
+    background-position-x: center;
+    min-height: 220px;
+    flex: 1 0 190px;
+}
+
+#bcc-content .hacks .copy {
+    flex: 2 0 250px;
+    text-align: center;
+}
+
+#bcc-content .hacks .copy::before {
+    content: "";
+    display: block;
+    background-image: url(https://content.la-z-boy.com/Images/npc/bell/hacks02_2x.png);
+    background-image: -webkit-image-set( url(https://content.la-z-boy.com/Images/npc/bell/hacks02_1x.png) 1x, url(https://content.la-z-boy.com/Images/npc/bell/hacks02_2x.png) 2x);
+    background-image: image-set( url(https://content.la-z-boy.com/Images/npc/bell/hacks02_1x.png) 1x, url(https://content.la-z-boy.com/Images/npc/bell/hacks02_2x.png) 2x);
+    background-size: cover;
+    height: 50px;
+    width: 225px;
+    margin: 20px 30px 0 30px;
+    margin: 20px auto 0;
+}
+
+@media only screen and (min-width: 500.1px) {
+    #bcc-content .hacks .copy {
+        text-align: left;
+    }
+    #bcc-content .hacks .copy::before {
+        margin: 20px 30px 0 30px;
+    }
+}
+
+#bcc-content .hacks .copy p {
+    margin: 5px 30px 0 30px;
+}
+
+#bcc-content .hacks .copy a {
+    font-size: 1.2em;
+    margin: 10px 30px 20px 30px;
+}
+
+#bcc-content .hacks .image {
+    background-size: cover;
+    background-position-x: left;
+    flex: 1 0 165px;
+    max-width: 290px;
+    display: none;
+}
+
+#bcc-content .hacks .image::before {
+    padding-bottom: 82.758621%;
+}
+
+@media only screen and (min-width: 550px) {
+    #bcc-content .hacks .kristen {
+        flex-grow: 0;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    #bcc-content .hacks .image {
+        display: block;
+    }
+}
+
+#bcc-content .photo-blocks>div {
+    min-width: 230px;
+    margin-top: 20px;
+}
+
+#bcc-content .photo-blocks h3 {
+    font-size: .9em;
+    margin-top: .5em;
+}
+
+@media only screen and (min-width: 700px) {
+    #bcc-content .photo-blocks>div {
+        min-width: 0;
+    }
+}
+
+#bcc-content .tennis-ball-copy h3 {
+    font-size: 1.3em;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+
+#bcc-content .tennis-ball-copy p {
+    font-size: .9em;
+    margin: 0 auto;
+    max-width: 380px;
+}
+
+#bcc-content .tennis-ball-copy a {
+    margin-top: .5em;
+}

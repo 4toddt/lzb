@@ -2,8 +2,7 @@
     <!-- copy below this line since Head cartridge has opening head tag -->
     <!-- copy below this line since Head cartridge has opening head tag -->
     <!-- copy below this line since Head cartridge has opening head tag -->
-
-
+    <!-- this comment is needed to make IE not break -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab');
         @font-face {
@@ -945,8 +944,15 @@
             color: #0070af;
         }
         
-        .post p {
+        .post p,
+        .post h3,
+        .post ul {
+            font-size: inherit;
             margin: .25em 20px 0;
+        }
+        
+        .post ul {
+            padding-left: 1em;
         }
         
         .post p.date {
@@ -1087,10 +1093,10 @@
             }
         }
     </style>
-    <script>
+    <!-- <script>
         console.log("end of styles");
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM Loaded');
         });
-    </script>
+    </script> -->
 </head>

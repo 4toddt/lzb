@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Lato:300,400,700";
-@import "https://cloud.typography.com/7057696/7391412/css/fonts.css";
+@import "fonts/archer.css";
 @import "_resets.css";
 @import "_defaults.css";
 
@@ -39,6 +39,7 @@
 
 #bcc-content>section>h2 {
     text-align: center;
+    margin-top: 30px;
 }
 
 #bcc-content h3 {
@@ -74,12 +75,25 @@
 
 #bcc-content a {
     text-decoration: none;
+    display: block;
 }
 
 #bcc-content a:after {
     font-family: 'LZB Icons';
     content: "\e90e";
     line-height: 0;
+}
+
+#bcc-content ol,
+#bcc-content ul {
+    margin-top: 1em;
+    padding-left: 1.5em;
+    text-align: left;
+    line-height: 1.4;
+}
+
+#bcc-content li+li {
+    margin-top: .5em;
 }
 
 #bcc-content .image {
@@ -178,7 +192,6 @@
 
 #bcc-content .smarts .quote .copy a {
     font-weight: bold;
-    display: block;
     margin-top: .5em;
 }
 
@@ -332,7 +345,6 @@
 
 #bcc-content .products a {
     font-size: .9em;
-    display: block;
     margin-top: .4em;
 }
 
@@ -379,7 +391,6 @@
 
 #bcc-content .hacks .copy a {
     font-size: 1.2em;
-    display: block;
     margin: 10px 30px 20px 30px;
 }
 
@@ -436,6 +447,5 @@
 }
 
 #bcc-content .tennis-ball-copy a {
-    display: block;
     margin-top: .5em;
 }

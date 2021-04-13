@@ -1,0 +1,27 @@
+FOR %I in (I:\Covers\tiles\*.tif) DO magick %I -write mpr:tile -set option:dnsty "%x" -size "%[fx:dnsty*10]x%[fx:dnsty*10]" +delete tile:mpr:tile ^
+( -clone 0 -resize "1000x1000\>" -format jpg -quality 85 -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Large\%~nI.jpg ) ^
+( -clone 0 -resize "800x800\>" -format jpg -quality 85 -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Medium\%~nI.jpg ) ^
+( -clone 0 -resize "400x400\>" -format jpg -quality 85 -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Small\%~nI.jpg ) ^
+( -clone 0 -resize "220x220\>" -format jpg -quality 85 -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Largeviews\%~nI.jpg ) ^
+( -clone 0 -resize "120x120\>" -format jpg -quality 85 -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Thumbnails\%~nI.jpg ) null:
+
+FOR %I in (I:\Covers\tiles\*.tif) DO magick %I -write mpr:tile -set option:dnsty "%x" -size "%[fx:dnsty*10]x%[fx:dnsty*10]" +delete tile:mpr:tile -quality 85 ^
+( -clone 0 -resize "1000x1000\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Large\%~nI.jpg ) ^
+( -clone 0 -resize "800x800\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Medium\%~nI.jpg ) ^
+( -clone 0 -resize "400x400\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Small\%~nI.jpg ) ^
+( -clone 0 -resize "220x220\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Largeviews\%~nI.jpg ) ^
+( -clone 0 -resize "120x120\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write I:\Covers\tiles\tiled\Thumbnails\%~nI.jpg ) null:
+
+FOR %I in (E:\*.tif) DO magick %I -write mpr:tile -set option:dnsty "%x" -size "%[fx:dnsty*10]x%[fx:dnsty*10]" +delete tile:mpr:tile -quality 85 ^
+( -clone 0 -resize "1000x1000\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Large\%~nI.jpg ) ^
+( -clone 0 -resize "800x800\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Medium\%~nI.jpg ) ^
+( -clone 0 -resize "400x400\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Small\%~nI.jpg ) ^
+( -clone 0 -resize "220x220\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Largeviews\%~nI.jpg ) ^
+( -clone 0 -resize "120x120\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Thumbnails\%~nI.jpg ) null:
+
+FOR %I in (E:\*.jpg) DO magick %I -write mpr:tile -set option:dnsty "%x" -size "%[fx:dnsty*10]x%[fx:dnsty*10]" +delete tile:mpr:tile -quality 85 ^
+( -clone 0 -resize "1000x1000\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Large\%~nI.jpg ) ^
+( -clone 0 -resize "800x800\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Medium\%~nI.jpg ) ^
+( -clone 0 -resize "400x400\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Small\%~nI.jpg ) ^
+( -clone 0 -resize "220x220\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Largeviews\%~nI.jpg ) ^
+( -clone 0 -resize "120x120\>" -set option:wdth "%w" -density "%[fx:wdth/10]" -units pixelsperinch -write E:\Thumbnails\%~nI.jpg ) null:

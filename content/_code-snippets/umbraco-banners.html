@@ -1,0 +1,64 @@
+<!-- Banner parent elements must have id="bannerName" where bannerName is the banner used in the API request -->
+<div id="homeleftrailslot">
+    <a href=""><img src="https://via.placeholder.com/980x180/FFFFFF/FFFFFF%20" alt=""></a>
+    <script>
+        getBannerData('homeleftrailslot');
+    </script>
+</div>
+<div id="homesmallpromoslot1">
+    <a href=""><img src="https://via.placeholder.com/312x450/FFFFFF/FFFFFF%20" alt=""></a>
+    <script>
+        getBannerData('homesmallpromoslot1');
+    </script>
+</div>
+<script>
+    function bannerCookieToHTML(bannerName) {
+        var parentElement = document.getElementById(bannerName);
+        var bannerData = JSON.parse(decodeURIComponent(document.cookie.split('gallerysiteapi_' + bannerName + '=')[1].split(';')[0]));
+        if (bannerData && parentElement) {
+            parentElement.querySelector('img').setAttribute('alt', bannerData.Data.bannerAltText);
+            parentElement.querySelector('img').setAttribute('src', bannerData.Data.bannerImage);
+            parentElement.querySelector('a').setAttribute('href', bannerData.Data.bannerURL);
+        }
+    }
+
+    (function() {
+        function hartMidnight() {
+            var d = new Date();
+            let jan = new Date(d.getFullYear(), 0, 1).getTimezoneOffset();
+            let jul = new Date(d.getFullYear(), 6, 1).getTimezoneOffset();
+            if (Math.max(jan, jul) != d.getTimezoneOffset()) {
+                var offset = d.getTimezoneOffset() - 240;
+            } else {
+                var offset = d.getTimezoneOffset() - 300;
+            }
+            d.setMinutes(d.getMinutes() + offset);
+            d.setHours(24, 0, 0, 0);
+            return d.toUTCString();
+        }
+        var bannerExpiration = hartMidnight()
+        var storeId = document.cookie.split('preferredStoreSet=')[1].split(';')[0];
+
+        function getBannerData(bannerName) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.cookie = 'gallerysiteapi_' + bannerName + '=' + encodeURIComponent(this.responseText) + '; expires=' + bannerExpiration;
+                    if (document.readyState == 'interactive' || document.readyState == 'complete') {
+                        bannerCookieToHTML(bannerName);
+                    } else {
+                        document.onreadystatechange = function() {
+                            if (document.readyState == 'interactive') {
+                                bannerCookieToHTML(bannerName);
+                            }
+                        }
+                    }
+                }
+            };
+            xhttp.open("GET", "https://gallerysiteapi.la-z-boy.com/api/Banners/Get?bannername=" + bannerName + "&dealernumber=" + storeId, true);
+            xhttp.send();
+        }
+        getBannerData('homeleftrailslot');
+        getBannerData('homesmallpromoslot1');
+    }());
+</script>
