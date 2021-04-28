@@ -194,7 +194,8 @@ body.mobile-site #breadcrumbs a {
     margin-top: .5em;
 }
 
-#npc-content .faux-button {
+#npc-content .faux-button,
+#npc-content input[type="submit"] {
     display: inline-block;
     white-space: nowrap;
     font-size: .9em;
@@ -361,7 +362,8 @@ body.mobile-site #breadcrumbs a {
     #npc-content p {
         font-size: .9em;
     }
-    #npc-content .faux-button {
+    #npc-content .faux-button,
+    #npc-content input[type="submit"] {
         margin-top: 30px;
     }
     #npc-content .two-col {

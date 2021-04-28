@@ -1,0 +1,149 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="/css/local/defaults.css" rel="stylesheet" type="text/css">
+    <style>
+        #npc-content {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Code for XM -->
+    <link href="/css/vip.css?v=may21" rel="stylesheet">
+    <nav id="breadcrumbs">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/vip">VIP Event</a></li>
+            <li>May 2021</li>
+        </ul>
+    </nav>
+    <style>
+        #npc-content .faux-button {
+            background-color: #AB8F5B;
+        }
+    </style>
+    <div id="npc-content" style="display: none;">
+        <section id="hero" class="full-width background-image">
+            <img src="/Images/vip/may21/swatch.png" alt="VIP OFFER">
+            <div class="copy">
+                <h1>Limited Time Only!</h1>
+                <p>April 27th – May 17th</p>
+            </div>
+        </section>
+        <section id="appointment">
+            <h2>Book an appointment to receive these special offers</h2>
+            <div class="two-col gutter-30">
+                <div>
+                    <div class="icon"><img src="/Images/vip/may21/store.svg" alt="Store icon"></div>
+                    <h3>In Store Appointment</h3>
+                    <a id="store-appointment" class="faux-button calendly">Book Now</a>
+                </div>
+                <div>
+                    <div class="icon"><img src="/Images/vip/may21/video-chat.svg" alt="Store icon"></div>
+                    <h3>Virtual Appointment</h3>
+                    <a id="virtual-appointment" class="faux-button calendly">Book Now</a>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section id="promos">
+            <h2>Bring your invitation to redeem your gift & offer</h2>
+            <div class="two-col gutter-20">
+                <div class="image"><img src="/Images/vip/may21/promo.jpg" alt="20% off + extra 15%*"></div>
+                <div class="image"><img src="/Images/vip/may21/gift.jpg" alt="Free water bottle set; $39 value"></div>
+            </div>
+            <div id="financing">
+                <p class="promo">0% interest for 36 months**</p>
+                <p class="terms">On purchases of $5000 or more (after discount) made on your <span class="no-wrap">La-Z-Boy</span> Furniture Galleries credit card between 4/27/21 and 5/17/21. 36 equal monthly payments required.</p>
+            </div>
+            <hr>
+        </section>
+        <section id="location">
+            <h2>Your VIP location</h2>
+            <div class="two-col">
+                <div class="background-image"></div>
+                <div class="copy">
+                    <p><span id="store-name">Loading store data...</span><br><span id="store-address"></span><br><span id="store-phone"></span></p>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section id="legal">
+            <p>*Discount excludes advertised items, select styles and clearance and cannot be combined with any other promotional offer, excluding financing. Price does not include delivery fee. Offer expires May 17, 2021. Featured items may not be stocked
+                as shown. Wall recliners are $150 additional when available. Photographs are representative of promotional items, actual selection may vary. <span class="no-wrap">La-Z-Boy</span> and <span class="no-wrap">La-Z-Boy</span> Furniture Galleries
+                are registered trademarks of <span class="no-wrap">La-Z-Boy</span> Incorporated. Savings on select items throughout the store. Valid only at participating <span class="no-wrap">La-Z-Boy</span> Furniture Galleries locations. <span class="no-wrap">La-Z-Boy</span>                is committed to accurate advertising, but errors in product descriptions, photographs, pricing or dates may occur. We are not bound by any such errors, and we reserve the right to correct them prior to any sale of&nbsp;merchandise.</p>
+            <p>**Offer applies only to single-receipt qualifying purchases. No interest will be charged on promo purchase and equal monthly payments are required equal to initial promo purchase amount divided equally by the number of months in promo period
+                until promo is paid in full. The equal monthly payment will be rounded to the next highest whole dollar and may be higher than the minimum payment that would be required if the purchase was a non-promotional purchase. Regular account terms
+                apply to non-promotional purchases. For new accounts: Purchase APR is 29.99%; Minimum Interest Charge is $2. Existing cardholders should see their credit card agreement for their applicable terms. Subject to credit approval. Any discount,
+                coupon, manufacturer rebate, or other promotional offer applied at time of purchase will reduce your total purchase amount and may result in you not satisfying the minimum qualifying purchase amount&nbsp;required.</p>
+        </section>
+    </div>
+    <!-- shared Calendly code -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script>
+        window.addEventListener(
+            'message',
+            function(e) {
+                if (e.data.event && e.data.event == 'calendly.event_scheduled') {
+                    _satellite.track('calendly_event_scheduled');
+                }
+            }
+        );
+        //function to check if jQuery is ready
+        function jqIsReady() {
+            if (typeof $ === "undefined") {
+                return false;
+            }
+            return true;
+        }
+        (function jqCheck() {
+            if (!jqIsReady()) {
+                setTimeout(jqCheck, 10);
+                return;
+            } else {
+                var postal = window.location.search.split('postal=')[1].split('&')[0];
+                var vipAPI = 'https://gallerysiteapi.la-z-boy.com/api/VIP/Get?zipcode=' + postal;
+
+                $.getJSON(vipAPI, function() {})
+                    .done(function(json) {
+                        if (!jQuery.isEmptyObject(json.Data)) {
+                            if (json.Data.StoreAppointment) {
+                                $("#store-appointment").attr("href", json.Data.StoreAppointment);
+                            } else {
+                                $("#store-appointment").attr("href", "tel:" + json.Data.Phone).removeClass("calendly").text("Call: " + json.Data.Phone);
+                            }
+                            if (json.Data.VirtualAppointment) {
+                                $("#virtual-appointment").attr("href", json.Data.VirtualAppointment);
+                            } else {
+                                $("#virtual-appointment").attr("href", "tel:" + json.Data.Phone).removeClass("calendly").text("Call: " + json.Data.Phone);
+                            }
+                            $("#store-name").text(json.Data.StoreName);
+                            $("#store-address").html(json.Data.Address);
+                            $("#store-phone").text(json.Data.Phone);
+                            $('#npc-content').show();
+
+                            $(".calendly").click(function(e) {
+                                e.preventDefault();
+                                calendlyUrl = $(this).attr('href');
+                                $.getScript('https://assets.calendly.com/assets/external/widget.js')
+                                    .done(function() {
+                                        Calendly.initPopupWidget({
+                                            url: calendlyUrl
+                                        });
+                                        gtag('event', 'conversion', {
+                                            'allow_custom_scripts': true,
+                                            'send_to': 'DC-1461522/fy17l0/shedu0+standard'
+                                        });
+                                    });
+                                return false;
+                            });
+                        }
+                    });
+            }
+        })();
+    </script>
+    <!-- /shared Calendly code -->
+    <!-- /Code for XM -->
+</body>

@@ -1,0 +1,96 @@
+{
+    "Data": [{
+            "number": "50860763",
+            "name": "Toledo",
+            "retail": false,
+            "rms": true,
+            "children": [{
+                    "number": "23461047",
+                    "name": "Monroe-Street",
+                    "storename": "5178 Monroe Street",
+                    "address": "5178 Monroe",
+                    "address2": "",
+                    "city": "TOLEDO",
+                    "state": "OH",
+                    "zip": "43623",
+                    "phone": "4198828082",
+                    "email": "matt.simpson@lzbtoledo.com"
+                },
+                {
+                    "number": "23461039",
+                    "name": "Airport-Highway",
+                    "storename": "5804 Airport Highway",
+                    "address": "5804 Airport Hwy",
+                    "address2": "",
+                    "city": "Toledo",
+                    "state": "Ohio",
+                    "zip": "43615",
+                    "phone": "419.867.3727",
+                    "email": "matt.simpson@lzbtoledo.com"
+                }
+            ]
+        },
+        {
+            "number": "50860762",
+            "name": "Somewhere Cool, Another Cool",
+            "retail": false,
+            "rms": false,
+            "children": [{
+                    "number": "23461042",
+                    "name": "Monroe-Street2",
+                    "storename": "5178 Monroe Street",
+                    "address": "5178 Monroe",
+                    "address2": "",
+                    "city": "TOLEDO",
+                    "state": "OH",
+                    "zip": "43623",
+                    "phone": "4198828082",
+                    "email": "matt.simpson@lzbtoledo.com"
+                },
+                {
+                    "number": "23461032",
+                    "name": "Airport-Highway2",
+                    "storename": "5804 Airport Highway",
+                    "address": "5804 Airport Hwy",
+                    "address2": "",
+                    "city": "Toledo",
+                    "state": "Ohio",
+                    "zip": "43615",
+                    "phone": "419.867.3727",
+                    "email": "matt.simpson@lzbtoledo.com"
+                }
+            ]
+        },
+        {
+            "number": "50860763",
+            "name": "Somewhere Also Cool",
+            "retail": false,
+            "rms": true,
+            "children": [{
+                    "number": "23461043",
+                    "name": "Monroe-Street3",
+                    "storename": "5178 Monroe Street",
+                    "address": "5178 Monroe",
+                    "address2": "",
+                    "city": "TOLEDO",
+                    "state": "OH",
+                    "zip": "43623",
+                    "phone": "4198828082",
+                    "email": "matt.simpson@lzbtoledo.com"
+                },
+                {
+                    "number": "23461033",
+                    "name": "Airport-Highway3",
+                    "storename": "5804 Airport Highway",
+                    "address": "5804 Airport Hwy",
+                    "address2": "",
+                    "city": "Toledo",
+                    "state": "Ohio",
+                    "zip": "43615",
+                    "phone": "419.867.3727",
+                    "email": "matt.simpson@lzbtoledo.com"
+                }
+            ]
+        }
+    ]
+}

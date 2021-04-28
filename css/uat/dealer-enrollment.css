@@ -1,0 +1,239 @@
+@import url("https://use.typekit.net/oxd7mfn.css");
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "lato", "OpenSans", sans-serif;
+    color: #333;
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    counter-reset: store-counter;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+header .image {
+    height: 425px;
+    max-width: 980px;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+header .image img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+}
+
+header .copy {
+    max-width: 1010px;
+    margin: 0 auto;
+    padding: 0 15px;
+    margin-top: 1.6666666rem;
+}
+
+header hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #979797;
+    margin: 2.2222222rem 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.625rem;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+    padding: 40px 0 0 1em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.4444444;
+    max-width: 43em;
+    margin: .5em auto 0;
+    text-align: center;
+}
+
+.fine-print {
+    font-size: 14px;
+    text-align: left;
+}
+
+.group {
+    white-space: nowrap;
+}
+
+.subhead {
+    font-size: .9em;
+    display: block;
+    margin-top: .25em;
+}
+
+form section {
+    margin-top: 2.2rem;
+    padding: 0 15px;
+}
+
+form>:nth-child(odd),
+#stores>:nth-child(even) {
+    background-color: #F4F4F4;
+    padding: 2.8rem 15px;
+}
+
+.fields {
+    max-width: 28.888888rem;
+    margin: 2rem auto 0;
+}
+
+.field {
+    margin: 1rem 0 0;
+}
+
+.field.pair {
+    display: flex;
+    margin: 1rem -.5rem 0;
+}
+
+.field.pair>div {
+    padding: 0 .5rem;
+    flex: 1 0 50%;
+}
+
+.field.pair>.state {
+    flex: 0 0 140px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+label.large {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+select,
+input,
+textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: .9em 1.1em;
+    border: 1px solid #B7B7B7;
+    border-radius: 2px;
+    background-color: white;
+}
+
+textarea {
+    height: 125px;
+    overflow: auto;
+    resize: vertical;
+}
+
+::placeholder {
+    color: #BBB;
+}
+
+.checkbox,
+.radio {
+    display: flex;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    flex: 0 0 30px;
+    height: 30px;
+    margin: 0;
+}
+
+[type="checkbox"]+label,
+[type="radio"]+label {
+    font-size: 1rem;
+    line-height: 30px;
+    font-weight: normal;
+    margin: 0 0 0 .8em;
+}
+
+.yes-no {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.yes-no>div {
+    justify-content: center;
+}
+
+.creative {
+    max-width: 1000px;
+    margin: 1rem auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.creative>div {
+    flex: 0 0 250px;
+    padding: 0 12.5px;
+    margin: 1rem 0 0;
+}
+
+#stores h3::before {
+    counter-increment: store-counter;
+    content: 'Store ' counter(store-counter) ' - ';
+}
+
+
+/* input:invalid {
+    background-color: #ffeeee;
+} */
+
+@media only screen and (min-width: 500px) {
+    html {
+        font-size: 106.25%;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    html {
+        font-size: 112.5%;
+    }
+}
